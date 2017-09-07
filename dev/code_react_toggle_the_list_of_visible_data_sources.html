@@ -1,0 +1,770 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReactJS to toggle the list of visible data sources &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
+        <link rel="next" title="Intermediate API Client Code Samples" href=".intermediate_api_client_code_samples.html"/>
+        <link rel="prev" title="ReactJS to manage the list of categories" href="code_react_manage_the_list_of_categories.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_rest_api_test.html">REST API Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_a_scalar_value.html">ReactJS to manage a scalar value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_the_list_of_categories.html">ReactJS to manage the list of categories</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ReactJS to toggle the list of visible data sources</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thinking-in-react">Thinking in React</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-with-a-mock">Start with a mock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#break-the-ui-into-a-component-hierarchy">Break the UI into a component hierarchy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-a-static-version-in-react">Build a static version in React</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-the-minimal-ui-state">Identify the minimal UI state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-where-the-state-should-live">Identify where the state should live</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-inverse-data-flow">Add inverse data flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a> &raquo;</li>
+        
+      <li>ReactJS to toggle the list of visible data sources</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_react_toggle_the_list_of_visible_data_sources.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reactjs-to-toggle-the-list-of-visible-data-sources">
+<h1>ReactJS to toggle the list of visible data sources<a class="headerlink" href="#reactjs-to-toggle-the-list-of-visible-data-sources" title="Permalink to this headline">¶</a></h1>
+<p>In this sample we will write a simplistic web page utilizing ReactJS to
+show two lists of available and visible data sources side by side and
+toggle items between them.</p>
+<ul class="simple">
+<li>We focus on applying ReactJS for a complex data structure.</li>
+<li>We will use the <a class="reference internal" href="../ref/api_connection.html#post-connection-loadremoteschema"><span class="std std-ref">POST connection/loadRemoteSchema</span></a>
+and <a class="reference internal" href="../ref/api_connection.html#post-connection"><span class="std std-ref">POST connection</span></a> APIs.</li>
+</ul>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>This sample is a continuation of <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a>.</li>
+<li>This sample re-uses the folder structure created in <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a>.</li>
+<li>The uncompressed, development version of react.js and react-dom.js
+has been put into &#8220;ui_react_examples/vendor&#8221; folder. (They are in
+the starter kit available at
+<a class="reference external" href="https://facebook.github.io/react/downloads.html">https://facebook.github.io/react/downloads.html</a>)</li>
+</ol>
+</div>
+<div class="section" id="thinking-in-react">
+<h2>Thinking in React<a class="headerlink" href="#thinking-in-react" title="Permalink to this headline">¶</a></h2>
+<p>That is the name of a <a class="reference external" href="https://facebook.github.io/react/docs/thinking-in-react.html">ReactJS
+guide</a>
+about building apps. In this sample we will follow the same process to
+build the page to toggle visible data sources.</p>
+</div>
+<div class="section" id="start-with-a-mock">
+<h2>Start with a mock<a class="headerlink" href="#start-with-a-mock" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/Connection_Move_Data_Source_to_Visible_List.jpg"><img alt="../_images/Connection_Move_Data_Source_to_Visible_List.jpg" src="../_images/Connection_Move_Data_Source_to_Visible_List.jpg" style="width: 611px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 401 </span><span class="caption-text">Move data sources between the two lists</span></p>
+</div>
+<p>For simplicity in this sample, we will skip the search boxes and the
+Table, View, Stored Procedure and Function groups and only keep the
+schema and data sources.</p>
+<p>The response from the API is detailed in <a class="reference internal" href="../ref/api_connection.html#post-connection-loadremoteschema"><span class="std std-ref">POST connection/loadRemoteSchema</span></a>.
+Basically the <code class="docutils literal"><span class="pre">response.dBSource.querySources</span></code> is an array of schemas,
+and each schema contains the <code class="docutils literal"><span class="pre">querySources</span></code> which is an array of query
+sources.</p>
+</div>
+<div class="section" id="break-the-ui-into-a-component-hierarchy">
+<h2>Break the UI into a component hierarchy<a class="headerlink" href="#break-the-ui-into-a-component-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>We will have two side-by-side lists of schema items, and inside each
+schema item is a list of query source items.</p>
+<p>Following would be our component hierarchy:</p>
+<ul class="simple">
+<li>App<ul>
+<li>List of SchemaItems<ul>
+<li>List of available QuerySourceItems</li>
+</ul>
+</li>
+<li>List of SchemaItems<ul>
+<li>List of visible QuerySourceItems</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Available QuerySourceItem and visible QuerySourceItem differ only in the
+checking condition for <code class="docutils literal"><span class="pre">selected</span></code> value, so we can use a single
+component code and pass &#8220;Available&#8221; or &#8220;Visible&#8221; to each instance via
+<code class="docutils literal"><span class="pre">props</span></code>.</p>
+</div>
+<div class="section" id="build-a-static-version-in-react">
+<h2>Build a static version in React<a class="headerlink" href="#build-a-static-version-in-react" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
+&#8220;ReactJS to toggle the list of visible data sources.html&#8221;.</li>
+<li>Edit the file with a text editor such as Notepad or Notepad++ and
+paste the following HTML code:</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+
+     var App = React.createClass({
+      render: function() {
+         return (
+           &lt;div&gt;
+             &lt;p&gt;Click an item to move between Available and Visible Data Sources.&lt;/p&gt;
+             &lt;div style={{&quot;width&quot;: &quot;600px&quot;, &quot;float&quot;: &quot;left&quot;}}&gt;
+               &lt;ul&gt;
+                 {this.props.schemaArray.map(function(result){
+                   return &lt;SchemaItem key={result.id} type=&quot;Available&quot; schema={result} /&gt;
+                 })}
+               &lt;/ul&gt;
+             &lt;/div&gt;
+             &lt;div style={{&quot;marginLeft&quot;: &quot;620px&quot;}}&gt;
+               &lt;ul&gt;
+                 {this.props.schemaArray.map(function(result){
+                   return &lt;SchemaItem key={result.id} type=&quot;Visible&quot; schema={result} /&gt;
+                 })}
+               &lt;/ul&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         )
+      }
+     });
+
+     var SchemaItem = React.createClass({
+      render: function() {
+         return (
+             &lt;li&gt;
+               &lt;label&gt;{this.props.schema.name}&lt;/label&gt;
+               &lt;ul&gt;
+                 {this.props.schema.querySources
+                   .filter(function(querySource){
+                     return ((this.props.type==&quot;Visible&quot;) ? querySource.selected : !querySource.selected);
+                   }.bind(this))
+                   .map(function(result){
+                     return &lt;QuerySourceItem key={result.id} type={this.props.type} querySource={result} /&gt;
+                   }.bind(this))
+                 }
+               &lt;/ul&gt;
+             &lt;/li&gt;
+           )
+      }
+     });
+
+     var QuerySourceItem = React.createClass({
+      render: function() {
+         return (
+           &lt;li style={{&quot;cursor&quot;: &quot;pointer&quot;}}&gt;
+             {this.props.querySource.name}
+           &lt;/li&gt;
+         )
+      }
+     });
+
+     var schemas = [
+      {id: &#39;10&#39;, name: &#39;HumanResources&#39;, querySources: [
+         {id: &#39;11&#39;, name: &#39;Employee&#39;, selected: false},
+         {id: &#39;12&#39;, name: &#39;Department&#39;, selected: true}
+      ]},
+      {id: &#39;20&#39;, name: &#39;Production&#39;, querySources: [
+         {id: &#39;21&#39;, name: &#39;Product&#39;, selected: true},
+         {id: &#39;22&#39;, name: &#39;WorkOrder&#39;, selected: true}
+      ]},
+      {id: &#39;30&#39;, name: &#39;Sales&#39;, querySources: [
+         {id: &#39;31&#39;, name: &#39;Customer&#39;, selected: false},
+         {id: &#39;32&#39;, name: &#39;SalesOrderDetail&#39;, selected: false}
+      ]}
+     ];
+
+     ReactDOM.render(&lt;App schemaArray={schemas}/&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="identify-the-minimal-ui-state">
+<h2>Identify the minimal UI state<a class="headerlink" href="#identify-the-minimal-ui-state" title="Permalink to this headline">¶</a></h2>
+<p>The pieces of data in our application:</p>
+<ul class="simple">
+<li>The API url</li>
+<li>The connection string</li>
+<li>The server type id</li>
+<li>The data returned from the API</li>
+<li>The value of selected field</li>
+</ul>
+<p>Our state would be the dBSource.querySources part of the response since
+it contains the list of schemas and also the selected value. The API
+url, connection string and server type id would be passed in via props.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span> <span class="nx">rootUrl</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;http://127.0.0.1:8888/api/&quot;</span><span class="p">}</span> <span class="nx">connectionString</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;server=host01\\instance01;database=db01;User Id=user01;Password=secret;&quot;</span><span class="p">}</span> <span class="nx">serverTypeId</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="identify-where-the-state-should-live">
+<h2>Identify where the state should live<a class="headerlink" href="#identify-where-the-state-should-live" title="Permalink to this headline">¶</a></h2>
+<p>The state should be in the root App since all other components only need
+a part of that state.</p>
+<p>Now we can implement getInitialState, componentDidMount and fetchData
+methods inside the root App.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span>  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">{</span>
+     <span class="nx">schemaArray</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
+     <span class="p">};</span>
+<span class="p">},</span>
+<span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+<span class="p">},</span>
+<span class="nx">fetchData</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+   <span class="nx">postData</span><span class="p">.</span><span class="nx">connectionString</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">connectionString</span><span class="p">;</span>
+   <span class="nx">postData</span><span class="p">.</span><span class="nx">serverTypeId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">serverTypeId</span><span class="p">;</span>
+   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;connection/loadRemoteSchema/&quot;</span><span class="p">,</span>
+     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+     <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+     <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+           <span class="nx">schemaArray</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">dBSource</span><span class="p">.</span><span class="nx">querySources</span>
+         <span class="p">});</span>
+       <span class="p">}</span>
+       <span class="k">else</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+       <span class="p">}</span>
+     <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+     <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">})</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-inverse-data-flow">
+<h2>Add inverse data flow<a class="headerlink" href="#add-inverse-data-flow" title="Permalink to this headline">¶</a></h2>
+<p>Because the state is in the parent component App, a toggle action that
+happens inside a QuerySourceItem cannot update it directly. Instead, App
+needs to pass a callback to QuerySourceItem to update the state whenever
+a toggle happens. For our hierarchy, the callback would be passed from
+App to SchemaItem first, then from SchemaItem to QuerySourceItem.</p>
+<p>We will name the callback <code class="docutils literal"><span class="pre">reflectChangedData</span></code> as normal:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>// .. in App
+  return &lt;SchemaItem key={result.id} type=&quot;Available&quot; schema={result} reflectChangedData={this.reflectChangedData} /&gt;
+// .. in SchemaItem
+  return &lt;QuerySourceItem key={result.id} type={this.props.type} querySource={result} reflectChangedData={this.reflectChangedData}/&gt;
+// .. in QuerySourceItem
+return (
+  &lt;li onClick={this.reflectChangedData.bind(this,this.props.querySource.id)} style={{&quot;cursor&quot;: &quot;pointer&quot;}}&gt;
+    {this.props.querySource.name}
+  &lt;/li&gt;
+)
+// .. in QuerySourceItem
+reflectChangedData: function(querySourceId) {
+  // the callback passed in by SchemaItem
+  this.props.reflectChangedData(querySourceId);
+}
+// .. in SchemaItem
+reflectChangedData: function(querySourceId) {
+  // the callback passed in by App
+  this.props.reflectChangedData(this.props.schema.id, querySourceId);
+}
+// .. in App
+reflectChangedData: function(schemaId, querySourceId) {
+  var schemas = this.state.schemaArray;
+  var schemaPos = schemas.map(function(x) {return x.id; }).indexOf(schemaId);
+  var querySources = schemas[schemaPos].querySources;
+  var querySourcePos = querySources.map(function(x) {return x.id; }).indexOf(querySourceId);
+  schemas[schemaPos].querySources[querySourcePos].selected = ! schemas[schemaPos].querySources[querySourcePos].selected;
+  this.setState({schemaArray : schemas});
+}
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>The inverse flow begins in QuerySourceItem where we bind the id of
+the query source to the callback function in SchemaItem.</li>
+<li>In SchemaItem we bind the id of the schema to the callback function
+in App.</li>
+<li>In App we use the id of the schema and the id of the query source to
+find the updated item to toggle its selected value.</li>
+<li>The setState call in App will render all the components.</li>
+</ol>
+</div>
+<div class="section" id="implement-pushdata">
+<h2>Implement pushData<a class="headerlink" href="#implement-pushdata" title="Permalink to this headline">¶</a></h2>
+<p>We will also add a Save button and implement pushData method to save the
+connection together with visible data sources.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">pushData</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">connectionName</span><span class="p">,</span>
+     <span class="nx">serverTypeId</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">serverTypeId</span><span class="p">,</span>
+     <span class="nx">connectionString</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">connectionString</span><span class="p">,</span>
+     <span class="nx">visible</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">dBSource</span><span class="o">:</span> <span class="p">{</span>
+       <span class="nx">querySources</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">schemaArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">schema</span><span class="p">){</span>
+                       <span class="nx">schema</span><span class="p">.</span><span class="nx">querySources</span> <span class="o">=</span> <span class="nx">schema</span><span class="p">.</span><span class="nx">querySources</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">querySource</span><span class="p">){</span>
+                        <span class="k">return</span> <span class="nx">querySource</span><span class="p">.</span><span class="nx">selected</span><span class="p">;</span>
+                       <span class="p">});</span>
+                       <span class="k">return</span> <span class="nx">schema</span><span class="p">;</span>
+                     <span class="p">})</span>
+     <span class="p">}</span>
+   <span class="p">};</span>
+   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;connection/&quot;</span><span class="p">,</span>
+     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+     <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+     <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;connectionId: &quot;</span><span class="o">+</span><span class="nx">response</span><span class="p">.</span><span class="nx">connectionId</span><span class="p">);</span>
+       <span class="p">}</span>
+     <span class="p">},</span>
+     <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">})</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we followed the recommended ReactJS design approach to
+implement the list of visible data sources.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full source code in this sample:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+
+     var App = React.createClass({
+      getInitialState: function() {
+         return {
+           schemaArray: new Array()
+           };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+      },
+      fetchData: function() {
+         var postData = new Object();
+         postData.connectionString = this.props.connectionString;
+         postData.serverTypeId = this.props.serverTypeId;
+              $.ajax({
+           url: this.props.rootUrl + &quot;connection/loadRemoteSchema/&quot;,
+           type: &quot;POST&quot;,
+           data: JSON.stringify(postData),
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             if (response.success) {
+               this.setState({
+                 schemaArray: response.dBSource.querySources
+               });
+             }
+             else {
+               console.log(JSON.stringify(response));
+             }
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         })
+      },
+      render: function() {
+         return (
+           &lt;div&gt;
+             &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+             &lt;p&gt;Click an item to move between Available and Visible Data Sources.&lt;/p&gt;
+             &lt;div style={{&quot;width&quot;: &quot;600px&quot;, &quot;float&quot;: &quot;left&quot;}}&gt;
+               &lt;ul&gt;
+                 {this.state.schemaArray.map(function(result){
+                   return &lt;SchemaItem key={result.id} type=&quot;Available&quot; schema={result} reflectChangedData={this.reflectChangedData} /&gt;
+                 }.bind(this))}
+               &lt;/ul&gt;
+             &lt;/div&gt;
+             &lt;div style={{&quot;marginLeft&quot;: &quot;620px&quot;}}&gt;
+               &lt;ul&gt;
+                 {this.state.schemaArray.map(function(result){
+                   return &lt;SchemaItem key={result.id} type=&quot;Visible&quot; schema={result} reflectChangedData={this.reflectChangedData} /&gt;
+                 }.bind(this))}
+               &lt;/ul&gt;
+             &lt;/div&gt;
+           &lt;/div&gt;
+         )
+      },
+      reflectChangedData: function(schemaId, querySourceId) {
+         var schemas = this.state.schemaArray;
+         var schemaPos = schemas.map(function(x) {return x.id; }).indexOf(schemaId);
+         var querySources = schemas[schemaPos].querySources;
+         var querySourcePos = querySources.map(function(x) {return x.id; }).indexOf(querySourceId);
+         schemas[schemaPos].querySources[querySourcePos].selected = ! schemas[schemaPos].querySources[querySourcePos].selected;
+         this.setState({schemaArray : schemas});
+      },
+      pushData: function() {
+         var postData = {
+           id: null,
+           name: this.props.connectionName,
+           serverTypeId: this.props.serverTypeId,
+           connectionString: this.props.connectionString,
+           visible: true,
+           dBSource: {
+             querySources: this.state.schemaArray.map(function(schema){
+                             schema.querySources = schema.querySources.filter(function(querySource){
+                              return querySource.selected;
+                             });
+                             return schema;
+                           })
+           }
+         };
+         $.ajax({
+           url: this.props.rootUrl + &quot;connection/&quot;,
+           type: &quot;POST&quot;,
+           data: JSON.stringify(postData),
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             if (!response.success) {
+               console.log(JSON.stringify(response));
+             } else {
+               console.log(&quot;connectionId: &quot;+response.connectionId);
+             }
+           },
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         })
+      }
+     });
+
+     var SchemaItem = React.createClass({
+      render: function() {
+         return (
+             &lt;li&gt;
+               &lt;label&gt;{this.props.schema.name}&lt;/label&gt;
+               &lt;ul&gt;
+                 {this.props.schema.querySources
+                   .filter(function(querySource){
+                     return ((this.props.type==&quot;Visible&quot;) ? querySource.selected : !querySource.selected);
+                   }.bind(this))
+                   .map(function(result){
+                     return &lt;QuerySourceItem key={result.id} type={this.props.type} querySource={result} reflectChangedData={this.reflectChangedData}/&gt;
+                   }.bind(this))
+                 }
+               &lt;/ul&gt;
+             &lt;/li&gt;
+           )
+           },
+      reflectChangedData: function(querySourceId) {
+         this.props.reflectChangedData(this.props.schema.id, querySourceId);
+      }
+     });
+
+     var QuerySourceItem = React.createClass({
+      render: function() {
+         return (
+           &lt;li onClick={this.reflectChangedData.bind(this,this.props.querySource.id)} style={{&quot;cursor&quot;: &quot;pointer&quot;}}&gt;
+             {this.props.querySource.name}
+           &lt;/li&gt;
+         )
+      },
+      reflectChangedData: function(querySourceId) {
+         this.props.reflectChangedData(querySourceId);
+      }
+     });
+
+
+
+     ReactDOM.render(&lt;App rootUrl={&quot;http://127.0.0.1:8888/api/&quot;} connectionString={&quot;server=host01\\instance01;database=db01;User Id=user01;Password=secret;&quot;} connectionName={&quot;db01&quot;} serverTypeId={&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;}/&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".intermediate_api_client_code_samples.html" class="btn btn-neutral float-right" title="Intermediate API Client Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_react_manage_the_list_of_categories.html" class="btn btn-neutral" title="ReactJS to manage the list of categories" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

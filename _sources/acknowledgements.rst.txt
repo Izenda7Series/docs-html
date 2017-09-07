@@ -1,0 +1,68 @@
+=================
+Acknowledgements
+=================
+
+-  Common.Logging v.3.3.1  http://netcommon.sourceforge.net/ License: http://netcommon.sourceforge.net/license.html
+-  Common.Logging.Core v.3.3.1  http://netcommon.sourceforge.net/ License: http://netcommon.sourceforge.net/license.html
+-  Common Service Locator v.1.0.0 http://commonservicelocator.codeplex.com/ License: http://commonservicelocator.codeplex.com/license
+-  OpenXML v.2.5.0 https://github.com/OfficeDev/Open-Xml-Sdk License: https://github.com/OfficeDev/Open-XML-SDK/blob/vNext/LICENSE.txt
+-  Enterprise Library Common v.5.0.505 https://msdn.microsoft.com/library/cc467894.aspx License: https://opensource.org/licenses/ms-pl
+-  Evopdf v.7.0.0 http://www.essentialobjects.com/Download.aspx License: This software is available under an End-User Sofware License Agreeemnt: http://www.essentialobjects.com/Products/EOPdf/EULA.aspx
+-  EvoHtmlToPdf_Azure_Client v.7.0.0 http://www.essentialobjects.com/Download.aspx License: This software is available under an End-User Sofware License Agreeemnt: http://www.essentialobjects.com/Products/EOPdf/EULA.aspx
+-  HtmlAgilityPack v.1.4.9.5 http://htmlagilitypack.codeplex.com/ License:http://htmlagilitypack.codeplex.com/license
+-  HtmlTags v.3.0.0.1866  http://htmltags.fubu-project.org/ Licesne: https://raw.githubusercontent.com/HtmlTags/htmltags/master/license.txt
+-  log4net  v.2.0.5 http://logging.apache.org/log4net/ License: http://logging.apache.org/log4net/license.html
+-  Microsoft.AspNet.WebApi.Client v.5.2.3 https://www.asp.net/web-api License: https://www.microsoft.com/web/webpi/eula/mvc_4_eula_enu.htm
+-  Microsoft.Net.Http v.2.2.29 http://go.microsoft.com/fwlink/?LinkID=280055 License: https://www.microsoft.com/net/dotnet_library_license.htm
+-  Microsoft.Web.Infrastructure v.1.0.0 https://www.asp.net/ License: https://www.microsoft.com/web/webpi/eula/aspnetmvc3update-eula.htm
+-  Moq v.4.2.1510.2205 http://www.moqthis.com/ License: http://www.opensource.org/licenses/bsd-license.php
+-  MySQL.Data v.6.9.9 https://dev.mysql.com/downloads/ License:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+-  Nancy v.1.4.3 http://nancyfx.org/ License: https://github.com/NancyFx/Nancy/blob/master/license.txt
+-  Nancy.Hosting.Aspnet v.1.4.1 http://nancyfx.org/ License: https://github.com/NancyFx/Nancy/blob/master/license.txt
+-  Nancy.Viewengines.Razor v.1.4.3  http://nancyfx.org/  License:https://github.com/NancyFx/Nancy/blob/master/license.txt
+-  Newtonsoft.Json v.9.0.1 http://www.newtonsoft.com/json License: https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/LICENSE.md
+-  Npgsql v.2.2.7 https://github.com/npgsql/Npgsql License: https://github.com/npgsql/npgsql
+-  Oracle.ManagedDataAccess v.12.1.2400 http://www.oracle.com License: http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
+-  Quartz v.2.5.0 https://www.quartz-scheduler.net/ License: http://www.apache.org/licenses/LICENSE-2.0
+-  TransientFaltHandling.Core v.5.1.1209.1 http://topaz.codeplex.com/ License:https://opensource.org/licenses/ms-pl
+-  Unity v.2.1.505 https://msdn.microsoft.com/en-us/library/ff660891(PandP.20).aspx License: https://opensource.org/licenses/ms-pl
+-  Unity.Interception v.2.1.505 https://msdn.microsoft.com/en-us/library/ff660891(PandP.20).aspx License: https://opensource.org/licenses/ms-pl
+-  xunit v.1.9.1 http://xunit.codeplex.com/ License: http://xunit.codeplex.com/license
+-  xunit.abstractions v.2.0.0  https://github.com/xunit/xunit License: https://raw.githubusercontent.com/xunit/xunit/master/license.txt
+-  xunit.core v.2.1.0 https://github.com/xunit/xunit License:https://raw.githubusercontent.com/xunit/xunit/master/license.txt
+-  xunit.runner.visualstudio v.2.1.0 https://github.com/xunit/xunit License: https://raw.githubusercontent.com/xunit/xunit/master/license.txt
+-  bluebird: v.3.3.5 http://bluebirdjs.com/docs/getting-started.html License:https://github.com/petkaantonov/bluebird/blob/master/LICENSE
+-  bootstrap: v.3.3.6  http://getbootstrap.com/ License: https://github.com/twbs/bootstrap/blob/v4-dev/LICENSE
+-  codemirror: v.5.16.0 https://codemirror.net/ License: https://codemirror.net/LICENSE
+-  dom-helpers: v.2.4.0  https://github.com/react-bootstrap/dom-helpers License: https://github.com/react-bootstrap/dom-helpers/blob/master/License.txt
+-  element-resize-detector: v.1.1.9  https://github.com/wnr/element-resize-detector License: https://github.com/wnr/element-resize-detector/blob/master/LICENSE
+-  eve: v.0.5.0 https://github.com/adobe-webplatform/eve License: https://github.com/adobe-webplatform/eve/blob/master/LICENSE
+-  fastdom: 1.0.5 https://github.com/wilsonpage/fastdom License:https://github.com/wilsonpage/fastdom#license
+-  highcharts: v.4.2.7 http://shop.highsoft.com/highcharts/highcharts-single-developer-support.html  License: The software is available under a commercial or non-commercial license http://shop.highsoft.com/highcharts.html
+-  hoist-non-react-statics: v.1.2.0 https://github.com/mridgway/hoist-non-react-statics License:https://github.com/mridgway/hoist-non-react-statics/blob/master/LICENSE.md
+-  jquery: v.2.2.4 https://github.com/jquery License: https://jquery.org/license/
+-  js-cookie: v.2.1.3 https://github.com/js-cookie/js-cookie License: https://github.com/js-cookie/js-cookie/blob/master/MIT-LICENSE.txt
+-  lodash: v.4.12.0  https://github.com/lodash/lodash License: https://github.com/lodash/lodash/blob/master/LICENSE
+-  mobx: v.2.4.2 https://github.com/mobxjs/mobx License: https://github.com/mobxjs/mobx/blob/master/LICENSE
+-  mobx-react: v.3.5.4 https://github.com/mobxjs/mobx-react License: https://github.com/mobxjs/mobx-react/blob/master/LICENSE
+-  moment: v.2.13.0 https://momentjs.com/  License: https://github.com/moment/moment/blob/develop/LICENSE
+-  moment-range: v.2.2.0 https://github.com/gf3/moment-range License: https://github.com/gf3/moment-range/blob/master/UNLICENSE
+-  moment-timezone: v.0.5.4 https://momentjs.com/timezone/  License: https://github.com/moment/moment-timezone/blob/develop/LICENSE
+-  numeral: v.1.5.3  http://numeraljs.com/  License: https://github.com/adamwdraper/Numeral-js/blob/master/LICENSE
+-  proj4: v.2.3.15   https://github.com/OSGeo/proj.4 License: https://github.com/OSGeo/proj.4/blob/master/COPYING
+-  query-string: v.4.3.1  https://github.com/sindresorhus/query-string  License: https://github.com/sindresorhus/query-string#license
+-  raf: v.3.2.0  https://www.npmjs.com/package/raf License: https://www.npmjs.com/package/raf
+-  raphael: v.2.2.0 http://dmitrybaranovskiy.github.io/raphael/ License: http://dmitrybaranovskiy.github.io/license.html
+-  react-dnd: v.2.1.4 https://github.com/react-dnd/react-dnd License: http://react-dnd.github.io/react-dnd/
+-  react-dnd-html5-backend: v.2.1.2 https://github.com/react-dnd/react-dnd-html5-backend  License: https://github.com/react-dnd/react-dnd-html5-backend/blob/master/LICENSE
+-  react-draggable: v.2.2.1  https://github.com/mzabriskie/react-draggable License: https://github.com/mzabriskie/react-draggable/blob/master/LICENSE
+-  react-motion: v.0.4.3 https://github.com/chenglou/react-motion  License: https://github.com/chenglou/react-motion/blob/master/LICENSE
+-  react-router: v.2.4.0  https://github.com/ReactTraining/react-router License:https://github.com/ReactTraining/react-router/blob/master/LICENSE.md
+-  react-widgets: v.3.3.1  https://jquense.github.io/react-widgets/docs/#/?_k=39z7x6   License:https://github.com/jquense/react-widgets/blob/master/License.txt
+-  recompose: v.0.20.2 https://github.com/acdlite/recompose License:https://github.com/acdlite/recompose/blob/master/LICENSE.md
+-  react-slick: v.0.14.5 https://github.com/akiran/react-slick License:https://github.com/akiran/react-slick/blob/master/LICENSE
+-  slick-carousel: v.1.6.0  https://github.com/kenwheeler/slick License: https://github.com/kenwheeler/slick/blob/master/LICENSE
+-  tinycolor2: v.1.4.1 https://github.com/bgrins/TinyColor License: https://github.com/bgrins/TinyColor/blob/master/LICENSE
+-  tinymce: v.4.4.0 https://www.tinymce.com License: https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT
+-  tween.js: v.16.3.5  https://github.com/tweenjs/tween.js/ License: https://github.com/tweenjs/tween.js/blob/master/LICENSE
+-  validate.js: v.0.9.0  https://validatejs.org/ License: https://github.com/ansman/validate.js/blob/master/LICENSE.txt

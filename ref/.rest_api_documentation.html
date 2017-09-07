@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>REST API Documentation &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Reference" href=".system_reference.html"/>
+        <link rel="next" title="System DB and License APIs" href="api_systemdb_and_license.html"/>
+        <link rel="prev" title="Izenda System Variables" href="spec_izenda_system_variables.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">REST API Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-apis">List of APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+      <li>REST API Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/.rest_api_documentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rest-api-documentation">
+<h1>REST API Documentation<a class="headerlink" href="#rest-api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>A master list of REST API endpoints, their purpose, parameters and return types - together with cross-references to UI functions and sample API calls.</p>
+<div class="section" id="list-of-request-headers">
+<h2>List of Request Headers<a class="headerlink" href="#list-of-request-headers" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Request header</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">access_token</span></code> <br clear="right" /> <br clear="right" />
+<strong>Required</strong>, except for <a class="reference internal" href="api_user.html#post-user-login"><span class="std std-ref">POST user/login</span></a> API</td>
+<td>The access token, which should be requested firstly using <a class="reference internal" href="api_user.html#post-user-login"><span class="std std-ref">POST user/login</span></a> API</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">current_tenant</span></code> <br clear="right" /> <br clear="right" />
+<strong>Required</strong> if logged in user is a tenant user</td>
+<td>The id of the tenant of the logged in user</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">selected_tenant</span></code> <br clear="right" /></td>
+<td>The id of the selected tenant. This is used in case the logged in user is a system user, and selects setting level as a specific tenant.</td>
+</tr>
+</tbody>
+</table>
+<p>For an example on adding request headers, please see <a class="reference internal" href="../dev/code_rest_api_test.html#code-sample-for-calling-rest-api"><span class="std std-ref">Code sample for calling REST API</span></a>.</p>
+</div>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-supporteddatabasetype">GET databaseSetup/supportedDatabaseType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-testconnection">POST databaseSetup/testConnection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-databaseinfo">GET databaseSetup/databaseInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-databaseinfo">POST databaseSetup/databaseInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-provisionstaticdata">POST databaseSetup/provisionStaticData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-provisionstaticdatastatus">GET databaseSetup/provisionStaticDataStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-staticdata-city">POST databaseSetup/staticData/city</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-staticdata-postalcode">POST databaseSetup/staticData/postalCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-staticdata-countrycodes">GET databaseSetup/staticData/countryCodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-systemmode">GET systemSetting/systemMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-systemmodesettings">GET systemSetting/systemModeSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-systemsetting-systemmodesettings">POST systemSetting/systemModeSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-deploymentmode">GET systemSetting/deploymentMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-systemindicator-tenant-id">GET systemSetting/systemIndicator/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-license-status">GET license/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#get-license-currenttoken">GET license/currentToken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-license-validate">POST license/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_systemdb_and_license.html#post-license-requesttoken">POST license/requestToken</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_connection.html">Connection APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-systemsetting-databasesetup">GET systemSetting/databaseSetup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-dataadaptor">GET dataAdaptor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-verify">POST connection/verify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-loadremoteschema">POST connection/loadRemoteSchema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection">POST connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-connection-tenant-id">GET connection/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-connection-detail-connection-id">GET connection/detail/{connection_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-connection-basicinfo-tenant-id">GET connection/basicInfo/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-connection-detailinfo-tenant-id-loadfield">GET connection/detailInfo/(tenant_id)/{loadField}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-detailinfo">POST connection/detailInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-invisible-connection-id">POST connection/invisible/{connection_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-visible-connection-id">POST connection/visible/{connection_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#delete-connection-connection-id">DELETE connection/{connection_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-reloadremoteschema">POST connection/reloadRemoteSchema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-databasename">POST connection/databaseName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-validateschema">POST connection/validateSchema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#get-connection-visible-tenant-id-count">GET connection/visible/(tenant_id)/count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_connection.html#post-connection-loaddistinctconnections">POST connection/loadDistinctConnections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_data_model.html">Data Model APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-loadquerysources">POST dataModel/loadQuerySources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-loadquerysourcefields">POST dataModel/loadQuerySourceFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-basicconnectionsinfo-tenant-id">GET dataModel/basicConnectionsInfo/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-basicconnectionsinfo">POST dataModel/basicConnectionsInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-basicquerysourcecategoriesinfo-connection-id">GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-basicquerysourcecategoriesinfo">POST dataModel/basicQuerySourceCategoriesInfo/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-basicquerysourcesinfo-connection-id-type">GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-querysourcesinfo-connection-id-type">GET dataModel/querySourcesInfo/{connection_id}/(type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#delete-datamodel-querysourcefield-query-source-field-id">DELETE dataModel/querySourceField/{query_source_field_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-basicquerysourcefieldsinfo-query-source-id">GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel">POST dataModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-indicator-tenant-id">GET dataModel/indicator/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-reloadquerysourcefields">POST dataModel/reloadQuerySourceFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-validatecalculatedfield">POST dataModel/validateCalculatedField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-functionoperators-tenant-id">GET dataModel/functionOperators/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-loadrelationships">POST dataModel/loadRelationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-relationships">POST dataModel/relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_data_model.html#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_tenant.html">Tenant APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-alltenants">GET tenant/allTenants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-tenant-id">GET tenant/{tenant_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#post-tenant">POST tenant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#post-tenant-active-tenant-id">POST tenant/active/{tenant_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#post-tenant-deactive-tenant-id">POST tenant/deactive/{tenant_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#delete-tenant-tenant-id">DELETE tenant/{tenant_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-activetenants">GET tenant/activeTenants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-availablecategory-type">GET tenant/availableCategory/{type}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#post-tenant-intergration-savetenant">POST tenant/intergration/saveTenant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-basicinfos">GET tenant/basicInfos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tenant.html#get-tenant-namesonly">GET tenant/namesOnly</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_role.html">Role APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#get-role-all-tenant-id">GET role/all/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-active-role-id-tenant-id">POST role/active/{role_id}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-deactive-role-id-tenant-id">POST role/deactive/{role_id}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#delete-role-role-id">DELETE role/{role_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#get-role-role-id">GET role/{role_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#get-role-availablerole-type-tenant-id">GET role/availableRole/{type}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#get-role-availablecategory-type-tenant-id">GET role/availableCategory/{type}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-availablecategory">POST role/availableCategory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role">POST role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#get-role-summaries-tenant-id">GET role/summaries/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-allowedsharingroles">POST role/allowedSharingRoles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-intergration-saverole">POST role/intergration/saveRole</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_user.html">User APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-all-tenant-id">GET user/all/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-all">POST user/all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-load">POST user/load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-login">POST user/login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-logout">POST user/logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user">POST user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-userprofile">POST user/userProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-passwordprofile">POST user/passwordProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-securityquesitions">POST user/securityQuesitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-active">POST user/active</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-deactive">POST user/deactive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#delete-user-user-id">DELETE user/{user_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-passwordandsecurityquestion">POST user/passwordAndSecurityQuestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-securityquestion-user-name-tenant-display-id">GET user/securityQuestion/{user_name}/(tenant_display_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-generatepasswordlink">POST user/generatePasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validatepasswordlink">POST user/validatePasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validatesecurityquestion">POST user/validateSecurityQuestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateuserinfo">POST user/validateUserInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateexpirationpasswordlink">POST user/validateExpirationPasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-sendpasswordlink">POST user/sendPasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-integration-saveuser">POST user/integration/saveUser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateuserroleassociation">POST user/validateUserRoleAssociation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-allowedsharingusers-tenant-id">POST user/allowedSharingUsers/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-islastsystemadmin">GET user/isLastSystemAdmin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-category-type-tenant-id">GET report/category/{type}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-allowedsavingcategories">POST report/allowedSavingCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-allowedsavingsubcategories">POST report/allowedSavingSubCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-subcategory-parent-category-id">GET report/subcategory/{parent_category_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-allcategories-type-tenant-id">GET report/allCategories/{type}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-allcategories">POST report/allCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-category">POST report/category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#delete-report-category-report-category-id">DELETE report/category/{report_category_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-validatecategoryname">POST report/validateCategoryName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportbyproperty-report-id-property">GET report/reportByProperty/{report_id}/{property}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report">POST report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-draft">POST report/draft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-cancel">POST report/cancel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-loadreport">POST report/loadReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-loadforedit">POST report/loadForEdit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-tenant-id">GET report/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-validatereportname">POST report/validateReportName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-validate">POST report/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-search">POST report/search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-search2">POST report/search2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-advancedsearch">POST report/advancedSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportmode">GET report/reportMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-reportmode-value">POST report/reportMode/{value}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-detectreportchange">POST report/detectReportChange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-function-function-mode-data-type-tenant-id">POST report/function/{function_mode}/{data_type}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-allreports-tenant-id">GET report/allReports/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-detectschemachange">POST report/detectSchemaChange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-updateresults">POST report/updateResults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-loadaccesses">POST report/loadAccesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-loadschedules">POST report/loadSchedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportpart-report-part-id-report-id">GET report/reportPart/{report_part_id}/(report_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-validateexistingfield">POST report/validateExistingField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportid-tenant-id-reportname-value-categoryname-value">GET report/reportId/(tenant_id)?reportName=value&amp;categoryName=value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-validateexistingreport">POST report/validateExistingReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportsbytenant-tenant-id">GET report/reportsByTenant/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-updaterenderingtime">POST report/updateRenderingTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-isreportvalid-report-id">GET report/isReportValid/(report_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-arereportsvalid">POST report/areReportsValid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-printdraft">POST report/printDraft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-printdraft-report-id">GET report/printDraft/{report_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-accesspriority-report-dashboard-id">GET report/accessPriority/(report_dashboard_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#post-report-timeperiod">POST report/timePeriod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#delete-report-timeperiod-time-period-id">DELETE report/timePeriod/{time_period_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-reportpart-crossfiltering-report-part-id">GET report/reportPart/crossfiltering/{report_part_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_details.html#get-report-validateembeddedreport-tenant-id-reportid-value-reportname-value-reportpartname-value">GET report/validateEmbeddedReport/(tenant_id)?reportId=value&amp;reportName=value&amp;reportPartName=value</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-datasourcecategory-tenant-id">GET report/dataSourceCategory/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-loaddatasourcecategory">POST report/loadDataSourceCategory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-loadquerysources">POST report/loadQuerySources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-loadrelationships">POST report/loadRelationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-validaterelationshipsyntax">POST report/validateRelationshipSyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-detectrelationshipschange">POST report/detectRelationshipsChange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-availablequerysourcefields">POST report/availableQuerySourceFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-availablereportmappingfields-report-id">GET report/availableReportMappingFields/{report_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-fieldproperties-query-source-field-id">GET report/fieldProperties/{query_source_field_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-calculatedfield">POST report/calculatedField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-calculatedfield-calculated-field-id">GET report/calculatedField/{calculated_field_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-hasreportusecalculatedfield-calculated-field-id">GET report/hasReportUseCalculatedField/{calculated_field_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#get-report-hasreportuserelationship-relationship-id">GET report/hasReportUseRelationship/{relationship_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_datasources.html#post-report-deletereportcalculatedfield">POST report/deleteReportCalculatedField</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#get-report-filter-operators">GET report/filter/operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadfilterdatasource">POST report/loadFilterDataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-validatefiltersyntax">POST report/validateFilterSyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadfilter">POST report/loadFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#get-report-filter-timeperiods">GET report/filter/timePeriods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#get-report-filter-dataformat-datatype">GET report/filter/dataFormat/{dataType}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#get-report-field-dataformat-datatype">GET report/field/dataFormat/{dataType}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadfilterfielddata">POST report/loadFilterFieldData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadfilterfielddataastree">POST report/loadFilterFieldDataAsTree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadpartialfilterfielddata">POST report/loadPartialFilterFieldData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadpartialfilterfielddataastree">POST report/loadPartialFilterFieldDataAsTree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#post-report-loadallfilterfieldsdata">POST report/loadAllFilterFieldsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_filters.html#get-report-validatefilter-report-id">GET report/validateFilter/{report_id}</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-validateexpression">POST fusion/validateExpression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-validategrandtotalexpression">POST fusion/validateGrandTotalExpression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-loaddata">POST fusion/loadData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-reportpartpreview">POST fusion/reportPartPreview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-previewgrandtotal">POST fusion/previewGrandTotal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#get-fusion-report-id-report-part-id-pageindex-pagesize">GET fusion/{report_id}/{report_part_id}/(pageIndex)/(pageSize)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-validatedatamodelexpression">POST fusion/validateDataModelExpression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-previewcalculatedfield">POST fusion/previewCalculatedField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-previewsubtotal">POST fusion/previewSubTotal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-calculatedfieldvalue">POST fusion/calculatedFieldValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-retrieverandomexpandedleveldata">POST fusion/retrieveRandomExpandedLevelData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-printquery">POST fusion/printQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#post-fusion-printquery-reportpartpreview">POST fusion/printQuery/reportPartPreview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_designer_data.html#get-fusion-printquery-reportid-reportpartid-pageindex-pagesize">GET fusion/printQuery/{reportId}/{reportPartId}/(pageIndex)/(pageSize)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_report_list.html">Report List APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-list">POST report/list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-list2-includehashcode-true">POST report/list2(?includeHashCode=true)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#get-report-info-report-id-version">GET report/info/{report_id}/(version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-copy">POST report/copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-move">POST report/move</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-history">POST report/history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-history-report-id-version">POST report/history/{report_id}/(version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#delete-report-history-report-id-version">DELETE report/history/{report_id}/(version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#get-report-tenants-tenant-id-categories-category-id-reports">GET report/tenants/(tenant_id)/categories/(category_id)/reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-rename">POST report/rename</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-delete">POST report/delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-loadsubscriptions">POST report/loadSubscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-emailtemplates-issubscription">POST report/emailTemplates/{isSubscription}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-subscription-validate">POST report/subscription/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-subscriptions">POST report/subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-deleteallarchiveversions">POST report/deleteAllArchiveVersions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_report_list.html#post-report-findbyname">POST report/findByName</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard">POST dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadfilterfielddata">POST dashboard/loadFilterFieldData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadfilterfielddataastree">POST dashboard/loadFilterFieldDataAsTree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadpartialfilterfielddata">POST dashboard/loadPartialFilterFieldData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadpartialfilterfielddataastree">POST dashboard/loadPartialFilterFieldDataAsTree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadfiltercomparisonfields">POST dashboard/loadFilterComparisonFields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-detectdashboardchange">POST dashboard/detectDashboardChange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loaddashboard">POST dashboard/loadDashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadsubscriptions">POST dashboard/loadSubscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-subscription-validate">POST dashboard/subscription/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-subscriptions">POST dashboard/subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-validatedashboardname">POST dashboard/validateDashboardName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-validate">POST dashboard/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-validateglobaldashboard">POST dashboard/validateGlobalDashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-previewdashboardpartdata">POST dashboard/previewDashboardPartData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loaddashboardpartdata">POST dashboard/loadDashboardPartData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loaddashboardpartdata2">POST dashboard/loadDashboardPartData2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-dashboardpart-dashboard-part-id">GET dashboard/dashboardPart/{dashboard_part_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-accesses-validate">POST dashboard/accesses/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-allowedsavingcategories">GET dashboard/allowedSavingCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-allowedsavingcategories">POST dashboard/allowedSavingCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-allowedsavingsubcategories">POST dashboard/allowedSavingSubCategories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-loadcommonfilters">POST dashboard/loadCommonFilters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-commonfilters-dashboard-id">GET dashboard/commonFilters/{dashboard_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-updaterenderingtime">POST dashboard/updateRenderingTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#post-dashboard-draft">POST dashboard/draft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-draft-dashboard-id">GET dashboard/draft/{dashboard_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-embeddedreports-dashboard-part-id">GET dashboard/embeddedReports/{dashboard_part_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_designer.html#get-dashboard-loadrelateddashboardparts-dashboard-id">GET dashboard/loadRelatedDashboardParts/{dashboard_id}</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#get-dashboard-categories-tenant-id">GET dashboard/categories/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-categories">POST dashboard/categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-category">POST dashboard/category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#delete-dashboard-category-dashboard-category-id">DELETE dashboard/category/{dashboard_category_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-validatecategoryname">POST dashboard/validateCategoryName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#get-dashboard-emailtemplates-issubscription">GET dashboard/emailTemplates/{isSubscription}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-rename">POST dashboard/rename</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-move">POST dashboard/move</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-copy">POST dashboard/copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#delete-dashboard-dashboard-id">DELETE dashboard/{dashboard_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-loadfilterdescription">POST dashboard/loadFilterDescription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-list">POST dashboard/list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-list2-includehashcode-true">POST dashboard/list2(?includeHashCode=true)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-search">POST dashboard/search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-search2">POST dashboard/search2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-loadaccesses">POST dashboard/loadAccesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_dashboard_list.html#post-dashboard-findbyname">POST dashboard/findByName</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#post-advancedsetting-category">POST advancedSetting/category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#get-advancedsetting-category-tenant-id">GET advancedSetting/category/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#delete-advancedsetting-category-category-id">DELETE advancedSetting/category/{category_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#get-advancedsetting-performance-tenant-id">GET advancedSetting/performance/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#post-advancedsetting-performance">POST advancedSetting/performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#get-advancedsetting-security-tenant-id">GET advancedSetting/security/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#post-advancedsetting-security">POST advancedSetting/security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#get-advancedsetting-miscsetting-tenant-id">GET advancedSetting/miscSetting/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#post-advancedsetting-miscsetting">POST advancedSetting/miscSetting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#post-advancedsetting-defaultimageurl">POST advancedSetting/defaultImageUrl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_advanced_settings.html#get-advancedsetting-defaultimageurl-tenantid-tenant-id">GET advancedSetting/defaultImageUrl(?tenantId=tenant_id)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#post-systemsetting-reportsetting">POST systemSetting/reportSetting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-reportsetting">GET systemSetting/reportSetting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-securitypolicy">GET systemSetting/securityPolicy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#post-systemsetting-securitypolicy">POST systemSetting/securityPolicy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#post-systemsetting-loadschedules">POST systemSetting/loadSchedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-schedules-reportdashboardname-reportingtype-tenant-id">GET systemSetting/schedules/reportDashboardName/{reportingType}/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-schedules-recipients-tenant-id">GET systemSetting/schedules/recipients/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-schedules-creators-tenant-id">GET systemSetting/schedules/creators/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#post-systemsetting-deleteschedules">POST systemSetting/deleteSchedules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_system_configuration.html#get-systemsetting-categorysetting">GET systemSetting/categorySetting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-accessright-reportdashboard-type">GET accessRight/reportDashboard/{type}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-accessright-authentication-type">GET accessRight/authentication/{type}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#post-accessright-load">POST accessRight/load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#post-accessright-validate">POST accessRight/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#post-authorization-checkpermissions">POST authorization/checkPermissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-authorization-permission-section">GET authorization/permission/(section)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-accessright-loadaccessdefaults-reportingtype">GET accessRight/loadAccessDefaults/{reportingType}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-status">GET systemSetting/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-reset">GET systemSetting/reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-systemvariables">GET systemSetting/systemVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-supporteddatasourcetypes">GET systemSetting/supportedDataSourceTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#post-systemsetting-loademailvariables">POST systemSetting/loadEmailVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-securityquestions-user-name-tenant-display-id">GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-email-tenant-id">GET systemSetting/email/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#post-systemsetting-email">POST systemSetting/email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-email-status-tenant-id">GET systemSetting/email/status/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-language">GET systemSetting/language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_misc_system_settings.html#get-systemsetting-dateformat">GET systemSetting/dateFormat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_export.html">Export APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_export.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_export.html#post-export-format-exportformat">POST export/{format:exportformat}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_export.html#post-export-email">POST export/email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_export.html#post-export-performancestatisticstrend">POST export/performanceStatisticsTrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_export.html#get-export-checkexportstatus-filesession">GET export/checkExportStatus/{fileSession}</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#get-copymanagement-workspace-workspace-id">GET copyManagement/workspace/{workspace_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#get-copymanagement-workspaces-tenant-id-onlymyworkspace">GET copyManagement/workspaces/{tenant_id}/{onlyMyWorkspace}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-validatename">POST copyManagement/workspace/validateName</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement">POST copyManagement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#delete-copymanagement-workspace-workspace-id">DELETE copyManagement/workspace/{workspace_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-copy">POST copyManagement/copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-connectionshasdatamodel">POST copyManagement/connectionsHasDataModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-validate">POST copyManagement/workspace/validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-validateworkspacetenant">POST copyManagement/workspace/validateWorkspaceTenant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-validateconcurrency">POST copyManagement/workspace/validateConcurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingtenantpermissions">POST copyManagement/workspace/detectConflictingTenantPermissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingadvancedsettings">POST copyManagement/workspace/detectConflictingAdvancedSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingreport">POST copyManagement/workspace/detectConflictingReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingrolepermission">POST copyManagement/workspace/detectConflictingRolePermission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingtemplate">POST copyManagement/workspace/detectConflictingTemplate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_management.html#post-copymanagement-workspace-detectconflictingdashboard">POST copyManagement/workspace/detectConflictingDashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#list-of-apis">List of APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#api-workflow">API Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-validate-sourcedata">POST copyManagement/console/validate/sourcedata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-validate-dataconsistent">POST copyManagement/console/validate/dataconsistent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-validate-source">POST copyManagement/console/validate/source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-validate-destination">POST copyManagement/console/validate/destination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-loadreport">POST copyManagement/console/loadreport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-copyreport">POST copyManagement/console/copyreport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-updatesubreport">POST copyManagement/console/updatesubreport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-loaddashboard">POST copyManagement/console/loaddashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-copydashboard">POST copyManagement/console/copydashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_copy_console.html#post-copymanagement-console-listreport">POST copyManagement/console/listreport</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_systemdb_and_license.html" class="btn btn-neutral float-right" title="System DB and License APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spec_izenda_system_variables.html" class="btn btn-neutral" title="Izenda System Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

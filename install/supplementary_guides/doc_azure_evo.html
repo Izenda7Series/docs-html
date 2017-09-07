@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pdf Exports in Azure Websites &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
+        <link rel="next" title="White-Listing Functions for Calculated Fields" href="white-listing-functions-for-calculated-fields.html"/>
+        <link rel="prev" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.integrated_deployment.html">Getting Started: Integrated Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../.supplementary_installation_guides.html">Supplementary Guides</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Pdf Exports in Azure Websites</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-and-configuring-the-azure-service">Installing and Configuring the Azure Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-izenda-instance">Configuring the Izenda instance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="white-listing-functions-for-calculated-fields.html">White-Listing Functions for Calculated Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
+        
+      <li>Pdf Exports in Azure Websites</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/install/supplementary_guides/doc_azure_evo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pdf-exports-in-azure-websites">
+<h1>Pdf Exports in Azure Websites<a class="headerlink" href="#pdf-exports-in-azure-websites" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Izenda utilizes the EVO HTML to PDF Converter for Azure to provide pdf exporting in Azure websites. This feature requires the use of an Azure Cloud Service. The high-level flow is illustrated below.</p>
+<div class="figure">
+<img alt="../../_images/evo_azure_architecture.png" src="../../_images/evo_azure_architecture.png" />
+</div>
+</div>
+<div class="section" id="installing-and-configuring-the-azure-service">
+<h2>Installing and Configuring the Azure Service<a class="headerlink" href="#installing-and-configuring-the-azure-service" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="required-components">
+<h3>Required Components<a class="headerlink" href="#required-components" title="Permalink to this headline">¶</a></h3>
+<p>There are two components needed for the Azure cloud service.</p>
+<div class="line-block">
+<div class="line"><em>EvoHtmlToPdfAzureService.cspkg</em></div>
+<div class="line"><em>ServiceConfiguration.Cloud.cscfg</em></div>
+<div class="line"><br /></div>
+</div>
+<p>These components as well as the installation guide this document is based on can be downloaded freely at the link below:
+<a class="reference external" href="http://www.evopdf.com/Downloads/Support/Archive/EvoHtmlToPdf-Azure-v6.16.zip">http://www.evopdf.com/Downloads/Support/Archive/EvoHtmlToPdf-Azure-v6.16.zip</a> (Please be sure to use this version)</p>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Login into your Microsoft Azure portal and create a new Cloud Service.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../../_images/azure_cs1.png" src="../../_images/azure_cs1.png" />
+</div>
+<div class="figure">
+<img alt="../../_images/azure_cs2.png" src="../../_images/azure_cs2.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In the first screen select a DNS name for your cloud service and then select a package.</p>
+</li>
+<li><p class="first">In the next screen choose a deployment label and choose the <strong>EvoHtmlToPdfAzureService.cspkg</strong> file for package option and <strong>ServiceConfiguration.Cloud.cscfg</strong> file for configuration option. Enable the <strong>Deploy even if one or more roles contain a single instance</strong> option and finish the wizard. The deployment process may take several minutes.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../../_images/azure_cs3.png" src="../../_images/azure_cs3.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">When the deployment has completed, navigate to the cloud service dashboard. Under the Properties &gt; Input Endpoints, you can find the service IP address and port number. You will use this information configure Azure exporting in Izenda.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../../_images/azure_cs4.png" src="../../_images/azure_cs4.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="configuring-the-izenda-instance">
+<h2>Configuring the Izenda instance<a class="headerlink" href="#configuring-the-izenda-instance" title="Permalink to this headline">¶</a></h2>
+<p>After the service has been configured, you must configure the Izenda application to use the service. The settings below are in the web.config file.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;configSections&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;evoPdfSettings&quot;</span> <span class="na">type=</span><span class="s">&quot;Izenda.BI.Framework.Models.Exporting.EvopdfConfiguration&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/configSections&gt;</span>
+  <span class="nt">&lt;evoPdfSettings</span> <span class="na">cloudEnable=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;azureCloudService</span> <span class="na">server=</span><span class="s">&quot;120.0.0.1&quot;</span> <span class="na">port=</span><span class="s">&quot;40001&quot;</span> <span class="na">servicePassword=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/evoPdfSettings&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="white-listing-functions-for-calculated-fields.html" class="btn btn-neutral float-right" title="White-Listing Functions for Calculated Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../.supplementary_installation_guides.html" class="btn btn-neutral" title="Supplementary Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

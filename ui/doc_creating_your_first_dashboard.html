@@ -1,0 +1,532 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Your First Dashboard &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Case Study 1: First Steps into the Izenda World" href=".case_study_1_first_steps.html"/>
+        <link rel="next" title="Design Tutorials" href=".design_tutorials.html"/>
+        <link rel="prev" title="Styling Your Report" href="doc_styling_your_report.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href=".case_study_1_first_steps.html">Case Study 1: First Steps into the Izenda World</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="doc_creating_your_first_report.html">Creating Your First Report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc_adding_to_your_report.html">Adding To Your Report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc_styling_your_report.html">Styling Your Report</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Creating Your First Dashboard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".training_walkthroughs.html">Training Walkthroughs</a> &raquo;</li>
+        
+          <li><a href=".case_study_1_first_steps.html">Case Study 1: First Steps into the Izenda World</a> &raquo;</li>
+        
+      <li>Creating Your First Dashboard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_creating_your_first_dashboard.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-your-first-dashboard">
+<h1>Creating Your First Dashboard<a class="headerlink" href="#creating-your-first-dashboard" title="Permalink to this headline">¶</a></h1>
+<p>In our previous tutorials, we’ve tasted a small dose of the power of
+report design. In this tutorial, we will introduce the concepts of
+another powerful tool—the dashboard.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-collection-of-data-analytics">
+<h3>A Collection of Data Analytics<a class="headerlink" href="#a-collection-of-data-analytics" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we have 10 reports with 10 report parts. Each report part is
+important (hence, the reason the report was created) but you may only be
+interested in 1 per report. While you could sift through every report to
+find your relevant information, it becomes increasingly difficult
+navigate 10 reports. Therefore, we have the dashboard—an all-in-one
+solution to interacting with all of our data visualizations in one
+place.</p>
+</div>
+<div class="section" id="what-a-dashboard-cant-do">
+<h3>What A Dashboard Can’t Do<a class="headerlink" href="#what-a-dashboard-cant-do" title="Permalink to this headline">¶</a></h3>
+<p>Apart from reports, a dashboard is merely a blank canvas. We cannot
+create new report parts, reference new data sources, add new filters to
+a report, or grant users rights to data sources or data visualizations.</p>
+</div>
+<div class="section" id="what-a-dashboard-can-do">
+<h3>What A Dashboard Can Do<a class="headerlink" href="#what-a-dashboard-can-do" title="Permalink to this headline">¶</a></h3>
+<p>Apart from reports, a dashboard is merely a blank canvas. We have the
+ability to create a “hub” of data visualizations for any and all users
+to consume. If another user doesn’t have access to a report or data
+source and our dashboard references that report or data source, no
+problem! The user simply doesn’t have access to that particular report
+part. Can we limit access to a dashboard? Can we export a dashboard? Can
+we schedule updates to a dashboard? You bet! Our tool is designed to
+provide as much parity with the Report Designer as possible.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Creating Your First Dashboard<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="selecting-report-sources">
+<h3>Selecting Report Sources<a class="headerlink" href="#selecting-report-sources" title="Permalink to this headline">¶</a></h3>
+<p><strong>If you click on the Dashboards tab at the top of the page</strong>, you will
+be presented with the Dashboard List, a familiar view from the Report
+List. If we are creating the first dashboard or you haven’t been given
+access to other dashboards, this list will be empty, of course.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F1.png" src="../_images/CS1_M4_F1.png" />
+</div>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F2.png"><img alt="../_images/CS1_M4_F2.png" src="../_images/CS1_M4_F2.png" style="width: 108px;" /></a>
+</div>
+<p>To create a new dashboard, <strong>click the + button beside the Dashboards
+tab at the top of the screen.</strong> <br clear="right" /></p>
+<p>When we first create a dashboard, we’re presented with several default
+layouts to help us design visually pleasing Dashboards. The preset
+layouts aren’t static&#8211; report parts can always be resized, removed
+from, and added from Dashboards <strong>For now, let’s select a blank
+Dashboard.</strong></p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F3.png"><img alt="../_images/CS1_M4_F3.png" src="../_images/CS1_M4_F3.png" style="width: 423px;" /></a>
+</div>
+<p>Similar to the Report Designer, if you want to add a tile, click on the
+grid or click the button labeled Add Dashboard Tile at the top of the
+page. <strong>Let’s add a tile to our Dashboard.</strong></p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F1.png" src="../_images/CS1_M4_F1.png" />
+</div>
+<p>Once you add a tile to your Dashboard, you’ll have the option to either
+add a Text tile or a Report Part tile. <strong>Let’s create a Text Tile.</strong>
+Text tiles are handy tools when you wish to provide a static information
+of your dashboard. When we add a Text tile to our dashboard, we’re
+presented with a stylizing text editor. When you’ve finished filling in
+your tile, you flip it from Preview Mode to Configuration Mode just as
+you would flip a Report Part in the Report Designer.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F5.png" src="../_images/CS1_M4_F5.png" />
+</div>
+<p>Dashboard Tiles are resizable and movable in the same manner as Report
+Parts in the Report Designer.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F6.png" src="../_images/CS1_M4_F6.png" />
+</div>
+<p><strong>Now that we have a Dashboard Text Tile, let’s add a Dashboard Report
+Part Tile.</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember, Dashboards do not have their own report parts. Instead, they
+“borrow” them from previously created reports. When you add a report
+part to the Dashboard Tile, you’re given a prompt to select your Report
+Part. To do this, you will first have to select the report by filling
+out the presented criteria. If you click Search without filling out the
+criteria, all reports that you have access to will appear.</p>
+</div>
+<div class="figure">
+<img alt="../_images/CS1_M4_F7.png" src="../_images/CS1_M4_F7.png" />
+</div>
+<p><strong>Since we created a report in the Category Tutorial, let’s search for
+that.</strong> Once we find and select our report, we are presented with a list
+of Report Parts that are found in the Report. Since we cleverly named
+our Report Parts in a previous tutorial, we can easily locate the Report
+Part we wish to add. Let’s add Bottom Bar Chart.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F8.png" src="../_images/CS1_M4_F8.png" />
+</div>
+<p>When the Report Part is added to the Dashboard Tile, the Filter
+information is automatically generated and placed in our Filters panel.
+To apply the filters, select your desired values and press the Update
+Results button just as you would in a Report.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F9.png" src="../_images/CS1_M4_F9.png" />
+</div>
+<p>If you recall, we applied a JavaScript Action on Country labels during
+our report design which made them clickable. <strong>Try clicking on a Country
+label and we’ll see that our JavaScript still works!</strong> In fact, all
+Report Part functionality works. If we click on a bar in the chart, we
+can view the drilldowns we previously created. Likewise, we can return
+to a higher drilldown layer by following the familiar breadcrumb
+structure introduced in Reports.</p>
+<p>Initially, our filters default to the filtering applied at Report Level.
+If we modify our filters in the Filter Panel of the Dashboard, the
+filters are applied to the entire Dashboard. <strong>Let’s filter on the
+Countries Germany and Sweden with a Quantity &gt; 100.</strong></p>
+</div>
+<div class="section" id="adding-more-report-sources">
+<h3>Adding More Report Sources<a class="headerlink" href="#adding-more-report-sources" title="Permalink to this headline">¶</a></h3>
+<p>To add additional report sources, follow the same process from above.
+Thus far in this tutorial series, we’ve only created one report with
+three report parts. While we could create a dashboard with all of these
+report parts, the references would be redundant since a user could
+simply view the report. For the sake of demonstration, I will add report
+parts from reports not created in this tutorial series thus far.
+Hopefully, you’ve had a chance to explore the platform on your own.
+<strong>Please add your own report parts to the dashboard to experience the
+full functionality.</strong></p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F10.png" src="../_images/CS1_M4_F10.png" />
+</div>
+</div>
+<div class="section" id="modifying-filters-with-multiple-reports">
+<h3>Modifying Filters With Multiple Reports<a class="headerlink" href="#modifying-filters-with-multiple-reports" title="Permalink to this headline">¶</a></h3>
+<p>Once our reports parts are added to our tiles, you may be in for a bit
+of surprise—the filters we set earlier may be missing from the Filter
+Panel! If you look at our Dashboard Tile, however, our filter is still
+applied.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F11.png" src="../_images/CS1_M4_F11.png" />
+</div>
+<p>Since filters in the Dashboard’s Filter Panel apply to all tiles on the
+dashboard, filters that don’t apply to all tiles on the dashboard are
+removed from the Filters Panel. In order for a filter to appear in the
+Filter Panel, the filter must be present in all of the report parts used
+in the dashboard, must be on the same field in the same data source and
+must have the same filter operator.</p>
+<p>In order to modify filters of non-matching data, we must flip the tile
+to Configuration Mode because the filter only applies to that tile.
+Let’s flip our “Bottom Bar Chart” tile to Configuration Mode.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F12.png" src="../_images/CS1_M4_F12.png" />
+</div>
+<p>Once the tile is in Configuration Mode, we will be presented with the
+options to modify our tile-specific filters. Likewise, we will have the
+option to provide a title and a description to the tile that will appear
+at the top of the tile when the tile is returned to Preview Mode.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F13.png" src="../_images/CS1_M4_F13.png" />
+</div>
+<p>(Please note that if a filter on a Report Part is marked as
+<strong>Required</strong>, then the a filter value must be provided prior to saving
+the Dashboard or clicking <em>Update Results</em>.)</p>
+<p>Let’s modify our Country filter to include Argentina.</p>
+</div>
+</div>
+<div class="section" id="dashboard-design">
+<h2>Dashboard Design<a class="headerlink" href="#dashboard-design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background-and-branding">
+<h3>Background and Branding<a class="headerlink" href="#background-and-branding" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F14.png"><img alt="../_images/CS1_M4_F14.png" src="../_images/CS1_M4_F14.png" style="width: 185px;" /></a>
+</div>
+<p>Now that we have a dashboard fleshed out with functionality, we can now
+start to unify it’s look and feel. To edit the Dashboard’s background
+color or to add a background image, click the Edit button at the top of
+the page. <br clear="right" /></p>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F15.png"><img alt="../_images/CS1_M4_F15.png" src="../_images/CS1_M4_F15.png" style="width: 414px;" /></a>
+</div>
+<p>Let’s change the background color to a pale blue. <strong>Select Set
+Background Color from the Edit dropdown and use the color selector to
+create a pale blue color.</strong> <br clear="right" /></p>
+<p><strong>Let’s now add a background image. We support images that have
+transparent backgrounds as well as solid-filled images.</strong> Simply add
+your URL to the image and it will be referenced. For this example, let’s
+use the free-to-use image located at
+<a class="reference external" href="https://cdn.pixabay.com/photo/2015/12/16/19/16/png-1096410_960_720.png">https://cdn.pixabay.com/photo/2015/12/16/19/16/png-1096410_960_720.png</a> .</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F16.png" src="../_images/CS1_M4_F16.png" />
+</div>
+<p>Background images are particularly useful to watermark your dashboard
+with our company’s logo.</p>
+</div>
+</div>
+<div class="section" id="hiding-filter-descriptions">
+<h2>Hiding Filter Descriptions<a class="headerlink" href="#hiding-filter-descriptions" title="Permalink to this headline">¶</a></h2>
+<p>If we examine our “Bottom Bar Chart” tile, we’ll notice the large Filter
+Descriptions text added to the top of the tile. While these values are
+certainly useful for exporting and printing, it may not be the most
+visual appealing option for Presentation Mode. <strong>Let’s disable filter
+descriptions on tiles by going to Edit</strong> -&gt; Hide filter descriptions on
+tile. To enable filter descriptions, you would go to Edit-&gt;Show filter
+descriptions on tile.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F17.png"><img alt="../_images/CS1_M4_F17.png" src="../_images/CS1_M4_F17.png" style="width: 582px;" /></a>
+</div>
+</div>
+<div class="section" id="setting-query-record-limits-in-the-dashboard">
+<h2>Setting Query Record Limits in the Dashboard<a class="headerlink" href="#setting-query-record-limits-in-the-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>Recall in Reports that you can set Preview Records limit to minimize
+query latency or to focus in on larger data sets. By default, each
+Dashboard Tile inherits the query limit defined in the report’s
+definition. Likewise, query limits can be redefined and saved in the
+Dashboard per Dashboard Tile. In order to change a Dashboard Tile’s
+query limit, hover over the top of the “Bottom Bar Chart” tile until we
+see the blue tile configuration bar. On the configuration bar, locate
+the Number of Records text box. <strong>Let’s type in a value of 100 and press
+the refresh button beside the text box to refresh the report part.</strong></p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/CS1_M4_F18.png"><img alt="../_images/CS1_M4_F18.png" src="../_images/CS1_M4_F18.png" style="width: 509px;" /></a>
+</div>
+</div>
+<div class="section" id="using-dashboards-as-a-visual-report-hub">
+<h2>Using Dashboards as A Visual Report Hub<a class="headerlink" href="#using-dashboards-as-a-visual-report-hub" title="Permalink to this headline">¶</a></h2>
+<p>While the report viewer is a phenomenal tool to locate your reports,
+it’s impossible to see any trends in our data by the report’s metadata.
+Therefore, we may never open a report to view its contents simply
+because we aren’t aware that it’s useful. Good Dashboard design allows
+us to take the most useful visualizations from several reports and place
+them in one location. If a user wishes to view the original report a
+report part originated from, he or she just needs to highlight over the
+top of the Dashboard Tile and click on the Dashboard Tile Name in the
+upper left-hand corner. <strong>Let’s save our dashboard and then click on our
+“Bottom Bar Chart” Tile Name to open its report.</strong> Notice that filter
+values from Dashboards do not transfer to an opened report. If you move
+from a dashboard to a report, ensure that you are looking at the correct
+data by setting your filters in the Report.</p>
+<div class="figure">
+<img alt="../_images/CS1_M4_F19.png" src="../_images/CS1_M4_F19.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".design_tutorials.html" class="btn btn-neutral float-right" title="Design Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_styling_your_report.html" class="btn btn-neutral" title="Styling Your Report" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

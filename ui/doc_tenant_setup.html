@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tenant Setup &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
+        <link rel="next" title="Tenant Setup for Multi-tenant Architectures" href="doc_tenant_setup_for_multi-tenant_architectures.html"/>
+        <link rel="prev" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tenant Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-and-view-tenants">List and View Tenants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-for-tenants">Search for Tenants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-tenant">Add Tenant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-tenant-details">Edit Tenant Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deactivate-tenant">Deactivate Tenant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-tenant">Delete Tenant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-tenant-permissions">Edit Tenant Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup_for_multi-tenant_architectures.html">Tenant Setup for Multi-tenant Architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_global_report_setup.html">Global Report Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_copy_management.html">Copy Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a> &raquo;</li>
+        
+      <li>Tenant Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_tenant_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenant-setup">
+<h1>Tenant Setup<a class="headerlink" href="#tenant-setup" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Tenant Setup</strong> page allows user to</p>
+<ul class="simple">
+<li>manage tenants</li>
+<li>manage tenant&#8217;s modules</li>
+<li>manage tenant&#8217;s permissions</li>
+</ul>
+<div class="section" id="list-and-view-tenants">
+<h2>List and View Tenants<a class="headerlink" href="#list-and-view-tenants" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id2">
+<span id="tenant-setup-location"></span><a class="reference internal image-reference" href="../_images/Tenant_Setup_Location.png"><img alt="../_images/Tenant_Setup_Location.png" src="../_images/Tenant_Setup_Location.png" style="width: 432px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">Tenant Setup</span></p>
+</div>
+<p>In browser, log in to Izenda as an Admin.</p>
+</li>
+<li><p class="first">Click Settings, then Tenant Setup in the left menu. (<a class="reference internal" href="#tenant-setup-location"><span class="std std-numref">Fig. 155</span></a>)</p>
+</li>
+<li><p class="first">List of tenant ids and tenant names will be displayed in the Middle
+Panel.</p>
+</li>
+<li><p class="first">Click any tenant in the list.</p>
+</li>
+<li><p class="first">The tenant&#8217;s information will be displayed in the Details section. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="search-for-tenants">
+<h2>Search for Tenants<a class="headerlink" href="#search-for-tenants" title="Permalink to this headline">¶</a></h2>
+<p>The Search box at the top allows user to search for specific tenants.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id3">
+<span id="tenant-setup-search"></span><a class="reference internal image-reference" href="../_images/Tenant_Setup_Search.png"><img alt="../_images/Tenant_Setup_Search.png" src="../_images/Tenant_Setup_Search.png" style="width: 194px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">Search for Tenants</span></p>
+</div>
+<p>Type a partial id or name and click the search icon (🔍).</p>
+</li>
+<li><p class="first">Only matching tenants will be displayed in the list. (<a class="reference internal" href="#tenant-setup-search"><span class="std std-numref">Fig. 156</span></a>)</p>
+</li>
+<li><p class="first">Clear the search box to see the full list. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-tenant">
+<h2>Add Tenant<a class="headerlink" href="#add-tenant" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id4">
+<span id="tenant-setup-add-button"></span><a class="reference internal image-reference" href="../_images/Tenant_Setup_Add_button.png"><img alt="../_images/Tenant_Setup_Add_button.png" src="../_images/Tenant_Setup_Add_button.png" style="width: 197px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 157 </span><span class="caption-text">Add New Tenant</span></p>
+</div>
+<p>Click the + Add Tenant button at the top. (<a class="reference internal" href="#tenant-setup-add-button"><span class="std std-numref">Fig. 157</span></a>)</p>
+</li>
+<li><p class="first">The Details section will be cleared for user to enter the tenant information.</p>
+</li>
+<li><p class="first">Click the Save button at the top, then OK in the confirmation pop-up. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id5">
+<span id="tenant-setup-successful-save"></span><a class="reference internal image-reference" href="../_images/Tenant_Setup_Successful_Save.png"><img alt="../_images/Tenant_Setup_Successful_Save.png" src="../_images/Tenant_Setup_Successful_Save.png" style="width: 401px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 158 </span><span class="caption-text">Tenant is saved successfully</span></p>
+</div>
+<p>A successful notification message will be displayed and the new
+tenant will also appear in the list in Middle Panel. (<a class="reference internal" href="#tenant-setup-successful-save"><span class="std std-numref">Fig. 158</span></a>)
+Tenant ID and Tenant Name are required and unique and will be
+checked before saving. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="edit-tenant-details">
+<h2>Edit Tenant Details<a class="headerlink" href="#edit-tenant-details" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the tenant in the list in Middle Panel.</p>
+</li>
+<li><p class="first">The tenant&#8217;s information is displayed in the Details section.</p>
+</li>
+<li><p class="first">Edit the information.</p>
+</li>
+<li><p class="first">Click the Save button at the top, then OK in the confirmation pop-up.</p>
+<blockquote>
+<div><p>Tenant ID and Tenant Name are required and unique and will be
+checked before saving.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="deactivate-tenant">
+<h2>Deactivate Tenant<a class="headerlink" href="#deactivate-tenant" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Untick the Active check-box (☑) of the tenant in Middle Panel.</li>
+<li>Click OK in the confirmation pop-up.</li>
+<li>The tenant becomes inactive. It is no longer available for selection
+and its users can no longer log into the system.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Cancel button at the top will have no effect in this case.</p>
+</div>
+</div>
+<div class="section" id="delete-tenant">
+<h2>Delete Tenant<a class="headerlink" href="#delete-tenant" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Delete icon (x) of each tenant.</li>
+<li>Click OK in the confirmation pop-up.</li>
+<li>The tenant is deleted together with all the connection, data sources
+and users.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Cancel button at the top will have no effect in this case.</p>
+</div>
+</div>
+<div class="section" id="edit-tenant-permissions">
+<span id="id1"></span><h2>Edit Tenant Permissions<a class="headerlink" href="#edit-tenant-permissions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the tenant in the list in Middle Panel.</p>
+</li>
+<li><p class="first">The tenant&#8217;s permissions
+are displayed in the Permissions section.</p>
+</li>
+<li><p class="first">The permissions are grouped into sections, each with a short-cut link
+placed at the top of the page.</p>
+<div class="figure" id="id6">
+<span id="tenant-permissions-section-short-cuts"></span><a class="reference internal image-reference" href="../_images/Tenant_Permissions_Section_Short-cuts.png"><img alt="../_images/Tenant_Permissions_Section_Short-cuts.png" src="../_images/Tenant_Permissions_Section_Short-cuts.png" style="width: 686px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 159 </span><span class="caption-text">Short-cuts to Permission Groups</span></p>
+</div>
+</li>
+<li><p class="first">Tick the Tenant Access check-box in each permission/group to allow
+the tenant admins to manage that permission/group by themselves.</p>
+</li>
+<li><p class="first">Click the Save button at the top to save the permissions.</p>
+</li>
+</ol>
+<p>Most of the permissions are straight-forward: tick the check-box to give
+that permission to the tenant.</p>
+<p><strong>Some advanced permissions</strong>:</p>
+<ul>
+<li><p class="first">Reports &gt; Data Sources</p>
+<blockquote>
+<div><p>Select Simple Data Sources to restrict tenants to using only data
+sources already having relationships with each other.
+Meanwhile, Advanced Data Sources will allow tenants to use any
+data sources then build relationships by themselves.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Reports &gt; Report Categories/Subcategories &gt; Category Accessibility
+and Dashboards &gt; Dashboard Categories/Subcategories &gt; Category
+Accessibility</p>
+<blockquote>
+<div><p>Move a category/subcategory from Available to Visible to allow
+tenants see it (and its child reports/dashboards) in Report
+List/Dashboard List.
+Move a category/subcategory from Visible to Saving to further
+allow tenants to save/move/copy reports/dashboards into it.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Access &gt; Access Limits</p>
+<blockquote>
+<div><p>Move a role/user from Available to Allowed to share will enable
+tenants to share reports/dashboards with that role/user.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Access &gt; Access Default</p>
+<blockquote>
+<div><p>Add sharings here similar to <a class="reference internal" href="doc_report_designer_access.html"><span class="doc">Report Designer/Access</span></a> to be used as
+default sharings for any newly-created report/dashboard.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Scheduling &gt; Scheduling Limits</p>
+<blockquote>
+<div><p>Move a role/user from Available to Allowed to share will enable
+tenants to set up schedule deliveries to send to this role/user.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_tenant_setup_for_multi-tenant_architectures.html" class="btn btn-neutral float-right" title="Tenant Setup for Multi-tenant Architectures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".multi-tenant_setup_guide.html" class="btn btn-neutral" title="Multi-tenant Setup Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

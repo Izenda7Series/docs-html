@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Understanding The Three-tiered Architecture &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Izenda Concepts" href=".izenda_concepts.html"/>
+        <link rel="next" title="Understanding The Tenant-Role-User Relationship" href="understanding_the_tenant_role_user_relationship.html"/>
+        <link rel="prev" title="Izenda Concepts" href=".izenda_concepts.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href=".intro.html">Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".izenda_concepts.html">Izenda Concepts</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding The Three-tiered Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standalone-deployment">Standalone Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fully-integrated-deployment">Fully Integrated Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mixed-deployment-standalone-api-embedded-ui">Mixed Deployment: Standalone API, Embedded UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#switching-between-deployment-styles">Switching Between Deployment Styles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_tenant_role_user_relationship.html">Understanding The Tenant-Role-User Relationship</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_reports_and_dashboards.html">Understanding Reports and Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_licensing_modes.html">Understanding Licensing Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nature_of_izenda_security.html">The Nature of Izenda Security</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".data_management.html">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported_web_browsers.html">Supported Web Browsers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".intro.html">Introduction</a> &raquo;</li>
+        
+          <li><a href=".izenda_concepts.html">Izenda Concepts</a> &raquo;</li>
+        
+      <li>Understanding The Three-tiered Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/understanding_the_three-tiered_architecture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="understanding-the-three-tiered-architecture">
+<h1>Understanding The Three-tiered Architecture<a class="headerlink" href="#understanding-the-three-tiered-architecture" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Izenda is split into three levels: the Front End (UI), the Back End
+(API),and the User Store (database layer). The three levels can be
+configured to support standalone models of Izenda as well as seamless,
+fully integrated versions.</p>
+<ul>
+<li><p class="first">Izenda offers a number of Integration Options.</p>
+<ul class="simple">
+<li>0 : All Stand Alone</li>
+<li>1 : Back End Stand Alone Front End Integrated</li>
+<li>2 : Back End Integrated Front End Stand Alone</li>
+<li>3 : All Integrated <br clear="right" /></li>
+</ul>
+</li>
+<li><p class="first">The diagram below groups our current kits available according to
+their deployment method.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click on the image to zoom or scroll down to see more detailed versions of each diagram</p>
+</div>
+<div class="figure" id="id2">
+<img alt="../_images/Overview4.png" src="../_images/Overview4.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Overview</span></p>
+</div>
+</li>
+<li><p class="first">Once Izenda is deployed, the SystemSettings table must be updated with the correct deployment value. For more about the SystemSetting table, click <a class="reference internal" href="../ref/spec_izendasystemsetting_table.html"><span class="doc">here</span></a>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="standalone-deployment">
+<h2>Standalone Deployment<a class="headerlink" href="#standalone-deployment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The Standalone Deployment style features a standalone front end and
+back end. The goal for this deployment is to quickly disseminate the
+Izenda platform as outline throughout the documentation.<ul>
+<li>Page layouts are immutable.</li>
+<li>CSS Stylesheets and basic logo replacement available.</li>
+</ul>
+</li>
+</ul>
+<div class="figure" id="id3">
+<img alt="../_images/Standalone.jpg" src="../_images/Standalone.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A diagram of Izenda&#8217;s standalone architecture.</span></p>
+</div>
+<ul>
+<li><p class="first"><strong>BI Platform Implementation</strong></p>
+<ul class="simple">
+<li><em>Requires the `API &lt;http://downloads.izenda.com/latest/API.zip/&gt;`_, `StandaloneUI &lt;http://downloads.izenda.com/latest/StandaloneUI.zip&gt;`_, and an empty database</em></li>
+<li>For installation steps, see the <a class="reference internal" href="../install/doc_installation_guide.html"><span class="doc">Installation Guide</span></a> and <a class="reference internal" href="../install/doc_upgrade_guide.html"><span class="doc">Upgrade Guide</span></a> for stand alone deployments.</li>
+</ul>
+<div class="figure" id="id4">
+<img alt="../_images/StandaloneArchDiagram2.png" src="../_images/StandaloneArchDiagram2.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A diagram of implementation</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="fully-integrated-deployment">
+<span id="id1"></span><h2>Fully Integrated Deployment<a class="headerlink" href="#fully-integrated-deployment" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The Fully Integrated Deployment style features an integrated front
+end and back end. The goal for this deployment is to create a
+seamless experience for your user while making the code intuitive and
+maintainable.</p>
+<ul class="simple">
+<li>Allows for Single Sign-On Authentication through your application.</li>
+<li>Allows for full-page renders of Izenda as well as granular element
+renders to allow unique page configurations within your
+application.</li>
+<li>Allows for tenant-level white labeling of colors, graphics, and
+page schemes.</li>
+</ul>
+<div class="figure" id="id5">
+<img alt="../_images/Fully_Embedded.jpg" src="../_images/Fully_Embedded.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A diagram of Izenda&#8217;s fully integrated architecture</span></p>
+</div>
+</li>
+<li><p class="first"><strong>MVC Implementation</strong></p>
+<ul class="simple">
+<li><em>Requires the API, EmbeddedUI, MVC5StarterKit, and an empty database.</em></li>
+<li>For setup and support, please refer to the <a class="reference internal" href="../install/doc_mvc_setup_guide.html"><span class="doc">MVC Setup Guide</span></a> and the <a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html"><span class="doc">Developer Guide for Integrated Scenarios</span></a>.</li>
+</ul>
+<div class="figure" id="id6">
+<img alt="../_images/MVC3ArchDiagram.png" src="../_images/MVC3ArchDiagram.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A diagram of implementation</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="mixed-deployment-standalone-api-embedded-ui">
+<h2>Mixed Deployment: Standalone API, Embedded UI<a class="headerlink" href="#mixed-deployment-standalone-api-embedded-ui" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The Mixed Deployment syle features a seamless front end with a remote
+back end. This deployment is useful when you can devote a lightweight
+server to your integrated front end and a &#8220;meatier&#8221; server for all
+API calls which would include requesting queries from your reporting
+database(s).</p>
+</li>
+<li><p class="first"><strong>MVC Implementation</strong></p>
+<ul class="simple">
+<li><em>Requires the API, a custom MVC5StarterKit build, and an empty database.</em></li>
+<li>For setup and support, please refer to the <a class="reference internal" href="../install/doc_mvc_setup_guide.html"><span class="doc">MVC Setup Guide</span></a> and the <a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html"><span class="doc">Developer Guide for Integrated Scenarios</span></a>.</li>
+</ul>
+<div class="figure" id="id7">
+<img alt="../_images/MVC1ArchDiagram.png" src="../_images/MVC1ArchDiagram.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A diagram of implementation</span></p>
+</div>
+</li>
+</ul>
+<ul>
+<li><p class="first"><strong>Angular 2 Implementation</strong></p>
+<div class="figure" id="id8">
+<img alt="../_images/Angular1ArchDiagram2.png" src="../_images/Angular1ArchDiagram2.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A diagram of implementation</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="switching-between-deployment-styles">
+<h2>Switching Between Deployment Styles<a class="headerlink" href="#switching-between-deployment-styles" title="Permalink to this headline">¶</a></h2>
+<p>While it is possible to switch between deployment styles, it is
+discouraged for a long-term deployment strategy.</p>
+<ul class="simple">
+<li>The database layer is accessed differently in different modes and
+some values within the configuration database are unique to a
+particular deployment style. To switch a deployment from one style to
+another, a database administrator must update these values.</li>
+<li>Izenda has a Console Application that will allow you to copy reports
+from one Configuration Database to another. This can help remedy
+potential data corruption and can be modified to schedule migrations.
+Nevertheless, the results may be extremely server intensive depending
+on your server resources and your data size. Please refer to the
+<a class="reference internal" href="../ui/doc_copy_console.html"><span class="doc">Izenda Copy Console</span></a> for more information.</li>
+</ul>
+<p>Alternative:</p>
+<ul class="simple">
+<li>If you like the setup of the standalone style for report/dashboard
+designers but would like the seamless nature of the embedded style
+for end users, you can create a &#8220;designer&#8221; tenant in an embedded
+deployment with access to a fully rendered Izenda BI Portal. Reports
+and dashboards can then be copied from one tenant to another via
+<a class="reference internal" href="../ui/doc_copy_management.html"><span class="doc">Copy Management</span></a> page.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="understanding_the_tenant_role_user_relationship.html" class="btn btn-neutral float-right" title="Understanding The Tenant-Role-User Relationship" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".izenda_concepts.html" class="btn btn-neutral" title="Izenda Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Model/Functions &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Data Model/Relationships and Schema" href="doc_data_model_relationships_and_schema.html"/>
+        <link rel="prev" title="Custom View Setup Guide" href="doc_data_model_custom_view.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Model/Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-functions">List functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-for-functions">Search for functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-function-level">Set function level</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Data Model/Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_data_model_functions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-model-functions">
+<h1>Data Model/Functions<a class="headerlink" href="#data-model-functions" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Data Model/Functions</strong> page allows user to</p>
+<ul class="simple">
+<li>manage functions and function level</li>
+</ul>
+<div class="section" id="list-functions">
+<h2>List functions<a class="headerlink" href="#list-functions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Data Model permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Data Model in the left menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Click Functions in the Middle Panel.</p>
+<div class="figure" id="id1">
+<span id="data-model-functions-location"></span><a class="reference internal image-reference" href="../_images/Data_Model_Functions_Location.png"><img alt="../_images/Data_Model_Functions_Location.png" src="../_images/Data_Model_Functions_Location.png" style="width: 429px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 118 </span><span class="caption-text">Data Model - Functions <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Visible functions from all connections will be displayed.</p>
+</li>
+<li><p class="first">By default, only the first page with 10 items are displayed. To see
+more, either use the next page icon</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/Data_Model_Next_Page_Icon.png"><img alt="../_images/Data_Model_Next_Page_Icon.png" src="../_images/Data_Model_Next_Page_Icon.png" style="width: 92px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">Data Model - Next Page <br clear="right" /></span></p>
+</div>
+<p>or select a larger number in Items per page box.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/Data_Model_Items_per_page.png"><img alt="../_images/Data_Model_Items_per_page.png" src="../_images/Data_Model_Items_per_page.png" style="width: 172px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">Data Model - Items per page <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="search-for-functions">
+<h2>Search for functions<a class="headerlink" href="#search-for-functions" title="Permalink to this headline">¶</a></h2>
+<p>The Search box at the top allows user to search for specific functions.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id4">
+<span id="data-model-functions-search-by-elements"></span><a class="reference internal image-reference" href="../_images/Data_Model_Functions_Search_by_Elements.png"><img alt="../_images/Data_Model_Functions_Search_by_Elements.png" src="../_images/Data_Model_Functions_Search_by_Elements.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">Data Model - Search Functions by element</span></p>
+</div>
+<p>Select a specific element to search for in the dropdown on the left
+of the Search box. Default is All. <br clear="right" /></p>
+</li>
+<li><p class="first">Type a partial name and click the search icon (🔍).</p>
+</li>
+<li><p class="first">Only the matching functions will be displayed.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="set-function-level">
+<h2>Set function level<a class="headerlink" href="#set-function-level" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 types of function level:</p>
+<ul>
+<li><p class="first">Field Level means whether the function is allowed to be used in field
+level in Report Designer Module.</p>
+<blockquote>
+<div><div class="figure" id="id5">
+<span id="data-model-functions-field-level-is-disabled"></span><a class="reference internal image-reference" href="../_images/Data_Model_Functions_Field_Level_is_disabled.png"><img alt="../_images/Data_Model_Functions_Field_Level_is_disabled.png" src="../_images/Data_Model_Functions_Field_Level_is_disabled.png" style="width: 464px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">Data Model - Function Field Level is disabled <br clear="right" /></span></p>
+</div>
+<p>When a function requires more than one input parameter, it cannot be used in field level and this option will be disabled.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Expression Level means whether the function is allowed to be used in
+calculated columns.</p>
+</li>
+</ul>
+<ol class="arabic simple">
+<li>Tick the respective checkbox to allow or untick to reject.</li>
+<li>Continue to set for other functions in the same page.</li>
+<li>Click Save button at the top, then click OK in the confirmation
+pop-up.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_data_model_relationships_and_schema.html" class="btn btn-neutral float-right" title="Data Model/Relationships and Schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_data_model_custom_view.html" class="btn btn-neutral" title="Custom View Setup Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

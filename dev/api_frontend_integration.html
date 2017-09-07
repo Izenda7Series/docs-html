@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Front-end Integration APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Full API List" href=".integration_api_documentation.html"/>
+        <link rel="next" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
+        <link rel="prev" title="Back-end Integration APIs" href="api_backend_integration.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="api_backend_integration.html">Back-end Integration APIs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Front-end Integration APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-apis">List of APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config-configjson">config(configJson)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#render-element">render(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rendersettingpage-element">renderSettingPage(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderreportpage-element">renderReportPage(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderreportdesignerpage-element">renderReportDesignerPage(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderreportviewerpage-element-report-id">renderReportViewerPage(element,report_id)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderreportpart-element-id-report-part-id">renderReportPart(element,{&#8220;id&#8221;:report_part_id})</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderdashboardpage-element">renderDashboardPage(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rendernewdashboardpage-element">renderNewDashboardPage(element)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setcurrentusercontext-token-access-token">setCurrentUserContext({&#8220;token&#8221;:access_token})</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderdashboardviewerpage-element-dashboard-id-filter-integrationstyle">renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".integration_api_documentation.html">Full API List</a> &raquo;</li>
+        
+      <li>Front-end Integration APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/api_frontend_integration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="front-end-integration-apis">
+<h1>Front-end Integration APIs<a class="headerlink" href="#front-end-integration-apis" title="Permalink to this headline">¶</a></h1>
+<p>This list documents the JavaScript APIs used for Front-end Integration.</p>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Class and Method</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>IzendaSynergy</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#config-configjson">config(configJson)</a></div>
+</td>
+<td>Configure Izenda</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#render-element">render(element)</a></div>
+</td>
+<td>Render all Izenda web page inside hosting web</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#rendersettingpage-element">renderSettingPage(element)</a></div>
+</td>
+<td>Render Izenda Setting page only inside hosting web</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderreportpage-element">renderReportPage(element)</a></div>
+</td>
+<td>Render Izenda Report page only inside hosting web</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderreportdesignerpage-element">renderReportDesignerPage(element)</a></div>
+</td>
+<td>Render Izenda Report Designer Page (New/Edit Report) inside hosting web</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderreportviewerpage-element-report-id">renderReportViewerPage(element,report_id)</a></div>
+</td>
+<td>Render Izenda Report Viewer page only inside hosting web</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderreportpart-element-id-report-part-id">renderReportPart(element,{&#8220;id&#8221;:report_part_id})</a></div>
+</td>
+<td>Render specific <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">Report Part</span></a> inside hosting web</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderdashboardpage-element">renderDashboardPage(element)</a></div>
+</td>
+<td>Render Izenda Dashboard page only inside hosing web</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#rendernewdashboardpage-element">renderNewDashboardPage(element)</a></div>
+</td>
+<td>Render Izenda New Dashboard page</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#setcurrentusercontext-token-access-token">setCurrentUserContext({&#8220;token&#8221;:access_token})</a></div>
+</td>
+<td>Authentication and authorization between hosting web and Izenda</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#renderdashboardviewerpage-element-dashboard-id-filter-integrationstyle">renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)</a></div>
+</td>
+<td>Render Izenda Dashboard Viewer page</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="config-configjson">
+<h2>config(configJson)<a class="headerlink" href="#config-configjson" title="Permalink to this headline">¶</a></h2>
+<p>Configure Izenda</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><p>configJson</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;WebApiUrl&quot;</span><span class="o">:</span> <span class="nx">hostApi</span><span class="p">,</span>
+   <span class="s2">&quot;BaseUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;RootPath&quot;</span><span class="o">:</span> <span class="s2">&quot;/Scripts/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;CssFile&quot;</span><span class="o">:</span> <span class="s2">&quot;izenda-ui.css&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Routes&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;Settings&quot;</span><span class="o">:</span> <span class="s2">&quot;settings&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;New&quot;</span><span class="o">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Dashboard&quot;</span><span class="o">:</span> <span class="s2">&quot;dashboard&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Report&quot;</span><span class="o">:</span> <span class="s2">&quot;report&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;ReportViewer&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewer&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;ReportViewerPopup&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewerpopup&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Viewer&quot;</span><span class="o">:</span> <span class="s2">&quot;viewer&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;TimeOut&quot;</span><span class="o">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;UIPreferences&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;ReportFilterSectionExpanded&quot;</span><span class="o">:</span> <span class="kc">true</span>
+     <span class="p">},</span>
+   <span class="s2">&quot;NeedToEncodeUrl&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0: </span><br clear="right" /> The optional <code class="docutils literal"><span class="pre">NeedToEncodeUrl</span></code> parameter (defaults to <code class="docutils literal"><span class="pre">true</span></code> if not specified). <br clear="right" />
+Set it to <code class="docutils literal"><span class="pre">false</span></code> if host framework expects unencoded urls (such as Angular 2).</p>
+</div>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">hostApi</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">+</span> <span class="s1">&#39;//&#39;</span> <span class="o">+</span> <span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="o">+</span> <span class="s2">&quot;/api/&quot;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">configJson</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;WebApiUrl&quot;</span><span class="o">:</span> <span class="nx">hostApi</span><span class="p">,</span>
+   <span class="s2">&quot;BaseUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;RootPath&quot;</span><span class="o">:</span> <span class="s2">&quot;/Scripts/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;CssFile&quot;</span><span class="o">:</span> <span class="s2">&quot;izenda-ui.css&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Routes&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;Settings&quot;</span><span class="o">:</span> <span class="s2">&quot;settings&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;New&quot;</span><span class="o">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Dashboard&quot;</span><span class="o">:</span> <span class="s2">&quot;dashboard&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Report&quot;</span><span class="o">:</span> <span class="s2">&quot;report&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;ReportViewer&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewer&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;ReportViewerPopup&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewerpopup&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Viewer&quot;</span><span class="o">:</span> <span class="s2">&quot;viewer&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;TimeOut&quot;</span><span class="o">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;UIPreferences&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;ReportFilterSectionExpanded&quot;</span><span class="o">:</span> <span class="kc">true</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="nx">configJson</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="render-element">
+<h2>render(element)<a class="headerlink" href="#render-element" title="Permalink to this headline">¶</a></h2>
+<p>Render all Izenda web page inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="figure" id="id1">
+<img alt="../_images/All_Izenda_Inside.png" src="../_images/All_Izenda_Inside.png" />
+<p class="caption"><span class="caption-number">Fig. 392 </span><span class="caption-text">Izenda Inside</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="rendersettingpage-element">
+<h2>renderSettingPage(element)<a class="headerlink" href="#rendersettingpage-element" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Setting page only inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderSettingPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="figure" id="id2">
+<img alt="../_images/Izenda_Settings.png" src="../_images/Izenda_Settings.png" />
+<p class="caption"><span class="caption-number">Fig. 393 </span><span class="caption-text">Izenda Settings</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderreportpage-element">
+<h2>renderReportPage(element)<a class="headerlink" href="#renderreportpage-element" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Report page only inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="figure" id="id3">
+<img alt="../_images/Izenda_Report_only.png" src="../_images/Izenda_Report_only.png" />
+<p class="caption"><span class="caption-number">Fig. 394 </span><span class="caption-text">Izenda Report only</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderreportdesignerpage-element">
+<h2>renderReportDesignerPage(element)<a class="headerlink" href="#renderreportdesignerpage-element" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Report Designer Page (New/Edit Report) inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportDesignerPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span><span class="nx">v</span>
+</pre></div>
+</div>
+<div class="figure" id="id4">
+<img alt="../_images/Izenda_Report_Designer_only.png" src="../_images/Izenda_Report_Designer_only.png" />
+<p class="caption"><span class="caption-number">Fig. 395 </span><span class="caption-text">Izenda Report Designer only</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderreportviewerpage-element-report-id">
+<h2>renderReportViewerPage(element,report_id)<a class="headerlink" href="#renderreportviewerpage-element-report-id" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Report Viewer page only inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element <br clear="right" />
+report_id</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportViewerPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">),</span> <span class="s2">&quot;C2946606-7159-4FB3-82B7-E7D4ED3162A0&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure" id="id5">
+<img alt="../_images/Izenda_Report_Viewer.png" src="../_images/Izenda_Report_Viewer.png" />
+<p class="caption"><span class="caption-number">Fig. 396 </span><span class="caption-text">Izenda Report Viewer Only</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderreportpart-element-id-report-part-id">
+<h2>renderReportPart(element,{&#8220;id&#8221;:report_part_id})<a class="headerlink" href="#renderreportpart-element-id-report-part-id" title="Permalink to this headline">¶</a></h2>
+<p>Render specific <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">Report Part</span></a> inside hosting web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element <br clear="right" />
+report_part_id</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportPart</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-part1&#39;</span><span class="p">),</span> <span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;804B35C8-44A4-4535-A484-F27E8ABA410D&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="figure" id="id6">
+<img alt="../_images/Render_Specific_report_part.png" src="../_images/Render_Specific_report_part.png" />
+<p class="caption"><span class="caption-number">Fig. 397 </span><span class="caption-text">Izenda Specific Report Part</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderdashboardpage-element">
+<h2>renderDashboardPage(element)<a class="headerlink" href="#renderdashboardpage-element" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Dashboard page only inside hosing web</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderDashboardPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="figure" id="id7">
+<img alt="../_images/Izenda_Dashboard.png" src="../_images/Izenda_Dashboard.png" />
+<p class="caption"><span class="caption-number">Fig. 398 </span><span class="caption-text">Izenda Dashboard Only</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="rendernewdashboardpage-element">
+<h2>renderNewDashboardPage(element)<a class="headerlink" href="#rendernewdashboardpage-element" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda New Dashboard page</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderNewDashboardPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="figure" id="id8">
+<img alt="../_images/Izenda_New_Dashboard.png" src="../_images/Izenda_New_Dashboard.png" />
+<p class="caption"><span class="caption-number">Fig. 399 </span><span class="caption-text">Izenda Dashboard Designer Only</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="setcurrentusercontext-token-access-token">
+<h2>setCurrentUserContext({&#8220;token&#8221;:access_token})<a class="headerlink" href="#setcurrentusercontext-token-access-token" title="Permalink to this headline">¶</a></h2>
+<p>Authentication and authorization between hosting web and Izenda</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div>element <br clear="right" />
+access_token</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">currentUserContext</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">token</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token</span>
+<span class="p">};</span>
+
+<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">setCurrentUserContext</span><span class="p">(</span><span class="nx">currentUserContext</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="renderdashboardviewerpage-element-dashboard-id-filter-integrationstyle">
+<h2>renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)<a class="headerlink" href="#renderdashboardviewerpage-element-dashboard-id-filter-integrationstyle" title="Permalink to this headline">¶</a></h2>
+<p>Render Izenda Dashboard Viewer page</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>element</td>
+<td>The element to render in</td>
+</tr>
+<tr class="row-even"><td>dashboard_id</td>
+<td>The id of the dashboard</td>
+</tr>
+<tr class="row-odd"><td>filter</td>
+<td>The values for the filters, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">p1:</span> <span class="pre">a_value,</span> <span class="pre">p2:</span> <span class="pre">another_value,</span> <span class="pre">..</span> <span class="pre">}</span></code></td>
+</tr>
+<tr class="row-even"><td>integrationStyle</td>
+<td>The options for toolbar and common filter section, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">hideDashboardToolbar:</span> <span class="pre">true/false,</span> <span class="pre">hideCommonFilter:</span> <span class="pre">true/false</span> <span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderDashboardViewerPage</span><span class="p">(</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">),</span>
+   <span class="s1">&#39;9371375f-2fe7-43f1-b83a-e69340f6136d&#39;</span><span class="p">,</span>
+   <span class="p">{</span>
+      <span class="nx">p1</span><span class="o">:</span> <span class="s2">&quot;10366&quot;</span><span class="p">,</span>
+      <span class="nx">p2</span><span class="o">:</span> <span class="s2">&quot;Barcelona&quot;</span>
+   <span class="p">},</span> <span class="p">{</span>
+      <span class="nx">hideDashboardToolbar</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">hideCommonFilter</span><span class="o">:</span> <span class="kc">false</span>
+   <span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Tags</strong></p>
+<p>Embed, Embedding, Fully Embedable.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".basic_api_client_code_samples.html" class="btn btn-neutral float-right" title="Basic API Client Code Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_backend_integration.html" class="btn btn-neutral" title="Back-end Integration APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

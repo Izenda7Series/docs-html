@@ -1,0 +1,12 @@
+==========================
+Database Documentation
+==========================
+
+.. toctree::
+   :maxdepth: 2
+
+
+   database_diagrams
+   spec_data_dictionary
+   spec_izendasystemsetting_table
+   spec_izenda_database_behavior

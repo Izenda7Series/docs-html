@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upgrade Guide &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/>
+        <link rel="next" title="Getting Started: Integrated Deployment" href=".integrated_deployment.html"/>
+        <link rel="prev" title="Installation Guide" href="doc_installation_guide.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_hosting_izenda_yourself.html">Hosting Izenda Yourself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_installation_guide.html">Installation Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Upgrade Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#upgrade-preparations">Upgrade Preparations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#system-backup">System Backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-system-database-upgrade">Izenda System Database Upgrade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-web-upgrade">Izenda Web Upgrade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restore-steps-in-case-of-error">Restore Steps in case of Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".integrated_deployment.html">Getting Started: Integrated Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".supplementary_installation_guides.html">Supplementary Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href=".stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a> &raquo;</li>
+        
+      <li>Upgrade Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/doc_upgrade_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="upgrade-guide">
+<h1>Upgrade Guide<a class="headerlink" href="#upgrade-guide" title="Permalink to this headline">¶</a></h1>
+<p>Izenda provides monthly maintenance releases with bug fixes and performance increases. At least 2 point releases should be expected each year but our goal is to release quarterly (4) point releases annually.</p>
+<p>An automatic upgrade process is still in progress. In the mean time, an upgrade includes the following manual steps.</p>
+<div class="section" id="upgrade-preparations">
+<h2>Upgrade Preparations<a class="headerlink" href="#upgrade-preparations" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. These scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ . Each patch release will contain the upgrade scripts from all prior versions within that Major/Minor version. For instance, in the upgrade script for 2.1.0 you will see 2.0.0 - 2.1.0. This will upgrade your database from any version in 2.0.x to 2.1.0. <br clear="right" /></p>
+<ul>
+<li><div class="figure align-right" id="id1">
+<span id="upgrade-izenda-app-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_App_folder2.png"><img alt="../_images/Izenda_App_folder2.png" src="../_images/Izenda_App_folder2.png" style="width: 482px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Front-end package</span></p>
+</div>
+<p>Izenda Front-end package in an &#8220;App&#8221; folder. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id2">
+<span id="upgrade-izenda-api-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_API_folder.png"><img alt="../_images/Izenda_API_folder.png" src="../_images/Izenda_API_folder.png" style="width: 482px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Back-end package</span></p>
+</div>
+<p>Izenda Back-end package in an &#8220;API&#8221; folder. <br clear="right" /></p>
+</li>
+</ul>
+</li>
+<li><p class="first">Permissions and Tools</p>
+<ul>
+<li><p class="first">Database client GUI to connect to Izenda System Database.</p>
+<p>e.g. Management Studio for MS SQL Server.</p>
+</li>
+<li><p class="first">Izenda System Database administrator account.</p>
+<p>e.g. a user with db_owner and db_backupoperator roles in SQL Server.</p>
+</li>
+<li><p class="first">Izenda Web Server administrator account.</p>
+<p>This account needs remote desktop and IIS service permissions.</p>
+</li>
+<li><p class="first">Maintenance notice during the upgrade process.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="system-backup">
+<h2>System Backup<a class="headerlink" href="#system-backup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="izenda-system-database-backup">
+<h3>Izenda System Database Backup<a class="headerlink" href="#izenda-system-database-backup" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Izenda recommends that you back up your data before upgrading to a newer version.</p>
+<blockquote class="last">
+<div>This is a step-by-step guide for SQL Server using Management Studio
+GUI.</div></blockquote>
+</div>
+<ol class="arabic">
+<li><div class="figure align-right" id="id3">
+<span id="izendatest-backup"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup.png"><img alt="../_images/IzendaTest_Backup.png" src="../_images/IzendaTest_Backup.png" style="width: 359px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Backup Menu</span></p>
+</div>
+<p>Log in to the server with Izenda System
+Database using an administrator account.</p>
+</li>
+<li><p class="first">Right-click the Izenda database then Tasks &gt; Back Up... <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id4">
+<span id="izendatest-backup-pop-up"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Pop-up.png"><img alt="../_images/IzendaTest_Backup_Pop-up.png" src="../_images/IzendaTest_Backup_Pop-up.png" style="width: 518px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Backup</span></p>
+</div>
+<p>In the pop-up, choose Backup type Full and Backup
+component Database.</p>
+<blockquote>
+<div><p>(Full backup option since Izenda System Database stays at a relatively small size)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Give any name for the backup set.</p>
+</li>
+<li><p class="first">Choose to back up to Disk and click Add. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id5">
+<span id="izendatest-backup-filename"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Filename.png"><img alt="../_images/IzendaTest_Backup_Filename.png" src="../_images/IzendaTest_Backup_Filename.png" style="width: 299px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Backup Filename</span></p>
+</div>
+<p>Select File name and click ... button to select a path and file name. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id6">
+<span id="izendatest-backup-success"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Success.png"><img alt="../_images/IzendaTest_Backup_Success.png" src="../_images/IzendaTest_Backup_Success.png" style="width: 455px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Backup Success</span></p>
+</div>
+<p>Click OK 3 times to run the backup. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="izenda-web-backup">
+<h3>Izenda Web Backup<a class="headerlink" href="#izenda-web-backup" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Remote desktop to the Web Server to perform this step.</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Open the Izenda deployment folder in IIS.</p>
+<blockquote>
+<div><p>A typical location is at C:\inetpub\wwwroot\Izenda...</p>
+</div></blockquote>
+</li>
+<li><p class="first">Back up Izenda Front-end and Back-end files.</p>
+<blockquote>
+<div><p>Copy the current API and App folders to a safe location.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Back up configuration files to avoid being overwritten.</p>
+<blockquote>
+<div><p>Copy the following configuration files to a temporary location.</p>
+</div></blockquote>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">API\izendadb.config</span></code></li>
+<li><code class="docutils literal"><span class="pre">API\Web.config</span></code> if there are custom configurations</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="izenda-system-database-upgrade">
+<h2>Izenda System Database Upgrade<a class="headerlink" href="#izenda-system-database-upgrade" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>This is a step-by-step guide for SQL Server using Management Studio
+GUI.</div></blockquote>
+<div class="section" id="identify-the-current-izenda-system-database-version">
+<h3>Identify the Current Izenda System Database Version<a class="headerlink" href="#identify-the-current-izenda-system-database-version" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the Izenda database then New Query.</li>
+<li>Run the query <code class="docutils literal"><span class="pre">select</span> <span class="pre">Version</span> <span class="pre">from</span> <span class="pre">IzendaDBVersion</span></code>.</li>
+<li>The result is the current database version.</li>
+</ol>
+</div>
+<div class="section" id="upgrade-izenda-system-database-gradually-to-latest-version">
+<h3>Upgrade Izenda System Database Gradually to Latest Version<a class="headerlink" href="#upgrade-izenda-system-database-gradually-to-latest-version" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open the Izenda System Database upgrade script folder.</p>
+</li>
+<li><p class="first">In SQL Server Management Studio, open the script in the folder that
+upgrades the current version to the next.</p>
+<blockquote>
+<div><p>e.g. if current version is 0.22.<strong>4</strong>, then open the script
+&#8220;IzendaDBSchema.sql&#8221; in &#8220;0.22.<strong>4</strong>-0.22.5&#8221; folder.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Check that the target database is correct.</p>
+</li>
+<li><p class="first">Run the script to upgrade database to next version.</p>
+</li>
+<li><p class="first">Continue to run the scripts for each next version.</p>
+<blockquote>
+<div><p>e.g. if current version is &#8220;0.22.<strong>5</strong>&#8221; and latest version is
+&#8220;0.22.<strong>8</strong>&#8221;, then run the scripts in folders
+&#8220;0.22.<strong>5</strong>-0.22.6&#8221;, &#8220;0.22.6-0.22.7&#8221; and &#8220;0.22.7-0.22.<strong>8</strong>&#8221; in
+that order.</p>
+</div></blockquote>
+</li>
+<li><p class="first">After all the scripts, re-run the query
+<code class="docutils literal"><span class="pre">select</span> <span class="pre">Version</span> <span class="pre">from</span> <span class="pre">IzendaDBVersion</span></code> to verify the version.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="izenda-web-upgrade">
+<h2>Izenda Web Upgrade<a class="headerlink" href="#izenda-web-upgrade" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Remote desktop to the Web Server to perform these steps.</div></blockquote>
+<div class="section" id="replace-current-packages">
+<h3>Replace Current Packages<a class="headerlink" href="#replace-current-packages" title="Permalink to this headline">¶</a></h3>
+<p>&nbsp; The configuration files must have been backed up before in <a class="reference internal" href="#izenda-web-backup">Izenda Web
+Backup</a> since they will be overwritten in this
+step.</p>
+<ol class="arabic simple">
+<li>Download the Izenda Front-end and Back-end Packages to Web Server.</li>
+<li>Stop the web site process to avoid Izenda DLL files being used.</li>
+<li>Remove all files in current API and App folders.</li>
+<li>Copy the files in downloaded API and App folders to the current API
+and App folders respectively.</li>
+</ol>
+</div>
+<div class="section" id="restore-the-current-configuration">
+<h3>Restore the Current Configuration<a class="headerlink" href="#restore-the-current-configuration" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Back-end: copy the configuration files from temporary location in
+<a class="reference internal" href="#izenda-web-backup">Izenda Web Backup</a> step to overwrite default
+ones in <code class="docutils literal"><span class="pre">API</span></code> folder.<ul>
+<li><code class="docutils literal"><span class="pre">izendadb.config</span></code></li>
+<li><code class="docutils literal"><span class="pre">Web.config</span></code> if it has been backed up.</li>
+</ul>
+</li>
+<li>Front-end: in <code class="docutils literal"><span class="pre">App\izenda_config.js</span></code>, update the value of
+<code class="docutils literal"><span class="pre">WebApiUrl</span></code> to the current address of back-end APIs (e.g.
+<code class="docutils literal"><span class="pre">http://localhost:8888/api/</span></code>).</li>
+</ol>
+</div>
+<div class="section" id="restart-the-web-server">
+<h3>Restart the Web Server<a class="headerlink" href="#restart-the-web-server" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="restore-steps-in-case-of-error">
+<h2>Restore Steps in case of Error<a class="headerlink" href="#restore-steps-in-case-of-error" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Restore the database using the back up file in <a class="reference internal" href="#izenda-system-database-backup">Izenda System
+Database Backup</a> step.</li>
+<li>Empty the API and App folders then copy back the contents from the
+location in <a class="reference internal" href="#izenda-web-backup">Izenda Web Backup</a> step.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".integrated_deployment.html" class="btn btn-neutral float-right" title="Getting Started: Integrated Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_installation_guide.html" class="btn btn-neutral" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

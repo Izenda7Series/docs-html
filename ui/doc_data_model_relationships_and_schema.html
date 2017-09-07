@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Model/Relationships and Schema &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Advanced Settings" href="doc_advanced_settings.html"/>
+        <link rel="prev" title="Data Model/Functions" href="doc_data_model_functions.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Model/Relationships and Schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-relationships">List relationships</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-for-relationships">Search for relationships</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-relationship">Add relationship</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-relationship">Copy relationship</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-relationship">Edit relationship</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-relationship">Delete relationship</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#view-the-schema">View the schema</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Data Model/Relationships and Schema</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_data_model_relationships_and_schema.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-model-relationships-and-schema">
+<h1>Data Model/Relationships and Schema<a class="headerlink" href="#data-model-relationships-and-schema" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Data Model/Relationships</strong> and <strong>Data Model/Schema</strong> pages allows
+user to</p>
+<ul class="simple">
+<li>manage relationships for tables, views and stored procedures</li>
+<li>view database schema</li>
+</ul>
+<div class="section" id="list-relationships">
+<h2>List relationships<a class="headerlink" href="#list-relationships" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda
+as a user with Data Model permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Data Model in the left menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Select Relationships in the Middle Panel. (<a class="reference internal" href="#data-model-relationships-location"><span class="std std-numref">Fig. 123</span></a>)</p>
+<div class="figure" id="id1">
+<span id="data-model-relationships-location"></span><a class="reference internal image-reference" href="../_images/Data_Model_Relationships_Location.png"><img alt="../_images/Data_Model_Relationships_Location.png" src="../_images/Data_Model_Relationships_Location.png" style="width: 429px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">Data Model - Relationships <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Relationships of all visible data sources from all connections will
+be displayed.</p>
+</li>
+<li><p class="first">By default, only the first page with 10 items are displayed. To see
+more, either use the next page icon</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/Data_Model_Next_Page_Icon.png"><img alt="../_images/Data_Model_Next_Page_Icon.png" src="../_images/Data_Model_Next_Page_Icon.png" style="width: 92px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">Data Model - Next Page <br clear="right" /></span></p>
+</div>
+<p>or select a larger number in Items per page box.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/Data_Model_Items_per_page.png"><img alt="../_images/Data_Model_Items_per_page.png" src="../_images/Data_Model_Items_per_page.png" style="width: 172px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">Data Model - Items per page <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="search-for-relationships">
+<h2>Search for relationships<a class="headerlink" href="#search-for-relationships" title="Permalink to this headline">¶</a></h2>
+<p>The Search box at the top allows user to search for specific
+relationships.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id4">
+<span id="data-model-relationships-search-by-elements"></span><a class="reference internal image-reference" href="../_images/Data_Model_Relationships_Search_by_Elements.png"><img alt="../_images/Data_Model_Relationships_Search_by_Elements.png" src="../_images/Data_Model_Relationships_Search_by_Elements.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">Data Model - Search Relationships by element</span></p>
+</div>
+<p>Select a specific element to search for in the dropdown on the left
+of the Search box. Default is All. <br clear="right" /></p>
+</li>
+<li><p class="first">Type a partial name and click the search icon (🔍).</p>
+</li>
+<li><p class="first">Only the matching relationships will be displayed.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-relationship">
+<h2>Add relationship<a class="headerlink" href="#add-relationship" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id5">
+<span id="data-model-relationships-add-new-button"></span><a class="reference internal image-reference" href="../_images/Data_Model_Relationships_Add_New_button.png"><img alt="../_images/Data_Model_Relationships_Add_New_button.png" src="../_images/Data_Model_Relationships_Add_New_button.png" style="width: 225px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Data Model - Add New Relationship</span></p>
+</div>
+<p>Click the Add Relationship button at the top. (<a class="reference internal" href="#data-model-relationships-add-new-button"><span class="std std-numref">Fig. 127</span></a>) <br clear="right" /></p>
+</li>
+<li><p class="first">A new empty row will appear at the first line.</p>
+</li>
+<li><p class="first">Select the elements of the relationship from dropdown boxes.</p>
+<blockquote>
+<div><p>User must select Connection Name, then Data Source, then Data
+Source Field in that order for the dropdown boxes to populate
+conveniently.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Continue to add more relationships.</p>
+</li>
+<li><p class="first">Click the Save button at the top.</p>
+<blockquote>
+<div><p>Relationships that already exists or have errors will be
+highlighted and not saved. (<a class="reference internal" href="#data-model-relationships-existed-error"><span class="std std-numref">Fig. 128</span></a> and <a class="reference internal" href="#data-model-relationships-data-type-error"><span class="std std-numref">Fig. 129</span></a>)</p>
+<div class="figure" id="id6">
+<span id="data-model-relationships-existed-error"></span><a class="reference internal image-reference" href="../_images/Data_Model_Relationships_Existed_Error.png"><img alt="../_images/Data_Model_Relationships_Existed_Error.png" src="../_images/Data_Model_Relationships_Existed_Error.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">Data Model - Relationship Already Exists <br clear="right" /></span></p>
+</div>
+<div class="figure" id="id7">
+<span id="data-model-relationships-data-type-error"></span><a class="reference internal image-reference" href="../_images/Data_Model_Relationships_Data_Type_Error.png"><img alt="../_images/Data_Model_Relationships_Data_Type_Error.png" src="../_images/Data_Model_Relationships_Data_Type_Error.png" style="width: 382px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 129 </span><span class="caption-text">Data Model - Data Type Error <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only single-column relationships are supported in Data Model. Multiple-column relationships are supported in <a class="reference internal" href="doc_report_designer_data_source.html#add-key-join-relationship"><span class="std std-ref">Report Designer</span></a>.</p>
+</div>
+</div>
+<div class="section" id="copy-relationship">
+<h2>Copy relationship<a class="headerlink" href="#copy-relationship" title="Permalink to this headline">¶</a></h2>
+<p>The copy feature help users to save efforts in adding and editing
+relationships.</p>
+<ol class="arabic simple">
+<li>Click the Copy icon (that looks a bit like this ❐) of each
+relationship to copy its details to a new line beneath.</li>
+<li>Edit the new line to make a new relationship.</li>
+<li>Continue for more relationships.</li>
+<li>Click the Save button at the top.</li>
+</ol>
+</div>
+<div class="section" id="edit-relationship">
+<h2>Edit relationship<a class="headerlink" href="#edit-relationship" title="Permalink to this headline">¶</a></h2>
+<p>User can freely edit any relationship in a page and save them.</p>
+</div>
+<div class="section" id="delete-relationship">
+<h2>Delete relationship<a class="headerlink" href="#delete-relationship" title="Permalink to this headline">¶</a></h2>
+<p>User can only delete relationships newly created in Data Model.
+Relationships originally created from physical database cannot be
+deleted, their delete icon will be disabled.</p>
+<ol class="arabic simple">
+<li>Click the Delete icon (x) of each relationship.</li>
+<li>Click OK in the confirmation pop-up.</li>
+<li>The relationship is deleted.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Cancel button at the top will have no effect in this case.</p>
+</div>
+</div>
+<div class="section" id="view-the-schema">
+<h2>View the schema<a class="headerlink" href="#view-the-schema" title="Permalink to this headline">¶</a></h2>
+<p>To be updated.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_advanced_settings.html" class="btn btn-neutral float-right" title="Advanced Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_data_model_functions.html" class="btn btn-neutral" title="Data Model/Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

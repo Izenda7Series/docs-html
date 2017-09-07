@@ -1,0 +1,1055 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tenant APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="Role APIs" href="api_role.html"/>
+        <link rel="prev" title="Data Model APIs" href="api_data_model.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>Tenant APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_tenant.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenant-apis">
+<h1>Tenant APIs<a class="headerlink" href="#tenant-apis" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Tenant Setup</strong> page allows user to</p>
+<ul class="simple">
+<li>manage tenants</li>
+<li>manage tenants&#8217; modules</li>
+<li>manage tenants&#8217; users and roles</li>
+</ul>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#get-tenant-alltenants">GET tenant/allTenants</a></td>
+<td>Returns an array of all tenants.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-tenant-tenant-id">GET tenant/{tenant_id}</a></td>
+<td>Returns the tenant specified by tenant_id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id1">POST tenant</a></td>
+<td>Saves a tenant.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-tenant-active-tenant-id">POST tenant/active/{tenant_id}</a></td>
+<td>Sets active for the tenant specified by tenant_id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-tenant-deactive-tenant-id">POST tenant/deactive/{tenant_id}</a></td>
+<td>Sets inactive for the tenant specified by tenant_id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-tenant-tenant-id">DELETE tenant/{tenant_id}</a></td>
+<td>Deletes the tenant specified by tenant_id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id2">GET tenant/activeTenants</a></td>
+<td>Returns an array of active tenants.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-tenant-availablecategory-type">GET tenant/availableCategory/{type}</a></td>
+<td><div class="first deprecated">
+<p><span class="versionmodified">Deprecated since version 2.0.0: </span>superseded by <a class="reference internal" href="api_role.html#post-role-availablecategory"><span class="std std-ref">POST role/availableCategory</span></a> <br clear="right" /> <br clear="right" /></p>
+</div>
+<p class="last">Returns an array of available categories for report/template (type=0) or dashboard (type=1).</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-tenant-intergration-savetenant">POST tenant/intergration/saveTenant</a></td>
+<td><p class="first">Adds or updates external tenant.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To be renamed to &#8220;integration&#8221;</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-tenant-basicinfos">GET tenant/basicInfos</a></td>
+<td>Returns all active tenants with basic info.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-tenant-namesonly">GET tenant/namesOnly</a></td>
+<td>Returns all active tenants with names only.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="get-tenant-alltenants">
+<h2>GET tenant/allTenants<a class="headerlink" href="#get-tenant-alltenants" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of all tenants.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/tenant/allTenants</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e4c784eb-3e41-4849-925c-a9094b73dfb7&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantID&quot;</span> <span class="p">:</span> <span class="s2">&quot;acme&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ACME Corporation&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;active&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;modules&quot;</span> <span class="p">:</span> <span class="s2">&quot;Report Template/ Component; Scheduling&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-05-22T03:27:13.5070000+07:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantModules&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Report Template/ Component&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">]</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;811e2d3b-c656-46fa-b70e-7fe95bc6529f&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantID&quot;</span> <span class="p">:</span> <span class="s2">&quot;doe&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;description&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;active&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;modules&quot;</span> <span class="p">:</span> <span class="s2">&quot;Report Template/ Component; Scheduling&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-05-22T03:26:32.0000000+07:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantModules&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Report Template/ Component&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-tenant-tenant-id">
+<h2>GET tenant/{tenant_id}<a class="headerlink" href="#get-tenant-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the tenant specified by tenant_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/tenant/e4c784eb-3e41-4849-925c-a9094b73dfb7</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;e4c784eb-3e41-4849-925c-a9094b73dfb7&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantID&quot;</span><span class="p">:</span> <span class="s2">&quot;acme&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Corporation&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modules&quot;</span><span class="p">:</span> <span class="s2">&quot;Report Template/ Component; Scheduling&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-05-22T03:27:13.5070000+07:00&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantModules&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Report Template/ Component&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-tenant">
+<span id="id1"></span><h2>POST tenant<a class="headerlink" href="#post-tenant" title="Permalink to this headline">¶</a></h2>
+<p>Saves a tenant.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>success</strong> <br clear="right" />
+boolean</td>
+<td>Should be true</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenant</strong> <br clear="right" />
+object</td>
+<td>The saved <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/tenant</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Simple Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tenantID&quot;</span> <span class="p">:</span> <span class="s2">&quot;doe&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;DOE&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tenantModules&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Report Template/ Component&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Request payload with full permission (see <a class="reference internal" href="models/Permission.html"><span class="doc">Permission</span></a> object) :</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;tenantID&quot;</span><span class="p">:</span> <span class="s2">&quot;stark&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Stark Industries&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Fictional Company&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;tenantModules&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alerting&quot;</span><span class="p">,</span> <span class="s2">&quot;Form&quot;</span><span class="p">,</span> <span class="s2">&quot;Dashboard&quot;</span><span class="p">,</span> <span class="s2">&quot;Report Templates&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">,</span> <span class="s2">&quot;Exporting&quot;</span><span class="p">,</span> <span class="s2">&quot;Report Designer&quot;</span><span class="p">,</span> <span class="s2">&quot;Charting&quot;</span><span class="p">,</span> <span class="s2">&quot;Maps&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;permission&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;fullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;systemConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;scheduledInstances&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;tenantSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;dataSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;dataModel&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;others&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;userSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;userRoleAssociation&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;configureSecurityOptions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roleSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dataModelAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;grantRoleWithFullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canCreateNewReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dataSources&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;simpleDataSources&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;advancedDataSources&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reportPartTypes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;chart&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;gauge&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reportCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;filterProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filterLogic&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;fieldProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;embeddedJavaScript&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;subreport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;viewReportHistory&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;registerForAlerts&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;unarchiveReportVersions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;overwriteExistingReport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canCreateNewDashboard&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dashboardCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;overwriteExistingDashboard&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;access&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;accessLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;accessDefaults&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;assignedType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;accessors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d004&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dashboardAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d008&quot;</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;scheduling&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;schedulingLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;schedulingScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;systemUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;externalUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;emailing&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;deliveryMethod&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;embeddedHTML&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;attachment&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;attachmentType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;exportingFormat&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;queryExecution&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;systemwide&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canSeeSystemMessages&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-tenant-active-tenant-id">
+<h2>POST tenant/active/{tenant_id}<a class="headerlink" href="#post-tenant-active-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Sets active for the tenant specified by tenant_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/tenant/active/e2bae114-11d6-4c29-ab2b-2c3d3f6ba751</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-tenant-deactive-tenant-id">
+<h2>POST tenant/deactive/{tenant_id}<a class="headerlink" href="#post-tenant-deactive-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Sets inactive for the tenant specified by tenant_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/tenant/deactive/e2bae114-11d6-4c29-ab2b-2c3d3f6ba751</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="delete-tenant-tenant-id">
+<h2>DELETE tenant/{tenant_id}<a class="headerlink" href="#delete-tenant-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Deletes the tenant specified by tenant_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the deletion is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/tenant/811e2d3b-c656-46fa-b70e-7fe95bc6529f</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-tenant-activetenants">
+<span id="id2"></span><h2>GET tenant/activeTenants<a class="headerlink" href="#get-tenant-activetenants" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of active tenants.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/tenant/activeTenants</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;e4c784eb-3e41-4849-925c-a9094b73dfb7&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantID&quot;</span><span class="p">:</span> <span class="s2">&quot;acme&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Corporation&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modules&quot;</span><span class="p">:</span> <span class="s2">&quot;encrypted&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-04-22T03:27:13.5070000+07:00&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantModules&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Report Template/ Component&quot;</span><span class="p">,</span> <span class="s2">&quot;Scheduling&quot;</span><span class="p">]</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-tenant-availablecategory-type">
+<h2>GET tenant/availableCategory/{type}<a class="headerlink" href="#get-tenant-availablecategory-type" title="Permalink to this headline">¶</a></h2>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 2.0.0: </span>superseded by <a class="reference internal" href="api_role.html#post-role-availablecategory"><span class="std std-ref">POST role/availableCategory</span></a></p>
+</div>
+<p>Returns an array of available categories for report/template (type=0) or dashboard (type=1).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/Category.html"><span class="doc">Category</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/tenant/availableCategory/0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+     <span class="s2">&quot;reports&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sample&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;canDelete&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;savable&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;subCategories&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+     <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;7b604d85-83b6-4c55-8392-eb517f30b75a&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;reports&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sample&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;canDelete&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;savable&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;subCategories&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="s2">&quot;reports&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sub&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="s2">&quot;8f966b73-bf1d-4c03-87ca-a946898a91db&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;canDelete&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;savable&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+           <span class="s2">&quot;subCategories&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+           <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;ac4219e1-91a7-4c2d-b42c-e27b12681c3c&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8f966b73-bf1d-4c03-87ca-a946898a91db&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Uncategorized&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;canDelete&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;savable&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;subCategories&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+     <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-tenant-intergration-savetenant">
+<h2>POST tenant/intergration/saveTenant<a class="headerlink" href="#post-tenant-intergration-savetenant" title="Permalink to this headline">¶</a></h2>
+<p>Adds or updates external tenant.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>Should be true</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="get-tenant-basicinfos">
+<h2>GET tenant/basicInfos<a class="headerlink" href="#get-tenant-basicinfos" title="Permalink to this headline">¶</a></h2>
+<p>Returns all active tenants with basic info.</p>
+<p>Returns only the current tenant with basic info if logged in user is a tenant user.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of the following objects:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+string</td>
+<td>The user-selected id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>The name of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>active</strong> <br clear="right" />
+boolean</td>
+<td>Whether the tenant is active</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>description</strong> <br clear="right" />
+string</td>
+<td>The description of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantModules</strong> <br clear="right" />
+array of strings</td>
+<td>An array of selected module names for the tenant</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/tenant/basicInfos</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response if logged in user is system user:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+<p>Sample response if logged in user is tenant user:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-tenant-namesonly">
+<h2>GET tenant/namesOnly<a class="headerlink" href="#get-tenant-namesonly" title="Permalink to this headline">¶</a></h2>
+<p>Returns all active tenants with names only.</p>
+<p>Returns only the current tenant with name only if logged in user is a tenant user.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of the following objects:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+string</td>
+<td>The user-selected id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>The name of the tenant</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/tenant/namesOnly</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response if logged in user is system user:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+<p>Sample response if logged in user is tenant user:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_role.html" class="btn btn-neutral float-right" title="Role APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_data_model.html" class="btn btn-neutral" title="Data Model APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

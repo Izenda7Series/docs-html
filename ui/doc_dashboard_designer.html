@@ -1,0 +1,675 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dashboard Designer &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
+        <link rel="next" title="Dashboard List" href="doc_dashboard_list.html"/>
+        <link rel="prev" title="Report Viewer" href="doc_report_viewer.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_schedule.html">Report Designer/Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_access.html">Report Designer/Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_grid.html">Report Designer/Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_chart.html">Report Designer/Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_gauge.html">Report Designer/Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_map.html">Report Designer/Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_form.html">Report Designer/Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_report_part_menu.html">Report Designer/Report Part Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_list.html">Report List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_viewer.html">Report Viewer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Dashboard Designer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-new-dashboard">Create a New Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customize-dashboard-layout">Customize Dashboard Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-dashboard">Edit Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#switch-to-presentation-mode">Switch to Presentation Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-sharing-access">Configure Sharing Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-subscriptions">Add Subscriptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-scheduled-delivery">Add Scheduled Delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#print-dashboard">Print Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#email-dashboard">Email Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dashboard-filters">Dashboard Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
+        
+      <li>Dashboard Designer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_dashboard_designer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dashboard-designer">
+<h1>Dashboard Designer<a class="headerlink" href="#dashboard-designer" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Dashboard Designer</strong> page allows user to</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>select a preset layout</li>
+<li>add report parts to a dashboard</li>
+<li>customize dashboard layout</li>
+<li>edit dashboard description and background</li>
+<li>copy and move dashboard</li>
+<li>switch to presentation mode</li>
+</ul>
+</td><td><ul class="simple">
+<li>configure sharing access</li>
+<li>add subscriptions and scheduled delivery</li>
+<li>print dashboard</li>
+<li>email dashboard</li>
+<li>dashboard filters</li>
+</ul>
+</td></tr></table>
+<div class="section" id="create-a-new-dashboard">
+<span id="id1"></span><h2>Create a New Dashboard<a class="headerlink" href="#create-a-new-dashboard" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the plus icon (+) next to Dashboards to create a new one.</p>
+</li>
+<li><p class="first">Select a preset layout from the pop-up.</p>
+<blockquote>
+<div><p>User can always add and remove tiles in the preset layout
+afterwards.</p>
+<div class="figure align-right" id="id5">
+<span id="dashboard-add-icon-and-preset-layout"></span><a class="reference internal image-reference" href="../_images/Dashboard_Add_Icon_and_Preset_Layout.png"><img alt="../_images/Dashboard_Add_Icon_and_Preset_Layout.png" src="../_images/Dashboard_Add_Icon_and_Preset_Layout.png" style="width: 635px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 341 </span><span class="caption-text">Dashboard Add Icon and Preset Layout <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select to either create a &#8220;text&#8221; dashboard tile or include an existing report part in each one.</p>
+<div class="figure" id="id6">
+<span id="dashboard-tiles-report-part-or-text"></span><a class="reference internal image-reference" href="../_images/Dashboard_Tiles_Report_Part_or_Text.png"><img alt="../_images/Dashboard_Tiles_Report_Part_or_Text.png" src="../_images/Dashboard_Tiles_Report_Part_or_Text.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 342 </span><span class="caption-text">Report Part or Text options <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">For a &#8220;text&#8221; dashboard tile, click the Configuration mode (page flip)
+icon to input the content.</p>
+<div class="figure align-right" id="id7">
+<span id="text-dashboard-tile"></span><a class="reference internal image-reference" href="../_images/Text_Dashboard_Tile.png"><img alt="../_images/Text_Dashboard_Tile.png" src="../_images/Text_Dashboard_Tile.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 343 </span><span class="caption-text">&#8220;Text&#8221; Dashboard Tile <br clear="right" /></span></p>
+</div>
+<ol class="arabic simple">
+<li>Optionally enter a title and description.</li>
+<li>Click the gear icons (⚙) to format the title and description.</li>
+<li>The title and description are limited to one paragraph of text and
+simple formatting:<ul>
+<li>font face and font size.</li>
+<li>text effects bold, italic, underlined.</li>
+<li>font color and background color.</li>
+<li>text alignment.</li>
+</ul>
+</li>
+<li>Enter the content into Body Text.</li>
+<li>This section supports unlimited amount of text and more formatting
+options:<ul>
+<li>Bullet List and Numbering List.</li>
+<li>Indented text.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p class="first">For existing report part option, use the Report Part Selection pop-up to search and use an existing report part:</p>
+<ol class="arabic simple">
+<li>Optionally specify a report category or sub-category.</li>
+<li>Type a partial text in Report Name to search for the containing
+report first.</li>
+<li>Other search options include Created By, Created Date, Last Edited
+By and Last Edited Date.</li>
+<li>Click Search to see the list of matching reports.</li>
+<li>Select a report to display the list of child report parts.</li>
+<li>Select the right report part and click OK to use it.</li>
+</ol>
+<div class="figure align-right" id="id8">
+<span id="dashboard-report-part-selection"></span><a class="reference internal image-reference" href="../_images/Dashboard_Report_Part_Selection.png"><img alt="../_images/Dashboard_Report_Part_Selection.png" src="../_images/Dashboard_Report_Part_Selection.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 344 </span><span class="caption-text">Report Part Search <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Repeat for other tiles then click Save at the top to save the dashboard.</p>
+</li>
+</ol>
+<p>Following is a sample dashboard with 3 tiles: a comparison column chart, detail grid and a text part for the summary:</p>
+<div class="figure align-right" id="id9">
+<span id="dashboard-sample"></span><a class="reference internal image-reference" href="../_images/Dashboard_Sample.png"><img alt="../_images/Dashboard_Sample.png" src="../_images/Dashboard_Sample.png" style="width: 767px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 345 </span><span class="caption-text">Sample Dashboard</span></p>
+</div>
+</div>
+<div class="section" id="customize-dashboard-layout">
+<h2>Customize Dashboard Layout<a class="headerlink" href="#customize-dashboard-layout" title="Permalink to this headline">¶</a></h2>
+<p>The dashboard tiles can be added, copied, resized, moved around, swapped
+in position and deleted.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id10">
+<span id="dashboard-tile-title-bar"></span><a class="reference internal image-reference" href="../_images/Dashboard_Tile_Title_Bar.png"><img alt="../_images/Dashboard_Tile_Title_Bar.png" src="../_images/Dashboard_Tile_Title_Bar.png" style="width: 405px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 346 </span><span class="caption-text">Title Bar</span></p>
+</div>
+<p>Move the cursor over the title bar to see Copy, Configuration/View mode, Fullscreen and Delete buttons.</p>
+</li>
+<li><p class="first">Switch the tiles back to View mode to be able to change the layout.</p>
+</li>
+<li><p class="first">Place the cursor over the edges of dashboard tiles then click and drag to resize them.</p>
+</li>
+<li><p class="first">Move the cursor over the title bar then drag to move the tiles.</p>
+</li>
+<li><p class="first">Drag a tile onto another to swap them.</p>
+</li>
+<li><p class="first">Click the Add Dashboard Tile button at the top to insert a new tile
+at the end.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="edit-dashboard">
+<h2>Edit Dashboard<a class="headerlink" href="#edit-dashboard" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id11">
+<span id="dashboard-edit-menu"></span><a class="reference internal image-reference" href="../_images/Dashboard_Edit_Menu.png"><img alt="../_images/Dashboard_Edit_Menu.png" src="../_images/Dashboard_Edit_Menu.png" style="width: 182px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 347 </span><span class="caption-text">Edit Menu</span></p>
+</div>
+<p>The Edit menu allows user to:</p>
+<ul class="simple">
+<li>Set a description for the dashboard.</li>
+<li>Set background color.</li>
+<li>Set background image:<ol class="arabic">
+<li>Select Set Background Image to open Background Image Settings
+pop-up.</li>
+<li>Enter the url of the image.</li>
+<li>Choose to stretch or center the image.</li>
+<li>Click OK to close the pop-up.</li>
+</ol>
+</li>
+<li>Copy or Move dashboard, this is similar to Report (<a class="reference internal" href="doc_report_list.html#copy-a-report"><span class="std std-ref">Copy a Report</span></a> and <a class="reference internal" href="doc_report_list.html#move-a-report"><span class="std std-ref">Move a Report</span></a>).</li>
+<li>Hide or show report part filter descriptions in dashboard.</li>
+</ul>
+</div>
+<div class="section" id="switch-to-presentation-mode">
+<h2>Switch to Presentation Mode<a class="headerlink" href="#switch-to-presentation-mode" title="Permalink to this headline">¶</a></h2>
+<p>Click the Presentation button at the top to switch to Presentation mode.</p>
+<blockquote>
+<div><div class="figure" id="id12">
+<span id="dashboard-presentation-mode"></span><a class="reference internal image-reference" href="../_images/Dashboard_Presentation_Mode.png"><img alt="../_images/Dashboard_Presentation_Mode.png" src="../_images/Dashboard_Presentation_Mode.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 348 </span><span class="caption-text">Presentation Mode <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>In this mode, each dashboard tile takes turn being displayed for a
+configurable time.</li>
+<li>The sub toolbar allows user to configure the slide transition time
+and switch to fullscreen.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Using report parts with short data refresh intervals together with presentation mode in fullscreen can effectively make up a live slide show dashboard.</p>
+</div>
+</div>
+<div class="section" id="configure-sharing-access">
+<h2>Configure Sharing Access<a class="headerlink" href="#configure-sharing-access" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Access button at the top to open Access screen.</li>
+<li>Click the Add Sharing button to add a new sharing.</li>
+<li>Select either Everyone, Role, or User from the Share With drop-down.</li>
+<li>For Role or User, select a specific one from the drop-down.</li>
+<li>Select a permission from Acces Right drop-down (See details in List
+of Access Rights table below).</li>
+<li>Click Save button at the top to save the list.</li>
+</ol>
+<div class="figure" id="id13">
+<span id="dashboard-sharing-access"></span><a class="reference internal image-reference" href="../_images/Dashboard_Sharing_Access.png"><img alt="../_images/Dashboard_Sharing_Access.png" src="../_images/Dashboard_Sharing_Access.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 349 </span><span class="caption-text">Sharing Access <br clear="right" /></span></p>
+</div>
+<table border="1" class="apitable docutils" id="id14">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">List of Access Rights</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Interact with shared report</th>
+<th class="head">Full Access</th>
+<th class="head">Quick Edit</th>
+<th class="head">Save As</th>
+<th class="head">Locked</th>
+<th class="head">View Only</th>
+<th class="head">No Access</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>View the report with filter interaction</strong></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✖</td>
+<td>✔</td>
+<td>✖</td>
+</tr>
+<tr class="row-odd"><td><strong>View the report with NO filter interaction</strong></td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+</tr>
+<tr class="row-even"><td><strong>Modify the report in Quick Edit mode</strong></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+</tr>
+<tr class="row-odd"><td><strong>Modify the report in Report Designer</strong></td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+</tr>
+<tr class="row-even"><td><strong>Save changes in the report</strong></td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+</tr>
+<tr class="row-odd"><td><strong>Save As changes in the report</strong></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+<td>✖</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils" id="id15">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Access Rights Precendence (Higher Right covers lower ones)</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Access Right</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Full Access</td>
+</tr>
+<tr class="row-odd"><td>Quick Edit</td>
+</tr>
+<tr class="row-even"><td>Save As</td>
+</tr>
+<tr class="row-odd"><td>Locked</td>
+</tr>
+<tr class="row-even"><td>View Only</td>
+</tr>
+<tr class="row-odd"><td>No Access</td>
+</tr>
+</tbody>
+</table>
+<p>Another function of this screen is to change the Dashboard Owner (next
+to the dashboard name):</p>
+<ol class="arabic simple">
+<li>Click the plus icon to open All Users pop-up.</li>
+<li>Select either User Name, Email Address or Role to search for. Select All to search for all fields.</li>
+<li>Type a partial name into the search box and click the search icon (🔍).</li>
+<li>Only matching users will be displayed.</li>
+<li>Select the user then click OK to close the pop-up.</li>
+<li>Click Save button at the top to save the dashboard together with the owner.</li>
+</ol>
+</div>
+<div class="section" id="add-subscriptions">
+<h2>Add Subscriptions<a class="headerlink" href="#add-subscriptions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Subscribe button at the top to open Subscription screen.</li>
+<li>Dashboard Subscription is similar to <a class="reference internal" href="doc_report_list.html#add-report-subscriptions-for-current-user"><span class="std std-ref">Report
+List</span></a>.</li>
+<li>Click the Subscribe button again to close Subscription screen.</li>
+</ol>
+</div>
+<div class="section" id="add-scheduled-delivery">
+<h2>Add Scheduled Delivery<a class="headerlink" href="#add-scheduled-delivery" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Schedule button at the top to open Schedule screen.</li>
+<li>Dashboard Schedule is similar to <a class="reference internal" href="doc_report_designer_schedule.html"><span class="doc">Report
+Schedule</span></a>.</li>
+<li>Click the Schedule button again to close Schedule screen.</li>
+</ol>
+</div>
+<div class="section" id="print-dashboard">
+<span id="id2"></span><h2>Print Dashboard<a class="headerlink" href="#print-dashboard" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id16">
+<span id="dashboard-print-options"></span><a class="reference internal image-reference" href="../_images/Dashboard_Print_Options.png"><img alt="../_images/Dashboard_Print_Options.png" src="../_images/Dashboard_Print_Options.png" style="width: 233px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 350 </span><span class="caption-text">Print Options</span></p>
+</div>
+<p>Click the Print button at the top and select either HTML or PDF format to open Print pop-up.</p>
+</li>
+<li><p class="first">Select print options in the left menu while the print preview is
+reflected on the right:</p>
+<ul>
+<li><p class="first">Select a target printer using Change button.</p>
+</li>
+<li><p class="first">Select specific pages to print.</p>
+</li>
+<li><p class="first">Increase the number of copies, then tick the Collate check-box to
+have the pages of each copy printed separately, instead of being
+mixed together.</p>
+</li>
+<li><p class="first">Select a page layout Portrait or Landscape.</p>
+</li>
+<li><p class="first">Select a paper size. <br clear="right" /></p>
+</li>
+<li><p class="first">Select a margin option. In Custom mode, the margins in preview
+pane can be resized interactively.</p>
+</li>
+<li><div class="figure align-right" id="id17">
+<span id="dashboard-print-custom-margins-png"></span><a class="reference internal image-reference" href="../_images/Dashboard_Print_Custom_Margins.png"><img alt="../_images/Dashboard_Print_Custom_Margins.png" src="../_images/Dashboard_Print_Custom_Margins.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 351 </span><span class="caption-text">Custom Print Margins</span></p>
+</div>
+<p>Select a print resolution in Quality drop-down: the higher the
+number of dpi, the clearer and more detailed output.</p>
+</li>
+<li><p class="first">Select to print headers and footers or not.</p>
+</li>
+<li><p class="first">Select to print background images or not. <br clear="right" /></p>
+</li>
+</ul>
+</li>
+<li><p class="first">For more advanced options, click the link Print using system
+dialog... to use the system Print dialog.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="email-dashboard">
+<span id="id3"></span><h2>Email Dashboard<a class="headerlink" href="#email-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>The dashboard can be delivered via email on-demand (instead of Scheduled
+Delivery) using the Email button:</p>
+<ol class="arabic simple">
+<li>Choose a delivery method Link or Embedded HTML to open Compose Email pop-up with the email template already populated.</li>
+<li>Fill in the To, Subject and optionally CC boxes.</li>
+<li>Optionally select the delivery method Link, Attachment or Embedded HTML.</li>
+<li>Click OK to close the pop-up and send the email.</li>
+</ol>
+</div>
+<div class="section" id="dashboard-filters">
+<span id="id4"></span><h2>Dashboard Filters<a class="headerlink" href="#dashboard-filters" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The filter section on the dashboard will only show common filters between all report parts used in the dashboard.</li>
+<li>By default, common filters are defined as the same field from the same table in the same schema of the database.</li>
+<li>Common filter definitions can be altered in Settings &gt; Data Setup &gt; Advanced Settings &gt; Others area of the application. The following options are available:<ul>
+<li>Same field of the same data object from the same database schema (Default)</li>
+<li>Same field name regardless of database schema or connection string</li>
+<li>Same alias name regardless of database schema or connection string</li>
+</ul>
+</li>
+<li>Stored procedures used in reports cannot follow the same logic as above, they always follow the default logic, for parameters to show as common filters, they must always be from the same stored procedure.</li>
+<li>Any filters which are not common between all report parts are available on the back of the report part tile. The user can flip the tile and update results to change the filters for the specific report part.</li>
+<li>Common filters query only one instance of a common filter (the first one in the dashboard), for data driven filters (checkbox, selection, tree, popup style filters where the user is presented data for selection). This means when Field A is common, based on rules set above, only the first instance of the field which is common will be queried to pull results for common filter data.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_dashboard_list.html" class="btn btn-neutral float-right" title="Dashboard List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_report_viewer.html" class="btn btn-neutral" title="Report Viewer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1067 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Report Designer/Chart &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
+        <link rel="next" title="Report Designer/Gauge" href="doc_report_designer_gauge.html"/>
+        <link rel="prev" title="Report Designer/Grid" href="doc_report_designer_grid.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_schedule.html">Report Designer/Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_access.html">Report Designer/Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_grid.html">Report Designer/Grid</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Report Designer/Chart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configure-report-part-properties-for-chart">Configure Report Part Properties for Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line-chart">Line Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bar-chart-and-column-chart">Bar Chart and Column Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#area-chart">Area Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pie-chart">Pie Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#funnel-chart">Funnel Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#donut-chart">Donut Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combination-chart">Combination Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tree-map-chart">Tree Map Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heat-map-chart">Heat Map Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scatter-chart">Scatter Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bubble-chart">Bubble Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#waterfall-chart">Waterfall Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sparkline-chart">Sparkline Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_gauge.html">Report Designer/Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_map.html">Report Designer/Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_form.html">Report Designer/Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_report_part_menu.html">Report Designer/Report Part Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_list.html">Report List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_viewer.html">Report Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
+        
+      <li>Report Designer/Chart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_report_designer_chart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="report-designer-chart">
+<h1>Report Designer/Chart<a class="headerlink" href="#report-designer-chart" title="Permalink to this headline">¶</a></h1>
+<p>Chart is a built-in type of report part that displays data using
+graphical symbols, such as bars in a bar chart, lines in a line chart,
+or slices in a pie chart.</p>
+<div class="section" id="configure-report-part-properties-for-chart">
+<h2>Configure Report Part Properties for Chart<a class="headerlink" href="#configure-report-part-properties-for-chart" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id1">
+<span id="chart-line-properties"></span><a class="reference internal image-reference" href="../_images/Chart_Line_Properties.png"><img alt="../_images/Chart_Line_Properties.png" src="../_images/Chart_Line_Properties.png" style="width: 245px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 256 </span><span class="caption-text">Report Designer - Chart Properties</span></p>
+</div>
+<p>Select the chart in Report Body (See <a class="reference internal" href="doc_report_designer_fields.html#manage-report-parts"><span class="std std-ref">Manage Report Parts</span></a> for how to
+add a chart).</p>
+</li>
+<li><p class="first">Click the expand icon (&lt;) on the right to open the Properties boxes
+if needed.</p>
+</li>
+<li><p class="first">Select the vertical Report Part Properties box.</p>
+</li>
+<li><p class="first">The properties are listed in Report Part Properties box in 7
+sections. (<a class="reference internal" href="#chart-line-properties"><span class="std std-numref">Fig. 256</span></a>)</p>
+<ul class="simple">
+<li>General Info</li>
+<li>Chart</li>
+<li>Labels</li>
+<li>Legends</li>
+<li>Grouping</li>
+<li>Data</li>
+<li>View <br clear="right" /></li>
+</ul>
+</li>
+</ol>
+<p>User can configure the properties and see changes reflected in
+Preview pane:</p>
+<ul>
+<li><p class="first">Select a type in Chart Type drop-down. (See below for each type)</p>
+</li>
+<li><p class="first">Configure border settings:</p>
+<ol class="arabic">
+<li><p class="first">In Chart group, click the gear icon (⚙) to open Border Settings
+pop-up.</p>
+</li>
+<li><p class="first">Choose the border to be visible or not.</p>
+</li>
+<li><p class="first">Select a border color.</p>
+</li>
+<li><p class="first">Select the border thickness (in pixels).</p>
+</li>
+<li><p class="first">Click OK to close the Border Settings pop-up.</p>
+<div class="figure" id="id2">
+<span id="nw-orders-chart-border-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Border_Settings.png"><img alt="../_images/NW_Orders_Chart_Border_Settings.png" src="../_images/NW_Orders_Chart_Border_Settings.png" style="width: 464px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 257 </span><span class="caption-text">Report Designer - Chart Border Settings <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Set the
+background color.</p>
+<ol class="arabic">
+<li><p class="first">In Chart group, click the gear icon (⚙) to open Chart Background
+Color Settings pop-up.</p>
+</li>
+<li><p class="first">Select a background color.</p>
+</li>
+<li><p class="first">Choose to apply the color to the entire chart (the area inside the
+border above) or to the plot area only (on the right).</p>
+</li>
+<li><p class="first">Click OK to close the Chart Background Color Settings pop-up.</p>
+<div class="figure" id="id3">
+<span id="nw-orders-chart-background-color-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Background_Color_Settings.png"><img alt="../_images/NW_Orders_Chart_Background_Color_Settings.png" src="../_images/NW_Orders_Chart_Background_Color_Settings.png" style="width: 455px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 258 </span><span class="caption-text">Report Designer - Chart Background Color <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Configure the X-axis
+and Y-axis (applicable to the chart types Line, Column, Bar, Area,
+and Combination only).</p>
+<ol class="arabic">
+<li><p class="first">Customize the title (&#8220;Month&#8221; instead of &#8220;Group (OrderDate)&#8221; and
+&#8220;Freight&#8221; instead of &#8220;Sum(Freight)&#8221;).</p>
+</li>
+<li><p class="first">Set the title font face and font size.</p>
+</li>
+<li><p class="first">Choose title text effects bold, italic and underlined.</p>
+</li>
+<li><p class="first">Choose title text color and background color.</p>
+</li>
+<li><p class="first">Choose title text alignment.</p>
+</li>
+<li><p class="first">Customize the starting value for the chart. In the sample
+screenshot, &#8220;3000&#8221; is entered into the Starting Point box of
+Y-axis, so only the points having Sum(Freight) value greater than
+or equal to 3000 are displayed.</p>
+</li>
+<li><p class="first">Customize the relative distance between the tick marks. In the
+sample screenshot, &#8220;10000&#8221; is entered into the Intervals box of
+Y-axis, so there will be exactly one tick mark after every 1000
+units on Y-axis (4000.00, 5000.00, 6000.00, 7000.00, etc).</p>
+<div class="figure" id="id4">
+<span id="nw-orders-chart-xy-plane-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_XY-Plane_Settings.png"><img alt="../_images/NW_Orders_Chart_XY-Plane_Settings.png" src="../_images/NW_Orders_Chart_XY-Plane_Settings.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 259 </span><span class="caption-text">Chart - X-axis and Y-axis Settings <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Configure the grid lines.</p>
+<ol class="arabic">
+<li><p class="first">Choose the grid lines to be visible or not.</p>
+</li>
+<li><p class="first">Select a line color.</p>
+</li>
+<li><p class="first">Select a line pattern: Solid (default), Dot or Dash.</p>
+</li>
+<li><p class="first">Select the line thickness (in pixels).</p>
+<div class="figure" id="id5">
+<span id="nw-orders-chart-grid-lines-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Grid_Lines_Settings.png"><img alt="../_images/NW_Orders_Chart_Grid_Lines_Settings.png" src="../_images/NW_Orders_Chart_Grid_Lines_Settings.png" style="width: 680px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 260 </span><span class="caption-text">Chart - Grid Lines Settings <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Configure the text direction for
+the labels.</p>
+<div class="figure" id="id6">
+<span id="nw-orders-chart-labels-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Labels_Settings.png"><img alt="../_images/NW_Orders_Chart_Labels_Settings.png" src="../_images/NW_Orders_Chart_Labels_Settings.png" style="width: 635px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 261 </span><span class="caption-text">Chart - Labels Settings <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Configure the legends.</p>
+<div class="figure" id="id7">
+<span id="report-chart-legend-settings"></span><a class="reference internal image-reference" href="../_images/Report_Chart_Legend_Settings.png"><img alt="../_images/Report_Chart_Legend_Settings.png" src="../_images/Report_Chart_Legend_Settings.png" style="width: 684px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 262 </span><span class="caption-text">Chart - Legend Settings <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Select to use Separator.</p>
+<blockquote>
+<div><p>The Separator option displays multiple charts according to each
+unique value of the field(s) defined in Separators box. For
+example: this report with multiple pies, each one for each
+country in Northwind Orders table.</p>
+<blockquote>
+<div><div class="figure" id="id8">
+<span id="nw-orders-pie-separators-shipcountry-group-by-shipregion-shipcity"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Pie_Separators_ShipCountry_Group_by_ShipRegion_ShipCity.png"><img alt="../_images/NW_Orders_Pie_Separators_ShipCountry_Group_by_ShipRegion_ShipCity.png" src="../_images/NW_Orders_Pie_Separators_ShipCountry_Group_by_ShipRegion_ShipCity.png" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 263 </span><span class="caption-text">Northwind Orders Pie with ShipCountry Separator <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Tick Use Separator check-box in Grouping in Report Part Properties
+to see Separators box inside the chart configuration.</p>
+</li>
+<li><p class="first">Add [ShipRegion] and [ShipCity] to Labels (X-axis) box, they will
+show up as Group(ShipRegion) and Group(ShipCity).</p>
+</li>
+<li><p class="first">Add [OrderID] to Values (Y-axis) box, then choose Count as the
+Function, it should show up as Count(OrderID).</p>
+</li>
+<li><p class="first">Add [ShipCountry] to Separators box, it will show up as
+Group(ShipCountry).</p>
+</li>
+<li><p class="first">Bottom X% Grouped to Other is used to set the threshold where
+percentage values lower than that will be grouped together into
+Others group. See examples below:</p>
+<blockquote>
+<div><p>Before: <img alt="Report Chart Pie Bottom X Before.png" src="../_images/Report_Chart_Pie_Bottom_X_Before.png" /> and After
+setting 60%: <img alt="Report Chart Pie Bottom X After.png" src="../_images/Report_Chart_Pie_Bottom_X_After.png" /></p>
+</div></blockquote>
+</li>
+</ol>
+</li>
+<li><p class="first">Choose to display values of
+data points or not.</p>
+<div class="figure" id="id9">
+<span id="nw-orders-chart-data-show-value-labels"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Data_Show_Value_Labels.png"><img alt="../_images/NW_Orders_Chart_Data_Show_Value_Labels.png" src="../_images/NW_Orders_Chart_Data_Show_Value_Labels.png" style="width: 635px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 264 </span><span class="caption-text">Chart - Show Value Labels <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Add threshold lines to the
+chart. For example, to add a threshold to highlight any Month with
+Total Freight higher than 6000:</p>
+<ol class="arabic simple">
+<li>In Data group, click the gear icon (⚙) to open Thresholds Settings
+pop-up.</li>
+<li>In Y-axis, click Add Setting.</li>
+<li>Enter &#8220;Over 6k&#8221; for the Label.</li>
+<li>Enter &#8220;6000&#8221; for the Value.</li>
+<li>Remember to tick the Visible check-box.</li>
+<li>A horizontal line will be displayed at the 6000th unit on Y-axis.</li>
+<li>The text format for the threshold&#8217;s label can be further
+customized by clicking the gear icon (⚙).</li>
+<li>Click OK to close the Thresholds Settings pop-up.</li>
+</ol>
+<div class="figure" id="id10">
+<span id="nw-orders-chart-data-thresholds-settings"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Data_Thresholds_Settings.png"><img alt="../_images/NW_Orders_Chart_Data_Thresholds_Settings.png" src="../_images/NW_Orders_Chart_Data_Thresholds_Settings.png" style="width: 680px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 265 </span><span class="caption-text">Chart - Data Thresholds <br clear="right" /></span></p>
+</div>
+</li>
+<li><div class="figure align-right" id="id11">
+<span id="nw-orders-chart-zoom"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_Zoom.png"><img alt="../_images/NW_Orders_Chart_Zoom.png" src="../_images/NW_Orders_Chart_Zoom.png" style="width: 330px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 266 </span><span class="caption-text">Chart - Zoom</span></p>
+</div>
+<p>Zoom into a region of the chart.</p>
+<ol class="arabic simple">
+<li>In View group, select the axis to be maginified:<ul>
+<li>XY: both axis will be magnified.</li>
+<li>X: X-axis will be magnified while Y-axis remains fixed.</li>
+<li>Y: Y-axis will be magnified while X-axis remains fixed.</li>
+</ul>
+</li>
+<li>Hold the mouse button and drag over a region, then release the
+mouse button to actually zoom into that region. (<a class="reference internal" href="#nw-orders-chart-zoom"><span class="std std-numref">Fig. 266</span></a>)</li>
+<li>Repeat to zoom closer.</li>
+<li>Click the Reset zoom button to restore the chart to normal. <br clear="right" /></li>
+</ol>
+</li>
+<li><p class="first">Invert the X-axis and Y-axis by ticking the Inverted check-box in
+View group.</p>
+</li>
+<li><p class="first">Choose a step chart style.</p>
+<div class="figure" id="id12">
+<span id="nw-orders-chart-view-center-step"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_View_Center_Step.png"><img alt="../_images/NW_Orders_Chart_View_Center_Step.png" src="../_images/NW_Orders_Chart_View_Center_Step.png" style="width: 633px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 267 </span><span class="caption-text">Chart - Center Step</span></p>
+</div>
+</li>
+<li><p class="first">Choose a spline chart style.</p>
+<div class="figure" id="id13">
+<span id="nw-orders-chart-view-spline"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Chart_View_Spline.png"><img alt="../_images/NW_Orders_Chart_View_Spline.png" src="../_images/NW_Orders_Chart_View_Spline.png" style="width: 633px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 268 </span><span class="caption-text">Chart - Spline</span></p>
+</div>
+</li>
+<li><div class="figure align-right" id="id14">
+<span id="report-designer-data-refresh-interval"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Data_Refresh_Interval.png"><img alt="../_images/Report_Designer_Data_Refresh_Interval.png" src="../_images/Report_Designer_Data_Refresh_Interval.png" style="width: 455px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 269 </span><span class="caption-text">Report Designer - Data Refresh Interval</span></p>
+</div>
+<p>Configure how
+often data is refreshed when report is being viewed.</p>
+<ol class="arabic simple">
+<li>Click the gear icon (⚙) to open Data Refresh Interval Settings
+pop-up.</li>
+<li>Choose to have data refreshed automatically or manually.</li>
+<li>Enter an interval between each refresh (in seconds).</li>
+<li>Choose to view all data or enter a number to view that specific
+number of latest records only. <br clear="right" /></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="line-chart">
+<h2>Line Chart<a class="headerlink" href="#line-chart" title="Permalink to this headline">¶</a></h2>
+<p>A line chart displays data as a series of data points ordered by value
+and connected by lines. Therefore the line chart is used to visualize a
+trend in data over intervals of time.</p>
+<div class="figure align-right" id="id15">
+<span id="nw-orders-line-chart-freight-by-month"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Line_Chart_Freight_by_Month.png"><img alt="../_images/NW_Orders_Line_Chart_Freight_by_Month.png" src="../_images/NW_Orders_Line_Chart_Freight_by_Month.png" style="width: 342px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 270 </span><span class="caption-text">Line Chart Freight by Month</span></p>
+</div>
+<p>For example, table Orders in
+Northwind database stores the OrderDate together with the Freight cost
+of each order. From that data, a report such as the trend of total
+Freight cost over each month would be best visualized using a line
+chart.</p>
+<ol class="arabic simple">
+<li>&#8220;Each month&#8221; means using &#8220;Month&#8221; format for OrderDate field to get
+the month numeric value, then using the Group function to group data
+with the same month numeric value together.</li>
+<li>Then &#8220;total Freight cost over each month&#8221; means applying the Sum
+function for Freight value within each month group. <br clear="right" /></li>
+</ol>
+<p>To configure the report like above:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Line&#8221; as the Chart Type in General Info group, two boxes will
+appear in Configuration section: &#8220;Labels (X-axis)&#8221; and &#8220;Values
+(Y-axis)&#8221;.</li>
+<li>Add the field OrderDate into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(OrderDate)&#8221;.</li>
+<li>Select the field in Labels box to open the Field Properties box.</li>
+<li>Check to confirm that in Data Formatting group, &#8220;Group&#8221; is selected
+for the Function and &#8220;Month&#8221; is selected for the Format.</li>
+<li>Add the field Freight into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(Freight)&#8221;.</li>
+<li>Select the field in Values box to open the Field Properties box.</li>
+<li>Check to confirm that in Data Formatting group, &#8220;Sum&#8221; is selected for
+the Function.</li>
+</ol>
+</div>
+<div class="section" id="bar-chart-and-column-chart">
+<h2>Bar Chart and Column Chart<a class="headerlink" href="#bar-chart-and-column-chart" title="Permalink to this headline">¶</a></h2>
+<p>A bar chart displays groups of data as rectangular bars with lengths
+proportional to the values that they represent. Therefore the bar chart
+is used to show comparisons among different groups.</p>
+<p>The column chart is the same as the bar chart, except for being
+displayed vertically.</p>
+<div class="figure align-right" id="id16">
+<span id="nw-suppliers-column-chart-supplier-count-by-country"></span><a class="reference internal image-reference" href="../_images/NW_Suppliers_Column_Chart_Supplier_Count_by_Country.png"><img alt="../_images/NW_Suppliers_Column_Chart_Supplier_Count_by_Country.png" src="../_images/NW_Suppliers_Column_Chart_Supplier_Count_by_Country.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 271 </span><span class="caption-text">Column Chart Supplier Count by Country</span></p>
+</div>
+<p>For example, table
+Suppliers in Northwind database stores the list of suppliers specified
+by SupplierID together with the Country. From that data, a report such
+as comparing the number of suppliers per country would be best
+visualized using a column chart.</p>
+<ol class="arabic simple">
+<li>&#8220;Per country&#8221; means using the Group function to group data with the
+same country text value together.</li>
+<li>Then &#8220;the number of suppliers per country&#8221; means applying the Count
+function for SupplierID value within each country group. <br clear="right" /></li>
+</ol>
+<p>To configure the report like above:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Column&#8221; as the Chart Type in General Info group, two boxes
+will appear in Configuration section: &#8220;Labels (X-axis)&#8221; and &#8220;Values
+(Y-axis)&#8221;.</li>
+<li>Add the field Country into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(Country)&#8221;.</li>
+<li>Select the field in Labels box to open the Field Properties box.</li>
+<li>Check to confirm that in Data Formatting group, &#8220;Group&#8221; is selected
+for the Function.</li>
+<li>Add the field SupplierID into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Count(SupplierID)&#8221;.</li>
+<li>Select the field in Values box to open the Field Properties box.</li>
+<li>Check to confirm that in Data Formatting group, &#8220;Count&#8221; is selected
+for the Function.</li>
+</ol>
+</div>
+<div class="section" id="area-chart">
+<h2>Area Chart<a class="headerlink" href="#area-chart" title="Permalink to this headline">¶</a></h2>
+<p>An area chart displays graphically quantitative data. It is based on the
+<a class="reference internal" href="#line-chart">Line Chart</a>. The area between axis and line are
+commonly emphasized with colors, textures and hatchings. Commonly one
+compares with an area chart two or more quantities.</p>
+<p>For example, this
+area chart compares the amount of Product units in stock versus the
+amount on order.</p>
+<blockquote>
+<div><div class="figure" id="id17">
+<span id="report-chart-area-unitsinstock-unitsonorder"></span><a class="reference internal image-reference" href="../_images/Report_Chart_Area_UnitsInStock_UnitsOnOrder.png"><img alt="../_images/Report_Chart_Area_UnitsInStock_UnitsOnOrder.png" src="../_images/Report_Chart_Area_UnitsInStock_UnitsOnOrder.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 272 </span><span class="caption-text">Area Chart UnitsInStock vs UnitsOnOrder <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+<p>Another example with Range Only option.</p>
+<blockquote>
+<div><div class="figure" id="id18">
+<span id="area-chart-range-only"></span><a class="reference internal image-reference" href="../_images/Area_Chart_Range_Only.png"><img alt="../_images/Area_Chart_Range_Only.png" src="../_images/Area_Chart_Range_Only.png" style="width: 672px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 273 </span><span class="caption-text">Area Chart with Range Only option <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="pie-chart">
+<h2>Pie Chart<a class="headerlink" href="#pie-chart" title="Permalink to this headline">¶</a></h2>
+<p>A pie chart displays data in a circle, divided into slices to illustrate
+numerical proportion.</p>
+<div class="figure align-right" id="id19">
+<span id="nw-orders-pie-freight-by-country-city"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Pie_Freight_by_Country_City.png"><img alt="../_images/NW_Orders_Pie_Freight_by_Country_City.png" src="../_images/NW_Orders_Pie_Freight_by_Country_City.png" style="width: 315px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 274 </span><span class="caption-text">Pie Chart Freight by Country</span></p>
+</div>
+<p>For example, a pie chart
+will compare proportions of the freight cost among different countries. <br clear="right" /></p>
+<div class="figure align-right" id="id20">
+<span id="nw-orders-pie-freight-by-country-city-in-france"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Pie_Freight_by_Country_City_in_France.png"><img alt="../_images/NW_Orders_Pie_Freight_by_Country_City_in_France.png" src="../_images/NW_Orders_Pie_Freight_by_Country_City_in_France.png" style="width: 315px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 275 </span><span class="caption-text">Pie Chart Freight by City in France</span></p>
+</div>
+<p>This pie chart also
+drills down data to freight cost among different cities in a selected
+country. <br clear="right" /></p>
+<p>To configure the report like that:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Pie&#8221; as the Chart Type in General Info group, two boxes will
+appear in Configuration section: &#8220;Labels (X-axis)&#8221; and &#8220;Values
+(Y-axis)&#8221;.</li>
+<li>Add the field ShipCountry into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(ShipCountry)&#8221; (Group
+function is used as expected).</li>
+<li>Add the field ShipCity into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(ShipCity)&#8221; (Group function
+is used as expected).</li>
+<li>Add the field Freight into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function is
+used as expected).</li>
+</ol>
+</div>
+<div class="section" id="funnel-chart">
+<h2>Funnel Chart<a class="headerlink" href="#funnel-chart" title="Permalink to this headline">¶</a></h2>
+<p>A funnel chart displays values as progressively decreasing proportions.
+Ideally the funnel chart shows a process that starts at 100% and ends
+with a lower percentage where it is noticeable in what stages the fall
+out happens and at what rate - the funnel chart illustrates where the
+biggest bottlenecks are in the process.</p>
+<p>Data like this sales pipeline data is best displayed using the funnel
+chart:</p>
+<div class="figure align-right" id="id21">
+<span id="salespipeline-funnel"></span><a class="reference internal image-reference" href="../_images/SalesPipeline_Funnel.png"><img alt="../_images/SalesPipeline_Funnel.png" src="../_images/SalesPipeline_Funnel.png" style="width: 218px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 276 </span><span class="caption-text">Funnel Chart</span></p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="62%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Stage</strong></td>
+<td><strong>Amount</strong></td>
+</tr>
+<tr class="row-even"><td>Prospects</td>
+<td>500</td>
+</tr>
+<tr class="row-odd"><td>Qualified prospects</td>
+<td>400</td>
+</tr>
+<tr class="row-even"><td>Needs analysis</td>
+<td>200</td>
+</tr>
+<tr class="row-odd"><td>Price quotes</td>
+<td>150</td>
+</tr>
+<tr class="row-even"><td>Negotiations</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>Closed sales</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<p><br clear="right" /></p>
+</div>
+<div class="section" id="donut-chart">
+<h2>Donut Chart<a class="headerlink" href="#donut-chart" title="Permalink to this headline">¶</a></h2>
+<p>Donut Chart displays data in a ring, divided into slices to illustrate
+numerical proportion.</p>
+<p>See also: <a class="reference external" href="#Pie_Chart">Pie Chart</a></p>
+</div>
+<div class="section" id="combination-chart">
+<h2>Combination Chart<a class="headerlink" href="#combination-chart" title="Permalink to this headline">¶</a></h2>
+<p>A combination chart allows combining multiple charts of different types
+together in a same report part.</p>
+<ul>
+<li><p class="first">Comparison between Sales with and without Discount</p>
+<div class="figure" id="id22">
+<span id="nw-order-details-combination-sales-and-discountsales"></span><a class="reference internal image-reference" href="../_images/NW_Order_Details_Combination_Sales_and_DiscountSales.png"><img alt="../_images/NW_Order_Details_Combination_Sales_and_DiscountSales.png" src="../_images/NW_Order_Details_Combination_Sales_and_DiscountSales.png" style="width: 434px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 277 </span><span class="caption-text">Bar Charts Order Details Sales and DiscountSales <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Relationship
+between ServiceTime and Sales</p>
+<div class="figure" id="id23">
+<span id="servicetimesales-combination-chart"></span><a class="reference internal image-reference" href="../_images/ServiceTimeSales_Combination_Chart.png"><img alt="../_images/ServiceTimeSales_Combination_Chart.png" src="../_images/ServiceTimeSales_Combination_Chart.png" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 278 </span><span class="caption-text">Relationship between ServiceTime and Sales <br clear="right" /></span></p>
+</div>
+</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="45%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Id</strong></td>
+<td><strong>ServiceTime</strong></td>
+<td><strong>Sales</strong></td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>150</td>
+<td>200</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>80</td>
+<td>930</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>30</td>
+<td>1370</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>10</td>
+<td>1504</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="tree-map-chart">
+<h2>Tree Map Chart<a class="headerlink" href="#tree-map-chart" title="Permalink to this headline">¶</a></h2>
+<p>Tree Map displays data as a set of rectangles. It is good for comparing
+proportions and spotting patterns. It can also display a large amount of
+items on the screen simultaneously.</p>
+<p>A Tree Map
+comparing Products by their Units in Stock.</p>
+<blockquote>
+<div><div class="figure" id="id24">
+<span id="report-part-tree-map"></span><a class="reference internal image-reference" href="../_images/Report_Part_Tree_Map.png"><img alt="../_images/Report_Part_Tree_Map.png" src="../_images/Report_Part_Tree_Map.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 279 </span><span class="caption-text">Tree Map Chart Product Units in Stock <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+<p>To configure the report like that:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Tree Map&#8221; as the Chart Type in General Info group, two boxes
+will appear in Configuration section: &#8220;Labels (X-axis)&#8221; and &#8220;Values
+(Y-axis)&#8221;.</li>
+<li>Add the field ProductName into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(ProductName)&#8221; (Group
+function is used as expected).</li>
+<li>Add the field UnitsInStock into Values box (drag the field from
+Middle Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(UnitsInStock)&#8221; (Sum function
+is used as expected).</li>
+<li>Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</li>
+<li>In Data group, tick Show Value Labels and Show Slice Labels.</li>
+</ol>
+</div>
+<div class="section" id="heat-map-chart">
+<h2>Heat Map Chart<a class="headerlink" href="#heat-map-chart" title="Permalink to this headline">¶</a></h2>
+<p>Heat Map displays values in a matrix, with larger values represented by
+darker colors.</p>
+<p>A Heat Map
+comparing Freights by Year and Country.</p>
+<blockquote>
+<div><div class="figure" id="id25">
+<span id="report-heat-map"></span><a class="reference internal image-reference" href="../_images/Report_Heat_Map.png"><img alt="../_images/Report_Heat_Map.png" src="../_images/Report_Heat_Map.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 280 </span><span class="caption-text">Heat Map Chart Freight by Year and Country <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+<p>To configure the report like that:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Heat Map&#8221; as the Chart Type in General Info group, three
+boxes will appear in Configuration section: &#8220;Labels (X-axis)&#8221;,
+&#8220;Values (Y-axis)&#8221; and &#8220;Value Label&#8221;.</li>
+<li>Add the field OrderDate into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(OrderDate)&#8221;, Group as
+Function and Year as Format in Field Properties.</li>
+<li>Add the field ShipCountry into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(ShipCountry)&#8221; (Group
+function is used as expected).</li>
+<li>Add the field Freight into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function is
+used as expected).</li>
+<li>Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</li>
+<li>Click the gear icon next to Settings in Legends group to open Legend
+Settings pop-up.</li>
+<li>Tick Visible check-box to show the legend.</li>
+<li>Click OK to close the pop-up.</li>
+<li>In Data group, tick Show Value Labels.</li>
+</ol>
+</div>
+<div class="section" id="scatter-chart">
+<h2>Scatter Chart<a class="headerlink" href="#scatter-chart" title="Permalink to this headline">¶</a></h2>
+<p>A scatter chart displays data as data points, at the intersection of an
+x and a y numerical value. For a scatter chart, both horizontal and
+vertical axis are value axis, there is no category axis like the line
+chart.</p>
+<div class="figure" id="id26">
+<span id="nw-orders-report-chart-scatter"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Report_Chart_Scatter.png"><img alt="../_images/NW_Orders_Report_Chart_Scatter.png" src="../_images/NW_Orders_Report_Chart_Scatter.png" style="width: 767px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 281 </span><span class="caption-text">Scatter Chart Showing Number of Orders and Total Freight by Country <br clear="right" /></span></p>
+</div>
+<p>Above is a sample Scatter Chart Showing Number of Orders and Total
+Freight by Country.</p>
+<ul class="simple">
+<li>The countries that appear further on the right have more orders.</li>
+<li>The countries that appear higher on the chart have more total
+freight.</li>
+</ul>
+<p>To configure the report like that:</p>
+<ol class="arabic">
+<li><p class="first">Select &#8220;Scatter&#8221; as the Chart Type in General Info group, three boxes
+will appear in Configuration section: &#8220;Labels (X-axis)&#8221;, &#8220;Values
+(Y-axis)&#8221; and &#8220;Value Label&#8221;.</p>
+<blockquote>
+<div><p>For this chart, the numerical fields will be added before the
+categories/labels.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Add the field OrderID into Labels box (drag the field from Middle
+Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Sum(OrderID)&#8221; (not the Count
+function as expected).</p>
+</li>
+<li><p class="first">Click on the field &#8220;Sum(OrderID)&#8221; in Labels box to open Field
+Properties box.</p>
+</li>
+<li><p class="first">Select Count as the Function in Data Formatting group, the field is
+now given the alias &#8220;Count(OrderID)&#8221;.</p>
+</li>
+<li><p class="first">Add the field Freight into Values (Y-axis) box (drag the field from
+Middle Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function is
+used as expected).</p>
+</li>
+<li><p class="first">Add the field ShipCountry into Value Label box (drag the field from
+Middle Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Group(ShipCountry)&#8221; (Group
+function is used as expected).</p>
+</li>
+<li><p class="first">Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</p>
+</li>
+<li><p class="first">In Data group, tick Show Value Labels check-box.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="bubble-chart">
+<h2>Bubble Chart<a class="headerlink" href="#bubble-chart" title="Permalink to this headline">¶</a></h2>
+<p>Bubble chart is a variation of scatter chart in which the data points
+are replaced with bubbles, and the size of the bubbles represents an
+additional dimension of the data.</p>
+<div class="figure" id="id27">
+<span id="nw-orders-report-chart-bubble"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Report_Chart_Bubble.png"><img alt="../_images/NW_Orders_Report_Chart_Bubble.png" src="../_images/NW_Orders_Report_Chart_Bubble.png" style="width: 767px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 282 </span><span class="caption-text">Bubble Chart Showing Number of Orders and Total Freight by Country <br clear="right" /></span></p>
+</div>
+<p>Above is a sample Bubble Chart Showing Number of Orders and Total
+Freight by Country.</p>
+<ul class="simple">
+<li>The countries that appear further on the right have more orders.</li>
+<li>The countries that appear higher on the chart have more total
+freight.</li>
+<li>The countries in bigger bubbles have more cities being shipped to.</li>
+</ul>
+<p>To configure the report like that:</p>
+<ol class="arabic">
+<li><p class="first">Select &#8220;Bubble&#8221; as the Chart Type in General Info group, four boxes
+will appear in Configuration section: &#8220;Labels (X-axis)&#8221;, &#8220;Values
+(Y-axis)&#8221;, &#8220;Value Label&#8221; and &#8220;Bubble Size&#8221;.</p>
+<blockquote>
+<div><p>For this chart, the numerical fields will be added before the
+categories/labels.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Add the field OrderID into Labels box (drag the field from Middle
+Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Sum(OrderID)&#8221; (not the Count
+function as expected).</p>
+</li>
+<li><p class="first">Click on the field &#8220;Sum(OrderID)&#8221; in Labels box to open Field
+Properties box.</p>
+</li>
+<li><p class="first">Select Count as the Function in Data Formatting group, the field is
+now given the alias &#8220;Count(OrderID)&#8221;.</p>
+</li>
+<li><p class="first">Add the field Freight into Values (Y-axis) box (drag the field from
+Middle Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function is
+used as expected).</p>
+</li>
+<li><p class="first">Add the field ShipCountry into Value Label box (drag the field from
+Middle Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Group(ShipCountry)&#8221; (Group
+function is used as expected).</p>
+</li>
+<li><p class="first">Add the field ShipCity into Bubble Size box (drag the field from
+Middle Panel or use the Add icon +).</p>
+</li>
+<li><p class="first">The field will be given the alias &#8220;Count(ShipCity)&#8221; (not the Count
+Distinct function as expected).</p>
+</li>
+<li><p class="first">Click on the field &#8220;Count(ShipCity)&#8221; in Bubble Size box to open Field
+Properties box.</p>
+</li>
+<li><p class="first">Select Count Distinct as the Function in Data Formatting group, the
+field is now given the alias &#8220;Count Distinct(ShipCity)&#8221;.</p>
+</li>
+<li><p class="first">Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</p>
+</li>
+<li><p class="first">In Data group, tick Show Value Labels check-box.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="waterfall-chart">
+<h2>Waterfall Chart<a class="headerlink" href="#waterfall-chart" title="Permalink to this headline">¶</a></h2>
+<p>A waterfall chart shows a running total as values are added or
+subtracted. It&#8217;s useful for understanding how an initial value is
+affected by a series of positive and negative values.</p>
+<div class="figure" id="id28">
+<span id="report-chart-waterfall"></span><a class="reference internal image-reference" href="../_images/Report_Chart_Waterfall.png"><img alt="../_images/Report_Chart_Waterfall.png" src="../_images/Report_Chart_Waterfall.png" style="width: 762px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 283 </span><span class="caption-text">Waterfall Chart Showing Running Sales by Year <br clear="right" /></span></p>
+</div>
+<p>Sample
+report on Northwind database, &#8220;Summary of Sales by Year&#8221; view showing
+running sales by year.</p>
+<p>To configure the report like that:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Waterfall&#8221; as the Chart Type in General Info group, three
+boxes will appear in Configuration section: &#8220;Labels (X-axis)&#8221;,
+&#8220;Values (Y-axis)&#8221; and &#8220;Total Label&#8221;.</li>
+<li>Add the field ShippedDate into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(ShippedDate)&#8221; (Group
+function and Year format are used as expected).</li>
+<li>Add the field Subtotal into Values box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(Subtotal)&#8221; (Sum function is
+used as expected).</li>
+<li>Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</li>
+<li>In Data group, tick Show Value Labels check-box.</li>
+</ol>
+</div>
+<div class="section" id="sparkline-chart">
+<h2>Sparkline Chart<a class="headerlink" href="#sparkline-chart" title="Permalink to this headline">¶</a></h2>
+<p>Sparkline is a tiny chart, usually drawn without axis and labels. It
+provides a visual representation of data in a simple and compact way. It
+is most commonly used as embedded report.</p>
+<div class="figure" id="id29">
+<span id="report-chart-sparkline"></span><a class="reference internal image-reference" href="../_images/Report_Chart_Sparkline.png"><img alt="../_images/Report_Chart_Sparkline.png" src="../_images/Report_Chart_Sparkline.png" style="width: 781px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 284 </span><span class="caption-text">Sparkline Chart Showing Total Freight and Number of Orders by Year <br clear="right" /></span></p>
+</div>
+<p>Sample sparkline chart comparing the related total freight and
+number of orders by year.</p>
+<p>To configure the report like that:</p>
+<ol class="arabic simple">
+<li>Select &#8220;Sparkline&#8221; as the Chart Type in General Info group, two boxes
+will appear in Configuration section: &#8220;Intervals (X-axis)&#8221; and
+&#8220;Values (Y-axis)&#8221;.</li>
+<li>Add the field OrderDate into Labels box (drag the field from Middle
+Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Group(OrderDate)&#8221; (Group function
+and Year format are used as expected).</li>
+<li>Add the field Freight into Metric 1 Value box (drag the field from
+Middle Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function is
+used as expected).</li>
+<li>Select Line as the Chart Type.</li>
+<li>Click the Add Metrics at the end to add another Metric.</li>
+<li>Add the field OrderID into Metric 2 Value box (drag the field from
+Middle Panel or use the Add icon +).</li>
+<li>The field will be given the alias &#8220;Sum(OrderID)&#8221; (not the Count
+function as expected).</li>
+<li>Click on the field &#8220;Sum(OrderID)&#8221; to open Field Properties box.</li>
+<li>Select Count as the Function in Data Formatting group, the field is
+now given the alias &#8220;Count(OrderID)&#8221;.</li>
+<li>Select Line as the Chart Type.</li>
+<li>Click the Report Part&#8217;s header to open Report Part Properties panel
+again.</li>
+</ol>
+<p>To be updated: screenshot of sparkline chart embedded inside a grid.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_report_designer_gauge.html" class="btn btn-neutral float-right" title="Report Designer/Gauge" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_report_designer_grid.html" class="btn btn-neutral" title="Report Designer/Grid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

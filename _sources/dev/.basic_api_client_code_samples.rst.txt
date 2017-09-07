@@ -1,0 +1,11 @@
+================================
+Basic API Client Code Samples
+================================
+
+.. toctree::
+   :maxdepth: 2
+
+   code_rest_api_test
+   code_react_manage_a_scalar_value
+   code_react_manage_the_list_of_categories
+   code_react_toggle_the_list_of_visible_data_sources

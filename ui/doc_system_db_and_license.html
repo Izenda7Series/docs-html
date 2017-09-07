@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System DB and License &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Connection String" href="doc_connection_string.html"/>
+        <link rel="prev" title="System Setup Guide" href=".system_setup_guide.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">System DB and License</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#clean-install-preparations">Clean-install Preparations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-system-database">Install the System Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validate-and-store-the-license">Validate and Store the License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#system-mode-settings">System Mode Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-map-data">Import Map Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-the-license">Modify the License</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-new-system-database">Select new System Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notifications">Notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#email-support">Email Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>System DB and License</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_system_db_and_license.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-db-and-license">
+<h1>System DB and License<a class="headerlink" href="#system-db-and-license" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>System DB and License</strong> page allows user (admin) to</p>
+<ul class="simple">
+<li>install to a target database</li>
+<li>validate and store the license inside that database</li>
+<li>renew the license or activate new modules.</li>
+</ul>
+<div class="section" id="clean-install-preparations">
+<h2>Clean-install Preparations<a class="headerlink" href="#clean-install-preparations" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">A database server with an empty database already created - this would
+become the Izenda system database. Supported database servers
+include:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>Oracle</li>
+<li>MySQL</li>
+<li>Microsoft SQL Server</li>
+</ul>
+</td><td><ul class="simple">
+<li>PostgreSQL</li>
+<li>Microsoft Azure SQL Database</li>
+</ul>
+</td></tr></table>
+</li>
+<li><p class="first">An Izenda license key - <a class="reference external" href="mailto:sales&#37;&#52;&#48;izenda&#46;com?Subject=Izenda%20Trial">email
+sales<span>&#64;</span>izenda<span>&#46;</span>com</a>
+for a trial license.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="install-the-system-database">
+<h2>Install the System Database<a class="headerlink" href="#install-the-system-database" title="Permalink to this headline">¶</a></h2>
+<p>The first section is to input, verify and save the database connection
+information.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id2">
+<span id="system-db-license"></span><a class="reference internal image-reference" href="../_images/System_DB_&amp;_License.jpg"><img alt="../_images/System_DB_&amp;_License.jpg" src="../_images/System_DB_&amp;_License.jpg" style="width: 483px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">System DB &amp; License</span></p>
+</div>
+<p>In browser, log in to Izenda as an Admin.</p>
+</li>
+<li><p class="first">Click System DB &amp; License in the left menu. (<a class="reference internal" href="#system-db-license"><span class="std std-numref">Fig. 62</span></a>) <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id3">
+<span id="select-database-server-type"></span><a class="reference internal image-reference" href="../_images/Select_Database_Server_Type.jpg"><img alt="../_images/Select_Database_Server_Type.jpg" src="../_images/Select_Database_Server_Type.jpg" style="width: 379px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">Select Database Server Type</span></p>
+</div>
+<p>Select database server type from the dropdown box. (<a class="reference internal" href="#select-database-server-type"><span class="std std-numref">Fig. 63</span></a>)</p>
+<blockquote>
+<div><p>All major database servers are already supported. <br clear="right" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Click the Connection Builder icon (⚡) to help build the connection string easily. (<a class="reference internal" href="#connection-builder-link"><span class="std std-numref">Fig. 64</span></a>)</p>
+<div class="figure" id="id4">
+<span id="connection-builder-link"></span><a class="reference internal image-reference" href="../_images/Connection_Builder_link.jpg"><img alt="../_images/Connection_Builder_link.jpg" src="../_images/Connection_Builder_link.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">Click Connection Builder icon</span></p>
+</div>
+<div class="figure align-right" id="id5">
+<span id="connection-builder"></span><a class="reference internal image-reference" href="../_images/Connection_Builder.jpg"><img alt="../_images/Connection_Builder.jpg" src="../_images/Connection_Builder.jpg" style="width: 458px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">Connection Builder</span></p>
+</div>
+<p>The Connection Builder. (<a class="reference internal" href="#connection-builder"><span class="std std-numref">Fig. 65</span></a>)</p>
+<p>This step can be bypassed when user already knows the connection
+string. In this case, it can be copied and pasted straight into the
+Connection String box. <br clear="right" /></p>
+</li>
+<li><p class="first">Click the Connect button to test database connection and all
+necessary permissions for Izenda to work.</p>
+<p>The Connection String box will be highlighted while the database is being set up for first use.</p>
+<div class="figure" id="id6">
+<span id="connection-string-highlighted"></span><a class="reference internal image-reference" href="../_images/Connection_String_highlighted.jpg"><img alt="../_images/Connection_String_highlighted.jpg" src="../_images/Connection_String_highlighted.jpg" style="width: 810px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">Connection String highlighted</span></p>
+</div>
+</li>
+<li><p class="first">After the connection string has been verified successfully, it will be saved and user can move next to the License section.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unless the Connection String has been verified successfully, user will not be able to perform any further action.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="validate-and-store-the-license">
+<span id="id1"></span><h2>Validate and Store the License<a class="headerlink" href="#validate-and-store-the-license" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp; In this section user will input, validate and save the license.</p>
+<ol class="arabic">
+<li><p class="first">Click the Offline/Online switch to specify the license mode. (<a class="reference internal" href="#offline"><span class="std std-numref">Fig. 67</span></a> and <a class="reference internal" href="#online"><span class="std std-numref">Fig. 68</span></a>)</p>
+<div class="figure" id="id7">
+<span id="offline"></span><img alt="../_images/Offline.jpg" src="../_images/Offline.jpg" />
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">Offline mode</span></p>
+</div>
+<div class="figure" id="id8">
+<span id="online"></span><img alt="../_images/Online.jpg" src="../_images/Online.jpg" />
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">Online mode</span></p>
+</div>
+</li>
+<li><p class="first">Enter the license.</p>
+<ul class="simple">
+<li>For Offline mode user needs to enter the license key and token.</li>
+<li>For Online mode user needs to enter the license key.</li>
+</ul>
+</li>
+<li><p class="first">Click Validate.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Online mode, another connection will be initiated to Izenda License Server for key validation.</p>
+</div>
+</li>
+<li><p class="first">Upon successful validation, the license will be automatically saved in the database. The license details will also be displayed in the License Information section for review. (<a class="reference internal" href="#license-information"><span class="std std-numref">Fig. 69</span></a>)</p>
+<div class="figure" id="id9">
+<span id="license-information"></span><a class="reference internal image-reference" href="../_images/License_Information.jpg"><img alt="../_images/License_Information.jpg" src="../_images/License_Information.jpg" style="width: 810px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">License Information section</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="system-mode-settings">
+<h2>System Mode Settings<a class="headerlink" href="#system-mode-settings" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select to use multi-tenant mode or not.</p>
+<blockquote>
+<div><p>This mode allows multiple clients on the same Izenda system.</p>
+<div class="figure" id="id10">
+<span id="system-mode"></span><a class="reference internal image-reference" href="../_images/System_Mode.png"><img alt="../_images/System_Mode.png" src="../_images/System_Mode.png" style="width: 654px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">System Mode</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">If using multi-tenant mode, select to allow duplicated user id among
+different tenants or not.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="import-map-data">
+<h2>Import Map Data<a class="headerlink" href="#import-map-data" title="Permalink to this headline">¶</a></h2>
+<p>Optionally provision Map data. This is only needed if the report part
+type <a class="reference internal" href="doc_report_designer_map.html"><span class="doc">Map</span></a> is to be used in reports and dashboards.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Izenda Map data contains all countries and all US and Canada cities and will take several minutes to be fully set up.</p>
+</div>
+</div>
+<div class="section" id="modify-the-license">
+<h2>Modify the License<a class="headerlink" href="#modify-the-license" title="Permalink to this headline">¶</a></h2>
+<p>&nbsp; The Database Connection and License Entry page allows modifying the
+license to either renew it or activate new modules.</p>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as an Admin.</p>
+</li>
+<li><p class="first">Click System DB &amp; License in the left menu.</p>
+</li>
+<li><p class="first">Note the current license details in License Information section.</p>
+</li>
+<li><p class="first">Click the Offline/Online switch to specify the license mode.</p>
+</li>
+<li><p class="first">Enter the license.</p>
+<ul class="simple">
+<li>For Offline mode user needs to enter the new license key and
+token.</li>
+<li>For Online mode user needs to enter the new license key.</li>
+</ul>
+</li>
+<li><p class="first">Click Validate.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Online mode, another connection will be initiated to Izenda License Server for key validation.</p>
+</div>
+</li>
+<li><p class="first">Upon successful validation, the new license will be automatically saved in the database.</p>
+</li>
+<li><p class="first">Please review the new license details in License Information section. (<a class="reference internal" href="#license-next"><span class="std std-numref">Fig. 71</span></a>)</p>
+<div class="figure" id="id11">
+<span id="license-next"></span><a class="reference internal image-reference" href="../_images/License_Next.jpg"><img alt="../_images/License_Next.jpg" src="../_images/License_Next.jpg" style="width: 796px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">New License Information</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="select-new-system-database">
+<h2>Select new System Database<a class="headerlink" href="#select-new-system-database" title="Permalink to this headline">¶</a></h2>
+<p>Only select new system database if needed, since all current settings
+are not copied to the new database.</p>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as an Admin.</p>
+</li>
+<li><p class="first">Click System DB &amp; License in the left menu.</p>
+</li>
+<li><p class="first">Use the Connection Builder to build the new connection string.</p>
+</li>
+<li><p class="first">Click Connect.</p>
+</li>
+<li><p class="first">Click OK in the confirmation pop-up to acknowledge that the license
+needs to be re-validated afterwards. (<a class="reference internal" href="#systemdb-change-system-db-confirmation"><span class="std std-numref">Fig. 72</span></a>)</p>
+<div class="figure" id="id12">
+<span id="systemdb-change-system-db-confirmation"></span><a class="reference internal image-reference" href="../_images/SystemDB_Change_System_DB_Confirmation.jpg"><img alt="../_images/SystemDB_Change_System_DB_Confirmation.jpg" src="../_images/SystemDB_Change_System_DB_Confirmation.jpg" style="width: 457px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">New system database confirmation</span></p>
+</div>
+<p>If there is an error with the new database connection, the current connection continues to be used. (<a class="reference internal" href="#systemdb-change-nonexistent-system-db-confirmation"><span class="std std-numref">Fig. 73</span></a>)</p>
+<div class="figure" id="id13">
+<span id="systemdb-change-nonexistent-system-db-confirmation"></span><a class="reference internal image-reference" href="../_images/SystemDB_Change_NonExistent_System_DB_Confirmation.jpg"><img alt="../_images/SystemDB_Change_NonExistent_System_DB_Confirmation.jpg" src="../_images/SystemDB_Change_NonExistent_System_DB_Confirmation.jpg" style="width: 713px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">Invalid new connection confirmation</span></p>
+</div>
+</li>
+<li><p class="first">System will be installed to the new database.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="#id1">Validate and store the license</a> again.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="notifications">
+<h2>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nearly-expired-license-reminder">
+<h3>Nearly-expired License Reminder<a class="headerlink" href="#nearly-expired-license-reminder" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-right" id="id14">
+<span id="expired-license"></span><a class="reference internal image-reference" href="../_images/Expired_License.jpg"><img alt="../_images/Expired_License.jpg" src="../_images/Expired_License.jpg" style="width: 308px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">Near Expired License Reminder</span></p>
+</div>
+<p>User will get this reminder when the license is near expiration. (<a class="reference internal" href="#expired-license"><span class="std std-numref">Fig. 74</span></a>) <br clear="right" /></p>
+<p>User will need to request a new license, then enter and validate it in the system.</p>
+</div>
+<div class="section" id="changing-license-to-online-offline-confirmation">
+<h3>Changing License to Online/Offline Confirmation<a class="headerlink" href="#changing-license-to-online-offline-confirmation" title="Permalink to this headline">¶</a></h3>
+<p>When switching the license mode, there will be a pop-up confirmation.</p>
+<ul>
+<li><div class="figure align-right" id="id15">
+<span id="online-confirmation"></span><a class="reference internal image-reference" href="../_images/Online_confirmation.jpg"><img alt="../_images/Online_confirmation.jpg" src="../_images/Online_confirmation.jpg" style="width: 473px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">Offline to Online Confirmation</span></p>
+</div>
+<p>To Online mode (<a class="reference internal" href="#online-confirmation"><span class="std std-numref">Fig. 75</span></a>) <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id16">
+<span id="offline-confirmation"></span><a class="reference internal image-reference" href="../_images/Offline_confirmation.jpg"><img alt="../_images/Offline_confirmation.jpg" src="../_images/Offline_confirmation.jpg" style="width: 476px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Online to Offline Confirmation</span></p>
+</div>
+<p>To Offline mode (<a class="reference internal" href="#offline-confirmation"><span class="std std-numref">Fig. 76</span></a>) <br clear="right" /></p>
+</li>
+</ul>
+<p>Click OK to confirm or Cancel to keep current license mode.</p>
+</div>
+</div>
+<div class="section" id="email-support">
+<h2>Email Support<a class="headerlink" href="#email-support" title="Permalink to this headline">¶</a></h2>
+<p>Should user has any further question, he/she can quickly ask for
+assistance via email by clicking the envelope icons (✉) in Database
+Connection and License sections respectively.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_connection_string.html" class="btn btn-neutral float-right" title="Connection String" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".system_setup_guide.html" class="btn btn-neutral" title="System Setup Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

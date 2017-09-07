@@ -1,0 +1,1169 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System DB and License APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="Connection APIs" href="api_connection.html"/>
+        <link rel="prev" title="REST API Documentation" href=".rest_api_documentation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>System DB and License APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_systemdb_and_license.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-db-and-license-apis">
+<h1>System DB and License APIs<a class="headerlink" href="#system-db-and-license-apis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="35%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+<th class="head">Usage in Izenda Front-end</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#id1">GET databaseSetup/supportedDatabaseType</a></td>
+<td>Returns an array of database server types currently supported for installation. <br clear="right" />
+See also: <a class="reference internal" href="api_connection.html#get-dataadaptor"><span class="std std-ref">GET dataAdaptor</span></a></td>
+<td>Settings &gt; System DB &amp; License &gt; populate Data Server Type box</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id2">POST databaseSetup/testConnection</a></td>
+<td>Tests the database connection and license validity if existing. <br clear="right" />
+See also: <a class="reference internal" href="api_connection.html#post-connection-verify"><span class="std std-ref">POST connection/verify</span></a></td>
+<td>Settings &gt; System DB &amp; License &gt; Connect</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-databasesetup-databaseinfo">GET databaseSetup/databaseInfo</a></td>
+<td>Returns the current database server type and connection string.</td>
+<td>Settings &gt; System DB &amp; License</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-databasesetup-databaseinfo">POST databaseSetup/databaseInfo</a></td>
+<td>Sets up system database and saves the database server type and the connection string.</td>
+<td>Settings &gt; System DB &amp; License &gt; Connect</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-databasesetup-provisionstaticdata">POST databaseSetup/provisionStaticData</a></td>
+<td>Provisions static data into system database.</td>
+<td>Settings &gt; System DB &amp; License &gt; Provision Map Data</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-databasesetup-provisionstaticdatastatus">GET databaseSetup/provisionStaticDataStatus</a></td>
+<td>Returns status of provision static data.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-databasesetup-staticdata-city">POST databaseSetup/staticData/city</a></td>
+<td>Returns provision city data.</td>
+<td>Report Designer &gt; Map Report Part &gt; add Field to City box</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-databasesetup-staticdata-postalcode">POST databaseSetup/staticData/postalCode</a></td>
+<td>Returns provision postal code data.</td>
+<td>Report Designer &gt; Map Report Part &gt; add Field to Postal Code box</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-databasesetup-staticdata-countrycodes">GET databaseSetup/staticData/countryCodes</a></td>
+<td>Returns provision country code data.
+.. versionadded:: 2.0.3</td>
+<td>Report Designer &gt; Map Report Part &gt; add Field to Country box</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-systemsetting-systemmode">GET systemSetting/systemMode</a></td>
+<td>Returns the current system or tenant mode of the settings.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-systemsetting-systemmodesettings">GET systemSetting/systemModeSettings</a></td>
+<td>Returns data in System Mode Settings section.</td>
+<td>Settings &gt; System DB &amp; License</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-systemsetting-systemmodesettings">POST systemSetting/systemModeSettings</a></td>
+<td>Saves data in System Mode Settings section.</td>
+<td>Settings &gt; System DB &amp; License &gt; change an option</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-systemsetting-deploymentmode">GET systemSetting/deploymentMode</a></td>
+<td>Returns the deployment mode.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id3">GET systemSetting/systemIndicator/(tenant_id)</a></td>
+<td>Returns the number of changes in Connection String and Data Model (filtered by tenant_id if provided).</td>
+<td>Settings &gt; Data Setup &gt; Connection String</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-license-status">GET license/status</a></td>
+<td>Returns up-to-date expiration status of the license.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-license-currenttoken">GET license/currentToken</a></td>
+<td>Returns the details of the current token.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-license-validate">POST license/validate</a></td>
+<td>Validates the license for both online and offline modes, then save it in the database.</td>
+<td>Settings &gt; System DB &amp; License &gt; enter the license &gt; Validate</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-license-requesttoken">POST license/requestToken</a></td>
+<td>Returns a newly-generated token for the license key in parameter.</td>
+<td>To be updated</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="get-databasesetup-supporteddatabasetype">
+<span id="id1"></span><h2>GET databaseSetup/supportedDatabaseType<a class="headerlink" href="#get-databasesetup-supporteddatabasetype" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of database server types currently supported for installation.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/DatabaseType.html"><span class="doc">DatabaseType</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/databaseSetup/supportedDatabaseType</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;[AZSQL] AzureSQL&quot;</span><span class="p">,</span> <span class="n">shortName</span><span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;[MYSQL] MySQL&quot;</span><span class="p">,</span> <span class="n">shortName</span><span class="p">:</span> <span class="s2">&quot;MYSQL&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;3d4916d1-5a41-4b94-874f-5bedacb89656&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;[ORACL] Oracle&quot;</span><span class="p">,</span> <span class="n">shortName</span><span class="p">:</span> <span class="s2">&quot;ORACL&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;93942448-c715-4f98-85e2-9292ed7ca4bc&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;[PGSQL] PostgreSQL&quot;</span><span class="p">,</span> <span class="n">shortName</span><span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span> <span class="n">shortName</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-databasesetup-testconnection">
+<span id="id2"></span><h2>POST databaseSetup/testConnection<a class="headerlink" href="#post-databasesetup-testconnection" title="Permalink to this headline">¶</a></h2>
+<p>Tests the database connection and license validity if existing.</p>
+<p>If success, the connection string will also be saved.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ConnectionVerificationResult.html"><span class="doc">ConnectionVerificationResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/databaseSetup/testConnection</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;ServerTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot; d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot; server=host01</span><span class="se">\\</span><span class="s2">instance01;database=db01;User Id=user01;Password=secret;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case of a successful call:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;serverNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;databaseNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;loginFail&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;hasValidLicense&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case of an invalid connection string error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;serverNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;databaseNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;loginFail&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;hasValidLicense&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;The connection string is invalid. Please enter a valid one.&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-databasesetup-databaseinfo">
+<h2>GET databaseSetup/databaseInfo<a class="headerlink" href="#get-databasesetup-databaseinfo" title="Permalink to this headline">¶</a></h2>
+<p>Returns the current database server type and connection string.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/databaseSetup/databaseInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span><span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span><span class="s2">&quot;[PGSQL] PostgreSQL&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Server=izenda-w10-02;Integrated Security=true; Database=db01;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-databasesetup-databaseinfo">
+<h2>POST databaseSetup/databaseInfo<a class="headerlink" href="#post-databasesetup-databaseinfo" title="Permalink to this headline">¶</a></h2>
+<p>Sets up system database and saves the database server type and the connection string.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It will take some time to set up the system database</p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the setup is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-databasesetup-provisionstaticdata">
+<h2>POST databaseSetup/provisionStaticData<a class="headerlink" href="#post-databasesetup-provisionstaticdata" title="Permalink to this headline">¶</a></h2>
+<p>Provisions static data into system database.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>0 = Not started</li>
+<li>1 = Provisioning in progresss</li>
+<li>2 = Provision success</li>
+<li>3 = Provision error</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/databaseSetup/provisionStaticData</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-databasesetup-provisionstaticdatastatus">
+<h2>GET databaseSetup/provisionStaticDataStatus<a class="headerlink" href="#get-databasesetup-provisionstaticdatastatus" title="Permalink to this headline">¶</a></h2>
+<p>Returns status of provision static data.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>0 = Not started</li>
+<li>1 = Provisioning in progresss</li>
+<li>2 = Provision success</li>
+<li>3 = Provision error</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/databaseSetup/provisionStaticDataStatus</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-databasesetup-staticdata-city">
+<h2>POST databaseSetup/staticData/city<a class="headerlink" href="#post-databasesetup-staticdata-city" title="Permalink to this headline">¶</a></h2>
+<p>Returns provision city data.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>Payload:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>criterias</strong> <br clear="right" />
+array of strings</td>
+<td><p class="first">The fields to filter data</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>GeonameId</li>
+<li>Name</li>
+<li>AsciiName</li>
+<li>AlternateNames</li>
+<li>Latitude</li>
+<li>Longitude</li>
+<li>FeatureClass</li>
+<li>FeatureCode</li>
+<li>CountryCode</li>
+</ul>
+</td><td><ul class="simple">
+<li>Cc2</li>
+<li>Admin1Code</li>
+<li>Admin2Code</li>
+<li>Admin3Code</li>
+<li>Admin4Code</li>
+<li>Population</li>
+<li>Elevation</li>
+<li>Dem</li>
+<li>Timezone</li>
+</ul>
+</td></tr></table>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>values</strong> <br clear="right" />
+array of strings</td>
+<td>The values to filter data (using case-insensitive string equal operator), in exact same order with the fields</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/City.html"><span class="doc">City</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/databaseSetup/staticData/city</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;criterias&quot;</span><span class="p">:[],</span><span class="s2">&quot;values&quot;</span><span class="p">:[]}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-databasesetup-staticdata-postalcode">
+<h2>POST databaseSetup/staticData/postalCode<a class="headerlink" href="#post-databasesetup-staticdata-postalcode" title="Permalink to this headline">¶</a></h2>
+<p>Returns provision postal code data.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>Payload:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>criterias</strong> <br clear="right" />
+array of strings</td>
+<td><p class="first">The fields to filter data</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>PostalCode</li>
+<li>PlaceName</li>
+<li>Province</li>
+</ul>
+</td><td><ul class="simple">
+<li>Latitude</li>
+<li>Longitude</li>
+</ul>
+</td></tr></table>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>values</strong> <br clear="right" />
+array of strings</td>
+<td>The values to filter data (using case-insensitive string equal operator), in exact same order with the fields</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/PostCode.html"><span class="doc">PostCode</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/databaseSetup/staticData/postalCode</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;criterias&quot;</span><span class="p">:[],</span><span class="s2">&quot;values&quot;</span><span class="p">:[]}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-databasesetup-staticdata-countrycodes">
+<h2>GET databaseSetup/staticData/countryCodes<a class="headerlink" href="#get-databasesetup-staticdata-countrycodes" title="Permalink to this headline">¶</a></h2>
+<p>Returns provision country code data.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.3.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of the following object</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>The name of the country</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>code2</strong> <br clear="right" />
+string</td>
+<td>The ISO Alpha-2 country code</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>code3</strong> <br clear="right" />
+string</td>
+<td>The ISO Alpha-3 country code</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>continent</strong> <br clear="right" />
+string</td>
+<td>The name of the continent</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-systemmode">
+<h2>GET systemSetting/systemMode<a class="headerlink" href="#get-systemsetting-systemmode" title="Permalink to this headline">¶</a></h2>
+<p>Returns the current system or tenant mode of the settings.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>systemMode</strong> <br clear="right" />
+integer</td>
+<td><p class="first">The system mode</p>
+<ul class="last simple">
+<li>0 = Multiple tenant</li>
+<li>1 = Single tenant</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/systemMode</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;systemMode&quot;</span> <span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-systemmodesettings">
+<h2>GET systemSetting/systemModeSettings<a class="headerlink" href="#get-systemsetting-systemmodesettings" title="Permalink to this headline">¶</a></h2>
+<p>Returns data in System Mode Settings section.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>systemMode</strong> <br clear="right" />
+integer</td>
+<td><p class="first">The system mode</p>
+<ul class="last simple">
+<li>0 = Multiple tenant</li>
+<li>1 = Single tenant</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>allowDuplicateUser</strong> <br clear="right" />
+boolean</td>
+<td>Whether to allow duplicated user names in multi-tenant mode</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/systemModeSettings</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="s2">&quot;systemMode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="s2">&quot;allowDuplicateUser&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-systemsetting-systemmodesettings">
+<h2>POST systemSetting/systemModeSettings<a class="headerlink" href="#post-systemsetting-systemmodesettings" title="Permalink to this headline">¶</a></h2>
+<p>Saves data in System Mode Settings section.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>systemMode</strong> <br clear="right" />
+integer</td>
+<td><p class="first">The system mode</p>
+<ul class="last simple">
+<li>0 = Multiple tenant</li>
+<li>1 = Single tenant</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>allowDuplicateUser</strong> <br clear="right" />
+boolean</td>
+<td>Whether to allow duplicated user names in multi-tenant mode</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>success</strong> <br clear="right" />
+boolean</td>
+<td>Is the save successful</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/systemSetting/systemModeSettings</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;systemMode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;allowDuplicateUser&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-deploymentmode">
+<h2>GET systemSetting/deploymentMode<a class="headerlink" href="#get-systemsetting-deploymentmode" title="Permalink to this headline">¶</a></h2>
+<p>Returns the deployment mode.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>deploymentMode</strong> <br clear="right" />
+integer</td>
+<td><p class="first">Integration modes</p>
+<ul class="last simple">
+<li>0 = AllStandAlone</li>
+<li>1 = BEStandAloneFEIntegrated</li>
+<li>2 = BEIntegratedFEStandAlone</li>
+<li>3 = AllIntegrated</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/deploymentMode</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;deploymentMode&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-systemindicator-tenant-id">
+<span id="id3"></span><h2>GET systemSetting/systemIndicator/(tenant_id)<a class="headerlink" href="#get-systemsetting-systemindicator-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the number of changes in Connection String and Data Model (filtered by tenant_id if provided).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string</td>
+<td>Either &#8220;ConnectionString&#8221; or &#8220;DataModel&#8221;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+integer</td>
+<td>The number of changes for each type</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/systemIndicator</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+  <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;ConnectionString&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;DataModel&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-license-status">
+<h2>GET license/status<a class="headerlink" href="#get-license-status" title="Permalink to this headline">¶</a></h2>
+<p>Returns up-to-date expiration status of the license.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/LicenseStatusResult.html"><span class="doc">LicenseStatusResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/license/status</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;licenseStatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;disabled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;meetExprireWarningPeriod&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;numberOfDayToExpire&quot;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+      <span class="s2">&quot;numberOfDayToValid&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;exceedLostConnectionAllowPeriod&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;isAdminUser&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;trialLicense&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-license-currenttoken">
+<h2>GET license/currentToken<a class="headerlink" href="#get-license-currenttoken" title="Permalink to this headline">¶</a></h2>
+<p>Returns the details of the current token.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ValidateTokenResult.html"><span class="doc">ValidateTokenResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/license/currentToken</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;tokenKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+=&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;licenseKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+=&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;startDate&quot;</span><span class="p">:</span><span class="s2">&quot;2016-03-01T00:00:00&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;endDate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-03-01T23:59:59&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modules&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+           <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;256b555f-58ef-4418-be6c-048d2fc1f691&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Alerting&quot;</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;companyId&quot;</span><span class="p">:</span><span class="s2">&quot;70d1037a-401a-446b-ae10-a5bb0144c611&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;previousStartDate&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;previousEndDate&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;previousModules&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;licenseOnlineMode&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;licenseTrial&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;licenseEnable&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;licenseEndDate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-03-01T23:59:59&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;numberOfDayToValid&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span><span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-license-validate">
+<h2>POST license/validate<a class="headerlink" href="#post-license-validate" title="Permalink to this headline">¶</a></h2>
+<p>Validates the license for both online and offline modes, then save it in the database.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/TokenRequest.html"><span class="doc">TokenRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ValidateTokenResult.html"><span class="doc">ValidateTokenResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/license/validate</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>For Online mode, Request Payload includes LicenseKey only:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;LicenseKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+==&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For Offline mode, Request Payload includes both LicenseKey and TokenKey:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;LicenseKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+==&quot;</span><span class="p">,</span><span class="s2">&quot;TokenKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+=&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-license-requesttoken">
+<h2>POST license/requestToken<a class="headerlink" href="#post-license-requesttoken" title="Permalink to this headline">¶</a></h2>
+<p>Returns a newly-generated token for the license key in parameter.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/TokenRequest.html"><span class="doc">TokenRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ValidateTokenResult.html"><span class="doc">ValidateTokenResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/license/requestToken</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;LicenseKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+==&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="p">{</span>
+    <span class="s2">&quot;success&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;tokenKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+==&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;licenseKey&quot;</span><span class="p">:</span><span class="s2">&quot;1aBcD+=&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;startDate&quot;</span><span class="p">:</span><span class="s2">&quot;2016-03-01T00:00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;endDate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-03-01T23:59:59&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;modules&quot;</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;256b555f-58ef-4418-be6c-048d2fc1f691&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Alerting&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;companyId&quot;</span><span class="p">:</span><span class="s2">&quot;70d1037a-401a-446b-ae10-a5bb0144c611&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;previousStartDate&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previousEndDate&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previousModules&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;licenseOnlineMode&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;licenseTrial&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;licenseEnable&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;licenseEndDate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-03-01T23:59:59&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;numberOfDayToValid&quot;</span><span class="p">:</span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_connection.html" class="btn btn-neutral float-right" title="Connection APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".rest_api_documentation.html" class="btn btn-neutral" title="REST API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

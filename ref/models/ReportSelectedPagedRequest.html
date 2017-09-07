@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReportSelectedPagedRequest &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Request and Response" href="_request_and_response.html"/>
+        <link rel="next" title="ReportSelectedQuerySourceResult" href="ReportSelectedQuerySourceResult.html"/>
+        <link rel="prev" title="ReportRenameParameter" href="ReportRenameParameter.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_security.html">Security</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_request_and_response.html">Request and Response</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AccessPagedRequest.html">AccessPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CategoryPagedRequest.html">CategoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionResult.html">ConnectionResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionVerificationResult.html">ConnectionVerificationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardFilterFieldPagedRequest.html">DashboardFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardRenameParameter.html">DashboardRenameParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatabaseMappingPagedRequest.html">DatabaseMappingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataResult.html">DataResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenerateAccessTokenArgs.html">GenerateAccessTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LicenseStatusResult.html">LicenseStatusResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoadDashboard.html">LoadDashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModelError.html">ModelError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OperationResult.html">OperationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PagedResult.html">PagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourceFieldPagedRequest.html">QuerySourceFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourcePagedRequest.html">QuerySourcePagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelationshipPagedRequest.html">RelationshipPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReloadQuerySourceRequest.html">ReloadQuerySourceRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportCalculatedFieldParameter.html">ReportCalculatedFieldParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportDataSourceParameter.html">ReportDataSourceParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportExpressionParameter.html">ReportExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterParameter.html">ReportFilterParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterFieldPagedRequest.html">ReportFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportHistoryPagedRequest.html">ReportHistoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPagedRequest.html">ReportPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html">ReportPartValidateExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html#reportpartpreviewparameter">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRelationshipResult.html">ReportRelationshipResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRenameParameter.html">ReportRenameParameter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ReportSelectedPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedQuerySourceResult.html">ReportSelectedQuerySourceResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaRequest.html">SchemaRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaResult.html">SchemaResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SharingRoleUserParameter.html">SharingRoleUserParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscriptionPagedRequest.html">SubscriptionPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedRequest.html">SystemSchedulingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedResult.html">SystemSchedulingPagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemVariablePagedRequest.html">SystemVariablePagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TokenRequest.html">TokenRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportInput.html">UpdateSubReportInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportStatus.html">UpdateSubReportStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserPagedRequest.html">UserPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenArgs.html">ValidateTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenResult.html">ValidateTokenResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateUserRoleAssociationParam.html">ValidateUserRoleAssociationParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidationOperationResult.html">ValidationOperationResult</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_others.html">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_request_and_response.html">Request and Response</a> &raquo;</li>
+        
+      <li>ReportSelectedPagedRequest</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ref/models/ReportSelectedPagedRequest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reportselectedpagedrequest">
+<h1>ReportSelectedPagedRequest<a class="headerlink" href="#reportselectedpagedrequest" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="60%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>querySources</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="ReportSelectedQuerySource.html"><span class="doc">ReportSelectedQuerySource</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>categoryId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the category if available</td>
+<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>subCategoryId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the sub-category if available</td>
+<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>timestampOffset</strong> <br clear="right" />
+real number</td>
+<td>&#160;</td>
+<td>The timestamp offset. See <a class="reference internal" href="../../ui/doc_user_setup.html"><span class="doc">User Setup</span></a>.</td>
+<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+</tr>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+<div class="section" id="pagedrequest">
+<h2>PagedRequest<a class="headerlink" href="#pagedrequest" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="60%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>criteria</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="SearchCriteria.html"><span class="doc">SearchCriteria</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>sortOrders</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="SortOrder.html"><span class="doc">SortOrder</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>parentIds</strong> <br clear="right" />
+array of strings (GUIDs)</td>
+<td>&#160;</td>
+<td>Ids of the parents</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>pageIndex</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The index of the page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>pageSize</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The size of the page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>total</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The total number of rows</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>skipItems</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>Skip items</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>isLastPage</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether this is the last page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>PagedRequest Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nt">&quot;sortOrders&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;shareWith&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;descending&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>ReportSelectedPagedRequest Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;39e2a9b9-3be3-4b8b-ae86-0823ecb3c533&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span>
+   <span class="p">}],</span>
+  <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;criteria&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nt">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ReportSelectedQuerySourceResult.html" class="btn btn-neutral float-right" title="ReportSelectedQuerySourceResult" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ReportRenameParameter.html" class="btn btn-neutral" title="ReportRenameParameter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

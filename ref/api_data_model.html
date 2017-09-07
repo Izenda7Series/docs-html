@@ -1,0 +1,2217 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Model APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="Tenant APIs" href="api_tenant.html"/>
+        <link rel="prev" title="Connection APIs" href="api_connection.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>Data Model APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_data_model.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-model-apis">
+<h1>Data Model APIs<a class="headerlink" href="#data-model-apis" title="Permalink to this headline">¶</a></h1>
+<p>The &#8216;&#8217;&#8216;Data Model&#8217;&#8216;&#8217; section allows user to</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>manage data sources and data source fields</li>
+<li>add computed columns</li>
+</ul>
+</td><td><ul class="simple">
+<li>delete columns</li>
+<li>manage relationships</li>
+</ul>
+</td></tr></table>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#id1">POST dataModel/loadQuerySources</a></td>
+<td>Returns an array of visible query sources, paged and sorted, filtered by type and other search criteria.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id2">POST dataModel/loadQuerySourceFields</a></td>
+<td>Returns an array of query source fields in a query source. <br clear="right" /> <br clear="right" />
+Will load from remote connection if they are not yet populated in system.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicconnectionsinfo-tenant-id">GET dataModel/basicConnectionsInfo/(tenant_id)</a></td>
+<td><p class="first">Returns an array of id and name of connections (filtered by tenant_id if given).</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same as <a class="reference internal" href="api_connection.html#get-connection-basicinfo-tenant-id"><span class="std std-ref">GET connection/basicInfo/(tenant_id)</span></a></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-basicconnectionsinfo">POST dataModel/basicConnectionsInfo</a></td>
+<td>Returns an array of connections infor with paging.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id">GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}</a></td>
+<td><p class="first">Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> in the specified connection.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.0.3.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-basicquerysourcesinfo-connection-id-type">GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)</a></td>
+<td>Returns an array of id and name of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-querysourcesinfo-connection-id-type">GET dataModel/querySourcesInfo/{connection_id}/(type)</a></td>
+<td>Returns an array of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-datamodel-querysourcefield-query-source-field-id">DELETE dataModel/querySourceField/{query_source_field_id}</a></td>
+<td>Removes a query source field from data model.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcefieldsinfo-query-source-id">GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}</a></td>
+<td>Returns an array of id and name of the query source fields in the query source specified by the {query_source_id} value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id3">POST dataModel</a></td>
+<td>Saves a list of query sources.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-indicator-tenant-id">GET dataModel/indicator/(tenant_id)</a></td>
+<td>Returns the number of physical changes in Data Model for each type Table, View, Stored procedure and Function, filtered by tenant_id if provided.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-reloadquerysourcefields">POST dataModel/reloadQuerySourceFields</a></td>
+<td>Returns the schema of stored procedures after using user-supplied parameters to try running them.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-validatecalculatedfield">POST dataModel/validateCalculatedField</a></td>
+<td>Validates a calculated field for duplicated name before saving.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-functionoperators-tenant-id">GET dataModel/functionOperators/(tenant_id)</a></td>
+<td>Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loadrelationships">POST dataModel/loadRelationships</a></td>
+<td>Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-relationships">POST dataModel/relationships</a></td>
+<td>Saves an array of relationships. <br clear="right" /> <br clear="right" />
+After adding a new relationship, <a class="reference internal" href="#post-datamodel-loadrelationships">POST DataModel/loadRelationships</a> should be called to retrieve the new id value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></td>
+<td>Deletes the relationship specified by the {relationship_id} value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></td>
+<td>Returns an array of query sources and an array of relationships with color properties (filtered by tenant_id if given).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></td>
+<td>Updates the connection color.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></td>
+<td>Returns an array of join types currently supported.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></td>
+<td>Returns an array of database mappings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></td>
+<td>Saves an array of database mappings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></td>
+<td>Returns a paged array of database servers and database names.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></td>
+<td>Returns a paged array of connection names or schema names in the specified database.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></td>
+<td>Executes and saves a custom query source.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></td>
+<td>Validates that name of custom query source is unique.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></td>
+<td>Deletes a custom query source.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></td>
+<td>Returns the query source specified by query_source_id.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="post-datamodel-loadquerysources">
+<span id="id1"></span><h2>POST dataModel/loadQuerySources<a class="headerlink" href="#post-datamodel-loadquerysources" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of visible query sources, paged and sorted, filtered by type and other search criteria.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/QuerySourcePagedRequest.html"><span class="doc">QuerySourcePagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySources</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;criteria&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;DataSourceName&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;demo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;operation&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;descending&quot;</span> <span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;result&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;24fa8fec-afe0-489d-b036-aaca514a7a0b&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo.CustomerDemographics&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;48733501-c57d-48ca-aded-501d5ebdaad9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;feb74cd9-bc6d-4933-bf72-296b394d0f77&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cat_Customer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cus_D&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;total&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-loadquerysourcefields">
+<span id="id2"></span><h2>POST dataModel/loadQuerySourceFields<a class="headerlink" href="#post-datamodel-loadquerysourcefields" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of query source fields in a query source. <br clear="right" /> <br clear="right" />
+Will load from remote connection if they are not yet populated in system.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/QuerySourceFieldPagedRequest.html"><span class="doc">QuerySourceFieldPagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;querySource&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fa90af2-5329-44ac-a753-50c27f9d6fd5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;criteria&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Alias&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;descending&quot;</span> <span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;04ff2dc5-df20-48e3-bae8-443b400b0b89&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerTypeID&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;CTypeID&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;nchar&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;filterable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;9fa90af2-5329-44ac-a753-50c27f9d6fd5&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;parentId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;children&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-04-07T04:51:17&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;filteredValue&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">PrimaryKey</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;existed&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;matchedTenant&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">}],</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-basicconnectionsinfo-tenant-id">
+<h2>GET dataModel/basicConnectionsInfo/(tenant_id)<a class="headerlink" href="#get-datamodel-basicconnectionsinfo-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of id and name of connections (filtered by tenant_id if given).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same as <a class="reference internal" href="api_connection.html#get-connection-basicinfo-tenant-id"><span class="std std-ref">GET connection/basicInfo/(tenant_id)</span></a></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of objects with two fields <strong>key</strong> and <strong>value</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the connection</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+string</td>
+<td>The name of the connection</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;48733501-c57d-48ca-aded-501d5ebdaad9&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-basicconnectionsinfo">
+<h2>POST dataModel/basicConnectionsInfo<a class="headerlink" href="#post-datamodel-basicconnectionsinfo" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of connections infor with paging.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.4.0.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The same as <a class="reference internal" href="api_connection.html#get-connection-basicinfo-tenant-id"><span class="std std-ref">GET connection/basicInfo/(tenant_id)</span></a></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>An array of objects with two fields <strong>key</strong> and <strong>value</strong></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the connection</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+string</td>
+<td>The name of the connection</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>A <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="p">[{</span>
+    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;48733501-c57d-48ca-aded-501d5ebdaad9&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;ed13d1d0-cc0c-49bc-8925-3a11da65ef65&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;MVC5-ViTest&quot;</span><span class="p">,</span>
+  <span class="p">}],</span>
+  <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+  <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-basicquerysourcecategoriesinfo-connection-id">
+<h2>GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}<a class="headerlink" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> in the specified connection.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.3.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-basicquerysourcecategoriesinfo">
+<h2>POST dataModel/basicQuerySourceCategoriesInfo/<a class="headerlink" href="#post-datamodel-basicquerysourcecategoriesinfo" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> with paging.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.4.0.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/QuerySourceCategoryPagedRequest.html"><span class="doc">QuerySourceCategoryPagedRequest</span></a> object.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-basicquerysourcesinfo-connection-id-type">
+<h2>GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)<a class="headerlink" href="#get-datamodel-basicquerysourcesinfo-connection-id-type" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of id and name of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>No payload</p>
+<p><strong>type</strong> values:</p>
+<ul class="simple">
+<li>Table</li>
+<li>View</li>
+<li>Stored%20Procedure</li>
+</ul>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of objects with two fields <strong>key</strong> and <strong>value</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the query source</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+string</td>
+<td>The name of the query source, qualified with the schema name</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourcesInfo/48733501-c57d-48ca-aded-501d5ebdaad9</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Suppliers&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;42f7c4ff-f44e-4460-bd50-10540d99a276&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Order Details&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-querysourcesinfo-connection-id-type">
+<h2>GET dataModel/querySourcesInfo/{connection_id}/(type)<a class="headerlink" href="#get-datamodel-querysourcesinfo-connection-id-type" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>No payload</p>
+<p><strong>type</strong> values:</p>
+<ul class="simple">
+<li>Table</li>
+<li>View</li>
+<li>Stored%20Procedure</li>
+</ul>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/QuerySourceInfo.html"><span class="doc">QuerySourceInfo</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/querySourcesInfo/5e8e56ce-ac29-48cf-ae0d-56cb5d9a935e/Table</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;77882ea1-6d82-45c2-b762-6c8612682b91&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Categories&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;connectionStringId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;55329213-9db0-4835-b465-44b3ac9b19fa&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerCustomerDemo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;connectionStringId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span> <span class="n">null</span>
+  <span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="delete-datamodel-querysourcefield-query-source-field-id">
+<h2>DELETE dataModel/querySourceField/{query_source_field_id}<a class="headerlink" href="#delete-datamodel-querysourcefield-query-source-field-id" title="Permalink to this headline">¶</a></h2>
+<p>Removes a query source field from data model.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if the deletion is succesful</li>
+<li>false if not</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/querySourceField/da7be1b4-d4c0-43c4-a11b-5c87004c4837</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-basicquerysourcefieldsinfo-query-source-id">
+<h2>GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}<a class="headerlink" href="#get-datamodel-basicquerysourcefieldsinfo-query-source-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of id and name of the query source fields in the query source specified by the {query_source_id} value.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of objects with two fields <strong>key</strong> and <strong>value</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the query source field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+string</td>
+<td>The name of the query source field</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourceFieldsInfo/4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;f8c2a34b-b304-4f1d-9d90-96c018ec3d2a&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ContactName&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;a895434e-a77b-452e-8ed1-9b5fa339f1a8&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;CompanyName&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;3b266337-0142-4a4b-8351-ea0a74a7f234&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel">
+<span id="id3"></span><h2>POST dataModel<a class="headerlink" href="#post-datamodel" title="Permalink to this headline">¶</a></h2>
+<p>Saves a list of query sources.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/DataModel.html"><span class="doc">DataModel</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the save is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload to save the aliases for column [dbo].[AWBuildVersion].[Database Version] and for table [dbo].[Categories]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;c3330d53-cd8d-411c-9e7d-05849c7f2cc3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo.AWBuildVersion&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;828e10df-dedb-42f6-8adf-b0785810837e&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AdventureWorks2008R2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+              <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;dc4eca5c-ec25-4721-9f72-f98813f9b116&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;VersionDate&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;datetime&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;filterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;c3330d53-cd8d-411c-9e7d-05849c7f2cc3&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;children&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-06T04:20:37&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="n">false</span>
+           <span class="p">},</span> <span class="p">{</span>
+              <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;a3466647-d30b-4b21-868d-c05d074cba66&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Database Version&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbversion&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;nvarchar&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;filterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;c3330d53-cd8d-411c-9e7d-05849c7f2cc3&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;children&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-06T04:20:37&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="n">false</span>
+           <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">},</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f5e3450b-2b5b-4388-bce3-05efba5b8311&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo.Categories&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;8143ad74-fa73-4224-9299-b115252e1cc7&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind2014&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;014e42b4-979a-4a7f-80cf-492142572d10&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cats&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Request Payload to set dynamic for stored procedure [dbo].[CustOrdersDetail]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;eabce774-10e4-4c9d-b0fd-7f8dc3b8a6be&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo.CustOrdersDetail&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Stored Procedure&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;38f89176-7113-4a20-aed0-9758cb65122a&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AdventureWorks2008R2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+              <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;5d4c6339-1539-43ed-a1d4-fd6f423f6bd3&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;@OrderID&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;filterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;eabce774-10e4-4c9d-b0fd-7f8dc3b8a6be&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;children&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-13T08:55:15.803&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="n">false</span>
+           <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-12-13T08:55:15.787&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">Dynamic</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">Static</span><span class="se">\&quot;</span><span class="s2">:false}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Request Payload to set Field Level and Expression Level for functions:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;b2972494-ca59-4904-9561-d4b609a6b806&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;northwind.DateOnly&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;33244a6a-df64-46f8-8c5c-93eebe0f9c47&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-12-13T07:36:42.713&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">ReturnedValue</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">varchar</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">InputParams</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">InDateTime</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">FieldLevel</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">ExpressionLevel</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">},</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;2224f941-a4e1-4211-8c52-fcba3dc14dd8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;northwind.MyRound&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;33244a6a-df64-46f8-8c5c-93eebe0f9c47&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-12-13T07:36:42.713&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">ReturnedValue</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">double</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">InputParams</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">Operand,Places</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">FieldLevel</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">ExpressionLevel</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-indicator-tenant-id">
+<h2>GET dataModel/indicator/(tenant_id)<a class="headerlink" href="#get-datamodel-indicator-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the number of physical changes in Data Model for each type Table, View, Stored procedure and Function, filtered by tenant_id if provided.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of objects with two fields <strong>key</strong> and <strong>value</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string</td>
+<td>Either &#8220;Table&#8221;, &#8220;View&#8221;, &#8220;Stored procedure&#8221; or &#8220;Function&#8221;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+integer</td>
+<td>The number of changes for each type</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/indicator</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+  <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;View&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-reloadquerysourcefields">
+<h2>POST dataModel/reloadQuerySourceFields<a class="headerlink" href="#post-datamodel-reloadquerysourcefields" title="Permalink to this headline">¶</a></h2>
+<p>Returns the schema of stored procedures after using user-supplied parameters to try running them.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/ReloadQuerySourceRequest.html"><span class="doc">ReloadQuerySourceRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/DataResult.html"><span class="doc">DataResult</span></a> object, with <strong>data</strong> field containing a <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object whose <strong>result</strong> field containing a list of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/reloadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload for Filter Lookup Key - Value:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;postedParameters&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8ccfac80-c883-446b-948d-18568dc4d173&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;@OrderID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="p">{</span>
+           <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span><span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;databaseId&quot;</span><span class="p">:</span><span class="s2">&quot;f7d00fd9-bfb4-40ae-b25a-61007781b196&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;querySourceName&quot;</span><span class="p">:</span><span class="s2">&quot;dbo.Order Details&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span><span class="s2">&quot;000e6c8a-89fd-4b38-8d6a-1b891c180daa&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;lookupKeyQuerySourceFieldName&quot;</span><span class="p">:</span><span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;lookupKeyQuerySourceFieldId&quot;</span><span class="p">:</span><span class="s2">&quot;a0acf5b0-4e47-49d6-af73-c953408df3ef&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;displayQuerySourceFieldName&quot;</span><span class="p">:</span><span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;displayQuerySourceFieldId&quot;</span><span class="p">:</span><span class="s2">&quot;a0acf5b0-4e47-49d6-af73-c953408df3ef&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;userDefinedValues&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;ColumnName&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;descending&quot;</span> <span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Request payload for User Defined Filter Value:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;postedParameters&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8ccfac80-c883-446b-948d-18568dc4d173&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;@OrderID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="p">{</span>
+           <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;userDefinedValues&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;ColumnName&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;descending&quot;</span> <span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;result&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ProductName&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;nvarchar&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;filterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+           <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;children&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+           <span class="s2">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="n">false</span>
+        <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8ccfac80-c883-446b-948d-18568dc4d173&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;@OrderID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;filterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+           <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+           <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;parentId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;children&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-14T04:19:48&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;existed&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+           <span class="s2">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="n">false</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="s2">&quot;total&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1000</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-validatecalculatedfield">
+<h2>POST dataModel/validateCalculatedField<a class="headerlink" href="#post-datamodel-validatecalculatedfield" title="Permalink to this headline">¶</a></h2>
+<p>Validates a calculated field for duplicated name before saving.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if the name is valid</li>
+<li>false if not</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/validateCalculatedField</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UnitPrice&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9d18fa06-bf09-4908-9cc0-3ecb15c0e9e4&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-functionoperators-tenant-id">
+<h2>GET dataModel/functionOperators/(tenant_id)<a class="headerlink" href="#get-datamodel-functionoperators-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/ReportFunction.html"><span class="doc">ReportFunction</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/functionOperators</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression - expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression * expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression / expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression + expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression &lt; expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression &lt;= expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression &lt;&gt; expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression = expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression &gt; expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;expression &gt;= expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean_expression AND boolean_expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;AVG&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;AVG (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;AVG&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;BETWEEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;BETWEEN (test_expression, begin_expression, end_expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;BETWEEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE WHEN...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE WHEN (boolean_expression) THEN (result_expression) [...n] [ELSE (else_result_expression)] END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE...WHEN...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE...WHEN...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE (input_expression) WHEN (when_expression) THEN (result_expression) [...n] [ELSE (else_result_expression)] END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CASE...WHEN...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CAST...AS&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CAST (expression AS data_type)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CAST...AS&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CONVERT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CONVERT (data_type [( length)], expression[, style])&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;CONVERT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;COUNT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;COUNT (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;COUNT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEADD&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEADD (datepart, number, expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEADD&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEDIFF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEDIFF (datepart, startdate, enddate)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEDIFF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEPART&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEPART (datepart, date)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DATEPART&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DISTINCT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DISTINCT (column) or DISTINCT column&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;DISTINCT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;GETDATE&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;GETDATE ()&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;GETDATE&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;IF...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;IF (boolean_expression) THEN (true_expression) [ELSE (false_expression)] END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;IF...THEN...ELSE...END&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;IIF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;IIF (boolean_expression, true_expression, [false_expression])&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;IIF&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ISNULL&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;ISNULL (check_expression, replacement_value)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;ISNULL&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;LEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;LEN (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;LEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MAX&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;MAX (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;MAX&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MIN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;MIN (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;MIN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;NOTBETWEEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;NOTBETWEEN (test_expression, begin_expression, end_expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;NOTBETWEEN&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OR&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean_expression OR boolean_expression&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;OR&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ROUND&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;ROUND (expression, length[, function])&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;ROUND&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNING AVG&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGAVG (column)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGAVG&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNING COUNT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGCOUNT (column)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGCOUNT&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNING SUM&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGSUM (column)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RUNNINGSUM&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SUM&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;SUM (expression)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="s2">&quot;SUM&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-loadrelationships">
+<h2>POST dataModel/loadRelationships<a class="headerlink" href="#post-datamodel-loadrelationships" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/RelationshipPagedRequest.html"><span class="doc">RelationshipPagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing an array of <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;tenentId&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;criteria&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;operation&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;DatabaseName&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;descending&quot;</span> <span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;result&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;joinConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joinQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e03b8805-60ae-41df-b69a-f3bece9721c5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joinQuerySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;EmployeeDepartmentHistory&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joinDataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;joinDataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignDataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;foreignDataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fb719f8-8a70-4f4e-91d5-4e8372413d92&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignQuerySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Employee&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joinFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;322d9f3d-1f65-4d60-9cac-933a2c40db9d&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joinFieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;BusinessEntityID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;484817ea-f130-417b-a096-32c13249b7d0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignFieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;BusinessEntityID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;systemRelationship&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;joinType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parentRelationshipId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;relationshipKeyJoins&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;foreignAlias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;selectedForeignAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fb719f8-8a70-4f4e-91d5-4e8372413d92_Employee&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;48ab1f19-db84-4d8b-9c18-02312d16c282&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-15T06:27:16.023&quot;</span>
+     <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;total&quot;</span> <span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-relationships">
+<h2>POST dataModel/relationships<a class="headerlink" href="#post-datamodel-relationships" title="Permalink to this headline">¶</a></h2>
+<p>Saves an array of relationships. <br clear="right" /> <br clear="right" />
+After adding a new relationship, <a class="reference internal" href="#post-datamodel-loadrelationships">POST DataModel/loadRelationships</a> should be called to retrieve the new id value.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an array of <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> objects</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the save is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/relationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload to insert one new relationship and update another:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;joinConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;joinQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;d310d0ec-06b3-409f-b48c-1f519d0a51d5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fb719f8-8a70-4f4e-91d5-4e8372413d92&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;joinFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;79c398b3-bc5d-4c68-9329-111a7125ad0d&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aff13fd8-b7dc-439d-bfbf-1cd1a1728565&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;systemRelationship&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;joinType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="s2">&quot;191&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;c7288fb3-1f9d-49c3-897e-1587d6ccda5f&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;joinConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;joinQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e03b8805-60ae-41df-b69a-f3bece9721c5&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fb719f8-8a70-4f4e-91d5-4e8372413d92&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;joinFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;322d9f3d-1f65-4d60-9cac-933a2c40db9d&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;foreignFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;484817ea-f130-417b-a096-32c13249b7d0&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;systemRelationship&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;joinType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-04-15T03:57:37.803&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="s2">&quot;185&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="delete-datamodel-relationship-relationship-id">
+<h2>DELETE dataModel/relationship/{relationship_id}<a class="headerlink" href="#delete-datamodel-relationship-relationship-id" title="Permalink to this headline">¶</a></h2>
+<p>Deletes the relationship specified by the {relationship_id} value.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if deletion is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/relationship/457dbf49-9b1d-42d0-9026-0e67ee86a912</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response when trying to delete a system relationship:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;System relationship cannot be deleted.&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-schema-tenant-id">
+<h2>GET dataModel/schema/(tenant_id)<a class="headerlink" href="#get-datamodel-schema-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of query sources and an array of relationships with color properties (filtered by tenant_id if given).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/DataModelSchema.html"><span class="doc">DataModelSchema</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/schema</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response for 2 relationships &#8220;Customer&#8221; Left joins with &#8220;Orders&#8221; and &#8220;Orders&#8221; Inner joins with &#8220;Order Details&#8221;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8aa52ba9-8324-4b8e-bf42-619a3f050aa5&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Customers&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;8195a480-ddd8-4915-95a0-432e24fed0ad&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-04-19T03:08:56.091528&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ContactName&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">PrimaryKey</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span>
+      <span class="p">}]</span>
+   <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;66dcf36e-e4b0-4c9b-9919-b9ba49377784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Orders&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;8195a480-ddd8-4915-95a0-432e24fed0ad&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-12-19T03:08:56.091528&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderDate&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">PrimaryKey</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span>
+      <span class="p">}]</span>
+   <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;26efbdf4-c724-4824-bd9c-6ae1e2dc7435&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Order Details&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;8195a480-ddd8-4915-95a0-432e24fed0ad&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-12-19T03:08:56.091528&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">PrimaryKey</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ProductID&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">PrimaryKey</span><span class="se">\&quot;</span><span class="s2">:true}&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Quantity&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UnitPrice&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}]</span>
+   <span class="p">}],</span>
+   <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;8aa52ba9-8324-4b8e-bf42-619a3f050aa5&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;66dcf36e-e4b0-4c9b-9919-b9ba49377784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;twoWays&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;66dcf36e-e4b0-4c9b-9919-b9ba49377784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;26efbdf4-c724-4824-bd9c-6ae1e2dc7435&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;twoWays&quot;</span><span class="p">:</span> <span class="n">true</span>
+   <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-schema-updateconnectioncolor">
+<h2>POST dataModel/schema/updateConnectionColor<a class="headerlink" href="#post-datamodel-schema-updateconnectioncolor" title="Permalink to this headline">¶</a></h2>
+<p>Updates the connection color.</p>
+<p>To be updated</p>
+</div>
+<div class="section" id="get-datamodel-relationship-jointypes">
+<h2>GET dataModel/relationship/joinTypes<a class="headerlink" href="#get-datamodel-relationship-jointypes" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of join types currently supported.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of string values. <br clear="right" /> <br clear="right" />
+Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#8221;, &#8220;Full&#8221; and &#8220;Cross&#8221;.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/relationship/joinTypes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Inner&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span> <span class="s2">&quot;Full&quot;</span><span class="p">,</span> <span class="s2">&quot;Cross&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-databasemapping">
+<h2>GET dataModel/databaseMapping<a class="headerlink" href="#get-datamodel-databasemapping" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of database mappings.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/GlobalDatabaseMapping.html"><span class="doc">GlobalDatabaseMapping</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name_2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;tenantIds&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tenants&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;errorType&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;258bbcf9-4bd1-49de-8728-1578bb4aefa7&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-14T04:18:50.4000000-07:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-14T04:18:50.4000000-07:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-databasemapping">
+<h2>POST dataModel/databaseMapping<a class="headerlink" href="#post-datamodel-databasemapping" title="Permalink to this headline">¶</a></h2>
+<p>Saves an array of database mappings.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/GlobalDatabaseMapping.html"><span class="doc">GlobalDatabaseMapping</span></a> objects</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> field true if the save is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name_2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tenants&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="n">true</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span><span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-loaddatabasenames">
+<h2>POST dataModel/loadDatabaseNames<a class="headerlink" href="#post-datamodel-loaddatabasenames" title="Permalink to this headline">¶</a></h2>
+<p>Returns a paged array of database servers and database names.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of the following object:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>serverTypeName</strong> <br clear="right" />
+string</td>
+<td>The type of the database server (MSSQL, Oracle, MySQL, etc.)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>databaseServer</strong> <br clear="right" />
+string</td>
+<td>The name of the server</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>databaseName</strong> <br clear="right" />
+string</td>
+<td>The name of the database</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseNames</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;loadFromDatabase&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;abc.database.windows.net&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MYSQL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;ORACL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1:1521/orcl&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;orcl&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;DB&quot;</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-loaddatabaseobjects">
+<h2>POST dataModel/loadDatabaseObjects<a class="headerlink" href="#post-datamodel-loaddatabaseobjects" title="Permalink to this headline">¶</a></h2>
+<p>Returns a paged array of connection names or schema names in the specified database.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of strings.</p>
+<p>If <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a>.``type`` is <code class="docutils literal"><span class="pre">2</span></code> (Database), return connection names, else return schema names.</p>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseObjects</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload for Database:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response for Database:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;connection_name&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Request Payload for Schema:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response for Schema:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;dbo&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-customquerysource">
+<h2>POST dataModel/customQuerySource<a class="headerlink" href="#post-datamodel-customquerysource" title="Permalink to this headline">¶</a></h2>
+<p>Executes and saves a custom query source.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The saved <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-validatecustomquerysource">
+<h2>POST dataModel/validateCustomQuerySource<a class="headerlink" href="#post-datamodel-validatecustomquerysource" title="Permalink to this headline">¶</a></h2>
+<p>Validates that name of custom query source is unique.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object, with <strong>name</strong> and <strong>categoryId</strong> fields populated.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> field true if name of custom query source is unique.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-deletecustomquerysource">
+<h2>POST dataModel/deleteCustomQuerySource<a class="headerlink" href="#post-datamodel-deletecustomquerysource" title="Permalink to this headline">¶</a></h2>
+<p>Deletes a custom query source.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object, with <strong>id</strong> field populated.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> true if the deletion is successful.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="get-datamodel-querysource-query-source-id">
+<h2>GET dataModel/querySource/{query_source_id}<a class="headerlink" href="#get-datamodel-querysource-query-source-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the query source specified by query_source_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_tenant.html" class="btn btn-neutral float-right" title="Tenant APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_connection.html" class="btn btn-neutral" title="Connection APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

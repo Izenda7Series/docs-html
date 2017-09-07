@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Security Recommendations &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guide" href=".administrator_guide.html"/>
+        <link rel="next" title="Izenda Copy Console" href="doc_copy_console.html"/>
+        <link rel="prev" title="Copy Management" href="doc_copy_management.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Security Recommendations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#web-server-security-configurations">Web Server Security Configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#use-custom-error-messages">Use Custom Error Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-cross-origin-http-access-cors">Configure Cross-Origin HTTP Access (CORS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssl-tls">SSL/TLS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#izenda-security-configurations">Izenda Security Configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#replace-the-default-system-admin-account">Replace the default System Admin account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#security-policies">Security Policies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reporting-databases">Reporting databases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#embedded-security-deployment-mode-1">Embedded Security - Deployment Mode 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rsa-keys">RSA Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-s-rsa-key-generator">Izenda&#8217;s RSA Key Generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#token-and-key-security">Token and Key Security</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+      <li>Security Recommendations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_security_recommendations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="security-recommendations">
+<h1>Security Recommendations<a class="headerlink" href="#security-recommendations" title="Permalink to this headline">¶</a></h1>
+<p>This guide outlines general recommendations for securing Izenda deployments. This document may not be all-encompassing, be sure to follow your organizations established security policies and procedures. This document may be updated at any time, without notice.</p>
+<div class="section" id="web-server-security-configurations">
+<span id="id1"></span><h2>Web Server Security Configurations<a class="headerlink" href="#web-server-security-configurations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-custom-error-messages">
+<h3>Use Custom Error Messages<a class="headerlink" href="#use-custom-error-messages" title="Permalink to this headline">¶</a></h3>
+<p>Besides being too technical for end-users, error messages may contain
+sensitive information of the system or its users. Therefore, it is best
+practice to show original error messages to only local clients (opened
+on the server box), and friendly error messages to remote clients
+(end-users).</p>
+<p>For example, this erroneous API call
+<code class="docutils literal"><span class="pre">http://127.0.0.1:8888/api/report/info/foo</span></code> will
+result in a 500 Internal Server Error:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;The application has encountered an unknown error. Please contact System Administrator for further information.&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>On the other hand, end-users should be presented with a non-technical
+and more friendly message such as:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Something&#39;s wrong!
+
+It looks like something is broken in our system.
+Don&#39;t panic - the situation has been logged and we will get to it as soon as we can.
+</pre></div>
+</div>
+<p>HTML source of a sample error page - save it as the file ErrorPage.html under C:\inetpub\wwwroot\Izenda\API:</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Error page HTML source</div>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height:100%&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span> 500 Internal Server Error
+<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top:20px;font-size: 30px;&quot;</span><span class="p">&gt;</span>Something&#39;s wrong!
+<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It looks like something is broken in our system.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> Don&#39;t panic - the situation has been logged and we will get to it as soon as we can.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>To configure IIS 7.0+:</p>
+<ul class="simple">
+<li>Add the following under <code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">httpErrors</span> <span class="na">errorMode</span><span class="o">=</span><span class="s">&quot;DetailedLocalOnly&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">remove</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">subStatusCode</span><span class="o">=</span><span class="s">&quot;-1&quot;</span> <span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">error</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">path</span><span class="o">=</span><span class="s">&quot;/ErrorPage.html&quot;</span> <span class="na">responseMode</span><span class="o">=</span><span class="s">&quot;ExecuteURL&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">httpErrors</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Possible values for <code class="docutils literal"><span class="pre">errorMode</span></code>:<ul>
+<li>DetailedLocalOnly: Returns detailed error information if the
+request is from the local computer, and returns a custom error
+message if the request is from an external computer.</li>
+<li>Custom: Replaces the error that the module or server generates
+with a custom page that you specify.</li>
+<li>Detailed: Sends detailed error information back to all clients.</li>
+</ul>
+</li>
+<li>Alternatively configure IIS via the UI:<ol class="arabic">
+<li>Select the Izenda site.</li>
+<li>Double-click Error Pages in the middle panel (Features View).</li>
+<li>Select the status code then click Edit Feature Settings.. in right
+panel to configure.</li>
+</ol>
+</li>
+</ul>
+<p>To configure IIS 6.0:</p>
+<ul class="simple">
+<li>Add the following under <code class="docutils literal"><span class="pre">&lt;system.web&gt;</span></code>:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">customErrors</span> <span class="na">mode</span><span class="o">=</span><span class="s">&quot;RemoteOnly&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">error</span> <span class="na">redirect</span><span class="o">=</span><span class="s">&quot;/ErrorPage.html&quot;</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">customErrors</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Possible values for <code class="docutils literal"><span class="pre">mode</span></code>:<ul>
+<li>On: Specifies that custom errors are enabled. If no
+defaultRedirect attribute is specified, users see a generic error.
+The custom errors are shown to the remote clients and to the local
+host.</li>
+<li>Off: Specifies that custom errors are disabled. The detailed
+ASP.NET errors are shown to the remote clients and to the local
+host.</li>
+<li>RemoteOnly: Specifies that custom errors are shown only to the
+remote clients, and that ASP.NET errors are shown to the local
+host. This is the default value.</li>
+</ul>
+</li>
+<li>Alternatively configure IIS via the UI similarly to IIS 7.0+.</li>
+</ul>
+</div>
+<div class="section" id="configure-cross-origin-http-access-cors">
+<h3>Configure Cross-Origin HTTP Access (CORS)<a class="headerlink" href="#configure-cross-origin-http-access-cors" title="Permalink to this headline">¶</a></h3>
+<p>Browser security prevents a web page from making HTTP requests to
+another domain. This restriction is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin
+policy</a>, and
+prevents a malicious site from reading sentitive data from another site.
+However, our web API wants to allow the calls from the Front-end site,
+which may be on another domain. This can be configured using the <a class="reference external" href="http://www.w3.org/TR/cors/">Cross
+Origin Resource Sharing (CORS)</a> standard.</p>
+<p>To allow calls from only the Front-end site while rejecting others:</p>
+<ol class="arabic simple">
+<li>In Web.config, locate the section <code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>,
+<code class="docutils literal"><span class="pre">&lt;httpProtocol&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;customHeaders&gt;</span></code>,
+<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;*&quot;</span> <span class="pre">/&gt;</span></code>.</li>
+<li>Change the default value * to the addresses (and ports) of the
+Front-end sites, separated by comma. For example:
+<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;http://www.acme.com,http://www.example.com&quot;</span> <span class="pre">/&gt;</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="ssl-tls">
+<h3>SSL/TLS<a class="headerlink" href="#ssl-tls" title="Permalink to this headline">¶</a></h3>
+<p>Izenda supports and strongly recommends the use of SSL/TLS to secure traffic between the Front-end, Backend (API) sites.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="izenda-security-configurations">
+<h2>Izenda Security Configurations<a class="headerlink" href="#izenda-security-configurations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="replace-the-default-system-admin-account">
+<h3>Replace the default System Admin account<a class="headerlink" href="#replace-the-default-system-admin-account" title="Permalink to this headline">¶</a></h3>
+<p>The default Izenda System Admin account comes with a pre-defined username. For best security, <a class="reference internal" href="doc_user_setup.html#add-a-system-admin-user"><span class="std std-ref">another System Admin account</span></a> should be created, then the default account be deactivated or deleted to prevent attempts on that pre-defined username.</p>
+</div>
+<div class="section" id="security-policies">
+<h3>Security Policies<a class="headerlink" href="#security-policies" title="Permalink to this headline">¶</a></h3>
+<p>Izenda has an extensive set of options for configuring security in stand-alone mode. You can configure the Password Complexity, Password Age, Password History, Security Questions, Account Lockout Policies and more. We recommend that you review these options to create a policy that works for your organization.</p>
+<p>Make use of the <a class="reference internal" href="doc_configuration_security_policies.html#configure-password-complexity-sample"><span class="std std-ref">Password Complexity settings</span></a> in System Configuration &gt; Security Policies page to enforce strong
+passwords.</p>
+</div>
+<div class="section" id="reporting-databases">
+<h3>Reporting databases<a class="headerlink" href="#reporting-databases" title="Permalink to this headline">¶</a></h3>
+<p>Following the principle of least privilege, your connection strings for the reporting database(s) should have the most restrictive permissions necessary to the application. Note, if you are using stored procedures, you will need &#8220;execute&#8221; permissions.</p>
+</div>
+</div>
+<div class="section" id="embedded-security-deployment-mode-1">
+<h2>Embedded Security - Deployment Mode 1<a class="headerlink" href="#embedded-security-deployment-mode-1" title="Permalink to this headline">¶</a></h2>
+<p>In this deployment mode, the API is standalone and the Izenda front-end is embedded into another application. This mode applies to the following kits provided by Izenda:</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://github.com/Izenda7Series/Angular2Starterkit">https://github.com/Izenda7Series/Angular2Starterkit</a></div>
+<div class="line"><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone">https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone</a></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="rsa-keys">
+<h3>RSA Keys<a class="headerlink" href="#rsa-keys" title="Permalink to this headline">¶</a></h3>
+<p>In versions 1.25.0+, Izenda utilizes RSA keys. These keys are used when exporting, or using any functionality that may itself use exporting (Scheduling, etc.).</p>
+<div class="line-block">
+<div class="line">Sample Endpoints (not all inclusive):</div>
+<div class="line"><br /></div>
+<div class="line"><a class="reference external" href="http://localhost:1001/api/export/pdf">http://localhost:1001/api/export/pdf</a></div>
+<div class="line"><a class="reference external" href="http://localhost:1001/api/export/csv">http://localhost:1001/api/export/csv</a></div>
+</div>
+<p>The high-level work flow is as follows:</p>
+<ol class="arabic">
+<li><p class="first">A user requests an export</p>
+</li>
+<li><p class="first">The API creates a JSON model of the user including the username and tenantID</p>
+</li>
+<li><p class="first">The API encrypts the model with the RSA public key</p>
+</li>
+<li><p class="first">The API makes a request to the endpoint specified for the AuthGetAccessTokenUrl value in the IzendaSystemSetting table. E.g</p>
+<blockquote>
+<div><p>AuthGetAccessTokenUrl  -&gt; <a class="reference external" href="http://localhost:14809/api/account/GetIzendaAccessToken">http://localhost:14809/api/account/GetIzendaAccessToken</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">The method below (in the front-end application) decrypts the JSON model and returns a token for the specified User/Tenant to the API.</p>
+<blockquote>
+<div><div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">[Route(&quot;GetIzendaAccessToken&quot;)]</span>
+<span class="k">public</span> <span class="n">IHttpActionResult</span> <span class="nf">GetIzendaAccessToken</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">userInfo</span> <span class="p">=</span> <span class="n">IzendaBoundary</span><span class="p">.</span><span class="n">IzendaTokenAuthorization</span><span class="p">.</span><span class="n">DecryptIzendaAuthenticationMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">token</span> <span class="p">=</span> <span class="n">IzendaBoundary</span><span class="p">.</span><span class="n">IzendaTokenAuthorization</span><span class="p">.</span><span class="n">GetToken</span><span class="p">(</span><span class="n">userInfo</span><span class="p">);</span>
+        <span class="c1">//return token;</span>
+        <span class="k">return</span> <span class="nf">Ok</span><span class="p">(</span><span class="k">new</span> <span class="p">{</span> <span class="n">Token</span> <span class="p">=</span> <span class="n">token</span> <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">The API uses this token to process the export under the context of the user.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="izenda-s-rsa-key-generator">
+<h3>Izenda&#8217;s RSA Key Generator<a class="headerlink" href="#izenda-s-rsa-key-generator" title="Permalink to this headline">¶</a></h3>
+<p>In order to simplify the process of creating RSA keys, Izenda has provided a tool to generate Public/Private key pairs and convert them to the format required by Izenda. This tool can be found here: <a class="reference external" href="http://downloads.izenda.com/Utilities/Izenda.Synergy.RSATool.zip">http://downloads.izenda.com/Utilities/Izenda.Synergy.RSATool.zip</a></p>
+<p><strong>Usage:</strong></p>
+<ol class="arabic simple">
+<li>Click <em>Generate</em> to create a new key pair.</li>
+<li>Click <em>Convert Keys</em> to convert the public key to XML as shown below.</li>
+<li>Alternatively, you can paste an existing key pair. Click <em>Convert Keys</em> and this will convert the public key to XML</li>
+</ol>
+<div class="figure">
+<img alt="../_images/rsa_tool1.png" src="../_images/rsa_tool1.png" />
+</div>
+</div>
+<div class="section" id="token-and-key-security">
+<h3>Token and Key Security<a class="headerlink" href="#token-and-key-security" title="Permalink to this headline">¶</a></h3>
+<p>In Deployment mode 1, the token management is handled by your application. Izenda has provided samples of generating, encrypting, and decrypting these tokens, but you are not required to use the same implementations. We have provided some basic recommendations below:</p>
+<p><strong>Key recommendations:</strong></p>
+<ol class="arabic simple">
+<li>Your encryption key should be stored securely.</li>
+<li>Your encryption key should be changed periodically.</li>
+<li>Your encryption key should be of sufficient length to mitigate the effectiveness of brute force attacks.</li>
+</ol>
+<p><strong>Token recommendations:</strong></p>
+<ol class="arabic simple">
+<li>Your tokens should be of sufficient length and entropy (randomness) to reduce the effectiveness of brute force attacks.</li>
+<li>Your tokens should not be indefinite, and should have an absolute time out. This reduces the window in which a stolen token could be used to impersonate a user.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.iis.net/configreference/system.webserver/httperrors">IIS HTTP
+Errors</a></li>
+<li><a class="reference external" href="https://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api#allowed-origins">Enabling Cross-Origin Requests in ASP.NET Web API
+2</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_copy_console.html" class="btn btn-neutral float-right" title="Izenda Copy Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_copy_management.html" class="btn btn-neutral" title="Copy Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

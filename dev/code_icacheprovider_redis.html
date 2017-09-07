@@ -1,0 +1,890 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ICacheProvider - Redis Sample &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Customization via Interfaces" href=".system_customization.html"/>
+        <link rel="next" title="DataSourceAdaptor - DB2 Sample" href="code_idatasourceadaptor_db2.html"/>
+        <link rel="prev" title="Customizable Interfaces" href="ref_interfaces.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/.stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_mvc_setup_guide.html">MVC Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_html_starter_kit.html">HTML Starter Kit Setup Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href=".starter_kits.html">Starter Kits</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href=".system_customization.html">System Customization via Interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href=".walkthroughs.html">Walkthroughs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/.supplementary_installation_guides.html">Supplementary Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../install/.install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a> &raquo;</li>
+        
+          <li><a href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a> &raquo;</li>
+        
+          <li><a href=".system_customization.html">System Customization via Interfaces</a> &raquo;</li>
+        
+      <li>ICacheProvider - Redis Sample</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_icacheprovider_redis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="icacheprovider-redis-sample">
+<h1>ICacheProvider - Redis Sample<a class="headerlink" href="#icacheprovider-redis-sample" title="Permalink to this headline">¶</a></h1>
+<p>Izenda applies
+<a class="reference external" href="https://en.wikipedia.org/wiki/Cache_(computing)">caching</a> to improve
+user responsiveness and reduce resource usage. The built-in caching uses
+<a class="reference external" href="http://www.memcached.org/">Memcached</a> which currently works best for
+typical usage scenarios.</p>
+<p>For specific needs, this feature can easily be integrated with other
+caching systems, via the <code class="docutils literal"><span class="pre">ICacheProvider</span></code> interface.</p>
+<p>In this sample, we will use <a class="reference external" href="http://redis.io/">Redis</a> as an
+alternative cache server - there is no intentional comparison between
+Memcached and Redis here, we just pick Redis as an example.</p>
+<p>Summary of the Steps</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#reference-icacheprovider-interface-in-a-new-project"><span class="std std-ref">Reference the interface library Izenda.BI.CacheProvider.dll in our code base.</span></a></li>
+<li><a class="reference internal" href="#implement-the-icacheprovider-interface"><span class="std std-ref">Provide our own implementation of the ICacheProvider interface.</span></a></li>
+<li><a class="reference internal" href="#implement-the-tests"><span class="std std-ref">Unit test the implementation.</span></a></li>
+<li><a class="reference internal" href="#replace-the-built-in-caching-library"><span class="std std-ref">Replace the built-in caching library file
+Izenda.BI.CacheProvider.Memcache.dll with our own library
+file.</span></a></li>
+</ol>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Redis test server setup</p>
+<ol class="arabic">
+<li><p class="first">Download, extract and compile the server from <a class="reference external" href="http://redis.io/download">http://redis.io/download</a>.</p>
+<p>For Windows, there are binary builds available at <a class="reference external" href="https://github.com/MSOpenTech/redis/releases">https://github.com/MSOpenTech/redis/releases</a>. <br clear="right" /></p>
+</li>
+<li><p class="first">Start the server using this command in terminal:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src/redis-server</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start the client in another terminal to check our server:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> src/redis-cli
+<span class="go">redis&gt; set foo bar</span>
+<span class="go">OK</span>
+<span class="go">redis&gt; get foo</span>
+<span class="go">&quot;bar&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Redis client library</p>
+<ol class="arabic simple">
+<li>We will use the <a class="reference external" href="https://github.com/StackExchange/StackExchange.Redis">StackExchange.Redis</a> library.</li>
+<li>We will install it from within Visual Studio in the following <a class="reference internal" href="#reference-stackexchange-redis-client-library"><span class="std std-ref">step</span></a>.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="icacheprovider-implementation">
+<h2>ICacheProvider Implementation<a class="headerlink" href="#icacheprovider-implementation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reference-icacheprovider-interface-in-a-new-project">
+<span id="id1"></span><h3>Reference ICacheProvider Interface in a New Project<a class="headerlink" href="#reference-icacheprovider-interface-in-a-new-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Create a new Class Library project in Visual
+Studio.</p>
+</li>
+<li><p class="first">Name it Izenda.BI.CacheProvider.Redis.</p>
+</li>
+<li><p class="first">Select a location (e.g. D:\Projects).</p>
+</li>
+<li><p class="first">Select to create new solution.</p>
+</li>
+<li><p class="first">Give the solution name Izenda.BI.RedisCache.</p>
+</li>
+<li><p class="first">Tick the Create directory for solution check-box.</p>
+</li>
+<li><p class="first">Click OK to create the project and solution.</p>
+<div class="figure" id="id6">
+<img alt="../_images/CacheProvider.Redis_New_Project.png" src="../_images/CacheProvider.Redis_New_Project.png" />
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">New Project</span></p>
+</div>
+</li>
+<li><p class="first">Copy the interface library file
+Izenda.BI.CacheProvider.dll from Izenda installation folder into the
+newly-created folder
+D:\Projects\Izenda.BI.RedisCache\Izenda.BI.CacheProvider.Redis.</p>
+</li>
+<li><p class="first">Open Solution Explorer, right-click References in project
+Izenda.BI.CacheProvider.Redis and select Add Reference.</p>
+</li>
+<li><p class="first">In Reference Manager pop-up, click Browse and select the file
+Izenda.BI.CacheProvider.dll (in
+D:\Projects\Izenda.BI.RedisCache\Izenda.BI.CacheProvider.Redis).</p>
+</li>
+<li><p class="first">Click OK to close Reference Manager pop-up.</p>
+</li>
+<li><p class="first">Verify the interface by double-clicking Izenda.BI.CacheProvider in
+References to open Object Browser.</p>
+</li>
+<li><p class="first">Expand the nodes and select ICacheProvider to see this list of
+methods to implement.</p>
+<div class="figure" id="id7">
+<img alt="../_images/ICacheProvider_Interface.png" src="../_images/ICacheProvider_Interface.png" />
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">ICacheProvider Interface</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="reference-stackexchange-redis-client-library">
+<span id="id2"></span><h3>Reference StackExchange.Redis Client Library<a class="headerlink" href="#reference-stackexchange-redis-client-library" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Open NuGet Package Manager pop-up from Tools &gt; NuGet Package Manager
+&gt; Manage NuGet Packages for Solution...</li>
+<li>Click Browse tab and enter StackExchange.Redis in the text box to
+search.</li>
+<li>Select StackExchange.Redis on the left and tick the
+Izenda.BI.CacheProvider.Redis project check-box on the right.</li>
+<li>Select Latest stable 1.1.608 (at the time of writing) and click
+Install.</li>
+<li>Verify that StackExchange.Redis is shown in the References list in
+Solution Explorer.</li>
+</ol>
+</div>
+<div class="section" id="implement-the-icacheprovider-interface">
+<span id="id3"></span><h3>Implement the ICacheProvider Interface<a class="headerlink" href="#implement-the-icacheprovider-interface" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the default Class1.cs file in Solution Explorer and
+rename it to RedisCacheProvider.cs, also agree to change the class
+name to RedisCacheProvider when asked.</li>
+<li>Implement the methods of the interface using StackExchange.Redis
+APIs.</li>
+<li>Reference the namespace System.ComponentModel.Composition if
+necessary (Add Reference and tick System.ComponentModel.Composition
+in Assemblies &gt; Framework).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Redis server address is assumed to be &#8220;localhost&#8221; in this sample. It should be read from the configuration file in an actual code.</p>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full sample code:</div>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel.Composition</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StackExchange.Redis</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Izenda.BI.CacheProvider.Redis</span>
+<span class="p">{</span>
+   <span class="c1">/// &lt;summary&gt;</span>
+   <span class="c1">/// Redis cache provider</span>
+   <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">   [Export(typeof(ICacheProvider))]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">RedisCacheProvider</span> <span class="p">:</span> <span class="n">ICacheProvider</span><span class="p">,</span> <span class="n">IDisposable</span>
+   <span class="p">{</span>
+      <span class="k">private</span> <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+      <span class="k">private</span> <span class="k">readonly</span> <span class="n">ReaderWriterLockSlim</span> <span class="n">lockCache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReaderWriterLockSlim</span><span class="p">();</span>
+      <span class="k">private</span> <span class="k">static</span> <span class="n">ConnectionMultiplexer</span> <span class="n">redis</span><span class="p">;</span>
+      <span class="k">private</span> <span class="k">static</span> <span class="n">String</span> <span class="n">serverAddress</span> <span class="p">=</span> <span class="s">&quot;localhost&quot;</span><span class="p">;</span>
+
+      <span class="k">public</span> <span class="nf">RedisCacheProvider</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="n">redis</span> <span class="p">=</span> <span class="n">ConnectionMultiplexer</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">serverAddress</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Adds an item to the underlying cache using the specified key.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="n">Add</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
+           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Adds an item to the underlying cache using the specified key with normal priority.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration timeout as a timespan. This is a sliding value. &lt;/param&gt;</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithExactLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
+           <span class="c1">// StackExchange.Redis client does not support exact datetime expiration, so sliding option is used.</span>
+           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Adds an item to the underlying cache using the specified key with normal priority.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration timeout as a timespan. This is a sliding value. &lt;/param&gt;</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithSlidingLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
+           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Determines whether the cache contains the specified key.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;returns&gt;</span>
+      <span class="c1">///     &lt;c&gt;true&lt;/c&gt; if the underlying cache contains the key otherwise, &lt;c&gt;false&lt;/c&gt;.</span>
+      <span class="c1">/// &lt;/returns&gt;</span>
+      <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Contains</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">KeyExists</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+      <span class="k">public</span> <span class="n">T</span> <span class="n">Ensure</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">Zero</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">)</span> <span class="p">=&gt;</span>
+           <span class="p">{</span>
+               <span class="n">Add</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+           <span class="p">});</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a sliding value.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+      <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">)</span> <span class="p">=&gt;</span>
+           <span class="p">{</span>
+               <span class="n">AddWithSlidingLifetime</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">);</span>
+           <span class="p">});</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Update and add the cache if not exist.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a sliding value.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+      <span class="k">public</span> <span class="n">T</span> <span class="n">UpdateWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+
+           <span class="kt">var</span> <span class="n">updatingValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
+           <span class="n">lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+
+           <span class="k">try</span>
+           <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="n">updatingValue</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+               <span class="p">{</span>
+                   <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="n">updatingValue</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
+                   <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+           <span class="k">catch</span>
+           <span class="p">{</span>
+               <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Fail set item to cache----------**********&quot;</span><span class="p">);</span>
+           <span class="p">}</span>
+           <span class="k">finally</span>
+           <span class="p">{</span>
+               <span class="n">lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+           <span class="p">}</span>
+
+           <span class="k">return</span> <span class="n">updatingValue</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a exact value.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+      <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithExactLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">)</span> <span class="p">=&gt;</span>
+           <span class="p">{</span>
+               <span class="n">AddWithExactLifetime</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">);</span>
+           <span class="p">});</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Removes the specified item from the cache.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key&lt;/param&gt;</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">Remove</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="n">db</span><span class="p">.</span><span class="n">KeyDelete</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan.&lt;/param&gt;</span>
+      <span class="k">private</span> <span class="n">T</span> <span class="n">EnsureCache</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">&gt;</span> <span class="n">addItemToCache</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">key</span><span class="p">);</span>
+
+           <span class="k">if</span> <span class="p">(</span><span class="n">EqualityComparer</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">Default</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">default</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+           <span class="p">{</span>
+               <span class="kt">var</span> <span class="n">addingValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
+               <span class="n">lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+
+               <span class="k">try</span>
+               <span class="p">{</span>
+                   <span class="c1">//Todo: remove log</span>
+                   <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Adding item to cache----------**********&quot;</span><span class="p">);</span>
+                   <span class="n">result</span> <span class="p">=</span> <span class="n">addingValue</span><span class="p">;</span>
+
+                   <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                   <span class="p">{</span>
+                       <span class="n">addItemToCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+               <span class="k">catch</span>
+               <span class="p">{</span>
+                   <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Fail add item to cache----------**********&quot;</span><span class="p">);</span>
+               <span class="p">}</span>
+               <span class="k">finally</span>
+               <span class="p">{</span>
+                   <span class="n">lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+
+           <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">///     Convenience method to retrieve and convert the object result from the cache.</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt; The type to convert the object to. &lt;/typeparam&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
+      <span class="c1">/// &lt;returns&gt; The instance of the object in the cache or the default value for the type if not found. &lt;/returns&gt;</span>
+      <span class="k">public</span> <span class="n">T</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+           <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">db</span><span class="p">.</span><span class="n">StringGet</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+
+           <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">IsNull</span><span class="p">)</span>
+           <span class="p">{</span>
+               <span class="k">return</span> <span class="nf">default</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+           <span class="p">}</span>
+
+           <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Dispose object</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+           <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Dispose object</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="c1">/// &lt;param name=&quot;disposing&quot;&gt;&lt;/param&gt;</span>
+      <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+      <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
+               <span class="k">return</span><span class="p">;</span>
+
+           <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span>
+           <span class="p">{</span>
+               <span class="n">lockCache</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+           <span class="p">}</span>
+
+           <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Dispose object</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+      <span class="p">~</span><span class="n">RedisCacheProvider</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="add-unittest-project">
+<h3>Add UnitTest Project<a class="headerlink" href="#add-unittest-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Rick click Solution &#8216;Izenda.BI.RedisCache&#8217; in Solution Explorer and
+select Add &gt; New Project.</li>
+<li>Add a Class Library project named Izenda.BI.CacheProvider.Redis.Test.</li>
+<li>Reference the project Izenda.BI.CacheProvider.Redis (Add Reference
+and tick Izenda.BI.CacheProvider.Redis in Projects &gt; Solution).</li>
+<li>Reference xUnit Library.<ol class="arabic">
+<li>Open NuGet Package Manager pop-up from Tools &gt; NuGet Package
+Manager &gt; Manage NuGet Packages for Solution...</li>
+<li>Click Browse tab and enter xunit in the text box to search.</li>
+<li>Select xunit on the left and tick the
+Izenda.BI.CacheProvider.Redis.Test project check-box on the right.</li>
+<li>Select version 1.9.1 (working at the time of writing) and click
+Install.</li>
+<li>Similarly install xunit.runner.visualstudio version 2.1.0 to
+Izenda.BI.CacheProvider.Redis.Test project.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="implement-the-tests">
+<span id="id4"></span><h3>Implement the Tests<a class="headerlink" href="#implement-the-tests" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the default Class1.cs file in Solution Explorer and
+rename it to RedisCacheProviderTest.cs, also agree to change the
+class name to RedisCacheProviderTest when asked.</li>
+<li>Implement the tests in xUnit.</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full sample code:</div>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Xunit</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Izenda.BI.CacheProvider.Redis.Test</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">RedisCacheProviderTest</span>
+   <span class="p">{</span>
+      <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">Key</span> <span class="p">=</span> <span class="s">&quot;test_key&quot;</span><span class="p">;</span>
+      <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;test value&quot;</span><span class="p">;</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function Add()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddValueToCache_NoExpiration</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function AddWithExactLifeTime()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithExactLifeTime_ExpireIn20Seconds</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">AddWithExactLifetime</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">));</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function AddWithSlidingLifetime()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithSlidingLifetime_ExpireAfter20Seconds</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">AddWithSlidingLifetime</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">));</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function Contain()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">ContainKey_ReturnTrueAfterAddItem</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
+           <span class="kt">var</span> <span class="n">containKeyInCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">True</span><span class="p">(</span><span class="n">containKeyInCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function Ensure()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">EnsureCache_ReturnCorrectObject</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Ensure</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Value</span><span class="p">;</span> <span class="p">});</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function EnsureCacheWithExactLifeTime()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">EnsureCacheWithExactLifeTime_ReturnCorrectObject</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">EnsureWithExactLifetime</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">),</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Value</span><span class="p">;</span> <span class="p">});</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function TestEnsureCacheWidthSlidingLifetime()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">EnsureCacheWidthSlidingLifetime_ReturnCorrectObject</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">EnsureWithSlidingLifetime</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">),</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Value</span><span class="p">;</span> <span class="p">});</span>
+           <span class="kt">var</span> <span class="n">valueFromCache</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">Value</span><span class="p">,</span> <span class="n">valueFromCache</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">/// &lt;summary&gt;</span>
+      <span class="c1">/// Test function Remove()</span>
+      <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">RemoveCache_ObjectIsRemoved</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">redisCacheProvider</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RedisCacheProvider</span><span class="p">();</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
+           <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">Key</span><span class="p">);</span>
+
+           <span class="kt">var</span> <span class="n">containCacheKey</span> <span class="p">=</span> <span class="n">redisCacheProvider</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">Key</span><span class="p">);</span>
+           <span class="n">Assert</span><span class="p">.</span><span class="n">False</span><span class="p">(</span><span class="n">containCacheKey</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="run-the-unittests">
+<h3>Run the UnitTests<a class="headerlink" href="#run-the-unittests" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open Test Explorer from Menu &gt; Test &gt; Windows.</p>
+</li>
+<li><p class="first">Click Run All in Test Explorer.</p>
+<blockquote>
+<div><p>(Remember to start the Redis server before testing)</p>
+</div></blockquote>
+</li>
+<li><p class="first">All the tests should be passed.</p>
+</li>
+</ol>
+<div class="figure" id="id8">
+<img alt="../_images/RedisCacheProviderTest_TestExplorer.png" src="../_images/RedisCacheProviderTest_TestExplorer.png" />
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Test Explorer Result</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="replace-the-built-in-caching-library">
+<span id="id5"></span><h2>Replace the Built-in Caching Library<a class="headerlink" href="#replace-the-built-in-caching-library" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In the installation folder, find the built-in caching library file
+Izenda.BI.CacheProvider.Memcache.dll and rename to
+Izenda.BI.CacheProvider.Memcache.dll.unused.</p>
+</li>
+<li><p class="first">Copy the new caching library file Izenda.BI.CacheProvider.Redis.dll
+and StackExchange.Redis.dll to the folder (they can be found at
+D:\Projects\Izenda.BI.RedisCache\Izenda.BI.CacheProvider.Redis\bin\Debug\).</p>
+</li>
+<li><p class="first">Restart the system for the DLL to be loaded.</p>
+</li>
+<li><p class="first">Use the system for a while then open the Redis client in terminal to check our cache:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> src/redis-cli
+<span class="go">redis&gt; keys *</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_idatasourceadaptor_db2.html" class="btn btn-neutral float-right" title="DataSourceAdaptor - DB2 Sample" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ref_interfaces.html" class="btn btn-neutral" title="Customizable Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

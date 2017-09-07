@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Understanding The Tenant-Role-User Relationship &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Izenda Concepts" href=".izenda_concepts.html"/>
+        <link rel="next" title="Understanding Reports and Dashboards" href="understanding_reports_and_dashboards.html"/>
+        <link rel="prev" title="Understanding The Three-tiered Architecture" href="understanding_the_three-tiered_architecture.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href=".intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq/.general.html">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.data_model.html">Data Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../faq/.admin_ui.html">Administrative UI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How does Izenda tailor features to users?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tenants-roles-and-users">Tenants, Roles, and Users</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.user.html">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.dev.html">Developer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".intro.html">Introduction</a> &raquo;</li>
+        
+          <li><a href=".izenda_concepts.html">Izenda Concepts</a> &raquo;</li>
+        
+      <li>Understanding The Tenant-Role-User Relationship</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/understanding_the_tenant_role_user_relationship.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="understanding-the-tenant-role-user-relationship">
+<h1>Understanding The Tenant-Role-User Relationship<a class="headerlink" href="#understanding-the-tenant-role-user-relationship" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tenants-roles-and-users">
+<h2>Tenants, Roles, and Users<a class="headerlink" href="#tenants-roles-and-users" title="Permalink to this headline">¶</a></h2>
+<p>Within Izenda, users fit into categories that define their relationships
+with other users. Izenda utilizes these relationships to define access
+rights of features, data, reports, and dashboards.</p>
+<div class="figure" id="id1">
+<img alt="../_images/tru_single_tenant.PNG" src="../_images/tru_single_tenant.PNG" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Tenant-Role-User Relationship</span></p>
+</div>
+<div class="section" id="users">
+<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
+<p>A user is the elemental classification of an entity within Izenda.</p>
+<ul class="simple">
+<li>Users have a user name and token to grant access to various parts of
+Izenda</li>
+<li>A user does not have to have a defined tenant or a defined role<ul>
+<li>A user either has a tenant/role or the user is a System
+Administrator. Within your User Setup, you will able to toggle a
+user to be an Administrator.</li>
+<li>System Administrators can impersonate tenant views to navigate the
+platform with a tenant&#8217;s access.</li>
+</ul>
+</li>
+<li>A user can belong to more than one role</li>
+</ul>
+<p>For more on User Setup, please see the <a class="reference internal" href="../ui/doc_user_setup.html"><span class="doc">User Setup</span></a>.</p>
+</div>
+<div class="section" id="roles">
+<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h3>
+<p>A role is a classification within a tenant and are used to define
+natural distinctions between users. For instance, your company man have
+an IT Department that is interested in bug reports and a Sales
+Department that is interested in quarterly sales. Roles will allow you
+to filter the data available for each role so that they only see
+relevant information.
+- Roles can overlap each other but roles cannot be subsets of each other</p>
+<p>For more on Role Setup, please see the <a class="reference internal" href="../ui/doc_role_setup.html"><span class="doc">Role Setup</span></a>.</p>
+</div>
+<div class="section" id="tenants">
+<h3>Tenants<a class="headerlink" href="#tenants" title="Permalink to this headline">¶</a></h3>
+<p>Tenants are the largest user classification available. A tenant is
+generally used to define one definite entity with a broad access to
+features, data, reports, and dashboards.
+- Users and roles can only belong to 1 tenant</p>
+</div>
+<div class="section" id="tenant-system-modes">
+<h3>Tenant System Modes<a class="headerlink" href="#tenant-system-modes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Izenda is built to support two main system configuration modes:</li>
+</ul>
+<div class="section" id="single-tenant">
+<h4>Single Tenant<a class="headerlink" href="#single-tenant" title="Permalink to this headline">¶</a></h4>
+<p>Single tenant allows you to set up Izenda for a single client scenario.</p>
+<div class="figure" id="id2">
+<img alt="../_images/tru_single_tenant.PNG" src="../_images/tru_single_tenant.PNG" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Single Tenant Mode</span></p>
+</div>
+</div>
+<div class="section" id="multi-tenant">
+<h4>Multi-Tenant<a class="headerlink" href="#multi-tenant" title="Permalink to this headline">¶</a></h4>
+<p>Multi-Tenant provides an easy management of multiple clients on the same instance of Izenda.</p>
+<ul class="simple">
+<li>If you use multi-tenant mode, you can choose to allow duplicated User IDs where an ID can be used in multiple tenants. These User IDs do not reference the same user.</li>
+<li>Roles can mirror each other in each tenant but roles cannot exist between tenants.</li>
+<li>Users can mirror each other in each tenant but users, other than a System Administrator, cannot exist between tenants.</li>
+</ul>
+<div class="figure" id="id3">
+<img alt="../_images/tru_multi_tenant.PNG" src="../_images/tru_multi_tenant.PNG" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Multi-Tenant Mode</span></p>
+</div>
+<p>For more on Multi-Tenant Setup, please see the <a class="reference internal" href="../ui/doc_tenant_setup.html"><span class="doc">Tenant Setup</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="understanding_reports_and_dashboards.html" class="btn btn-neutral float-right" title="Understanding Reports and Dashboards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="understanding_the_three-tiered_architecture.html" class="btn btn-neutral" title="Understanding The Three-tiered Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

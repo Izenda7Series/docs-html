@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReactJS to manage a scalar value &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
+        <link rel="next" title="ReactJS to manage the list of categories" href="code_react_manage_the_list_of_categories.html"/>
+        <link rel="prev" title="REST API Test" href="code_rest_api_test.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_rest_api_test.html">REST API Test</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ReactJS to manage a scalar value</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boilerplate-code">Boilerplate code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reactjs-basics">ReactJS basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-fetchdata">Implement fetchData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_the_list_of_categories.html">ReactJS to manage the list of categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html">ReactJS to toggle the list of visible data sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a> &raquo;</li>
+        
+      <li>ReactJS to manage a scalar value</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_react_manage_a_scalar_value.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reactjs-to-manage-a-scalar-value">
+<h1>ReactJS to manage a scalar value<a class="headerlink" href="#reactjs-to-manage-a-scalar-value" title="Permalink to this headline">¶</a></h1>
+<p>In this sample we will write a simplistic web page utilizing ReactJS to
+manage a server scalar value setting.</p>
+<ul class="simple">
+<li>We will test with the <a class="reference internal" href="../ref/api_report_designer_details.html#get-report-reportmode"><span class="std std-ref">GET report/reportMode</span></a> and
+<a class="reference internal" href="../ref/api_report_designer_details.html#post-report-reportmode-value"><span class="std std-ref">POST report/reportMode/{value}</span></a>
+APIs.</li>
+<li>We will use ReactJS to create the UI.</li>
+</ul>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>This sample is a continuation of <a class="reference internal" href="code_rest_api_test.html"><span class="doc">REST API Test</span></a>.</li>
+<li>This sample re-uses the folder structure created in <a class="reference internal" href="code_rest_api_test.html"><span class="doc">REST API Test</span></a>.</li>
+<li>The uncompressed, development version of react.js and react-dom.js
+has been put into &#8220;ui_react_examples/vendor&#8221; folder. (They are in
+the starter kit available at
+<a class="reference external" href="https://facebook.github.io/react/downloads.html">https://facebook.github.io/react/downloads.html</a>)</li>
+</ol>
+</div>
+<div class="section" id="boilerplate-code">
+<h2>Boilerplate code<a class="headerlink" href="#boilerplate-code" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
+&#8220;ReactJS to manage a scalar value.html&#8221;.</li>
+<li>Edit the file with a text editor such as Notepad or Notepad++ and
+paste the following boilerplate HTML code:</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;title&gt;React Test&lt;/title&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+     var ScalarValueComponent = React.createClass({
+      getInitialState: function() {
+         return {
+           data: null
+         };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+      },
+      render: function() {
+         return (
+           &lt;div id=&quot;outerdiv&quot;&gt;
+             &lt;input type=&quot;text&quot; value={this.state.data} onChange={this.reflectChangedData} /&gt;&amp;nbsp;
+             &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+           &lt;/div&gt;
+         )
+      },
+      reflectChangedData: function(event) {
+         this.setState({
+           data: event.target.value
+         });
+      },
+      fetchData: function() {
+         // TODO
+      },
+      pushData: function() {
+         // TODO
+      }
+     });
+
+     ReactDOM.render(&lt;ScalarValueComponent /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>For production web site, we will replace the local libraries with
+hosted, minified and compressed library links.</p>
+</div>
+<div class="section" id="reactjs-basics">
+<h2>ReactJS basics<a class="headerlink" href="#reactjs-basics" title="Permalink to this headline">¶</a></h2>
+<p>A ReactJS component maintains its data in <code class="docutils literal"><span class="pre">this.state</span></code>, initialize the
+data in <code class="docutils literal"><span class="pre">getInitialState</span></code> method, load the data from server in
+<code class="docutils literal"><span class="pre">componentDidMount</span></code> method, and creates its UI elements in the
+<code class="docutils literal"><span class="pre">render</span></code> method. The <code class="docutils literal"><span class="pre">render</span></code> method is called each time there is a
+change in <code class="docutils literal"><span class="pre">this.state</span></code>.</p>
+<p>Above that we added 3 custom methods:</p>
+<ul class="simple">
+<li>fetchData to get data from the server</li>
+<li>reflectChangedData to update the state data according to user input</li>
+<li>pushData to post data to the server</li>
+</ul>
+<p>Just by implementing these 6 methods then we will have a working ReactJS
+component. In this specific case, we only need to implement fetchData
+and pushData, the other boilerplate methods are already working without
+any change needed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note on the mixing of JavaScript and XML tags: we are using the JSX syntax to facilitate reading. This JSX will be translated to JavaScript by the included Babel library.</p>
+</div>
+</div>
+<div class="section" id="implement-fetchdata">
+<h2>Implement fetchData<a class="headerlink" href="#implement-fetchdata" title="Permalink to this headline">¶</a></h2>
+<p>From the API documentation <a class="reference internal" href="../ref/api_report_designer_details.html#get-report-reportmode"><span class="std std-ref">GET report/reportMode</span></a>, the
+<code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> in fetchData would be replaced by this ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://127.0.0.1:8888/api/report/reportMode&quot;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="nx">response</span>
+    <span class="p">});</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Now open the page in web browser and we can see the value 0 or 1 for the reportMode setting.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We need to add <code class="docutils literal"><span class="pre">.bind(this)</span></code> for the call <code class="docutils literal"><span class="pre">this.setState</span></code> to correctly call the setState method of the ReactJS component.</p>
+</div>
+</div>
+<div class="section" id="implement-pushdata">
+<h2>Implement pushData<a class="headerlink" href="#implement-pushdata" title="Permalink to this headline">¶</a></h2>
+<p>From the API documentation <a class="reference internal" href="../ref/api_report_designer_details.html#post-report-reportmode-value"><span class="std std-ref">POST report/reportMode/{value}</span></a>,
+the <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> in pushData would be replaced by this ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://127.0.0.1:8888/api/report/reportMode/&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;The response was &quot;false&quot;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Now we can enter the desired value 0 or 1 and click Save to update the
+server setting. Any other value would receive a false response and an
+notice line in JavaScript Console.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We need to add <code class="docutils literal"><span class="pre">.bind(this)</span></code> for the call <code class="docutils literal"><span class="pre">this.fetchData</span></code> to correctly call the fetchData method of the ReactJS component.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we went through these activities:</p>
+<ul class="simple">
+<li>included the ReactJS and JQuery libraries.</li>
+<li>created a boilerplate ReactJS component.</li>
+<li>loaded initial data using ReactJS&#8217;s componentDidMount event.</li>
+<li>created UI components using ReactJS.</li>
+<li>added event handlers to get data, post data and update the state data
+according to user input.</li>
+</ul>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full source code in this sample:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+     var ScalarValueComponent = React.createClass({
+      getInitialState: function() {
+         return {
+           data: null
+         };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+      },
+      render: function() {
+         return (
+           &lt;div id=&quot;outerdiv&quot;&gt;
+             &lt;input type=&quot;text&quot; value={this.state.data} onChange={this.reflectChangedData} /&gt;&amp;nbsp;
+             &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+           &lt;/div&gt;
+         )
+      },
+      fetchData: function() {
+              $.ajax({
+           url: &quot;http://127.0.0.1:8888/api/report/reportMode&quot;,
+           type: &quot;GET&quot;,
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             this.setState({
+               data: response
+             });
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         })
+           },
+      reflectChangedData: function(event) {
+         this.setState({
+           data: event.target.value
+         });
+      },
+      pushData: function() {
+         $.ajax({
+           url: &quot;http://127.0.0.1:8888/api/report/reportMode/&quot; + this.state.data,
+           type: &quot;POST&quot;,
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             if (response == false) {
+               this.fetchData();
+               console.log(&#39;The response was &quot;false&quot;&#39;);
+             }
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         })
+      }
+     });
+
+     ReactDOM.render(&lt;ScalarValueComponent /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_react_manage_the_list_of_categories.html" class="btn btn-neutral float-right" title="ReactJS to manage the list of categories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_rest_api_test.html" class="btn btn-neutral" title="REST API Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

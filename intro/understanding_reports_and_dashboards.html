@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Understanding Reports and Dashboards &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Izenda Concepts" href=".izenda_concepts.html"/>
+        <link rel="next" title="Understanding Licensing Modes" href="understanding_licensing_modes.html"/>
+        <link rel="prev" title="Understanding The Tenant-Role-User Relationship" href="understanding_the_tenant_role_user_relationship.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href=".intro.html">Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".izenda_concepts.html">Izenda Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_three-tiered_architecture.html">Understanding The Three-tiered Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_tenant_role_user_relationship.html">Understanding The Tenant-Role-User Relationship</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding Reports and Dashboards</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reports-vs-dashboards">Reports vs. Dashboards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reports-and-dashboards">Reports and Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_licensing_modes.html">Understanding Licensing Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nature_of_izenda_security.html">The Nature of Izenda Security</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".data_management.html">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported_web_browsers.html">Supported Web Browsers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".intro.html">Introduction</a> &raquo;</li>
+        
+          <li><a href=".izenda_concepts.html">Izenda Concepts</a> &raquo;</li>
+        
+      <li>Understanding Reports and Dashboards</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/understanding_reports_and_dashboards.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="understanding-reports-and-dashboards">
+<h1>Understanding Reports and Dashboards<a class="headerlink" href="#understanding-reports-and-dashboards" title="Permalink to this headline">¶</a></h1>
+<p>Reports and Dashboards are the blank canvases of Izenda.</p>
+<div class="section" id="reports-vs-dashboards">
+<h2>Reports vs. Dashboards<a class="headerlink" href="#reports-vs-dashboards" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reports">
+<h3>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h3>
+<p>Reports allow you to select data sources and build data visualizations
+of your data in containers called <em>report parts.</em></p>
+<ul class="simple">
+<li>Report Parts are the smallest units of a report and allow you to
+build reports modularly with ease.</li>
+<li>Report Parts are re-sizable, movable, and editable. Interaction with
+them within the Report Designer is built to be intuitive.</li>
+<li>Report Parts can consist of 5 different Report Part types. These
+include Grids, Gauges, Maps, Forms, and Charts.</li>
+<li>For more, see <a class="reference internal" href="../ui/doc_report_list.html"><span class="doc">Report List</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="dashboards">
+<h3>Dashboards<a class="headerlink" href="#dashboards" title="Permalink to this headline">¶</a></h3>
+<p>Dashboards give you the ability to create a “hub” of data visualizations
+for any and all users to consume. Like reports, dashboards have an
+elemental container called a <em>tile.</em> Essentially these tiles act as a
+collection of report parts combined into one visualization.</p>
+<ul class="simple">
+<li>Tiles are re-sizable, movable, and editable. Interaction with them
+within the Report Designer is built to be intuitive.</li>
+<li>Tiles hold a report part definition from reports that have previously
+been created.<ul>
+<li>Since dashboards don&#8217;t <em>own</em> any report parts, dashboards do not
+have the ability to select additional data sources.</li>
+</ul>
+</li>
+<li>For more, see <a class="reference internal" href="../ui/doc_dashboard_designer.html"><span class="doc">Dashboard Designer</span></a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="reports-and-dashboards">
+<h2>Reports and Dashboards<a class="headerlink" href="#reports-and-dashboards" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sample-sizes">
+<h3>Sample Sizes<a class="headerlink" href="#sample-sizes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Sample sizes of your data can be manipulated to allow you to design
+quickly with a small data set and display accurately with a large
+data set.</li>
+</ul>
+</div>
+<div class="section" id="filtering">
+<span id="id1"></span><h3>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Filtering can be applied to limit the data seen in a
+report/dashboard. For instance, if you had a <em>Country</em> field in your
+data, you could filter the report/dashboard to only display data for
+the country of Argentina.</li>
+<li>Filtering is report-wide. You cannot filter per report part or per
+field.</li>
+<li>Filtering is generally dashboard-wide.<ul>
+<li>If all tiles share the same filters, filters can only be set
+globally.</li>
+<li>If tiles share some filters but have some unique filters, unique
+filters can be set individually by flipping the tile into
+configuration mode. Common filters are set globally.</li>
+<li>If tiles only have unique filters, all filters can be set
+individually by flipping the tile into configuration mode.</li>
+</ul>
+</li>
+</ul>
+<p>For more information on Filters, feel free to check out the <a class="reference internal" href="../ui/usage_adding_filters_to_a_report.html"><span class="doc">Adding Filters to a Report</span></a> guide.</p>
+</div>
+<div class="section" id="sharing-and-permissions">
+<h3>Sharing and Permissions<a class="headerlink" href="#sharing-and-permissions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>As a report/dashboard designer, you will be able to limit the
+visibility and access of your creations.<ul>
+<li>By default, all reports/dashboards are shared at a role level.</li>
+<li>If a user doesn&#8217;t have access to data pertaining to a particular
+dashboard tile, the tile will not display any information.</li>
+<li>There are also a number of different access rights that can be
+granted to indvidual roles and users. These include offering Full
+Access, No Access, View Only, Quick Edit, Save As, and Locked.</li>
+<li>For more, see <a class="reference internal" href="understanding_the_tenant_role_user_relationship.html"><span class="doc">Understanding The Tenant-Role-User Relationship</span></a>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="exporting-and-scheduling">
+<span id="id2"></span><h3>Exporting and Scheduling<a class="headerlink" href="#exporting-and-scheduling" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Reports and Dashboards are exportable<ul>
+<li>Izenda supports exporting to various file formats including: Word,
+Excel, PDF, XML, CSV, and JSON.</li>
+</ul>
+</li>
+<li>Reports/Dashboards can be scheduled<ul>
+<li>Reports and dashboards can be exported through the Email body as a
+link, embedded, attached as an export, or saved to a file location
+as an export.</li>
+<li>For more, see <a class="reference internal" href="../ui/doc_configuration_scheduling.html"><span class="doc">How to Schedule</span></a>.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="understanding_licensing_modes.html" class="btn btn-neutral float-right" title="Understanding Licensing Modes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="understanding_the_tenant_role_user_relationship.html" class="btn btn-neutral" title="Understanding The Tenant-Role-User Relationship" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

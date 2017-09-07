@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Copy Management &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
+        <link rel="next" title="Security Recommendations" href="doc_security_recommendations.html"/>
+        <link rel="prev" title="Global Report Setup Guide" href="doc_global_report_setup.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup.html">Tenant Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup_for_multi-tenant_architectures.html">Tenant Setup for Multi-tenant Architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_global_report_setup.html">Global Report Setup Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Copy Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#view-workspace-list">View Workspace List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-a-workspace">Edit a Workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validate-consistency-between-source-and-destinations">Validate Consistency between Source and Destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-copy">Run Copy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a> &raquo;</li>
+        
+      <li>Copy Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_copy_management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="copy-management">
+<h1>Copy Management<a class="headerlink" href="#copy-management" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Copy Dashboard is available from release v0.22.14.</p>
+</div>
+<p>The <strong>Copy Management</strong> page allows user to:</p>
+<ul>
+<li><p class="first">define rules to copy data among system and tenants, including:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>logical data model</li>
+<li>advanced data settings</li>
+<li>dashboards</li>
+<li>reports</li>
+</ul>
+</td><td><ul class="simple">
+<li>tenant permissions</li>
+<li>role names</li>
+<li>roles and their permissions</li>
+</ul>
+</td></tr></table>
+</li>
+<li><p class="first">validate data model consistency between two locations</p>
+</li>
+<li><p class="first">save mapping rules into workspaces</p>
+</li>
+</ul>
+<div class="section" id="view-workspace-list">
+<h2>View Workspace List<a class="headerlink" href="#view-workspace-list" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id1">
+<span id="workspace-list"></span><a class="reference internal image-reference" href="../_images/Workspace_List.png"><img alt="../_images/Workspace_List.png" src="../_images/Workspace_List.png" style="width: 367px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 174 </span><span class="caption-text">Workspace List</span></p>
+</div>
+<p>In browser, log in to Izenda as a user with Copy Management permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Copy Management in the left menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">The list of workspaces are displayed under Middle Panel.</p>
+</li>
+<li><p class="first">Tick the Show only my workspace check-box to filter the list by workspaces owned by current user.</p>
+</li>
+<li><p class="first">Type a partial name into the Search box to further filter the list by similar name.</p>
+<ul class="simple">
+<li>Click on a workspace to open it.</li>
+<li>Click the x icon to delete the workspace. <br clear="right" /></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="edit-a-workspace">
+<h2>Edit a Workspace<a class="headerlink" href="#edit-a-workspace" title="Permalink to this headline">¶</a></h2>
+<p>Clicking on a workspace in Middle Panel will open it. Each workspace
+contains 5 sections:</p>
+<ul>
+<li><p class="first">Workspace Name and created date</p>
+<blockquote>
+<div><p>allows user to view workspace name and created date, and to
+rename the workspace.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Items to Copy Options</p>
+<blockquote>
+<div><p>allows user to quickly specify groups of settings then run copy.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Source Data Model Copy List</p>
+<blockquote>
+<div><p>allows user to pick specific data model items to copy instead of
+all visible items.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Destination Tenant List</p>
+<blockquote>
+<div><p>contains the tenants to copy to.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Mappings List</p>
+<blockquote>
+<div><p>contains mapping from Source to Destination physical location.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="rename-a-workspace">
+<h3>Rename a Workspace<a class="headerlink" href="#rename-a-workspace" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><div class="figure align-right" id="id2">
+<span id="workspace-rename-duplication"></span><a class="reference internal image-reference" href="../_images/Workspace_Rename_Duplication.png"><img alt="../_images/Workspace_Rename_Duplication.png" src="../_images/Workspace_Rename_Duplication.png" style="width: 211px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 175 </span><span class="caption-text">Rename a Workspace</span></p>
+</div>
+<p>Click the pencil icon to rename the workspace.</p>
+</li>
+<li><p class="first">Enter a new name for the workspace.</p>
+</li>
+<li><p class="first">Click the check icon to confirm the new name.</p>
+</li>
+<li><p class="first">The name will be checked for duplication. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="items-to-copy-options">
+<h3>Items to Copy Options<a class="headerlink" href="#items-to-copy-options" title="Permalink to this headline">¶</a></h3>
+<p>This section lists selectable items to copy:</p>
+<ul class="simple">
+<li>Data Model</li>
+<li>Advanced Data Settings</li>
+<li>Tenant Permissions</li>
+<li>Roles</li>
+<li>Role Permissions</li>
+</ul>
+</div>
+<div class="section" id="configure-source-data-model-copy-list">
+<h3>Configure Source Data Model Copy List<a class="headerlink" href="#configure-source-data-model-copy-list" title="Permalink to this headline">¶</a></h3>
+<p>Source panel on the left shows visible database connections, schemas
+together with visible inner data model items.</p>
+<blockquote>
+<div>Tick the checkbox next to each item to include it in the Data Model copy operation.</div></blockquote>
+<p>Destination panel on the right is the list of selected tenants to copy
+to, together with validation and authentication status.</p>
+</div>
+<div class="section" id="configure-destination-tenant-list">
+<h3>Configure Destination Tenant List<a class="headerlink" href="#configure-destination-tenant-list" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click the down arrow in Destination box to see the list of tenants.</li>
+<li>Click each tenant to add it to the box.</li>
+<li>Click the down arrow again to close the list.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To copy to all tenants, simply select &#8220;All Tenants&#8221; option. It will replace all currently selected tenants when selected.</p>
+</div>
+</div>
+<div class="section" id="edit-mappings">
+<h3>Edit mappings<a class="headerlink" href="#edit-mappings" title="Permalink to this headline">¶</a></h3>
+<p>A mapping specifies the physical destination for each database
+connection or schema of tenant (in case the database connection or
+schema name in destination is different from logical data model).</p>
+<ol class="arabic simple">
+<li>Select a database connection in Source.</li>
+<li>Choose the mapping type: Database or Schema.</li>
+<li><ul class="first">
+<li>Select a schema from the Object list if using Schema mapping.</li>
+<li>For Database mapping, the Object list is already populated with
+the database name.</li>
+</ul>
+</li>
+<li>Select the target database connection.</li>
+<li><ul class="first">
+<li>Enter the schema name (expression) into Object list if using
+Schema mapping.</li>
+<li>For Database mapping, the Object list is already populated with
+the database name.</li>
+</ul>
+</li>
+<li>Select the tenants to apply this mapping to.</li>
+<li>Continue to add mappings to cover all selected database connections,
+schemas and tenants.</li>
+</ol>
+<p>Rules:</p>
+<ul class="simple">
+<li>Tenants without a Database mapping will be copied to the same
+database connection.</li>
+<li>Each schema without mapping will be copied to a schema with the same
+name (in the database connection specified in mapping).</li>
+</ul>
+<p>For example, user needs to copy data model for schema Sales to Tenant01, Tenant02 and Tenant03.</p>
+<blockquote>
+<div><p>The schemas are named Sales0x with x = 1, 2 or 3 for each tenant
+respectively.</p>
+<p>Tenant02 and Tenant03 share the same physical database TenantDB
+while Tenant03 uses ACMEDB database on a separate server.</p>
+</div></blockquote>
+<p>Following is how to configure the workspace:</p>
+<ol class="arabic">
+<li><p class="first">Tick Data Model check-box in Items to Copy section.</p>
+</li>
+<li><div class="figure align-right" id="id3">
+<span id="copy-management-sample-sales-schema"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Sample_Sales_schema.png"><img alt="../_images/Copy_Management_Sample_Sales_schema.png" src="../_images/Copy_Management_Sample_Sales_schema.png" style="width: 664px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 176 </span><span class="caption-text">Copy Sales schema</span></p>
+</div>
+<p>Tick the Sales schema to include it in the copy. <br clear="right" /></p>
+</li>
+<li><p class="first">Select Tenant01, Tenant02 and Tenant03 as Destinations.</p>
+</li>
+<li><p class="first">Add Connection to TenantDB for Tenant02 and Tenant03, and add connection to ACMEDB for Tenant03.</p>
+</li>
+<li><p class="first">Add the mappings.</p>
+<div class="figure" id="id4">
+<span id="copy-management-sample-mapping"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Sample_Mapping.png"><img alt="../_images/Copy_Management_Sample_Mapping.png" src="../_images/Copy_Management_Sample_Mapping.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 177 </span><span class="caption-text">Map database connections and schemas <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="validate-consistency-between-source-and-destinations">
+<h2>Validate Consistency between Source and Destinations<a class="headerlink" href="#validate-consistency-between-source-and-destinations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the Validate button at the top to validate for tenants with
+status &#8220;Need validated&#8221;:</p>
+<blockquote>
+<div><p>Each tenant will be checked for a valid mapping for each schema.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click the gear icon (⚙) next to
+each tenant to open Advanced Settings page for that tenant.</p>
+</li>
+<li><p class="first">Click Validate button at the top to validate consistency in data
+model between source and the selected tenant.</p>
+<blockquote>
+<div><p>Selected objects in source will be checked for existence in data
+model for selected tenant by name.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click OK to close the page.</p>
+<div class="figure" id="id5">
+<span id="copy-management-data-model-comparison"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Data_Model_Comparison.png"><img alt="../_images/Copy_Management_Data_Model_Comparison.png" src="../_images/Copy_Management_Data_Model_Comparison.png" style="width: 637px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 178 </span><span class="caption-text">Data Model Comparison <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="run-copy">
+<h2>Run Copy<a class="headerlink" href="#run-copy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click Run Copy button to perform the copy of selected items for
+tenants with status &#8220;Ready To Copy&#8221;.</p>
+</li>
+<li><div class="figure align-right" id="id6">
+<span id="copy-management-overwritten-confirmation"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Overwritten_Confirmation.png"><img alt="../_images/Copy_Management_Overwritten_Confirmation.png" src="../_images/Copy_Management_Overwritten_Confirmation.png" style="width: 452px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 179 </span><span class="caption-text">Confirm to Overwrite existing Data Model</span></p>
+</div>
+<p>Click OK to confirm to overwrite existing Data Model if needed. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_security_recommendations.html" class="btn btn-neutral float-right" title="Security Recommendations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_global_report_setup.html" class="btn btn-neutral" title="Global Report Setup Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Nature of Izenda Security &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Izenda Concepts" href=".izenda_concepts.html"/>
+        <link rel="next" title="Data Management" href=".data_management.html"/>
+        <link rel="prev" title="Understanding Licensing Modes" href="understanding_licensing_modes.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href=".intro.html">Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".izenda_concepts.html">Izenda Concepts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_three-tiered_architecture.html">Understanding The Three-tiered Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_tenant_role_user_relationship.html">Understanding The Tenant-Role-User Relationship</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_reports_and_dashboards.html">Understanding Reports and Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="understanding_licensing_modes.html">Understanding Licensing Modes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The Nature of Izenda Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#security-at-a-role-level">Security at a Role Level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#security-at-a-code-level">Security at a Code Level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#security-at-a-report-level">Security at a Report Level</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".data_management.html">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported_web_browsers.html">Supported Web Browsers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".intro.html">Introduction</a> &raquo;</li>
+        
+          <li><a href=".izenda_concepts.html">Izenda Concepts</a> &raquo;</li>
+        
+      <li>The Nature of Izenda Security</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/nature_of_izenda_security.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-nature-of-izenda-security">
+<h1>The Nature of Izenda Security<a class="headerlink" href="#the-nature-of-izenda-security" title="Permalink to this headline">¶</a></h1>
+<p>Izenda abides by a few simple rules to ensure that resources are properly secure. A resource could be a data source, access right, or report. We will use the following example to display these laws. In this example, we have a tenant with access to resources {A, B, C, D, E}. We have three roles: Role 1 with access to {A,B,C}; Role 2 with accecss to {A,C,D}; Role 3 with access to {A,E}. Finally, we have a User X that we would like to grant access to to certain resources.</p>
+<div class="figure" id="id1">
+<img alt="../_images/resource_mapping_example.PNG" src="../_images/resource_mapping_example.PNG" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Resource Mapping Example</span></p>
+</div>
+<div class="section" id="security-at-a-role-level">
+<h2>Security at a Role Level<a class="headerlink" href="#security-at-a-role-level" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Security at a role level allows you to restrict access to resources.</li>
+</ul>
+<div class="section" id="the-law-of-filtered-resources">
+<h3>The Law of Filtered Resources<a class="headerlink" href="#the-law-of-filtered-resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Resources provided to a user is filtered from the broadest indentity to the narrowest. Therefore, when the identity of a user is established, a tenant is created, a role is created, and, finally, a user is created.</dt>
+<dd><ul class="first last">
+<li>Suppose we want User X to have access to Resource A. User X could have either Role 1, Role 2, or Role 3.</li>
+<li>Suppose we want User X to have access to Resource E. User x must have Role 3.</li>
+<li>Suppose we want User X to have access to Resource F. Since we are only aware of one tenant and that tenant does not have access to Resource F, User X cannot have access to Resource F.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="the-law-of-least-restriction">
+<h3>The Law of Least Restriction<a class="headerlink" href="#the-law-of-least-restriction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>The access for a user is the union of all of it&#8217;s identities&#8217; access. For reports/dashboards, the access for a user is the union of all of it&#8217;s identities&#8217; report/dashboard and all access rights explicitly defined in a report/dashboard.</dt>
+<dd><ul class="first last">
+<li>Users can only belong to one tenant and, therefore, roles defined in a tenant contain subsets of resource access of the tenant. Since users can have multiple roles, the role identity of a user is the union of all it&#8217;s roles. Therefore, if a user belongs to one role that does not allow access to a resource but it also belongs to a role that does allow access to a resource, the user will have access to the resource.</li>
+<li>Suppose we want User X to have access to Resources {A, B, C, D, E}. User X must have Role 1, Role 2, Role 3.</li>
+<li>Suppose we want User X to have access to Resources {A, C, D, E}. User X must have Role 2 and Role 3.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The Law of Least Restriction makes it impossible to define a user&#8217;s access to a resource by the instersection of roles with only the use of roles.</dt>
+<dd><ul class="first last">
+<li>Suppose we want User X to have access to Resources {A, C, E} but we do not want it to have access to Resources {B, D}. With the roles provided, it is impossible to restrict access with roles alone.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>The Law of Least Restriction makes it impossible to define roles within roles (subsets) with only the use of roles</li>
+</ul>
+</div>
+</div>
+<div class="section" id="security-at-a-code-level">
+<h2>Security at a Code Level<a class="headerlink" href="#security-at-a-code-level" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Security at a code level allows for further granulation of data.</li>
+</ul>
+<div class="section" id="hidden-filters">
+<h3>Hidden Filters<a class="headerlink" href="#hidden-filters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Data source access is first dictated by your roles and then your code (hidden filters). Explicit permission in reports regarding data access is not possible i.e. it cannot override your code.</dt>
+<dd><ul class="first last">
+<li>Code-Level Filtering is applied as a &#8220;where&#8221; clause in SQL. It is intended to filter data query results but not the reports themselves</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure" id="id2">
+<img alt="../_images/intersection_of_role_data_access.png" src="../_images/intersection_of_role_data_access.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Simulating The Intersection of Role Data Access</span></p>
+</div>
+<div class="figure" id="id3">
+<img alt="../_images/sub_role_data_access.png" src="../_images/sub_role_data_access.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Simulating Sub Role Data Access</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="security-at-a-report-level">
+<h2>Security at a Report Level<a class="headerlink" href="#security-at-a-report-level" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Explicit permissions in reports regarding modification supersede permissions set in a role.</dt>
+<dd><ul class="first last">
+<li>If a user’s role does not grant it access to data or code is used to filter the data, the user will not have access to the data. A message “No Results Found” will be displayed.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>In the report designer, categories exist if there is a report that exists within it.</li>
+<li>In the report designer, categories are only visible to a user if at least one report is visible to the user.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".data_management.html" class="btn btn-neutral float-right" title="Data Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="understanding_licensing_modes.html" class="btn btn-neutral" title="Understanding Licensing Modes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sample Properties for a ReportPartElement &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Building Report" href=".building_report.html"/>
+        <link rel="next" title="BI Portal Custom CSS" href="code_bi_portal_custom_css.html"/>
+        <link rel="prev" title="Build a simple Form" href="code_javascript_build_a_simple_form.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".building_report.html">Building Report</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_generic_report.html">Build a Generic Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_grid.html">Build a simple Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_chart.html">Build a simple Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html">Build a simple Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_map.html">Build a simple Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_form.html">Build a simple Form</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sample Properties for a ReportPartElement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".building_report.html">Building Report</a> &raquo;</li>
+        
+      <li>Sample Properties for a ReportPartElement</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_javascript_sample_properties_for_a_reportpartelement.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sample-properties-for-a-reportpartelement">
+<h1>Sample Properties for a ReportPartElement<a class="headerlink" href="#sample-properties-for-a-reportpartelement" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <a class="reference internal" href="../ref/models/ReportPartElementProperties.html"><span class="doc">ReportPartElementProperties</span></a> for the purpose of each field.</p>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample for <code class="docutils literal"><span class="pre">GROUP(OrderDate)</span></code></div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>&#8220;7f942ac7-08d8-41fa-9e89-bad96f07f102&#8221; is the id for GROUP function</li>
+<li>Get the list of functions from <a class="reference internal" href="../ref/api_report_designer_details.html#post-report-function-function-mode-data-type-tenant-id"><span class="std std-ref">POST report/function/{function_mode}/{data_type}/(tenant_id)</span></a></li>
+<li>&#8220;76875180-32c1-4180-b92f-03bdb14c4f6a&#8221; is the id for Year format</li>
+<li>Get the list of formats from <a class="reference internal" href="../ref/api_report_designer_filters.html#get-report-field-dataformat-datatype"><span class="std std-ref">GET report/field/dataFormat/{dataType}</span></a></li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderDate&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;other fields&quot;</span><span class="p">:</span> <span class="s2">&quot;are not included in this sample&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;7f942ac7-08d8-41fa-9e89-bad96f07f102&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;7f942ac7-08d8-41fa-9e89-bad96f07f102&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Datetime&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Datetime&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;formatId&quot;</span><span class="p">:</span> <span class="s2">&quot;76875180-32c1-4180-b92f-03bdb14c4f6a&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;groupBy&quot;</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;createNewHiddenPercenOfGroupField&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample for <code class="docutils literal"><span class="pre">SUM(Freight)</span></code></div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>&#8220;902a9168-fc01-4a35-92fb-ea67942d099d&#8221; is the id for SUM function</li>
+<li>Get the list of functions from <a class="reference internal" href="../ref/api_report_designer_details.html#post-report-function-function-mode-data-type-tenant-id"><span class="std std-ref">POST report/function/{function_mode}/{data_type}/(tenant_id)</span></a></li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (Freight)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;other fields&quot;</span><span class="p">:</span> <span class="s2">&quot;are not included in this sample&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;createNewHiddenPercenOfGroupField&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample for <code class="docutils literal"><span class="pre">SUM(Freight)</span></code> with Gauge Static Threshold setting</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>&#8220;902a9168-fc01-4a35-92fb-ea67942d099d&#8221; is the id for SUM function</li>
+<li>Get the list of functions from <a class="reference internal" href="../ref/api_report_designer_details.html#post-report-function-function-mode-data-type-tenant-id"><span class="std std-ref">POST report/function/{function_mode}/{data_type}/(tenant_id)</span></a></li>
+<li>The Gauge metric settings are also highlighted:<ul>
+<li>Scale from 4000 to 8000</li>
+<li>Unit label shows &#8220;USD&#8221;</li>
+<li>Static threshold levels: less than 5000, between 5000 and 7000, greater than 7000</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (Freight)&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;createNewHiddenPercenOfGroupField&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;metric&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">         <span class="nt">&quot;scale&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">            <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="mi">4000</span><span class="p">,</span>
+</span><span class="hll">            <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="mi">8000</span>
+</span>         <span class="p">},</span>
+<span class="hll">         <span class="nt">&quot;unitLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+</span>         <span class="nt">&quot;thresholds&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;setting&quot;</span><span class="p">:</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;levels&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#55BF3B&quot;</span><span class="p">,</span>
+<span class="hll">                  <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;less than&quot;</span><span class="p">,</span>
+</span>                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="hll">                  <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
+</span>                  <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="kc">null</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#DDDF0D&quot;</span><span class="p">,</span>
+<span class="hll">                  <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;between&quot;</span><span class="p">,</span>
+</span><span class="hll">                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
+</span><span class="hll">                  <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="mi">7000</span><span class="p">,</span>
+</span>                  <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="kc">null</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;high&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#DF5353&quot;</span><span class="p">,</span>
+<span class="hll">                  <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;greater than&quot;</span><span class="p">,</span>
+</span><span class="hll">                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">7000</span><span class="p">,</span>
+</span>                  <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="kc">null</span>
+               <span class="p">}</span>
+            <span class="p">]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;supplementaryKPI&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;valueType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;unitLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;61b3c4ad-cbd4-49b0-9385-540568397e05&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;Freight&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (Freight)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample for <code class="docutils literal"><span class="pre">SUM(UnitsInStock)</span></code> with Gauge Dynamic Threshold setting</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>&#8220;902a9168-fc01-4a35-92fb-ea67942d099d&#8221; is the id for SUM function</li>
+<li>Get the list of functions from <a class="reference internal" href="../ref/api_report_designer_details.html#post-report-function-function-mode-data-type-tenant-id"><span class="std std-ref">POST report/function/{function_mode}/{data_type}/(tenant_id)</span></a></li>
+<li>The Gauge Dynamic Threshold setting: <code class="docutils literal"><span class="pre">low:</span> <span class="pre">SUM(UnitsInStock)</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">SUM(UnitsOnOrder)</span></code></li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;activeSerie&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;labels&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;7f942ac7-08d8-41fa-9e89-bad96f07f102&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;7f942ac7-08d8-41fa-9e89-bad96f07f102&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Group&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;a79ccaa4-d294-4b02-aed8-70f7ea1ee303&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;59c2e0a9-138a-4d29-b12d-bf98f99f6cc3&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;labels&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+<span class="hll">            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsInStock)&quot;</span><span class="p">,</span>
+</span>            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+</span>                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{},</span>
+               <span class="nt">&quot;metric&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;scale&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;unitLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="hll">                  <span class="nt">&quot;thresholds&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">                     <span class="nt">&quot;setting&quot;</span><span class="p">:</span> <span class="s2">&quot;dynamic&quot;</span><span class="p">,</span>
+</span>                     <span class="nt">&quot;levels&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span>
+<span class="hll">                           <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;less than&quot;</span><span class="p">,</span>
+</span>                           <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="hll">                           <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">                              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsOnOrder)&quot;</span><span class="p">,</span>
+</span>                              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                 <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                 <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">                                       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+</span>                                       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                    <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                       <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">},</span>
+                                       <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">}</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                       <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                       <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">}</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                    <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                    <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                       <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                                       <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">},</span>
+                                       <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">}</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                              <span class="p">},</span>
+                              <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                 <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;9baea98a-8cf8-46d9-8bcc-89a3374da404&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;UnitsOnOrder&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsOnOrder)&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;59c2e0a9-138a-4d29-b12d-bf98f99f6cc3&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                 <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                 <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                 <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                 <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                              <span class="p">}</span>
+                           <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#008000&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;less than&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsOnOrder)&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                 <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                 <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;902a9168-fc01-4a35-92fb-ea67942d099d&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;syntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;expressionSyntax&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;isOperator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;userDefined&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                    <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                       <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                       <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+                                    <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">},</span>
+                                       <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">}</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                       <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                       <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                                       <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                    <span class="p">}</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">},</span>
+                                    <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                    <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                    <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                    <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                       <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                       <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                       <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                                       <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                          <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                          <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                       <span class="p">},</span>
+                                       <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                                    <span class="p">}</span>
+                                 <span class="p">},</span>
+                                 <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+                              <span class="p">},</span>
+                              <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                 <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;9baea98a-8cf8-46d9-8bcc-89a3374da404&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;UnitsOnOrder&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsOnOrder)&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;59c2e0a9-138a-4d29-b12d-bf98f99f6cc3&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                 <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                 <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                 <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                                 <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                 <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                              <span class="p">},</span>
+                              <span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                              <span class="nt">&quot;isSelected&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                           <span class="p">},</span>
+                           <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;high&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#000000&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="s2">&quot;greater than&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;valueUpper&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;elementUpper&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                        <span class="p">}</span>
+                     <span class="p">]</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;supplementaryKPI&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;valueType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;unitLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;element&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;bbd3b5a1-4be2-40c3-be9f-89e19a9487df&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;UnitsInStock&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Sum (UnitsInStock)&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;59c2e0a9-138a-4d29-b12d-bf98f99f6cc3&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;values&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;separators&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;separators&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;staticProperties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;chartType&quot;</span><span class="p">:</span> <span class="s2">&quot;SolidGauge&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;optionByType&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;izUseSeparator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;izUsePagination&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;izItemPerRow&quot;</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;showLabels&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;dataRefreshInterval&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;updateInterval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isAll&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;latestRecord&quot;</span><span class="p">:</span> <span class="mi">0</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;printing&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;izPageBreakAfterSeparator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral float-right" title="BI Portal Custom CSS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_javascript_build_a_simple_form.html" class="btn btn-neutral" title="Build a simple Form" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

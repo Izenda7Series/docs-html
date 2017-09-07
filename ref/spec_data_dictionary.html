@@ -1,0 +1,7129 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Dictionary &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Database Documentation" href=".database_documentation.html"/>
+        <link rel="next" title="IzendaSystemSetting table" href="spec_izendasystemsetting_table.html"/>
+        <link rel="prev" title="Database Diagrams" href="database_diagrams.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".database_documentation.html">Database Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="database_diagrams.html">Database Diagrams</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izendasystemsetting_table.html">IzendaSystemSetting table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_database_behavior.html">Izenda Database Behaviors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".database_documentation.html">Database Documentation</a> &raquo;</li>
+        
+      <li>Data Dictionary</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/spec_data_dictionary.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-dictionary">
+<h1>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following data types are documented for a Microsoft SQL Server database.</p>
+</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="5%" />
+<col width="15%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Table / Field Name</th>
+<th class="head">Data Type</th>
+<th class="head">Length</th>
+<th class="head">Constraints</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>IzendaAccessRight</strong> <br clear="right" />
+Pre-defined sharing rights on each report or dashboard</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Report/Template</li>
+<li>1 = Dashboard</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaAdvancedSetting</strong> <br clear="right" />
+Advanced system settings</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>2048</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DefaultValue</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Performance, Security or Others</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaCity</strong> <br clear="right" />
+Data of cities used for Map report part</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>GeonameId</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>AsciiName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>The name in Latin alphabets</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AlternateNames</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Latitude</strong></div>
+</td>
+<td>varchar</td>
+<td>15</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Longitude</strong></div>
+</td>
+<td>varchar</td>
+<td>15</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FeatureClasss</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FeatureCode</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CountryCode</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Cc2</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Admin1Code</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Admin2Code</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Admin3Code</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Admin4Code</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Population</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Elevation</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Dem</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Timezone</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModificationDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaCommonFilterField</strong> <br clear="right" />
+Filter fields that are common among different report parts in the same dashboard</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>varchar</td>
+<td>1000</td>
+<td>&#160;</td>
+<td>Auto-generated name, e.g. ce0fda8a-4515-409c-9d00-0bf56c2b4c4d-OrderDate</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DisplayName</strong></div>
+</td>
+<td>varchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>varchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFilterOperator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OperatorSetting</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DashboardId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FilterFieldContent</strong></div>
+</td>
+<td>varchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>data in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaConnection</strong> <br clear="right" />
+Connection strings to source databases</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>Database name</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ServerTypeId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ConnectionString</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Encrypted connection string</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Visible</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RelateToConnectionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Color</strong></div>
+</td>
+<td>nvarchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaDashboard</strong> <br clear="right" />
+Dashboards</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportCategory</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SubCategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportCategory</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ImageUrl</strong></div>
+</td>
+<td>nvarchar</td>
+<td>2048</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>StretchImage</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>BackgroundColor</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ShowFilterDescription</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Owner</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastViewed</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfView</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RenderingTime</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Unit: second</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OwnerId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedById</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedById</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaDashboardPart</strong> <br clear="right" />
+Dashboard parts</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DashboardId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Either reportPart or text</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Title</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportPartId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportPart</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfRecord</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FilterDescription</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Content</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Data in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PositionX</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PositionY</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Width</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Height</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaDashboardPartFilterField</strong> <br clear="right" />
+Filter fields in a dashboard part</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FilterFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFilterField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFilterOperator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorSetting</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DashboardPartId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDashboardPart</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaDataFormat</strong> <br clear="right" />
+Data formats, e.g. &#8216;mm/dd/yyyy&#8217;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Format</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Sample values</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Category</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SubCategory</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>AllowFilter</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AllowFieldProperty</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>GroupBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Values to be grouped by</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FormatDataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaDataSourceCategory</strong> <br clear="right" />
+Categories for source tables, views and stored procedures</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaDataTypeFunctionMapping</strong> <br clear="right" />
+Mappings between data types and supported functions</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FunctionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFunction <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FormatDataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Data type of the result</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaDBVersion</strong> <br clear="right" />
+Current version of Izenda database schema</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>nvarchar</td>
+<td>16</td>
+<td>not null</td>
+<td>Current version of Izenda database schema</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt><strong>IzendaEmailSetting</strong> <br clear="right" /></dt>
+<dd>[Expand] Email sending options</dd>
+</dl>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DisplayName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Value of the name in From field, e.g. John Doe in &#8220;From: John Doe &lt;<a class="reference external" href="mailto:jdoe&#37;&#52;&#48;acme&#46;com">jdoe<span>&#64;</span>acme<span>&#46;</span>com</a>&gt;&#8221;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>EmailFromAddress</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Value of the email in From field, e.g. <a class="reference external" href="mailto:jdoe&#37;&#52;&#48;acme&#46;com">jdoe<span>&#64;</span>acme<span>&#46;</span>com</a> in &#8220;From: John Doe &lt;<a class="reference external" href="mailto:jdoe&#37;&#52;&#48;acme&#46;com">jdoe<span>&#64;</span>acme<span>&#46;</span>com</a>&gt;&#8221;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>UseSystemConfiguration</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Re-use setting from system level or not</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Server</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>E.g. smtp.gmail.com</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Port</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>E.g. 587</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SecureConnection</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Use SSL/TLS or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Login</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>User name for the email server</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Password</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Encrypted password</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaExportMarginDefaultValue</strong> <br clear="right" />
+Default values for the margin in Export function</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>not null</td>
+<td><ul class="first last simple">
+<li>0 = Normal</li>
+<li>1 = Narrow</li>
+<li>2 = Wide</li>
+<li>3 = Custom</li>
+<li>4 = MinCustom</li>
+<li>5 = MaxCustom</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TopValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>BottomValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>LeftValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RightValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>HeaderValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FooterValue</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaFilterField</strong> <br clear="right" />
+Filter fields in a report part</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FilterId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFilter</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>QuerySourceFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySourceField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>QuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>QuerySourceType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Table, Aggregated Field, Calculated Fields or Stored Procedure</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RelationshipId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaRelationship</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Alias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Display alias, e.g. Sum(Freight), Freight*1.1</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportFieldAlias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportPartTitle</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Visible</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Required</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Cascading</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaOperator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OperatorSetting</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Values for the operator, separated by semi-colon</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataFormatId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDataFormat</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FontFamily</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FontSize</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TextColor</strong></div>
+</td>
+<td>nvarchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>BackgroundColor</strong></div>
+</td>
+<td>nvarchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FontBold</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FontItalic</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FontUnderline</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SortType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>10</td>
+<td>&#160;</td>
+<td>ASC, DESC or Unsorted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaFilterOperator</strong> <br clear="right" />
+Operators used in filters</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Label</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorGroupId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaOperatorGroup</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AllowParameter</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Needs additional parameter value (in IzendaFilterField.Value) or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaFilterOperatorGroup</strong> <br clear="right" />
+Groups of filter operators</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaFilterOperatorRule</strong> <br clear="right" />
+Rules for filter operators</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaOperator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AllowNull</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Accepts null values or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>IsPairedValues</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaFunction</strong> <br clear="right" />
+Built-in functions</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>varchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Expression</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SubTotal</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is usable in Sub Total or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>GrandTotal</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is usable in Grand Total or not</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FieldProperty</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is usable on a data source field or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaLanguage</strong> <br clear="right" />
+Supported languages and cultures</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Language</strong></div>
+</td>
+<td>nvarchar</td>
+<td>150</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CultureName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>20</td>
+<td>&#160;</td>
+<td>E.g. en-US</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>150</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>150</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaLicenseSetting</strong> <br clear="right" />
+License data</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Online</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LicenseKey</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Token</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastRefresh</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaPasswordHistory</strong> <br clear="right" />
+Password hash history to prevent reuse</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>UserId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaUser</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PasswordHash</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PasswordSalt</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaPerformanceStatsTrend</strong> <br clear="right" />
+Collected performance statistics</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfCore</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfServer</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfReport</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfReportCreator</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfDashboard</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfDashboardCreator</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfReportView</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfDashboardView</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfActiveTenant</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfInactiveTenant</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfActiveUser</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfInactiveUser</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfCreateReportUser</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfCreateDashboardUser</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IzendaVersion</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>IzendaConfigurationDatabase</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DatabaseTypesInUse</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ClientLicenseKey</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaPostalCode</strong> <br clear="right" />
+Postal code data used for Map</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PostalCode</strong></div>
+</td>
+<td>varchar</td>
+<td>10</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PlaceName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Province</strong></div>
+</td>
+<td>nvarchar</td>
+<td>255</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Latitude</strong></div>
+</td>
+<td>varchar</td>
+<td>15</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Longitude</strong></div>
+</td>
+<td>varchar</td>
+<td>15</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaQuerySource</strong> <br clear="right" />
+Data sources</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Table, View or Stored Procedure</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Selected</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is selected to be visible or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ParentQuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataSourceCategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Alias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ExtendedProperties</strong></div>
+</td>
+<td>nvarchar</td>
+<td>4000</td>
+<td>&#160;</td>
+<td>Properties for functions and stored procedures, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PhysicalChange</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>-1 = Not set</li>
+<li>0 = None</li>
+<li>1 = Added</li>
+<li>2 = Modified</li>
+<li>3 = Deleted</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Approval</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaQuerySourceCategory</strong> <br clear="right" />
+Database schemas</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ParentCategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ConnectionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaConnection <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaQuerySourceField</strong> <br clear="right" />
+Database fields and calculated fields</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Original data type</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>IzendaDataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Converted data type</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AllowDistinct</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Alias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Visible</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Filterable</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>QuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ParentId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Field</li>
+<li>1 = Parameter</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>GroupPosition</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FilteredValue</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Filter values for stored procedures parameters</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ExtendedProperties</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MatchedTenant</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PhysicalChange</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Approval</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FunctionName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Expression</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Expression for calculated fields</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IsCalculated</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is calculated field or not</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaRelationship</strong> <br clear="right" />
+Database relationships</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>JoinQuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ForeignQuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>JoinFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySourceField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ForeignFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySourceField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Alias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Alias of join query source</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SystemRelationship</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this a physical relationship (or defined in Data Model)</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>JoinType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Inner, Right, Left or Outer</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ParentRelationshipId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ForeignAlias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Alias of foreign query source</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RelationshipPosition</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaRelationshipKeyJoin</strong> <br clear="right" />
+Additional fields in a multi-column relationship</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RelationshipId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaRelationship <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>JoinQuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ForeignQuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>JoinFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySourceField <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ForeignFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySourceField <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Operator</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Join operator</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>JoinSourceAlias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ForeignSourceAlias</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaReport</strong> <br clear="right" />
+Reports</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>not null</td>
+<td><ul class="first last simple">
+<li>0 = Report</li>
+<li>1 = Template</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PreviewRecord</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>AdvancedMode</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AllowNulls</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>IsDistinct</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportCategory</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SubCategoryId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportCategory</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>HeaderContent</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Content of header box, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FooterContent</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Content of footer box, in json format</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastViewed</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Owner</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Firstname and lastname of owner for display</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OwnerId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaUser</td>
+<td>The owner</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Title</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TitleDescriptionContent</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Content of title box, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ExcludedRelationships</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Relationships that were manually removed</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfView</strong></div>
+</td>
+<td>bigint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RenderingTime</strong></div>
+</td>
+<td>float</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedById</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedById</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ExportFormatSettingData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Remembered export settings, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SnapToGrid</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>UsingFields</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>List of ids of query source fields used by this report, comma-separated</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaReportCategory</strong> <br clear="right" />
+Categories for report/dashboard</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>not null</td>
+<td><ul class="first last simple">
+<li>0 = Report</li>
+<li>1 = Template</li>
+<li>2 = Dashboard</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ParentId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReportCategory</td>
+<td>Id of the parent category, for sub-categories</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaReportDataSource</strong> <br clear="right" />
+Data sources used in reports</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>QuerySourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaQuerySource <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaReportFilter</strong> <br clear="right" />
+Data of filters in report</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Logic</strong></div>
+</td>
+<td>nvarchar</td>
+<td>2000</td>
+<td>&#160;</td>
+<td>The logic, e.g. 1 AND 2 OR 3</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Visible</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Shown under report description or not</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaReportHistory</strong> <br clear="right" />
+Report history</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Definition</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaReportPart</strong> <br clear="right" />
+Report parts</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Title</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PositionX</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PositionY</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Width</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Height</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Content</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>The <a class="reference internal" href="models/ReportPartContent.html"><span class="doc">ReportPartContent</span></a> in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfRecord</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaReportSetting</strong> <br clear="right" />
+Report Settings</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>EnforceVersionHistory</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumOfArchivedVersionToKeep</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RemoveArchivedVersions</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RecurrentReportSettingData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IsScheduled</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaRole</strong> <br clear="right" />
+Roles</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PermissionData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Permissions in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>QuerySources</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Array of tenant query sources, in json format</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Active</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaSecurityPolicy</strong> <br clear="right" />
+Security policies</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfPasswordLenght</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfPasswordLenght</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfSpecialCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfSpecialCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfUppercaseCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfUppercaseCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfLowercaseCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfLowercaseCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfNumericCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfNumericCharacter</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfRepeatSequential</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>MinNumberOfPasswordAge</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>MaxNumberOfPasswordAge</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NotifyUseDuring</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfPasswordToKeep</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PasswordLinkValidity</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfQuestionProfile</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfQuestionResetPassword</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfFailedLogonAllowed</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfFailedAnswerAllowed</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LockoutPeriod</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaSecurityQuestion</strong> <br clear="right" />
+Security questions</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Question</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OrderNumber</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaServer</strong> <br clear="right" />
+The web server information used in performance statistics</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ServerName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>1000</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ServerCore</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaSubsCommonFilterField</strong> <br clear="right" />
+Common filter fields used in subscriptions</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CommonFilterFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaCommonFilterField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Selected values for this filter</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaOperator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OperatorSetting</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SubscriptionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaSubscription</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaSubscription</strong> <br clear="right" />
+Report and dashboard subscriptions and sheduled deliveries</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Schedule</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Description of the schedule for display</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FilterValueSelection</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Description of the filter for display</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>Subscribed Reporting Item or Subscribed Alert</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TimeZoneName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TimeZoneValue</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>StartDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>StartDateUtc</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>StartTime</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RecurrenceType</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = AlertHourly</li>
+<li>1 = AlertDaily</li>
+<li>2 = EveryDay</li>
+<li>3 = EveryWeekday</li>
+<li>4 = EveryWeek</li>
+<li>5 = EveryTwoWeeks</li>
+<li>6 = EveryMonth</li>
+<li>7 = EveryQuarter</li>
+<li>8 = CustomRecurrence</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RecurrencePattern</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Daily</li>
+<li>1 = Weekly</li>
+<li>2 = Monthly</li>
+<li>3 = Yearly</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RecurrencePatternValue</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Details of the recurrence pattern, in json format, e.g. {&#8220;recurrenceWeek&#8221;:1,&#8221;selectedDayValue&#8221;:&#8221;2&#8221;}</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IsEndless</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>IsScheduled</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Occurrence</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Actual number of past occurences</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>EndDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>EndDateUtc</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DeliveryType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>Email or File Location</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DeliveryMethod</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>Link, Attachment, Embedded HTML or Send to disk</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ExportFileType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>PDF, Word, Excel, or CSV</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ExportAttachmentType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>EmailSubject</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>EmailBody</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DashboardId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Recipients</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Comma-separated list of email addresses</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastSuccessfulRun</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Display value for LastSuccessfulRunDate</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NextScheduledRun</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Display value for NextScheduledRunDate</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastSuccessfulRunDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NextScheduledRunDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IsSubscription</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this a subscription (or scheduled delivery)</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedById</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Redundant, to be removed</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaSubscriptionFilterField</strong> <br clear="right" />
+Filter fields used in subscriptions</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>FilterFieldId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaFilterField</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Selected values for this filter</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OperatorId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>OperatorSetting</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>FK to IzendaFilterOperator</td>
+<td>Selected operator for this filter</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SubscriptionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaSubscription</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaSystemSetting</strong> <br clear="right" />
+System settings</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>varchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaSystemVariable</strong> <br clear="right" />
+System variables</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>Everywhere: {currentDateTime}, {currentUserName}, {tenantName}</li>
+<li>Report/Dashboard: {recipientName}</li>
+<li>Report: {reportName}, {reportLink}, {embedReportHTML}</li>
+<li>Dashboard: {dashboardLink}, {dashboardName}, {embedDashboardHTML}</li>
+<li>Export: {pageNumber}, {horizontalRule}, {verticalRule}</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DataType</strong></div>
+</td>
+<td>nvarchar</td>
+<td>50</td>
+<td>&#160;</td>
+<td>Output data type of the system variable</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>2000</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Scope</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Everywhere</li>
+<li>1 = Report/Dashboard</li>
+<li>2 = Report</li>
+<li>3 = Dashboard</li>
+<li>4 = Export</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaTemporaryData</strong> <br clear="right" />
+Data for un-saved objects</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ObjectId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Id of the temporary object</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ObjectData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Data of the object, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaTenant</strong> <br clear="right" />
+Tenant data in multi-tenant mode</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantID</strong></div>
+</td>
+<td>varchar</td>
+<td>256</td>
+<td>not null</td>
+<td>The user-defined &#8220;Tenant Id&#8221; field</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Active</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modules</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Encrypted list of assigned modules</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PermissionData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Data of permissions, in json format</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaTimePeriod</strong> <br clear="right" />
+Pre-defined time periods, e.g. current and next month</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>nvarchar</td>
+<td>100</td>
+<td>&#160;</td>
+<td>Classification for the period, e.g. Day, Calendar Quarter, Fiscal Quarter</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Value</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Internal value of the period</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaUser</strong> <br clear="right" />
+Users</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>UserName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FirstName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LastName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PasswordHash</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PasswordSalt</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>EmailAddress</strong></div>
+</td>
+<td>varchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CurrentTokenHash</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Active</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Inactive users cannot login</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DataOffset</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TimestampOffset</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>InitPassword</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Has password been initiated</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>RetryLoginTime</strong></div>
+</td>
+<td>smallint</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The number of failed login attempts</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>LastTimeAccessed</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>PasswordLastChanged</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Locked</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is locked out because of max failed login attempts or not</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>LockedDate</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CultureName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>20</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DateFormat</strong></div>
+</td>
+<td>nvarchar</td>
+<td>20</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SystemAdmin</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SecurityQuestionLastChanged</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>NumberOfFailedSecurityQuestion</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The aggregated number of times that user fails security questions, it will be reset when user is unlocked</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaUserPermission</strong> <br clear="right" />
+Sharing rights on each report or dashboard</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ReportId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>DashboardId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaDashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AssignedTo</strong></div>
+</td>
+<td>nvarchar</td>
+<td>4000</td>
+<td>&#160;</td>
+<td>Array of ids of assigned roles or users depending on AssignedType, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>AssignedType</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>1 = Everyone</li>
+<li>2 = Role</li>
+<li>3 = User</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>AccessRightId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaAccessRight</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Position</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaUserRole</strong> <br clear="right" />
+Assignment of users and roles</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>UserId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaUser</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>RoleId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaRole</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaUserSecurityQuestion</strong> <br clear="right" />
+Security questions for each user</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>UserId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaUser <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SecurityQuestionId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaSecurityQuestion <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Answer</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Version</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Current version of the data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ModifiedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who last modified this data</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaWorkspace</strong> <br clear="right" />
+Copy management workspaces</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Name</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Description</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Not used <br clear="right" />
+The target ternant is in IzendaWorkspaceTenant</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>OwnerId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaUser</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CreatedBy</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>FK to IzendaUser</td>
+<td>User who created this data</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Deleted</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Is this data deleted</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Created</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The created datetime</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Modified</strong></div>
+</td>
+<td>datetime</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>The modification datetime</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CopyRoles</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CopyReport</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CopyDashboard</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CopyRolePermission</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CopyAdvancedSettings</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CopyDataModel</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CopyTenantPermissions</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SourceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Id of the source tenant, null or empty if source is system</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SelectAllTenants</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Copies to all tenants or not</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SourceDataModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Source data model in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceHashCode</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Hash code of all connection strings of source</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>CopiedRolesData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Array of ids of copied roles at modification time, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>CopiedRolePermissionData</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Array of ids of copied permissions at modification time, in json format</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TotalHashCode</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Array of hash codes of advancedSettings, tenantPermission, roles and rolePermissions, in json format</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceReportModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SourceTemplateModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>SourceDashboardModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaWorkspaceMapping</strong> <br clear="right" />
+Mapping from source to destination in copy management workspace</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Id</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>PK</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>WorkspaceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaWorkspace</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FromDatabaseName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Source database in mappings with &#8220;Database&#8221; type</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Type</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FromObject</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Source schema in mappings with &#8220;Schema&#8221; type</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ToDatabaseName</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Target database in mappings with &#8220;Database&#8221; type</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>ToObject</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>Target schema in mappings with &#8220;Schema&#8221; type</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>IsGlobal</strong></div>
+</td>
+<td>bit</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Place-holder</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>FromServer</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>ToServer</strong></div>
+</td>
+<td>nvarchar</td>
+<td>256</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>IzendaWorkspaceMappingTenant</strong> <br clear="right" />
+Selected tenants for each copy management mapping</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>WorkspaceMappingId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaWorkspaceMapping</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-odd"><td><strong>IzendaWorkspaceTenant</strong> <br clear="right" />
+Selected tenants for each copy management workspace</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>WorkspaceId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaWorkspace <br clear="right" />
+not null</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>TenantId</strong></div>
+</td>
+<td>uniqueidentifier</td>
+<td>&#160;</td>
+<td>FK to IzendaTenant</td>
+<td>The id of the tenant if not null</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Status</strong></div>
+</td>
+<td>int</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = NeedValidated</li>
+<li>1 = ReadyToCopy</li>
+<li>2 = AuthenticationMissing</li>
+<li>3 = ValidationError</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>SourceDataModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Place-holder</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>PhysicalDataModel</strong></div>
+</td>
+<td>nvarchar</td>
+<td>max</td>
+<td>&#160;</td>
+<td>Place-holder</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>DestinationHashCode</strong></div>
+</td>
+<td>nvarchar</td>
+<td>500</td>
+<td>&#160;</td>
+<td>Hascode of all connection strings of the tenant</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spec_izendasystemsetting_table.html" class="btn btn-neutral float-right" title="IzendaSystemSetting table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database_diagrams.html" class="btn btn-neutral" title="Database Diagrams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

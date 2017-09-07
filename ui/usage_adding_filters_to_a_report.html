@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding Filters to a Report &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Design Tutorials" href=".design_tutorials.html"/>
+        <link rel="next" title="Using Templates" href="usage_using_templates.html"/>
+        <link rel="prev" title="Report on Multiple Tables" href="usage_report_on_multiple_tables.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage_report_on_multiple_tables.html">Report on Multiple Tables</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding Filters to a Report</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-filters-through-report-designer">Adding Filters Through Report Designer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-filters-through-quick-edit">Adding Filters Through Quick Edit</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="usage_using_templates.html">Using Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage_referencing_a_filtered_report_using_a_url.html">Referencing A Filtered Report Using A URL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".design_tutorials.html">Design Tutorials</a> &raquo;</li>
+        
+      <li>Adding Filters to a Report</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/usage_adding_filters_to_a_report.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adding-filters-to-a-report">
+<h1>Adding Filters to a Report<a class="headerlink" href="#adding-filters-to-a-report" title="Permalink to this headline">¶</a></h1>
+<p>This page will serve as a guide to new users of the system with the
+intention of describing the process of adding, customizing, and
+deploying filters as a part of Izenda&#8217;s reporting module. The intention
+of this guide is to equip users with the tools necessary to more easily
+navigate and utilize the platform.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>This page is currently under construction. Please feel free to use the
+information provided on this page while we continue to refine it for
+your use.</em></p>
+</div>
+<div class="section" id="adding-filters-through-report-designer">
+<h2>Adding Filters Through Report Designer<a class="headerlink" href="#adding-filters-through-report-designer" title="Permalink to this headline">¶</a></h2>
+<p>To do this, the user would employ the same drag and drop mechanism used
+for adding data sources to a report part. Simply drag and drop a column
+from the available data objects into the filter panel at the top of the
+screen.</p>
+<p>In order to follow along with this guide, the user must have access to
+the Report Designer module within Izenda. Once data sources are selected
+for report building purposes, and the user has already created their
+desired report parts, the user can then begin adding Filters to the
+report.</p>
+<ol class="arabic">
+<li><p class="first">Get to a point in the design process where data sources have been
+selected and a report part has been constructed.</p>
+</li>
+<li><p class="first">Using the same mechanism for adding data sources to a report part,
+simply drag and drop data objects into the filter area as showing in
+<a class="reference internal" href="#draganddropfilters"><span class="std std-numref">Fig. 365</span></a>.</p>
+<div class="figure" id="id1">
+<span id="draganddropfilters"></span><img alt="../_images/DragAndDropFilters.png" src="../_images/DragAndDropFilters.png" />
+<p class="caption"><span class="caption-number">Fig. 365 </span><span class="caption-text">Field being dragged and dropped into place</span></p>
+</div>
+</li>
+<li><p class="first">With the filter selected, the Filter Properties Panel is enabled. This
+is where further configuration is necessary to have the filter
+operational. (See <a class="reference internal" href="#filterpropertiespanel"><span class="std std-numref">Fig. 366</span></a>)</p>
+<div class="figure" id="id2">
+<span id="filterpropertiespanel"></span><img alt="../_images/FilterPropertiesPanel.png" src="../_images/FilterPropertiesPanel.png" />
+<p class="caption"><span class="caption-number">Fig. 366 </span><span class="caption-text">Filter properties panel</span></p>
+</div>
+</li>
+<li><p class="first">Select a equivalence type and a selection mechanism for users to
+interact with prior to a filter running. (<a class="reference internal" href="#filteroperatorselection"><span class="std std-numref">Fig. 367</span></a>)</p>
+<div class="figure" id="id3">
+<span id="filteroperatorselection"></span><img alt="../_images/FilterOperatorSelection.png" src="../_images/FilterOperatorSelection.png" />
+<p class="caption"><span class="caption-number">Fig. 367 </span><span class="caption-text">Filter properties panel</span></p>
+</div>
+</li>
+<li><p class="first">Once the selection mechanism in place, the filter will be available for
+anyone with access to the full one-page viewer or designer. Depending on
+the selection mechanism under the filter operator, users will be able to
+filter down criteria based on what is selected/entered. In this case, we
+are using the Popup mechanism that opens a window with all of the
+available values within the field being filtered upon</p>
+<div class="figure" id="id4">
+<span id="filterspopup"></span><img alt="../_images/FiltersPopUp.png" src="../_images/FiltersPopUp.png" />
+<p class="caption"><span class="caption-number">Fig. 368 </span><span class="caption-text">Filter properties panel</span></p>
+</div>
+</li>
+<li><p class="first">Either in the report viewer or designer, the user must hit the Update
+Results button prior to the report filtering down on the selected data.</p>
+<div class="figure" id="id5">
+<span id="updateresultsbutton"></span><img alt="../_images/UpdateResultsButton.PNG" src="../_images/UpdateResultsButton.PNG" />
+<p class="caption"><span class="caption-number">Fig. 369 </span><span class="caption-text">Update Results button</span></p>
+</div>
+</li>
+<li><p class="first">If there are multiple filters in the filter panel, their Filter Logic
+can be adjusted to refine the results set displayed in the report parts
+displayed below. Additionally, if the cascading flag is checked on a
+filter, any selected values will be sent to subsequent filters. For
+example, if USA is selected in the “Country” filter, then only USA
+cities will show in the “City” filter.</p>
+</li>
+<li><p class="first">There are additional options in the Filter Properties panel including
+making a filter required prior to a report running, making it visible
+for users to interact with, and various basic formatting options.</p>
+<div class="figure" id="id6">
+<span id="filterformatting"></span><img alt="../_images/FilterFormatting.png" src="../_images/FilterFormatting.png" />
+<p class="caption"><span class="caption-number">Fig. 370 </span><span class="caption-text">Filter properties panel</span></p>
+</div>
+</li>
+<li><p class="first">Filters will be displayed on Reports and Dashboards in the filter panel
+at the top of the screen. In the case of Dashboards, if every report
+part contains the same filter using the same field and selection
+mechanism, it will be displayed at the top of the screen for dashboard
+level filtering.</p>
+<div class="figure" id="id7">
+<span id="filteronareport"></span><img alt="../_images/FilterOnAReport.png" src="../_images/FilterOnAReport.png" />
+<p class="caption"><span class="caption-number">Fig. 371 </span><span class="caption-text">Filter contained on a report</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-filters-through-quick-edit">
+<h2>Adding Filters Through Quick Edit<a class="headerlink" href="#adding-filters-through-quick-edit" title="Permalink to this headline">¶</a></h2>
+<p>Quick edit allows users to make quick adjustments to a report without
+being able to save over the underlying base report or add any extra data
+sources to the report. Quick Edit also gives users the ability to manage
+and add their own custom filters, filter criteria, and filter selection
+mechanism.</p>
+<p>Below is a step by step guide to adjusting filters on a report through
+the Quick Edit functionality:</p>
+<ol class="arabic">
+<li><p class="first">Select Quick Edit on a report in which the user has been granted
+Quick Edit access rights.</p>
+<div class="figure" id="id8">
+<span id="addfilter"></span><img alt="../_images/AddFilter.png" src="../_images/AddFilter.png" />
+<p class="caption"><span class="caption-number">Fig. 372 </span><span class="caption-text">Quick Edit Mode</span></p>
+</div>
+</li>
+<li><p class="first">Use the <em>Add Filter</em> button in order to add a new filter using the
+already pre-selected data sources for this report.</p>
+</li>
+<li><p class="first">With a data source selected, use the Filter Properties panel in order to
+make the proper adjustments for the Filter to act appropriately. This
+includes selecting the Filter Operator and Selection Mechanism. (See
+<a class="reference internal" href="#filterpropertiespanel"><span class="std std-numref">Fig. 366</span></a> above).</p>
+</li>
+<li><p class="first">With the filter in place, add some filter criteria.</p>
+</li>
+<li><p class="first">Make sure to utilize the <em>Update Results</em> button to adjust the report&#8217;s
+values prior to moving on or saving. (See <a class="reference internal" href="#filterspopup"><span class="std std-numref">Fig. 368</span></a> above).</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage_using_templates.html" class="btn btn-neutral float-right" title="Using Templates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage_report_on_multiple_tables.html" class="btn btn-neutral" title="Report on Multiple Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

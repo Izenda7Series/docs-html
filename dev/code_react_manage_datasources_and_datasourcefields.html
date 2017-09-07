@@ -1,0 +1,1112 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReactJS to manage data sources and data source fields &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Intermediate API Client Code Samples" href=".intermediate_api_client_code_samples.html"/>
+        <link rel="next" title="JavaScript Manage UI Components, Libraries and Unit Tests" href="code_javascript_manage_ui_components_libraries_and_unit_tests.html"/>
+        <link rel="prev" title="Intermediate API Client Code Samples" href=".intermediate_api_client_code_samples.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ReactJS to manage data sources and data source fields</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thinking-in-react">Thinking in React</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-with-a-mock">Start with a mock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#break-the-ui-into-a-component-hierarchy">Break the UI into a component hierarchy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-a-static-version-in-react">Build a static version in React</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-the-minimal-ui-state">Identify the minimal UI state</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-where-the-state-should-live">Identify where the state should live</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-inverse-data-flow">Add inverse data flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_manage_ui_components_libraries_and_unit_tests.html">JavaScript Manage UI Components, Libraries and Unit Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a> &raquo;</li>
+        
+      <li>ReactJS to manage data sources and data source fields</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_react_manage_datasources_and_datasourcefields.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reactjs-to-manage-data-sources-and-data-source-fields">
+<h1>ReactJS to manage data sources and data source fields<a class="headerlink" href="#reactjs-to-manage-data-sources-and-data-source-fields" title="Permalink to this headline">¶</a></h1>
+<p>In this sample we will write a simplistic web page utilizing ReactJS to
+manage data sources and data source fields in Data Model.</p>
+<ul class="simple">
+<li>We focus on applying ReactJS for a parent-child data structure.</li>
+<li>We will use the <a class="reference internal" href="../ref/api_data_model.html#post-datamodel-loadquerysources"><span class="std std-ref">POST dataModel/loadQuerySources</span></a>, <a class="reference internal" href="../ref/api_data_model.html#post-datamodel-loadquerysourcefields"><span class="std std-ref">POST dataModel/loadQuerySourceFields</span></a> and <a class="reference internal" href="../ref/api_data_model.html#post-datamodel"><span class="std std-ref">POST dataModel</span></a> APIs.</li>
+</ul>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>This sample continues from <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a>.</li>
+<li>This sample re-uses the folder structure created in <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a>.</li>
+<li>The uncompressed, development version of react.js and react-dom.js
+has been put into &#8220;ui_react_examples/vendor&#8221; folder. (They are in
+the starter kit available at
+<a class="reference external" href="https://facebook.github.io/react/downloads.html">https://facebook.github.io/react/downloads.html</a>)</li>
+</ol>
+</div>
+<div class="section" id="thinking-in-react">
+<h2>Thinking in React<a class="headerlink" href="#thinking-in-react" title="Permalink to this headline">¶</a></h2>
+<p>That is the name of a <a class="reference external" href="https://facebook.github.io/react/docs/thinking-in-react.html">ReactJS
+guide</a>
+about building apps. In this sample we will follow the same process to
+build the page to manage data sources and data source fields.</p>
+</div>
+<div class="section" id="start-with-a-mock">
+<h2>Start with a mock<a class="headerlink" href="#start-with-a-mock" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="../_images/Data_Model_Tables_and_Views_Column_Grid.png" src="../_images/Data_Model_Tables_and_Views_Column_Grid.png" />
+<p class="caption"><span class="caption-number">Fig. 402 </span><span class="caption-text">Data Model - Data Source Grid and Column Grid</span></p>
+</div>
+<p>For simplicity in this sample, we will skip the search box, sorting
+and paging controls.</p>
+<p>The response from the API is detailed in <a class="reference internal" href="../ref/api_data_model.html#post-datamodel-loadquerysources"><span class="std std-ref">POST dataModel/loadQuerySources</span></a> and <a class="reference internal" href="../ref/api_data_model.html#post-datamodel-loadquerysourcefields"><span class="std std-ref">POST dataModel/loadQuerySourceFields</span></a>.
+Basically the <code class="docutils literal"><span class="pre">response.result</span></code> is an array of query sources, or query
+source fields.</p>
+</div>
+<div class="section" id="break-the-ui-into-a-component-hierarchy">
+<h2>Break the UI into a component hierarchy<a class="headerlink" href="#break-the-ui-into-a-component-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>We will have a table of query sources, and a table of query source
+fields that shows the content of the selected query source. In each row
+in table of query sources, we have a select box to display and select
+the category.</p>
+<p>Following would be our component hierarchy:</p>
+<ul class="simple">
+<li>App<ul>
+<li>Table of QuerySourceItems<ul>
+<li>Exactly one CategoryItem in each QuerySourceItem</li>
+</ul>
+</li>
+<li>Table of QuerySourceFieldItems of the currently selected
+QuerySourceItem</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="build-a-static-version-in-react">
+<h2>Build a static version in React<a class="headerlink" href="#build-a-static-version-in-react" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
+&#8220;ReactJS to manage data sources and data source fields.html&#8221;.</li>
+<li>Edit the file with a text editor such as Notepad or Notepad++ and
+paste the following HTML code:</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+
+     var categoryArray = [
+      {id: &#39;1&#39;, name: &#39;Category_1&#39;},
+      {id: &#39;2&#39;, name: &#39;Category_2&#39;},
+      {id: &#39;3&#39;, name: &#39;Category_3&#39;},
+      {id: &#39;4&#39;, name: &#39;Category_4&#39;}
+     ];
+
+     var querySourceArray = [
+      {id: &#39;10&#39;, name: &#39;dbo.Products&#39;, type: &#39;Table&#39;, selected: true, connectionName: &#39;Northwind&#39;, dataSourceCategoryId: 2, alias: null},
+      {id: &#39;20&#39;, name: &#39;dbo.Employees&#39;, type: &#39;Table&#39;, selected: true, connectionName: &#39;Northwind&#39;, dataSourceCategoryId: 2, alias: &#39;e&#39;},
+      {id: &#39;30&#39;, name: &#39;dbo.Suppliers&#39;, type: &#39;Table&#39;, selected: false, connectionName: &#39;Northwind&#39;, dataSourceCategoryId: null, alias: null},
+      {id: &#39;40&#39;, name: &#39;dbo.Customers&#39;, type: &#39;Table&#39;, selected: true, connectionName: &#39;Northwind&#39;, dataSourceCategoryId: 1, alias: &#39;c&#39;}
+     ];
+
+     var selectedQuerySourceId = &#39;20&#39;;
+
+     var querySourceFieldArray = [
+      {id: &#39;11&#39;, name: &#39;EmployeeID&#39;, dataType: &#39;int&#39;, alias: null, visible: true, filterable: true},
+      {id: &#39;12&#39;, name: &#39;FirstName&#39;, dataType: &#39;nvarchar&#39;, alias: &#39;FN&#39;, visible: true, filterable: true},
+      {id: &#39;13&#39;, name: &#39;LastName&#39;, dataType: &#39;nvarchar&#39;, alias: &#39;LN&#39;, visible: true, filterable: false},
+      {id: &#39;14&#39;, name: &#39;BirthDate&#39;, dataType: &#39;datetime&#39;, alias: &#39;DoB&#39;, visible: false, filterable: false}
+     ];
+
+     var App = React.createClass({
+      render: function() {
+         var selectedQuerySourceName = this.props.querySourceArray[0].name;
+         return (
+           &lt;div&gt;
+             &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+             &lt;p&gt;&lt;/p&gt;
+             &lt;table style={{&quot;border&quot;: &quot;1px solid black&quot;}}&gt;
+               &lt;thead&gt;
+                 &lt;tr&gt;
+                   &lt;th&gt;Category&lt;/th&gt;
+                   &lt;th&gt;Database Name&lt;/th&gt;
+                   &lt;th&gt;Data Source Name&lt;/th&gt;
+                   &lt;th&gt;Data Source Alias&lt;/th&gt;
+                 &lt;/tr&gt;
+               &lt;/thead&gt;
+               &lt;tbody&gt;
+                 {this.props.querySourceArray.map(function(result){
+                   var color = (result.id==this.props.selectedQuerySourceId) ? &quot;lightgrey&quot; : &quot;white&quot;;
+                   return &lt;QuerySourceItem key={result.id} color={color} querySource={result} categories={this.props.categoryArray} /&gt;;
+                 }.bind(this))}
+               &lt;/tbody&gt;
+             &lt;/table&gt;
+             &lt;p&gt;&lt;/p&gt;
+             &lt;label&gt;{selectedQuerySourceName}&lt;/label&gt;
+             &lt;table style={{&quot;border&quot;: &quot;1px solid black&quot;}}&gt;
+               &lt;thead&gt;
+                 &lt;tr&gt;
+                   &lt;th&gt;Column Name&lt;/th&gt;
+                   &lt;th&gt;Data Type&lt;/th&gt;
+                   &lt;th&gt;Column Alias&lt;/th&gt;
+                   &lt;th&gt;Visible&lt;/th&gt;
+                   &lt;th&gt;Filterable&lt;/th&gt;
+                 &lt;/tr&gt;
+               &lt;/thead&gt;
+               &lt;tbody&gt;
+                 {
+                   this.props.querySourceFieldArray.map(function(result){
+                     return &lt;QuerySourceFieldItem key={result.id} querySourceField={result} /&gt;
+                 })}
+               &lt;/tbody&gt;
+             &lt;/table&gt;
+           &lt;/div&gt;
+         )
+      }
+     });
+
+     var QuerySourceItem = React.createClass({
+      render: function() {
+         return (
+           &lt;tr style={{backgroundColor: this.props.color}}&gt;
+             &lt;td&gt;&lt;CategoryItem selectedCategoryId={this.props.querySource.dataSourceCategoryId} categories={this.props.categories} /&gt;&lt;/td&gt;
+             &lt;td&gt;{this.props.querySource.connectionName}&lt;/td&gt;
+             &lt;td&gt;{this.props.querySource.name}&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;text&quot; value={(this.props.querySource.alias==null)?&quot;&quot;:this.props.querySource.alias} /&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+         )
+      }
+     });
+
+     var QuerySourceFieldItem = React.createClass({
+      render: function() {
+         return (
+           &lt;tr&gt;
+             &lt;td&gt;{this.props.querySourceField.name}&lt;/td&gt;
+             &lt;td&gt;{this.props.querySourceField.dataType}&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;text&quot; value={(this.props.querySourceField.alias==null)?&quot;&quot;:this.props.querySourceField.alias} /&gt;&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;checkbox&quot; checked={this.props.querySourceField.visible} /&gt;&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;checkbox&quot; checked={this.props.querySourceField.filterable} /&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+         )
+      }
+     });
+
+     var CategoryItem = React.createClass({
+      render: function() {
+         var options = this.props.categories.map(function(category) {
+           return (
+             &lt;option key={category.id} value={category.id}&gt;{category.name}&lt;/option&gt;
+           )
+
+         });
+         return (
+           &lt;select value={(this.props.selectedCategoryId==null)?&quot;&quot;:this.props.selectedCategoryId}&gt;
+             &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+             {options}
+           &lt;/select&gt;
+         )
+      }
+     });
+
+     ReactDOM.render(&lt;App querySourceArray={querySourceArray} selectedQuerySourceId={selectedQuerySourceId} querySourceFieldArray={querySourceFieldArray} categoryArray={categoryArray} /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="identify-the-minimal-ui-state">
+<h2>Identify the minimal UI state<a class="headerlink" href="#identify-the-minimal-ui-state" title="Permalink to this headline">¶</a></h2>
+<p>The pieces of data in our application:</p>
+<ul class="simple">
+<li>The API url</li>
+<li>The array of data sources returned from the API</li>
+<li>The array of categories returned from the API</li>
+<li>The currently selected data source</li>
+<li>The array of data source fields returned from the API</li>
+</ul>
+<p>Our state would be all of the above data except for the API url, which
+would be passed in via props.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span> <span class="nx">rootUrl</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;http://127.0.0.1:8888/api/&quot;</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="identify-where-the-state-should-live">
+<h2>Identify where the state should live<a class="headerlink" href="#identify-where-the-state-should-live" title="Permalink to this headline">¶</a></h2>
+<p>The state should be in the root App since all other components only need
+a part of that state.</p>
+<p>Now we can implement getInitialState, componentDidMount and fetchData
+methods inside the root App.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">{</span>
+     <span class="nx">querySourceArray</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(),</span>
+     <span class="nx">querySourceFieldArray</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(),</span>
+     <span class="nx">selectedQuerySourceId</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nx">categoryArray</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
+     <span class="p">};</span>
+<span class="p">},</span>
+<span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+<span class="p">},</span>
+<span class="nx">fetchData</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fetchCategories</span><span class="p">();</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fetchQuerySources</span><span class="p">().</span><span class="nx">success</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fetchQuerySourceFields</span><span class="p">());</span>
+<span class="p">},</span>
+<span class="nx">fetchCategories</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span><span class="p">,</span>
+     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+     <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+         <span class="nx">categoryArray</span><span class="o">:</span> <span class="nx">response</span>
+       <span class="p">});</span>
+     <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+     <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">});</span>
+<span class="p">},</span>
+<span class="nx">fetchQuerySources</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="p">{</span><span class="nx">querySourceType</span><span class="o">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span> <span class="nx">criteria</span><span class="o">:</span> <span class="p">[{</span><span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;operation&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}],</span> <span class="nx">pageIndex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">sortOrders</span><span class="o">:</span> <span class="p">[]};</span>
+   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;dataModel/loadQuerySources/&quot;</span><span class="p">,</span>
+     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+     <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+     <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+         <span class="nx">querySourceArray</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">,</span>
+         <span class="nx">selectedQuerySourceId</span><span class="o">:</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nx">response</span><span class="p">.</span><span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span> <span class="o">:</span> <span class="kc">null</span>
+       <span class="p">});</span>
+     <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+     <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">});</span>
+<span class="p">},</span>
+<span class="nx">fetchQuerySourceFields</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">postData</span> <span class="o">=</span> <span class="p">{</span><span class="nx">querySource</span><span class="o">:</span> <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">selectedQuerySourceId</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">},</span> <span class="nx">criteria</span><span class="o">:</span> <span class="p">[],</span> <span class="nx">pageIndex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">sortOrders</span><span class="o">:</span> <span class="p">[]};</span>
+   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;dataModel/loadQuerySourceFields/&quot;</span><span class="p">,</span>
+     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+     <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">postData</span><span class="p">),</span>
+     <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+         <span class="nx">querySourceFieldArray</span><span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">result</span>
+       <span class="p">});</span>
+     <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+     <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this fetchData method we need to get the list of categories, the list
+of query sources, then sequently the list of query source fields for the
+selected/first query source. Since ajax calls are asynchronous, we need
+to queue the second call in success method of the first call
+<code class="docutils literal"><span class="pre">this.fetchQuerySources().success(this.fetchQuerySourceFields());</span></code>
+(see &#8220;success&#8221; section in <a class="reference external" href="http://api.jquery.com/jquery.ajax/">http://api.jquery.com/jquery.ajax/</a>).</p>
+</div>
+<div class="section" id="add-inverse-data-flow">
+<h2>Add inverse data flow<a class="headerlink" href="#add-inverse-data-flow" title="Permalink to this headline">¶</a></h2>
+<p>We need to handle the following events:</p>
+<ul class="simple">
+<li>A QuerySourceItem is selected: to fetch the corresponding list of
+query source fields, then update the state.</li>
+<li>A CategoryItem inside a QuerySourceItem is selected: to update the
+dataSourceCategoryId property for that QuerySourceItem in the state.</li>
+<li>An alias input inside a QuerySourceItem is updated: to update the
+alias property for that QuerySourceItem in the state.</li>
+<li>An alias input inside a QuerySourceFieldItem is updated: to update
+the alias property for that QuerySourceFieldItem in the state.</li>
+<li>A visible checkbox inside a QuerySourceItem is updated: to update the
+visible property for that QuerySourceItem in the state.</li>
+<li>A filterable checkbox inside a QuerySourceItem is updated: to update
+the filterable property for that QuerySourceItem in the state.</li>
+</ul>
+<p>All these events need to be passed to the root App for processing, via
+callbacks.</p>
+<div class="section" id="reflectselectedquerysource">
+<h3>reflectSelectedQuerySource<a class="headerlink" href="#reflectselectedquerysource" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// in App</span>
+<span class="k">return</span> <span class="o">&lt;</span><span class="nx">QuerySourceItem</span> <span class="p">..</span> <span class="nx">reflectSelectedQuerySource</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">reflectSelectedQuerySource</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="c1">// .. in QuerySourceItem</span>
+<span class="o">&lt;</span><span class="nx">tr</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">backgroundColor</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">}}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">reflectSelectedQuerySource</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="c1">// .. in QuerySourceItem</span>
+<span class="nx">reflectSelectedQuerySource</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">reflectSelectedQuerySource</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">querySource</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// .. in App</span>
+<span class="nx">reflectSelectedQuerySource</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">querySourceId</span> <span class="o">!=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">selectedQuerySourceId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">(</span>
+      <span class="p">{</span><span class="nx">selectedQuerySourceId</span><span class="o">:</span> <span class="nx">querySourceId</span><span class="p">},</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">fetchQuerySourceFields</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">fetchQuerySourceFields needs to use the result of selectedQuerySourceId in the asynchronous setState method. That is why we need to queue fetchQuerySourceFields in callback of setState <code class="docutils literal"><span class="pre">this.setState({selectedQuerySourceId:</span> <span class="pre">querySourceId},</span> <span class="pre">this.fetchQuerySourceFields);</span></code> <br clear="right" />
+(see &#8220;setState&#8221; section in <a class="reference external" href="https://facebook.github.io/react/docs/component-api.html">https://facebook.github.io/react/docs/component-api.html</a>).</p>
+</div>
+</div>
+<div class="section" id="reflectchangedcategory">
+<h3>reflectChangedCategory<a class="headerlink" href="#reflectchangedcategory" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre><span></span>// in App
+return &lt;QuerySourceItem .. reflectChangedCategory={this.reflectChangedCategory} /&gt;;
+// .. in QuerySourceItem
+&lt;td&gt;&lt;CategoryItem .. reflectChangedCategory={this.reflectChangedCategory} /&gt;&lt;/td&gt;
+// .. in CategoryItem
+&lt;select .. onChange={this.reflectChangedCategory} &gt;
+// .. in CategoryItem
+reflectChangedCategory: function(event) {
+  this.props.reflectChangedCategory(event.target.value);
+}
+// .. in QuerySourceItem
+reflectChangedCategory: function(selectedCategoryId) {
+  this.props.reflectChangedCategory(this.props.querySource.id, selectedCategoryId);
+}
+// .. in App
+reflectChangedCategory: function(querySourceId, selectedCategoryId) {
+  var querySources = this.state.querySourceArray;
+  var querySourcePos = querySources.map(function(x){return x.id;}).indexOf(querySourceId);
+  querySources[querySourcePos].dataSourceCategoryId = selectedCategoryId;
+  this.setState({
+    querySourceArray: querySources
+  });
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="reflectchangedquerysourcealias">
+<h3>reflectChangedQuerySourceAlias<a class="headerlink" href="#reflectchangedquerysourcealias" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre><span></span>// in App
+return &lt;QuerySourceItem .. reflectChangedAlias={this.reflectChangedQuerySourceAlias} /&gt;;
+// .. in QuerySourceItem
+&lt;td&gt;&lt;input .. onChange={this.reflectChangedAlias} /&gt;&lt;/td&gt;
+// .. in QuerySourceItem
+reflectChangedAlias: function(event) {
+  this.props.reflectChangedAlias(this.props.querySource.id, event.target.value);
+}
+// .. in App
+reflectChangedQuerySourceAlias: function(querySourceId, alias) {
+  var querySources = this.state.querySourceArray;
+  var querySourcePos = querySources.map(function(x){return x.id;}).indexOf(querySourceId);
+  querySources[querySourcePos].alias = alias;
+  this.setState({
+    querySourceArray: querySources
+  });
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="reflectchangedquerysourcefieldalias">
+<h3>reflectChangedQuerySourceFieldAlias<a class="headerlink" href="#reflectchangedquerysourcefieldalias" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre><span></span>// in App
+return &lt;QuerySourceFieldItem .. reflectChangedAlias={this.reflectChangedQuerySourceFieldAlias} /&gt;;
+// .. in QuerySourceFieldItem
+&lt;td&gt;&lt;input .. onChange={this.reflectChangedAlias} /&gt;&lt;/td&gt;
+// .. in QuerySourceFieldItem
+reflectChangedAlias: function(event) {
+  this.props.reflectChangedAlias(this.props.querySourceField.id, event.target.value);
+}
+// .. in App
+reflectChangedQuerySourceFieldAlias: function(querySourceFieldId, alias) {
+  var querySourceFields = this.state.querySourceFieldArray;
+  var querySourceFieldPos = querySourceFields.map(function(x){return x.id;}).indexOf(querySourceFieldId);
+  querySourceFields[querySourceFieldPos].alias = alias;
+  this.setState({
+    querySourceFieldArray: querySourceFields
+  });
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="reflectvisiblefield-and-reflectfilterablefield">
+<h3>reflectVisibleField and reflectFilterableField<a class="headerlink" href="#reflectvisiblefield-and-reflectfilterablefield" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// in App</span>
+<span class="k">return</span> <span class="o">&lt;</span><span class="nx">QuerySourceFieldItem</span> <span class="p">..</span> <span class="nx">reflectVisibleField</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">reflectVisibleField</span><span class="p">}</span> <span class="o">/&gt;</span>
+<span class="c1">// .. in QuerySourceFieldItem</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">querySourceField</span><span class="p">.</span><span class="nx">visible</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">reflectVisibleField</span><span class="p">}</span> <span class="o">/&gt;</span>
+<span class="c1">// .. in QuerySourceFieldItem</span>
+<span class="nx">reflectVisibleField</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">reflectVisibleField</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">querySourceField</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// .. in App</span>
+<span class="nx">reflectVisibleField</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">querySourceFields</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">querySourceFieldArray</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">querySourceFieldPos</span> <span class="o">=</span> <span class="nx">querySourceFields</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">;}).</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">);</span>
+  <span class="nx">querySourceFields</span><span class="p">[</span><span class="nx">querySourceFieldPos</span><span class="p">].</span><span class="nx">visible</span> <span class="o">=</span> <span class="o">!</span><span class="nx">querySourceFields</span><span class="p">[</span><span class="nx">querySourceFieldPos</span><span class="p">].</span><span class="nx">visible</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+    <span class="nx">querySourceFieldArray</span><span class="o">:</span> <span class="nx">querySourceFields</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We use similar code for reflectFilterableField.</p>
+</div>
+</div>
+<div class="section" id="implement-pushdata">
+<h2>Implement pushData<a class="headerlink" href="#implement-pushdata" title="Permalink to this headline">¶</a></h2>
+<p>The API for saving is <a class="reference internal" href="../ref/api_data_model.html#post-datamodel"><span class="std std-ref">POST dataModel</span></a>.
+It saves an array of query sources, each with an optional array of query
+source fields.</p>
+<p>We will try to save only items that have been changed since page load or
+last save. These include an array of changed query sources in the data
+source grid and a single querySourceId if any changes in the column grid
+(they are plain object properties, neither state nor props).</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">changedQuerySources</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each time we handle a change event in a component, we will log that id
+for later processing.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">reflectChangedCategory</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">,</span> <span class="nx">selectedCategoryId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">..</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">registerChangedQuerySource</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">reflectChangedQuerySourceAlias</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">,</span> <span class="nx">alias</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">..</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">registerChangedQuerySource</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">registerChangedQuerySource</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">changedQuerySources</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">querySourceId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">reflectChangedQuerySourceFieldAlias</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">,</span> <span class="nx">alias</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">..</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">registerChangedQuerySourceField</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">reflectVisibleField</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">..</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">registerChangedQuerySourceField</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">reflectFilterableField</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="p">..</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">registerChangedQuerySourceField</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">registerChangedQuerySourceField</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">querySourceFields</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">querySourceFieldArray</span><span class="p">;</span>
+   <span class="kd">var</span> <span class="nx">querySourceFieldPos</span> <span class="o">=</span> <span class="nx">querySourceFields</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">;}).</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">querySourceFieldId</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span> <span class="o">=</span> <span class="nx">querySourceFields</span><span class="p">[</span><span class="nx">querySourceFieldPos</span><span class="p">].</span><span class="nx">querySourceId</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In pushData method we will extract a unique array of changed query
+sources, compose the post data then call the API.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">uniqueOnly</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">self</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">===</span> <span class="nx">index</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">allChangedQuerySources</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span>
+  <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">changedQuerySources</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span><span class="p">)</span>
+  <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">changedQuerySources</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">uniqueChangedQuerySources</span> <span class="o">=</span> <span class="nx">allChangedQuerySources</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">uniqueOnly</span><span class="p">);</span>
+
+<span class="nx">postData</span><span class="p">.</span><span class="nx">querySources</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">querySourceArray</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">querySource</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">uniqueChangedQuerySources</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">querySource</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">querySourceWithChangedQuerySourceFieldsPos</span> <span class="o">=</span> <span class="nx">postData</span><span class="p">.</span><span class="nx">querySources</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">;}).</span><span class="nx">indexOf</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">querySourceWithChangedQuerySourceFields</span><span class="p">);</span>
+  <span class="nx">postData</span><span class="p">.</span><span class="nx">querySources</span><span class="p">[</span><span class="nx">querySourceWithChangedQuerySourceFieldsPos</span><span class="p">].</span><span class="nx">querySourceFields</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">querySourceFieldArray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we followed the recommended ReactJS design approach to
+manage data sources and data source fields.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full source code in this sample:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+
+     var App = React.createClass({
+      render: function() {
+         var selectedQuerySourceName = (this.state.querySourceArray.length &gt; 0)
+           ? this.state.querySourceArray[this.state.querySourceArray.map(function(x){return x.id;}).indexOf(this.state.selectedQuerySourceId)].name
+           : &#39;&#39;;
+         return (
+           &lt;div&gt;
+             &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+             &lt;p&gt;&lt;/p&gt;
+             &lt;table style={{&quot;border&quot;: &quot;1px solid black&quot;}}&gt;
+               &lt;thead&gt;
+                 &lt;tr&gt;
+                   &lt;th&gt;Category&lt;/th&gt;
+                   &lt;th&gt;Database Name&lt;/th&gt;
+                   &lt;th&gt;Data Source Name&lt;/th&gt;
+                   &lt;th&gt;Data Source Alias&lt;/th&gt;
+                 &lt;/tr&gt;
+               &lt;/thead&gt;
+               &lt;tbody&gt;
+                 {this.state.querySourceArray.map(function(querySource){
+                   var color = (querySource.id==this.state.selectedQuerySourceId) ? &quot;lightgrey&quot; : &quot;white&quot;;
+                   return &lt;QuerySourceItem key={querySource.id} color={color} querySource={querySource} categories={this.state.categoryArray} reflectSelectedQuerySource={this.reflectSelectedQuerySource} reflectChangedCategory={this.reflectChangedCategory} reflectChangedAlias={this.reflectChangedQuerySourceAlias} /&gt;;
+                 }.bind(this))}
+               &lt;/tbody&gt;
+             &lt;/table&gt;
+             &lt;p&gt;&lt;/p&gt;
+             &lt;label&gt;{selectedQuerySourceName}&lt;/label&gt;
+             &lt;table style={{&quot;border&quot;: &quot;1px solid black&quot;}}&gt;
+               &lt;thead&gt;
+                 &lt;tr&gt;
+                   &lt;th&gt;Column Name&lt;/th&gt;
+                   &lt;th&gt;Data Type&lt;/th&gt;
+                   &lt;th&gt;Column Alias&lt;/th&gt;
+                   &lt;th&gt;Visible&lt;/th&gt;
+                   &lt;th&gt;Filterable&lt;/th&gt;
+                 &lt;/tr&gt;
+               &lt;/thead&gt;
+               &lt;tbody&gt;
+                 {this.state.querySourceFieldArray.map(function(querySourceField){
+                     return &lt;QuerySourceFieldItem key={querySourceField.id} querySourceField={querySourceField} reflectChangedAlias={this.reflectChangedQuerySourceFieldAlias} reflectVisibleField={this.reflectVisibleField} reflectFilterableField={this.reflectFilterableField} /&gt;
+                 }.bind(this))}
+               &lt;/tbody&gt;
+             &lt;/table&gt;
+           &lt;/div&gt;
+         )
+      },
+      getInitialState: function() {
+         return {
+           querySourceArray: new Array(),
+           querySourceFieldArray: new Array(),
+           selectedQuerySourceId: null,
+           categoryArray: new Array()
+           };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+         this.changedQuerySources = new Array();
+         this.querySourceWithChangedQuerySourceFields = null;
+      },
+      fetchData: function() {
+         this.fetchCategories();
+         this.fetchQuerySources().success(this.fetchQuerySourceFields());
+      },
+      fetchCategories: function() {
+         return $.ajax({
+           url: this.props.rootUrl + &quot;advancedSetting/category/&quot;,
+           type: &quot;GET&quot;,
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             this.setState({
+               categoryArray: response
+             });
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         });
+      },
+      fetchQuerySources: function() {
+         var postData = {querySourceType: &quot;Table&quot;, criteria: [{key: &quot;All&quot;, &quot;value&quot;:&quot;&quot;, &quot;operation&quot;:1}], pageIndex: 1, pageSize: 10, sortOrders: []};
+         return $.ajax({
+           url: this.props.rootUrl + &quot;dataModel/loadQuerySources/&quot;,
+           type: &quot;POST&quot;,
+           data: JSON.stringify(postData),
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             this.setState({
+               querySourceArray: response.result,
+               selectedQuerySourceId: (response.result.length &gt; 0) ? response.result[0].id : null
+             });
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         });
+      },
+      fetchQuerySourceFields: function() {
+         var postData = {querySource: {id: this.state.selectedQuerySourceId, type: &quot;Table&quot;}, criteria: [], pageIndex: 1, pageSize: 10, sortOrders: []};
+         return $.ajax({
+           url: this.props.rootUrl + &quot;dataModel/loadQuerySourceFields/&quot;,
+           type: &quot;POST&quot;,
+           data: JSON.stringify(postData),
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             this.setState({
+               querySourceFieldArray: response.result
+             });
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         });
+      },
+      reflectSelectedQuerySource: function(querySourceId) {
+         if (querySourceId != this.state.selectedQuerySourceId) {
+           this.setState(
+             {selectedQuerySourceId: querySourceId},
+             this.fetchQuerySourceFields
+           );
+         }
+      },
+      reflectChangedCategory: function(querySourceId, selectedCategoryId) {
+         var querySources = this.state.querySourceArray;
+         var querySourcePos = querySources.map(function(x){return x.id;}).indexOf(querySourceId);
+         querySources[querySourcePos].dataSourceCategoryId = selectedCategoryId;
+         this.setState({
+           querySourceArray: querySources
+         });
+         this.registerChangedQuerySource(querySourceId);
+      },
+      reflectChangedQuerySourceAlias: function(querySourceId, alias) {
+         var querySources = this.state.querySourceArray;
+         var querySourcePos = querySources.map(function(x){return x.id;}).indexOf(querySourceId);
+         querySources[querySourcePos].alias = alias;
+         this.setState({
+           querySourceArray: querySources
+         });
+         this.registerChangedQuerySource(querySourceId);
+      },
+      reflectChangedQuerySourceFieldAlias: function(querySourceFieldId, alias) {
+         var querySourceFields = this.state.querySourceFieldArray;
+         var querySourceFieldPos = querySourceFields.map(function(x){return x.id;}).indexOf(querySourceFieldId);
+         querySourceFields[querySourceFieldPos].alias = alias;
+         this.setState({
+           querySourceFieldArray: querySourceFields
+         });
+         this.registerChangedQuerySourceField(querySourceFieldId);
+      },
+      reflectVisibleField: function(querySourceFieldId) {
+         var querySourceFields = this.state.querySourceFieldArray;
+         var querySourceFieldPos = querySourceFields.map(function(x){return x.id;}).indexOf(querySourceFieldId);
+         querySourceFields[querySourceFieldPos].visible = !querySourceFields[querySourceFieldPos].visible;
+         this.setState({
+           querySourceFieldArray: querySourceFields
+         });
+         this.registerChangedQuerySourceField(querySourceFieldId);
+      },
+      reflectFilterableField: function(querySourceFieldId) {
+         var querySourceFields = this.state.querySourceFieldArray;
+         var querySourceFieldPos = querySourceFields.map(function(x){return x.id;}).indexOf(querySourceFieldId);
+         querySourceFields[querySourceFieldPos].filterable = !querySourceFields[querySourceFieldPos].filterable;
+         this.setState({
+           querySourceFieldArray: querySourceFields
+         });
+         this.registerChangedQuerySourceField(querySourceFieldId);
+      },
+      registerChangedQuerySource: function(querySourceId) {
+         this.changedQuerySources.push(querySourceId);
+      },
+      registerChangedQuerySourceField: function(querySourceFieldId) {
+         var querySourceFields = this.state.querySourceFieldArray;
+         var querySourceFieldPos = querySourceFields.map(function(x){return x.id;}).indexOf(querySourceFieldId);
+         this.querySourceWithChangedQuerySourceFields = querySourceFields[querySourceFieldPos].querySourceId;
+      },
+      pushData: function() {
+
+         var postData = new Object();
+
+         function uniqueOnly(value, index, self) {
+           return self.indexOf(value) === index;
+         }
+
+         var allChangedQuerySources = (this.querySourceWithChangedQuerySourceFields!=null)
+           ? this.changedQuerySources.concat(this.querySourceWithChangedQuerySourceFields)
+           : this.changedQuerySources;
+         var uniqueChangedQuerySources = allChangedQuerySources.filter(uniqueOnly);
+
+         postData.querySources = this.state.querySourceArray.filter(function(querySource){
+           return uniqueChangedQuerySources.indexOf(querySource.id) &gt;= 0;
+         });
+
+         if (this.querySourceWithChangedQuerySourceFields!=null) {
+           var querySourceWithChangedQuerySourceFieldsPos = postData.querySources.map(function(x){return x.id;}).indexOf(this.querySourceWithChangedQuerySourceFields);
+           postData.querySources[querySourceWithChangedQuerySourceFieldsPos].querySourceFields = this.state.querySourceFieldArray;
+         }
+
+         return $.ajax({
+           url: this.props.rootUrl + &quot;dataModel/&quot;,
+           type: &quot;POST&quot;,
+           data: JSON.stringify(postData),
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             if (response.success) {
+               this.fetchData();
+               this.changedQuerySources = new Array();
+               this.querySourceWithChangedQuerySourceFields = null;
+             } else {
+               console.log(JSON.stringify(response));
+             }
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         });
+      }
+     });
+
+     var QuerySourceItem = React.createClass({
+      render: function() {
+         return (
+           &lt;tr style={{backgroundColor: this.props.color}} onClick={this.reflectSelectedQuerySource}&gt;
+             &lt;td&gt;&lt;CategoryItem selectedCategoryId={this.props.querySource.dataSourceCategoryId} categories={this.props.categories} reflectChangedCategory={this.reflectChangedCategory} /&gt;&lt;/td&gt;
+             &lt;td&gt;{this.props.querySource.connectionName}&lt;/td&gt;
+             &lt;td&gt;{this.props.querySource.name}&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;text&quot; value={(this.props.querySource.alias==null)?&quot;&quot;:this.props.querySource.alias} onChange={this.reflectChangedAlias} /&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+         )
+      },
+      reflectSelectedQuerySource: function() {
+         this.props.reflectSelectedQuerySource(this.props.querySource.id);
+      },
+      reflectChangedCategory: function(selectedCategoryId) {
+         this.props.reflectChangedCategory(this.props.querySource.id, selectedCategoryId);
+      },
+      reflectChangedAlias: function(event) {
+         this.props.reflectChangedAlias(this.props.querySource.id, event.target.value);
+      }
+     });
+
+     var QuerySourceFieldItem = React.createClass({
+      render: function() {
+         return (
+           &lt;tr&gt;
+             &lt;td&gt;{this.props.querySourceField.name}&lt;/td&gt;
+             &lt;td&gt;{this.props.querySourceField.dataType}&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;text&quot; value={(this.props.querySourceField.alias==null)?&quot;&quot;:this.props.querySourceField.alias} onChange={this.reflectChangedAlias} /&gt;&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;checkbox&quot; checked={this.props.querySourceField.visible} onChange={this.reflectVisibleField} /&gt;&lt;/td&gt;
+             &lt;td&gt;&lt;input type=&quot;checkbox&quot; checked={this.props.querySourceField.filterable} onChange={this.reflectFilterableField} /&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+         )
+      },
+      reflectChangedAlias: function(event) {
+         this.props.reflectChangedAlias(this.props.querySourceField.id, event.target.value);
+      },
+      reflectVisibleField: function() {
+         this.props.reflectVisibleField(this.props.querySourceField.id);
+      },
+      reflectFilterableField: function() {
+         this.props.reflectFilterableField(this.props.querySourceField.id);
+      }
+     });
+
+     var CategoryItem = React.createClass({
+      render: function() {
+         var options = this.props.categories.map(function(category) {
+           return (
+             &lt;option key={category.id} value={category.id}&gt;{category.name}&lt;/option&gt;
+           )
+
+         });
+         return (
+           &lt;select value={(this.props.selectedCategoryId==null)?&quot;&quot;:this.props.selectedCategoryId} onChange={this.reflectChangedCategory} &gt;
+             &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+             {options}
+           &lt;/select&gt;
+         )
+      },
+      reflectChangedCategory: function(event) {
+         this.props.reflectChangedCategory(event.target.value);
+      }
+     });
+
+     ReactDOM.render(&lt;App rootUrl={&quot;http://127.0.0.1:8888/api/&quot;} /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_javascript_manage_ui_components_libraries_and_unit_tests.html" class="btn btn-neutral float-right" title="JavaScript Manage UI Components, Libraries and Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".intermediate_api_client_code_samples.html" class="btn btn-neutral" title="Intermediate API Client Code Samples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2047 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Permission &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Security" href="_security.html"/>
+        <link rel="next" title="Role" href="Role.html"/>
+        <link rel="prev" title="PasswordOption" href="PasswordOption.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_security.html">Security</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AccessRight.html">AccessRight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AccessToken.html">AccessToken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Credential.html">Credential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Expiration.html">Expiration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Identity.html">Identity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PasswordOption.html">PasswordOption</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Permission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Role.html">Role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RoleDetail.html">RoleDetail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SecurityPolicy.html">SecurityPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SecurityQuestion.html">SecurityQuestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="User.html">User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserContext.html">UserContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserDetail.html">UserDetail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserPermission.html">UserPermission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserRole.html">UserRole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserSecurityQuestion.html">UserSecurityQuestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserVerification.html">UserVerification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateExpiration.html">ValidateExpiration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_request_and_response.html">Request and Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_others.html">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_security.html">Security</a> &raquo;</li>
+        
+      <li>Permission</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ref/models/Permission.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="permission">
+<h1>Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Null</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>systemAdmin</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>System admin option</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>fullReportAndDashboardAccess</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this a full access permission</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>systemConfiguration</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>scheduledInstances</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Scheduled Instances set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>dataSetup</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>dataModel</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Data Model set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>customView</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td><p class="first">Permission for Custom View feature</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.0.3.</span></p>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>create</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Create set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>edit</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Edit set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>delete</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>advancedSettings</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>category</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Category set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>others</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Others set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>userSetup</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>userRoleAssociation</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Permission for User Role Association</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>actions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>create</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Create set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>edit</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Edit set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>del</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>configureSecurityOptions</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Configure Security Options set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>roleSetup</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>actions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>create</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Create set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>edit</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Edit set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>del</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>dataModelAccess</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Data Model set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>permissions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Permissions set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>grantRoleWithFullReportAndDashboardAccess</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Grant Role With Full Report And Dashboard Access set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reports</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>canCreateNewReport</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Can Create New Report set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>dataSources</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>simpleDataSources</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Simple Data Sources set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>advancedDataSources</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Advanced Data Sources set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>reportPartTypes</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>chart</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Chart set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>form</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Form set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>gauge</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Gauge set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>map</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Map set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>reportCategoriesSubcategories</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>canCreateNewCategory</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for CanCreateNewCategory set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>categoryAccessibility</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>categories</strong> <br clear="right" />
+array of objects</div>
+</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="Category.html"><span class="doc">Category</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>filterProperties</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>filterLogic</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Filter Logic set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>CrossFiltering</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Cross Filtering set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>fieldProperties</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>customURL</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Custom URL set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>embeddedJavaScript</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Embedded JavaScript set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>subreport</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Subreport set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>actions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>schedule</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Schedule set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>email</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Email set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>viewReportHistory</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for View Report History set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>del</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>registerForAlerts</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Register For Alerts set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>print</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Print set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>unarchiveReportVersions</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Unarchive Report Versions set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>overwriteExistingReport</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Overwrite Existing Report set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>subscribe</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Subscribe set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>exporting</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Exporting set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>configureAccessRights</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Configure Access Rights set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>tenantSetup</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>actions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>create</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Create set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>edit</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Edit set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>del</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>permissions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Permissions set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>dashboards</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>canCreateNewDashboard</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Can create new dashboard set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>dashboardCategoriesSubcategories</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>canCreateNewCategory</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Can create new category set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>categoryAccessibility</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>categories</strong> <br clear="right" />
+array of objects</div>
+</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="Category.html"><span class="doc">Category</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>actions</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>schedule</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Schedule set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>email</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Email set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>del</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Delete set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>subscribe</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Subscribe set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>print</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Print set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>overwriteExistingDashboard</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Overwrite Existing Dashboard set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>configureAccessRights</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Configure Access Rights set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>access</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>accessLimits</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+array of objects</div>
+</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="RoleDetail.html"><span class="doc">RoleDetail</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>accessDefaults</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+array of objects</div>
+</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="UserPermission.html"><span class="doc">UserPermission</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>scheduling</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>schedulingLimits</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+array of objects</div>
+</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="RoleDetail.html"><span class="doc">RoleDetail</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>schedulingScope</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>systemUsers</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for System Users set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>externalUsers</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for External Users set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>emailing</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>deliveryMethod</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>link</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Link set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>embeddedHTML</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for EmbeddedHTML set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>attachment</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Attachment set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>attachmentType</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>word</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Word set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>excel</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Excel set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>pdf</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Pdf set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>csv</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for CSV set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>xml</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for XML set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>json</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Json set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>exporting</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>exportingFormat</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>word</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Word set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>excel</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Excel set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>pdf</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Pdf set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>csv</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for CSV set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>xml</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for XML set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>json</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Json set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>queryExecution</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Query Execution set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>systemWide</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>canSeeSystemMessages</strong> <br clear="right" />
+object</div>
+</td>
+<td>&#160;</td>
+<td>An object with the following fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>value</strong> <br clear="right" />
+boolean</div>
+</td>
+<td>&#160;</td>
+<td>Is permission for Can See System Messages set</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>tenantAccess</strong> <br clear="right" />
+integer</div>
+</td>
+<td>&#160;</td>
+<td>Permission for Tenant</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;fullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;systemConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;scheduledInstances&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;dataSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;dataModel&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;others&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;userSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;userRoleAssociation&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;configureSecurityOptions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;roleSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dataModelAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;grantRoleWithFullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canCreateNewReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dataSources&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;simpleDataSources&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;advancedDataSources&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reportPartTypes&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;chart&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;gauge&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reportCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;filterProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filterLogic&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;fieldProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;embeddedJavaScript&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;subreport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;viewReportHistory&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;registerForAlerts&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;unarchiveReportVersions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;overwriteExistingReport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;tenantSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canCreateNewDashboard&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dashboardCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;overwriteExistingDashboard&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;access&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;accessLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;userRoles&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                     <span class="nt">&quot;issueDate&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;newPassword&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;initPassword&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;retryLoginTime&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lastTimeAccessed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;passwordLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lockedDate&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;securityQuestionLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;numberOfFailedSecurityQuestion&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;currentModules&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;97e363f5-9daf-4329-a964-e279e04a10f3&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">],</span>
+               <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;permission&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;visibleQuerySources&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;df188fa0-5829-40cc-a1fc-ab4b0259f061&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;accessDefaults&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;dashboardId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;assignedType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="nt">&quot;accessRightId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;accessRight&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;shareWith&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;accessors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="nt">&quot;accessorNames&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reportAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d004&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reportAccessRights&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;dashboardAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d008&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;assignedTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;Everyone&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dashboardAccessRights&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;scheduling&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;schedulingLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;userRoles&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                     <span class="nt">&quot;issueDate&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;newPassword&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;initPassword&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;retryLoginTime&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lastTimeAccessed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;passwordLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;lockedDate&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;securityQuestionLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;numberOfFailedSecurityQuestion&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;currentModules&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;97e363f5-9daf-4329-a964-e279e04a10f3&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">],</span>
+               <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;permission&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;visibleQuerySources&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;df188fa0-5829-40cc-a1fc-ab4b0259f061&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;schedulingScope&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;systemUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;externalUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;emailing&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;deliveryMethod&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;embeddedHTML&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;attachment&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;attachmentType&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;exportingFormat&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;queryExecution&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;systemwide&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;canSeeSystemMessages&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Role.html" class="btn btn-neutral float-right" title="Role" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="PasswordOption.html" class="btn btn-neutral" title="PasswordOption" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1095 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Build a simple Grid &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Building Report" href=".building_report.html"/>
+        <link rel="next" title="Build a simple Chart" href="code_javascript_build_a_simple_chart.html"/>
+        <link rel="prev" title="Build a Generic Report" href="code_javascript_build_a_generic_report.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".building_report.html">Building Report</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_generic_report.html">Build a Generic Report</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Build a simple Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-an-empty-reportpartgrid-object">Prepare an empty ReportPartGrid object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-the-properties-of-the-grid-in-properties-field-per-user-selection">Update the properties of the grid in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#back-to-the-step-in-build-a-generic-report">Back to the step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_chart.html">Build a simple Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html">Build a simple Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_map.html">Build a simple Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_form.html">Build a simple Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html">Sample Properties for a ReportPartElement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".building_report.html">Building Report</a> &raquo;</li>
+        
+      <li>Build a simple Grid</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_javascript_build_a_simple_grid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build-a-simple-grid">
+<h1>Build a simple Grid<a class="headerlink" href="#build-a-simple-grid" title="Permalink to this headline">¶</a></h1>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li>Follow <a class="reference internal" href="code_javascript_build_a_generic_report.html"><span class="doc">Build a Generic Report</span></a> until the step to add report parts.</li>
+<li>Prepare an empty <a class="reference internal" href="../ref/models/ReportPartGrid.html"><span class="doc">ReportPartGrid</span></a> object with default properties.</li>
+<li>For each selected data source fields, populate a <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> object with default properties.</li>
+<li>Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into <code class="docutils literal"><span class="pre">columns.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartGrid.html"><span class="doc">ReportPartGrid</span></a> object.</li>
+<li>Update the properties of the grid in <code class="docutils literal"><span class="pre">properties</span></code> field per user selection (See <a class="reference internal" href="../ref/models/ReportPartGridProperties.html"><span class="doc">ReportPartGridProperties</span></a>).</li>
+<li>Back to the steps in <a class="reference internal" href="code_javascript_build_a_generic_report.html"><span class="doc">Build a Generic Report</span></a>.</li>
+</ol>
+<div class="section" id="prepare-an-empty-reportpartgrid-object">
+<h2>Prepare an empty ReportPartGrid object<a class="headerlink" href="#prepare-an-empty-reportpartgrid-object" title="Permalink to this headline">¶</a></h2>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Empty ReportPartGrid object</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>The highlighted <code class="docutils literal"><span class="pre">columns.elements</span></code> is where the selected data source fields will be added</li>
+<li>The highlighted <code class="docutils literal"><span class="pre">properties</span></code> contains the default properties</li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+   <span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span>      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;columns&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;rows&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;values&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;separators&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;separators&quot;</span>
+   <span class="p">},</span>
+<span class="hll">   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>      <span class="nt">&quot;generalInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;gridStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;separatorStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Comma&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;table&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;border&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;midVer&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;midHor&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#fff&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">150</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#E4E4E4&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;removeHeaderForExport&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;grouping&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;useSeparator&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;dataRefreshInterval&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;updateInterval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isAll&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;latestRecord&quot;</span><span class="p">:</span> <span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;usePagination&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;pivotColumnsPerExportedPage&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;printing&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;usePageBreakAfterSeparator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                  <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="populate-selected-data-sources-fields">
+<span id="grid-populate-selected-data-sources-fields"></span><h2>Populate selected data sources fields<a class="headerlink" href="#populate-selected-data-sources-fields" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Get the list of available data sources fields from <a class="reference internal" href="../ref/api_report_designer_datasources.html#post-report-availablequerysourcefields"><span class="std std-ref">POST report/availableQuerySourceFields</span></a> with this payload:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;the id of the report&gt;&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The response is an array containing exactly one <a class="reference internal" href="../ref/models/ReportDataSourceCategory.html"><span class="doc">ReportDataSourceCategory</span></a> object, with <code class="docutils literal"><span class="pre">querySource</span></code> field containing an array of selected data sources (<a class="reference internal" href="../ref/models/ReportQuerySource.html"><span class="doc">ReportQuerySource</span></a> objects), with <code class="docutils literal"><span class="pre">fields</span></code> field containing an array of available data source fields. For example:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Selected Data Source&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySource&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;connectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerID&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;remaining items&quot;</span><span class="p">:</span> <span class="s2">&quot;have been omitted&quot;</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;remaining items&quot;</span><span class="p">:</span> <span class="s2">&quot;have been omitted&quot;</span>
+               <span class="p">}</span>
+            <span class="p">]</span>
+         <span class="p">}</span>
+      <span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For each selected data source field (<a class="reference internal" href="../ref/models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> object), build a corresponding <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> object</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;User-defined Field Name Alias of the selected QuerySourceField&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;position in the list of selected fields&gt;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;id of the selected QuerySourceField&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name of the selected QuerySourceField&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;User-defined Field Name Alias of the selected QuerySourceField&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;Izenda data type of the selected QuerySourceField&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;id of the parent QuerySource&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;Table, View or Stored Procedure&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name of the schema&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name of the parent QuerySource&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name of the connection&gt;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><a class="reference download internal" href="../_downloads/QuerySourceField_OrderID.json" download=""><code class="xref download docutils literal"><span class="pre">Sample</span> <span class="pre">QuerySourceField</span></code></a></th>
+<th class="head"><a class="reference download internal" href="../_downloads/ReportPartElement_OrderID.json" download=""><code class="xref download docutils literal"><span class="pre">Sample</span> <span class="pre">ReportPartElement</span></code></a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;b648344c-526e-4984-bfc3-7be462b800fe&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;b648344c-526e-4984-bfc3-7be462b800fe&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>User entered &#8220;OID&#8221;</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;OID&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Alias of the parent QuerySource</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Name of the schema</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Name of the parent QuerySource</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Name of the database</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>      <span class="s2">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">},</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html"><span class="doc">Sample Properties for a ReportPartElement</span></a> for more samples.</p>
+</li>
+<li><p class="first">Populate a default <a class="reference internal" href="../ref/models/ReportPartElementProperties.html"><span class="doc">ReportPartElementProperties</span></a> for <code class="docutils literal"><span class="pre">properties</span></code> field in each <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> object</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<p>Default ReportPartElementProperties object</p>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+         <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+         <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+         <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into <code class="docutils literal"><span class="pre">columns.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartGrid.html"><span class="doc">ReportPartGrid</span></a> object.</p>
+<div class="toggle docutils container" id="sample-full-reportpartgrid-object">
+<div class="header docutils container">
+<p>Sample full ReportPartGrid object</p>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+   <span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;b648344c-526e-4984-bfc3-7be462b800fe&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;OID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                  <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;cellColor&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;rangePercent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;rangeValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;option&quot;</span><span class="p">:</span> <span class="s2">&quot;LINK_NEW_WINDOW&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isSelected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;columns&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;rows&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;values&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;separators&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;separators&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;generalInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;gridStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;separatorStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Comma&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;table&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;border&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;midVer&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="nt">&quot;midHor&quot;</span><span class="p">:</span> <span class="p">{}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#fff&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">150</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#E4E4E4&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;removeHeaderForExport&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;grouping&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;useSeparator&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;dataRefreshInterval&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;updateInterval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isAll&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;latestRecord&quot;</span><span class="p">:</span> <span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;usePagination&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;pivotColumnsPerExportedPage&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;printing&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;usePageBreakAfterSeparator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;highlightColor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[]</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="update-the-properties-of-each-field-per-user-selection">
+<h2>Update the properties of each field per user selection<a class="headerlink" href="#update-the-properties-of-each-field-per-user-selection" title="Permalink to this headline">¶</a></h2>
+<p>Please see <a class="reference internal" href="../ref/models/ReportPartElementProperties.html"><span class="doc">ReportPartElementProperties</span></a> for the purpose of each field.</p>
+<p>See <a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html"><span class="doc">Sample Properties for a ReportPartElement</span></a> for more samples.</p>
+</div>
+<div class="section" id="update-the-properties-of-the-grid-in-properties-field-per-user-selection">
+<h2>Update the properties of the grid in &#8220;properties&#8221; field per user selection<a class="headerlink" href="#update-the-properties-of-the-grid-in-properties-field-per-user-selection" title="Permalink to this headline">¶</a></h2>
+<p>Please see <a class="reference internal" href="../ref/models/ReportPartGridProperties.html"><span class="doc">ReportPartGridProperties</span></a> for the purpose of each field.</p>
+</div>
+<div class="section" id="back-to-the-step-in-build-a-generic-report">
+<h2>Back to the step in <a class="reference internal" href="code_javascript_build_a_generic_report.html#populate-the-report-parts"><span class="std std-ref">Build a Generic Report</span></a><a class="headerlink" href="#back-to-the-step-in-build-a-generic-report" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_javascript_build_a_simple_chart.html" class="btn btn-neutral float-right" title="Build a simple Chart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_javascript_build_a_generic_report.html" class="btn btn-neutral" title="Build a Generic Report" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

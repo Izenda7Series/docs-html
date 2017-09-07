@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logging Information Into a Database &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer" href="../faq/.dev.html"/>
+        <link rel="next" title="Glossary" href="../ref/.glossary.html"/>
+        <link rel="prev" title="Developer" href="../faq/.dev.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq/.general.html">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.data_model.html">Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.admin_ui.html">Administrative UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/.user.html">User</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../faq/.dev.html">Developer</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_white_labeling_urls.html">How can I white label Izenda in my application?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Can I store my logs in a database as opposed to a .log file?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a> &raquo;</li>
+        
+          <li><a href="../faq/.dev.html">Developer</a> &raquo;</li>
+        
+      <li>Logging Information Into a Database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_logging_information_to_a_database.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="logging-information-into-a-database">
+<h1>Logging Information Into a Database<a class="headerlink" href="#logging-information-into-a-database" title="Permalink to this headline">¶</a></h1>
+<p>In order to adjust log4net to write to a particular database, as opposed
+to the flat .log file there are a few steps that you need to take.</p>
+<ul>
+<li><p class="first">Creating the Logging Database</p>
+<ul>
+<li><p class="first">On your database sever, create an empty database with a meaningful
+name to easily identify its contents (ex. Izenda Logs)</p>
+</li>
+<li><p class="first">Within this table, create one table, entitled Log, with the query
+below:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Log</span><span class="p">]</span> <span class="p">(</span>
+    <span class="p">[</span><span class="n">Id</span><span class="p">]</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="k">IDENTITY</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="nb">Date</span><span class="p">]</span> <span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Thread</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="k">Level</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Logger</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Message</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">4000</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="k">Exception</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">2000</span><span class="p">)</span> <span class="k">NULL</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Open the web.config file in your API folder</p>
+<ul>
+<li><p class="first">in <code class="docutils literal"><span class="pre">&lt;configSections&gt;</span></code> replace the current <code class="docutils literal"><span class="pre">&lt;section</span> <span class="pre">name=&quot;log4net&quot;&gt;</span></code> with the following:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;log4net&quot;</span> <span class="na">type=</span><span class="s">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Lower on the same web.config file, there is a element (line 14).
+Remove this and all of its contents (Lines 14 through 52)</p>
+<ul>
+<li><p class="first">Replace the removed section with the following, noting to add your
+connection string to the log database:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;log4net&gt;</span> <span class="nt">&lt;root&gt;</span> <span class="nt">&lt;level</span> <span class="na">value=</span><span class="s">&quot;DEBUG&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;/root&gt;</span>
+  <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="na">type=</span><span class="s">&quot;log4net.Appender.ADONetAppender&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;bufferSize</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;connectionType</span> <span class="na">value=</span><span class="s">&quot;System.Data.SqlClient.SqlConnection, System.Data, Version=1.2.15.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;connectionString</span> <span class="na">value=</span><span class="s">&quot;&lt;YOUR CONNECTION STRING TO THE IZENDA LOGS DATABASE HERE&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;commandText</span> <span class="na">value=</span><span class="s">&quot;INSERT INTO Log ([Date],[Thread],[Level],[Logger],[Message],[Exception]) VALUES (@log_date, @thread, @log_level, @logger, @message, @exception)&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@log_date&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;DateTime&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.RawTimeStampLayout&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@thread&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;String&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;size</span> <span class="na">value=</span><span class="s">&quot;255&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.PatternLayout&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;conversionPattern</span> <span class="na">value=</span><span class="s">&quot;%thread&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@log_level&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;String&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;size</span> <span class="na">value=</span><span class="s">&quot;50&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.PatternLayout&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;conversionPattern</span> <span class="na">value=</span><span class="s">&quot;%level&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@logger&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;String&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;size</span> <span class="na">value=</span><span class="s">&quot;255&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.PatternLayout&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;conversionPattern</span> <span class="na">value=</span><span class="s">&quot;%logger&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@message&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;String&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;size</span> <span class="na">value=</span><span class="s">&quot;4000&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.PatternLayout&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;conversionPattern</span> <span class="na">value=</span><span class="s">&quot;%message&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;parameter&gt;</span>
+         <span class="nt">&lt;parameterName</span> <span class="na">value=</span><span class="s">&quot;@exception&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;dbType</span> <span class="na">value=</span><span class="s">&quot;String&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;size</span> <span class="na">value=</span><span class="s">&quot;2000&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;layout</span> <span class="na">type=</span><span class="s">&quot;log4net.Layout.ExceptionLayout&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/parameter&gt;</span>
+  <span class="nt">&lt;/appender&gt;</span>
+<span class="nt">&lt;/log4net&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The bufferSize value is currently set to 1. You can adjust
+this value to change the frequency with which the logs get pushed
+into the database.</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ref/.glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../faq/.dev.html" class="btn btn-neutral" title="Developer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

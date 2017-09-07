@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Settings &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Role Setup" href="doc_role_setup.html"/>
+        <link rel="prev" title="Data Model/Relationships and Schema" href="doc_data_model_relationships_and_schema.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-data-source-categories">Add data source categories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-data-source-categories">Delete data source categories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rename-data-source-categories">Rename data source categories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-settings-in-performance-security-additive-fields-and-others-group">Update settings in Performance, Security/Additive Fields and Others group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-settings-in-security-tenant-group">Update settings in Security/Tenant group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cancel-the-changes">Cancel the changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Advanced Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_advanced_settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-settings">
+<h1>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Advanced Settings</strong> page allows user to</p>
+<ul class="simple">
+<li>manage the list of data source categories</li>
+<li>update system settings in related groups</li>
+</ul>
+<div class="section" id="add-data-source-categories">
+<span id="id1"></span><h2>Add data source categories<a class="headerlink" href="#add-data-source-categories" title="Permalink to this headline">¶</a></h2>
+<p>A category should be added before showing up for assignment to a data
+source.</p>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Advanced Settings
+permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Advanced Settings in the left
+menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><div class="figure align-right" id="id3">
+<span id="menu-advanced-settings-category"></span><a class="reference internal image-reference" href="../_images/Menu_Advanced_Settings_Category.jpg"><img alt="../_images/Menu_Advanced_Settings_Category.jpg" src="../_images/Menu_Advanced_Settings_Category.jpg" style="width: 391px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 130 </span><span class="caption-text">Category Menu</span></p>
+</div>
+<p>Click Category in the Middle Panel. (<a class="reference internal" href="#menu-advanced-settings-category"><span class="std std-numref">Fig. 130</span></a>) <br clear="right" /></p>
+</li>
+<li><p class="first">Click Add New + button and type the name into the new text box. (<a class="reference internal" href="#settings-category-add-new"><span class="std std-numref">Fig. 131</span></a>)</p>
+<div class="figure" id="id4">
+<span id="settings-category-add-new"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Add_New.jpg"><img alt="../_images/Settings_Category_Add_New.jpg" src="../_images/Settings_Category_Add_New.jpg" style="width: 622px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">Add New button <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Continue to click Add New + button to enter more categories.</p>
+</li>
+<li><p class="first">Click Save button at the top to save the whole list.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User will not be able to save the list unless there is no duplication.</p>
+</div>
+</div>
+<div class="section" id="delete-data-source-categories">
+<h2>Delete data source categories<a class="headerlink" href="#delete-data-source-categories" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In the category list, click the delete icon (x) on the right of each category to delete it. (<a class="reference internal" href="#settings-category-delete"><span class="std std-numref">Fig. 132</span></a>)</p>
+<div class="figure" id="id5">
+<span id="settings-category-delete"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Delete.jpg"><img alt="../_images/Settings_Category_Delete.jpg" src="../_images/Settings_Category_Delete.jpg" style="width: 621px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">Delete icon <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Click OK in the pop-up confirmation. (<a class="reference internal" href="#category-deletion-confirmation"><span class="std std-numref">Fig. 133</span></a>)</p>
+<div class="figure" id="id6">
+<span id="category-deletion-confirmation"></span><a class="reference internal image-reference" href="../_images/Category_Deletion_Confirmation.jpg"><img alt="../_images/Category_Deletion_Confirmation.jpg" src="../_images/Category_Deletion_Confirmation.jpg" style="width: 456px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">Delete confirmation <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">The category is deleted immediately.</p>
+<blockquote>
+<div><p>The Save and Cancel buttons at the top does not have any effect in this action.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The category will be deleted even if it has been assigned to data sources. After that these data sources will have no category.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To change the name of a category, the <a class="reference internal" href="#rename-data-source-categories">Rename data source categories</a> feature should be used instead.</p>
+</div>
+</div>
+<div class="section" id="rename-data-source-categories">
+<h2>Rename data source categories<a class="headerlink" href="#rename-data-source-categories" title="Permalink to this headline">¶</a></h2>
+<p>Renaming a category will only change the name and keep the assignments
+to data sources intact.</p>
+<ol class="arabic">
+<li><p class="first">In the category list, click the text box of any category and change the name. (<a class="reference internal" href="#settings-category-rename"><span class="std std-numref">Fig. 134</span></a>)</p>
+<div class="figure align-right" id="id7">
+<span id="settings-category-rename"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Rename.jpg"><img alt="../_images/Settings_Category_Rename.jpg" src="../_images/Settings_Category_Rename.jpg" style="width: 617px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 134 </span><span class="caption-text">Rename categories <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Continue to change more category names</p>
+</li>
+<li><p class="first">Click Save button at the top to save the whole list.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="update-settings-in-performance-security-additive-fields-and-others-group">
+<span id="id2"></span><h2>Update settings in Performance, Security/Additive Fields and Others group<a class="headerlink" href="#update-settings-in-performance-security-additive-fields-and-others-group" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Advanced Settings
+permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Advanced Settings in the left
+menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><div class="figure align-right" id="id8">
+<span id="menu-advanced-settings-performance-security-and-others"></span><a class="reference internal image-reference" href="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg"><img alt="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg" src="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg" style="width: 389px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 135 </span><span class="caption-text">Performance, Security and Others</span></p>
+</div>
+<p>Click Performance, Security or Others. (<a class="reference internal" href="#menu-advanced-settings-performance-security-and-others"><span class="std std-numref">Fig. 135</span></a>) <br clear="right" /></p>
+</li>
+<li><p class="first">The settings are listed together with their current values.</p>
+</li>
+<li><p class="first">Update the values.</p>
+<blockquote>
+<div><p>User can revert any setting back to its system default value by clicking the back arrow icon (↺). (<a class="reference internal" href="#advanced-settings-back-to-default-value"><span class="std std-numref">Fig. 136</span></a>)</p>
+<div class="figure" id="id9">
+<span id="advanced-settings-back-to-default-value"></span><a class="reference internal image-reference" href="../_images/Advanced_Settings_Back_to_default_value.jpg"><img alt="../_images/Advanced_Settings_Back_to_default_value.jpg" src="../_images/Advanced_Settings_Back_to_default_value.jpg" style="width: 618px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 136 </span><span class="caption-text">Revert back to default value <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click Save button at the top to save the whole setting group.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The input boxes only accept a limited range of values and will not allow invalid entries.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For a detailed description of any setting, point over that setting to see the information icon (i), then point over that icon to see the description tooltip. (<a class="reference internal" href="#advanced-settings-detailed-description-tooltip"><span class="std std-numref">Fig. 137</span></a>)</p>
+<div class="last figure" id="id10">
+<span id="advanced-settings-detailed-description-tooltip"></span><a class="reference internal image-reference" href="../_images/Advanced_Settings_Detailed_description_tooltip.jpg"><img alt="../_images/Advanced_Settings_Detailed_description_tooltip.jpg" src="../_images/Advanced_Settings_Detailed_description_tooltip.jpg" style="width: 617px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 137 </span><span class="caption-text">Detailed description tooltip <br clear="right" /></span></p>
+</div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Use No Lock setting instructs the database engine to return the current version of data immediately, instead of waiting for all pending transactions to complete. Check the possible consequences <a class="reference external" href="https://www.izenda.com/blog/high-performance-sql-views-using-withnolock/">here</a> before using this option.</p>
+</div>
+</div>
+<div class="section" id="update-settings-in-security-tenant-group">
+<h2>Update settings in Security/Tenant group<a class="headerlink" href="#update-settings-in-security-tenant-group" title="Permalink to this headline">¶</a></h2>
+<p>For security in multi-tenant systems, it is a best practice to have an
+automatic filter condition to always restrict data retrieval to only
+that of the current tenant. To enable this feature:</p>
+<ol class="arabic simple">
+<li>Untick Show Tenant Field check-box.</li>
+<li>Enter the name of tenant id fields into the Tenant Field box. The Tenant Field must be enclosed in brackets [fieldname] and multiple fields should be separated by a semi-colon.</li>
+<li>Click Save button at the top.</li>
+<li>Then:<ul>
+<li>These tenant id fields will be hidden from Report Designer.</li>
+<li>The reports will automatically have a filter condition to restrict
+data retrieval to only that of the current tenant.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="cancel-the-changes">
+<h2>Cancel the changes<a class="headerlink" href="#cancel-the-changes" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id11">
+<span id="settings-cancel-confirmation"></span><a class="reference internal image-reference" href="../_images/Cancel_Confirmation.jpg"><img alt="../_images/Cancel_Confirmation.jpg" src="../_images/Cancel_Confirmation.jpg" style="width: 465px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text">Cancel confirmation pop-up</span></p>
+</div>
+<p>To cancel any changes without saving:</p>
+<ol class="arabic simple">
+<li>Click the Cancel button at the top.</li>
+<li>Click OK in the confirmation pop-up. (<a class="reference internal" href="#settings-cancel-confirmation"><span class="std std-numref">Fig. 138</span></a>) <br clear="right" /></li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html#assign-a-category-to-a-table-view-or-stored-procedure"><span class="std std-ref">Data Model - Assign a category to a table, view or stored procedure</span></a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_role_setup.html" class="btn btn-neutral float-right" title="Role Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_data_model_relationships_and_schema.html" class="btn btn-neutral" title="Data Model/Relationships and Schema" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

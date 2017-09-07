@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Back-end Integration APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Full API List" href=".integration_api_documentation.html"/>
+        <link rel="next" title="Front-end Integration APIs" href="api_frontend_integration.html"/>
+        <link rel="prev" title="Full API List" href=".integration_api_documentation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Back-end Integration APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-apis">List of APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#public-static-func-validatetokenargs-validatetokenresult-validatetoken">public static Func&lt;ValidateTokenArgs, ValidateTokenResult&gt; ValidateToken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#public-static-func-generateaccesstokenargs-string-getaccesstoken">public static Func&lt;GenerateAccessTokenArgs, string&gt; GetAccessToken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#public-static-user-addorupdateuser-userdetail-user">public static User AddOrUpdateUser(UserDetail user)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#public-static-roledetail-addorupdaterole-roledetail-role">public static RoleDetail AddOrUpdateRole(RoleDetail role)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#public-static-tenants-addorupdatetenant-tenants-tenant">public static Tenants AddOrUpdateTenant(Tenants tenant)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dll-references">DLL References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api_frontend_integration.html">Front-end Integration APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".integration_api_documentation.html">Full API List</a> &raquo;</li>
+        
+      <li>Back-end Integration APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/api_backend_integration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="back-end-integration-apis">
+<h1>Back-end Integration APIs<a class="headerlink" href="#back-end-integration-apis" title="Permalink to this headline">¶</a></h1>
+<p>This list documents the .NET APIs used for Back-end Integration.</p>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Class and Method</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>UserIntegrationConfig</strong> in Izenda.BI.Logic.CustomConfiguration</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-func-validatetokenargs-validatetokenresult-validatetoken">public static Func&lt;ValidateTokenArgs, ValidateTokenResult&gt; ValidateToken</a></div>
+</td>
+<td>Hosting app hooks authorization logic for Izenda</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-func-generateaccesstokenargs-string-getaccesstoken">public static Func&lt;GenerateAccessTokenArgs, string&gt; GetAccessToken</a></div>
+</td>
+<td>Izenda requests hosting app to generate token based on userName/tenantId</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-user-addorupdateuser-userdetail-user">public static User AddOrUpdateUser(UserDetail user)</a></div>
+</td>
+<td>Hosting app can add/update user in Izenda</td>
+</tr>
+<tr class="row-even"><td><strong>RoleIntegrationConfig</strong> in Izenda.BI.Logic.CustomConfiguration</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-roledetail-addorupdaterole-roledetail-role">public static RoleDetail AddOrUpdateRole(RoleDetail role)</a></div>
+</td>
+<td>Hosting app can add/update role in Izenda</td>
+</tr>
+<tr class="row-even"><td><strong>TenantIntegrationConfig</strong> in Izenda.BI.Logic.CustomConfiguration</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-tenants-addorupdatetenant-tenants-tenant">public static Tenants AddOrUpdateTenant(Tenants tenant)</a></div>
+</td>
+<td>Hosting app can add/update tenant in Izenda</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="public-static-func-validatetokenargs-validatetokenresult-validatetoken">
+<h2>public static Func&lt;ValidateTokenArgs, ValidateTokenResult&gt; ValidateToken<a class="headerlink" href="#public-static-func-validatetokenargs-validatetokenresult-validatetoken" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app hooks authorization logic for Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">Func&lt;ValidateTokenArgs,</span> <span class="pre">ValidateTokenResult&gt;</span> <span class="pre">ValidateToken</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/ValidateTokenArgs.html"><span class="doc">ValidateTokenArgs</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/ValidateTokenResult.html"><span class="doc">ValidateTokenResult</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.UserManagement</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="k">const</span> <span class="kt">string</span> <span class="n">KEY</span> <span class="p">=</span> <span class="s">&quot;SECRET&quot;</span><span class="p">;</span>
+
+<span class="n">UserIntegrationConfig</span><span class="p">.</span><span class="n">ValidateToken</span> <span class="p">=</span> <span class="p">(</span><span class="n">ValidateTokenArgs</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+   <span class="kt">var</span> <span class="n">serializedObject</span> <span class="p">=</span> <span class="n">Encrypt</span><span class="p">.</span><span class="n">DecryptString</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">AccessToken</span><span class="p">,</span> <span class="n">KEY</span><span class="p">);</span>
+   <span class="kt">var</span> <span class="n">userInfo</span> <span class="p">=</span> <span class="n">Newtonsoft</span><span class="p">.</span><span class="n">Json</span><span class="p">.</span><span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">Models</span><span class="p">.</span><span class="n">UserInfo</span><span class="p">&gt;(</span><span class="n">serializedObject</span><span class="p">);</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="n">ValidateTokenResult</span> <span class="p">{</span> <span class="n">UserName</span> <span class="p">=</span> <span class="n">userInfo</span><span class="p">.</span><span class="n">UserName</span><span class="p">,</span> <span class="n">TenantUniqueName</span> <span class="p">=</span> <span class="n">userInfo</span><span class="p">.</span><span class="n">TenantUniqueName</span> <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="public-static-func-generateaccesstokenargs-string-getaccesstoken">
+<h2>public static Func&lt;GenerateAccessTokenArgs, string&gt; GetAccessToken<a class="headerlink" href="#public-static-func-generateaccesstokenargs-string-getaccesstoken" title="Permalink to this headline">¶</a></h2>
+<p>Izenda requests hosting app to generate token based on
+userName/tenantId.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">Func&lt;GenerateAccessTokenArgs,</span> <span class="pre">string&gt;</span> <span class="pre">GetAccessToken</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/ValidateTokenArgs.html"><span class="doc">ValidateTokenArgs</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div>string</div></blockquote>
+<p><strong>Samples</strong></p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.UserManagement</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Web</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="k">const</span> <span class="kt">string</span> <span class="n">KEY</span> <span class="p">=</span> <span class="s">&quot;SECRET&quot;</span><span class="p">;</span>
+
+<span class="n">UserIntegrationConfig</span><span class="p">.</span><span class="n">GetAccessToken</span> <span class="p">=</span> <span class="p">(</span><span class="n">GenerateAccessTokenArgs</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="n">KEY</span> <span class="p">+</span> <span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">Identity</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="public-static-user-addorupdateuser-userdetail-user">
+<h2>public static User AddOrUpdateUser(UserDetail user)<a class="headerlink" href="#public-static-user-addorupdateuser-userdetail-user" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can add/update user in Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">User</span> <span class="pre">AddOrUpdateUser(UserDetail</span> <span class="pre">user)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/User.html"><span class="doc">User</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">izendaUser</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserDetail</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">UserName</span> <span class="p">=</span> <span class="s">&quot;admin&quot;</span><span class="p">,</span>
+   <span class="n">EmailAddress</span> <span class="p">=</span> <span class="s">&quot;admin@acme.com&quot;</span><span class="p">,</span>
+   <span class="n">FirstName</span> <span class="p">=</span> <span class="s">&quot;John&quot;</span><span class="p">,</span>
+   <span class="n">LastName</span> <span class="p">=</span> <span class="s">&quot;Doe&quot;</span><span class="p">,</span>
+   <span class="n">TenantDisplayId</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">,</span>
+   <span class="n">Deleted</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+   <span class="n">Active</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+   <span class="n">SystemAdmin</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+   <span class="n">Roles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Role</span><span class="p">&gt;()</span>
+<span class="p">};</span>
+
+<span class="n">UserIntegrationConfig</span><span class="p">.</span><span class="n">AddOrUpdateUser</span><span class="p">(</span><span class="n">izendaUser</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="public-static-roledetail-addorupdaterole-roledetail-role">
+<h2>public static RoleDetail AddOrUpdateRole(RoleDetail role)<a class="headerlink" href="#public-static-roledetail-addorupdaterole-roledetail-role" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can add/update role in Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">RoleDetail</span> <span class="pre">AddOrUpdateRole(RoleDetail</span> <span class="pre">role)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/RoleDetail.html"><span class="doc">RoleDetail</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/RoleDetail.html"><span class="doc">RoleDetail</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">roleDetail</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RoleDetail</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Administrator&quot;</span><span class="p">,</span>
+   <span class="n">Active</span> <span class="p">=</span> <span class="k">true</span>
+<span class="p">};</span>
+
+<span class="n">RoleIntegrationConfig</span><span class="p">.</span><span class="n">AddOrUpdateRole</span><span class="p">(</span><span class="n">roleDetail</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="public-static-tenants-addorupdatetenant-tenants-tenant">
+<h2>public static Tenants AddOrUpdateTenant(Tenants tenant)<a class="headerlink" href="#public-static-tenants-addorupdatetenant-tenants-tenant" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can add/update tenant in Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">Tenants</span> <span class="pre">AddOrUpdateTenant(Tenants</span> <span class="pre">tenant)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/Tenants.html"><span class="doc">Tenants</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/Tenants.html"><span class="doc">Tenants</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">izendaTenant</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Tenants</span><span class="p">();</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Active</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Deleted</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;ACME Corp&quot;</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">TenantID</span> <span class="p">=</span> <span class="s">&quot;ACME&quot;</span><span class="p">;</span>
+
+<span class="n">TenantIntegrationConfig</span><span class="p">.</span><span class="n">AddOrUpdateTenant</span><span class="p">(</span><span class="n">izendaTenant</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="dll-references">
+<h2>DLL References<a class="headerlink" href="#dll-references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Izenda.BI.Logic.dll for the methods</li>
+<li>Izenda.BI.Framework.dll for the object models</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_frontend_integration.html" class="btn btn-neutral float-right" title="Front-end Integration APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".integration_api_documentation.html" class="btn btn-neutral" title="Full API List" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

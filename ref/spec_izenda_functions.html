@@ -1,0 +1,538 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Izenda Functions &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Specification" href=".system_specification.html"/>
+        <link rel="next" title="Izenda System Variables" href="spec_izenda_system_variables.html"/>
+        <link rel="prev" title="Izenda Operators" href="spec_izenda_operators.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_specification.html">System Specification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_data_types.html">Izenda Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_operators.html">Izenda Operators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Izenda Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-built-in-functions">List of Built-in Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-dateparts-and-abbreviations">List of Dateparts and Abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_system_variables.html">Izenda System Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".system_specification.html">System Specification</a> &raquo;</li>
+        
+      <li>Izenda Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/spec_izenda_functions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="izenda-functions">
+<h1>Izenda Functions<a class="headerlink" href="#izenda-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="list-of-built-in-functions">
+<h2>List of Built-in Functions<a class="headerlink" href="#list-of-built-in-functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="45%" />
+<col width="15%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+<th class="head">Result Data Types</th>
+<th class="head">Examples</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>AVG</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">AVG(expression)</span></code> <br clear="right" /> <br clear="right" />
+Numeric, Money</td>
+<td>Returns the average of the values in a group. Null values are ignored.</td>
+<td>Numeric, Money</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>COUNT</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">COUNT(expression)</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the number of items in a group.</td>
+<td>Numeric.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>MAX</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">MAX(expression)</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the maximum value in a group.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>MIN</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">MIN(expression)</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the minimum value in a group.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>SUM</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">SUM(expression)</span></code> <br clear="right" /> <br clear="right" />
+Numeric, Money.</td>
+<td>Returns the sum of all the values in a group. Null values are ignored.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>LEN</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">LEN(expression)</span></code> <br clear="right" /> <br clear="right" />
+Text.</td>
+<td>Returns the number of characters of the given text expression, excluding trailing blanks.</td>
+<td>Numeric.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>ROUND</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">ROUND(expression)</span></code> <br clear="right" /> <br clear="right" />
+Numeric, Money.</td>
+<td>Returns the expression rounded to the specified length or precision.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>CONCAT</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CONCAT(expression,</span> <span class="pre">expression</span> <span class="pre">[,</span> <span class="pre">...])</span></code> <br clear="right" /> <br clear="right" />
+Text.</td>
+<td>Returns the concatenation of all the parameters in that exact order.</td>
+<td>Text.</td>
+<td><code class="docutils literal"><span class="pre">CONCAT('ab','cd',[SHIPCOUNTRY])</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>GETDATE</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">GETDATE()</span></code> <br clear="right" /> <br clear="right" />
+N/A.</td>
+<td>Returns the current system date and time.</td>
+<td>Datetime.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>DATEADD</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">DATEADD(datepart,</span> <span class="pre">number,</span> <span class="pre">date)</span></code> <br clear="right" /> <br clear="right" />
+<strong>datepart</strong>: the part of the date. (See table <a class="reference internal" href="#list-of-dateparts-and-abbreviations">List of Dateparts and Abbreviations</a>) <br clear="right" /> <br clear="right" />
+<strong>number</strong>: the value used to increment datepart. <br clear="right" /> <br clear="right" />
+<strong>date</strong>: an expression that returns a datetime value.</td>
+<td>Returns a new datetime value based on adding an interval to the specified date.</td>
+<td>Datetime.</td>
+<td><code class="docutils literal"><span class="pre">DATEADD(day,3,[DueDate])</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>DATEDIFF</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">DATEDIFF(datepart,</span> <span class="pre">startdate,</span> <span class="pre">enddate)</span></code> <br clear="right" /> <br clear="right" />
+<strong>datepart</strong>: the part of the date. (See table <a class="reference internal" href="#list-of-dateparts-and-abbreviations">List of Dateparts and Abbreviations</a>) <br clear="right" /> <br clear="right" />
+<strong>startdate</strong>, <strong>enddate</strong>: expressions that return datetime values.</td>
+<td>Returns the number of date and time boundaries crossed between two specified dates.</td>
+<td>Numeric.</td>
+<td><code class="docutils literal"><span class="pre">DATEDIFF(day,[OrderDate],[ShipDate])</span></code> <br clear="right" /> <br clear="right" /></td>
+</tr>
+<tr class="row-odd"><td><strong>DATEPART</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">DATEPART(datepart,</span> <span class="pre">date)</span></code> <br clear="right" /> <br clear="right" />
+<strong>datepart</strong>: the part of the date. (See table <a class="reference internal" href="#list-of-dateparts-and-abbreviations">List of Dateparts and Abbreviations</a>) <br clear="right" /> <br clear="right" />
+<strong>date</strong>: an expression that returns a datetime value.</td>
+<td>Returns a number representing the specified datepart of the specified date.</td>
+<td>Numeric.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>CONVERT</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CONVERT(data_type,</span> <span class="pre">expression)</span></code> <br clear="right" /> <br clear="right" />
+<strong>data_type</strong>: any data type. <br clear="right" /> <br clear="right" />
+<strong>expression</strong>: any expression.</td>
+<td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CAST..AS</span></code>.</td>
+<td>The same data type as data_type.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>CAST..AS</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CAST(expression</span> <span class="pre">AS</span> <span class="pre">data_type)</span></code> <br clear="right" /> <br clear="right" />
+<strong>data_type</strong>: any data type. <br clear="right" /> <br clear="right" />
+<strong>expression</strong>: any expression.</td>
+<td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CONVERT</span></code>.</td>
+<td>The same data type as data_type.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>ISNULL</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">ISNULL(check_expression,</span> <span class="pre">replacement_expression)</span></code> <br clear="right" /> <br clear="right" />
+<strong>check_expression</strong> and <strong>replacement_expression</strong>: any data type.</td>
+<td>Returns the value of check_expression if it is not NULL; otherwise, returns the value of replacement_expression.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>BETWEEN..AND</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">test_expression</span> <span class="pre">[NOT]</span> <span class="pre">BETWEEN</span> <span class="pre">begin_expression</span> <span class="pre">AND</span> <span class="pre">end_expression</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns TRUE if the value of test_expression is greater than or equal to the value of begin_expression and less than or equal to the value of end_expression, otherwise returns FALSE.</td>
+<td>Boolean.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>AND</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">boolean_expression</span> <span class="pre">AND</span> <span class="pre">boolean_expression</span></code> <br clear="right" /> <br clear="right" />
+Boolean.</td>
+<td>Returns TRUE when both expressions are TRUE, otherwise returns FALSE.</td>
+<td>Boolean.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>OR</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">boolean_expression</span> <span class="pre">AND</span> <span class="pre">boolean_expression</span></code> <br clear="right" /> <br clear="right" />
+Boolean.</td>
+<td>Returns TRUE when either expression is TRUE, otherwise returns FALSE.</td>
+<td>Boolean.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>DISTINCT</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">DISTINCT</span> <span class="pre">(expression)</span></code> or <code class="docutils literal"><span class="pre">DISTINCT</span> <span class="pre">expression</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns unique values.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>IFF</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">IFF</span> <span class="pre">(boolean_expression,</span> <span class="pre">true_expression[,</span> <span class="pre">false_expression])</span></code> <br clear="right" /> <br clear="right" />
+<strong>boolean_expression</strong>: Boolean. <br clear="right" /> <br clear="right" />
+<strong>true_expression</strong>, <strong>false_expression</strong>: any data type except Image and Lob.</td>
+<td>Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.</td>
+<td>The highest precedence data type from data types of true_expression and false_expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>IF..THEN..ELSE..END</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">IF</span> <span class="pre">(boolean_expression)</span> <span class="pre">THEN</span> <span class="pre">(true_expression)</span> <span class="pre">[ELSE</span> <span class="pre">(false_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
+<strong>boolean_expression</strong>: Boolean. <br clear="right" /> <br clear="right" />
+<strong>true_expression</strong>, <strong>false_expression</strong>: any data type except Image and Lob.</td>
+<td>Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.</td>
+<td>The highest precedence data type from data types of true_expression and false_expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>CASE..WHEN..THEN..ELSE..END</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CASE</span> <span class="pre">(input_expression)</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.</td>
+<td>The highest precedence data type from data types of all <code class="docutils literal"><span class="pre">result_expression</span></code> s and else_result_expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>RUNNINGSUM</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">RUNNINGSUM(expression)</span></code> <br clear="right" /> <br clear="right" />
+Numeric, Money.</td>
+<td>Returns the sum of all the values of expression from the first row up to the current row.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>RUNNINGAVG</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">RUNNINGAVG(expression)</span></code> <br clear="right" /> <br clear="right" />
+Numeric, Money.</td>
+<td>Returns the average of all the values of expression from the first row up to the current row.</td>
+<td>The same data type as expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>RUNNINGCOUNT</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">RUNNINGCOUNT(expression)</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the number of unique values of expression from the first row up to the current row.</td>
+<td>Numeric.</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="list-of-dateparts-and-abbreviations">
+<h2>List of Dateparts and Abbreviations<a class="headerlink" href="#list-of-dateparts-and-abbreviations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="69%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Datepart</td>
+<td>Abbreviations</td>
+</tr>
+<tr class="row-even"><td><strong>year</strong></td>
+<td><strong>yy</strong>, <strong>yyyy</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>quarter</strong></td>
+<td><strong>qq</strong>, <strong>q</strong></td>
+</tr>
+<tr class="row-even"><td><strong>month</strong></td>
+<td><strong>mm</strong>, <strong>m</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>dayofyear</strong></td>
+<td><strong>dy</strong>, <strong>y</strong></td>
+</tr>
+<tr class="row-even"><td><strong>day</strong></td>
+<td><strong>dd</strong>, <strong>d</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>week</strong></td>
+<td><strong>ww</strong>, <strong>wk</strong></td>
+</tr>
+<tr class="row-even"><td><strong>weekday</strong></td>
+<td><strong>dw</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>hour</strong></td>
+<td><strong>hh</strong></td>
+</tr>
+<tr class="row-even"><td><strong>minute</strong></td>
+<td><strong>mi</strong>, <strong>n</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>second</strong></td>
+<td><strong>ss</strong>, <strong>s</strong></td>
+</tr>
+<tr class="row-even"><td><strong>millisecond</strong></td>
+<td><strong>ms</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spec_izenda_system_variables.html" class="btn btn-neutral float-right" title="Izenda System Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spec_izenda_operators.html" class="btn btn-neutral" title="Izenda Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

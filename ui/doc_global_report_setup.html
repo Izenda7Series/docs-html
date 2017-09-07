@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global Report Setup Guide &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
+        <link rel="next" title="Copy Management" href="doc_copy_management.html"/>
+        <link rel="prev" title="Tenant Setup for Multi-tenant Architectures" href="doc_tenant_setup_for_multi-tenant_architectures.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup.html">Tenant Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup_for_multi-tenant_architectures.html">Tenant Setup for Multi-tenant Architectures</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Global Report Setup Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup-steps">Setup Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features-of-global-report">Features of Global Report</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_copy_management.html">Copy Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a> &raquo;</li>
+        
+      <li>Global Report Setup Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_global_report_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="global-report-setup-guide">
+<h1>Global Report Setup Guide<a class="headerlink" href="#global-report-setup-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Global Report is available from release v2.0.0.</p>
+</div>
+<p>The Global Categories (Global Report) is a central place to share system reports/templates among all tenants. This section, categories/sub-categories and reports underneath will be visible in Report List of tenants.</p>
+<p>Usages of Global Categories may include a category of sample reports or common reports that are shared among all tenants.</p>
+<div class="figure" id="id1">
+<span id="global-report-list-acme-user"></span><a class="reference internal image-reference" href="../_images/Global_Report_List_ACME_user.png"><img alt="../_images/Global_Report_List_ACME_user.png" src="../_images/Global_Report_List_ACME_user.png" style="width: 765px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 170 </span><span class="caption-text">Global Categories containing sample and common reports in Report List of one tenant</span></p>
+</div>
+<p>For the global report to display relevant data, each tenant must have a connection to the same database or one with structure similar to that of the global report.</p>
+<div class="section" id="setup-steps">
+<h2>Setup Steps<a class="headerlink" href="#setup-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Set up tenants, for example ACME and Globex Online.</p>
+</li>
+<li><p class="first">Add connection for the global report (Northwind) then add connections for tenants (ACME_Northwind and GO_Northwind).</p>
+</li>
+<li><p class="first">Map connections of tenant to the system connection in Data Setup &gt; Database Mapping.</p>
+<div class="figure" id="id2">
+<span id="global-report-database-mapping"></span><a class="reference internal image-reference" href="../_images/Global_Report_Database_Mapping.png"><img alt="../_images/Global_Report_Database_Mapping.png" src="../_images/Global_Report_Database_Mapping.png" style="width: 785px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 171 </span><span class="caption-text">Database Mapping</span></p>
+</div>
+</li>
+<li><p class="first">Set up tenant roles and users that can access reports.</p>
+</li>
+<li><div class="figure align-right" id="id3">
+<span id="save-report-into-global-categories"></span><a class="reference internal image-reference" href="../_images/Save_report_into_Global_Categories.png"><img alt="../_images/Save_report_into_Global_Categories.png" src="../_images/Save_report_into_Global_Categories.png" style="width: 455px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 172 </span><span class="caption-text">Save report into Global Categories</span></p>
+</div>
+<p>Create the report at system level, then save it into Global Categories. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id4">
+<span id="global-report-list-globex-user"></span><a class="reference internal image-reference" href="../_images/Global_Report_List_Globex_user.png"><img alt="../_images/Global_Report_List_Globex_user.png" src="../_images/Global_Report_List_Globex_user.png" style="width: 765px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 173 </span><span class="caption-text">Global Categories in Report List of sample tenant</span></p>
+</div>
+<p>The Global Categories and global reports are visible to tenant users. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="features-of-global-report">
+<h2>Features of Global Report<a class="headerlink" href="#features-of-global-report" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Best way to share reports among tenants (using Copy Management to copy reports takes more time).</li>
+<li>The Global Categories is well positioned in Left Navigation, easily accessible.</li>
+<li>Report data is read from the tenant&#8217;s connection only.</li>
+<li>The names &#8220;Global Categories&#8221; and &#8220;Local Categories&#8221; can be aliased in <a class="reference internal" href="doc_configuration_report.html#customize-the-names-for-global-categories-and-local-categories"><span class="std std-ref">Report Setting</span></a>.</li>
+<li>When saving an existing report in a local system category as a global report, please note that any subreports used in the report must also be saved into global categories as well. Once this is complete the subreport links must be udpated to point to the correct global subreport as the report ids will be new in the global categories.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_copy_management.html" class="btn btn-neutral float-right" title="Copy Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_tenant_setup_for_multi-tenant_architectures.html" class="btn btn-neutral" title="Tenant Setup for Multi-tenant Architectures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

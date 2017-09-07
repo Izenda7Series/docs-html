@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReactJS to manage the list of categories &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
+        <link rel="next" title="ReactJS to toggle the list of visible data sources" href="code_react_toggle_the_list_of_visible_data_sources.html"/>
+        <link rel="prev" title="ReactJS to manage a scalar value" href="code_react_manage_a_scalar_value.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_rest_api_test.html">REST API Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_a_scalar_value.html">ReactJS to manage a scalar value</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ReactJS to manage the list of categories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boilerplate-code-for-an-array">Boilerplate code for an array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-fetchdata">Implement fetchData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-addcategory">Implement addCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-removecategory">Implement removeCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html">ReactJS to toggle the list of visible data sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a> &raquo;</li>
+        
+      <li>ReactJS to manage the list of categories</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_react_manage_the_list_of_categories.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reactjs-to-manage-the-list-of-categories">
+<h1>ReactJS to manage the list of categories<a class="headerlink" href="#reactjs-to-manage-the-list-of-categories" title="Permalink to this headline">¶</a></h1>
+<p>In this sample we will write a simplistic web page utilizing ReactJS to
+manage a list of items - the data source categories.</p>
+<ul class="simple">
+<li>We will use the <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a>,
+<a class="reference internal" href="../ref/api_advanced_settings.html#post-advancedsetting-category"><span class="std std-ref">POST advancedSetting/category</span></a> and <a class="reference internal" href="../ref/api_advanced_settings.html#delete-advancedsetting-category-category-id"><span class="std std-ref">DELETE advancedSetting/category/{category_id}</span></a> APIs.</li>
+<li>We will use ReactJS to create the UI.</li>
+</ul>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>This sample is a continuation of <a class="reference internal" href="code_react_manage_a_scalar_value.html"><span class="doc">ReactJS to manage a scalar value</span></a>.</li>
+<li>This sample re-uses the folder structure created in <a class="reference internal" href="code_react_manage_a_scalar_value.html"><span class="doc">ReactJS to manage a scalar value</span></a>.</li>
+<li>The uncompressed, development version of react.js and react-dom.js
+has been put into &#8220;ui_react_examples/vendor&#8221; folder. (They are in
+the starter kit available at
+<a class="reference external" href="https://facebook.github.io/react/downloads.html">https://facebook.github.io/react/downloads.html</a>)</li>
+</ol>
+</div>
+<div class="section" id="boilerplate-code-for-an-array">
+<h2>Boilerplate code for an array<a class="headerlink" href="#boilerplate-code-for-an-array" title="Permalink to this headline">¶</a></h2>
+<p>With these APIs, we will be managing an array of objects, so:</p>
+<ul class="simple">
+<li>We model the data in <code class="docutils literal"><span class="pre">this.state</span></code> in an array called categoryArray.</li>
+<li>We modify render method to display a list of items</li>
+<li>We render a new Add button to insert a new category</li>
+<li>We modify reflectChangedData method to update categoryArray with user
+input.</li>
+</ul>
+<p>We also make one code improvement to pass the API server IP and port via
+the parameter rootUrl to the ReactJS component.</p>
+<ol class="arabic simple">
+<li>In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
+&#8220;ReactJS to manage the list of categories.html&#8221;.</li>
+<li>Edit the file with a text editor such as Notepad or Notepad++ and
+paste the following boilerplate HTML code:</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+     var CategoryList = React.createClass({
+      getInitialState: function() {
+         return {
+           categoryArray: new Array()
+         };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+      },
+      render: function() {
+         var lines = this.state.categoryArray.map(function(category) {
+           return (
+             &lt;li key={category.id}&gt;
+             &lt;input type=&quot;text&quot; id={category.id} value={category.name} onChange={this.reflectChangedData.bind(this,category.id)} /&gt;&amp;nbsp;
+             &lt;button onClick={this.removeCategory.bind(this,category.id)}&gt;Remove&lt;/button&gt;
+             &lt;/li&gt;
+           )
+         }.bind(this));
+         return (
+           &lt;div style={{&quot;border&quot;: &quot;1px solid black&quot;, &quot;width&quot;: &quot;400px&quot;}}&gt;
+           &lt;button onClick={this.addCategory}&gt;Add&lt;/button&gt;
+           &lt;ul&gt; {lines} &lt;/ul&gt;
+           &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+           &lt;/div&gt;
+         )
+      },
+      fetchData: function() {
+              // TODO
+           },
+      reflectChangedData: function(id, event) {
+         var categories = this.state.categoryArray;
+         var pos = categories.map(function(x) {return x.id; }).indexOf(id);
+         categories[pos].name = event.target.value;
+         this.setState({categoryArray : categories});
+      },
+      pushData: function() {
+         // TODO
+      },
+      addCategory: function(e) {
+         // TODO
+      },
+      removeCategory: function(id, event) {
+         // TODO
+      }
+     });
+
+     ReactDOM.render(&lt;CategoryList rootUrl={&quot;http://127.0.0.1:8888/api/&quot;} /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using Notepad++, we can set the Language as JavaScript to see proper syntax highlighting.</p>
+</div>
+<ul class="simple">
+<li>We render the list of categories in an unordered list
+<code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code> tag, with an <code class="docutils literal"><span class="pre">&lt;li&gt;</span></code> tag
+wrapping around the <code class="docutils literal"><span class="pre">&lt;input&gt;</span></code> tag for each
+category.</li>
+<li>In <code class="docutils literal"><span class="pre">onChange</span></code> event of the input box, reflectChangedData is binded
+with category.id so that in the method we can know the change
+happended in which category and update that category only.</li>
+<li>In <code class="docutils literal"><span class="pre">reflectChangedData</span></code>, data in <code class="docutils literal"><span class="pre">this.state</span></code> is immutable so
+that is why we could not assign this.state.categoryArray.name
+directly.</li>
+</ul>
+<p>Since this is a list of items, apart from fetchData and pushData we need
+2 more custom methods:</p>
+<ul class="simple">
+<li>addCategory to add a new category</li>
+<li>removeCategory to remove a category</li>
+</ul>
+</div>
+<div class="section" id="implement-fetchdata">
+<h2>Implement fetchData<a class="headerlink" href="#implement-fetchdata" title="Permalink to this headline">¶</a></h2>
+<p>From the API documentation <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a>,
+the <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> in fetchData would be replaced by this ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="nx">categoryArray</span><span class="o">:</span> <span class="nx">response</span>
+    <span class="p">});</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Now open the page in web browser and we can see the list of existing
+categories.</p>
+</div>
+<div class="section" id="implement-pushdata">
+<h2>Implement pushData<a class="headerlink" href="#implement-pushdata" title="Permalink to this headline">¶</a></h2>
+<p>From the API documentation <a class="reference internal" href="../ref/api_advanced_settings.html#post-advancedsetting-category"><span class="std std-ref">POST advancedSetting/category</span></a>,
+the <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> in pushData would be replaced by this ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">categoryArray</span><span class="p">),</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implement-addcategory">
+<h2>Implement addCategory<a class="headerlink" href="#implement-addcategory" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">categoryArray</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">newId</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[xy]/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">16</span><span class="o">|</span><span class="mi">0</span><span class="p">,</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">c</span> <span class="o">==</span> <span class="s1">&#39;x&#39;</span> <span class="o">?</span> <span class="nx">r</span> <span class="o">:</span> <span class="p">(</span><span class="nx">r</span><span class="o">&amp;</span><span class="mh">0x3</span><span class="o">|</span><span class="mh">0x8</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">v</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">categories</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span> <span class="nx">newId</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="kc">null</span><span class="p">});</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">categoryArray</span> <span class="o">:</span> <span class="nx">categories</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>The Add button only needs to modify categoryArray, then the changed data
+in <code class="docutils literal"><span class="pre">this.state</span></code> will trigger the render method. Also, the newly-added
+category has its name as null so that ReactJS will render a new blank
+editable input box.</p>
+</div>
+<div class="section" id="implement-removecategory">
+<h2>Implement removeCategory<a class="headerlink" href="#implement-removecategory" title="Permalink to this headline">¶</a></h2>
+<p>From the API documentation <a class="reference internal" href="../ref/api_advanced_settings.html#delete-advancedsetting-category-category-id"><span class="std std-ref">DELETE advancedSetting/category/{category_id}</span></a>,
+the <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> in pushData would be replaced by this ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;DELETE&quot;</span><span class="p">,</span>
+  <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+  <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we went through a ReactJS structure to manage a list of
+items.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Full source code in this sample:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;vendor/jquery-1.12.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;vendor/react-dom.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+   &lt;section id=&quot;app&quot;&gt;&lt;/section&gt;
+
+   &lt;script type=&quot;text/babel&quot;&gt;
+     var CategoryList = React.createClass({
+      getInitialState: function() {
+         return {
+           categoryArray: new Array()
+         };
+      },
+      componentDidMount: function() {
+         this.fetchData();
+      },
+      render: function() {
+         var lines = this.state.categoryArray.map(function(category) {
+           return (
+             &lt;li key={category.id}&gt;
+             &lt;input type=&quot;text&quot; id={category.id} value={category.name} onChange={this.reflectChangedData.bind(this,category.id)} /&gt;&amp;nbsp;
+             &lt;button onClick={this.removeCategory.bind(this,category.id)}&gt;Remove&lt;/button&gt;
+             &lt;/li&gt;
+           )
+         }.bind(this));
+         return (
+           &lt;div style={{&quot;border&quot;: &quot;1px solid black&quot;, &quot;width&quot;: &quot;400px&quot;}}&gt;
+           &lt;button onClick={this.addCategory}&gt;Add&lt;/button&gt;
+           &lt;ul&gt; {lines} &lt;/ul&gt;
+           &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+           &lt;/div&gt;
+         )
+      },
+      fetchData: function() {
+         $.ajax({
+           url: this.props.rootUrl + &quot;advancedSetting/category/&quot;,
+           type: &quot;GET&quot;,
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             this.setState({
+               categoryArray: response
+             });
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+           }
+         })
+      },
+      reflectChangedData: function(id, event) {
+         var categories = this.state.categoryArray;
+         var pos = categories.map(function(x) {return x.id; }).indexOf(id);
+         categories[pos].name = event.target.value;
+         this.setState({categoryArray : categories});
+      },
+      pushData: function() {
+         $.ajax({
+           url: this.props.rootUrl + &quot;advancedSetting/category/&quot;,
+           type: &quot;POST&quot;,
+           contentType: &quot;application/json&quot;,
+           data: JSON.stringify(this.state.categoryArray),
+           success: function(response) {
+             if (!response.success) {
+               console.log(JSON.stringify(response))
+             }
+             this.fetchData();
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+             this.fetchData();
+           }
+         })
+      },
+      addCategory: function(e) {
+         e.preventDefault();
+         var categories = this.state.categoryArray;
+         var newId = &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) {
+           var r = Math.random()*16|0, v = c == &#39;x&#39; ? r : (r&amp;0x3|0x8);
+           return v.toString(16);
+         });
+         categories.push({id: newId, name: null});
+         this.setState({categoryArray : categories});
+      },
+      removeCategory: function(id, event) {
+         $.ajax({
+           url: this.props.rootUrl + &quot;advancedSetting/category/&quot; + id,
+           type: &quot;DELETE&quot;,
+           contentType: &quot;application/json&quot;,
+           success: function(response) {
+             if (!response.success) {
+               console.log(JSON.stringify(response))
+             }
+             this.fetchData();
+           }.bind(this),
+           error: function(response) {
+             console.log(JSON.stringify(response));
+             this.fetchData();
+           }.bind(this)
+         });
+      }
+     });
+
+     ReactDOM.render(&lt;CategoryList rootUrl={&quot;http://127.0.0.1:8888/api/&quot;} /&gt;, document.getElementById(&#39;app&#39;));
+   &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_react_toggle_the_list_of_visible_data_sources.html" class="btn btn-neutral float-right" title="ReactJS to toggle the list of visible data sources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_react_manage_a_scalar_value.html" class="btn btn-neutral" title="ReactJS to manage a scalar value" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

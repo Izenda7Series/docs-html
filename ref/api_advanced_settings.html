@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Settings APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="System Configuration APIs" href="api_system_configuration.html"/>
+        <link rel="prev" title="Dashboard List APIs" href="api_dashboard_list.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>Advanced Settings APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_advanced_settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-settings-apis">
+<h1>Advanced Settings APIs<a class="headerlink" href="#advanced-settings-apis" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Advanced Settings</strong> page allows user to</p>
+<ul class="simple">
+<li>manage the list of data source categories</li>
+<li>update system settings in related groups</li>
+</ul>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="35%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+<th class="head">Usage in Izenda Front-end</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#id1">POST advancedSetting/category</a></td>
+<td>Updates the list of <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">categories</span></a>.</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Category &gt; Save</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id2">GET advancedSetting/category/(tenant_id)</a></td>
+<td>Returns an array of <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">categories</span></a> (filtered by tenant_id if provided).</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Category</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id3">DELETE advancedSetting/category/{category_id}</a></td>
+<td>Deletes the <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">category</span></a> specified by category_id.</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Category &gt; click Remove icon</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-advancedsetting-performance-tenant-id">GET advancedSetting/performance/(tenant_id)</a></td>
+<td>Returns the settings in Performance group (filtered by tenant_id if provided).</td>
+<td>- On Front-end load <br clear="right" />
+- Settings &gt; Data Setup &gt; Advanced Settings &gt; Performance</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-advancedsetting-performance">POST advancedSetting/performance</a></td>
+<td>Updates the settings in Performance group.</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Performance &gt; Save</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-advancedsetting-security-tenant-id">GET advancedSetting/security/(tenant_id)</a></td>
+<td>Returns the settings in Security group (filtered by tenant_id if provided).</td>
+<td>- On Front-end load <br clear="right" />
+- Settings &gt; Data Setup &gt; Advanced Settings &gt; Security</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-advancedsetting-security">POST advancedSetting/security</a></td>
+<td>Updates the settings in Security group.</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Security &gt; Save</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-advancedsetting-miscsetting-tenant-id">GET advancedSetting/miscSetting/(tenant_id)</a></td>
+<td>Returns the settings in Others group (filtered by tenant_id if provided).</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Others</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-advancedsetting-miscsetting">POST advancedSetting/miscSetting</a></td>
+<td>Updates the settings in Others group.</td>
+<td>Settings &gt; Data Setup &gt; Advanced Settings &gt; Others &gt; Save</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-advancedsetting-defaultimageurl">POST advancedSetting/defaultImageUrl</a></td>
+<td>Updates the default image url setting.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-advancedsetting-defaultimageurl-tenantid-tenant-id">GET advancedSetting/defaultImageUrl(?tenantId=tenant_id)</a></td>
+<td>Returns the default image url setting.</td>
+<td>Setting Level Tenant is selected</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="post-advancedsetting-category">
+<span id="id1"></span><h2>POST advancedSetting/category<a class="headerlink" href="#post-advancedsetting-category" title="Permalink to this headline">¶</a></h2>
+<p>Updates the list of <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">categories</span></a>.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/DataSourceCategory.html"><span class="doc">DataSourceCategory</span></a> objects</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/category</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>With an existing empty category list, this request payload will add two categories ABC and XYZ:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;XYZ&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>User needs to reload the category list to have the server-generated ids by calling <a class="reference internal" href="#id2">GET advancedSetting/category/(tenant_id)</a>. User will get:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;0eac7266-4150-4b45-b6f7-6c40d95b6a37&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;45c747c5-a11a-48f4-b966-14819a07450f&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;XYZ&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Right after that, assuming user have renamed ABC category to ABCDEF, removed XYZ and added QRS, the update request payload will be:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;0eac7266-4150-4b45-b6f7-6c40d95b6a37&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ABCDEF&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;QRS&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-advancedsetting-category-tenant-id">
+<span id="id2"></span><h2>GET advancedSetting/category/(tenant_id)<a class="headerlink" href="#get-advancedsetting-category-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">categories</span></a> (filtered by tenant_id if provided).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/DataSourceCategory.html"><span class="doc">DataSourceCategory</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/category</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;45c747c5-a11a-48f4-b966-14819a07450f&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ABC&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-03-20T04:47:09.1170000+07:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;cda0ef9a-7fc0-4f9b-96ed-b1c33ea624b1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;DEF&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-03-20T04:47:09.1330000+07:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;868e6176-530f-4e8a-bef4-fb14d50e1882&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;QRS&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-03-20T04:47:09.1330000+07:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="delete-advancedsetting-category-category-id">
+<span id="id3"></span><h2>DELETE advancedSetting/category/{category_id}<a class="headerlink" href="#delete-advancedsetting-category-category-id" title="Permalink to this headline">¶</a></h2>
+<p>Deletes the <a class="reference internal" href=".glossary.html#term-data-source-category"><span class="xref std std-term">category</span></a> specified by category_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the deletion is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/advancedSetting/category/cda0ef9a-7fc0-4f9b-96ed-b1c33ea624b1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-advancedsetting-performance-tenant-id">
+<h2>GET advancedSetting/performance/(tenant_id)<a class="headerlink" href="#get-advancedsetting-performance-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the settings in Performance group (filtered by tenant_id if provided).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PerformanceSetting.html"><span class="doc">PerformanceSetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/performance</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;queryTimeoutValue&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+  <span class="s2">&quot;queryTimeoutDefaultValue&quot;</span> <span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+  <span class="s2">&quot;useNoLockValue&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;useNoLockDefaultValue&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;dataSourceLimitValue&quot;</span> <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="s2">&quot;dataSourceLimitDefaultValue&quot;</span> <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-advancedsetting-performance">
+<h2>POST advancedSetting/performance<a class="headerlink" href="#post-advancedsetting-performance" title="Permalink to this headline">¶</a></h2>
+<p>Updates the settings in Performance group.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PerformanceSetting.html"><span class="doc">PerformanceSetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> fied true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/performance</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload to update Query Timeout to 360:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;queryTimeoutValue&quot;</span> <span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+  <span class="s2">&quot;useNoLockValue&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;dataSourceLimitValue&quot;</span> <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-advancedsetting-security-tenant-id">
+<h2>GET advancedSetting/security/(tenant_id)<a class="headerlink" href="#get-advancedsetting-security-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the settings in Security group (filtered by tenant_id if provided).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/SecuritySetting.html"><span class="doc">SecuritySetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/security</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;tenantFieldValue&quot;</span><span class="p">:</span> <span class="s2">&quot;TenantID;UserID&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantFieldDefaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;showTenantFieldValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;showTenantFieldDefaultValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;setAdditiveFieldAutoVisibleValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;setAdditiveFieldAutoVisibleDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;setAdditiveFieldAutoFilterableValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;setAdditiveFieldAutoFilterableDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;tenantFields&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TenantID&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;isSystem&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UserID&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;isSystem&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;allowShowTenant&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-15T06:31:15&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-advancedsetting-security">
+<h2>POST advancedSetting/security<a class="headerlink" href="#post-advancedsetting-security" title="Permalink to this headline">¶</a></h2>
+<p>Updates the settings in Security group.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/SecuritySetting.html"><span class="doc">SecuritySetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/security</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload to set Additive Fields Auto Visible:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;showTenantFieldValue&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;setAdditiveFieldAutoVisibleValue&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;setAdditiveFieldAutoFilterableValue&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-advancedsetting-miscsetting-tenant-id">
+<h2>GET advancedSetting/miscSetting/(tenant_id)<a class="headerlink" href="#get-advancedsetting-miscsetting-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the settings in Others group (filtered by tenant_id if provided).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/Entity.html"><span class="doc">Entity</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OtherSetting.html"><span class="doc">OtherSetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/miscSetting</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;sortColumnNameValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;sortColumnNameDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;trimTimeInJoinsValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;trimTimeInJoinsDefaultValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForDataOffsetValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForDataOffsetDefaultValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForTimestampOffsetValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForTimestampOffsetDefaultValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;convertNullToEmptyStringValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;convertNullToEmptyStringDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showSchemaNameValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showSchemaNameDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showIntroductionTextValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showIntroductionTextDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;introductionTextValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;introductionTextDefaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sendToDiskPathValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sendToDiskPathDefaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-15T07:29:25.3300651&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-advancedsetting-miscsetting">
+<h2>POST advancedSetting/miscSetting<a class="headerlink" href="#post-advancedsetting-miscsetting" title="Permalink to this headline">¶</a></h2>
+<p>Updates the settings in Others group.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OtherSetting.html"><span class="doc">OtherSetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the update is successful</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/miscSetting</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload to set Timezone Offset to -4:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;sortColumnNameValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;trimTimeInJoinsValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForDataOffsetValue&quot;</span><span class="p">:</span> <span class="s2">&quot;-4&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForTimestampOffsetValue&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;convertNullToEmptyStringValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showSchemaNameValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showIntroductionTextValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;introductionTextValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sendToDiskPathValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sortColumnNameDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;trimTimeInJoinsDefaultValue&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForDataOffsetDefaultValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;timezoneForTimestampOffsetDefaultValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;convertNullToEmptyStringDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showSchemaNameDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;showIntroductionTextDefaultValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;introductionTextDefaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sendToDiskPathDefaultValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-15T07:29:25.3300651&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-advancedsetting-defaultimageurl">
+<h2>POST advancedSetting/defaultImageUrl<a class="headerlink" href="#post-advancedsetting-defaultimageurl" title="Permalink to this headline">¶</a></h2>
+<p>Updates the default image url setting.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The saved <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object with <strong>name</strong> field value &#8220;DefaultImageUrl&#8221;</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/defaultImageUrl</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/img/default.png&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;c8ecf9fd-196d-44a3-90ec-97f393ebfc0c&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DefaultImageUrl&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/img/default.png&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-12T16:55:11.4884228Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-advancedsetting-defaultimageurl-tenantid-tenant-id">
+<h2>GET advancedSetting/defaultImageUrl(?tenantId=tenant_id)<a class="headerlink" href="#get-advancedsetting-defaultimageurl-tenantid-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns the default image url setting.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>No payload</p>
+<p>Optional querystring: ?tenantId=&lt;the id of the tenant&gt;</p>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/defaultImageUrl</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;c8ecf9fd-196d-44a3-90ec-97f393ebfc0c&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DefaultImageUrl&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/img/default.png&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-12T16:55:11.4900000+07:00&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_system_configuration.html" class="btn btn-neutral float-right" title="System Configuration APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_dashboard_list.html" class="btn btn-neutral" title="Dashboard List APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

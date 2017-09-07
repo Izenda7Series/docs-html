@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Export APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="Copy Management APIs" href="api_copy_management.html"/>
+        <link rel="prev" title="Misc System Settings APIs" href="api_misc_system_settings.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_console.html">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>Export APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_export.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="export-apis">
+<h1>Export APIs<a class="headerlink" href="#export-apis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="45%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+<th class="head">Usage in Izenda Front-end</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#post-export-format-exportformat">POST export/{format:exportformat}</a></td>
+<td>Exports the dashboard, report or report part specified in request parameters.</td>
+<td>Report List &gt; Expand a report &gt; Export</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-export-email">POST export/email</a></td>
+<td>Emails or exports report/dashboard based on the input subscription parameter.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-export-performancestatisticstrend">POST export/performanceStatisticsTrend</a></td>
+<td>Exports the performance statistics trend to csv.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-export-checkexportstatus-filesession">GET export/checkExportStatus/{fileSession}</a></td>
+<td><p class="first">Returns true if the export has been completed for the specified fileSession. <br clear="right" />
+This should be the value in fileSessionKey in <a class="reference internal" href="#post-export-format-exportformat">POST export/{format:exportformat}</a>.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.0.6.</span></p>
+</div>
+</td>
+<td>- Report List &gt; Expand a report &gt; Export <br clear="right" />
+- Report Designer &gt; Export <br clear="right" />
+- Report Viewer &gt; Export <br clear="right" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="post-export-format-exportformat">
+<h2>POST export/{format:exportformat}<a class="headerlink" href="#post-export-format-exportformat" title="Permalink to this headline">¶</a></h2>
+<p>Exports the dashboard, report or report part specified in request parameters.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p><strong>Keys</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>dashboardID</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the dashboard if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>dashboardPartID</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the dashboard part if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportID</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the report if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>draftID</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the draft if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportPartID</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the report part if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>filters</strong> <br clear="right" />
+array of objects</td>
+<td>Y</td>
+<td>An array of <a class="reference internal" href="models/FilterItem.html"><span class="doc">FilterItem</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>fileSessionKey</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The key of this specific session, it will be set to cookie &lt;fileSessionKey&gt;=true on success</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>reportDefinition</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The report definition if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>dashboardDefinition</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The dashboard definition if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>dashboardPartIndex</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The index of the dashboard part if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>access_token</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The authentication token</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>current_tenant</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The id of the current tenant if available</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The content of the export</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/export/pdf</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request form (application/x-www-form-urlencoded):</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>url:http://localhost:8888/report/view/e09f9d45-b721-4012-b8e7-c31c58d52af3
+reportId:e09f9d45-b721-4012-b8e7-c31c58d52af3
+filters:[]
+draftId:f862931f-f897-4f98-ab13-687b79b91806
+tenantId:
+fileSessionKey:e09f9d45-b721-4012-b8e7-c31c58d52af3294
+access_token:123Abc..=
+current_tenant:
+</pre></div>
+</div>
+<p>Request form (application/json):</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>{
+     &quot;reportId&quot;:&quot;e09f9d45-b721-4012-b8e7-c31c58d52af3&quot;,
+     &quot;filters&quot;:
+     [
+          {&quot;key&quot;: &quot;EF8414A4-AAC0-46BA-B29B-AC7D2775EBE3&quot;, &quot;value&quot;: &quot;Argentina&quot;, &quot;operatorId&quot;: &quot;737307D1-1E5F-407F-889F-1B3C9A66DD6F&quot;},
+          {&quot;key&quot;: &quot;204142B3-0BCF-4B3D-A834-D5E531CFDD2F&quot;, &quot;value&quot;: 1, &quot;operatorId&quot;: &quot;737307D1-1E5F-407F-889F-1B3C9A66DD6F&quot;}
+     ]
+}
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">the</span> <span class="n">file</span>
+</pre></div>
+</div>
+<p>The cookie will be set:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>e09f9d45-b721-4012-b8e7-c31c58d52af3294=true
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-export-email">
+<h2>POST export/email<a class="headerlink" href="#post-export-email" title="Permalink to this headline">¶</a></h2>
+<p>Emails or exports report/dashboard based on the input subscription parameter.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/Subscription.html"><span class="doc">Subscription</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if successful</li>
+<li>false if not</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/export/email</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;e09f9d45-b721-4012-b8e7-c31c58d52af3&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;deliveryType&quot;</span><span class="p">:</span> <span class="s2">&quot;Email&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;deliveryMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;link&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;exportAttachmentType&quot;</span><span class="p">:</span> <span class="s2">&quot;Pdf&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;emailSubject&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{reportName}</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;emailBody&quot;</span><span class="p">:</span> <span class="s2">&quot;Dear,&lt;br&gt;&lt;br&gt;Please open report by clicking on the following link.&lt;br&gt;&lt;br&gt;</span><span class="si">{reportLink}</span><span class="s2"> &lt;br&gt;&lt;br&gt;Regards,&lt;br&gt;</span><span class="si">{currentUserName}</span><span class="s2">&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;recipients&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@acme.com&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;additionalRecipients&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-export-performancestatisticstrend">
+<h2>POST export/performanceStatisticsTrend<a class="headerlink" href="#post-export-performancestatisticstrend" title="Permalink to this headline">¶</a></h2>
+<p>Exports the performance statistics trend to csv.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p><strong>Keys</strong>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>access_token</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The access token</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>current_tenant</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The file</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/export/performanceStatisticsTrend</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request form (application/x-www-form-urlencoded):</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>access_token:123Abc..=
+current_tenant:
+</pre></div>
+</div>
+<p>Request form (application/json):</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>{
+  &quot;access_token&quot; : &quot;123Abc...&quot;,
+  &quot;current_tenant&quot; : &quot;&quot;
+}
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">the</span> <span class="n">file</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-export-checkexportstatus-filesession">
+<h2>GET export/checkExportStatus/{fileSession}<a class="headerlink" href="#get-export-checkexportstatus-filesession" title="Permalink to this headline">¶</a></h2>
+<p>Returns true if the export has been completed for the specified fileSession. <br clear="right" />
+This should be the value in fileSessionKey in <a class="reference internal" href="#post-export-format-exportformat">POST export/{format:exportformat}</a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.6.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>true</strong> if the export has been completed</li>
+<li><strong>false</strong> if not</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/export/checkExportStatus/my_file_session_key</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">false</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_copy_management.html" class="btn btn-neutral float-right" title="Copy Management APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_misc_system_settings.html" class="btn btn-neutral" title="Misc System Settings APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

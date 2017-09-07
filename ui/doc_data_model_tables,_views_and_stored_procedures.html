@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Model/Tables, Views and Stored Procedures &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Custom View Setup Guide" href="doc_data_model_custom_view.html"/>
+        <link rel="prev" title="Connection String" href="doc_connection_string.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Model/Tables, Views and  Stored Procedures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-tables-views-or-stored-procedures">List tables, views or stored procedures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-for-tables-views-or-stored-procedures">Search for tables, views or stored procedures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assign-a-category-to-a-table-view-or-stored-procedure">Assign a category to a table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assign-an-alias-to-a-table-view-or-stored-procedure">Assign an alias to a table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manage-relationships-for-a-table-view-or-stored-procedure">Manage relationships for a table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assign-an-alias-to-a-column-in-table-view-or-stored-procedure">Assign an alias to a column in table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-visible-or-not-for-a-column-in-table-view-or-stored-procedure">Select visible or not for a column in table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-filterable-or-not-for-a-column-in-table-view-or-stored-procedure">Select filterable or not for a column in table, view or stored procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-calculated-field-to-table-or-view">Add a calculated field to table or view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-a-calculated-field-from-table-or-view">Remove a calculated field from table or view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-stored-procedure-as-dynamic">Set stored procedure as dynamic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-stored-procedure-as-non-dynamic">Set stored procedure as non-dynamic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-a-non-dynamic-stored-procedure-to-get-the-schema">Execute a non-dynamic stored procedure to get the schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-filter-value-for-a-stored-procedure-parameter">Update Filter Value for a stored procedure parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Data Model/Tables, Views and  Stored Procedures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_data_model_tables,_views_and_stored_procedures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-model-tables-views-and-stored-procedures">
+<h1>Data Model/Tables, Views and  Stored Procedures<a class="headerlink" href="#data-model-tables-views-and-stored-procedures" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Data Model/Tables</strong>, <strong>Data Model/Views</strong> and <strong>Data Model/Stored Procedures</strong> pages allow user to</p>
+<ul class="simple">
+<li>manage tables, views, their columns and relationships</li>
+<li>add and remove calculated fields</li>
+<li>manage stored procedures, their parameters, output columns and
+relationships</li>
+<li>assign filter values for stored procedure parameters</li>
+<li>mark stored procedures as dynamic</li>
+</ul>
+<div class="section" id="list-tables-views-or-stored-procedures">
+<h2>List tables, views or stored procedures<a class="headerlink" href="#list-tables-views-or-stored-procedures" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Data Model permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Data Model in the left menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Click Tables, Views or Stored Procedures in the Middle Panel. (<a class="reference internal" href="#data-model-tables-views-stored-procedures-location"><span class="std std-numref">Fig. 97</span></a>)</p>
+<div class="figure" id="id2">
+<span id="data-model-tables-views-stored-procedures-location"></span><a class="reference internal image-reference" href="../_images/Data_Model_Tables_Views_Stored_Procedures_Location.png"><img alt="../_images/Data_Model_Tables_Views_Stored_Procedures_Location.png" src="../_images/Data_Model_Tables_Views_Stored_Procedures_Location.png" style="width: 476px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text">Data Model - Tables, Views and Stored Procedures <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Visible tables, views, or stored procedures from all connections will
+be displayed in the upper data source grid, and columns of the
+currently selected one will be displayed in the lower Column Grid. (<a class="reference internal" href="#data-model-tables-and-views-column-grid"><span class="std std-numref">Fig. 98</span></a>)</p>
+<div class="figure" id="id3">
+<span id="data-model-tables-and-views-column-grid"></span><a class="reference internal image-reference" href="../_images/Data_Model_Tables_and_Views_Column_Grid.png"><img alt="../_images/Data_Model_Tables_and_Views_Column_Grid.png" src="../_images/Data_Model_Tables_and_Views_Column_Grid.png" style="width: 476px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">Data Model - Data Source Grid and Column Grid <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">By default, only the first page with 10 items are displayed. To see
+more, either use the next page icon</p>
+<div class="figure" id="id4">
+<a class="reference internal image-reference" href="../_images/Data_Model_Next_Page_Icon.png"><img alt="../_images/Data_Model_Next_Page_Icon.png" src="../_images/Data_Model_Next_Page_Icon.png" style="width: 92px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Data Model - Next Page <br clear="right" /></span></p>
+</div>
+<p>or select a larger number in Items per page box.</p>
+<div class="figure" id="id5">
+<a class="reference internal image-reference" href="../_images/Data_Model_Items_per_page.png"><img alt="../_images/Data_Model_Items_per_page.png" src="../_images/Data_Model_Items_per_page.png" style="width: 172px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">Data Model - Items per page <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="search-for-tables-views-or-stored-procedures">
+<h2>Search for tables, views or stored procedures<a class="headerlink" href="#search-for-tables-views-or-stored-procedures" title="Permalink to this headline">¶</a></h2>
+<p>The Search box at the top allows user to search for specific tables,
+views or stored procedures.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id6">
+<span id="data-model-tables-and-views-search-by-elements"></span><a class="reference internal image-reference" href="../_images/Data_Model_Tables_and_Views_Search_by_Elements.png"><img alt="../_images/Data_Model_Tables_and_Views_Search_by_Elements.png" src="../_images/Data_Model_Tables_and_Views_Search_by_Elements.png" style="width: 289px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">Data Model - Search Tables or Views by element</span></p>
+</div>
+<p>Select a specific element to search for in the dropdown on the left
+of the Search box. Default is All. (<a class="reference internal" href="#data-model-tables-and-views-search-by-elements"><span class="std std-numref">Fig. 101</span></a>)</p>
+</li>
+<li><p class="first">Type a partial name and click the search icon (🔍).</p>
+</li>
+<li><p class="first">Only the matching tables, views or stored procedures will be
+displayed. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="assign-a-category-to-a-table-view-or-stored-procedure">
+<span id="id1"></span><h2>Assign a category to a table, view or stored procedure<a class="headerlink" href="#assign-a-category-to-a-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select a name in the Category dropdown to assign it to the table,
+view or stored procedure.</p>
+</li>
+<li><p class="first">If the category name is not yet in the list, user can add it by typing the name in and press Enter. (<a class="reference internal" href="#data-model-new-category"><span class="std std-numref">Fig. 102</span></a>)</p>
+<div class="figure" id="id7">
+<span id="data-model-new-category"></span><a class="reference internal image-reference" href="../_images/Data_Model_New_Category.png"><img alt="../_images/Data_Model_New_Category.png" src="../_images/Data_Model_New_Category.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text">Data Model - Functions <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Continue to assign category to more tables, views or stored
+procedures in the same page.</p>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User must save the assignments before moving to another page or another group in the Middle Panel.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="doc_advanced_settings.html#add-data-source-categories"><span class="std std-ref">Advanced Settings/Add data source categories</span></a>.</p>
+</div>
+</div>
+<div class="section" id="assign-an-alias-to-a-table-view-or-stored-procedure">
+<h2>Assign an alias to a table, view or stored procedure<a class="headerlink" href="#assign-an-alias-to-a-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Enter an alias into the Database Source Alias box to assign it to the
+table, view or stored procedure.</p>
+</li>
+<li><p class="first">Continue to assign alias to more tables, views or stored procedures
+in the same page.</p>
+<blockquote>
+<div><p>The alias can contain any characters except for &#8220;[&#8221; and &#8220;]&#8221;.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User must save the assignments before moving to another page or another group in the Middle Panel.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Within a category, the aliases cannot be duplicated. In <a class="reference internal" href="#data-model-duplicated-category-and-alias"><span class="std std-numref">Fig. 103</span></a>, Alias_1 is duplicated because the data sources are in the same Category2, and Alias_2 is valid because the data sources are in different categories.</p>
+<div class="last figure" id="id8">
+<span id="data-model-duplicated-category-and-alias"></span><a class="reference internal image-reference" href="../_images/Data_Model_Duplicated_Category_and_Alias.png"><img alt="../_images/Data_Model_Duplicated_Category_and_Alias.png" src="../_images/Data_Model_Duplicated_Category_and_Alias.png" style="width: 966px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">Data Model - Duplicated Aliases in Category <br clear="right" /></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="manage-relationships-for-a-table-view-or-stored-procedure">
+<h2>Manage relationships for a table, view or stored procedure<a class="headerlink" href="#manage-relationships-for-a-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the relationhips icon at the end of each line to open the
+Relationships dialog.</li>
+<li>See <a class="reference internal" href="doc_data_model_relationships_and_schema.html"><span class="doc">Data Model/Relationships and Schema</span></a> for how to manage
+relationships.</li>
+</ol>
+</div>
+<div class="section" id="assign-an-alias-to-a-column-in-table-view-or-stored-procedure">
+<h2>Assign an alias to a column in table, view or stored procedure<a class="headerlink" href="#assign-an-alias-to-a-column-in-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In the Column Grid, enter an alias into the Column Alias box to
+assign it to the column.</p>
+</li>
+<li><p class="first">Continue to assign alias to more columns in the same page.</p>
+<blockquote>
+<div><p>The alias can contain any characters except for &#8220;[&#8221; and &#8220;]&#8221;.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User must save the assignments before moving to another page or another group in the Middle Panel.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Within a table or view, the aliases cannot be duplicated. (<a class="reference internal" href="#data-model-duplicated-column-alias"><span class="std std-numref">Fig. 104</span></a>)</p>
+<div class="last figure" id="id9">
+<span id="data-model-duplicated-column-alias"></span><a class="reference internal image-reference" href="../_images/Data_Model_Duplicated_Column_Alias.png"><img alt="../_images/Data_Model_Duplicated_Column_Alias.png" src="../_images/Data_Model_Duplicated_Column_Alias.png" style="width: 702px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">Data Model - Duplicated Column Alias <br clear="right" /></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="select-visible-or-not-for-a-column-in-table-view-or-stored-procedure">
+<h2>Select visible or not for a column in table, view or stored procedure<a class="headerlink" href="#select-visible-or-not-for-a-column-in-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<p>A visible column will be included in any field selection control in
+report.</p>
+<ol class="arabic">
+<li><p class="first">Untick the Visible check-box to exclude the column from field
+selection controls in report, or leave it checked to include.</p>
+</li>
+<li><p class="first">Continue for more columns in the same page.</p>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User must save the changes before moving to another page or another group in the Middle Panel.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="select-filterable-or-not-for-a-column-in-table-view-or-stored-procedure">
+<h2>Select filterable or not for a column in table, view or stored procedure<a class="headerlink" href="#select-filterable-or-not-for-a-column-in-table-view-or-stored-procedure" title="Permalink to this headline">¶</a></h2>
+<p>A filterable (and visible) column will be included in any filter in
+report.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A not visible column will be excluded from any filter in report no matter it is filterable or not.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Untick the Filterable check-box to exclude the column from filters in
+report, or leave it checked to include.</p>
+</li>
+<li><p class="first">Continue for more columns in the same page.</p>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">User must save the changes before moving to another page or another group in the Middle Panel.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="add-a-calculated-field-to-table-or-view">
+<h2>Add a calculated field to table or view<a class="headerlink" href="#add-a-calculated-field-to-table-or-view" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Calculated field</p>
+<p>Calculated field is a virtual field calculated from an expression that can use other fields in the same table or view. A calculated field is created to simplify the select queries by hiding the detailed formula, and the formula can be replaced without any change in existing queries. A calculated field will also avoid data redundancy since it is re-calculated in each query.</p>
+<p>For example, from a student test score, the grade can be calculated by this formula:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">WHEN</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="k">THEN</span> <span class="s1">&#39;GOOD&#39;</span>
+<span class="k">WHEN</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">7</span> <span class="k">AND</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">9</span> <span class="k">THEN</span> <span class="s1">&#39;EXCELLENT&#39;</span>
+<span class="k">WHEN</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">9</span>               <span class="k">THEN</span> <span class="s1">&#39;OUTSTANDING&#39;</span>
+</pre></div>
+</div>
+<p>If defined as a calculated field, the grade can later use another formula without changing any queries.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://technet.microsoft.com/en-us/library/ms191250(v=sql.105).aspx">Computed Columns</a></p>
+</div>
+</div>
+<p><br clear="right" /></p>
+<ol class="arabic">
+<li><p class="first">Select the table or view in the upper data source grid.</p>
+</li>
+<li><p class="first">Click Add Field button on top of the Column Grid to open Add
+Calculated Field pop-up.</p>
+</li>
+<li><p class="first">Enter the field name
+into Column Name box.</p>
+<blockquote>
+<div><p>The field name must be unique in that table or view. (<a class="reference internal" href="#data-model-calculated-field-duplicated-name"><span class="std std-numref">Fig. 105</span></a>)</p>
+<div class="figure" id="id10">
+<span id="data-model-calculated-field-duplicated-name"></span><a class="reference internal image-reference" href="../_images/Data_Model_Calculated_Field_Duplicated_Name.png"><img alt="../_images/Data_Model_Calculated_Field_Duplicated_Name.png" src="../_images/Data_Model_Calculated_Field_Duplicated_Name.png" style="width: 456px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">Data Model - Calculated Field Name <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Enter the
+definition for the calculated field into Expression box.</p>
+<blockquote>
+<div><p>Click the bulb icon (💡) to see the list of available fields,
+functions and operators.
+Then click a field, function or operator to insert it into the
+cursor position. (<a class="reference internal" href="#data-model-calculated-field-bulb-pop-up"><span class="std std-numref">Fig. 106</span></a>)</p>
+<div class="figure" id="id11">
+<span id="data-model-calculated-field-bulb-pop-up"></span><a class="reference internal image-reference" href="../_images/Data_Model_Calculated_Field_Bulb_Pop-up.png"><img alt="../_images/Data_Model_Calculated_Field_Bulb_Pop-up.png" src="../_images/Data_Model_Calculated_Field_Bulb_Pop-up.png" style="width: 518px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">Data Model - Calculated Field Available List <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Depending on the
+formula, a suitable data type is suggested in Data Type drop-down.</p>
+</li>
+<li><p class="first">Click Preview button to see a sample result of the formula.</p>
+</li>
+<li><p class="first">Click OK to accept the formula and close the pop-up. (<a class="reference internal" href="#data-model-calculated-field-firstname-whitespace-lastname"><span class="std std-numref">Fig. 107</span></a>)</p>
+</li>
+<li><p class="first">Click Save at the top.</p>
+<div class="figure" id="id12">
+<span id="data-model-calculated-field-firstname-whitespace-lastname"></span><a class="reference internal image-reference" href="../_images/Data_Model_Calculated_Field_FirstName_WhiteSpace_LastName.png"><img alt="../_images/Data_Model_Calculated_Field_FirstName_WhiteSpace_LastName.png" src="../_images/Data_Model_Calculated_Field_FirstName_WhiteSpace_LastName.png" style="width: 456px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">Data Model - FullName Calculated Field <br clear="right" /></span></p>
+</div>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="../ref/spec_izenda_data_types.html"><span class="doc">Izenda Data Types</span></a></li>
+<li><a class="reference internal" href="../ref/spec_izenda_operators.html"><span class="doc">Izenda Operators</span></a></li>
+<li><a class="reference internal" href="../ref/spec_izenda_functions.html"><span class="doc">Izenda Functions</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="remove-a-calculated-field-from-table-or-view">
+<h2>Remove a calculated field from table or view<a class="headerlink" href="#remove-a-calculated-field-from-table-or-view" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select the table or view in the upper data source grid.</p>
+</li>
+<li><p class="first">Click the remove icon (X) at the end of the calculated field.</p>
+<blockquote>
+<div><p>The remove icon is only enabled for calculated fields. (<a class="reference internal" href="#data-model-calculated-field-remove-icon"><span class="std std-numref">Fig. 108</span></a>)</p>
+<div class="figure" id="id13">
+<span id="data-model-calculated-field-remove-icon"></span><a class="reference internal image-reference" href="../_images/Data_Model_Calculated_Field_Remove_Icon.png"><img alt="../_images/Data_Model_Calculated_Field_Remove_Icon.png" src="../_images/Data_Model_Calculated_Field_Remove_Icon.png" style="width: 1026px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">Data Model - Remove Calculated Field <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click OK in the confirmation pop-up.</p>
+<blockquote>
+<div><p>If the calculated field has been used in any report, user will
+have to confirm that these reports will not be viewable anymore.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click Save at the top.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="set-stored-procedure-as-dynamic">
+<h2>Set stored procedure as dynamic<a class="headerlink" href="#set-stored-procedure-as-dynamic" title="Permalink to this headline">¶</a></h2>
+<p>For stored procedures with any input parameter, they can be set as
+dynamic.</p>
+<div class="topic">
+<p class="topic-title first">Dynamic stored procedure</p>
+<p>A stored procedure with one (or more) input parameter might have different output schemas based on the value of that input parameter. The reports have 2 options to handle this situation:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Dynamic: The schema is only determined at report design time by a user-supplied input value.</dt>
+<dd><p class="first last">The schema is empty in Data Model.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Non-dynamic: The schema is assumed to remain consistent regardless of the input value.</dt>
+<dd><p class="first">System can try getting that schema for Data Model by executing with null input parameters. In case it cannot because any parameter requires NOT NULL, user will be prompted for a proper input value.</p>
+<p>The exact rule for NOT NULL input parameters:</p>
+<ol class="last arabic simple">
+<li>If Filter Value has been defined for a parameter, the first value in that list will be used as input value.</li>
+<li>If not, then null will be used as input value.</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Non-dynamic should be the default value since in practice, well-coded stored procedures should return a consistent schema.</p>
+</div>
+<p><br clear="right" /></p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id14">
+<span id="data-model-sp-set-dynamic-confirmation"></span><a class="reference internal image-reference" href="../_images/Data_Model_SP_Set_Dynamic_Confirmation.png"><img alt="../_images/Data_Model_SP_Set_Dynamic_Confirmation.png" src="../_images/Data_Model_SP_Set_Dynamic_Confirmation.png" style="width: 456px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Data Model - Set stored procedure as dynamic confirmation</span></p>
+</div>
+<p>Tick the Dynamic check-box to set a stored procedure as dynamic.</p>
+</li>
+<li><p class="first">Click OK in the confirmation pop-up. (<a class="reference internal" href="#data-model-sp-set-dynamic-confirmation"><span class="std std-numref">Fig. 109</span></a>)</p>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+</li>
+<li><p class="first">The stored procedure will be set as dynamic and its schema will be
+removed from the lower Column Grid. The Execute button is also
+disabled. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="set-stored-procedure-as-non-dynamic">
+<h2>Set stored procedure as non-dynamic<a class="headerlink" href="#set-stored-procedure-as-non-dynamic" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Untick the Dynamic check-box to set a stored procedure as
+non-dynamic.</li>
+<li>Click Save button at the top, then click OK in the confirmation
+pop-up.</li>
+<li>The stored procedure will be set as non-dynamic. The Execute button
+is also enabled for user to get the schema.</li>
+</ol>
+</div>
+<div class="section" id="execute-a-non-dynamic-stored-procedure-to-get-the-schema">
+<h2>Execute a non-dynamic stored procedure to get the schema<a class="headerlink" href="#execute-a-non-dynamic-stored-procedure-to-get-the-schema" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Execute button above the lower Column Grid.</li>
+<li>System tries running the stored procedure to get the schema.</li>
+<li>The schema will be populated into the lower Column Grid.</li>
+<li>Click Save button at the top, then click OK in the confirmation
+pop-up.</li>
+</ol>
+<p>The action will fail if one of the parameters requires not null and
+Filter Value has not been defined.</p>
+<p>In this case, please update the Filter Value section.</p>
+</div>
+<div class="section" id="update-filter-value-for-a-stored-procedure-parameter">
+<h2>Update Filter Value for a stored procedure parameter<a class="headerlink" href="#update-filter-value-for-a-stored-procedure-parameter" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the icon in Filter Value box.</p>
+<blockquote>
+<div><p>Filter Value icon only appears for parameters.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Select either Filter Lookup Key - Value or User Defined Filter Value</p>
+<ul>
+<li><p class="first">Example to set
+parameter &#64;OrderID to look up from NorthwindA.dbo.Orders.OrderID,
+displaying column ShipName to end-user. (<a class="reference internal" href="#data-model-sp-filter-lookup-key-value"><span class="std std-numref">Fig. 110</span></a>)</p>
+<div class="figure" id="id15">
+<span id="data-model-sp-filter-lookup-key-value"></span><a class="reference internal image-reference" href="../_images/Data_Model_SP_Filter_Lookup_Key_-_Value.png"><img alt="../_images/Data_Model_SP_Filter_Lookup_Key_-_Value.png" src="../_images/Data_Model_SP_Filter_Lookup_Key_-_Value.png" style="width: 458px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Data Model - Filter Lookup Key - Value <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Example to set
+parameter &#64;OrderID to look up from a list of 3 values: the value
+of Tenant ID and 2 fixed values NewValueA and NewValueB. (<a class="reference internal" href="#data-model-sp-user-defined-filter-value"><span class="std std-numref">Fig. 111</span></a>)</p>
+<div class="figure" id="id16">
+<span id="data-model-sp-user-defined-filter-value"></span><a class="reference internal image-reference" href="../_images/Data_Model_SP_User_Defined_Filter_Value.png"><img alt="../_images/Data_Model_SP_User_Defined_Filter_Value.png" src="../_images/Data_Model_SP_User_Defined_Filter_Value.png" style="width: 458px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Data Model - User Defined Filter Value <br clear="right" /></span></p>
+</div>
+</li>
+</ul>
+</li>
+<li><div class="figure align-right" id="id17">
+<span id="data-model-sp-view-user-defined-filter-value"></span><a class="reference internal image-reference" href="../_images/Data_Model_SP_View_User_Defined_Filter_Value.png"><img alt="../_images/Data_Model_SP_View_User_Defined_Filter_Value.png" src="../_images/Data_Model_SP_View_User_Defined_Filter_Value.png" style="width: 245px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">Data Model - Selected User Defined Filter Value</span></p>
+</div>
+<p>The  selected filter value will appear in the Filter Value box. (<a class="reference internal" href="#data-model-sp-view-user-defined-filter-value"><span class="std std-numref">Fig. 112</span></a>) <br clear="right" /></p>
+</li>
+<li><p class="first">Click Save button at the top, then click OK in the confirmation
+pop-up.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_data_model_custom_view.html" class="btn btn-neutral float-right" title="Custom View Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_connection_string.html" class="btn btn-neutral" title="Connection String" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

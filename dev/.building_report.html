@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Report &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
+        <link rel="next" title="Build a Generic Report" href="code_javascript_build_a_generic_report.html"/>
+        <link rel="prev" title="Add Internal User" href="code_javascript_add_internal_user.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_generic_report.html">Build a Generic Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_grid.html">Build a simple Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_chart.html">Build a simple Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html">Build a simple Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_map.html">Build a simple Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_build_a_simple_form.html">Build a simple Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html">Sample Properties for a ReportPartElement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+      <li>Building Report</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/.building_report.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-report">
+<h1>Building Report<a class="headerlink" href="#building-report" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_generic_report.html">Build a Generic Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#prepare-an-empty-report-object">Prepare an Empty Report Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#populate-report-name-and-categories">Populate Report Name and Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#populate-selected-data-sources">Populate selected data sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#call-save-report-as-draft-api">Call Save report as draft API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#populate-the-report-parts">Populate the report parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_generic_report.html#call-save-report-api">Call Save report API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_simple_grid.html">Build a simple Grid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_grid.html#prepare-an-empty-reportpartgrid-object">Prepare an empty ReportPartGrid object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_grid.html#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_grid.html#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_grid.html#update-the-properties-of-the-grid-in-properties-field-per-user-selection">Update the properties of the grid in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_grid.html#back-to-the-step-in-build-a-generic-report">Back to the step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_simple_chart.html">Build a simple Chart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_chart.html#prepare-an-empty-reportpartchart-object">Prepare an empty ReportPartChart object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_chart.html#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_chart.html#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_chart.html#update-the-properties-of-the-chart-in-properties-field-per-user-selection">Update the properties of the Chart in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_chart.html#back-to-the-save-step-in-build-a-generic-report">Back to the Save step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html">Build a simple Gauge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html#prepare-an-empty-reportpartgauge-object">Prepare an empty ReportPartGauge object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html#update-the-properties-of-the-gauge-in-properties-field-per-user-selection">Update the properties of the Gauge in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_gauge.html#back-to-the-save-step-in-build-a-generic-report">Back to the Save step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_simple_map.html">Build a simple Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_map.html#prepare-an-empty-reportpartmap-object">Prepare an empty ReportPartMap object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_map.html#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_map.html#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_map.html#update-the-properties-of-the-map-in-properties-field-per-user-selection">Update the properties of the Map in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_map.html#back-to-the-save-step-in-build-a-generic-report">Back to the Save step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_build_a_simple_form.html">Build a simple Form</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_form.html#prepare-an-empty-reportpartform-object">Prepare an empty ReportPartForm object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_form.html#populate-selected-data-sources-fields">Populate selected data sources fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_form.html#update-the-properties-of-each-field-per-user-selection">Update the properties of each field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_form.html#update-the-properties-of-the-form-in-properties-field-per-user-selection">Update the properties of the Form in &#8220;properties&#8221; field per user selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_javascript_build_a_simple_form.html#back-to-the-save-step-in-build-a-generic-report">Back to the Save step in <code class="docutils literal"><span class="pre">Build</span> <span class="pre">a</span> <span class="pre">Generic</span> <span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html">Sample Properties for a ReportPartElement</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_javascript_build_a_generic_report.html" class="btn btn-neutral float-right" title="Build a Generic Report" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_javascript_add_internal_user.html" class="btn btn-neutral" title="Add Internal User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

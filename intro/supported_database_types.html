@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Supported Database Types &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Data Management" href=".data_management.html"/>
+        <link rel="next" title="Query Performance" href="query_performance.html"/>
+        <link rel="prev" title="Understanding the User Store" href="understanding_the_user_store.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href=".intro.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".izenda_concepts.html">Izenda Concepts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".data_management.html">Data Management</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="understanding_the_user_store.html">Understanding the User Store</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Supported Database Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#supported-databases">Supported Databases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cubes-support">Cubes Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connection-string-setup">Connection String Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="query_performance.html">Query Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="supported_web_browsers.html">Supported Web Browsers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".intro.html">Introduction</a> &raquo;</li>
+        
+          <li><a href=".data_management.html">Data Management</a> &raquo;</li>
+        
+      <li>Supported Database Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/supported_database_types.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="supported-database-types">
+<h1>Supported Database Types<a class="headerlink" href="#supported-database-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="supported-databases">
+<h2>Supported Databases<a class="headerlink" href="#supported-databases" title="Permalink to this headline">¶</a></h2>
+<p>Izenda fully supports the following database servers:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Microsoft SQL Server 2008 or later</li>
+<li>Microsoft Azure</li>
+<li>Oracle 10.2 or later</li>
+<li>MySQL (For optimal performance MySQL 5.7+ is suggested. MySQL 5.7 includes major performance enhancements to derived tables/subqueries which are used throughout Izenda.)</li>
+<li>PostgreSQL</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="cubes-support">
+<h2>Cubes Support<a class="headerlink" href="#cubes-support" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>SSAS (SQL Server Analysis Services) cubes cannot be used directly as
+data sources; however, an MDX (Multidimensional Expression) query
+can be written to flatten the cube which Izenda can then report
+against.</div></blockquote>
+</div>
+<div class="section" id="connection-string-setup">
+<h2>Connection String Setup<a class="headerlink" href="#connection-string-setup" title="Permalink to this headline">¶</a></h2>
+<p>Connection string setup is outlined in our Installation and Maintenance
+Guide as well as our Administrator Guide.</p>
+<ul class="simple">
+<li>Refer to the <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">System DB and License</span></a>
+section and the <a class="reference internal" href="../ui/doc_connection_string.html"><span class="doc">Connection String</span></a> section
+for more information.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="query_performance.html" class="btn btn-neutral float-right" title="Query Performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="understanding_the_user_store.html" class="btn btn-neutral" title="Understanding the User Store" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>White-Listing Functions for Calculated Fields &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
+        <link rel="next" title="White-Labeling Izenda" href="white-labeling-izenda.html"/>
+        <link rel="prev" title="Pdf Exports in Azure Websites" href="doc_azure_evo.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.integrated_deployment.html">Getting Started: Integrated Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../.supplementary_installation_guides.html">Supplementary Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_azure_evo.html">Pdf Exports in Azure Websites</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">White-Listing Functions for Calculated Fields</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-configuration">Installation &amp; Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
+        
+      <li>White-Listing Functions for Calculated Fields</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/install/supplementary_guides/white-listing-functions-for-calculated-fields.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="white-listing-functions-for-calculated-fields">
+<h1>White-Listing Functions for Calculated Fields<a class="headerlink" href="#white-listing-functions-for-calculated-fields" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Izenda allows users to white-list SQL functions for calculated fields. This allows the use of built-in or custom SQL functions that are not available in Izenda out of the box. This is accomplished by configuring and deploying a custom config file.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="installation-configuration">
+<h2>Installation &amp; Configuration<a class="headerlink" href="#installation-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="creating-the-custom-configuration-file">
+<h3>Creating the custom configuration file<a class="headerlink" href="#creating-the-custom-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>A sample config file <em>CustomFunctionSample.config</em> is included as part of the Izenda API. It is located in <strong>API &gt; bin &gt; Resources</strong>. A snippet of this file is below:</p>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Functions&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;SUBSTRING&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;This is my custom function to get the sub string of the given string&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;SUBSTRING(expression ,start ,length)&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;expression&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;The column or value to get the sub string.&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;The start position.&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;length&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;The number of characters.&quot;</span>
+                <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;ReturnType&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;572BD576-8C92-4901-AB2A-B16E38144813&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;DatasourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionName&quot;</span><span class="p">:</span> <span class="s2">&quot;SUBSTRING&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionQueryPattern&quot;</span><span class="p">:</span> <span class="s2">&quot;SUBSTRING(expression ,start ,length)&quot;</span>
+                <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;RTRIM&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Returns a character string after truncating all trailing blanks.&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;RTRIM(character_expression)&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;character_expression&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;An expression of character data.&quot;</span>
+                <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;ReturnType&quot;</span><span class="p">:</span> <span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;572BD576-8C92-4901-AB2A-B16E38144813&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;DatasourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionName&quot;</span><span class="p">:</span> <span class="s2">&quot;RTRIM&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionQueryPattern&quot;</span><span class="p">:</span> <span class="s2">&quot;RTRIM(character_expression)&quot;</span>
+                <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;FLOOR&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Returns the largest integer value that is equal to or less than a given value.&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Syntax&quot;</span><span class="p">:</span> <span class="s2">&quot;FLOOR(character_expression)&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;n&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;The value&quot;</span>
+                <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;ReturnType&quot;</span><span class="p">:</span> <span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;Mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;572BD576-8C92-4901-AB2A-B16E38144813&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;DatasourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionName&quot;</span><span class="p">:</span> <span class="s2">&quot;FLOOR&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;FunctionQueryPattern&quot;</span><span class="p">:</span> <span class="s2">&quot;FLOOR(n)&quot;</span>
+                <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the example above, we are white-listing the <em>FLOOR</em> function starting at line 55. The floor function returns the largest integer less than or equal to <em>n</em>. This function receives input of type <em>NUMBER</em> and also returns a value of type <em>NUMBER</em>. The example is fairly straight-forward, but ensure that you are using the correct DatasourceName and Id for your desired database. A table of these values has been provided below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">DatasourceName</th>
+<th class="head">Id</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[AZSQL] AzureSQL</td>
+<td>d968e96f-91dc-414d-9fd8-aef2926c9a18</td>
+</tr>
+<tr class="row-odd"><td>[MYSQL] MySQL</td>
+<td>3d4916d1-5a41-4b94-874f-5bedacb89656</td>
+</tr>
+<tr class="row-even"><td>[ORACL] Oracle</td>
+<td>93942448-c715-4f98-85e2-9292ed7ca4bc</td>
+</tr>
+<tr class="row-odd"><td>[PGSQL] PostgreSQL</td>
+<td>f2638ed5-70e5-47da-a052-4da0c1888fcf</td>
+</tr>
+<tr class="row-even"><td>[MSSQL] SQLServer</td>
+<td>572bd576-8c92-4901-ab2a-b16e38144813</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deploying-the-configuration-file">
+<h3>Deploying the configuration file<a class="headerlink" href="#deploying-the-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>After white-listing the desired functions, save the file and deploy it to the API folder. You may find it easier to copy the file to a &#8216;customizations&#8217; folder as shown below to better organize any customizations.</p>
+<div class="figure">
+<img alt="../../_images/customizations_folder.png" src="../../_images/customizations_folder.png" />
+</div>
+<p>Next, you will need to update the &#8216;CustomFunctionFilePath&#8217; in the IzendaSystemSettings table. You can use the script below, be sure to include the full path to your file.</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This is a MSSQL snippet, you may need to adjust the query for other databases.</span>
+<span class="k">UPDATE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">IzendaSystemSetting</span><span class="p">]</span>
+<span class="k">SET</span> <span class="n">Value</span> <span class="o">=</span> <span class="s1">&#39;C:\inetpub\wwwroot\API\customizations\CustomFunctionSample.config&#39;</span> <span class="c1">-- &lt;&lt; Use your actual path here</span>
+<span class="k">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;CustomFunctionFilePath&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="restarting-the-web-sites">
+<h3>Restarting the web sites<a class="headerlink" href="#restarting-the-web-sites" title="Permalink to this headline">¶</a></h3>
+<p>After deploying the configuration file, restart the API and front-end sites.</p>
+</div>
+<div class="section" id="verifying-the-changes">
+<h3>Verifying the changes<a class="headerlink" href="#verifying-the-changes" title="Permalink to this headline">¶</a></h3>
+<p>Functions should now be listed in the calculated fields window.</p>
+<div class="figure">
+<img alt="../../_images/floor_function1.png" src="../../_images/floor_function1.png" />
+</div>
+<p>We can also verify that the function works as expected.</p>
+<div class="figure">
+<img alt="../../_images/floor_function2.png" src="../../_images/floor_function2.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="white-labeling-izenda.html" class="btn btn-neutral float-right" title="White-Labeling Izenda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_azure_evo.html" class="btn btn-neutral" title="Pdf Exports in Azure Websites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tenant Setup for Multi-tenant Architectures &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
+        <link rel="next" title="Global Report Setup Guide" href="doc_global_report_setup.html"/>
+        <link rel="prev" title="Tenant Setup" href="doc_tenant_setup.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_tenant_setup.html">Tenant Setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tenant Setup for Multi-tenant Architectures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#separate-database-architecture">Separate Database Architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#separate-schema-architecture">Separate Schema Architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shared-schema-architecture">Shared Schema Architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_global_report_setup.html">Global Report Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_copy_management.html">Copy Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a> &raquo;</li>
+        
+      <li>Tenant Setup for Multi-tenant Architectures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_tenant_setup_for_multi-tenant_architectures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenant-setup-for-multi-tenant-architectures">
+<h1>Tenant Setup for Multi-tenant Architectures<a class="headerlink" href="#tenant-setup-for-multi-tenant-architectures" title="Permalink to this headline">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.0: </span>Global Report feature can be used to share system reports among all tenants, see <a class="reference internal" href="doc_global_report_setup.html"><span class="doc">Global Report Setup Guide</span></a>.</p>
+</div>
+<p>In multi-tenant systems, tenant data is stored in similar database
+structures placed in</p>
+<ul class="simple">
+<li>different databases - Separate Database Architecture</li>
+<li>different schemas in the same database - Separate Schema Architecture</li>
+<li>same tables, schemas and databases - Shared Schema Architecture</li>
+</ul>
+<div class="section" id="separate-database-architecture">
+<h2>Separate Database Architecture<a class="headerlink" href="#separate-database-architecture" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<span id="ticketdesk-separate-database-architecture"></span><a class="reference internal image-reference" href="../_images/TicketDesk_-_Separate_Database_Architecture.png"><img alt="../_images/TicketDesk_-_Separate_Database_Architecture.png" src="../_images/TicketDesk_-_Separate_Database_Architecture.png" style="width: 143px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 160 </span><span class="caption-text">Sample Separate Database Architecture</span></p>
+</div>
+<p>Each tenant data is
+stored in a separate database with identical structure. <br clear="right" /></p>
+<ol class="arabic">
+<li><p class="first">Add connections to each tenant database at that tenant level.</p>
+<blockquote>
+<div><p>In this sample, create 4 tenants each having one connection to
+its database.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Data model and other settings should be set up for one tenant, then
+copied to other tenants using a Copy Management setting similar to
+the following:</p>
+<div class="figure" id="id2">
+<span id="copy-management-separate-database-architecture"></span><a class="reference internal image-reference" href="../_images/Copy_Management_-_Separate_Database_Architecture.png"><img alt="../_images/Copy_Management_-_Separate_Database_Architecture.png" src="../_images/Copy_Management_-_Separate_Database_Architecture.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 161 </span><span class="caption-text">Copy Management for Separate Database Architecture</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="separate-schema-architecture">
+<h2>Separate Schema Architecture<a class="headerlink" href="#separate-schema-architecture" title="Permalink to this headline">¶</a></h2>
+<p>Each tenant data is stored in a separate schema in the same database.</p>
+<ol class="arabic">
+<li><p class="first">Add
+connections to the shared database at that each tenant level.</p>
+</li>
+<li><p class="first">Set up data model for one source tenant only.</p>
+<div class="figure" id="id3">
+<span id="multitenantcase2-t1-data-model"></span><a class="reference internal image-reference" href="../_images/MultiTenantCase2_T1_Data_Model.png"><img alt="../_images/MultiTenantCase2_T1_Data_Model.png" src="../_images/MultiTenantCase2_T1_Data_Model.png" style="width: 556px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 162 </span><span class="caption-text">Connection and Data Model for one Source Tenant</span></p>
+</div>
+</li>
+<li><p class="first">Skip data model
+for other tenants (Just add the connection, test then save it).</p>
+<div class="figure" id="id4">
+<span id="multitenantcase2-t2-connection"></span><a class="reference internal image-reference" href="../_images/MultiTenantCase2_T2_Connection.png"><img alt="../_images/MultiTenantCase2_T2_Connection.png" src="../_images/MultiTenantCase2_T2_Connection.png" style="width: 557px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 163 </span><span class="caption-text">Connection for other Destination Tenants</span></p>
+</div>
+</li>
+<li><p class="first">Copy data model to other tenants using a Copy Management setting
+similar to the following:</p>
+<div class="figure" id="id5">
+<span id="copy-management-separate-schema-architecture"></span><a class="reference internal image-reference" href="../_images/Copy_Management_-_Separate_Schema_Architecture.png"><img alt="../_images/Copy_Management_-_Separate_Schema_Architecture.png" src="../_images/Copy_Management_-_Separate_Schema_Architecture.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 164 </span><span class="caption-text">Copy Management for Separate Schema Architecture</span></p>
+</div>
+</li>
+<li><p class="first">The data model was successfully
+copied to other tenants.</p>
+<div class="figure" id="id6">
+<span id="multitenantcase2-t2-after-copy"></span><a class="reference internal image-reference" href="../_images/MultiTenantCase2_T2_After_Copy.png"><img alt="../_images/MultiTenantCase2_T2_After_Copy.png" src="../_images/MultiTenantCase2_T2_After_Copy.png" style="width: 540px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 165 </span><span class="caption-text">Copied Data Model</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="shared-schema-architecture">
+<h2>Shared Schema Architecture<a class="headerlink" href="#shared-schema-architecture" title="Permalink to this headline">¶</a></h2>
+<p>Each tenant data is stored in the same tables, schema and database,
+identified by different values in a &#8220;TenantID&#8221; field in every table.</p>
+<ol class="arabic">
+<li><p class="first">Add
+connections to the shared database at that each tenant level.</p>
+</li>
+<li><p class="first">Set up data model for one source tenant only.</p>
+<div class="figure" id="id7">
+<span id="multitenantcase3-t1-data-model"></span><a class="reference internal image-reference" href="../_images/MultiTenantCase3_T1_Data_Model.png"><img alt="../_images/MultiTenantCase3_T1_Data_Model.png" src="../_images/MultiTenantCase3_T1_Data_Model.png" style="width: 567px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 166 </span><span class="caption-text">Connection and Data Model for one Source Tenant</span></p>
+</div>
+</li>
+<li><p class="first">Skip data model
+for other tenants (Just add the connection, test then save it).</p>
+<div class="figure" id="id8">
+<span id="multitenantcase3-t2-connection"></span><a class="reference internal image-reference" href="../_images/MultiTenantCase3_T2_Connection.png"><img alt="../_images/MultiTenantCase3_T2_Connection.png" src="../_images/MultiTenantCase3_T2_Connection.png" style="width: 568px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 167 </span><span class="caption-text">Connection for other Destination Tenants</span></p>
+</div>
+</li>
+<li><p class="first">Copy data model to other tenants using a Copy Management setting
+similar to the following:</p>
+<div class="figure" id="id9">
+<span id="copy-management-shared-schema-architecture"></span><a class="reference internal image-reference" href="../_images/Copy_Management_-_Shared_Schema_Architecture.png"><img alt="../_images/Copy_Management_-_Shared_Schema_Architecture.png" src="../_images/Copy_Management_-_Shared_Schema_Architecture.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 168 </span><span class="caption-text">Copy Management for Shared Schema Architecture</span></p>
+</div>
+</li>
+<li><p class="first">Specify this specific
+&#8220;TenantID&#8221; field in the &#8220;Tenant Field&#8221; advanced setting to
+automatically restrict report data to that of the tenant of the
+current logged-in user.</p>
+<blockquote>
+<div><p>(This setting basically adds a filter condition &#8220;TenantID&#8221; = &lt;value of the tenant id of the current logged-in user&gt; to
+every query sources used in report)</p>
+</div></blockquote>
+<div class="figure" id="id10">
+<span id="tenant-field-advanced-setting"></span><a class="reference internal image-reference" href="../_images/Tenant_Field_advanced_setting.png"><img alt="../_images/Tenant_Field_advanced_setting.png" src="../_images/Tenant_Field_advanced_setting.png" style="width: 650px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 169 </span><span class="caption-text">Tenant Field Advanced Setting</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://msdn.microsoft.com/en-us/library/aa479086.aspx">Multi-Tenant
+Architectures</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_global_report_setup.html" class="btn btn-neutral float-right" title="Global Report Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_tenant_setup.html" class="btn btn-neutral" title="Tenant Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

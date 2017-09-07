@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic API Client Code Samples &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
+        <link rel="next" title="REST API Test" href="code_rest_api_test.html"/>
+        <link rel="prev" title="Front-end Integration APIs" href="api_frontend_integration.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic API Client Code Samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="code_rest_api_test.html">REST API Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_a_scalar_value.html">ReactJS to manage a scalar value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_the_list_of_categories.html">ReactJS to manage the list of categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html">ReactJS to toggle the list of visible data sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+      <li>Basic API Client Code Samples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/.basic_api_client_code_samples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-api-client-code-samples">
+<h1>Basic API Client Code Samples<a class="headerlink" href="#basic-api-client-code-samples" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_rest_api_test.html">REST API Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#folder-preparation">Folder preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#api-access-token-preparation">API Access Token preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#how-to-use-jquery-library">How to use JQuery library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#boilerplate-html-page">Boilerplate HTML page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#code-sample-for-calling-rest-api">Code sample for calling REST API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#view-the-web-page-in-browser-and-the-javascript-console">View the web page in browser and the JavaScript Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_rest_api_test.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_react_manage_a_scalar_value.html">ReactJS to manage a scalar value</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#boilerplate-code">Boilerplate code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#reactjs-basics">ReactJS basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#implement-fetchdata">Implement fetchData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_a_scalar_value.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_react_manage_the_list_of_categories.html">ReactJS to manage the list of categories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#boilerplate-code-for-an-array">Boilerplate code for an array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#implement-fetchdata">Implement fetchData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#implement-addcategory">Implement addCategory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#implement-removecategory">Implement removeCategory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_manage_the_list_of_categories.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html">ReactJS to toggle the list of visible data sources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#thinking-in-react">Thinking in React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#start-with-a-mock">Start with a mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#break-the-ui-into-a-component-hierarchy">Break the UI into a component hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#build-a-static-version-in-react">Build a static version in React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#identify-the-minimal-ui-state">Identify the minimal UI state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#identify-where-the-state-should-live">Identify where the state should live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#add-inverse-data-flow">Add inverse data flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#implement-pushdata">Implement pushData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_rest_api_test.html" class="btn btn-neutral float-right" title="REST API Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_frontend_integration.html" class="btn btn-neutral" title="Front-end Integration APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>REST API Test &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
+        <link rel="next" title="ReactJS to manage a scalar value" href="code_react_manage_a_scalar_value.html"/>
+        <link rel="prev" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">REST API Test</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#folder-preparation">Folder preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-access-token-preparation">API Access Token preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-jquery-library">How to use JQuery library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boilerplate-html-page">Boilerplate HTML page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code-sample-for-calling-rest-api">Code sample for calling REST API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#view-the-web-page-in-browser-and-the-javascript-console">View the web page in browser and the JavaScript Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_a_scalar_value.html">ReactJS to manage a scalar value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_the_list_of_categories.html">ReactJS to manage the list of categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code_react_toggle_the_list_of_visible_data_sources.html">ReactJS to toggle the list of visible data sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a> &raquo;</li>
+        
+      <li>REST API Test</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_rest_api_test.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rest-api-test">
+<h1>REST API Test<a class="headerlink" href="#rest-api-test" title="Permalink to this headline">¶</a></h1>
+<p>In this sample we will write a simplistic web page that tries calling a
+REST API then displays the response.</p>
+<ul class="simple">
+<li>We will test with the <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a> API.</li>
+<li>We will use JQuery ajax to call the API.</li>
+<li>We will display the response in the browser&#8217;s JavaScript Console.</li>
+</ul>
+<div class="section" id="folder-preparation">
+<h2>Folder preparation<a class="headerlink" href="#folder-preparation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create a folder named &#8220;ui_react_examples&#8221; in our web server root
+folder.</p>
+<blockquote>
+<div><p>A web server is not required for our tutorials. In case of none,
+just create the &#8220;ui_react_examples&#8221; folder anywhere available.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Inside it, create a folder named &#8220;vendor&#8221;. This is where we will put
+the JavaScript library files.</p>
+</li>
+<li><p class="first">If using a web server, check the permissions to make sure that it can
+read the files inside these two folders.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="api-access-token-preparation">
+<h2>API Access Token preparation<a class="headerlink" href="#api-access-token-preparation" title="Permalink to this headline">¶</a></h2>
+<p>API calls need an access token to verify that the client has logged in
+the system. This access token is returned in the login API result.</p>
+<ol class="arabic simple">
+<li>Open Izenda login page in browser.</li>
+<li>Open the browser developer tool (by pressing F12 on most browsers).</li>
+<li>Login to Izenda.</li>
+<li>Switch to Network tab in the developer tool.</li>
+<li>Find the login API response and copy the content of the token field.</li>
+</ol>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/API_login_token.png"><img alt="../_images/API_login_token.png" src="../_images/API_login_token.png" style="width: 596px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 400 </span><span class="caption-text">Login API Response with Token</span></p>
+</div>
+</div>
+<div class="section" id="how-to-use-jquery-library">
+<h2>How to use JQuery library<a class="headerlink" href="#how-to-use-jquery-library" title="Permalink to this headline">¶</a></h2>
+<p>The JQuery library is packaged into a single .js file, with two
+versions:</p>
+<ul>
+<li><p class="first">Production, which has been minified and compressed.</p>
+<blockquote>
+<div><p>The filename for production version ends with <code class="docutils literal"><span class="pre">.min.js</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Development, which contains uncompressed and readable code.</p>
+</li>
+</ul>
+<p>We will use the development version for debugging purpose.</p>
+<p>There are also two ways to use the library:</p>
+<ul class="simple">
+<li>Include it from a content delivery network such as Google or
+Microsoft.<ul>
+<li>The link for Google hosted library: <br clear="right" />
+<code class="docutils literal"><span class="pre">https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js</span></code></li>
+<li>The link for Microsoft hosted library: <br clear="right" />
+<code class="docutils literal"><span class="pre">http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js</span></code></li>
+</ul>
+</li>
+<li>Download it and put into a local folder on our web server, then
+include the local file in our web page.</li>
+</ul>
+<p>We will use a local file for instructional purpose:</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="http://jquery.com/download/">http://jquery.com/download/</a> and download the uncompressed,
+development version (jquery-1.12.2.js).</li>
+<li>Put it into the &#8220;ui_react_examples/vendor&#8221; folder.</li>
+</ol>
+</div>
+<div class="section" id="boilerplate-html-page">
+<h2>Boilerplate HTML page<a class="headerlink" href="#boilerplate-html-page" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
+&#8220;REST API Test.html&#8221;.</p>
+</li>
+<li><p class="first">Edit the file with a text editor such as Notepad or Notepad++ and
+paste the following boilerplate HTML code:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;vendor/jquery-1.12.2.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+     <span class="c1">// TODO</span>
+   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>For production web site, we will replace <code class="docutils literal"><span class="pre">vendor/jquery-1.12.2.js</span></code>
+with the link for Google or Microsoft hosted, minified and compressed
+library.</p>
+</div>
+<div class="section" id="code-sample-for-calling-rest-api">
+<span id="id1"></span><h2>Code sample for calling REST API<a class="headerlink" href="#code-sample-for-calling-rest-api" title="Permalink to this headline">¶</a></h2>
+<p>Edit the &#8220;REST API Test.html&#8221; file to replace <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> with our
+JQuery ajax call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+   <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">access_token</span><span class="o">:</span><span class="s2">&quot;&lt;the token returned from the login API&gt;&quot;</span>
+   <span class="p">},</span>
+   <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://127.0.0.1:8888/api/advancedSetting/category&quot;</span><span class="p">,</span>
+   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+   <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+   <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+   <span class="p">},</span>
+   <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+   <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>The url <code class="docutils literal"><span class="pre">http://127.0.0.1:8888/api/advancedSetting/category</span></code> should be updated with the correct IP and port of our API server.</p>
+<p>In this JQuery ajax call, we:</p>
+<ol class="arabic simple">
+<li>fill out the url.</li>
+<li>set the type GET, POST, or DELETE.</li>
+<li>set the content type application/json.</li>
+<li>register two anonymous call-back functions for success and error
+cases.</li>
+<li>write the call-back functions to format as text (<code class="docutils literal"><span class="pre">JSON.stringify</span></code>)
+the response from server, then display to the browser&#8217;s JavaScript
+Console (<code class="docutils literal"><span class="pre">console.log</span></code>).</li>
+</ol>
+</div>
+<div class="section" id="view-the-web-page-in-browser-and-the-javascript-console">
+<h2>View the web page in browser and the JavaScript Console<a class="headerlink" href="#view-the-web-page-in-browser-and-the-javascript-console" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">We can either open the file locally, or through a web server if
+available.</p>
+<ul class="simple">
+<li>To open the file through a web server, we must know the address
+and port of the server (e.g. <code class="docutils literal"><span class="pre">http://127.0.0.1:81</span></code>), then add
+<code class="docutils literal"><span class="pre">/ui_react_examples/REST</span> <span class="pre">API</span> <span class="pre">Test.html</span></code> and type in the address
+bar.</li>
+<li>To open the file locally, in the browser press Ctrl + O or go to
+File, Open then browse to the file location and open it.</li>
+</ul>
+</li>
+<li><p class="first">After the file has been opened, activate the JavaScript Console. In
+most browsers, this can be done by pressing F12 then choosing
+&#8220;Console&#8221; menu item.</p>
+<blockquote>
+<div><p>For more help, this link has the instructions to open the
+JavaScript Console on many browsers
+<a class="reference external" href="https://codex.wordpress.org/Using_Your_Browser_to_Diagnose_JavaScript_Errors#Step_3:_Diagnosis">https://codex.wordpress.org/Using_Your_Browser_to_Diagnose_JavaScript_Errors#Step_3:_Diagnosis</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">In the JavaScript Console, we can see the response from the server
+similar to this:</p>
+</li>
+</ol>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_1&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;cf484173-e03a-46a8-aa23-c628e28a6e9e&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1300000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_2&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;04d67b3c-e93e-4b93-88e2-e4c6199d9671&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1130000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we went through these activities:</p>
+<ul class="simple">
+<li>created a boilerplate web page.</li>
+<li>included the JQuery library.</li>
+<li>made an ajax call to the <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a> API.</li>
+<li>displayed the response from this API to the JavaScript Console.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_react_manage_a_scalar_value.html" class="btn btn-neutral float-right" title="ReactJS to manage a scalar value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".basic_api_client_code_samples.html" class="btn btn-neutral" title="Basic API Client Code Samples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

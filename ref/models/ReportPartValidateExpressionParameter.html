@@ -1,0 +1,1572 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ReportPartValidateExpressionParameter &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Request and Response" href="_request_and_response.html"/>
+        <link rel="next" title="ReportRelationshipResult" href="ReportRelationshipResult.html"/>
+        <link rel="prev" title="ReportPartPreviewParameter" href="ReportPartPreviewParameter.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_security.html">Security</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_request_and_response.html">Request and Response</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AccessPagedRequest.html">AccessPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CategoryPagedRequest.html">CategoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionResult.html">ConnectionResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionVerificationResult.html">ConnectionVerificationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardFilterFieldPagedRequest.html">DashboardFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardRenameParameter.html">DashboardRenameParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatabaseMappingPagedRequest.html">DatabaseMappingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataResult.html">DataResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenerateAccessTokenArgs.html">GenerateAccessTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LicenseStatusResult.html">LicenseStatusResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoadDashboard.html">LoadDashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModelError.html">ModelError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OperationResult.html">OperationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PagedResult.html">PagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourceFieldPagedRequest.html">QuerySourceFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourcePagedRequest.html">QuerySourcePagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelationshipPagedRequest.html">RelationshipPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReloadQuerySourceRequest.html">ReloadQuerySourceRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportCalculatedFieldParameter.html">ReportCalculatedFieldParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportDataSourceParameter.html">ReportDataSourceParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportExpressionParameter.html">ReportExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterParameter.html">ReportFilterParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterFieldPagedRequest.html">ReportFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportHistoryPagedRequest.html">ReportHistoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPagedRequest.html">ReportPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ReportPartValidateExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reportpartpreviewparameter">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRelationshipResult.html">ReportRelationshipResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRenameParameter.html">ReportRenameParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedPagedRequest.html">ReportSelectedPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedQuerySourceResult.html">ReportSelectedQuerySourceResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaRequest.html">SchemaRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaResult.html">SchemaResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SharingRoleUserParameter.html">SharingRoleUserParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscriptionPagedRequest.html">SubscriptionPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedRequest.html">SystemSchedulingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedResult.html">SystemSchedulingPagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemVariablePagedRequest.html">SystemVariablePagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TokenRequest.html">TokenRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportInput.html">UpdateSubReportInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportStatus.html">UpdateSubReportStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserPagedRequest.html">UserPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenArgs.html">ValidateTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenResult.html">ValidateTokenResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateUserRoleAssociationParam.html">ValidateUserRoleAssociationParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidationOperationResult.html">ValidationOperationResult</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_others.html">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_request_and_response.html">Request and Response</a> &raquo;</li>
+        
+      <li>ReportPartValidateExpressionParameter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ref/models/ReportPartValidateExpressionParameter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reportpartvalidateexpressionparameter">
+<h1>ReportPartValidateExpressionParameter<a class="headerlink" href="#reportpartvalidateexpressionparameter" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>expression</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The expression</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>izendaDataType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The Izenda data type</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+</div>
+<div class="section" id="reportpartpreviewparameter">
+<h1>ReportPartPreviewParameter<a class="headerlink" href="#reportpartpreviewparameter" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>title</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The report part title</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>expandedLevel</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The expanded level</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>filters</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="FilterItem.html"><span class="doc">FilterItem</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>reportField</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>A <a class="reference internal" href="ReportField.html"><span class="doc">ReportField</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>calculatedField</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>A <a class="reference internal" href="QuerySourceField.html"><span class="doc">QuerySourceField</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>paging</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>A <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>loadAll</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether to load all rows for printing</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+</div>
+<div class="section" id="reportsavingparameter">
+<h1>ReportSavingParameter<a class="headerlink" href="#reportsavingparameter" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>saveAs</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this saved as new report</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>report</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>A <a class="reference internal" href="ReportDefinition.html"><span class="doc">ReportDefinition</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>section</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td><p class="first">The report section</p>
+<ul class="last simple">
+<li>0 = All</li>
+<li>1 = DataSource</li>
+<li>2 = Fields</li>
+<li>3 = CalculatedField</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>ignoreCheckChange</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is the check for report changes ignored</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>ignoreCheckName</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is the check for report name ignored</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>insertWithAssignedId</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether to use the populated report id in <strong>report</strong> object to insert</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>overrideCalculatedFields</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether to override calculated fields</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportState</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Posted - Report is posted from client</li>
+<li>1 = Saved  - Get report from database</li>
+<li>2 = Draft  - Get report from draft</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+<div class="section" id="reportparameter">
+<h2>ReportParameter<a class="headerlink" href="#reportparameter" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>reportKey</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>A <a class="reference internal" href="ReportKey.html"><span class="doc">ReportKey</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>previewRecord</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The numer of records to preview</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="nt">&quot;reportKey&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;section&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="nt">&quot;saveAs&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="nt">&quot;ignoreCheckChange&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="nt">&quot;report&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;previewRecord&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;advancedMode&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;allowNulls&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;isDistinct&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;reportDataSource&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+          <span class="nt">&quot;aliasId&quot;</span> <span class="p">:</span> <span class="s2">&quot;479be129-338d-45f1-b216-1d95957fe2c8_Order Details&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;479be129-338d-45f1-b216-1d95957fe2c8&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+       <span class="p">},</span> <span class="p">{</span>
+          <span class="nt">&quot;aliasId&quot;</span> <span class="p">:</span> <span class="s2">&quot;54852be4-5584-4c23-ae5d-4197724059e1_Orders&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;54852be4-5584-4c23-ae5d-4197724059e1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+       <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;reportRelationship&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+          <span class="nt">&quot;tempId&quot;</span> <span class="p">:</span> <span class="s2">&quot;16d3b9bf-86cb-45fa-b33d-53e3e2a8a042&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;db19bb46-ffa3-45fd-b205-0dad305fdf98&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;db19bb46-ffa3-45fd-b205-0dad305fdf98&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;479be129-338d-45f1-b216-1d95957fe2c8&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinQuerySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinDataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignDataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignQuerySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;54852be4-5584-4c23-ae5d-4197724059e1&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignQuerySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;a0011b48-ef08-45fe-b044-abc68442cd17&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;joinFieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;3caf9c17-abd7-4119-809d-2c3debb8eb37&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;foreignFieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;systemRelationship&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;joinType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;parentRelationshipId&quot;</span> <span class="p">:</span> <span class="s2">&quot;c55d696b-f25d-4a6f-a951-7a4e6e532c98&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;relationshipKeyJoins&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+          <span class="nt">&quot;selectedForeignAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;54852be4-5584-4c23-ae5d-4197724059e1_Orders&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;16d3b9bf-86cb-45fa-b33d-53e3e2a8a052&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;validationKey&quot;</span> <span class="p">:</span> <span class="s2">&quot;c55d696b-f25d-4a6f-a951-7a4e6e532c98&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;relationshipPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;invalidAlias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;hidden&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;level&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+       <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;reportPart&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="nt">&quot;filters&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;reportKey&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;1e1316a9-b6ce-46c8-9496-671fd5ddeee1&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;section&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nt">&quot;saveAs&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;ignoreCheckChange&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;report&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;previewRecord&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+     <span class="nt">&quot;advancedMode&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;allowNulls&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;isDistinct&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;category&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;subCategory&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;reportDataSource&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="nt">&quot;aliasId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d_Suppliers&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;primaryFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;47954424-fff3-4157-9296-ad08b751e71d&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00.0000000-08:00&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+              <span class="p">}</span>
+           <span class="p">]</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;reportRelationship&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+     <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;logic&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;filterFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;4a75d01f-1fb3-4eca-ae13-8f17d41289ea&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1e1316a9-b6ce-46c8-9496-671fd5ddeee1&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;reportPart&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="nt">&quot;columns&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                       <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldItemVisible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFormattings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;functionInfo&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;format&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;sort&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;textColor&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                                <span class="nt">&quot;cellColor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alternativeText&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;rangePercent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;rangeValue&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;customURL&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;option&quot;</span> <span class="p">:</span> <span class="s2">&quot;Open link in New Window&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;embeddedJavascript&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;script&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;subTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;grandTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;Total Number of Countries&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count Distinct&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;headerFormating&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;pixels&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;columnGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;drillDown&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;subReport&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;selectedReport&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;style&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportPartUsed&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                <span class="nt">&quot;mappingFields&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;otherProps&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                       <span class="p">},</span>
+                       <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                       <span class="nt">&quot;field&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;76139896-c2c3-432e-898a-2c2205bb2e35&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldNameAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFieldType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;sourceAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;schemaName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                       <span class="p">},</span>
+                       <span class="nt">&quot;isDeleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+                    <span class="p">},</span> <span class="p">{</span>
+                       <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count (SupplierID)&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldItemVisible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFormattings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;8a74f4e0-b845-4b9e-adfa-bb678a116878&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;functionInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8a74f4e0-b845-4b9e-adfa-bb678a116878&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;formatDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;syntax&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;expressionSyntax&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;isOperator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;format&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;sort&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;textColor&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                                <span class="nt">&quot;cellColor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alternativeText&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;rangePercent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;rangeValue&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;customURL&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;option&quot;</span> <span class="p">:</span> <span class="s2">&quot;Open link in New Window&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;embeddedJavascript&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;script&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;subTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;grandTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;headerFormating&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;pixels&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;columnGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;drillDown&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;subReport&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;selectedReport&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;style&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportPartUsed&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                <span class="nt">&quot;mappingFields&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;otherProps&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                       <span class="p">},</span>
+                       <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                       <span class="nt">&quot;field&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;47954424-fff3-4157-9296-ad08b751e71d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldNameAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count (SupplierID)&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFieldType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;sourceAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;schemaName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                       <span class="p">},</span>
+                       <span class="nt">&quot;isDeleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                    <span class="p">}</span>
+                 <span class="p">],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;columns&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;rows&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;rows&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;values&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;values&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;separators&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;separators&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;generalInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;gridStyle&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;separatorStyle&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comma&quot;</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;table&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;#efefef&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;border&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;top&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;right&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;bottom&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;midVer&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;left&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;midHor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;columns&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;Pixels&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alterBackgroundColor&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;rows&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                    <span class="nt">&quot;alterBackgroundColor&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;headers&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;#dbf2ff&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;removeHeaderForExport&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;grouping&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;useSeparator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;view&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;dataRefreshInterval&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;enable&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;updateInterval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="nt">&quot;isAll&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;latestRecord&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+                    <span class="p">}</span>
+                 <span class="p">}</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+              <span class="nt">&quot;dataSource&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+              <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;highlightColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;highlightColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+              <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;positionX&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;positionY&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+           <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+           <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+           <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+           <span class="nt">&quot;numberOfRecord&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;isBackSide&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;points&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                 <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;filter&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                       <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">],</span>
+                 <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;isViewSeparator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+              <span class="p">}</span>
+           <span class="p">],</span>
+           <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;561dba1e-f799-42be-be9d-bbfa078aee43&quot;</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+  <span class="nt">&quot;filters&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Grid&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;reportKey&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;1e1316a9-b6ce-46c8-9496-671fd5ddeee1&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;report&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;previewRecord&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+     <span class="nt">&quot;advancedMode&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;allowNulls&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;isDistinct&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;category&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;subCategory&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Templates&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;reportDataSource&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="nt">&quot;aliasId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d_Suppliers&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;primaryFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;47954424-fff3-4157-9296-ad08b751e71d&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00.0000000-08:00&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+              <span class="p">}</span>
+           <span class="p">]</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;reportRelationship&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+     <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;logic&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;filterFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;4a75d01f-1fb3-4eca-ae13-8f17d41289ea&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1e1316a9-b6ce-46c8-9496-671fd5ddeee1&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;reportPart&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+           <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="nt">&quot;columns&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                       <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldItemVisible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFormattings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;functionInfo&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;format&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;sort&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;textColor&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                                <span class="nt">&quot;cellColor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alternativeText&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;rangePercent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;rangeValue&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;customURL&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;option&quot;</span> <span class="p">:</span> <span class="s2">&quot;Open link in New Window&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;embeddedJavascript&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;script&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;subTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;grandTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;Total Number of Countries&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count Distinct&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;headerFormating&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;pixels&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;columnGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;drillDown&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;subReport&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;selectedReport&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;style&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportPartUsed&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                <span class="nt">&quot;mappingFields&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;otherProps&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                       <span class="p">},</span>
+                       <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                       <span class="nt">&quot;field&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;76139896-c2c3-432e-898a-2c2205bb2e35&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldNameAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFieldType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;sourceAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;schemaName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                       <span class="p">},</span>
+                       <span class="nt">&quot;isDeleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+                    <span class="p">},</span> <span class="p">{</span>
+                       <span class="nt">&quot;reportPartContent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count (SupplierID)&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldItemVisible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFormattings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;8a74f4e0-b845-4b9e-adfa-bb678a116878&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;functionInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8a74f4e0-b845-4b9e-adfa-bb678a116878&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;formatDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;syntax&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;expressionSyntax&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;isOperator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;format&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;sort&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                             <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;textColor&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                                <span class="nt">&quot;cellColor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alternativeText&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;rangePercent&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;rangeValue&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;customURL&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;url&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;option&quot;</span> <span class="p">:</span> <span class="s2">&quot;Open link in New Window&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;embeddedJavascript&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;script&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;subTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;grandTotal&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;label&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;function&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;previewResult&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                <span class="nt">&quot;fieldDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;headerFormating&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;pixels&quot;</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                             <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+                             <span class="p">},</span>
+                             <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                             <span class="nt">&quot;columnGroup&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;drillDown&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;subReport&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                                <span class="nt">&quot;selectedReport&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;style&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportPartUsed&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                                <span class="nt">&quot;reportFilter&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                <span class="nt">&quot;mappingFields&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+                             <span class="p">}</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;otherProps&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                       <span class="p">},</span>
+                       <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                       <span class="nt">&quot;field&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;47954424-fff3-4157-9296-ad08b751e71d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;SupplierID&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;fieldNameAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Count (SupplierID)&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;dataFieldType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;sourceAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                          <span class="nt">&quot;schemaName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                       <span class="p">},</span>
+                       <span class="nt">&quot;isDeleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                    <span class="p">}</span>
+                 <span class="p">],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;columns&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;rows&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;rows&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;values&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;values&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;separators&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;separators&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;generalInfo&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;gridStyle&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;separatorStyle&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comma&quot;</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;table&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;#efefef&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;border&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;top&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;right&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;bottom&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;midVer&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;left&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                       <span class="nt">&quot;midHor&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;columns&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                       <span class="nt">&quot;unit&quot;</span> <span class="p">:</span> <span class="s2">&quot;Pixels&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alterBackgroundColor&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;rows&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                    <span class="nt">&quot;alterBackgroundColor&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;headers&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;#dbf2ff&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;wordWrap&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;removeHeaderForExport&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;grouping&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;useSeparator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;view&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;dataRefreshInterval&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;enable&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;updateInterval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="nt">&quot;isAll&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;latestRecord&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+                    <span class="p">}</span>
+                 <span class="p">}</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+              <span class="nt">&quot;dataSource&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+              <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;highlightColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                 <span class="nt">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;properties&quot;</span> <span class="p">:</span> <span class="p">{},</span>
+                 <span class="nt">&quot;settings&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;font&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;family&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;size&quot;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                       <span class="nt">&quot;bold&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;italic&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;underline&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                       <span class="nt">&quot;color&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;highlightColor&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;alignment&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;elements&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+              <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;positionX&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;positionY&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+           <span class="nt">&quot;height&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+           <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+           <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+           <span class="nt">&quot;numberOfRecord&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;isBackSide&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="nt">&quot;points&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                 <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;filter&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                       <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                    <span class="p">}</span>
+                 <span class="p">],</span>
+                 <span class="nt">&quot;expandedLevel&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="nt">&quot;isViewSeparator&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+              <span class="p">}</span>
+           <span class="p">],</span>
+           <span class="nt">&quot;isSelected&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;561dba1e-f799-42be-be9d-bbfa078aee43&quot;</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;reportField&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;76139896-c2c3-432e-898a-2c2205bb2e35&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;fieldNameAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;dataFieldType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;1641cb37-b60c-42bc-b986-c51667e8037d&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sourceAlias&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nt">&quot;schemaName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;querySourceName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Suppliers&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ReportRelationshipResult.html" class="btn btn-neutral float-right" title="ReportRelationshipResult" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ReportPartPreviewParameter.html" class="btn btn-neutral" title="ReportPartPreviewParameter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

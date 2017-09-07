@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Setup &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="System Configuration Guide" href=".system_configuration_guide.html"/>
+        <link rel="prev" title="Role Setup" href="doc_role_setup.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-and-view-users">List and View Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-for-users">Search for Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-user">Add User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-system-admin-user">Add a System Admin user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-user-details">Edit User Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deactivate-user">Deactivate User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-user">Delete User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#change-a-password">Change a Password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrated-mode-behavior">Integrated Mode Behavior</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>User Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_user_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-setup">
+<h1>User Setup<a class="headerlink" href="#user-setup" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>User Setup</strong> page allows user to manage users.</p>
+<div class="section" id="list-and-view-users">
+<h2>List and View Users<a class="headerlink" href="#list-and-view-users" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In browser, log in to Izenda
+as a user with User Setup permissions.</li>
+<li>Click Settings, then User Setup in the left menu.</li>
+<li>Select the Setting Level: either System or a specific tenant.</li>
+<li>List of user names and statuses will be displayed in the Middle
+Panel.</li>
+<li>Click any user in the list.</li>
+<li>The user&#8217;s information will be displayed in the Details section.</li>
+</ol>
+<div class="figure" id="id2">
+<span id="user-setup-list-and-details"></span><a class="reference internal image-reference" href="../_images/User_Setup_List_and_Details.png"><img alt="../_images/User_Setup_List_and_Details.png" src="../_images/User_Setup_List_and_Details.png" style="width: 730px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 144 </span><span class="caption-text">User Setup List and Details</span></p>
+</div>
+</div>
+<div class="section" id="search-for-users">
+<h2>Search for Users<a class="headerlink" href="#search-for-users" title="Permalink to this headline">¶</a></h2>
+<p>The Search box at the top allows searching for specific users.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id3">
+<span id="user-setup-search"></span><a class="reference internal image-reference" href="../_images/User_Setup_Search.png"><img alt="../_images/User_Setup_Search.png" src="../_images/User_Setup_Search.png" style="width: 182px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 145 </span><span class="caption-text">Search for Users</span></p>
+</div>
+<p>Type a partial name and click the search
+icon (🔍).</p>
+</li>
+<li><p class="first">Only matching users will be displayed in the list.</p>
+</li>
+<li><p class="first">Clear the search box to see the full list. <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-user">
+<h2>Add User<a class="headerlink" href="#add-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the + Add User button at the top.</p>
+</li>
+<li><p class="first">The Details section will be cleared to enter the user information.</p>
+<div class="figure" id="id4">
+<span id="user-setup-add"></span><a class="reference internal image-reference" href="../_images/User_Setup_Add.png"><img alt="../_images/User_Setup_Add.png" src="../_images/User_Setup_Add.png" style="width: 539px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">Add a User</span></p>
+</div>
+</li>
+<li><p class="first">Enter a unique user id, then the first name and last name.</p>
+</li>
+<li><p class="first">An email address is not required, but is recommended for password
+retrieval and report subscriptions.</p>
+</li>
+<li><p class="first">Select roles from the drop-down.</p>
+</li>
+<li><p class="first">Enter the time zone adjustments into Data Offset and Time Offset
+boxes.</p>
+<ul>
+<li><p class="first">Data Offset: the time shift to be applied to datetime data from
+client database connections to match user&#8217;s local time zone.</p>
+<blockquote>
+<div><p>For example, the data from client database connections are in
+Estern Time &#8220;UTC-05:00&#8221; and the user being created is in
+Central Time &#8220;UTC-06:00&#8221;, then the value &#8220;-1.0&#8221; hour should be
+entered into Data Offset. (It is easiest to use an online time
+zone converter to find out this value)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Timestamp Offset: the time shift to be applied to timestamp data
+(created date time, last updated date time) from Izenda system
+database to match user&#8217;s local time zone.</p>
+<blockquote>
+<div><p>For example, the Izenda system database is in Pacific time
+&#8220;UTC-08:00&#8221; and the user being created is in Central Time
+&#8220;UTC-06:00&#8221;, then the value &#8220;+2.0&#8221; hours should be entered
+into Timestamp Offset. (It is easiest to use an online time
+zone converter to find out this value)</p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Click the Password Options button at the
+top to open Password Options pop-up.</p>
+<div class="figure align-right" id="id5">
+<span id="user-setup-password-options"></span><a class="reference internal image-reference" href="../_images/User_Setup_Password_Options.png"><img alt="../_images/User_Setup_Password_Options.png" src="../_images/User_Setup_Password_Options.png" style="width: 527px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">Password Options</span></p>
+</div>
+</li>
+<li><p class="first">Click Generate Password Link button to generate the <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a>.</p>
+<ul class="simple">
+<li>Either click the copy icon (that looks a bit like this ❐) to copy
+the password link to clipboard then send to the user.</li>
+<li>Or tick the Send password link in email checkbox then select the
+user email from the drop-down.</li>
+</ul>
+</li>
+<li><p class="first">Click Save to close the pop-up.</p>
+</li>
+<li><p class="first">Click the Save button at the top.</p>
+</li>
+<li><p class="first">The new user will appear in the list in Middle Panel.</p>
+</li>
+<li><p class="first">Click the Activate link next to the user in Middle Panel to make
+him/her active.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-a-system-admin-user">
+<span id="id1"></span><h2>Add a System Admin user<a class="headerlink" href="#add-a-system-admin-user" title="Permalink to this headline">¶</a></h2>
+<p>Additional system admin users can be created by:</p>
+<ol class="arabic simple">
+<li>Select System Setting Level.</li>
+<li>Tick the System Admin check-box.</li>
+<li>Enter the unique user id, then first name, last name and email
+address.</li>
+<li>There is no role assignment for a System Admin.</li>
+<li>Enter the remaining information then set up password options
+similarly to a normal user.</li>
+</ol>
+</div>
+<div class="section" id="edit-user-details">
+<h2>Edit User Details<a class="headerlink" href="#edit-user-details" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click the user in the list in Middle Panel.</p>
+</li>
+<li><p class="first">The user&#8217;s information is displayed in the Details section.</p>
+</li>
+<li><p class="first">Edit the information.</p>
+</li>
+<li><p class="first">Click the Save button at the top, then OK in the confirmation pop-up.</p>
+<blockquote>
+<div><p>User ID is unique and will be checked before saving.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="deactivate-user">
+<h2>Deactivate User<a class="headerlink" href="#deactivate-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Untick the Active checkbox (☑) of the user in Middle Panel.</li>
+<li>Click OK in the confirmation pop-up.</li>
+<li>The user becomes inactive. He/she can no longer log into the system.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Cancel button at the top will have no effect in this case.</p>
+</div>
+</div>
+<div class="section" id="delete-user">
+<h2>Delete User<a class="headerlink" href="#delete-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the Delete icon (x) of each user.</li>
+<li>Click OK in the confirmation pop-up.</li>
+<li>The user is deleted and removed from the list in Middle Panel.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Cancel button at the top will have no effect in this case.</p>
+</div>
+</div>
+<div class="section" id="change-a-password">
+<h2>Change a Password<a class="headerlink" href="#change-a-password" title="Permalink to this headline">¶</a></h2>
+<p>To change a password, select the user then click Password Options button
+and follow the steps in <a class="reference internal" href="#add-user">Add User</a> section.</p>
+</div>
+<div class="section" id="integrated-mode-behavior">
+<h2>Integrated Mode Behavior<a class="headerlink" href="#integrated-mode-behavior" title="Permalink to this headline">¶</a></h2>
+<p>When running inside an existing system:</p>
+<ul class="simple">
+<li>Izenda inherits the list of users with basic information User ID,
+First Name, Last Name and Email.</li>
+<li>Users cannot be deleted or added, and basic information cannot be
+changed from within Izenda system.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".system_configuration_guide.html" class="btn btn-neutral float-right" title="System Configuration Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_role_setup.html" class="btn btn-neutral" title="Role Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

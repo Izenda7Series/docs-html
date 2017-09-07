@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UserVerification &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Security" href="_security.html"/>
+        <link rel="next" title="ValidateExpiration" href="ValidateExpiration.html"/>
+        <link rel="prev" title="UserSecurityQuestion" href="UserSecurityQuestion.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_security.html">Security</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AccessRight.html">AccessRight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AccessToken.html">AccessToken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Credential.html">Credential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Expiration.html">Expiration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Identity.html">Identity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PasswordOption.html">PasswordOption</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Permission.html">Permission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Role.html">Role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RoleDetail.html">RoleDetail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SecurityPolicy.html">SecurityPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SecurityQuestion.html">SecurityQuestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="User.html">User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserContext.html">UserContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserDetail.html">UserDetail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserPermission.html">UserPermission</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserRole.html">UserRole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserSecurityQuestion.html">UserSecurityQuestion</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">UserVerification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateExpiration.html">ValidateExpiration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_request_and_response.html">Request and Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_others.html">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_security.html">Security</a> &raquo;</li>
+        
+      <li>UserVerification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ref/models/UserVerification.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="userverification">
+<h1>UserVerification<a class="headerlink" href="#userverification" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Null</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The id of user</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>firstName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The first name</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>lastName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The last name</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>emailAddress</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The email</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>userName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The user name</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>verification</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The encoded info of user from <a class="reference internal" href="../.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>issueDate</strong> <br clear="right" />
+datetime</td>
+<td>&#160;</td>
+<td>The time when token was generated</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>tenantDisplayId</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The user-entered id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the tenant</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;tenantDisplayID&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;userName&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;firstName&quot;</span> <span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;lastName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;emailAddress&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe@acme.com&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;verification&quot;</span> <span class="p">:</span> <span class="s2">&quot;H8K....RU=&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ValidateExpiration.html" class="btn btn-neutral float-right" title="ValidateExpiration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="UserSecurityQuestion.html" class="btn btn-neutral" title="UserSecurityQuestion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

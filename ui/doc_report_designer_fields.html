@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Report Designer/Fields &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
+        <link rel="next" title="Report Designer/Format" href="doc_report_designer_format.html"/>
+        <link rel="prev" title="Report Designer/Data Source" href="doc_report_designer_data_source.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Report Designer/Fields</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#view-data-source-fields">View data source fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#view-data-source-fields-properties">View data source fields&#8217; properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-calculated-field">Add Calculated Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-a-report-filter">Add a report filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-filter-properties-in-filter-settings-section">Configure filter properties in Filter Settings section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-filter-properties-in-filter-formatting-section">Configure filter properties in Filter Formatting section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-complex-filter-logic">Build complex filter logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-cross-filtering-to-multiple-report-parts">Apply Cross Filtering to Multiple Report Parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manage-report-parts">Manage Report Parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-report-part-properties">Configure report part properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-field-properties-box-for-data-source-fields-in-report">Open Field Properties box for data source fields in report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-field-properties-in-data-source-section">Configure field properties in Data Source section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-field-properties-in-data-formatting-section">Configure field properties in Data Formatting section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-field-properties-in-header-formatting-section">Configure field properties in Header Formatting section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-field-properties-in-drill-down-section">Configure field properties in Drill Down section</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_schedule.html">Report Designer/Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_access.html">Report Designer/Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_grid.html">Report Designer/Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_chart.html">Report Designer/Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_gauge.html">Report Designer/Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_map.html">Report Designer/Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_form.html">Report Designer/Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_report_part_menu.html">Report Designer/Report Part Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_list.html">Report List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_viewer.html">Report Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
+        
+      <li>Report Designer/Fields</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_report_designer_fields.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="report-designer-fields">
+<h1>Report Designer/Fields<a class="headerlink" href="#report-designer-fields" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><a class="reference internal" href="#apply-cross-filtering-to-multiple-report-parts"><span class="std std-ref">Cross Filtering</span></a> is available from release v2.1.0.</p>
+</div>
+<p>The <strong>Report Designer/Fields</strong> page allows user to</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>view data source fields&#8217; properties</li>
+<li>add report-level calculated fields</li>
+<li>define report filters based on data source fields</li>
+</ul>
+</td><td><ul class="simple">
+<li>add report parts to report body</li>
+<li>add data source fields to report</li>
+<li>configure formatting and calculation properties for data source fields in report</li>
+</ul>
+</td></tr></table>
+<div class="section" id="view-data-source-fields">
+<h2>View data source fields<a class="headerlink" href="#view-data-source-fields" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id4">
+<span id="report-designer-fields-location"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Fields_Location.png"><img alt="../_images/Report_Designer_Fields_Location.png" src="../_images/Report_Designer_Fields_Location.png" style="width: 485px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 200 </span><span class="caption-text">Report Designer - Fields</span></p>
+</div>
+<p>Open an existing report if not already open.</p>
+</li>
+<li><p class="first">Click Fields in the left menu. (<a class="reference internal" href="#report-designer-fields-location"><span class="std std-numref">Fig. 200</span></a>) <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id5">
+<span id="report-designer-fields-middle-panel"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Fields_Middle_Panel.png"><img alt="../_images/Report_Designer_Fields_Middle_Panel.png" src="../_images/Report_Designer_Fields_Middle_Panel.png" style="width: 223px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 201 </span><span class="caption-text">Report Designer - List of Fields</span></p>
+</div>
+<p>Data sources will be displayed under Selected Data Source group in
+the Middle Panel, initially collapsed.</p>
+</li>
+<li><p class="first">User-defined calculated fields are under Calculated Fields group, if
+available.</p>
+</li>
+<li><p class="first">Click on a data source to expand its fields.</p>
+</li>
+<li><p class="first">The data source fields are listed together with an icon representing
+their data types. (<a class="reference internal" href="#report-designer-fields-middle-panel"><span class="std std-numref">Fig. 201</span></a>) <br clear="right" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The list of data source fields also supports searching via the top search box.</p>
+</div>
+</div>
+<div class="section" id="view-data-source-fields-properties">
+<h2>View data source fields&#8217; properties<a class="headerlink" href="#view-data-source-fields-properties" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id6">
+<span id="report-designer-fields-field-properties"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Fields_Field_Properties.png"><img alt="../_images/Report_Designer_Fields_Field_Properties.png" src="../_images/Report_Designer_Fields_Field_Properties.png" style="width: 263px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 202 </span><span class="caption-text">Report Designer - Data Source Field Properties</span></p>
+</div>
+<p>Select a data source field to view its properties.</p>
+</li>
+<li><p class="first">Properties of the selected field is displayed in the Field Properties
+box. (<a class="reference internal" href="#report-designer-fields-field-properties"><span class="std std-numref">Fig. 202</span></a>) <br clear="right" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-calculated-field">
+<h2>Add Calculated Field<a class="headerlink" href="#add-calculated-field" title="Permalink to this headline">¶</a></h2>
+<p>Calculated fields can also be added to a specific report.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../_images/Report_Level_Calculated_Field_Discounted_Cost.png"><img alt="../_images/Report_Level_Calculated_Field_Discounted_Cost.png" src="../_images/Report_Level_Calculated_Field_Discounted_Cost.png" style="width: 724px;" /></a>
+</div>
+<p>A report-level calculated field. Note that in Expression box the connection name [Northwind] and schema name [dbo] are included since the fields can come from different connections. <br clear="right" /></p>
+</div></blockquote>
+<p>Sample expressions:</p>
+<blockquote>
+<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">Case</span> <span class="k">when</span> <span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span> <span class="s1">&#39;less&#39;</span> <span class="k">when</span> <span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">)</span> <span class="k">then</span> <span class="s1">&#39;mid&#39;</span> <span class="k">when</span> <span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>  <span class="k">then</span> <span class="s1">&#39;high&#39;</span> <span class="k">else</span> <span class="s1">&#39;not evaluated&#39;</span> <span class="k">end</span>
+
+<span class="k">Case</span> <span class="k">when</span> <span class="p">(</span><span class="k">BETWEEN</span><span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="k">then</span> <span class="s1">&#39;less&#39;</span> <span class="k">when</span> <span class="p">(</span><span class="k">BETWEEN</span><span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span> <span class="s1">&#39;mid&#39;</span> <span class="k">when</span> <span class="p">(</span> <span class="k">BETWEEN</span><span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>  <span class="k">then</span> <span class="s1">&#39;high&#39;</span> <span class="k">else</span> <span class="s1">&#39;not evaluated&#39;</span> <span class="k">end</span>
+
+<span class="k">IF</span> <span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="k">then</span> <span class="s1">&#39;Less&#39;</span> <span class="k">else</span> <span class="p">(</span> <span class="k">IF</span> <span class="p">(</span><span class="k">BETWEEN</span> <span class="p">([</span><span class="n">northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">EmployeeID</span><span class="p">]</span> <span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="k">then</span>  <span class="s1">&#39;More&#39;</span> <span class="k">else</span> <span class="s1">&#39;Most&#39;</span> <span class="k">END</span><span class="p">)</span> <span class="k">END</span>
+
+<span class="k">Count</span><span class="p">(</span><span class="k">DISTINCT</span><span class="p">([</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">ShipCity</span><span class="p">]))</span>
+
+<span class="n">DATEPART</span><span class="p">(</span><span class="n">yyyy</span><span class="p">,[</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">])</span>
+
+<span class="n">DATEPART</span><span class="p">(</span><span class="n">m</span><span class="p">,[</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">])</span>
+
+<span class="k">CASE</span> <span class="k">when</span> <span class="p">(</span><span class="n">DATEPART</span><span class="p">(</span><span class="n">yyyy</span><span class="p">,[</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">])</span> <span class="o">=</span> <span class="mi">1996</span><span class="p">)</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span>
+
+<span class="n">DATEADD</span><span class="p">(</span><span class="k">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">OrderDate</span><span class="p">])</span>
+
+<span class="k">CAST</span><span class="p">([</span><span class="n">Northwind</span><span class="p">].[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Orders</span><span class="p">].[</span><span class="n">OrderID</span><span class="p">]</span> <span class="k">as</span> <span class="nb">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="doc_available_calculated_field_expressions.html"><span class="doc">Available Calculated Field Expressions</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="add-a-report-filter">
+<h2>Add a report filter<a class="headerlink" href="#add-a-report-filter" title="Permalink to this headline">¶</a></h2>
+<p>From the data sources, user can add report filters to select only the
+rows that they need.</p>
+<p>For example with Northwind database, to do a report on customers that
+are in Atlanta city:</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id7">
+<span id="report-designer-filter-properties"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Filter_Properties.png"><img alt="../_images/Report_Designer_Filter_Properties.png" src="../_images/Report_Designer_Filter_Properties.png" style="width: 265px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 203 </span><span class="caption-text">Report Designer - Filter Properties</span></p>
+</div>
+<p>User should have selected &#8220;Customers&#8221; table in Data Source page.</p>
+</li>
+<li><p class="first">Click Fields in the left menu.</p>
+</li>
+<li><p class="first">Expand Filter section if needed by clicking the <strong>&gt;</strong> icon.</p>
+</li>
+<li><p class="first">Click on Selected Data Source in Middle Panel to expand the list.</p>
+</li>
+<li><p class="first">Click on &#8220;Customers&#8221; data source to expand its fields.</p>
+</li>
+<li><p class="first">Either drag the field &#8220;City&#8221; into the Filter box or click Add Filter
+button and select &#8220;City&#8221; in the drop-down.</p>
+</li>
+<li><p class="first">Click on the filter area outside of the drop-down (in darker color)
+to expand the Filter Properties box. (<a class="reference internal" href="#report-designer-filter-click-to-select"><span class="std std-numref">Fig. 204</span></a>)</p>
+<div class="figure" id="id8">
+<span id="report-designer-filter-click-to-select"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Filter_Click_to_Select.png"><img alt="../_images/Report_Designer_Filter_Click_to_Select.png" src="../_images/Report_Designer_Filter_Click_to_Select.png" style="width: 324px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 204 </span><span class="caption-text">Report Designer - Click to Select Filter</span></p>
+</div>
+</li>
+<li><p class="first">The properties are listed in Filter Properties box in 3 sections (<a class="reference internal" href="#report-designer-filter-properties"><span class="std std-numref">Fig. 203</span></a>):</p>
+<ul class="simple">
+<li>Source</li>
+<li>Filter Settings</li>
+<li>Filter Formatting <br clear="right" /></li>
+</ul>
+</li>
+<li><p class="first">Select Equivalence in Filter Operator drop-down in Filter Settings
+section.</p>
+</li>
+<li><p class="first">Select Equals (Manual Entry) in the next drop-down.</p>
+</li>
+<li><p class="first">Type in &#8220;Atlanta&#8221;.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any field marked as not filterable in Data Model cannot be used in a filter. It can neither be dragged into the Filter box, nor appear in a filter drop-down.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In case data source is a stored procedure, its parameters are automatically added as report filters.</p>
+<div class="last figure" id="id9">
+<span id="report-designer-filter-sp-parameter"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Filter_SP_Parameter.png"><img alt="../_images/Report_Designer_Filter_SP_Parameter.png" src="../_images/Report_Designer_Filter_SP_Parameter.png" style="width: 719px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 205 </span><span class="caption-text">Report Designer - Filters from Parameters</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="configure-filter-properties-in-filter-settings-section">
+<h2>Configure filter properties in Filter Settings section<a class="headerlink" href="#configure-filter-properties-in-filter-settings-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can:</p>
+<ul>
+<li><p class="first">Choose a filter
+alias.</p>
+<blockquote>
+<div><p>This alias will be the display text on report at runtime, if
+visible.
+The alias must be unique inside the whole report. Any duplicated
+value will result in an error message (<a class="reference internal" href="#report-designer-duplicated-filter-alias"><span class="std std-numref">Fig. 206</span></a>).
+The alias can contain any characters except for &#8220;[&#8221; and &#8220;]&#8221;.</p>
+<div class="figure" id="id10">
+<span id="report-designer-duplicated-filter-alias"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Duplicated_Filter_Alias.png"><img alt="../_images/Report_Designer_Duplicated_Filter_Alias.png" src="../_images/Report_Designer_Duplicated_Filter_Alias.png" style="width: 515px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 206 </span><span class="caption-text">Report Designer - Duplicated Filter Alias</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select the filter to be visible or not at runtime.</p>
+<blockquote>
+<div><p>A filter with a fixed condition (such as &#8220;City&#8221; always equals
+&#8220;Atlanta&#8221;) should be hidden at runtime.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Select the filter to be required or not.</p>
+<blockquote>
+<div><p>A required filter will force end-user to enter filter values in
+order to run it.
+Contrary to a fixed condition, the example report above could be
+more flexible if the &#8220;City&#8221;-equals-&#8220;Atlanta&#8221; filter is visible
+and not required. Then the report still shows customers in
+Atlanta by default, but end-user can select another city or even
+empty the value to show all customers. Screenshot to be updated.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Select the filter to be cascading or not.</p>
+<blockquote>
+<div><p>A cascading filter will constrain the available values in other
+filters behind it. For example, if a report has two filters:
+Country and City, and a value was selected for Country, then the
+only possible values that can be selected for City will be ones
+with a match for the current Country. Screenshot to be updated.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Choose sorting order for filter values: unsorted, ascending or
+descending by repeatedly clicking the icon.</p>
+</li>
+<li><p class="first">Select the filter condition.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id11">
+<span id="report-designer-filter-operator"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Filter_Operator.png"><img alt="../_images/Report_Designer_Filter_Operator.png" src="../_images/Report_Designer_Filter_Operator.png" style="width: 221px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 207 </span><span class="caption-text">Report Designer - Filter Operator</span></p>
+</div>
+<p>Select the operator group Comparison, Equivalence, Field
+Comparison or String.</p>
+</li>
+<li><p class="first">Select the specific operator.</p>
+</li>
+<li><p class="first">Enter or select the fields or values depending on each operator. (<a class="reference internal" href="#report-designer-filter-operator"><span class="std std-numref">Fig. 207</span></a>) <br clear="right" /></p>
+</li>
+</ol>
+</li>
+</ul>
+<table border="1" class="colwidths-given apitable docutils" id="id12">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">The list of available operators depends on the data type of the field:</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="30%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Operator Type / Operator</th>
+<th class="head">Text</th>
+<th class="head">Numeric</th>
+<th class="head">Money</th>
+<th class="head">Datetime</th>
+<th class="head">Boolean</th>
+<th class="head">Image</th>
+<th class="head">LOB</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">.../Blank/Not Blank</th>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><th class="stub">Comparison</th>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><th class="stub">Equivalence</th>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><th class="stub">Field Comparison</th>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><th class="stub">Date &amp; Time</th>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">String</th>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Boolean</th>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configure-filter-properties-in-filter-formatting-section">
+<h2>Configure filter properties in Filter Formatting section<a class="headerlink" href="#configure-filter-properties-in-filter-formatting-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can:</p>
+<ul class="simple">
+<li>Choose a font face and font size.</li>
+<li>Choose text effects bold, italic and underlined.</li>
+<li>Set text color and cell color.</li>
+</ul>
+</div>
+<div class="section" id="build-complex-filter-logic">
+<span id="id1"></span><h2>Build complex filter logic<a class="headerlink" href="#build-complex-filter-logic" title="Permalink to this headline">¶</a></h2>
+<p>In most cases, user simply adds new filters when needed, and the report
+returns data that matches all of the filter conditions.</p>
+<p>In some other cases, that simple match-all condition is not enough. For
+example, user needs a report of all customers that are in Atlanta city
+with either CompanyName or ContactName &#8220;John&#8221;. Such &#8220;either A or B&#8221;
+condition requires building a filter logic.</p>
+<ol class="arabic">
+<li><p class="first">Add a filter for &#8220;City&#8221;, &#8220;Equivalence&#8221;, &#8220;Equals&#8221;, &#8220;Atlanta&#8221; (see <a class="reference internal" href="#add-a-report-filter">Add
+a report filter</a>).</p>
+</li>
+<li><p class="first">Similarly, add a filter for &#8220;CompanyName&#8221;, &#8220;String&#8221;, &#8220;Like&#8221;, &#8220;John&#8221;.</p>
+</li>
+<li><p class="first">Similarly, add a filter for &#8220;ContactName&#8221;, &#8220;String&#8221;, &#8220;Like&#8221;, &#8220;John&#8221;.</p>
+</li>
+<li><p class="first">The filters are subsequently numbered 1, 2 and 3 in the filter box.</p>
+</li>
+<li><p class="first">Enter the logic into Filter Logic box. The following rule of thumb
+may help:</p>
+</li>
+<li><p class="first">For each &#8220;either A or B&#8221; condition, write an &#8220;or&#8221; condition using the
+filter numbers, and wrap it in parentheses - <code class="docutils literal"><span class="pre">(2</span> <span class="pre">OR</span> <span class="pre">3)</span></code> for this
+example.</p>
+</li>
+<li><p class="first">Fill in other &#8220;and&#8221; conditions using the filter numbers -
+<code class="docutils literal"><span class="pre">1</span> <span class="pre">AND</span> <span class="pre">(2</span> <span class="pre">OR</span> <span class="pre">3)</span></code> for this example.</p>
+</li>
+<li><p class="first">Click Validate Syntax button to check the logic.</p>
+<div class="figure" id="id13">
+<span id="report-designer-filter-logic-1-and-2-or-3"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Filter_Logic_1_AND_(2_OR_3).png"><img alt="../_images/Report_Designer_Filter_Logic_1_AND_(2_OR_3).png" src="../_images/Report_Designer_Filter_Logic_1_AND_(2_OR_3).png" style="width: 953px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 208 </span><span class="caption-text">Report Designer - Filter Logic 1 AND (2 OR 3)</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="apply-cross-filtering-to-multiple-report-parts">
+<span id="id2"></span><h2>Apply Cross Filtering to Multiple Report Parts<a class="headerlink" href="#apply-cross-filtering-to-multiple-report-parts" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.1.0.</span></p>
+</div>
+<p>Cross filtering allows user to drill up and drill down data in multiple <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">report parts</span></a> together. For each drilling action from user, it will filter related report parts automatically.</p>
+<div class="figure" id="id14">
+<span id="report-designer-filter-cross-filtering-sample"></span><a class="reference internal image-reference" href="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_Germany.png"><img alt="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_Germany.png" src="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_Germany.png" style="width: 810px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 209 </span><span class="caption-text">Cross Filtering Sample - User drilled down to &#8220;Germany&#8221; in the Chart, and the Grid is automatically filtered by &#8220;Germany&#8221; only.</span></p>
+</div>
+<ol class="arabic">
+<li><p class="first">Select related report parts to apply cross filtering. In this example Chart and Grid will be drilled up and down together while Map remains independent.</p>
+<div class="figure" id="id15">
+<a class="reference internal image-reference" href="../_images/Report_Cross_Filtering_Report_Part_Selection.png"><img alt="../_images/Report_Cross_Filtering_Report_Part_Selection.png" src="../_images/Report_Cross_Filtering_Report_Part_Selection.png" style="width: 454px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 210 </span><span class="caption-text">Report Designer - Cross Filtering Report Part Selection</span></p>
+</div>
+</li>
+<li><p class="first">Set up report parts to have common data source fields. In this example Chart and Grid display aggregated data for ShipCountry and ShipCity.</p>
+</li>
+<li><p class="first">Drill down on one report part by clicking on a data point.</p>
+<div class="figure" id="id16">
+<span id="report-cross-filtering-shipcountry-shipcity-by-all"></span><a class="reference internal image-reference" href="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_All.png"><img alt="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_All.png" src="../_images/Report_Cross_Filtering_ShipCountry_ShipCity_by_All.png" style="width: 810px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 211 </span><span class="caption-text">Cross Filtering Sample - User is about to drill down on &#8220;Germany&#8221; in the Chart.</span></p>
+</div>
+</li>
+<li><p class="first">The related report parts are filtered automatically, and the Cross Filtering breadcrumb tells which report part is being drilled down. (<a class="reference internal" href="#report-designer-filter-cross-filtering-sample"><span class="std std-numref">Fig. 209</span></a>)</p>
+</li>
+<li><p class="first">To reset, either drill up the exact report part, or remove the drill-down on the breadcrumb.</p>
+<div class="figure" id="id17">
+<span id="remove-a-cross-filter"></span><a class="reference internal image-reference" href="../_images/Remove_a_Cross_Filter.png"><img alt="../_images/Remove_a_Cross_Filter.png" src="../_images/Remove_a_Cross_Filter.png" style="width: 810px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 212 </span><span class="caption-text">Click to remove a drill-down on the breadcrumb</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="manage-report-parts">
+<span id="id3"></span><h2>Manage Report Parts<a class="headerlink" href="#manage-report-parts" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to
+display data in a report: bar chart, line chart, pie chart, map, data
+grid, etc, each is supported by a different <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">report part</span></a>. Built-in report
+parts include:</p>
+<ul class="simple">
+<li>Chart (Bar Chart, Line Chart, Pie Chart, etc.)</li>
+<li>Form</li>
+<li>Grid (Horizontal, Vertical, Pivot)</li>
+<li>Gauge</li>
+<li>Map</li>
+</ul>
+<p>Any new report will include one default blank report part. Additional
+report parts of the same or different types can be added by:</p>
+<ul>
+<li><p class="first">clicking Add Report Part button at the top.</p>
+</li>
+<li><p class="first">clicking the add icon (+) in any available background cell. (<a class="reference internal" href="#report-designer-add-report-part"><span class="std std-numref">Fig. 213</span></a>)</p>
+<div class="figure" id="id18">
+<span id="report-designer-add-report-part"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Add_Report_Part.png"><img alt="../_images/Report_Designer_Add_Report_Part.png" src="../_images/Report_Designer_Add_Report_Part.png" style="width: 524px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 213 </span><span class="caption-text">Report Designer - Add Report Part</span></p>
+</div>
+</li>
+<li><p class="first">clicking the copy icon in the configuration header.</p>
+<div class="figure" id="id19">
+<span id="report-designer-copy-report-part"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Copy_Report_Part.png"><img alt="../_images/Report_Designer_Copy_Report_Part.png" src="../_images/Report_Designer_Copy_Report_Part.png" style="width: 656px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 214 </span><span class="caption-text">Report Designer - Copy Report Part</span></p>
+</div>
+</li>
+</ul>
+<p>A report part can be removed by clicking the delete icon in the
+configuration header.</p>
+<blockquote>
+<div><div class="figure" id="id20">
+<span id="report-designer-remove-report-part"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Remove_Report_Part.png"><img alt="../_images/Report_Designer_Remove_Report_Part.png" src="../_images/Report_Designer_Remove_Report_Part.png" style="width: 94px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 215 </span><span class="caption-text">Report Designer - Remove Report Part</span></p>
+</div>
+</div></blockquote>
+<p>Report parts can be resized, dragged to a new location, or switched
+position with each other in Preview Mode.</p>
+<blockquote>
+<div><div class="figure" id="id21">
+<span id="report-designer-switch-to-preview-mode"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Switch_to_Preview_Mode.png"><img alt="../_images/Report_Designer_Switch_to_Preview_Mode.png" src="../_images/Report_Designer_Switch_to_Preview_Mode.png" style="width: 128px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 216 </span><span class="caption-text">Report Designer - Switch to Preview Mode</span></p>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">To resize:</p>
+<ol class="arabic simple">
+<li>Hover the cursor over borders and corners of a report part.</li>
+<li>When the cursor changes, click and drag to resize the report part.</li>
+<li>The color of the dragged report part remains purple if the new
+size is acceptable, and changes to orange if the new size overlaps
+with other report parts.</li>
+<li>Release the mouse when the color is purple to accept the new size.</li>
+<li>Release the mouse when the color is orange to cancel.</li>
+</ol>
+</li>
+<li><p class="first">To change location:</p>
+<div class="figure align-right" id="id22">
+<span id="report-designer-drag-report-part-to-invalid-location"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Drag_Report_Part_to_Invalid_Location.png"><img alt="../_images/Report_Designer_Drag_Report_Part_to_Invalid_Location.png" src="../_images/Report_Designer_Drag_Report_Part_to_Invalid_Location.png" style="width: 524px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 217 </span><span class="caption-text">Report Designer - Drag Report Part to Invalid Location</span></p>
+</div>
+<ol class="arabic simple">
+<li>Hover the cursor over the report part header.</li>
+<li>When the cursor changes, click and drag the report part to a new
+location.</li>
+<li>The shadow rectangle is where the report part will land.</li>
+<li>The color of the dragged report part remains purple if the new
+location is acceptable, and changes to orange if the new location
+overlaps with other report parts.</li>
+<li>Release the mouse when the color is purple to accept the new
+location.</li>
+<li>Release the mouse when the color is orange to cancel. <br clear="right" /></li>
+</ol>
+</li>
+<li><p class="first">To switch position with another report part:</p>
+<div class="figure align-right" id="id23">
+<span id="report-designer-drag-report-part-to-switch-location"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Drag_Report_Part_to_Switch_Location.png"><img alt="../_images/Report_Designer_Drag_Report_Part_to_Switch_Location.png" src="../_images/Report_Designer_Drag_Report_Part_to_Switch_Location.png" style="width: 507px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 218 </span><span class="caption-text">Report Designer - Drag Report Part to Switch Location</span></p>
+</div>
+<ol class="arabic simple">
+<li>Hover the cursor over the report part header.</li>
+<li>When the cursor changes, click and drag the report part over
+another.</li>
+<li>The shadow rectangle is where the report part will land.</li>
+<li>Drag the report part so that the shadow rectangle completely
+covers or is completely covered by the other report part, and the
+color of the dragged report part remains purple.</li>
+<li>Release the mouse when the color is purple to accept the new
+location. <br clear="right" /></li>
+</ol>
+</li>
+</ul>
+<div class="figure" id="id24">
+<a class="reference internal image-reference" href="../_images/Report_Designer_FreightGrid_FreightChart_OrdersGrid.png"><img alt="../_images/Report_Designer_FreightGrid_FreightChart_OrdersGrid.png" src="../_images/Report_Designer_FreightGrid_FreightChart_OrdersGrid.png" style="width: 951px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 219 </span><span class="caption-text">Sample Combination of a Subtotal Grid, a Chart and a
+Detailed Grid</span></p>
+</div>
+</div>
+<div class="section" id="configure-report-part-properties">
+<h2>Configure report part properties<a class="headerlink" href="#configure-report-part-properties" title="Permalink to this headline">¶</a></h2>
+<p>See:</p>
+<ul class="simple">
+<li><a class="reference internal" href="doc_report_designer_chart.html"><span class="doc">Report Designer/Chart</span></a></li>
+<li><a class="reference internal" href="doc_report_designer_form.html"><span class="doc">Report Designer/Form</span></a></li>
+<li><a class="reference internal" href="doc_report_designer_gauge.html"><span class="doc">Report Designer/Gauge</span></a></li>
+<li><a class="reference internal" href="doc_report_designer_grid.html"><span class="doc">Report Designer/Grid</span></a></li>
+<li><a class="reference internal" href="doc_report_designer_map.html"><span class="doc">Report Designer/Map</span></a></li>
+</ul>
+</div>
+<div class="section" id="open-field-properties-box-for-data-source-fields-in-report">
+<h2>Open Field Properties box for data source fields in report<a class="headerlink" href="#open-field-properties-box-for-data-source-fields-in-report" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click on a data source field inside report body.</li>
+<li>The properties are listed in Field Properties box in 4 sections:<ul>
+<li>Data Source</li>
+<li>Data Formatting</li>
+<li>Header Formatting</li>
+<li>Drill Down</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Instead of trying to find a field inside report body and click on it, user can quickly select a report part then one of its fields using the two drop-downs on top of Field Properties box. (<a class="reference internal" href="#report-designer-data-source-report-part-and-field-drop-downs"><span class="std std-numref">Fig. 220</span></a>)</p>
+<div class="last figure" id="id25">
+<span id="report-designer-data-source-report-part-and-field-drop-downs"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Data_Source_Report_Part_And_Field_Drop-downs.png"><img alt="../_images/Report_Designer_Data_Source_Report_Part_And_Field_Drop-downs.png" src="../_images/Report_Designer_Data_Source_Report_Part_And_Field_Drop-downs.png" style="width: 219px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 220 </span><span class="caption-text">Report Designer - Report Part and Field drop-downs</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="configure-field-properties-in-data-source-section">
+<h2>Configure field properties in Data Source section<a class="headerlink" href="#configure-field-properties-in-data-source-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can:</p>
+<ul>
+<li><div class="figure align-right" id="id26">
+<span id="report-designer-fields-duplicated-field-alias"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Fields_Duplicated_Field_Alias.png"><img alt="../_images/Report_Designer_Fields_Duplicated_Field_Alias.png" src="../_images/Report_Designer_Fields_Duplicated_Field_Alias.png" style="width: 219px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 221 </span><span class="caption-text">Report Designer - Duplicated Field Alias</span></p>
+</div>
+<p>Choose an alias
+for the selected data source field.</p>
+<blockquote>
+<div><p>The alias must be unique inside the whole report. Any duplicated
+value will result in an error message (<a class="reference internal" href="#report-designer-fields-duplicated-field-alias"><span class="std std-numref">Fig. 221</span></a>).
+The alias can contain any characters except for &#8220;[&#8221; and &#8220;]&#8221;. <br clear="right" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Select visible or not for the field. A not visible field will not
+appear on the report screen at runtime.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="configure-field-properties-in-data-formatting-section">
+<h2>Configure field properties in Data Formatting section<a class="headerlink" href="#configure-field-properties-in-data-formatting-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can:</p>
+<ul>
+<li><p class="first">Apply a function to the field.</p>
+<blockquote>
+<div><p>The list of available functions depends on the data type and
+includes two lists:</p>
+</div></blockquote>
+<ul class="simple">
+<li>User-defined functions marked as Field Level in Data Model which
+require a single input parameter in a compatible data type.</li>
+<li>System built-in functions for that specific data type.</li>
+</ul>
+</li>
+</ul>
+<table border="1" class="colwidths-given apitable docutils" id="id27">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">List of system built-in functions for each data type</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="50%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Built-in <br clear="right" /> Function</th>
+<th class="head">Description</th>
+<th class="head">Text</th>
+<th class="head">Numeric</th>
+<th class="head">Money</th>
+<th class="head">Datetime</th>
+<th class="head">Boolean</th>
+<th class="head">Image</th>
+<th class="head">LOB</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Average</th>
+<td>Returns the average of the values in a field.</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Count</th>
+<td>Returns the number of items in a field.</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Count <br clear="right" /> Distinct</th>
+<td>Returns the number of unique items in a field.</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Maximum</th>
+<td>Returns the maximum value in a field.</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Minimum</th>
+<td>Returns the minimum value in a field.</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Sum</th>
+<td>Returns the sum of all values in a field.</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Sum <br clear="right" /> Distinct</th>
+<td>Returns the sum of all unique values in a field.</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Group</th>
+<td>Groups data together by field values for aggregating.</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Days Old</th>
+<td>Returns the number of days counting from today&#8217;s date.</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Average <br clear="right" /> Days Old</th>
+<td>Returns the average number of days counting from today&#8217;s date.</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">Sum <br clear="right" /> Days Old</th>
+<td>Return the sum of numbers of days counting from today&#8217;s date.</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">Group <br clear="right" /> Days Old</th>
+<td>Groups data together by numbers of days for aggregating.</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Y</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">Choose a display format for the field.</p>
+<blockquote>
+<div><p>The list of available dispaly formats depends on the data type of
+the field.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Choose a font face and font size.</p>
+</li>
+<li><p class="first">Choose text effects bold, italic and underlined.</p>
+</li>
+<li><p class="first">Choose text alignment left, center, right or justify.</p>
+</li>
+<li><p class="first">Choose data sorting order unsorted, ascending or descending by
+repeatedly clicking the icon.</p>
+</li>
+<li><p class="first">Set text
+color and cell color for different ranges of value.</p>
+<ol class="arabic simple">
+<li>Click either icon.</li>
+<li>Select Value, Range Value or Range Percentage in Text Color
+Settings or Cell Color Settings pop-up.</li>
+<li>Click Add Setting.</li>
+<li>Enter a value or a range of value then pick a color.</li>
+<li>Continue to click Add Setting to add more ranges and colors.</li>
+<li>Click OK to save the setting.</li>
+</ol>
+<div class="figure" id="id28">
+<span id="report-designer-field-text-color-range"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Field_Text_Color_Range.png"><img alt="../_images/Report_Designer_Field_Text_Color_Range.png" src="../_images/Report_Designer_Field_Text_Color_Range.png" style="width: 457px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 222 </span><span class="caption-text">Report Designer - Text Color for a Date Range</span></p>
+</div>
+</li>
+<li><div class="figure align-right" id="id29">
+<span id="report-designer-field-alternative-text-value"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Field_Alternative_Text_Value.png"><img alt="../_images/Report_Designer_Field_Alternative_Text_Value.png" src="../_images/Report_Designer_Field_Alternative_Text_Value.png" style="width: 457px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 223 </span><span class="caption-text">Report Designer - Alternative Text for UnitsInStock = 0</span></p>
+</div>
+<p>Set alternative text for different ranges of value.</p>
+<ol class="arabic simple">
+<li>Click the icon.</li>
+<li>Select Value, Range Value or Range Percentage in Alternative Text
+Settings pop-up.</li>
+<li>Click Add Setting.</li>
+<li>Enter a value or a range of value then type in an alternative
+text.</li>
+<li>Continue to click Add Setting to add more ranges and alternative
+texts.</li>
+<li>Click OK to save the setting. <br clear="right" /></li>
+</ol>
+</li>
+<li><p class="first">Set custom URL.</p>
+<ol class="arabic simple">
+<li>Click the icon.</li>
+<li>Enter the url into the text box.</li>
+<li>Choose an option to open the url in a new window, a new tab or the
+current window.</li>
+<li>Click OK to save the setting.</li>
+</ol>
+</li>
+<li><p class="first">Write customized action in embedded JavaScript.</p>
+</li>
+</ul>
+<div class="topic">
+<p class="topic-title first">System variables</p>
+<p>Some system variables are available for use in Custom URL or Embedded JavaScript pop-ups.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">pXvalue=a_value</span></code> sets <code class="docutils literal"><span class="pre">a_value</span></code> as the value for filter number X.</li>
+<li><code class="docutils literal"><span class="pre">{column_name}</span></code> will be replaced by the value in the column specified.</li>
+<li><code class="docutils literal"><span class="pre">{0}</span></code> will be replaced by the value in current column.</li>
+</ul>
+<p>For example:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">http://www.google.com/?q={0}</span></code> when clicked on will open Google and search for the value in this column.</li>
+<li><code class="docutils literal"><span class="pre">http://www.google.com/?q={[OrderDay]}</span></code> when clicked on will open Google and search for the value in column OrderDay.</li>
+<li><code class="docutils literal"><span class="pre">http://127.0.0.1/new/e8d89dc0-5933-4946-816c-c0ee4e30f2b2?p1value={[OrderDay]}</span></code> when clicked on will take the value in column OrderDay, open the report with id=e8d89dc0-5933-4946-816c-c0ee4e30f2b2 and pass the value to the first filter of that report.</li>
+</ul>
+</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li>Set Grand Total and Sub Total.</li>
+</ul>
+<div class="topic">
+<p class="topic-title first">Grand Total and Sub Total</p>
+<p>In report tables, the Grand Total for a field will provide the sum of all values within that field across the entire table. For example, in a report for Northwind database&#8217;s Orders table, the Grand Total for Freight field will tell the sum of all Freight costs until now. Screenshot to be updated.</p>
+<p>To have the sum for all Freight costs to each country without having to create additional reports, Grouping and Sub Total can be used. Grouping will group data for each ShipCountry together, while Sub Total for Freight field will give the sum of all Freight costs in each country/group. Screenshot to be updated.</p>
+<p>Grand Total and Sub Total is not necessarily the sum calculation. Other functions include minimum, maximum, average and count.</p>
+</div>
+<p><br clear="right" /></p>
+<p>To set up both Grand Total and Sub Total for Freight costs in Northwind database&#8217;s Orders table as an example:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><div class="figure align-right" id="id30">
+<span id="report-designer-added-shipcountry-and-freight"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Added_ShipCountry_and_Freight.png"><img alt="../_images/Report_Designer_Added_ShipCountry_and_Freight.png" src="../_images/Report_Designer_Added_ShipCountry_and_Freight.png" style="width: 443px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 224 </span><span class="caption-text">Report Designer - ShipCountry and Freight</span></p>
+</div>
+<p>Choose Orders table as Data Source, add a Grid report part, add [ShipCountry] and [Freight] to the list of columns. <br clear="right" /></p>
+</li>
+<li><div class="figure align-right" id="id31">
+<span id="report-designer-shipcountry-group-function"></span><a class="reference internal image-reference" href="../_images/Report_Designer_ShipCountry_Group_Function.png"><img alt="../_images/Report_Designer_ShipCountry_Group_Function.png" src="../_images/Report_Designer_ShipCountry_Group_Function.png" style="width: 252px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 225 </span><span class="caption-text">Report Designer - Group ShipCountry</span></p>
+</div>
+<p>Select [ShipCountry] in the report part.</p>
+</li>
+<li><p class="first">Choose Group in Function drop-down. Data will be grouped by each
+available value in [ShipCountry]. <br clear="right" /></p>
+</li>
+<li><p class="first">Select
+[Freight] in the report part.</p>
+</li>
+<li><p class="first">Click the Grand Total icon to open the pop-up.</p>
+</li>
+<li><p class="first">Enter the display label in Grand Total Label box (e.g. &#8220;Total
+Freight Costs&#8221;).</p>
+</li>
+<li><p class="first">Select Sum in Grand Total Function drop-down.</p>
+</li>
+<li><p class="first">The data type Money is automatically suggested in Data Type
+drop-down.</p>
+</li>
+<li><p class="first">Click OK to close the pop-up.</p>
+<div class="figure" id="id32">
+<span id="report-designer-freight-grand-total-sum"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Freight_Grand_Total_Sum.png"><img alt="../_images/Report_Designer_Freight_Grand_Total_Sum.png" src="../_images/Report_Designer_Freight_Grand_Total_Sum.png" style="width: 590px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 226 </span><span class="caption-text">Report Designer - Grand Total Sum for Freight</span></p>
+</div>
+</li>
+<li><p class="first">Click
+the Sub Total icon to open the pop-up.</p>
+</li>
+<li><p class="first">Enter the display label in Subtotal Label box (e.g. &#8220;Freight
+Costs for this Country&#8221;).</p>
+</li>
+<li><p class="first">Select Sum in Subtotal Function drop-down.</p>
+</li>
+<li><p class="first">The data type Money is automatically suggested in Data Type
+drop-down.</p>
+</li>
+<li><p class="first">Click OK to close the pop-up.</p>
+<div class="figure" id="id33">
+<span id="report-designer-freight-sub-total-sum"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Freight_Sub_Total_Sum.png"><img alt="../_images/Report_Designer_Freight_Sub_Total_Sum.png" src="../_images/Report_Designer_Freight_Sub_Total_Sum.png" style="width: 596px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 227 </span><span class="caption-text">Report Designer - Sub Total Sum for Freight</span></p>
+</div>
+</li>
+<li><p class="first">Click Save at the top.</p>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="configure-field-properties-in-header-formatting-section">
+<h2>Configure field properties in Header Formatting section<a class="headerlink" href="#configure-field-properties-in-header-formatting-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can adjust formatting for the header row:</p>
+<ul class="simple">
+<li>Set column width.</li>
+<li>Choose a font face and font size.</li>
+<li>Choose text effects bold, italic and underlined.</li>
+<li>Choose text alignment left, center, right or justify.</li>
+<li>Choose text color and cell color (see <a class="reference internal" href="#configure-field-properties-in-data-formatting-section">Configure field properties in
+Data Formatting
+section</a>).</li>
+<li>Turn on or off word wrap option.</li>
+<li>Set the &#8220;grouping key&#8221; for specific columns to stand next to each
+other. Screenshot to be updated.</li>
+</ul>
+</div>
+<div class="section" id="configure-field-properties-in-drill-down-section">
+<h2>Configure field properties in Drill Down section<a class="headerlink" href="#configure-field-properties-in-drill-down-section" title="Permalink to this headline">¶</a></h2>
+<p>In this section, user can connect another report as sub-report via the
+values in this parent report.</p>
+<ol class="arabic">
+<li><div class="figure align-right" id="id34">
+<span id="report-designer-sub-report-field-mapping"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Sub-report_Field_Mapping.png"><img alt="../_images/Report_Designer_Sub-report_Field_Mapping.png" src="../_images/Report_Designer_Sub-report_Field_Mapping.png" style="width: 458px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 228 </span><span class="caption-text">Report Designer - Drill Down Field Mapping</span></p>
+</div>
+<p>Click the icon to open Sub-report Settings pop-up.</p>
+</li>
+<li><p class="first">Select the sub-report from the drop-down list.</p>
+</li>
+<li><p class="first">Tick the checkbox in case sub-report needs to filter in the same way
+as parent report.</p>
+</li>
+<li><p class="first">Click Add Field Mapping button to insert a new mapping row.</p>
+</li>
+<li><p class="first">Select a field in current report to use its values as filter</p>
+</li>
+<li><p class="first">Select a field in sub-report to be filtered by those values. (<a class="reference internal" href="#report-designer-sub-report-field-mapping"><span class="std std-numref">Fig. 228</span></a>)</p>
+</li>
+<li><p class="first">Continue to add more field mappings as needed.</p>
+</li>
+<li><p class="first">Choose a display style for the sub-report in the Style drop-down.</p>
+</li>
+<li><p class="first">Click OK to save the setting. <br clear="right" /></p>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="usage_report_on_multiple_tables.html"><span class="doc">Report on Multiple Tables</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_report_designer_format.html" class="btn btn-neutral float-right" title="Report Designer/Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_report_designer_data_source.html" class="btn btn-neutral" title="Report Designer/Data Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

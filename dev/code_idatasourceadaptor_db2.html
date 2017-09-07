@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataSourceAdaptor - DB2 Sample &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Customization via Interfaces" href=".system_customization.html"/>
+        <link rel="next" title="Walkthroughs" href=".walkthroughs.html"/>
+        <link rel="prev" title="ICacheProvider - Redis Sample" href="code_icacheprovider_redis.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/.stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_mvc_setup_guide.html">MVC Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_html_starter_kit.html">HTML Starter Kit Setup Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href=".starter_kits.html">Starter Kits</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href=".system_customization.html">System Customization via Interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href=".walkthroughs.html">Walkthroughs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/.supplementary_installation_guides.html">Supplementary Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../install/.install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a> &raquo;</li>
+        
+          <li><a href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a> &raquo;</li>
+        
+          <li><a href=".system_customization.html">System Customization via Interfaces</a> &raquo;</li>
+        
+      <li>DataSourceAdaptor - DB2 Sample</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_idatasourceadaptor_db2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="datasourceadaptor-db2-sample">
+<h1>DataSourceAdaptor - DB2 Sample<a class="headerlink" href="#datasourceadaptor-db2-sample" title="Permalink to this headline">¶</a></h1>
+<p>Izenda has built-in support for most common source database systems
+including MS SQL Server, Azure, Oracle, MySQL and PosgreSQL.</p>
+<p>Other database systems can be easily supported via the
+<code class="docutils literal"><span class="pre">IDataSourceAdaptor</span></code> interface.</p>
+<p>In this sample, we will add a DataSourceAdaptor for <a class="reference external" href="http://www.ibm.com/analytics/us/en/technology/db2/">IBM DB2
+database</a>.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">DB2 Express-C database server setup</p>
+<ol class="arabic">
+<li><p class="first">Download and install the server from
+<a class="reference external" href="http://www.ibm.com/analytics/us/en/technology/db2/db2-trials.html">IBM</a>.</p>
+<p>Note down the password of db2admin user to connect to the server later. <br clear="right" /></p>
+</li>
+<li><p class="first">Open the DB2 Command Window from Start menu to check the server.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> db2
+<span class="go">db2 =&gt; connect to sample</span>
+
+<span class="go">   Database Connection Information</span>
+
+<span class="go"> Database server        = DB2/NT64 11.1.0</span>
+<span class="go"> SQL authorization ID   = ...</span>
+<span class="go"> Local database alias   = SAMPLE</span>
+
+<span class="go">db2 =&gt; terminate</span>
+<span class="go">DB20000I  The TERMINATE command completed successfully.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">DB2 client library</p>
+<ol class="arabic simple">
+<li>Get DB2 .Net driver from the section &#8220;IBM DB2 10.5 client and driver packages&#8221; in <a class="reference external" href="http://www.ibm.com/analytics/us/en/technology/db2/db2-trials.html">the same page</a>.</li>
+<li>Download and install the IBM Data Server Driver Package (DS Driver).</li>
+<li>Check that the file IBM.Data.DB2.dll has been installed (e.g. at C:\Program Files\IBM\IBM DATA SERVER DRIVER\bin\netf40_32).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Xunit unit test only works with 32-bit projects so we will be using the 32-bit driver (netf40_<strong>32</strong>).</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="idatasourceadaptor-implementation">
+<h2>IDataSourceAdaptor Implementation<a class="headerlink" href="#idatasourceadaptor-implementation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reference-idatasourceadaptor-interface-in-a-new-project">
+<h3>Reference IDataSourceAdaptor Interface in a New Project<a class="headerlink" href="#reference-idatasourceadaptor-interface-in-a-new-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Create a new Class Library project in Visual Studio.</p>
+</li>
+<li><p class="first">Name it Izenda.BI.DataAdaptor.RDBMS.DB2.</p>
+</li>
+<li><p class="first">Select a location (e.g. D:\Projects).</p>
+</li>
+<li><p class="first">Select to create new solution.</p>
+</li>
+<li><p class="first">Give the solution name Izenda.BI.DB2DataAdaptor.</p>
+</li>
+<li><p class="first">Tick the Create directory for solution check-box.</p>
+</li>
+<li><p class="first">Click OK to create the project and solution.</p>
+<div class="figure" id="id1">
+<img alt="../_images/New_DataAdaptor_DB2_Project.png" src="../_images/New_DataAdaptor_DB2_Project.png" />
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">New Project</span></p>
+</div>
+</li>
+<li><p class="first">Copy the interface library file Izenda.BI.DataSourceAdapter.dll from
+Izenda installation folder into the newly-created folder
+D:\Projects\Izenda.BI.DataAdaptor.RDBMS.DB2.</p>
+</li>
+<li><p class="first">Open Solution Explorer,
+right-click References in project
+Izenda.BI.DataSourceAdaptor.RDBMS.DB2 and select Add Reference.</p>
+</li>
+<li><p class="first">In Reference Manager pop-up, click Browse and select the file
+Izenda.BI.DataSourceAdapter.dll (in
+D:\Projects\Izenda.BI.DataAdaptor.RDBMS.DB2).</p>
+</li>
+<li><p class="first">Click OK to close Reference Manager pop-up.</p>
+</li>
+<li><p class="first">Verify the interface by double-clicking Izenda.BI.DataSourceAdapter
+in References to open Object Browser.</p>
+</li>
+<li><p class="first">Expand the nodes and select IDataSourceAdaptor to see this list of
+methods to implement.</p>
+<div class="figure" id="id2">
+<img alt="../_images/BI_IDataSourceAdaptor_Interface.png" src="../_images/BI_IDataSourceAdaptor_Interface.png" />
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">IDataSourceAdaptor Interface</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="reference-imb-data-db2-library">
+<h3>Reference IMB.Data.DB2 Library<a class="headerlink" href="#reference-imb-data-db2-library" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Similarly, add reference to the file IBM.Data.DB2.dll at C:\Program
+Files\IBM\IBM DATA SERVER DRIVER\bin\netf40_32.</p>
+<blockquote>
+<div><p>This driver depends on other libraries in the installation so it
+should not be copied to another place.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="implement-the-idatasourceadaptor-interface">
+<h3>Implement the IDataSourceAdaptor Interface<a class="headerlink" href="#implement-the-idatasourceadaptor-interface" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Right-click the default Class1.cs file in Solution Explorer and
+rename it to DB2DataSourceAdaptor.cs, also agree to change the class
+name to DB2DataSourceAdaptor when asked.</p>
+</li>
+<li><p class="first">Add reference to the DLLs being used similarly to the above steps:</p>
+<ul class="simple">
+<li>Izenda.BI.DataAdaptor.RDBMS.dll</li>
+<li>Izenda.BI.Framework.dll</li>
+<li>Izenda.BI.Logging.dll</li>
+<li>Izenda.BI.QueryNormalizer.SQL.dll</li>
+<li>Izenda.BI.RDBMS.dll</li>
+</ul>
+</li>
+<li><p class="first">Implement the methods of the interface using DB2 APIs.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="n">ConnectionStatus</span> <span class="nf">TestConnection</span><span class="p">(</span><span class="n">Guid</span> <span class="n">serverType</span><span class="p">,</span> <span class="kt">string</span> <span class="n">connectionString</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConnectionStatus</span><span class="p">();</span>
+     <span class="k">try</span>
+     <span class="p">{</span>
+         <span class="n">DB2Connection</span> <span class="n">connect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DB2Connection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">);</span>
+         <span class="n">connect</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+         <span class="n">result</span><span class="p">.</span><span class="n">Status</span> <span class="p">=</span> <span class="n">ConnectDBStatus</span><span class="p">.</span><span class="n">Success</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">result</span><span class="p">.</span><span class="n">Status</span> <span class="p">=</span> <span class="n">ConnectDBStatus</span><span class="p">.</span><span class="n">Fail</span><span class="p">;</span>
+         <span class="n">result</span><span class="p">.</span><span class="n">ErrorMessage</span> <span class="p">=</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">;</span>
+     <span class="p">}</span>
+
+     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The full implementation for DB2 will be updated later.</p>
+</div>
+</div>
+<div class="section" id="add-unittest-project">
+<h3>Add UnitTest Project<a class="headerlink" href="#add-unittest-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Rick click Solution &#8216;Izenda.BI.DataAdaptor.RDBMS.DB2&#8217; in Solution
+Explorer and select Add &gt; New Project.</li>
+<li>Add a Class Library project named
+Izenda.BI.DataAdaptor.RDBMS.DB2.Test.</li>
+<li>Reference the project Izenda.BI.DataAdaptor.RDBMS.DB2 (Add Reference
+and tick Izenda.BI.DataAdaptor.RDBMS.DB2 in Projects &gt; Solution).</li>
+<li>Reference xUnit Library.<ol class="arabic">
+<li>Open NuGet Package Manager pop-up from Tools &gt; NuGet Package
+Manager &gt; Manage NuGet Packages for Solution...</li>
+<li>Click Browse tab and enter xunit in the text box to search.</li>
+<li>Select xunit on the left and tick the
+Izenda.BI.DataAdaptor.RDBMS.DB2.Test project check-box on the
+right.</li>
+<li>Select version 1.9.1 (working at the time of writing) and click
+Install.</li>
+<li>Similarly install xunit.runner.visualstudio version 2.1.0 to
+Izenda.BI.DataAdaptor.RDBMS.DB2.Test project.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="implement-the-tests">
+<h3>Implement the Tests<a class="headerlink" href="#implement-the-tests" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Right-click the default Class1.cs file in Solution Explorer and
+rename it to DB2DataSourceAdaptorTest.cs, also agree to change the
+class name to DB2DataSourceAdaptorTest when asked.</li>
+<li>Add reference to the DLLs being used similarly to the above steps.</li>
+<li>Implement the tests in xUnit.</li>
+</ol>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.DataAdaptor.DB2</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Constants</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Xunit</span><span class="p">;</span>
+
+
+<span class="k">namespace</span> <span class="nn">Izenda.BI.DataAdaptor.RDBMS.DB2.Test</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">DB2DataSourceAdaptorTest</span>
+   <span class="p">{</span>
+
+      <span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">conn</span> <span class="p">=</span> <span class="s">&quot;Database=SAMPLE;UserID=db2admin;Password=DB2_admin;Server=localhost:50000&quot;</span><span class="p">;</span>
+
+<span class="na">      [Fact]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">TestConnection</span><span class="p">()</span>
+      <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">adaptor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DB2DataSourceAdaptor</span><span class="p">();</span>
+           <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">adaptor</span><span class="p">.</span><span class="n">TestConnection</span><span class="p">(</span><span class="k">new</span> <span class="n">Guid</span><span class="p">(</span><span class="s">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span><span class="p">),</span> <span class="n">conn</span><span class="p">);</span>
+           <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Status</span><span class="p">,</span><span class="n">ConnectDBStatus</span><span class="p">.</span><span class="n">Success</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Edit the connection conn to the correct password and IP address of the DB2 server. Also, the connection should be read from the configuration file in an actual code.</p>
+</div>
+</div>
+<div class="section" id="run-the-unittests">
+<h3>Run the UnitTests<a class="headerlink" href="#run-the-unittests" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open Test Explorer from Menu &gt; Test &gt; Windows.</p>
+</li>
+<li><p class="first">Click Run All in Test Explorer.</p>
+<div class="figure" id="id3">
+<img alt="../_images/DB2DataSourceAdaptorTest_TestExplorer.png" src="../_images/DB2DataSourceAdaptorTest_TestExplorer.png" />
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Test Explorer Result</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".walkthroughs.html" class="btn btn-neutral float-right" title="Walkthroughs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_icacheprovider_redis.html" class="btn btn-neutral" title="ICacheProvider - Redis Sample" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

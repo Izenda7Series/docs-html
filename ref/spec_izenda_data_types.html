@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Izenda Data Types &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Specification" href=".system_specification.html"/>
+        <link rel="next" title="Izenda Operators" href="spec_izenda_operators.html"/>
+        <link rel="prev" title="System Specification" href=".system_specification.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_specification.html">System Specification</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Izenda Data Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-of-data-types">List of Data Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-data-type-mapping">Default Data Type Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-type-precedence">Data Type Precedence</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_operators.html">Izenda Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_functions.html">Izenda Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izenda_system_variables.html">Izenda System Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".system_specification.html">System Specification</a> &raquo;</li>
+        
+      <li>Izenda Data Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/spec_izenda_data_types.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="izenda-data-types">
+<h1>Izenda Data Types<a class="headerlink" href="#izenda-data-types" title="Permalink to this headline">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Data Types</p>
+<p>All DBMS (Database Management System) enforce classifying data into data types, for data integrity and performance (disk reading and writing). However, each DBMS uses a data type terminology different from standard SQL, and even the standard terminology may be too technical for end-users to understand.</p>
+<p>For example: the case with <a class="reference external" href="https://en.wikipedia.org/wiki/SQL:1999#Boolean_data_types">Boolean data types</a>.</p>
+<p>Izenda presents end-users with a generic data type system using familiar names.</p>
+</div>
+<p><br clear="right" /></p>
+<div class="section" id="list-of-data-types">
+<h2>List of Data Types<a class="headerlink" href="#list-of-data-types" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Name</th>
+<th class="head">Description</th>
+<th class="head">ISO</th>
+<th class="head">Microsoft SQL Server</th>
+<th class="head">MySQL</th>
+<th class="head">Oracle</th>
+<th class="head">PostgreSQL</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Numeric</th>
+<td>Numbers, including negative values, integers or real numbers (having decimal points).</td>
+<td>integer, dec, float, double precision</td>
+<td>tinyint, smallint, int, bigint, decimal, float, real</td>
+<td>tinyint, smallint, mediumint, int, integer, bigint, decimal, numeric, fixed, float, double, double precision, real</td>
+<td>number, binary_float, binary_double, binary_integer</td>
+<td>smallint, bigint, integer, double precision, real, numeric</td>
+</tr>
+<tr class="row-odd"><th class="stub">Text</th>
+<td>Text, maximum 4,000 chars.</td>
+<td>character, char varying, character varying, national char, national character, national char varying, nation character varying, nation text</td>
+<td>char, varchar, nchar, nvarchar, text, ntext</td>
+<td>char, varchar</td>
+<td>char, varchar2, nchar, nvarchar2</td>
+<td>character, char, character varying, varchar, text</td>
+</tr>
+<tr class="row-even"><th class="stub">Datetime</th>
+<td>Date combined with time of day.</td>
+<td>timestamp, date</td>
+<td>smaldatetime, datetime, date, datetime2</td>
+<td>date, datetime, timestamp</td>
+<td>date, timestamp</td>
+<td>date, timestamp, timestamp without time zone, timestamp with time zone</td>
+</tr>
+<tr class="row-odd"><th class="stub">Money</th>
+<td>Currency amount.</td>
+<td>numeric</td>
+<td>money, smallmoney</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>money</td>
+</tr>
+<tr class="row-even"><th class="stub">Boolean</th>
+<td>TRUE and FALSE values.</td>
+<td>boolean</td>
+<td>bit</td>
+<td>bool, boolean, tinyint(1)</td>
+<td>number(1)</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><th class="stub">Image</th>
+<td>The binary format of an image.</td>
+<td>N/A</td>
+<td>image</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><th class="stub">Lob</th>
+<td>Binary data.</td>
+<td>binary large object</td>
+<td>text, ntext, binary, varbinary</td>
+<td>binary, varbinary, tinyblob, blob, mediumblob, longblob, tinytext, text, mediumtext, longtext</td>
+<td>clob, nlob, long, blob, bfile, raw, long raw</td>
+<td>bytea</td>
+</tr>
+<tr class="row-odd"><th class="stub">Time</th>
+<td>Time data only (hour, minute, and second values)</td>
+<td>Time</td>
+<td>Time</td>
+<td>Time</td>
+<td>N/A</td>
+<td>time, time without time zone, time with time zone</td>
+</tr>
+<tr class="row-even"><th class="stub">XML</th>
+<td>Extensible Markup Language (XML) data type</td>
+<td>N/A</td>
+<td>XML</td>
+<td>N/A</td>
+<td>XMLType</td>
+<td>XML</td>
+</tr>
+<tr class="row-odd"><th class="stub">JSON</th>
+<td>JavaScript Object Notation (JSON) data type</td>
+<td>N/A</td>
+<td>XML</td>
+<td>JSON</td>
+<td>N/A</td>
+<td>JSON</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="default-data-type-mapping">
+<h2>Default Data Type Mapping<a class="headerlink" href="#default-data-type-mapping" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Name</th>
+<th class="head">Description</th>
+<th class="head">ISO</th>
+<th class="head">Microsoft SQL Server</th>
+<th class="head">MySQL</th>
+<th class="head">Oracle</th>
+<th class="head">PostgreSQL</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Numeric</th>
+<td>Numbers, including negative values, integers or real numbers (having decimal points).</td>
+<td>dec</td>
+<td>decimal</td>
+<td>decimal</td>
+<td>number</td>
+<td>numeric</td>
+</tr>
+<tr class="row-odd"><th class="stub">Text</th>
+<td>Text, maximum 4,000 chars.</td>
+<td>nation character varying</td>
+<td>nvarchar</td>
+<td>varchar</td>
+<td>nvarchar2</td>
+<td>character varying</td>
+</tr>
+<tr class="row-even"><th class="stub">Datetime</th>
+<td>Date combined with time of day.</td>
+<td>timestamp</td>
+<td>datetime2</td>
+<td>datetime</td>
+<td>date</td>
+<td>timestamp</td>
+</tr>
+<tr class="row-odd"><th class="stub">Money</th>
+<td>Currency amount.</td>
+<td>numeric</td>
+<td>money</td>
+<td>decimal</td>
+<td>number</td>
+<td>money</td>
+</tr>
+<tr class="row-even"><th class="stub">Boolean</th>
+<td>TRUE and FALSE values.</td>
+<td>boolean</td>
+<td>bit</td>
+<td>tinyint(1)</td>
+<td>number(1)</td>
+<td>boolean</td>
+</tr>
+<tr class="row-odd"><th class="stub">Image</th>
+<td>The binary format of an image.</td>
+<td>binary large object</td>
+<td>image</td>
+<td>longblob</td>
+<td>blob</td>
+<td>bytea</td>
+</tr>
+<tr class="row-even"><th class="stub">Lob</th>
+<td>Binary data.</td>
+<td>binary large object</td>
+<td>varbinary</td>
+<td>longblob</td>
+<td>blob</td>
+<td>bytea</td>
+</tr>
+<tr class="row-odd"><th class="stub">Time</th>
+<td>Time data only (hour, minute, and second values)</td>
+<td>Time</td>
+<td>Time</td>
+<td>Time</td>
+<td>N/A</td>
+<td>time with time zone</td>
+</tr>
+<tr class="row-even"><th class="stub">XML</th>
+<td>Extensible Markup Language (XML) data type</td>
+<td>N/A</td>
+<td>XML</td>
+<td>N/A</td>
+<td>XMLType</td>
+<td>XML</td>
+</tr>
+<tr class="row-odd"><th class="stub">JSON</th>
+<td>JavaScript Object Notation (JSON) data type</td>
+<td>N/A</td>
+<td>nvarchar (JSON functions will be supported)</td>
+<td>JSON</td>
+<td>N/A</td>
+<td>JSON</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-type-precedence">
+<h2>Data Type Precedence<a class="headerlink" href="#data-type-precedence" title="Permalink to this headline">¶</a></h2>
+<p>When an operator combines two expressions of different data types, the
+expression of the lower precedence data type is converted to the higher
+precedence data type. If the conversion is not available, an error is
+returned.</p>
+<ol class="arabic simple">
+<li>Datetime (highest)</li>
+<li>Numeric</li>
+<li>Money</li>
+<li>Boolean</li>
+<li>Text</li>
+<li>Image</li>
+<li>Lob</li>
+<li>Time</li>
+<li>XML</li>
+<li>JSON (lowest)</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spec_izenda_operators.html" class="btn btn-neutral float-right" title="Izenda Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".system_specification.html" class="btn btn-neutral" title="System Specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

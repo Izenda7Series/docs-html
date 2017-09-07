@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Report Designer/Gauge &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
+        <link rel="next" title="Report Designer/Map" href="doc_report_designer_map.html"/>
+        <link rel="prev" title="Report Designer/Chart" href="doc_report_designer_chart.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_schedule.html">Report Designer/Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_access.html">Report Designer/Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_grid.html">Report Designer/Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_chart.html">Report Designer/Chart</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Report Designer/Gauge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#define-a-linear-gauge">Define a Linear Gauge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-separator">Define Separator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-a-solid-gauge">Define a Solid Gauge</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_map.html">Report Designer/Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_form.html">Report Designer/Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_report_part_menu.html">Report Designer/Report Part Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_list.html">Report List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_viewer.html">Report Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
+        
+      <li>Report Designer/Gauge</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_report_designer_gauge.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="report-designer-gauge">
+<h1>Report Designer/Gauge<a class="headerlink" href="#report-designer-gauge" title="Permalink to this headline">¶</a></h1>
+<p>Gauge is a built-in type of report part that displays data using a
+speedometer.</p>
+<div class="section" id="define-a-linear-gauge">
+<h2>Define a Linear Gauge<a class="headerlink" href="#define-a-linear-gauge" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<span id="gauge-properties"></span><a class="reference internal image-reference" href="../_images/Gauge_Properties.png"><img alt="../_images/Gauge_Properties.png" src="../_images/Gauge_Properties.png" style="width: 251px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 285 </span><span class="caption-text">Report Designer - Gauge Properties</span></p>
+</div>
+<ol class="arabic simple">
+<li>Select the chart in Report Body (See <a class="reference internal" href="doc_report_designer_fields.html#manage-report-parts"><span class="std std-ref">Manage Report Parts</span></a> for how to
+add a chart).</li>
+<li>Click the expand icon (&lt;) on the right to open the Properties boxes
+if needed.</li>
+<li>Select the vertical Report Part Properties box.</li>
+<li>The properties are listed in Report Part Properties box in these
+sections. (<a class="reference internal" href="#gauge-properties"><span class="std std-numref">Fig. 285</span></a>)<ul>
+<li>General Info</li>
+<li>Gauge</li>
+<li>Grouping</li>
+<li>View</li>
+<li>Printing <br clear="right" /></li>
+</ul>
+</li>
+</ol>
+<p>User can configure the properties and see changes reflected in
+Preview pane:</p>
+<ul>
+<li><p class="first">Select Linear Gauge in Gauge Type drop-down. (See below for Solid
+Gauge and Simple Gauge.)</p>
+</li>
+<li><div class="figure align-right" id="id2">
+<span id="gauge-border-settings"></span><a class="reference internal image-reference" href="../_images/Gauge_Border_Settings.png"><img alt="../_images/Gauge_Border_Settings.png" src="../_images/Gauge_Border_Settings.png" style="width: 458px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 286 </span><span class="caption-text">Report Designer - Gauge Border Settings</span></p>
+</div>
+<p>Configure border settings:</p>
+<ol class="arabic simple">
+<li>In Gauge group, click the gear icon (⚙) to open Gauge Border Settings pop-up.</li>
+<li>Choose the border to be visible or not.</li>
+<li>Select a border color.</li>
+<li>Select the border thickness (in pixels).</li>
+<li>Click OK to close the Border Settings pop-up. <br clear="right" /></li>
+</ol>
+</li>
+<li><p class="first">Customize the relative distance between the tick marks (in Intervals
+box for Linear Gauge only).</p>
+</li>
+<li><p class="first">Select to use Separator. (See <a class="reference internal" href="#define-separator">Define
+Separator</a>)</p>
+</li>
+<li><p class="first">It looks better to invert the Linear Gauge (to horizontal direction).</p>
+</li>
+<li><div class="figure align-right" id="id3">
+<span id="gauge-data-refresh-interval-settings"></span><a class="reference internal image-reference" href="../_images/Gauge_Data_Refresh_Interval_Settings.png"><img alt="../_images/Gauge_Data_Refresh_Interval_Settings.png" src="../_images/Gauge_Data_Refresh_Interval_Settings.png" style="width: 460px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 287 </span><span class="caption-text">Report Designer - Gauge Data Refresh Interval Settings</span></p>
+</div>
+<p>Configure Data Refresh Interval if needed. <br clear="right" /></p>
+</li>
+<li><p class="first">Optionally display a long report in multiple pages.</p>
+</li>
+<li><p class="first">Optionally choose to print each grid in a new page by checking Page
+Break After Separator in Printing group.</p>
+</li>
+</ul>
+<div class="figure" id="id4">
+<span id="nw-orders-linear-gauge-sum-freight-group-shipcity"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity).png"><img alt="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity).png" src="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity).png" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 288 </span><span class="caption-text">Northwind Orders Linear Gauge</span></p>
+</div>
+<p>To define the above sample gauge:</p>
+<ol class="arabic simple">
+<li>Select Northwind Orders table in Data Source.</li>
+<li>Add a gauge report part and select Linear Gauge as the type.</li>
+<li>Add [ShipCity] to Labels (X-axis) box, it will show up as
+Group(ShipCity).</li>
+<li>Click Add Metrics to create Metrics 1.</li>
+<li>Add [Freight] to Value box, it will show up as Sum(Freight).</li>
+<li>Optionally set the threshold values like following:</li>
+</ol>
+<div class="figure" id="id5">
+<span id="nw-orders-linear-gauge-sum-freight-group-shipcity-threshold"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity)_Threshold.png"><img alt="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity)_Threshold.png" src="../_images/NW_Orders_Linear_Gauge_Sum(Freight)_Group(ShipCity)_Threshold.png" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 289 </span><span class="caption-text">Northwind Orders Line Gauge with Threshold</span></p>
+</div>
+<p>Screenshot for Dynamic Threshold to be updated.</p>
+</div>
+<div class="section" id="define-separator">
+<h2>Define Separator<a class="headerlink" href="#define-separator" title="Permalink to this headline">¶</a></h2>
+<p>The Separator option displays multiple sections of gauges according to
+each unique value of the field(s) defined in Separators box.</p>
+<p>For example: this report with multiple gauges, each one for each country in
+Northwind Orders table.</p>
+<div class="figure" id="id6">
+<span id="nw-orders-gauge-separator-shipcountry-sum-freight-group-shipcity"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity).png"><img alt="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity).png" src="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity).png" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 290 </span><span class="caption-text">Northwind Orders Gauge with ShipCountry Separator</span></p>
+</div>
+<ol class="arabic simple">
+<li>Tick Use Separator check-box in Grouping in Report Part Properties to
+see Separators box inside the gauge configuration.</li>
+<li>Add [ShipCity] to Labels (X-axis) box, it will show up as
+Group(ShipCity).</li>
+<li>Click Add Metrics to create Metrics 1.</li>
+<li>Add [Freight] to Value box, it will show up as Sum(Freight).</li>
+<li>Add [ShipCountry] to Separators box, it will show up as
+Group(ShipCountry).</li>
+</ol>
+</div>
+<div class="section" id="define-a-solid-gauge">
+<h2>Define a Solid Gauge<a class="headerlink" href="#define-a-solid-gauge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select Solid Gauge in Gauge Type drop-down.</li>
+<li>The rest of the properties are similar to Linear Gauge.</li>
+</ol>
+<p>An example solid gauge with separator and threshold:</p>
+<div class="figure" id="id7">
+<span id="nw-orders-gauge-separator-shipcountry-sum-freight-group-shipcity-threshold"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity)_Threshold.png"><img alt="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity)_Threshold.png" src="../_images/NW_Orders_Gauge_Separator_ShipCountry_Sum(Freight)_Group(ShipCity)_Threshold.png" style="width: 950px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 291 </span><span class="caption-text">Northwind Orders Gauge with ShipCountry Separator and Threshold</span></p>
+</div>
+<div class="figure align-right" id="id8">
+<span id="report-simple-gauge"></span><a class="reference internal image-reference" href="../_images/Report_Simple_Gauge.png"><img alt="../_images/Report_Simple_Gauge.png" src="../_images/Report_Simple_Gauge.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 292 </span><span class="caption-text">Sample Simple Gauge</span></p>
+</div>
+<p>Sample Simple Gauge. <br clear="right" /></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_report_designer_map.html" class="btn btn-neutral float-right" title="Report Designer/Map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_report_designer_chart.html" class="btn btn-neutral" title="Report Designer/Chart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

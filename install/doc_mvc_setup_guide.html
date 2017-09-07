@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MVC Setup Guide &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started: Integrated Deployment" href=".integrated_deployment.html"/>
+        <link rel="next" title="HTML Starter Kit Setup Guide" href="doc_html_starter_kit.html"/>
+        <link rel="prev" title="Getting Started: Integrated Deployment" href=".integrated_deployment.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".integrated_deployment.html">Getting Started: Integrated Deployment</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MVC Setup Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#downloads-and-materials">Downloads and Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#first-steps">First Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sample-reporting-database-setup">Sample Reporting Database Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-the-application">Starting the Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alternative-environments">Alternative Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_html_starter_kit.html">HTML Starter Kit Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".supplementary_installation_guides.html">Supplementary Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href=".integrated_deployment.html">Getting Started: Integrated Deployment</a> &raquo;</li>
+        
+      <li>MVC Setup Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/doc_mvc_setup_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mvc-setup-guide">
+<h1>MVC Setup Guide<a class="headerlink" href="#mvc-setup-guide" title="Permalink to this headline">¶</a></h1>
+<p>For this installation guide of the MVC5StarterKit, Izenda will demonstrate the process using Visual Studio, SQL Server Management Studio, and Google Chrome.</p>
+<p>Also, for a visual representation of the following guide, please check out our MVC Setup Guide video by clicking <a class="reference external" href="https://www.izenda.com/7-series-installation-videos/#mvc5starter">here</a>.</p>
+<div class="section" id="downloads-and-materials">
+<h2>Downloads and Materials<a class="headerlink" href="#downloads-and-materials" title="Permalink to this headline">¶</a></h2>
+<p>To begin the process of installing the kit, download the EmbeddedUI.zip and API.zip from the latest directory of the Izenda downloads page.</p>
+<p>As well, download the MVC5StarterKit.zip from the Izenda GitHub site.
+This installation guide will reference Visual Studio, SSMS, and Google Chrome. Each of these will be on their latest up-to-date version as of 04/07/2017.</p>
+</div>
+<div class="section" id="first-steps">
+<h2>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Unzip the MVC5StarterKit.zip contents into an easy to access location to be referenced later.</li>
+<li>Unzip the contents of the downloaded EmbeddedUI.zip and API.zip files into an equally easy to access location.</li>
+<li>Navigate through the MVC5StarterKit directory to the file named Mvc5StarterKit.sln and double-click to open the project in Visual Studio. When open, the contents of the project should be listed on the right panel of the screen.</li>
+<li>Now, with the project open, pull up the file explorer with the unzipped API directory open. Navigate to the APIbin directory and copy all of the contents and move them to the Mvc5StarterKitIzendaReferences directory.</li>
+<li>Then navigate back to the API home directory. Take the APIContent, APIEmailTemplates, and APIExport Template directories and move the folders into the Mvc5StarterKitIzendaResources directory.</li>
+<li>Finally, move to the unzipped EmbeddedUI directory and copy all files and folders contained within and move them into the Mvc5StarterKitScriptsizenda directory of the project.</li>
+</ol>
+</div>
+<div class="section" id="sample-reporting-database-setup">
+<h2>Sample Reporting Database Setup<a class="headerlink" href="#sample-reporting-database-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open SQL Server Management Studio. Right click on the “Databases” dropdown and select “New Database”. Give the new database the name “Retail”.</li>
+<li>Now, locate the Retail database script contained within the Mvc5StarterKit directory in the SQLScript folder (Mvc5StarterKitSQLScript). Then run that script on the newly created Retail database to update it. Once the script has successfully executed, the project and reporting database should be in a runnable state.</li>
+</ol>
+</div>
+<div class="section" id="starting-the-application">
+<h2>Starting the Application<a class="headerlink" href="#starting-the-application" title="Permalink to this headline">¶</a></h2>
+<p>In Visual Studio, right click on the project to build, and then run the application in the desired browser (for the purposes of this installation, Google Chrome will be the default browser).</p>
+<p>When the application loads up, use the default System Administrator login credentials to log into the platform for the first time. Select the “Login” button at the top of the screen and enter System into the Tenant field, then use the Username <a class="reference external" href="mailto:IzendaAdmin&#37;&#52;&#48;system&#46;com">IzendaAdmin<span>&#64;</span>system<span>&#46;</span>com</a> with the Password <a class="reference external" href="mailto:Izenda&#37;&#52;&#48;123">Izenda<span>&#64;</span>123</a>.</p>
+<p>Once logged in, navigate to the System tab at the top of the screen. This is where the user will need to enter in their license key and token to validate the deployment. With the deployment validated, the user can then navigate to the Data Model tab to load in that Retail database for reporting purposes.</p>
+<p>Under the Data Model area, select the Connection String tab. With the Connection String tab open, press the “Add Connection” button at the top of the second panel. Then, enter in the Database name as “Retail”, select SQLServer from the Data Server Type dropdown, and then, either through the connection string builder or manually, enter in the connection string to the Retail database hosted in SSMS.</p>
+<p>Once in place, the user can select the Test button to ensure a stable connection to the database and then the connect button to load in references to any Tables, Views, Stored Procedures, and User Defined Functions contained within the Retail Database.</p>
+<p>Now the MVC5StarterKit is in a state that reports and dashboards can begin to be built and deployed.</p>
+<p>Feel free to navigate through the code to see how Izenda was programmatically integrated into the MVC5 default application offered by Microsoft.</p>
+<p>Please review the following file: mvc5starterkitmvc5starterkitizendaboundarycustomadhocreport.cs This is where you can find samples for: Hidden Filters Filter Dropdown Overrides See more information here: All About IAdhocExtension, Hidden Filters, and Filter Dropdown Overrides</p>
+</div>
+<div class="section" id="alternative-environments">
+<h2>Alternative Environments<a class="headerlink" href="#alternative-environments" title="Permalink to this headline">¶</a></h2>
+<p>Contained within the kit are some tenants with custom themes that can be explored by logging in using their specific credentials.
+There are three environments that can be analyzed through the UI and styling assets that can be observed at the code level for each.</p>
+<p>The logins are listed below:
+For each Tenant the following users / roles are configured all use the same password: <a class="reference external" href="mailto:Izenda&#37;&#52;&#48;123">Izenda<span>&#64;</span>123</a></p>
+<p><strong>Tenant: DELDG</strong></p>
+<p>User: <a class="reference external" href="mailto:employee&#37;&#52;&#48;deldg&#46;com">employee<span>&#64;</span>deldg<span>&#46;</span>com</a> Role: employee</p>
+<p>User: <a class="reference external" href="mailto:manager&#37;&#52;&#48;deldg&#46;com">manager<span>&#64;</span>deldg<span>&#46;</span>com</a> Role: manager</p>
+<p>User: <a class="reference external" href="mailto:vp&#37;&#52;&#48;deldg&#46;com">vp<span>&#64;</span>deldg<span>&#46;</span>com</a> Role: VP</p>
+<p><strong>Tenant: NATWR</strong></p>
+<p>User: <a class="reference external" href="mailto:employee&#37;&#52;&#48;natwr&#46;com">employee<span>&#64;</span>natwr<span>&#46;</span>com</a> Role: employee</p>
+<p>User: <a class="reference external" href="mailto:manager&#37;&#52;&#48;natwr&#46;com">manager<span>&#64;</span>natwr<span>&#46;</span>com</a> Role: manager</p>
+<p>User: <a class="reference external" href="mailto:VP&#37;&#52;&#48;natwr&#46;com">VP<span>&#64;</span>natwr<span>&#46;</span>com</a> Role: VP</p>
+<p><strong>Tenant: RETCL</strong></p>
+<p>User: <a class="reference external" href="mailto:employee&#37;&#52;&#48;retcl&#46;com">employee<span>&#64;</span>retcl<span>&#46;</span>com</a> Role: employee</p>
+<p>User: <a class="reference external" href="mailto:manager&#37;&#52;&#48;retcl&#46;com">manager<span>&#64;</span>retcl<span>&#46;</span>com</a> Role: manager</p>
+<p>User: <a class="reference external" href="mailto:vp&#37;&#52;&#48;retcl&#46;com">vp<span>&#64;</span>retcl<span>&#46;</span>com</a> Role: VP</p>
+<p>When registering a new user in this sample all users are hardcoded to the manager role here: Mvc5StarterKitControllersAccountController.cs.</p>
+<p>The CSS can be configured per tenant and an example is provided see below: This is configured here ~mvc5starterkitMvc5StarterKitViewsShared_Layout.cshtml And folder structures are located here ~mvc5starterkitMvc5StarterKitContent</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_html_starter_kit.html" class="btn btn-neutral float-right" title="HTML Starter Kit Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".integrated_deployment.html" class="btn btn-neutral" title="Getting Started: Integrated Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

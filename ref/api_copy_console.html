@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Copy Console APIs &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
+        <link rel="next" title="REST API Object Models" href="models/.rest_api_object_models.html"/>
+        <link rel="prev" title="Copy Management APIs" href="api_copy_management.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".rest_api_documentation.html#list-of-request-headers">List of Request Headers</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".rest_api_documentation.html#list-of-apis">List of APIs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_systemdb_and_license.html">System DB and License APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_connection.html">Connection APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_designer_data.html">Report Designer Data and Expressions APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_report_list.html">Report List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_designer.html">Dashboard Designer APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_dashboard_list.html">Dashboard List APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_advanced_settings.html">Advanced Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_system_configuration.html">System Configuration APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_misc_system_settings.html">Misc System Settings APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_export.html">Export APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_copy_management.html">Copy Management APIs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Copy Console APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_documentation.html">REST API Documentation</a> &raquo;</li>
+        
+      <li>Copy Console APIs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/api_copy_console.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="copy-console-apis">
+<h1>Copy Console APIs<a class="headerlink" href="#copy-console-apis" title="Permalink to this headline">¶</a></h1>
+<p>The Izenda Copy Console Tool will allow you to copy templates, reports and dashboards from one Izenda Configuration database to another or within one configuration database.</p>
+<p>The following APIs are used internally for the tool.</p>
+<div class="section" id="list-of-apis">
+<h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-validate-sourcedata">POST copyManagement/console/validate/sourcedata</a></td>
+<td>Returns a distinct list of connections from selected tenant, reports, templates and dashboards.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-validate-dataconsistent">POST copyManagement/console/validate/dataconsistent</a></td>
+<td>Validates for consistency between source and destination, for example database server types, database mappings and data models.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-validate-source">POST copyManagement/console/validate/source</a></td>
+<td>Validates that ids of source tenant, reports, templates and dashboards are correct.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-validate-destination">POST copyManagement/console/validate/destination</a></td>
+<td>Validates that destination tenants, database mappings and role mappings are correct.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-loadreport">POST copyManagement/console/loadreport</a></td>
+<td>Returns all report/template and related data to be copied to another system.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-copyreport">POST copyManagement/console/copyreport</a></td>
+<td>Copies report and related data to a system.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-updatesubreport">POST copyManagement/console/updatesubreport</a></td>
+<td>Updates the content of copied reports to match destination state.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-loaddashboard">POST copyManagement/console/loaddashboard</a></td>
+<td>Returns all dashboard and related data to be copied to another system.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-copydashboard">POST copyManagement/console/copydashboard</a></td>
+<td>Copies dashboard and related data to a system.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-listreport">POST copyManagement/console/listreport</a></td>
+<td>Returns a list of report definitions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="api-workflow">
+<h2>API Workflow<a class="headerlink" href="#api-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/Copy_Console_API_Workflow.png"><img alt="../_images/Copy_Console_API_Workflow.png" src="../_images/Copy_Console_API_Workflow.png" style="width: 428px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 405 </span><span class="caption-text">Copy Console API Workflow</span></p>
+</div>
+</div>
+<div class="section" id="post-copymanagement-console-validate-sourcedata">
+<h2>POST copyManagement/console/validate/sourcedata<a class="headerlink" href="#post-copymanagement-console-validate-sourcedata" title="Permalink to this headline">¶</a></h2>
+<p>Returns a distinct list of connections from selected tenant, reports, templates and dashboards.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/InputWorkspace.html"><span class="doc">InputWorkspace</span></a> object with <strong>sourceTenantId</strong>, <strong>reportIds</strong>, <strong>templateIds</strong> and <strong>dashboardIds</strong> fields populated</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/InputWorkspace.html"><span class="doc">InputWorkspace</span></a> object with <strong>dataInSource</strong> field populated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/copyManagement/console/validate/sourcedata</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;sourceTenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;78e5699a-6a67-471f-8374-529a80777754&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;reportIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;4b6d592e-ad29-408d-a3f2-845776d555db&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;sourceTenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;reportIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;reportIdsLineNumber&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;templateIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;templateIdsLineNumber&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;dashboardIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;dashboardIdsLineNumber&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;destinationTenants&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;dataInSource&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbSetupInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot;3d4916d1-5a41-4b94-874f-5bedacb89656&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MYSQL] MySQL&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;encrypted&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;sourceConnections&quot;</span><span class="p">:</span> <span class="s2">&quot;To be updated&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;sourceLineNumber&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;destinationLineNumber&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;sourceTenantLineNumber&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-validate-dataconsistent">
+<h2>POST copyManagement/console/validate/dataconsistent<a class="headerlink" href="#post-copymanagement-console-validate-dataconsistent" title="Permalink to this headline">¶</a></h2>
+<p>Validates for consistency between source and destination, for example database server types, database mappings and data models.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/InputWorkspace.html"><span class="doc">InputWorkspace</span></a> object with <strong>dataInSource</strong> field populated</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of strings containing the errors if available</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-validate-source">
+<h2>POST copyManagement/console/validate/source<a class="headerlink" href="#post-copymanagement-console-validate-source" title="Permalink to this headline">¶</a></h2>
+<p>Validates that ids of source tenant, reports, templates and dashboards are correct.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/InputWorkspace.html"><span class="doc">InputWorkspace</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of strings containing the errors if available</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-validate-destination">
+<h2>POST copyManagement/console/validate/destination<a class="headerlink" href="#post-copymanagement-console-validate-destination" title="Permalink to this headline">¶</a></h2>
+<p>Validates that destination tenants, database mappings and role mappings are correct.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an array of <a class="reference internal" href="models/DestinationTenant.html"><span class="doc">DestinationTenant</span></a> objects</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of strings containing the errors if available</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-loadreport">
+<h2>POST copyManagement/console/loadreport<a class="headerlink" href="#post-copymanagement-console-loadreport" title="Permalink to this headline">¶</a></h2>
+<p>Returns all report/template and related data to be copied to another system.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/ReportParameter.html"><span class="doc">ReportParameter</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/WorkspaceDetailConsole.html"><span class="doc">WorkspaceDetailConsole</span></a> object with <strong>reportDefinition</strong>, <strong>sourceTenantConnections</strong>, <strong>dataSourceConnections</strong>, <strong>sourceRoles</strong> and <strong>sourceUserPermissions</strong> fields populated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-copyreport">
+<h2>POST copyManagement/console/copyreport<a class="headerlink" href="#post-copymanagement-console-copyreport" title="Permalink to this headline">¶</a></h2>
+<p>Copies report and related data to a system.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/WorkspaceDetailConsole.html"><span class="doc">WorkspaceDetailConsole</span></a> object, which has been fully-populated from <a class="reference internal" href="#post-copymanagement-console-loadreport">POST copyManagement/console/loadreport</a></div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/CopyStatus.html"><span class="doc">CopyStatus</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>Skipped because of too much data</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-updatesubreport">
+<h2>POST copyManagement/console/updatesubreport<a class="headerlink" href="#post-copymanagement-console-updatesubreport" title="Permalink to this headline">¶</a></h2>
+<p>Updates the content of copied reports to match destination state.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/UpdateSubReportInput.html"><span class="doc">UpdateSubReportInput</span></a> object, with <strong>copyStatus</strong> field populated from the result of <a class="reference internal" href="#post-copymanagement-console-copyreport">POST copyManagement/console/copyreport</a></div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/UpdateSubReportStatus.html"><span class="doc">UpdateSubReportStatus</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-loaddashboard">
+<h2>POST copyManagement/console/loaddashboard<a class="headerlink" href="#post-copymanagement-console-loaddashboard" title="Permalink to this headline">¶</a></h2>
+<p>Returns all dashboard and related data to be copied to another system.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/LoadDashboard.html"><span class="doc">LoadDashboard</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/WorkspaceDetailConsole.html"><span class="doc">WorkspaceDetailConsole</span></a> object with <strong>dashBoardDefinition</strong>, <strong>sourceReports</strong>, <strong>reportDefinitions</strong>, <strong>sourceRoles</strong> and <strong>sourceUserPermissions</strong> fields populated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>Skipped because of too much data</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-copydashboard">
+<h2>POST copyManagement/console/copydashboard<a class="headerlink" href="#post-copymanagement-console-copydashboard" title="Permalink to this headline">¶</a></h2>
+<p>Copies dashboard and related data to a system.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a fully-populated  <a class="reference internal" href="models/WorkspaceDetailConsole.html"><span class="doc">WorkspaceDetailConsole</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/CopyStatus.html"><span class="doc">CopyStatus</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>Skipped because of too much data</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-listreport">
+<h2>POST copyManagement/console/listreport<a class="headerlink" href="#post-copymanagement-console-listreport" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of report definitions.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an array of <a class="reference internal" href="models/ReportKey.html"><span class="doc">ReportKey</span></a> objects</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/ReportDefinition.html"><span class="doc">ReportDefinition</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div>To be updated</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models/.rest_api_object_models.html" class="btn btn-neutral float-right" title="REST API Object Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_copy_management.html" class="btn btn-neutral" title="Copy Management APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

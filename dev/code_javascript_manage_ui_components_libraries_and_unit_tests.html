@@ -1,0 +1,873 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript Manage UI Components, Libraries and Unit Tests &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Intermediate API Client Code Samples" href=".intermediate_api_client_code_samples.html"/>
+        <link rel="next" title="Adding User" href=".adding_user.html"/>
+        <link rel="prev" title="ReactJS to manage data sources and data source fields" href="code_react_manage_datasources_and_datasourcefields.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="code_react_manage_datasources_and_datasourcefields.html">ReactJS to manage data sources and data source fields</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">JavaScript Manage UI Components, Libraries and Unit Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#folders-and-tools-preparation">Folders and Tools Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-packages">Install the Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-unit-test">Configure Unit Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-an-empty-component">Implement an Empty Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-the-unit-test">Write the Unit Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-unit-test">Run the Unit Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-component-in-server">Run the Component in Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implement-categorylist-component">Implement CategoryList Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-behaviors-with-react-testutils">Test Behaviors with React TestUtils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a> &raquo;</li>
+        
+      <li>JavaScript Manage UI Components, Libraries and Unit Tests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_javascript_manage_ui_components_libraries_and_unit_tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="javascript-manage-ui-components-libraries-and-unit-tests">
+<h1>JavaScript Manage UI Components, Libraries and Unit Tests<a class="headerlink" href="#javascript-manage-ui-components-libraries-and-unit-tests" title="Permalink to this headline">¶</a></h1>
+<p>Unit testing raises the need to organize code into separate components.
+Other reasons include code re-use and better management of various
+JavaScript libraries.</p>
+<p>In this sample we will re-write the <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a> sample in
+a commonly recommended way that allows for code re-use, unit test,
+deployment and automatic management of third-party JavaScript packages
+together with their specific versions.</p>
+<div class="section" id="folders-and-tools-preparation">
+<h2>Folders and Tools Preparation<a class="headerlink" href="#folders-and-tools-preparation" title="Permalink to this headline">¶</a></h2>
+<p>We will use <a class="reference external" href="https://www.npmjs.com/">npm</a> as the central place to
+manage the libraries, run the web server and unit tests.</p>
+<ol class="arabic">
+<li><p class="first">npm is packaged inside Node.js so firstly we need to download Node
+installer from <a class="reference external" href="https://nodejs.org">https://nodejs.org</a>.</p>
+</li>
+<li><div class="first figure align-right">
+<a class="reference internal image-reference" href="../_images/Node.js_Setup_Including_npm.png"><img alt="../_images/Node.js_Setup_Including_npm.png" src="../_images/Node.js_Setup_Including_npm.png" style="width: 306px;" /></a>
+</div>
+<p>Install npm</p>
+<p>Run the installer and include npm in the setup. <br clear="right" /></p>
+</li>
+<li><p class="first">Test that npm is installed successfully by running <code class="docutils literal"><span class="pre">npm</span> <span class="pre">--version</span></code>
+in the command-line to see the version number.</p>
+</li>
+<li><p class="first">Create a folder named &#8220;ui_react_samples_2&#8221; anywhere available.</p>
+</li>
+<li><p class="first">Inside it, create a folder named &#8220;src&#8221;. This is where we will put our
+code, with each component in a separate file.</p>
+<blockquote>
+<div><p>Because of this structure, we now must use a web server even for
+testing. For details, please see <a class="reference external" href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin
+policy</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Inside &#8220;src&#8221; folder, create a folder named &#8220;__tests__&#8221;. This is
+where we will put the unit tests.</p>
+</li>
+<li><p class="first">In command-line, go to &#8220;ui_react_samples_2&#8221; folder and run
+<code class="docutils literal"><span class="pre">npm</span> <span class="pre">init</span></code> to create npm configuration file &#8220;package.json&#8221;.</p>
+</li>
+<li><p class="first">Accept default values by pressing Enter.</p>
+</li>
+<li><p class="first">The content of &#8220;ui_react_samples_2/package.json&#8221; will be as
+following:</p>
+</li>
+</ol>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ui_react_samples_2&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ISC&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-packages">
+<h2>Install the Packages<a class="headerlink" href="#install-the-packages" title="Permalink to this headline">¶</a></h2>
+<p>We need the following packages:</p>
+<ul class="simple">
+<li>In both production and development:<ul>
+<li><a class="reference external" href="https://www.npmjs.com/package/react">react</a> and
+<a class="reference external" href="https://www.npmjs.com/package/react-dom">react-dom</a> for the
+UI.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/babel-loader">babel-loader</a>
+<a class="reference external" href="https://www.npmjs.com/package/babel-core">babel-core</a>
+<a class="reference external" href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a>
+<a class="reference external" href="https://www.npmjs.com/package/babel-preset-react">babel-preset-react</a>
+to transpile JSX.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/request">request</a> for REST API
+calls (to replace JQuery that <a class="reference external" href="https://www.npmjs.com/package/jquery">needs
+tweaking</a> to work in
+Node.js).</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/webpack">webpack</a> to bundle the
+source files together</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/json-loader">json-loader</a> for
+webpack.</li>
+</ul>
+</li>
+<li>In development only:<ul>
+<li><a class="reference external" href="https://www.npmjs.com/package/webpack-dev-server">webpack-dev-server</a>
+to serve the bundle.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/http-server">http-server</a> to
+serve HTML files.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/react-addons-test-utils">react-addons-test-utils</a>
+for unit testing.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/mocha">mocha</a> for the test
+framework.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/karma">karma</a>
+<a class="reference external" href="https://www.npmjs.com/package/karma-cli">karma-cli</a>,
+<a class="reference external" href="https://www.npmjs.com/package/karma-mocha">karma-mocha</a>,
+<a class="reference external" href="https://www.npmjs.com/package/karma-webpack">karma-webpack</a>,
+<a class="reference external" href="https://www.npmjs.com/package/karma-chrome-launcher">karma-chrome-launcher</a>
+for the test runner.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/karma-sinon">karma-sinon</a> to
+stub out API calls in unit tests.</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/expect">expect</a> to write
+assertions in unit tests.</li>
+</ul>
+</li>
+</ul>
+<p>Install the packages and save to &#8220;package.json&#8221;:</p>
+<ol class="arabic">
+<li><p class="first">In command-line, go to &#8220;ui_react_samples_2&#8221; folder.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">react</span> <span class="pre">react-dom</span> <span class="pre">--save</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">babel-loader</span> <span class="pre">babel-core</span> <span class="pre">babel-preset-es2015</span> <span class="pre">babel-preset-react</span> <span class="pre">--save</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">request&#64;2.65.0</span> <span class="pre">--save</span></code></p>
+<blockquote>
+<div><p>(Use request at 2.65.0 because higher versions are having an
+issue with webpack.)</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">webpack</span> <span class="pre">json-loader</span> <span class="pre">--save</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">webpack</span> <span class="pre">webpack-dev-server</span> <span class="pre">http-server</span> <span class="pre">react-addons-test-utils</span> <span class="pre">mocha</span></code> <br clear="right" /> <code class="docutils literal"><span class="pre">karma</span> <span class="pre">karma-cli</span> <span class="pre">karma-mocha</span> <span class="pre">karma-webpack</span> <span class="pre">karma-chrome-launcher</span> <span class="pre">karma-sinon</span> <span class="pre">expect</span> <span class="pre">--save-dev</span></code></p>
+<blockquote>
+<div><p>(Packages only needed for development use <code class="docutils literal"><span class="pre">--save-dev</span></code> so that
+they are excluded when deployed for production)</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="configure-unit-test">
+<h2>Configure Unit Test<a class="headerlink" href="#configure-unit-test" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create a text file named &#8220;tests.webpack.js&#8221; in &#8220;ui_react_samples_2&#8221; folder.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="s1">&#39;./src&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="sr">/-test\.jsx$/</span><span class="p">);</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">keys</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The code tells webpack to bundle all files ending in <code class="docutils literal"><span class="pre">-test.jsx</span></code> (test cases) below &#8220;ui_react_samples_2/src&#8221; folder into this &#8220;tests.webpack.js&#8221; file.</p>
+</li>
+<li><p class="first">Create a text file named &#8220;karma.conf.js&#8221; in &#8220;ui_react_samples_2&#8221; folder.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span>
+      <span class="nx">browsers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Chrome&#39;</span><span class="p">],</span>
+      <span class="nx">client</span><span class="o">:</span> <span class="p">{</span> <span class="nx">captureConsole</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+      <span class="nx">singleRun</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">frameworks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;mocha&#39;</span><span class="p">,</span><span class="s1">&#39;sinon&#39;</span><span class="p">],</span>
+      <span class="nx">files</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s1">&#39;tests.webpack.js&#39;</span>
+      <span class="p">],</span>
+      <span class="nx">preprocessors</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s1">&#39;tests.webpack.js&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;webpack&#39;</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nx">reporters</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;dots&#39;</span><span class="p">],</span>
+      <span class="nx">webpack</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">loaders</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx$/</span><span class="p">,</span> <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span><span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;es2015&#39;</span><span class="p">]}},</span>
+                <span class="p">{</span><span class="nx">test</span><span class="o">:</span> <span class="sr">/\.json$/</span><span class="p">,</span> <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;json-loader&#39;</span><span class="p">}</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="nx">watch</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nx">node</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">fs</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span><span class="p">,</span>
+            <span class="nx">net</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span><span class="p">,</span>
+            <span class="nx">tls</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span>
+          <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">webpackServer</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">noInfo</span><span class="o">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">files</span></code> section says that <code class="docutils literal"><span class="pre">tests.webpack.js</span></code> should be used to test, and <code class="docutils literal"><span class="pre">preprocessors</span></code> section tells webpack to process this file in advance (which bundles all test cases into the file).</p>
+<p>Also, the <code class="docutils literal"><span class="pre">loaders</span></code> section inside <code class="docutils literal"><span class="pre">webpack</span></code> tells webpack to use babel loader for JSX and json loader for json files.</p>
+</li>
+<li><p class="first">Finally, edit &#8220;package.json&#8221; to change the npm test command to call karma:</p>
+</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&quot;scripts&quot;: {
+   &quot;test&quot;: &quot;karma start&quot;
+},
+</pre></div>
+</div>
+</div>
+<div class="section" id="implement-an-empty-component">
+<h2>Implement an Empty Component<a class="headerlink" href="#implement-an-empty-component" title="Permalink to this headline">¶</a></h2>
+<p>Create a text file named &#8220;CategoryList.jsx&#8221; in
+&#8220;ui_react_samples_2/src&#8221;.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>var React = require(&#39;react&#39;);
+
+module.exports = React.createClass({
+   render: function() {
+      return &lt;div&gt;&lt;/div&gt;
+   }
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-the-unit-test">
+<h2>Write the Unit Test<a class="headerlink" href="#write-the-unit-test" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create a text file named &#8220;CategoryList-test.jsx&#8221; in
+&#8220;ui_react_samples_2/src/__tests__&#8221;.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">TestUtils</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-addons-test-utils&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;expect&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">CategoryList</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../CategoryList.jsx&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;CategoryList&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+   <span class="nx">before</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">done</span><span class="p">){</span>
+      <span class="nx">sinon</span>
+         <span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">yields</span><span class="p">(</span>  <span class="kc">null</span><span class="p">,</span>
+           <span class="p">{</span><span class="nx">statusCode</span><span class="o">:</span><span class="mi">200</span><span class="p">},</span>
+           <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span>
+             <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s2">&quot;192a433a-383e-4093-a21c-266b9a3031c2&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Category_1&quot;</span><span class="p">},</span>
+             <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s2">&quot;3c55a8ac-5763-4dfd-9e1e-788e0e741400&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Category_2&quot;</span><span class="p">},</span>
+             <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="s2">&quot;3c55a8ac-5763-4dfd-9e1e-788e0e741401&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Category_3&quot;</span><span class="p">}]));</span>
+      <span class="nx">done</span><span class="p">();</span>
+   <span class="p">});</span>
+
+   <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;renders an ul with lis&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">categoryList</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">renderIntoDocument</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">CategoryList</span> <span class="nx">rootUrl</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">);</span>
+
+<span class="hll">      <span class="kd">var</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">findRenderedDOMComponentWithTag</span><span class="p">(</span>
+</span><span class="hll">         <span class="nx">categoryList</span><span class="p">,</span> <span class="s1">&#39;ul&#39;</span>
+</span>      <span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">ul</span><span class="p">).</span><span class="nx">toExist</span><span class="p">();</span>
+
+<span class="hll">      <span class="kd">var</span> <span class="nx">lis</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">scryRenderedDOMComponentsWithTag</span><span class="p">(</span>
+</span><span class="hll">         <span class="nx">categoryList</span><span class="p">,</span> <span class="s1">&#39;li&#39;</span>
+</span>      <span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">lis</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+   <span class="p">});</span>
+
+   <span class="nx">after</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">done</span><span class="p">){</span>
+     <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+     <span class="nx">done</span><span class="p">();</span>
+   <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">In <code class="docutils literal"><span class="pre">before</span></code>, we use sinon to stub any GET request to return successfully by statusCode 200 with a mock array of 3 categories as response. (See <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a> for sample of actual response.)</p>
+</li>
+<li><p class="first">In <code class="docutils literal"><span class="pre">&quot;renders</span> <span class="pre">an</span> <span class="pre">ul</span> <span class="pre">with</span> <span class="pre">lis&quot;</span></code>, we use React TestUtils to render the component with a dummy url, then use TestUtils functions to find and assert the UI elements.</p>
+</li>
+<li><p class="first">In <code class="docutils literal"><span class="pre">after</span></code>, we restore the original request.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="run-the-unit-test">
+<h2>Run the Unit Test<a class="headerlink" href="#run-the-unit-test" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In command-line, go to &#8220;ui_react_samples_2&#8221; folder and run
+<code class="docutils literal"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">--silent</span> <span class="pre">test</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">karma</span> <span class="pre">start</span></code> should be called and after a while, open a Chrome
+browser window, then fail as expected with the messages
+<code class="docutils literal"><span class="pre">CategoryList</span> <span class="pre">renders</span> <span class="pre">an</span> <span class="pre">ul</span> <span class="pre">with</span> <span class="pre">lis</span> <span class="pre">FAILED</span></code> and
+<code class="docutils literal"><span class="pre">Executed</span> <span class="pre">1</span> <span class="pre">of</span> <span class="pre">1</span> <span class="pre">(1</span> <span class="pre">FAILED)</span> <span class="pre">ERROR</span></code>.</li>
+</ol>
+<p>In next sections we will work on CategoryList code to make the unit test
+succeed, as well as more tests to make use of React TestUtils&#8217;
+<code class="docutils literal"><span class="pre">Simulate</span></code>.</p>
+</div>
+<div class="section" id="run-the-component-in-server">
+<h2>Run the Component in Server<a class="headerlink" href="#run-the-component-in-server" title="Permalink to this headline">¶</a></h2>
+<p>To run the component, we render it in a starting page, then use webpack
+to bundle the page together with the libraries, then use
+webpack-dev-server to serve the JavaScript bundle. This bundle will be
+included in an HTML page served by the http-server.</p>
+<ol class="arabic">
+<li><p class="first">Create the starting page named &#8220;index.jsx&#8221; in &#8220;ui_react_samples_2&#8221;
+folder.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">ReactDOM</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-dom&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">CategoryList</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./src/CategoryList&#39;</span><span class="p">);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">CategoryList</span> <span class="nx">rootUrl</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;http://127.0.0.1:8888/api/&quot;</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the default webpack configuration file named &#8220;webpack.config.js&#8221; in &#8220;ui_react_samples_2&#8221; folder.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./index.jsx&#39;</span><span class="p">,</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span><span class="p">,</span>
+        <span class="nx">publicPath</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8090/assets&#39;</span>
+        <span class="c1">// url to include the bundle in HTML page will be http://localhost:8090/assets/bundle.js</span>
+    <span class="p">},</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">loaders</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx$/</span><span class="p">,</span> <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span><span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;es2015&#39;</span><span class="p">]}},</span>
+            <span class="p">{</span><span class="nx">test</span><span class="o">:</span> <span class="sr">/\.json$/</span><span class="p">,</span> <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">externals</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//don&#39;t bundle the &#39;react&#39; npm package with our bundle.js</span>
+        <span class="c1">//but get it from a global &#39;React&#39; variable</span>
+        <span class="s1">&#39;react&#39;</span><span class="o">:</span> <span class="s1">&#39;React&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">,</span> <span class="s1">&#39;.jsx&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">fs</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span><span class="p">,</span>
+      <span class="nx">net</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span><span class="p">,</span>
+      <span class="nx">tls</span><span class="o">:</span> <span class="s1">&#39;empty&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the HTML page named &#8220;index.html&#8221; in &#8220;ui_react_samples_2&#8221; folder.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- include react --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./node_modules/react/dist/react-with-addons.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- id=&quot;app&quot; is where the react component will be rendered --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- include the webpack-dev-server script so changes are automatically reloaded --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://localhost:8090/webpack-dev-server.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- include the bundle from webpack --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://localhost:8090/assets/bundle.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add commands to &#8220;package.json&#8221; to start the server</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&quot;scripts&quot;: {
+ &quot;test&quot;: &quot;karma start&quot;,
+ &quot;start&quot;: &quot;npm run serve | npm run dev&quot;,
+ &quot;serve&quot;: &quot;./node_modules/.bin/http-server -p 8080&quot;,
+ &quot;dev&quot;: &quot;webpack-dev-server --progress --colors --port 8090&quot;
+},
+</pre></div>
+</div>
+</li>
+<li><p class="first">Start the server by running <code class="docutils literal"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code>.</p>
+</li>
+<li><p class="first">Open browser and go to <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a> to see a blank page.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="implement-categorylist-component">
+<h2>Implement CategoryList Component<a class="headerlink" href="#implement-categorylist-component" title="Permalink to this headline">¶</a></h2>
+<p>The JavaScript code is nearly the same as <a class="reference internal" href="code_react_manage_the_list_of_categories.html"><span class="doc">ReactJS to manage the list of categories</span></a>, but without the HTML code.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>var React = require(&#39;react&#39;);
+var request = require(&#39;request&#39;);
+
+module.exports = React.createClass({
+    getInitialState: function() {
+      return {
+        categoryArray: new Array()
+      };
+    },
+    componentDidMount: function() {
+      this.fetchData();
+    },
+    render: function() {
+      var lines = this.state.categoryArray.map(function(category) {
+        return (
+         &lt;li key={category.id}&gt;
+         &lt;input type=&quot;text&quot; id={category.id} value={category.name} onChange={this.reflectChangedData.bind(this,category.id)} /&gt;&amp;nbsp;
+         &lt;button onClick={this.removeCategory.bind(this,category.id)}&gt;Remove&lt;/button&gt;
+         &lt;/li&gt;
+        )
+      }.bind(this));
+      return (
+        &lt;div style={{&quot;border&quot;: &quot;1px solid black&quot;, &quot;width&quot;: &quot;400px&quot;}}&gt;
+        &lt;button onClick={this.addCategory}&gt;Add&lt;/button&gt;
+        &lt;ul&gt; {lines} &lt;/ul&gt;
+        &lt;button onClick={this.pushData}&gt;Save&lt;/button&gt;
+        &lt;/div&gt;
+      )
+    },
+    fetchData: function() {
+      // TODO
+    },
+    reflectChangedData: function(id, event) {
+      var categories = this.state.categoryArray;
+      var pos = categories.map(function(x) {return x.id; }).indexOf(id);
+      categories[pos].name = event.target.value;
+      this.setState({categoryArray : categories});
+    },
+    pushData: function() {
+      // TODO
+    },
+    addCategory: function(e) {
+      e.preventDefault();
+      var categories = this.state.categoryArray;
+      var newId = &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == &#39;x&#39; ? r : (r&amp;0x3|0x8);
+        return v.toString(16);
+      });
+      categories.push({id: newId, name: null});
+      this.setState({categoryArray : categories});
+    },
+    removeCategory: function(id, event) {
+      // TODO
+    }
+});
+</pre></div>
+</div>
+<p>The fetchData, pushData and removeCategory functions are now implemented using <a class="reference external" href="https://www.npmjs.com/package/request">request</a> library:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">fetchData</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span>
+    <span class="p">{</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span><span class="p">,</span>
+     <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+     <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">false</span>
+     <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+          <span class="nx">categoryArray</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">});</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error in fetchData: &quot;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+     <span class="p">}</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">pushData</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+    <span class="p">{</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span><span class="p">,</span>
+     <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+     <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">categoryArray</span><span class="p">)</span>
+     <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">parsed_body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">parsed_body</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+     <span class="p">}</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">},</span>
+<span class="nx">removeCategory</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">request</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span>
+    <span class="p">{</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">rootUrl</span> <span class="o">+</span> <span class="s2">&quot;advancedSetting/category/&quot;</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span>
+     <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+     <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">false</span>
+     <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">parsed_body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">err</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">parsed_body</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
+     <span class="p">}</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The page at <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a> will automatically be refreshed each
+time the code is updated.</p>
+</div>
+<div class="section" id="test-behaviors-with-react-testutils">
+<h2>Test Behaviors with React TestUtils<a class="headerlink" href="#test-behaviors-with-react-testutils" title="Permalink to this headline">¶</a></h2>
+<p>React TestUtils allow us to simulate mouse and keyboard events,
+therefore provides a way to test the event handler code. Here we will
+test that a new &lt;li&gt; tag is inserted when the Add button is clicked.</p>
+<p>Between the functions <code class="docutils literal"><span class="pre">&quot;renders</span> <span class="pre">an</span> <span class="pre">ul</span> <span class="pre">with</span> <span class="pre">lis&quot;</span></code> and <code class="docutils literal"><span class="pre">after</span></code>, add
+the following function:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">it</span><span class="p">(</span><span class="s2">&quot;renders one more li when Add button is clicked&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">categoryList</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">renderIntoDocument</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">CategoryList</span> <span class="nx">rootUrl</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">findRenderedDOMComponentWithTag</span><span class="p">(</span>
+    <span class="nx">categoryList</span><span class="p">,</span> <span class="s1">&#39;ul&#39;</span>
+  <span class="p">);</span>
+
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">ul</span><span class="p">).</span><span class="nx">toExist</span><span class="p">();</span>
+
+  <span class="kd">var</span> <span class="nx">buttons</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">scryRenderedDOMComponentsWithTag</span><span class="p">(</span>
+    <span class="nx">categoryList</span><span class="p">,</span> <span class="s1">&#39;button&#39;</span>
+  <span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">addButton</span> <span class="o">=</span> <span class="nx">buttons</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="hll">  <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">Simulate</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">addButton</span><span class="p">);</span>
+</span>
+  <span class="kd">var</span> <span class="nx">lis</span> <span class="o">=</span> <span class="nx">TestUtils</span><span class="p">.</span><span class="nx">scryRenderedDOMComponentsWithTag</span><span class="p">(</span>
+    <span class="nx">categoryList</span><span class="p">,</span> <span class="s1">&#39;li&#39;</span>
+  <span class="p">);</span>
+
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">lis</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".adding_user.html" class="btn btn-neutral float-right" title="Adding User" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_react_manage_datasources_and_datasourcefields.html" class="btn btn-neutral" title="ReactJS to manage data sources and data source fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

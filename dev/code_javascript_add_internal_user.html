@@ -1,0 +1,713 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Add Internal User &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Adding User" href=".adding_user.html"/>
+        <link rel="next" title="Building Report" href=".building_report.html"/>
+        <link rel="prev" title="Adding User" href=".adding_user.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".adding_user.html">Adding User</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Add Internal User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#empty-userdetail-object">Empty UserDetail object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#populate-userdetail-object">Populate UserDetail object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#call-post-user-api">Call POST user API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-a-password-link-for-the-user">Generate a <code class="docutils literal"><span class="pre">password</span> <span class="pre">link</span></code> for the user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-the-password-and-security-questions-for-user">Save the password and security questions for user</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_bi_portal_custom_css.html">BI Portal Custom CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".adding_user.html">Adding User</a> &raquo;</li>
+        
+      <li>Add Internal User</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_javascript_add_internal_user.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="add-internal-user">
+<h1>Add Internal User<a class="headerlink" href="#add-internal-user" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Tenant, Data Model and Role should have been created before this step.</p>
+<ul class="last simple">
+<li><a class="reference internal" href="../ref/api_tenant.html#post-tenant"><span class="std std-ref">Add Tenant</span></a></li>
+<li><a class="reference internal" href="../ref/api_data_model.html#post-datamodel"><span class="std std-ref">Add Data Model</span></a></li>
+<li><a class="reference internal" href="../ref/api_role.html#post-role"><span class="std std-ref">Add Role</span></a></li>
+</ul>
+</div>
+<p>It requires 3 steps to fully create an internal user with password and security questions:</p>
+<ol class="arabic simple">
+<li>Create a user with an associated role.<ol class="arabic">
+<li>Prepare an empty <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
+<li>Populate user details.</li>
+<li>Populate user role.</li>
+<li>Call <a class="reference internal" href="../ref/api_user.html#post-user"><span class="std std-ref">POST user</span></a> API, and receive back the saved id.</li>
+</ol>
+</li>
+<li>Generate a <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a> for the user.<ol class="arabic">
+<li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
+<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API, and receive back the hash value.</li>
+</ol>
+</li>
+<li>Save the password and security questions for user.<ol class="arabic">
+<li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
+<li>Populate the user password.</li>
+<li>Populate the hash value for verification.</li>
+<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.</li>
+</ol>
+</li>
+</ol>
+<div class="section" id="empty-userdetail-object">
+<h2>Empty UserDetail object<a class="headerlink" href="#empty-userdetail-object" title="Permalink to this headline">¶</a></h2>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Empty UserDetail object:</div>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="populate-userdetail-object">
+<h2>Populate UserDetail object<a class="headerlink" href="#populate-userdetail-object" title="Permalink to this headline">¶</a></h2>
+<p>Populate the fields.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">userName</span></code>, <code class="docutils literal"><span class="pre">firstName</span></code>, <code class="docutils literal"><span class="pre">lastName</span></code>,  <code class="docutils literal"><span class="pre">emailAddress</span></code>, <code class="docutils literal"><span class="pre">dataOffset</span></code>, <code class="docutils literal"><span class="pre">timestampOffset</span></code> and <code class="docutils literal"><span class="pre">dateFormat</span></code> with the user details</li>
+<li><code class="docutils literal"><span class="pre">tenantId</span></code> with the actual tenant id <br clear="right" />
+Get the list of tenants from <a class="reference internal" href="../ref/api_tenant.html#get-tenant-activetenants"><span class="std std-ref">GET tenant/activeTenants</span></a></li>
+<li><code class="docutils literal"><span class="pre">roles</span></code> with the selected role id <br clear="right" />
+Get the list of roles from <a class="reference internal" href="../ref/api_role.html#get-role-all-tenant-id"><span class="std std-ref">GET role/all/(tenant_id)</span></a></li>
+</ul>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample populated UserDetail object:</div>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;98bfcd0c-76eb-46e3-acca-500a6bc18caf&quot;</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="call-post-user-api">
+<h2>Call POST user API<a class="headerlink" href="#call-post-user-api" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Receive back the <a class="reference internal" href="../ref/models/OperationResult.html"><span class="doc">OperationResult</span></a> object</li>
+<li>Check that the <strong>success</strong> field equals true.</li>
+<li>Remember the assigned value in <strong>data.id</strong>.</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;98bfcd0c-76eb-46e3-acca-500a6bc18caf&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;userRoles&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;ab4f931f-bd35-420c-b341-b022ea1d1e7c&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;roleId&quot;</span><span class="p">:</span> <span class="s2">&quot;98bfcd0c-76eb-46e3-acca-500a6bc18caf&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;386fb900-2d36-46fe-bc8c-dcebbe88fc4d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-10T04:13:54.7143356&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-10T04:13:54.7143356&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;issueDate&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;newPassword&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;initPassword&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;retryLoginTime&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;lastTimeAccessed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;passwordLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;lockedDate&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;securityQuestionLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;numberOfFailedSecurityQuestion&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;David Webb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;currentModules&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;d4fdd98f-ac63-4836-a011-6567b2641b3a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-10T04:13:54.7119596&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-10T04:13:54.7119596&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="generate-a-password-link-for-the-user">
+<h2>Generate a <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a> for the user<a class="headerlink" href="#generate-a-password-link-for-the-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Prepare the input <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+UserDetail object</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">id</span></code> filled with the assigned id</li>
+<li><code class="docutils literal"><span class="pre">userName</span></code>, <code class="docutils literal"><span class="pre">firstName</span></code>, <code class="docutils literal"><span class="pre">lastName</span></code> and <code class="docutils literal"><span class="pre">emailAddress</span></code> must be the same as the values in the saved user <br clear="right" /></li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="hll">   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;d4fdd98f-ac63-4836-a011-6567b2641b3a&quot;</span><span class="p">,</span>
+</span>   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API.</li>
+<li>Receive back the <a class="reference internal" href="../ref/models/OperationResult.html"><span class="doc">OperationResult</span></a> object<ol class="arabic">
+<li>Check that the <strong>success</strong> field equals true.</li>
+<li>Remember the hash value in <strong>data</strong>.</li>
+</ol>
+</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response</div>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="hll">   <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/...==&quot;</span>
+</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="save-the-password-and-security-questions-for-user">
+<h2>Save the password and security questions for user<a class="headerlink" href="#save-the-password-and-security-questions-for-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Prepare the input <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+UserDetail object</div>
+<p><br clear="right" /></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">verification</span></code> filled with the hash value from last step</li>
+<li><code class="docutils literal"><span class="pre">password</span></code> populated with user-selected password</li>
+<li><code class="docutils literal"><span class="pre">userSecurityQuestions</span></code> populated with the secret answers for security questions</li>
+<li><code class="docutils literal"><span class="pre">autoLogin</span></code> true to login the user after this step to immediately use the system</li>
+</ul>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;tenantDisplayID&quot;</span><span class="p">:</span> <span class="s2">&quot;stark&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Stark Industries&quot;</span><span class="p">,</span>
+<span class="hll">   <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+</span><span class="hll">   <span class="nt">&quot;verification&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/...==&quot;</span><span class="p">,</span>
+</span>   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="hll">   <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span class="hll">   <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">true</span>
+</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.<ol class="arabic">
+<li>Check that the <strong>success</strong> field equals true.</li>
+<li>If autoLogin, use the value in <strong>data.token</strong> as <code class="docutils literal"><span class="pre">access_token</span></code> in subsequent REST API calls.</li>
+</ol>
+</li>
+</ol>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="hll">      <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/.../==&quot;</span><span class="p">,</span>
+</span>      <span class="nt">&quot;tenant&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isExpired&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;notifyDuringDay&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".building_report.html" class="btn btn-neutral float-right" title="Building Report" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href=".adding_user.html" class="btn btn-neutral" title="Adding User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

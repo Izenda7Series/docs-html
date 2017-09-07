@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TenantField &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Others" href="_others.html"/>
+        <link rel="next" title="Tenants" href="Tenants.html"/>
+        <link rel="prev" title="SystemVariable" href="SystemVariable.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_security.html">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_request_and_response.html">Request and Response</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_others.html">Others</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AdvancedSetting.html">AdvancedSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Category.html">Category</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CenterOnPageStyle.html">CenterOnPageStyle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="City.html">City</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConflictReportDashboardItem.html">ConflictReportDashboardItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataFormat.html">DataFormat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataFormating.html">DataFormating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="EmailSetting.html">EmailSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Entity.html">Entity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportFormatSetting.html">ExportFormatSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExportMarginTypeSetting.html">ExportMarginTypeSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Item.html">Item</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IzendaLanguage.html">IzendaLanguage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LicenseStatus.html">LicenseStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OtherSetting.html">OtherSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PagedRequest.html">PagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PagingInfo.html">PagingInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PerformanceSetting.html">PerformanceSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PostCode.html">PostCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelationshipOrder.html">RelationshipOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportDashboardSearchCriteria.html">ReportDashboardSearchCriteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSetting.html">ReportSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SaveConnectionStatus.html">SaveConnectionStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SearchCriteria.html">SearchCriteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SecuritySetting.html">SecuritySetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SortOrder.html">SortOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SortParam.html">SortParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemVariable.html">SystemVariable</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">TenantField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Tenants.html">Tenants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TimePeriod.html">TimePeriod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateExpiration.html">ValidateExpiration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValueTreeNode.html">ValueTreeNode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_others.html">Others</a> &raquo;</li>
+        
+      <li>TenantField</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ref/models/TenantField.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tenantfield">
+<h1>TenantField<a class="headerlink" href="#tenantfield" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>isSystem</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this tenant in System level</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TenantID&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;isSystem&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Tenants.html" class="btn btn-neutral float-right" title="Tenants" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SystemVariable.html" class="btn btn-neutral" title="SystemVariable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1030 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IAdHocExtension &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Customization via Interfaces" href=".system_customization.html"/>
+        <link rel="next" title="IAdHocExtension Samples" href="code_iadhocextension_samples.html"/>
+        <link rel="prev" title="White Labeling URLs" href="code_white_labeling_urls.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install/.stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_mvc_setup_guide.html">MVC Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install/doc_html_starter_kit.html">HTML Starter Kit Setup Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href=".starter_kits.html">Starter Kits</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href=".system_customization.html">System Customization via Interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href=".walkthroughs.html">Walkthroughs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/.supplementary_installation_guides.html">Supplementary Guides</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../install/.install.html">Installation and Maintenance Guide</a> &raquo;</li>
+        
+          <li><a href="../install/.integrated_deployment.html">Getting Started: Integrated Deployment</a> &raquo;</li>
+        
+          <li><a href="../install/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a> &raquo;</li>
+        
+          <li><a href=".system_customization.html">System Customization via Interfaces</a> &raquo;</li>
+        
+      <li>IAdHocExtension</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/ref_iadhocextension.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iadhocextension">
+<h1>IAdHocExtension<a class="headerlink" href="#iadhocextension" title="Permalink to this headline">¶</a></h1>
+<p><strong>IAdHocExtension</strong> interface in Izenda.BI.Framework.CustomConfiguration defines the extension APIs that allows customization code to hook in the report life cycle.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="20%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Customized Behavior</th>
+<th class="head">Method &amp; Sample</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Filter data tree lookup</td>
+<td><a class="reference internal" href="#onpreloadfilterdatatree">OnPreLoadFilterDataTree</a></td>
+<td>Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This has extra report filter settings, which contains the other filter values selected by the user in the report. This allows for easy set up of cascading behavior in your custom code. If this is implemented OnLoadFilterDataTree will be ignored.</td>
+</tr>
+<tr class="row-odd"><td>Filter data tree lookup (To be deprecated in 3.0.0)</td>
+<td><a class="reference internal" href="#onloadfilterdatatree">OnLoadFilterDataTree</a></td>
+<td>Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This will be deprecated in favor of OnPreLoadFilterDataTree, please make plans to convert to this implementation prior to release of 3.0.0</td>
+</tr>
+<tr class="row-even"><td>Customize filter data tree lookup results</td>
+<td><a class="reference internal" href="#onpostloadfilterdatatree">OnPostLoadFilterDataTree</a></td>
+<td>Allows override of the filter tree just before the results are returned to the user.</td>
+</tr>
+<tr class="row-odd"><td>Filter data</td>
+<td><a class="reference internal" href="#onpreloadfilterdata">OnPreLoadFilterData</a></td>
+<td>Allows injecting report filter data instead of querying the database</td>
+</tr>
+<tr class="row-even"><td>Filter data display</td>
+<td><a class="reference internal" href="#onpostloadfilterdata">OnPostLoadFilterData</a></td>
+<td>Allows overriding filter values displayed for selection under Report Designer filter fields</td>
+</tr>
+<tr class="row-odd"><td>ReportDefinition object</td>
+<td><a class="reference internal" href="#onpreexecute">OnPreExecute</a></td>
+<td>Allows on-the-fly customization of the report content</td>
+</tr>
+<tr class="row-even"><td>Data source query tree</td>
+<td><a class="reference internal" href="#onexecuting">OnExecuting</a></td>
+<td>Allows customizing the data source query tree</td>
+</tr>
+<tr class="row-odd"><td>Data source query results</td>
+<td><a class="reference internal" href="#onpostexecute">OnPostExecute</a></td>
+<td>Allows customizing the execution result of data source queries</td>
+</tr>
+<tr class="row-even"><td>Hidden report filters</td>
+<td><a class="reference internal" href="#sethiddenfilters">SetHiddenFilters</a></td>
+<td>Adds customized filters to reports while hiding them from UI users</td>
+</tr>
+<tr class="row-odd"><td>Custom In Time Period Filters</td>
+<td><a class="reference internal" href="#customtimeperiod">CustomTimePeriod</a></td>
+<td>Adds custom In Time Period Filter Values</td>
+</tr>
+<tr class="row-even"><td>Load Custom Data Format</td>
+<td><a class="reference internal" href="#loadcustomdataformat">LoadCustomDataFormat</a></td>
+<td>Adds custom data formats for specified data types</td>
+</tr>
+</tbody>
+</table>
+<p>The companion wrapper class <strong>DefaultAdHocExtension</strong> in  Izenda.BI.Framework.CustomConfiguration should be used as the base class for customization.</p>
+<div class="figure" id="id4">
+<img alt="../_images/DefaultAdHocExtension_class.png" src="../_images/DefaultAdHocExtension_class.png" />
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">DefaultAdHocExtension class</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="code_iadhocextension_samples.html"><span class="doc">Full-code Samples for all IAdHocExtension Methods</span></a></p>
+</div>
+<div class="section" id="onpreloadfilterdatatree">
+<h2>OnPreLoadFilterDataTree<a class="headerlink" href="#onpreloadfilterdatatree" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;ValueTreeNode&gt;</span> <span class="pre">OnPreLoadFilterDataTree(ReportFilterField</span> <span class="pre">filterField,</span> <span class="pre">ReportFilterSetting</span> <span class="pre">filterSetting,</span> <span class="pre">out</span> <span class="pre">bool</span> <span class="pre">handled)</span></code></p>
+<p>This method customizes the behavior of <a class="reference internal" href="../ref/api_report_designer_filters.html#post-report-loadfilterfielddataastree"><span class="std std-ref">POST report/loadFilterFieldDataAsTree</span></a> and <a class="reference internal" href="../ref/api_dashboard_designer.html#post-dashboard-loadfilterfielddataastree"><span class="std std-ref">POST dashboard/loadFilterFieldDataAsTree</span></a> APIs.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;</span> <span class="n">OnPreLoadFilterDataTree</span><span class="p">(</span><span class="n">ReportFilterField</span> <span class="n">filterField</span><span class="p">,</span> <span class="n">ReportFilterSetting</span> <span class="n">filterSetting</span><span class="p">,</span> <span class="k">out</span> <span class="kt">bool</span> <span class="n">handled</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">handled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+  <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;();</span>
+  <span class="kt">var</span> <span class="n">shipCountry</span> <span class="p">=</span> <span class="n">filterSetting</span><span class="p">.</span><span class="n">FilterFields</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">f</span> <span class="p">=&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">SourceFieldName</span> <span class="p">==</span> <span class="s">&quot;ShipCountry&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">filterField</span><span class="p">.</span><span class="n">SourceFieldName</span> <span class="p">==</span> <span class="s">&quot;ShipCity&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">shipCountry</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">shipCountry</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="s">&quot;Argentina&quot;</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">handled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+          <span class="kt">var</span> <span class="n">rootNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;[All]&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;[All]&quot;</span> <span class="p">};</span>
+          <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;();</span>
+          <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;Buenos Aires&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;Buenos Aires&quot;</span> <span class="p">});</span>
+          <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;Mendoza&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;Mendoza&quot;</span> <span class="p">});</span>
+          <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;Salta&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;Salta&quot;</span> <span class="p">});</span>
+          <span class="n">result</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rootNode</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="onloadfilterdatatree">
+<h2>OnLoadFilterDataTree<a class="headerlink" href="#onloadfilterdatatree" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;ValueTreeNode&gt;</span> <span class="pre">OnLoadFilterDataTree(QuerySourceFieldInfo</span> <span class="pre">fieldInfo)</span></code></p>
+<p>This method customizes the behavior of <a class="reference internal" href="../ref/api_report_designer_filters.html#post-report-loadfilterfielddataastree"><span class="std std-ref">POST report/loadFilterFieldDataAsTree</span></a> and <a class="reference internal" href="../ref/api_dashboard_designer.html#post-dashboard-loadfilterfielddataastree"><span class="std std-ref">POST dashboard/loadFilterFieldDataAsTree</span></a> APIs.</p>
+<p>For example, the API can be customized to return a list of cities per country in a hierarchy like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span>
+  <span class="o">+--</span><span class="n">Argentina</span>
+     <span class="o">+--</span><span class="n">Buenos</span> <span class="n">Aires</span>
+  <span class="o">+--</span><span class="n">France</span>
+     <span class="o">+--</span><span class="n">Lille</span>
+     <span class="o">+--</span><span class="n">Lyon</span>
+     <span class="o">+--</span><span class="n">Marseille</span>
+</pre></div>
+</div>
+<p>Sample code to display All &gt; South America and North America for Manager role:</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;</span> <span class="n">OnLoadFilterDataTree</span><span class="p">(</span><span class="n">QuerySourceFieldInfo</span> <span class="n">fieldInfo</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;();</span>
+
+       <span class="k">if</span> <span class="p">(</span><span class="n">fieldInfo</span><span class="p">.</span><span class="n">QuerySourceName</span> <span class="p">==</span> <span class="s">&quot;OrderDetailsByRegion&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">fieldInfo</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">&quot;CountryRegionName&quot;</span>
+           <span class="p">&amp;&amp;</span> <span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">IsInRole</span><span class="p">(</span><span class="s">&quot;Manager&quot;</span><span class="p">))</span>
+       <span class="p">{</span>
+           <span class="c1">// Node [All] is required for UI to render.</span>
+           <span class="kt">var</span> <span class="n">rootNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;[All]&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;[All]&quot;</span> <span class="p">};</span>
+           <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;();</span>
+           <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;South America&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;South America&quot;</span> <span class="p">});</span>
+           <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;North America&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;North America&quot;</span> <span class="p">});</span>
+
+           <span class="n">result</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rootNode</span><span class="p">);</span>
+       <span class="p">}</span>
+
+       <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="onpostloadfilterdatatree">
+<h2>OnPostLoadFilterDataTree<a class="headerlink" href="#onpostloadfilterdatatree" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;ValueTreeNode&gt;</span> <span class="pre">OnPostLoadFilterDataTree(ReportFilterField</span> <span class="pre">filterField,</span> <span class="pre">List&lt;ValueTreeNode&gt;</span> <span class="pre">data,</span> <span class="pre">ReportFilterSetting</span> <span class="pre">filterSetting)</span></code></p>
+<p>This method customizes the behavior of <a class="reference internal" href="../ref/api_report_designer_filters.html#post-report-loadfilterfielddataastree"><span class="std std-ref">POST report/loadFilterFieldDataAsTree</span></a> and <a class="reference internal" href="../ref/api_dashboard_designer.html#post-dashboard-loadfilterfielddataastree"><span class="std std-ref">POST dashboard/loadFilterFieldDataAsTree</span></a> APIs.</p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;</span> <span class="n">OnPostLoadFilterDataTree</span><span class="p">(</span><span class="n">ReportFilterField</span> <span class="n">filterField</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ValueTreeNode</span><span class="p">&gt;</span> <span class="n">data</span><span class="p">,</span> <span class="n">ReportFilterSetting</span> <span class="n">filterSetting</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">var</span> <span class="n">shipCountry</span> <span class="p">=</span> <span class="n">filterSetting</span><span class="p">.</span><span class="n">FilterFields</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">f</span> <span class="p">=&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">SourceFieldName</span> <span class="p">==</span> <span class="s">&quot;ShipCountry&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">filterField</span><span class="p">.</span><span class="n">SourceFieldName</span> <span class="p">==</span> <span class="s">&quot;ShipCity&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">shipCountry</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">shipCountry</span><span class="p">.</span><span class="n">Value</span> <span class="p">==</span> <span class="s">&quot;Argentina&quot;</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="kt">var</span> <span class="n">rootNode</span> <span class="p">=</span> <span class="n">data</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+          <span class="n">rootNode</span><span class="p">.</span><span class="n">Nodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueTreeNode</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&quot;La Plata - After&quot;</span><span class="p">,</span> <span class="n">Value</span> <span class="p">=</span> <span class="s">&quot;La Plata&quot;</span> <span class="p">});</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="onpreloadfilterdata">
+<h2>OnPreLoadFilterData<a class="headerlink" href="#onpreloadfilterdata" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;string&gt;</span> <span class="pre">OnPreLoadFilterData(ReportFilterSetting</span> <span class="pre">filterSetting,</span> <span class="pre">out</span> <span class="pre">bool</span> <span class="pre">handled)</span></code></p>
+<p>This method allows injecting report filter data instead of querying the database.</p>
+<ul class="simple">
+<li>if <code class="docutils literal"><span class="pre">handled</span></code> is false (not set), system will ignore the output and query the database for filter values.</li>
+<li>if <code class="docutils literal"><span class="pre">handled</span></code> is set to true, system will take the output as filter values and skip the database query.</li>
+</ul>
+<p>For example, it can be used to:</p>
+<ul class="simple">
+<li>skip time-consuming database queries when the list of values is predictable: true and false, list of regions (although there is no warranty that the injected values actually have data in the database)</li>
+<li>disable filtering by returning null in some conditions</li>
+</ul>
+<p>Sample code to use a pre-defined list for filters on OrdersByRegion.CountryRegionName:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">OnPreLoadFilterData</span><span class="p">(</span><span class="n">ReportFilterSetting</span> <span class="n">filterSetting</span><span class="p">,</span> <span class="k">out</span> <span class="kt">bool</span> <span class="n">handled</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="n">handled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+       <span class="n">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="n">result</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+
+       <span class="k">if</span> <span class="p">(</span><span class="n">filterSetting</span><span class="p">.</span><span class="n">FilterFields</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">1</span>
+           <span class="p">&amp;&amp;</span> <span class="n">filterSetting</span><span class="p">.</span><span class="n">FilterFields</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span>
+               <span class="n">x</span>   <span class="p">=&gt;</span>  <span class="n">x</span><span class="p">.</span><span class="n">SourceDataObjectName</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;OrdersByRegion&quot;</span><span class="p">)</span>
+                       <span class="p">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">SourceFieldName</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;CountryRegionName&quot;</span><span class="p">)))</span>
+       <span class="p">{</span>
+           <span class="n">handled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+           <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;()</span>
+           <span class="p">{</span>
+               <span class="s">&quot;Europe&quot;</span><span class="p">,</span>
+               <span class="s">&quot;North America&quot;</span><span class="p">,</span>
+               <span class="s">&quot;South America&quot;</span>
+           <span class="p">};</span>
+       <span class="p">}</span>
+
+       <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="onpostloadfilterdata">
+<h2>OnPostLoadFilterData<a class="headerlink" href="#onpostloadfilterdata" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;string&gt;</span> <span class="pre">OnPostLoadFilterData(ReportFilterField</span> <span class="pre">filterField,</span> <span class="pre">List&lt;string&gt;</span> <span class="pre">data)</span></code></p>
+<p>This method allows overriding filter values displayed for selection under Report Designer filter fields.</p>
+<p>For example, it can be used to:
+* do a secondary lookup on filter values returned from system to add more information such as appending population to city names
+* format values returned from system for example to proper case or title case
+* add or remove values from the list</p>
+<p>Sample code to change Europe to EU for Employee role:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">OnPostLoadFilterData</span><span class="p">(</span><span class="n">ReportFilterField</span> <span class="n">filterField</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">data</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="c1">// override dropdown value based on user role for filter on view &quot;OrderDetailsByRegion&quot; and field &quot;CountryRegionName&quot;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">filterField</span><span class="p">.</span><span class="n">SourceDataObjectName</span> <span class="p">==</span> <span class="s">&quot;OrderDetailsByRegion&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">filterField</span><span class="p">.</span><span class="n">SourceFieldName</span> <span class="p">==</span> <span class="s">&quot;CountryRegionName&quot;</span>
+           <span class="p">&amp;&amp;</span> <span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="n">IsInRole</span><span class="p">(</span><span class="s">&quot;Employee&quot;</span><span class="p">))</span>
+       <span class="p">{</span>
+         <span class="kt">var</span> <span class="n">indexEU</span> <span class="p">=</span> <span class="n">data</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">);</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">indexEU</span> <span class="p">!=</span> <span class="p">-</span><span class="m">1</span><span class="p">)</span>
+           <span class="n">data</span><span class="p">[</span><span class="n">indexEU</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;EU&quot;</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="n">OnPostLoadFilterData</span><span class="p">(</span><span class="n">filterField</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="onpreexecute">
+<h2>OnPreExecute<a class="headerlink" href="#onpreexecute" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">ReportDefinition</span> <span class="pre">OnPreExecute(ReportDefinition</span> <span class="pre">reportDefinition)</span></code></p>
+<p>This method allows customizing the report content on the fly before it is run.</p>
+<p>For example, it can be used to:</p>
+<ul class="simple">
+<li>customize the data sources, relationships, filters and calculated fields</li>
+<li>customize the report parts settings</li>
+</ul>
+<p>Sample code to remove all Map report parts on-the-fly:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">ReportDefinition</span> <span class="nf">OnPreExecute</span><span class="p">(</span><span class="n">ReportDefinition</span> <span class="n">report</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">report</span><span class="p">.</span><span class="n">ReportPart</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">ReportPartContent</span><span class="p">.</span><span class="n">Type</span> <span class="p">==</span> <span class="n">ReportPartContentType</span><span class="p">.</span><span class="n">Map</span><span class="p">))</span>
+       <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">filteredReportPart</span> <span class="p">=</span> <span class="n">report</span><span class="p">.</span><span class="n">ReportPart</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">ReportPartContent</span><span class="p">.</span><span class="n">Type</span> <span class="p">!=</span> <span class="n">ReportPartContentType</span><span class="p">.</span><span class="n">Map</span><span class="p">).</span><span class="n">ToList</span><span class="p">();</span>
+           <span class="n">report</span><span class="p">.</span><span class="n">ReportPart</span> <span class="p">=</span> <span class="n">filteredReportPart</span><span class="p">;</span>
+       <span class="p">}</span>
+
+       <span class="k">return</span> <span class="n">report</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="onexecuting">
+<h2>OnExecuting<a class="headerlink" href="#onexecuting" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">QueryTree</span> <span class="pre">OnExecuting(QueryTree</span> <span class="pre">queryTree)</span></code></p>
+<p>This method allows customizing the data source queries on the fly before it is run.</p>
+<p>For example, it can be used to:</p>
+<ul class="simple">
+<li>inspect the query steps</li>
+<li>customize the operations such as adding a limit operator or re-ordering the sequence</li>
+</ul>
+<div class="figure" id="id5">
+<img alt="../_images/QueryTree_Sample.png" src="../_images/QueryTree_Sample.png" />
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">QueryTree Sample</span></p>
+</div>
+<p>Sample code to log all operations without a result limit operator:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">QueryTree</span> <span class="nf">OnExecuting</span><span class="p">(</span><span class="n">QueryTree</span> <span class="n">queryTree</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="kt">var</span> <span class="n">nodeVisitor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">QueryTreePathAnalyzeVisitor</span><span class="p">(</span><span class="k">new</span> <span class="n">ExtensibilityFactory</span><span class="p">(),</span> <span class="n">queryTree</span><span class="p">.</span><span class="n">ContextData</span><span class="p">);</span>
+       <span class="n">nodeVisitor</span><span class="p">.</span><span class="n">ContextData</span> <span class="p">=</span> <span class="n">queryTree</span><span class="p">.</span><span class="n">ContextData</span><span class="p">;</span>
+       <span class="n">queryTree</span><span class="p">.</span><span class="n">Root</span><span class="p">.</span><span class="n">Accept</span><span class="p">(</span><span class="n">nodeVisitor</span><span class="p">);</span>
+
+       <span class="kt">var</span> <span class="n">resultLimitOperator</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ResultLimitOperator</span><span class="p">()</span>
+       <span class="p">{</span>
+           <span class="n">ChildOperand</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Operand</span><span class="p">()</span>
+           <span class="p">{</span>
+               <span class="n">QuerySource</span> <span class="p">=</span> <span class="k">new</span> <span class="n">QuerySource</span><span class="p">()</span>
+           <span class="p">}</span>
+       <span class="p">};</span>
+
+       <span class="k">try</span>
+       <span class="p">{</span>
+           <span class="n">nodeVisitor</span><span class="p">.</span><span class="n">Visit</span><span class="p">(</span><span class="n">resultLimitOperator</span><span class="p">);</span>
+       <span class="p">}</span>
+       <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;LOG: Query with no limit&quot;</span><span class="p">);</span>
+       <span class="p">}</span>
+
+       <span class="k">return</span> <span class="n">queryTree</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="onpostexecute">
+<h2>OnPostExecute<a class="headerlink" href="#onpostexecute" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">List&lt;IDictionary&lt;string,</span> <span class="pre">object&gt;&gt;</span> <span class="pre">OnPostExecute(QueryTree</span> <span class="pre">executedQueryTree,</span> <span class="pre">List&lt;IDictionary&lt;string,</span> <span class="pre">object&gt;&gt;</span> <span class="pre">result)</span></code></p>
+<p>This method allows customizing the execution result of data source queries.</p>
+<p>For example, it can be used to:
+* inspect the execution result
+* alter the execution result such as adding and removing rows or changing data values</p>
+<p>Sample code to limit the execution result to the first 1000 rows only (although the database may return more than that):</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdHocExtensionSample</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">OnPostExecute</span><span class="p">(</span><span class="n">QueryTree</span> <span class="n">executedQueryTree</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;&gt;</span> <span class="n">result</span><span class="p">)</span>
+  <span class="p">{</span>
+       <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="m">1000</span><span class="p">).</span><span class="n">ToList</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sethiddenfilters">
+<span id="id1"></span><h2>SetHiddenFilters<a class="headerlink" href="#sethiddenfilters" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">ReportFilterSetting</span> <span class="pre">SetHiddenFilters(SetHiddenFilterParam</span> <span class="pre">param)</span></code></p>
+<p>This method adds customized filters to every reports while hiding them from UI users.</p>
+<p>For example, it can be used to:</p>
+<ul class="simple">
+<li>filter data to rows with ShipRegion = &#8216;WA&#8217; or BLANK only.</li>
+<li>automatically filter all tables to non-deleted data (IsDeleted = FALSE).</li>
+<li>in a Shared Schema Multi-Tenant Architecture, filter every table to only data of the tenant of current logged in user.</li>
+</ul>
+<p>Sample code to add hidden filter ShipRegion = &#8220;WA&#8221; or &#8220;[Blank]&#8221; for all:</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span>[Export(typeof(IAdHocExtension))]
+
+   public override ReportFilterSetting SetHiddenFilters(SetHiddenFilterParam param)
+   {
+       var filterFieldName = &quot;ShipRegion&quot;;
+
+       Func&lt;ReportFilterSetting, int, QuerySource, QuerySourceField, Guid, Relationship, int&gt; addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =&gt;
+       {
+           var firstFilter = new ReportFilterField
+           {
+               Alias = $&quot;ShipRegion{filterPosition}&quot;,
+               QuerySourceId = querySource.Id,
+               SourceDataObjectName = querySource.Name,
+               QuerySourceType = querySource.Type,
+               QuerySourceFieldId = field.Id,
+               SourceFieldName = field.Name,
+               DataType = field.DataType,
+               Position = ++filterPosition,
+               OperatorId = equalOperator,
+               Value = &quot;WA&quot;,
+               RelationshipId = rel?.Id,
+               IsParameter = false,
+               ReportFieldAlias = null
+           };
+
+           var secondFilter = new ReportFilterField
+           {
+               Alias = $&quot;ShipRegion{filterPosition}&quot;,
+               QuerySourceId = querySource.Id,
+               SourceDataObjectName = querySource.Name,
+               QuerySourceType = querySource.Type,
+               QuerySourceFieldId = field.Id,
+               SourceFieldName = field.Name,
+               DataType = field.DataType,
+               Position = ++filterPosition,
+               OperatorId = equalOperator,
+               Value = &quot;[Blank]&quot;,
+               RelationshipId = rel?.Id,
+               IsParameter = false,
+               ReportFieldAlias = null
+           };
+           result.FilterFields.Add(firstFilter);
+           result.FilterFields.Add(secondFilter);
+
+           var logic = $&quot;({filterPosition - 1} OR {filterPosition})&quot;;
+           if (string.IsNullOrEmpty(result.Logic))
+           {
+               result.Logic = logic;
+           }
+           else
+           {
+               result.Logic += $&quot; AND {logic}&quot;;
+           }
+
+           return filterPosition;
+       };
+
+       var filterSetting = new ReportFilterSetting()
+       {
+           FilterFields = new List&lt;ReportFilterField&gt;()
+       };
+       var position = 0;
+
+       var ds = param.ReportDefinition.ReportDataSource;
+
+       // Build the hidden filters for ship country fields
+       foreach (var querySource in param.QuerySources // Scan thru the query sources that are involved in the report
+           .Where(x =&gt; x.QuerySourceFields.Any(y =&gt; y.Name.Equals(filterFieldName, StringComparison.OrdinalIgnoreCase)))) // Take only query sources that have filter field name
+       {
+           // Pick the relationships that joins the query source as primary source
+           // Setting the join ensure the proper table is assigned when using join alias in the UI
+           var rels = param.ReportDefinition.ReportRelationship.
+               Where(x =&gt; x.JoinQuerySourceId == querySource.Id)
+               .ToList();
+
+           // Count the relationships that the filter query source is foreign query source
+           var foreignRelCounts = param.ReportDefinition.ReportRelationship
+               .Where(x =&gt; x.ForeignQuerySourceId == querySource.Id)
+               .Count();
+
+           // Find actual filter field in query source
+           var field = querySource.QuerySourceFields.FirstOrDefault(x =&gt; x.Name.Equals(filterFieldName, StringComparison.OrdinalIgnoreCase));
+
+           // Pick the equal operator
+           var equalOperator = Izenda.BI.Framework.Enums.FilterOperator.FilterOperator.EqualsManualEntry.GetUid();
+
+           // In case there is no relationship that the query source is joined as primary
+           if (rels.Count() == 0)
+           {
+               // Just add hidden filter with null relationship
+               position = addHiddenFilters(filterSetting, position, querySource, field, equalOperator, null);
+           }
+           else
+           {
+               // Add another hidden filter for query source that appears in both alias primary and foreign query source of relationships.
+               // This step is mandatory because when aliasing a primary query source, it becomes another instance of query source in the query.
+               // So if we only add filter for alias, the original query source instance will not be impacted by the filter. That&#39;s why we need
+               // to add another filter for original instance when it appears in both side of alias and foreign.
+               // For example:
+               //          [Order] LEFT JOIN [Employee]
+               //      [Aliased Employee] LEFT JOIN [Department]
+               // If the system needs to add a hidden filter to [Employee], for example: [CompanyId] = &#39;ALKA&#39;
+               // It needs to add
+               //          [Employee].[CompanyId] = &#39;ALKA&#39; AND [Aliased Employee].[CompanyId] = &#39;ALKA&#39;
+               // By this way, it ensures all [Employee] instances are filtered by ALKA company id.
+               if (foreignRelCounts &gt; 0)
+               {
+                   position = addHiddenFilters(filterSetting, position, querySource, field, equalOperator, null);
+               }
+
+               foreach (var rel in rels)
+               {
+                   // Loop thru all relationships that the query source is joined as primary and add the hidden field associated with each relationship
+                   position = addHiddenFilters(filterSetting, position, querySource, field, equalOperator, rel);
+               }
+           }
+       }
+
+       return filterSetting;
+   }
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-scenarios">
+<h2>Application Scenarios<a class="headerlink" href="#application-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>Hidden filters can be applied based on several values. For example,</p>
+<p>User Name:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">currentUser</span> <span class="o">=</span> <span class="n">UserContext</span><span class="o">.</span><span class="n">Current</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">currentUserName</span> <span class="o">=</span> <span class="n">currentUser</span><span class="o">.</span><span class="n">CurrentUser</span><span class="o">.</span><span class="n">UserName</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">String</span><span class="o">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">currentUserName</span><span class="p">,</span> <span class="s2">&quot;userName&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="o">//</span><span class="n">Filter</span> <span class="n">Logic</span> <span class="n">Goes</span> <span class="n">Here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tenant Name:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">currentUser</span> <span class="o">=</span> <span class="n">UserContext</span><span class="o">.</span><span class="n">Current</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">currentTenantName</span> <span class="o">=</span> <span class="n">currentUser</span><span class="o">.</span><span class="n">CurrentTenant</span><span class="o">.</span><span class="n">Name</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">String</span><span class="o">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">currentTenantName</span><span class="p">,</span> <span class="s2">&quot;TestTenant&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+       <span class="o">//</span><span class="n">Filter</span> <span class="n">Logic</span> <span class="n">Goes</span> <span class="n">Here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Role Name:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>var currentUser = UserContext.Current;
+var currentUserRoles = currentUser.Roles.Select(x =&gt; x.Name).ToList();
+
+if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
+{
+       //Filter Logic Goes Here
+}
+</pre></div>
+</div>
+<p>Role Name (Alternative Method):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">currentUser</span> <span class="o">=</span> <span class="n">UserContext</span><span class="o">.</span><span class="n">Current</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">currentUser</span><span class="o">.</span><span class="n">IsInRole</span><span class="p">(</span><span class="s2">&quot;Administrator&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+       <span class="o">//</span><span class="n">Filter</span> <span class="n">Logic</span> <span class="n">Goes</span> <span class="n">Here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Schema Notation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">override</span> <span class="n">ReportFilterSetting</span> <span class="n">SetHiddenFilters</span><span class="p">(</span><span class="n">SetHiddenFilterParam</span> <span class="n">param</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">var</span> <span class="n">queryCategory</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">QuerySources</span><span class="o">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="s2">&quot;Orders&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">QuerySourceCategoryName</span><span class="p">;</span>
+
+     <span class="k">if</span> <span class="p">(</span><span class="n">String</span><span class="o">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">queryCategory</span><span class="p">,</span> <span class="s2">&quot;dbo&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">{</span>
+          <span class="o">//</span><span class="n">Filter</span> <span class="n">Logic</span> <span class="n">Goes</span> <span class="n">Here</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Query Source:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">override</span> <span class="n">ReportFilterSetting</span> <span class="n">SetHiddenFilters</span><span class="p">(</span><span class="n">SetHiddenFilterParam</span> <span class="n">param</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">var</span> <span class="n">querySouce</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">QuerySources</span><span class="o">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="s2">&quot;TableName&quot;</span><span class="p">));</span>
+
+     <span class="k">if</span> <span class="p">(</span><span class="n">String</span><span class="o">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">querySource</span><span class="o">.</span><span class="n">Type</span><span class="p">,</span> <span class="s2">&quot;Table&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">{</span>
+          <span class="o">//</span><span class="n">Filter</span> <span class="n">Logic</span> <span class="n">Goes</span> <span class="n">Here</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="applying-filter-with-compounded-values">
+<h2>Applying Filter with Compounded Values<a class="headerlink" href="#applying-filter-with-compounded-values" title="Permalink to this headline">¶</a></h2>
+<p>In some scenarios, you will require several values passed into the same filter, which get applied according to the logic you provide.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="n">Compare</span><span class="p">(</span><span class="n">currentUserName</span><span class="p">,</span> <span class="s">&quot;userName&quot;</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">result</span><span class="p">.</span><span class="n">Logic</span> <span class="p">=</span> <span class="s">&quot;(1 or 2 or 3)&quot;</span><span class="p">;</span> <span class="c1">//The logic, something like &quot;1 AND 2 OR 3&quot;</span>
+
+     <span class="c1">//Equal operator</span>
+     <span class="kt">var</span> <span class="n">equalOperator</span> <span class="p">=</span> <span class="n">param</span><span class="p">.</span><span class="n">FilterOperatorGroups</span><span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Equivalence&quot;</span><span class="p">)).</span><span class="n">FilterOperators</span>
+          <span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Equals (Selection)&quot;</span><span class="p">));</span>
+
+     <span class="c1">//Filter Order.ShipContry = USA</span>
+     <span class="kt">string</span><span class="p">[]</span> <span class="n">valArray</span> <span class="p">=</span> <span class="p">{</span> <span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;Argentina&quot;</span><span class="p">,</span> <span class="s">&quot;Germany&quot;</span> <span class="p">};</span>
+     <span class="kt">var</span> <span class="n">querySouce</span> <span class="p">=</span> <span class="n">param</span><span class="p">.</span><span class="n">QuerySources</span><span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Orders&quot;</span><span class="p">));</span>
+     <span class="kt">var</span> <span class="n">field</span> <span class="p">=</span> <span class="n">querySouce</span><span class="p">.</span><span class="n">QuerySourceFields</span><span class="p">.</span><span class="n">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;ShipCountry&quot;</span><span class="p">));</span>
+
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">valArray</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+     <span class="p">{</span>
+          <span class="kt">var</span> <span class="n">reportFilterField</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReportFilterField</span>
+          <span class="p">{</span>
+               <span class="n">QuerySourceId</span> <span class="p">=</span> <span class="n">querySouce</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+               <span class="n">SourceDataObjectName</span> <span class="p">=</span> <span class="n">querySouce</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+               <span class="n">QuerySourceType</span> <span class="p">=</span> <span class="n">querySouce</span><span class="p">.</span><span class="n">Type</span><span class="p">,</span>
+               <span class="n">QuerySourceFieldId</span> <span class="p">=</span> <span class="n">field</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+               <span class="n">SourceFieldName</span> <span class="p">=</span> <span class="n">field</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+               <span class="n">DataType</span> <span class="p">=</span> <span class="n">field</span><span class="p">.</span><span class="n">DataType</span><span class="p">,</span>
+               <span class="n">Position</span> <span class="p">=</span> <span class="n">i</span><span class="p">+</span><span class="m">1</span><span class="p">,</span>
+               <span class="n">OperatorId</span> <span class="p">=</span> <span class="n">equalOperator</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+               <span class="n">Value</span> <span class="p">=</span> <span class="n">valStr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+               <span class="n">RelationshipId</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+               <span class="n">IsParameter</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+               <span class="n">ReportFieldAlias</span> <span class="p">=</span> <span class="k">null</span>
+          <span class="p">};</span>
+
+          <span class="n">filterFields</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">reportFilterField</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customtimeperiod">
+<span id="id2"></span><h2>CustomTimePeriod<a class="headerlink" href="#customtimeperiod" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;CustomTimePeriod&gt;</span> <span class="pre">LoadCustomTimePeriod()</span></code></p>
+<p>NOTE: This method is only available in v1.24.0 or higher</p>
+<p>You can create custom time period filters for various datatypes by overriding the LoadCustomTimePeriod in your DefaultAdHocExtension implementation.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Operator</span> <span class="p">=</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Enums</span><span class="p">.</span><span class="n">DateTimeOperator</span><span class="p">;</span>
+
+<span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">CustomAdhocReport</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">CustomTimePeriod</span><span class="p">&gt;</span> <span class="n">LoadCustomTimePeriod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">CustomTimePeriod</span><span class="p">&gt;</span>
+        <span class="p">{</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;Tomorrow&quot;</span><span class="p">,</span>
+                <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="m">1</span><span class="p">),</span> <span class="n">Operator</span><span class="p">.</span><span class="n">BetweenDateTime</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;Previous Date -&gt; DateTime Now&quot;</span><span class="p">,</span>
+               <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(-</span><span class="m">1</span><span class="p">),</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span> <span class="n">Operator</span><span class="p">.</span><span class="n">BetweenDateTime</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;Less Than 2 Days Old&quot;</span><span class="p">,</span>
+                <span class="m">2</span><span class="p">,</span> <span class="n">Operator</span><span class="p">.</span><span class="n">LessThanDaysOld</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;Greater Than 2 Days Old&quot;</span><span class="p">,</span>
+               <span class="p">()</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">,</span> <span class="n">Operator</span><span class="p">.</span><span class="n">GreaterThanDaysOld</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;&gt;= Date Time Now + 2 Days&quot;</span><span class="p">,</span>
+                <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="m">2</span><span class="p">),</span> <span class="n">Operator</span><span class="p">.</span><span class="n">GreaterThanOrEqualsCalender</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nf">CustomTimePeriod</span><span class="p">(</span><span class="s">&quot;&lt;= Date Time Now - 2 Days&quot;</span><span class="p">,</span>
+               <span class="p">()</span> <span class="p">=&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(-</span><span class="m">2</span><span class="p">),</span> <span class="n">Operator</span><span class="p">.</span><span class="n">LessThanOrEqualsCalendar</span><span class="p">)</span>
+        <span class="p">};</span>
+
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loadcustomdataformat">
+<span id="id3"></span><h2>LoadCustomDataFormat<a class="headerlink" href="#loadcustomdataformat" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;DataFormat&gt;</span> <span class="pre">LoadCustomDataFormat()</span></code></p>
+<p>NOTE: This method is only available in v1.24.0 or higher</p>
+<p>You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Loads the defined custom formats into the Izenda application</span>
+<span class="c1">///</span>
+<span class="c1">/// &lt;see href=&quot;https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx&quot;&gt;Standard Numeric Format Strings&lt;/see&gt;</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;returns&gt;A list of custom formats. &lt;/returns&gt;</span>
+ <span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">DataFormat</span><span class="p">&gt;</span> <span class="n">LoadCustomDataFormat</span><span class="p">()</span>
+
+<span class="p">{</span>
+
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">DataFormat</span><span class="p">&gt;</span>
+
+    <span class="p">{</span>
+
+         <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;By Hour&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">DatetimeType</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="p">((</span><span class="n">DateTime</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;M/d/yyyy h:00 tt&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;dd MM:mm&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">DatetimeType</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">date</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;dd HH:mm&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;dd HH:mm:ss&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">DatetimeType</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">date</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;dd HH:mm:ss&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;dd mm:ss&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">DatetimeType</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">date</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">date</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;dd mm:ss&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+            <span class="p">{</span>
+                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;£0,000&quot;</span><span class="p">,</span>
+                <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">NumericType</span><span class="p">,</span>
+                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;en-GB&quot;</span><span class="p">));</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="k">new</span> <span class="n">DataFormat</span>
+            <span class="p">{</span>
+                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;¥0,000&quot;</span><span class="p">,</span>
+                <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">NumericType</span><span class="p">,</span>
+                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;ja-JP&quot;</span><span class="p">));</span>
+                <span class="p">}</span>
+
+                <span class="p">},</span>
+            <span class="k">new</span> <span class="n">DataFormat</span>
+            <span class="p">{</span>
+                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;0,000&quot;</span><span class="p">,</span>
+                <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">NumericType</span><span class="p">,</span>
+                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;{0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+                <span class="p">}</span>
+
+            <span class="p">},</span>
+                <span class="k">new</span> <span class="n">DataFormat</span>
+                <span class="p">{</span>
+                    <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;$0,000&quot;</span><span class="p">,</span>
+                    <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">NumericType</span><span class="p">,</span>
+                    <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+                    <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;${0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+
+                <span class="k">new</span> <span class="n">DataFormat</span>
+                <span class="p">{</span>
+                    <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;HH:MM:SS&quot;</span><span class="p">,</span>
+                    <span class="n">DataType</span> <span class="p">=</span> <span class="n">IzendaDataType</span><span class="p">.</span><span class="n">NumericType</span><span class="p">,</span>
+                    <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+                    <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">newValue</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+                        <span class="n">TimeSpan</span> <span class="n">time</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="n">newValue</span><span class="p">);</span>
+
+                        <span class="k">return</span> <span class="n">time</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">@&quot;dd\.hh\:mm\:ss&quot;</span><span class="p">);</span>
+                    <span class="p">}</span>
+
+                <span class="p">}</span>
+
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../ref/models/UserContext.html"><span class="doc">UserContext.Current</span></a> object contains data of the current logged in user, which can be leveraged in filters:</p>
+<ul class="simple">
+<li>to check if user has &#8220;Report Designer&#8221; role: <br clear="right" /> <code class="docutils literal"><span class="pre">UserContext.Current.IsInRole(&quot;Report</span> <span class="pre">Designer&quot;)</span></code></li>
+<li>to check if user belongs to &#8220;ACME&#8221; tenant: <br clear="right" /> <code class="docutils literal"><span class="pre">UserContext.Current.CurrentTenant.TenantID</span> <span class="pre">==</span> <span class="pre">&quot;acme&quot;</span></code></li>
+<li>to check if user has permission to create new reports: <br clear="right" /> <code class="docutils literal"><span class="pre">UserContext.Current.Permissions.Reports.CanCreateNewReport.Value</span> <span class="pre">==</span> <span class="pre">TRUE</span></code></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_iadhocextension_samples.html" class="btn btn-neutral float-right" title="IAdHocExtension Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_white_labeling_urls.html" class="btn btn-neutral" title="White Labeling URLs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

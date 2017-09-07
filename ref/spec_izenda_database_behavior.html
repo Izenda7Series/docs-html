@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Izenda Database Behaviors &mdash; Izenda BI 2.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.4.0 documentation" href="../index.html"/>
+        <link rel="up" title="Database Documentation" href=".database_documentation.html"/>
+        <link rel="next" title="Frequently Asked Questions (Work in progress)" href="../faq/.faq.html"/>
+        <link rel="prev" title="IzendaSystemSetting table" href="spec_izendasystemsetting_table.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide_integrated_scenarios.html">Developer Guide for Integrated Scenarios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".database_documentation.html">Database Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="database_diagrams.html">Database Diagrams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_data_dictionary.html">Data Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec_izendasystemsetting_table.html">IzendaSystemSetting table</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Izenda Database Behaviors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#soft-delete">Soft Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#report-dashboard-specific-data">Report/Dashboard-specific Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#history-tables">History Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Izenda7Series/docs/wiki">White Labeling Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".database_documentation.html">Database Documentation</a> &raquo;</li>
+        
+      <li>Izenda Database Behaviors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ref/spec_izenda_database_behavior.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="izenda-database-behaviors">
+<h1>Izenda Database Behaviors<a class="headerlink" href="#izenda-database-behaviors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="soft-delete">
+<h2>Soft Delete<a class="headerlink" href="#soft-delete" title="Permalink to this headline">¶</a></h2>
+<p>Instead of physically removing rows, Izenda will set the Deleted flag on
+them to preserve historical data. Therefore, normal-case queries should
+always include a <code class="docutils literal"><span class="pre">Deleted</span> <span class="pre">=</span> <span class="pre">0</span></code> condition.</p>
+</div>
+<div class="section" id="report-dashboard-specific-data">
+<h2>Report/Dashboard-specific Data<a class="headerlink" href="#report-dashboard-specific-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="report-relationship-data">
+<h3>Report Relationship Data<a class="headerlink" href="#report-relationship-data" title="Permalink to this headline">¶</a></h3>
+<p>Each report uses its own set of relationships. Report creators are free
+to modify or remove the default relationships suggested from Data Model
+or create new ones. Therefore, IzendaRelationship table stores both Data
+Model relationships (without a ReportId) and Report-specific
+relationships (with a value in ReportId). Report-specific relationships
+will also be deleted along with the report.</p>
+<p>Example:</p>
+<blockquote>
+<div><div class="figure" id="id1">
+<span id="data-model-and-report-relationships"></span><img alt="../_images/Data_Model_and_Report_Relationships.png" src="../_images/Data_Model_and_Report_Relationships.png" />
+<p class="caption"><span class="caption-number">Fig. 406 </span><span class="caption-text">Data Model and Report Relationships.png</span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>First row is a Data Model relationship.</li>
+<li>Second row is a Report relationship with value in ReportId, and copied from the Data Model relationship above.</li>
+</ul>
+</div>
+<div class="section" id="dashboard-filter-data">
+<h3>Dashboard Filter Data<a class="headerlink" href="#dashboard-filter-data" title="Permalink to this headline">¶</a></h3>
+<p>Dashboard part can use a different filter value than the specified value
+in the included report part. Therefore, dashboard part filter data is
+stored in the separate table IzendaDashboardPartFilterField, with the
+default values copied from report filter data in
+Izenda(ReportPart)FilterField.</p>
+</div>
+<div class="section" id="subscription-filter-data">
+<h3>Subscription Filter Data<a class="headerlink" href="#subscription-filter-data" title="Permalink to this headline">¶</a></h3>
+<p>Specific subscriptions can also choose to use a different filter value
+than the one in report/dashboard. Therefore, subscription filter data is
+also stored in a separate table IzendaSubscriptionFilterField.</p>
+</div>
+</div>
+<div class="section" id="history-tables">
+<h2>History Tables<a class="headerlink" href="#history-tables" title="Permalink to this headline">¶</a></h2>
+<p>History tables are used to keep previous versions of the data in a
+separate place, for specific Izenda features:</p>
+<ul>
+<li><p class="first">IzendaReportHistory</p>
+<blockquote>
+<div><p>to display in <a class="reference internal" href="../ui/doc_report_list.html#view-report-history"><span class="std std-ref">View Report History</span></a> in Report List.</p>
+</div></blockquote>
+</li>
+<li><p class="first">IzendaPasswordHistory</p>
+<blockquote>
+<div><p>to validate against new passwords following <a class="reference internal" href="../ui/doc_configuration_security_policies.html"><span class="doc">System Configuration/Security Policies</span></a>.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Normal tables only retain deleted data for a short time before archiving, and do not keep updated data. Hence, there should be no attempt to read history information from them.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/.faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions (Work in progress)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spec_izendasystemsetting_table.html" class="btn btn-neutral" title="IzendaSystemSetting table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
