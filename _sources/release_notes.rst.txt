@@ -7,6 +7,21 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.4.2 September 11, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18289  The subscription doesn't trigger the last scheduled run if the system was offline and restarts later than that moment
+-  Defect  18229  When using embedded mode the URL for Custom URL and Custom JS on field values are encoded twice and cause navigation issues to the links.
+-  Defect  18174  Export to Excel fails when field mapping to subreport is added to pivot
+-  Defect  18127  TIMESTAMP data type with fractional seconds precision was not recognized properly 
+-  Defect  18123  Adding a new field removes Embedded JavaScript from first field (On Field Properties Panel). Clickable link still available on first field.
+-  Defect  18055  System shows incorrect value for Sub Total if date field has format, when user attempts to format the subtotal the data shows no results.
+-  Defect  18054  Duplicated Data Object is not automatically swapped at tenant level/ tenant user
+-  Defect  17988  APIs - report - User can delete archived version by sending request to "api/report/deleteAllArchiveVersions"
+
+
 v.2.4.1 September 5, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1392,9 +1407,6 @@ Known Issues
      - 18230
      - Chart with Drill down with date format other than year shows no results when user drillsdown to next level on chart.
    * - Defect
-     - 18229
-     - When using embedded mode the URL for Custom URL and Custom JS on field values are encoded twice and cause navigation issues to the links.
-   * - Defect
      - 18228
      - Change query structure for saving role details to improve performance.
    * - Defect
@@ -1427,9 +1439,6 @@ Known Issues
    * - Defect
      - 18176
      - Hamburger for category shows in report/dashboard view mode for mobile screens
-   * - Defect
-     - 18174
-     - Export to Excel fails when field mapping to subreport is added to pivot
    * - Defect
      - 18170
      - In Report Designer Data source tab, the drop down list of Join Field/Field is not reset/disabled when data in Data Object/Foreign Data Object is blank
@@ -1496,9 +1505,6 @@ Known Issues
    * - Defect
      - 18124
      - Internet Explorer, Right click on report part header does not work
-   * - Defect
-     - 18123
-     - Adding a new field removes Embedded JavaScript from first field (On Field Properties Panel). Clickable link still available on first field.
    * - Defect
      - 18122
      - [Integration] Angular Kit shows circle loading forever when hitting refresh a report viewer page
@@ -1578,12 +1584,6 @@ Known Issues
      - 18056
      - System works incorrect when sub category is duplicated with another category
    * - Defect
-     - 18055
-     - System shows incorrect value for Sub Total if date field has format, when user attempts to format the subtotal the data shows no results.
-   * - Defect
-     - 18054
-     - Duplicated Data Object is not automatically swapped at tenant level/ tenant user
-   * - Defect
      - 18053
      - Setting levels is enable when refreshing a report in report designer
    * - Defect
@@ -1661,9 +1661,6 @@ Known Issues
    * - Defect
      - 17989
      - APIs - role - User can deactivate role by sending "POST role/deactive/{id}/{tenantId?}" 
-   * - Defect
-     - 17988
-     - APIs - report - User can delete archived version by sending request to "api/report/deleteAllArchiveVersions"
    * - Defect
      - 17984
      - Data source categories sort incorrectly if all data sources are categorized
