@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pdf Exports in Azure Websites &mdash; Izenda BI 2.4.0 documentation</title>
+  <title>Using SSL/TLS &mdash; Izenda BI 2.4.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
         <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
-        <link rel="next" title="White-Listing Functions for Calculated Fields" href="white-listing-functions-for-calculated-fields.html"/>
-        <link rel="prev" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/> 
+        <link rel="next" title="Administrator Guide" href="../../ui/.administrator_guide.html"/>
+        <link rel="prev" title="White-Labeling Izenda" href="white-labeling-izenda.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -108,15 +108,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../.integrated_deployment.html">Getting Started: Integrated Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../.supplementary_installation_guides.html">Supplementary Guides</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Pdf Exports in Azure Websites</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installing-and-configuring-the-azure-service">Installing and Configuring the Azure Service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configuring-the-izenda-instance">Configuring the Izenda instance</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_azure_evo.html">Pdf Exports in Azure Websites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-listing-functions-for-calculated-fields.html">White-Listing Functions for Calculated Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="https.html">Using SSL/TLS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using SSL/TLS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -180,13 +179,13 @@
         
           <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
         
-      <li>Pdf Exports in Azure Websites</li>
+      <li>Using SSL/TLS</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/install/supplementary_guides/doc_azure_evo.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/install/supplementary_guides/https.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,80 +198,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pdf-exports-in-azure-websites">
-<h1>Pdf Exports in Azure Websites<a class="headerlink" href="#pdf-exports-in-azure-websites" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="using-ssl-tls">
+<h1>Using SSL/TLS<a class="headerlink" href="#using-ssl-tls" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Izenda utilizes the EVO HTML to PDF Converter for Azure to provide pdf exporting in Azure websites. This feature requires the use of an Azure Cloud Service. The high-level flow is illustrated below.</p>
-<div class="figure">
-<img alt="../../_images/evo_azure_architecture.png" src="../../_images/evo_azure_architecture.png" />
-</div>
-</div>
-<div class="section" id="installing-and-configuring-the-azure-service">
-<h2>Installing and Configuring the Azure Service<a class="headerlink" href="#installing-and-configuring-the-azure-service" title="Permalink to this headline">¶</a></h2>
+<p>Izenda supports and strongly recommends the use of SSL/TLS to secure traffic between the Front-end, Backend (API) sites. This guides demonstrates how to configure Izenda to us HTTPS.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="section" id="required-components">
-<h3>Required Components<a class="headerlink" href="#required-components" title="Permalink to this headline">¶</a></h3>
-<p>There are two components needed for the Azure cloud service.</p>
-<div class="line-block">
-<div class="line"><em>EvoHtmlToPdfAzureService.cspkg</em></div>
-<div class="line"><em>ServiceConfiguration.Cloud.cscfg</em></div>
-<div class="line"><br /></div>
 </div>
-<p>These components as well as the installation guide this document is based on can be downloaded freely at the link below:
-<a class="reference external" href="http://www.evopdf.com/Downloads/Support/Archive/EvoHtmlToPdf-Azure-v6.16.zip">http://www.evopdf.com/Downloads/Support/Archive/EvoHtmlToPdf-Azure-v6.16.zip</a> (Please be sure to use this version)</p>
-</div>
-<div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Login into your Microsoft Azure portal and create a new Cloud Service.</p>
+<li><p class="first">Add SSL bindings for the API and Front-end sites. The process for doing this will vary, please consult with your technical staff for assistance.</p>
+</li>
+<li><p class="first">Update the izenda_config.js (Front-end) to use the new HTTPS binding for the API</p>
 <blockquote>
-<div><div class="figure">
-<img alt="../../_images/azure_cs1.png" src="../../_images/azure_cs1.png" />
-</div>
-<div class="figure">
-<img alt="../../_images/azure_cs2.png" src="../../_images/azure_cs2.png" />
-</div>
+<div><p>WebApiUrl:&#8221;<a class="reference external" href="https://localhost/api/">https://localhost/api/</a>&#8220;<br clear="right" /></p>
 </div></blockquote>
 </li>
-<li><p class="first">In the first screen select a DNS name for your cloud service and then select a package.</p>
-</li>
-<li><p class="first">In the next screen choose a deployment label and choose the <strong>EvoHtmlToPdfAzureService.cspkg</strong> file for package option and <strong>ServiceConfiguration.Cloud.cscfg</strong> file for configuration option. Enable the <strong>Deploy even if one or more roles contain a single instance</strong> option and finish the wizard. The deployment process may take several minutes.</p>
-<blockquote>
-<div><div class="figure">
-<img alt="../../_images/azure_cs3.png" src="../../_images/azure_cs3.png" />
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">When the deployment has completed, navigate to the cloud service dashboard. Under the Properties &gt; Input Endpoints, you can find the service IP address and port number. You will use this information configure Azure exporting in Izenda.</p>
-<blockquote>
-<div><div class="figure">
-<img alt="../../_images/azure_cs4.png" src="../../_images/azure_cs4.png" />
-</div>
-</div></blockquote>
+<li><p class="first">Update the following settings in the IzendaSystemSetting table to use HTTPS.</p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The values below are examples, you will need to use values relevant to your particular setup.</p>
 </div>
-</div>
-<div class="section" id="configuring-the-izenda-instance">
-<h2>Configuring the Izenda instance<a class="headerlink" href="#configuring-the-izenda-instance" title="Permalink to this headline">¶</a></h2>
-<p>After the service has been configured, you must configure the Izenda application to use the service. The settings below are in the web.config file.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration&gt;</span>
-  <span class="nt">&lt;configSections&gt;</span>
-    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;evoPdfSettings&quot;</span> <span class="na">type=</span><span class="s">&quot;Izenda.BI.Framework.Models.Exporting.EvopdfConfiguration&quot;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/configSections&gt;</span>
-  <span class="nt">&lt;evoPdfSettings</span> <span class="na">cloudEnable=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;azureCloudService</span> <span class="na">server=</span><span class="s">&quot;120.0.0.1&quot;</span> <span class="na">port=</span><span class="s">&quot;40001&quot;</span> <span class="na">servicePassword=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/evoPdfSettings&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</pre></div>
-</div>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>WebAPIUrl</td>
+<td><a class="reference external" href="https://localhost:5555/">https://localhost:5555/</a></td>
+</tr>
+<tr class="row-odd"><td>WebUrl</td>
+<td><a class="reference external" href="https://localhost:5556/">https://localhost:5556/</a></td>
+</tr>
+<tr class="row-even"><td>AuthValidateAccessTokenUrl</td>
+<td><a class="reference external" href="https://example.com/api/validateAccessToken">https://example.com/api/validateAccessToken</a></td>
+</tr>
+<tr class="row-odd"><td>AuthGetAccessTokenUrl</td>
+<td><a class="reference external" href="http://example.com/api/getAccessToken">http://example.com/api/getAccessToken</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -286,10 +265,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="white-listing-functions-for-calculated-fields.html" class="btn btn-neutral float-right" title="White-Listing Functions for Calculated Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ui/.administrator_guide.html" class="btn btn-neutral float-right" title="Administrator Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../.supplementary_installation_guides.html" class="btn btn-neutral" title="Supplementary Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="white-labeling-izenda.html" class="btn btn-neutral" title="White-Labeling Izenda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
