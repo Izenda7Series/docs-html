@@ -103,6 +103,19 @@ report.
 
    Opened from Report Link with multiple filter values
    
+   Now if you have a multiple selection type filter or a between date type filter where multiple values are passed for each filter, the    values must be separated with the following characters ;# and this must be encoded in the url, see example below:
+   
+   Unencoded Multiple Country Values:
+   **http://xxxx:5556/report/view/637d1389-35aa-4c53-8205-ed2c180b7f89?p1value=USA%3B%23Spain** |br|
+   
+   Encoded Multiple Country Values:
+   **http://xxxx:5556/report/view/637d1389-35aa-4c53-8205-ed2c180b7f89?p1value=USA%3B%23Spain** |br|
+   
+   Between Date Unencoded:
+   **http://xxxx:5556/report/view/eccde685-c903-4fbd-a805-eb26814cea21?p1value=1996-07-01;#1996-07-10** |br|
+   
+   Between Date Encoded:
+   **http://xxxx:5556/report/view/eccde685-c903-4fbd-a805-eb26814cea21?p1value=1996-07-01%3B%231996-07-10** |br|
    
 Passing Filter Values To Dashboards
 ------------------------------------
