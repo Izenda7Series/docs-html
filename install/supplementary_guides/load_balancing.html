@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using SSL/TLS &mdash; Izenda BI 2.4.0 documentation</title>
+  <title>Load Balancing &mdash; Izenda BI 2.4.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
         <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
-        <link rel="next" title="Load Balancing" href="load_balancing.html"/>
-        <link rel="prev" title="White-Labeling Izenda" href="white-labeling-izenda.html"/> 
+        <link rel="next" title="Administrator Guide" href="../../ui/.administrator_guide.html"/>
+        <link rel="prev" title="Using SSL/TLS" href="https.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -111,12 +111,12 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_azure_evo.html">Pdf Exports in Azure Websites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-listing-functions-for-calculated-fields.html">White-Listing Functions for Calculated Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Using SSL/TLS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https.html">Using SSL/TLS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Load Balancing</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#steps">Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="load_balancing.html">Load Balancing</a></li>
 </ul>
 </li>
 </ul>
@@ -180,13 +180,13 @@
         
           <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
         
-      <li>Using SSL/TLS</li>
+      <li>Load Balancing</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/install/supplementary_guides/https.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/install/supplementary_guides/load_balancing.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,60 +199,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-ssl-tls">
-<h1>Using SSL/TLS<a class="headerlink" href="#using-ssl-tls" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="load-balancing">
+<h1>Load Balancing<a class="headerlink" href="#load-balancing" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
+<div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Izenda supports and strongly recommends the use of SSL/TLS to secure traffic between the Front-end, Backend (API) sites. This guides demonstrates how to configure Izenda to us HTTPS.</p>
+<p>The Izenda application can be load balanced to offer better performance and scalability.
+The most common scenario would be to load balance the API among two or more servers. The diagram below assumes that SSL is terminated by the load balancer. To clarify, traffic to the load balancer is encrypted and the load balancer sends unencrypted traffic to the API server(s) in a trusted network</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
-<div class="section" id="steps">
-<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Add SSL bindings for the API and Front-end sites. The process for doing this will vary, please consult with your technical staff for assistance.</p>
-</li>
-<li><p class="first">Update the izenda_config.js (Front-end) to use the new HTTPS binding for the API</p>
-<blockquote>
-<div><p>WebApiUrl:&#8221;<a class="reference external" href="https://localhost/api/">https://localhost/api/</a>&#8220;<br clear="right" /></p>
-</div></blockquote>
-</li>
-<li><p class="first">Update the following settings in the IzendaSystemSetting table to use HTTPS.</p>
-</li>
-</ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The values below are examples, you will need to use values relevant to your particular setup.</p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="33%" />
-<col width="67%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
-<th class="head">Value</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>WebAPIUrl</td>
-<td><a class="reference external" href="https://localhost:5555/">https://localhost:5555/</a></td>
-</tr>
-<tr class="row-odd"><td>WebUrl</td>
-<td><a class="reference external" href="https://localhost:5556/">https://localhost:5556/</a></td>
-</tr>
-<tr class="row-even"><td>AuthValidateAccessTokenUrl</td>
-<td><a class="reference external" href="https://example.com/api/validateAccessToken">https://example.com/api/validateAccessToken</a></td>
-</tr>
-<tr class="row-odd"><td>AuthGetAccessTokenUrl</td>
-<td><a class="reference external" href="http://example.com/api/getAccessToken">http://example.com/api/getAccessToken</a></td>
-</tr>
-</tbody>
-</table>
+<ol class="arabic simple">
+<li>Update the WebApiUrl value in the izenda_config.js file with the IP or host name of the load balancer.</li>
+<li>Update the WebApiUrl in the [IzendaSystemSetting] table with the hostname or IP of the load balancer.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/load-balancing1.png" src="../../_images/load-balancing1.png" />
+</div>
 </div>
 </div>
 
@@ -266,10 +238,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="load_balancing.html" class="btn btn-neutral float-right" title="Load Balancing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ui/.administrator_guide.html" class="btn btn-neutral float-right" title="Administrator Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="white-labeling-izenda.html" class="btn btn-neutral" title="White-Labeling Izenda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="https.html" class="btn btn-neutral" title="Using SSL/TLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
