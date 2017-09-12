@@ -875,7 +875,7 @@ In this section, user can adjust formatting for the header row:
 Configure field properties in Drill Down section
 ================================================
 
-In this section, user can connect another report as sub-report via the
+In this section, user can connect another report as subreport via the
 values in this parent report.
 
 #. .. _Report_Designer_Sub-report_Field_Mapping:
@@ -886,15 +886,15 @@ values in this parent report.
 
       Report Designer - Drill Down Field Mapping
 
-   Click the icon to open Sub-report Settings pop-up.
-#. Select the sub-report from the drop-down list.
-#. Tick the checkbox in case sub-report needs to filter in the same way
+   Click the icon to open Subreport Settings pop-up.
+#. Select the subreport from the drop-down list.
+#. Tick the checkbox in case subreport needs to filter in the same way
    as parent report.
 #. Click Add Field Mapping button to insert a new mapping row.
 #. Select a field in current report to use its values as filter
-#. Select a field in sub-report to be filtered by those values. (:numref:`Report_Designer_Sub-report_Field_Mapping`)
+#. Select a field in subreport to be filtered by those values. (:numref:`Report_Designer_Sub-report_Field_Mapping`)
 #. Continue to add more field mappings as needed.
-#. Choose a display style for the sub-report in the Style drop-down.
+#. Choose a display style for the subreport in the Style drop-down.
 #. Click OK to save the setting. |br|
 
 .. seealso::
