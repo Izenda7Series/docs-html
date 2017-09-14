@@ -7,8 +7,18 @@ White-Listing Functions for Calculated Fields
 Introduction
 ------------------------------------------
 
-Izenda allows users to white-list SQL functions for calculated fields. This allows the use of built-in or custom SQL functions that are not available in Izenda out of the box. This is accomplished by configuring and deploying a custom config file.
+Izenda allows users to white-list SQL functions for calculated fields. This allows the use of native SQL functions supported by database type, which are not available in Izenda out of the box. This is accomplished by configuring and deploying a custom config file.
 
+The following are some examples (not all encompassing) of aggregated functions which should not be white-listed (the only supported aggregated functions are already included within Izenda): 
+
+-  STDEV
+-  STDEVP
+-  VAR
+-  VARP
+-  STDDEV_POP
+-  VAR_POP
+-  VAR_SAMP
+-  VARIANCE
 |
 
 Installation & Configuration
