@@ -119,7 +119,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#izenda-web-upgrade">Izenda Web Upgrade</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#replace-current-packages">Replace Current Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replace-current-front-end-and-back-end-packages">Replace Current Front End and Back End Packages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restore-the-current-configuration">Restore the Current Configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#restart-the-web-server">Restart the Web Server</a></li>
 </ul>
@@ -220,16 +220,20 @@
 <span id="upgrade-izenda-app-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_App_folder2.png"><img alt="../_images/Izenda_App_folder2.png" src="../_images/Izenda_App_folder2.png" style="width: 482px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Front-end package</span></p>
 </div>
-<p>Izenda Front-end package in an &#8220;App&#8221; folder. <br clear="right" /></p>
-</li>
-<li><div class="figure align-right" id="id2">
-<span id="upgrade-izenda-api-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_API_folder.png"><img alt="../_images/Izenda_API_folder.png" src="../_images/Izenda_API_folder.png" style="width: 482px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Back-end package</span></p>
-</div>
-<p>Izenda Back-end package in an &#8220;API&#8221; folder. <br clear="right" /></p>
+<p>Locating the Schema Migration Scripts. <br clear="right" /></p>
 </li>
 </ul>
 </li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Finding You Current Version: There are several ways to check your Izenda version.
+* In the Izenda platform, navigate to the &#8220;Settings&#8221; panel. The &#8220;License Information&#8221; section will contain the current Izenda version.
+* In your Izenda Configuration Database, query for the &#8216;Version&#8217; field in the IzendaDBVersion Table. This will let you identify your database version.
+* In Windows Explorer, navigate to your API&#8217;s bin directory (in stand alone versions of the API, this will be located at /API/bin/). Locate a dll prefixed with &#8220;Izenda.&#8221; Right click &gt; properties &gt; details. This will provide you with the current API version of Izenda.</li>
+</ul>
+</div></blockquote>
+<ul>
 <li><p class="first">Permissions and Tools</p>
 <ul>
 <li><p class="first">Database client GUI to connect to Izenda System Database.</p>
@@ -259,18 +263,18 @@
 GUI.</div></blockquote>
 </div>
 <ol class="arabic">
-<li><div class="figure align-right" id="id3">
+<li><div class="figure align-right" id="id2">
 <span id="izendatest-backup"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup.png"><img alt="../_images/IzendaTest_Backup.png" src="../_images/IzendaTest_Backup.png" style="width: 359px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Backup Menu</span></p>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Backup Menu</span></p>
 </div>
 <p>Log in to the server with Izenda System
 Database using an administrator account.</p>
 </li>
 <li><p class="first">Right-click the Izenda database then Tasks &gt; Back Up... <br clear="right" /></p>
 </li>
-<li><div class="figure align-right" id="id4">
+<li><div class="figure align-right" id="id3">
 <span id="izendatest-backup-pop-up"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Pop-up.png"><img alt="../_images/IzendaTest_Backup_Pop-up.png" src="../_images/IzendaTest_Backup_Pop-up.png" style="width: 518px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Backup</span></p>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Backup</span></p>
 </div>
 <p>In the pop-up, choose Backup type Full and Backup
 component Database.</p>
@@ -282,15 +286,15 @@ component Database.</p>
 </li>
 <li><p class="first">Choose to back up to Disk and click Add. <br clear="right" /></p>
 </li>
-<li><div class="figure align-right" id="id5">
+<li><div class="figure align-right" id="id4">
 <span id="izendatest-backup-filename"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Filename.png"><img alt="../_images/IzendaTest_Backup_Filename.png" src="../_images/IzendaTest_Backup_Filename.png" style="width: 299px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Backup Filename</span></p>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Backup Filename</span></p>
 </div>
 <p>Select File name and click ... button to select a path and file name. <br clear="right" /></p>
 </li>
-<li><div class="figure align-right" id="id6">
+<li><div class="figure align-right" id="id5">
 <span id="izendatest-backup-success"></span><a class="reference internal image-reference" href="../_images/IzendaTest_Backup_Success.png"><img alt="../_images/IzendaTest_Backup_Success.png" src="../_images/IzendaTest_Backup_Success.png" style="width: 455px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Backup Success</span></p>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Backup Success</span></p>
 </div>
 <p>Click OK 3 times to run the backup. <br clear="right" /></p>
 </li>
@@ -369,18 +373,31 @@ that order.</p>
 <div class="section" id="izenda-web-upgrade">
 <h2>Izenda Web Upgrade<a class="headerlink" href="#izenda-web-upgrade" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Remote desktop to the Web Server to perform these steps.</div></blockquote>
-<div class="section" id="replace-current-packages">
-<h3>Replace Current Packages<a class="headerlink" href="#replace-current-packages" title="Permalink to this headline">¶</a></h3>
-<p>&nbsp; The configuration files must have been backed up before in <a class="reference internal" href="#izenda-web-backup">Izenda Web
-Backup</a> since they will be overwritten in this
-step.</p>
+<div>The following steps outline how to upgrade your front end and back end via a remote desktop connection to the Web Server.</div></blockquote>
+<div class="section" id="replace-current-front-end-and-back-end-packages">
+<h3>Replace Current Front End and Back End Packages<a class="headerlink" href="#replace-current-front-end-and-back-end-packages" title="Permalink to this headline">¶</a></h3>
+<p>&nbsp; Please note, the configuration files should be backed up using the <a class="reference internal" href="#izenda-web-backup">Izenda Web
+Backup</a> section since they will be overwritten in this step.</p>
 <ol class="arabic simple">
-<li>Download the Izenda Front-end and Back-end Packages to Web Server.</li>
+<li><dl class="first docutils">
+<dt>Download the Izenda Front-end and Back-end Packages to Web Server. Ensure that the version you are downloading matches your updated database version set in the section above.</dt>
+<dd><ul class="first last">
+<li>For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from our downloads page.</li>
+<li>For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from our downloads page.</li>
+</ul>
+</dd>
+</dl>
+</li>
 <li>Stop the web site process to avoid Izenda DLL files being used.</li>
-<li>Remove all files in current API and App folders.</li>
-<li>Copy the files in downloaded API and App folders to the current API
-and App folders respectively.</li>
+<li>Remove all files in your current API and App directories.</li>
+<li><dl class="first docutils">
+<dt>Copy the files from the downloaded API and App folders to the current API and App directories, respectively.</dt>
+<dd><ul class="first last">
+<li>For Integrated versions of Izenda, you will need to update your web application with these resources and publish it according to your company standards.</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ol>
 </div>
 <div class="section" id="restore-the-current-configuration">

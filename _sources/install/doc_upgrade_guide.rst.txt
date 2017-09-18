@@ -21,18 +21,14 @@ Upgrade Preparations
 
          Front-end package
 
-      Izenda Front-end package in an "App" folder. |br|
-
-   *  .. _Upgrade_Izenda_API_folder:
-
-      .. figure:: /_static/images/Izenda_API_folder.png
-         :align: right
-         :width: 482px
-
-         Back-end package
-
-      Izenda Back-end package in an "API" folder. |br|
-
+      Locating the Schema Migration Scripts. |br|
+      
+  * Finding You Current Version: There are several ways to check your Izenda version. 
+    * In the Izenda platform, navigate to the "Settings" panel. The "License Information" section will contain the current Izenda version.
+    * In your Izenda Configuration Database, query for the 'Version' field in the IzendaDBVersion Table. This will let you identify your database version.
+    * In Windows Explorer, navigate to your API's bin directory (in stand alone versions of the API, this will be located at /API/bin/). Locate a dll prefixed with "Izenda." Right click > properties > details. This will provide you with the current API version of Izenda.
+    
+  
 -  Permissions and Tools
 
    *  Database client GUI to connect to Izenda System Database.
@@ -171,20 +167,21 @@ Upgrade Izenda System Database Gradually to Latest Version
 Izenda Web Upgrade
 ------------------
 
-    Remote desktop to the Web Server to perform these steps.
+    The following steps outline how to upgrade your front end and back end via a remote desktop connection to the Web Server.
 
-Replace Current Packages
-~~~~~~~~~~~~~~~~~~~~~~~~
+Replace Current Front End and Back End Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  The configuration files must have been backed up before in `Izenda Web
-Backup`_ since they will be overwritten in this
-step.
+  Please note, the configuration files should be backed up using the `Izenda Web
+Backup`_ section since they will be overwritten in this step.
 
-#. Download the Izenda Front-end and Back-end Packages to Web Server.
+#. Download the Izenda Front-end and Back-end Packages to Web Server. Ensure that the version you are downloading matches your updated database version set in the section above.
+    * For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from our downloads page.
+    * For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from our downloads page.
 #. Stop the web site process to avoid Izenda DLL files being used.
-#. Remove all files in current API and App folders.
-#. Copy the files in downloaded API and App folders to the current API
-   and App folders respectively.
+#. Remove all files in your current API and App directories.
+#. Copy the files from the downloaded API and App folders to the current API and App directories, respectively.
+    * For Integrated versions of Izenda, you will need to update your web application with these resources and publish it according to your company standards.
 
 Restore the Current Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
