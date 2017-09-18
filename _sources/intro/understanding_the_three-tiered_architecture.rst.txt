@@ -80,15 +80,13 @@ Fully Integrated Deployment
 
 *  **MVC Implementation**
 
-   - *Requires the API, EmbeddedUI, MVC5StarterKit, and an empty database.*
-
-   - For setup and support, please refer to the :doc:`/install/doc_mvc_setup_guide` and the :doc:`/dev/.developer_guide_integrated_scenarios`.
+   - *Requires the API, the Embedded UI, `MVC Back End Standalone Kit <https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone>`_, and an empty database.*
 
    .. figure::  /_static/images/MVC3ArchDiagram.png
 
       A diagram of implementation
 
-Mixed Deployment: Standalone API, Embedded UI
+Backend End Standalone Deployment: Standalone API, Embedded UI
 ---------------------------------------------
 
 *  The Mixed Deployment syle features a seamless front end with a remote
@@ -99,19 +97,21 @@ Mixed Deployment: Standalone API, Embedded UI
 
 *  **MVC Implementation**
 
-   - *Requires the API, a custom MVC5StarterKit build, and an empty database.*
-
-   - For setup and support, please refer to the :doc:`/install/doc_mvc_setup_guide` and the :doc:`/dev/.developer_guide_integrated_scenarios`.
+   - *Requires the API, the Embedded UI, the `MVC Kit <https://github.com/Izenda7Series/Mvc5StarterKit>`_, and an empty database.*
 
    .. figure::  /_static/images/MVC1ArchDiagram.png
 
       A diagram of implementation
 
--  **Angular 2 Implementation**
+*  **Angular 2 Implementation**
+      - *Requires the API, the Embedded UI, the `Angular 2 Kit <https://github.com/Izenda7Series/Angular2Starterkit>`_, and an empty database.*
+
 
    .. figure::  /_static/images/Angular1ArchDiagram2.png
 
       A diagram of implementation
+    
+    
 
 Switching Between Deployment Styles
 -----------------------------------
