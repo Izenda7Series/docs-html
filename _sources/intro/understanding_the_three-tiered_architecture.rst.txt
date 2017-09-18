@@ -83,7 +83,7 @@ Fully Integrated Deployment
          - API
          - Embedded UI
          - Empty database
-         - MVC Starter Kit found 'here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
+         - MVC Starter Kit found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
 
 
@@ -105,7 +105,7 @@ Backend End Standalone Deployment: Standalone API, Embedded UI
          - API
          - Embedded UI
          - Empty database
-         - MVC Starter Kit Back End Standalone found 'here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
+         - MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
    .. figure::  /_static/images/MVC1ArchDiagram.png
 
@@ -116,8 +116,7 @@ Backend End Standalone Deployment: Standalone API, Embedded UI
          - API
          - Embedded UI
          - Empty database
-         - Angular 2 Starter Kit found 'here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
-
+         - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
 
    .. figure::  /_static/images/Angular1ArchDiagram2.png
 
