@@ -104,7 +104,7 @@ Backend End Standalone Deployment: Standalone API, Embedded UI
       A diagram of implementation
 
 *  **Angular 2 Implementation**
-      - *Requires the API, the Embedded UI, the `test <https://github.com/Izenda7Series/Angular2Starterkit/>`_, and an empty database.*
+      - Requires the API, the Embedded UI, the 'test <https://github.com/Izenda7Series/Angular2Starterkit/>`_, and an empty database.
 
 
    .. figure::  /_static/images/Angular1ArchDiagram2.png
