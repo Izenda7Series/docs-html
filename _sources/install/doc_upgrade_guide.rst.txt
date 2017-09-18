@@ -2,7 +2,7 @@
 
 ==========================
 Upgrade Guide
-==========================
+========================== 
 
 Izenda provides monthly maintenance releases with bug fixes and performance increases. At least 2 point releases should be expected each year but our goal is to release quarterly (4) point releases annually.
 
