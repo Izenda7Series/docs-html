@@ -79,8 +79,13 @@ Fully Integrated Deployment
       A diagram of Izenda's fully integrated architecture
 
 *  **MVC Implementation**
+      - Requirements:
+         - API
+         - Embedded UI
+         - Empty database
+         - 'MVC Starter Kit <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
-   - *Requires the API, the Embedded UI, `MVC Back End Standalone Kit <https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone>`_, and an empty database.*
+
 
    .. figure::  /_static/images/MVC3ArchDiagram.png
 
@@ -96,8 +101,11 @@ Backend End Standalone Deployment: Standalone API, Embedded UI
    database(s).
 
 *  **MVC Implementation**
-
-   - *Requires the API, the Embedded UI, the `MVC Kit <https://github.com/Izenda7Series/Mvc5StarterKit>`_, and an empty database.*
+      - Requirements:
+         - API
+         - Embedded UI
+         - Empty database
+         - 'MVC Starter Kit Back End Standalone <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
    .. figure::  /_static/images/MVC1ArchDiagram.png
 
@@ -108,7 +116,7 @@ Backend End Standalone Deployment: Standalone API, Embedded UI
          - API
          - Embedded UI
          - Empty database
-         -'Angular 2 Starter Kit <https://github.com/Izenda7Series/Angular2Starterkit/>`_
+         - 'Angular 2 Starter Kit <https://github.com/Izenda7Series/Angular2Starterkit/>`_
 
 
    .. figure::  /_static/images/Angular1ArchDiagram2.png
