@@ -7,6 +7,28 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.4.3 September 18, 2017
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18368  Stored Procedure Lookups are Failing when Key and Value are different data types
+-  Defect  18346  New Chrome release Version 61.0.3163.79 causes issues in rendering charts, maps and gauges.
+-  Defect  18332  Relationships order is changed when user goes back to data source from report viewer when self join is created. 
+-  Defect  18319  Grid does not export, print or show in emailed items when some fields are hidden a grid
+-  Defect  18309  Latitude & longitude do not work on any map report parts.
+-  Defect  18287  Existing Users Can Be Modified to have User IDs that are already in use
+-  Defect  18268  When adding a date field to the x axis of any gauge and using M/d/yyyy format the year of the date is displayed incorrectly.
+-  Defect  18267  Using Calculated Field for subreport field mapping Breaks and does not show proper subreport values
+-  Defect  18256  Javascript declarations were being deleted upon using the visual tab.
+-  Defect  18209  Scatter chart labels are shown incorrectly, value label is shown as label and label for y axis
+-  Defect  18074  Subtotals of side total on Pivot grids is incorrect 
+-  Defect  18073  Side Total in Pivot Are not calculating properly
+-  Defect  18023  System shows blank value on filter value for parameter of stored procedure on Schedules/Subscriptions after saving
+-  Defect  17991  APIs - License - User can get Izenda "License Key and Token" by sending request to "api/License/currenttoken"
+-  Defect  17744  User is able to add duplicate database mappings and save. System should not allow duplicate mappings.
+-  Defect  17554  SubReport link from printed PDF and embedded email shows blank page when clicked by user.
+
 v.2.4.2 September 11, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1389,9 +1411,6 @@ Known Issues
      - 18257
      - Schema query which pulls data to data model should include database name in where clause based on given database from connection string.
    * - Defect
-     - 18256
-     - Javascript declarations were being deleted upon using the visual tab.
-   * - Defect
      - 18249
      - Error in IE/IE Edge with params of datetime used in URL with integrated Angular environment.
    * - Defect
@@ -1430,9 +1449,6 @@ Known Issues
    * - Defect
      - 18213
      - Report header is readable in the report viewer, but the spacing is overlapped in Word export.
-   * - Defect
-     - 18209
-     - Scatter chart labels are shown incorrectly, value label is shown as label and label for y axis
    * - Defect
      - 18204
      - In Edge Browser the HTML of form is shown in visual tab
@@ -1560,12 +1576,6 @@ Known Issues
      - 18078
      - Sub Total is counted incorrectly when sorting in grid
    * - Defect
-     - 18074
-     - Subtotals of side total on Pivot grids is incorrect 
-   * - Defect
-     - 18073
-     - Side Total in Pivot Are not calculating properly
-   * - Defect
      - 18072
      - Drag and Drop functionality in the report designer is not working in FireFox browser
    * - Defect
@@ -1629,9 +1639,6 @@ Known Issues
      - 18025
      - XY-Plane Settings: Axis's text background color settings does not work
    * - Defect
-     - 18023
-     - System shows blank value on filter value for parameter of stored procedure on Schedules/Subscriptions after saving
-   * - Defect
      - 18018
      - APIs - connection - User can access some function of module "connection" via API
    * - Defect
@@ -1655,9 +1662,6 @@ Known Issues
    * - Defect
      - 17992
      - APIs - databaseSetup- User can access some function of module "databaseSetup" 
-   * - Defect
-     - 17991
-     - APIs - License - User can get Izenda "License Key and Token" by sending request to "api/License/currenttoken"
    * - Defect
      - 17989
      - APIs - role - User can deactivate role by sending "POST role/deactive/{id}/{tenantId?}" 
@@ -1857,9 +1861,6 @@ Known Issues
      - 17747
      - When setting Data Setup > Advanced Settings > Show Schema Name at system level, this setting is being used at all tenant levels too.
    * - Defect
-     - 17744
-     - User is able to add duplicate database mappings and save. System should not allow duplicate mappings.
-   * - Defect
      - 17735
      - Y-Axis scales would not adjust properly when using the '% of Group' format in charts 
    * - Defect
@@ -1988,9 +1989,6 @@ Known Issues
    * - Defect
      - 17556
      - Excel would lose certain DateTime formatting on un-grouped fields.
-   * - Defect
-     - 17554
-     - SubReport link from printed PDF and embedded email shows blank page when clicked by user. 
    * - Defect
      - 17540
      - Grouping is not working properly for Separators when date is used and format is changed
