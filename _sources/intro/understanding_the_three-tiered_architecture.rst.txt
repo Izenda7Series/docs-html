@@ -52,10 +52,10 @@ BI Platform Implementation
 
 -  Requirements 
    - `API <http://downloads.izenda.com/latest/API.zip/>`_
-      - `StandaloneUI <http://downloads.izenda.com/latest/StandaloneUI.zip>`_
-      - An empty database
-
-   -  For installation steps, see the :doc:`/install/doc_installation_guide` and :doc:`/install/doc_upgrade_guide` for stand alone deployments.
+   - `StandaloneUI <http://downloads.izenda.com/latest/StandaloneUI.zip>`_
+   - An empty database
+   
+-  For installation steps, see the :doc:`/install/doc_installation_guide` and :doc:`/install/doc_upgrade_guide` for stand alone deployments.
 
    .. figure::  /_static/images/StandaloneArchDiagram2.png
 
