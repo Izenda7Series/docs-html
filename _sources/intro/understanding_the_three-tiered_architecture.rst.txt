@@ -6,9 +6,9 @@ Overview
 --------
 
 Izenda is split into three levels: the Front End (UI), the Back End
-(API),and the User Store (database layer). The three levels can be
-configured to support standalone models of Izenda as well as seamless,
-fully integrated versions.
+(API),and the User Store (database layer). These three componenets can be
+configured to support a fully standalone instance of Izenda as well as seamless,
+fully-integrated instances.
 
 *  Izenda offers a number of Integration Options.
 
@@ -47,7 +47,8 @@ Deployment Mode 0: Standalone Deployment
 
    A diagram of Izenda's standalone architecture.
 
--  **BI Platform Implementation**
+BI Platform Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    -  Requirements 
       - `API <http://downloads.izenda.com/latest/API.zip/>`_
@@ -72,7 +73,9 @@ Deployment Mode 1: Back End Standalone, Front End Integrated
    API calls which would include requesting queries from your reporting
    database(s).
 
-*  **MVC Implementation**
+MVC 5 Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
       - Requirements:
          - API
          - Embedded UI
@@ -83,7 +86,9 @@ Deployment Mode 1: Back End Standalone, Front End Integrated
 
       A diagram of implementation
 
-*  **Angular 2 Implementation**
+Angular 2 Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
       - Requirements:
          - API
          - Embedded UI
@@ -114,7 +119,8 @@ Deployment Mode 3: Fully Integrated
 
       A diagram of Izenda's fully integrated architecture
 
-*  **MVC Implementation**
+MVC Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       - Requirements:
          - API
          - Embedded UI
