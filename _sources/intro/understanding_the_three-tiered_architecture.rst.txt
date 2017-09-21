@@ -14,9 +14,9 @@ fully integrated versions.
 
    - 0 : All Stand Alone
 
-   - 1 : Back End Stand Alone Front End Integrated
+   - 1 : Back End Stand Alone, Front End Integrated
 
-   - 2 : Back End Integrated Front End Stand Alone
+   - 2 : Back End Integrated, Front End Stand Alone
 
    - 3 : All Integrated |br|
 
@@ -33,8 +33,8 @@ fully integrated versions.
 
 *  Once Izenda is deployed, the SystemSettings table must be updated with the correct deployment value. For more about the SystemSetting table, click :doc:`here </ref/spec_izendasystemsetting_table>`.
 
-Standalone Deployment
----------------------
+Deployment Mode 0: Standalone Deployment
+-----------------------------------------
 
 -  The Standalone Deployment style features a standalone front end and
    back end. The goal for this deployment is to quickly disseminate the
@@ -62,8 +62,41 @@ Standalone Deployment
 
 .. _Fully_Integrated_Deployment:
 
-Fully Integrated Deployment
----------------------------
+
+Deployment Mode 1: Back End Standalone, Front End Integrated
+------------------------------------------------------------
+
+*  The Back End Standalone Deployment syle features a seamless front end with a remote
+   back end. This deployment is useful when you can devote a lightweight
+   server to your integrated front end and a "meatier" server for all
+   API calls which would include requesting queries from your reporting
+   database(s).
+
+*  **MVC Implementation**
+      - Requirements:
+         - API
+         - Embedded UI
+         - Empty database
+         - MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
+
+   .. figure::  /_static/images/MVC1ArchDiagram.png
+
+      A diagram of implementation
+
+*  **Angular 2 Implementation**
+      - Requirements:
+         - API
+         - Embedded UI
+         - Empty database
+         - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
+
+   .. figure::  /_static/images/Angular1ArchDiagram2.png
+
+      A diagram of implementation
+    
+    
+Deployment Mode 3: Fully Integrated
+------------------------------------
 
 *  The Fully Integrated Deployment style features an integrated front
    end and back end. The goal for this deployment is to create a
@@ -94,38 +127,6 @@ Fully Integrated Deployment
 
       A diagram of implementation
 
-Backend End Standalone Deployment: Standalone API, Embedded UI
----------------------------------------------
-
-*  The Mixed Deployment syle features a seamless front end with a remote
-   back end. This deployment is useful when you can devote a lightweight
-   server to your integrated front end and a "meatier" server for all
-   API calls which would include requesting queries from your reporting
-   database(s).
-
-*  **MVC Implementation**
-      - Requirements:
-         - API
-         - Embedded UI
-         - Empty database
-         - MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
-
-   .. figure::  /_static/images/MVC1ArchDiagram.png
-
-      A diagram of implementation
-
-*  **Angular 2 Implementation**
-      - Requirements:
-         - API
-         - Embedded UI
-         - Empty database
-         - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
-
-   .. figure::  /_static/images/Angular1ArchDiagram2.png
-
-      A diagram of implementation
-    
-    
 
 Switching Between Deployment Styles
 -----------------------------------

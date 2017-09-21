@@ -106,9 +106,9 @@
 <li class="toctree-l2 current"><a class="reference internal" href=".izenda_concepts.html">Izenda Concepts</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding The Three-tiered Architecture</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#standalone-deployment">Standalone Deployment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fully-integrated-deployment">Fully Integrated Deployment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#backend-end-standalone-deployment-standalone-api-embedded-ui">Backend End Standalone Deployment: Standalone API, Embedded UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-mode-0-standalone-deployment">Deployment Mode 0: Standalone Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-mode-1-back-end-standalone-front-end-integrated">Deployment Mode 1: Back End Standalone, Front End Integrated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-mode-3-fully-integrated">Deployment Mode 3: Fully Integrated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#switching-between-deployment-styles">Switching Between Deployment Styles</a></li>
 </ul>
 </li>
@@ -211,8 +211,8 @@ fully integrated versions.</p>
 <li><p class="first">Izenda offers a number of Integration Options.</p>
 <ul class="simple">
 <li>0 : All Stand Alone</li>
-<li>1 : Back End Stand Alone Front End Integrated</li>
-<li>2 : Back End Integrated Front End Stand Alone</li>
+<li>1 : Back End Stand Alone, Front End Integrated</li>
+<li>2 : Back End Integrated, Front End Stand Alone</li>
 <li>3 : All Integrated <br clear="right" /></li>
 </ul>
 </li>
@@ -222,7 +222,7 @@ their deployment method.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">Click on the image to zoom or scroll down to see more detailed versions of each diagram</p>
 </div>
-<div class="figure" id="id4">
+<div class="figure" id="id3">
 <img alt="../_images/Overview4.png" src="../_images/Overview4.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Overview</span></p>
 </div>
@@ -231,8 +231,8 @@ their deployment method.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="standalone-deployment">
-<h2>Standalone Deployment<a class="headerlink" href="#standalone-deployment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deployment-mode-0-standalone-deployment">
+<h2>Deployment Mode 0: Standalone Deployment<a class="headerlink" href="#deployment-mode-0-standalone-deployment" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>The Standalone Deployment style features a standalone front end and
 back end. The goal for this deployment is to quickly disseminate the
@@ -242,7 +242,7 @@ Izenda platform as outline throughout the documentation.<ul>
 </ul>
 </li>
 </ul>
-<div class="figure" id="id5">
+<div class="figure" id="id4">
 <img alt="../_images/Standalone.jpg" src="../_images/Standalone.jpg" />
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">A diagram of Izenda&#8217;s standalone architecture.</span></p>
 </div>
@@ -255,61 +255,17 @@ Izenda platform as outline throughout the documentation.<ul>
 - An empty database</li>
 <li>For installation steps, see the <a class="reference internal" href="../install/doc_installation_guide.html"><span class="doc">Installation Guide</span></a> and <a class="reference internal" href="../install/doc_upgrade_guide.html"><span class="doc">Upgrade Guide</span></a> for stand alone deployments.</li>
 </ul>
-<div class="figure" id="id6">
+<div class="figure" id="id5">
 <img alt="../_images/StandaloneArchDiagram2.png" src="../_images/StandaloneArchDiagram2.png" />
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A diagram of implementation</span></p>
 </div>
 </li>
 </ul>
 </div>
-<div class="section" id="fully-integrated-deployment">
-<span id="id1"></span><h2>Fully Integrated Deployment<a class="headerlink" href="#fully-integrated-deployment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deployment-mode-1-back-end-standalone-front-end-integrated">
+<span id="fully-integrated-deployment"></span><h2>Deployment Mode 1: Back End Standalone, Front End Integrated<a class="headerlink" href="#deployment-mode-1-back-end-standalone-front-end-integrated" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">The Fully Integrated Deployment style features an integrated front
-end and back end. The goal for this deployment is to create a
-seamless experience for your user while making the code intuitive and
-maintainable.</p>
-<ul class="simple">
-<li>Allows for Single Sign-On Authentication through your application.</li>
-<li>Allows for full-page renders of Izenda as well as granular element
-renders to allow unique page configurations within your
-application.</li>
-<li>Allows for tenant-level white labeling of colors, graphics, and
-page schemes.</li>
-</ul>
-<div class="figure" id="id7">
-<img alt="../_images/Fully_Embedded.jpg" src="../_images/Fully_Embedded.jpg" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A diagram of Izenda&#8217;s fully integrated architecture</span></p>
-</div>
-</li>
-<li><dl class="first docutils">
-<dt><strong>MVC Implementation</strong></dt>
-<dd><ul class="first last simple">
-<li><dl class="first docutils">
-<dt>Requirements:</dt>
-<dd><ul class="first last">
-<li>API</li>
-<li>Embedded UI</li>
-<li>Empty database</li>
-<li>MVC Starter Kit found <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/">here</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-<div class="figure" id="id8">
-<img alt="../_images/MVC3ArchDiagram.png" src="../_images/MVC3ArchDiagram.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A diagram of implementation</span></p>
-</div>
-</li>
-</ul>
-</div>
-<div class="section" id="backend-end-standalone-deployment-standalone-api-embedded-ui">
-<h2>Backend End Standalone Deployment: Standalone API, Embedded UI<a class="headerlink" href="#backend-end-standalone-deployment-standalone-api-embedded-ui" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">The Mixed Deployment syle features a seamless front end with a remote
+<li><p class="first">The Back End Standalone Deployment syle features a seamless front end with a remote
 back end. This deployment is useful when you can devote a lightweight
 server to your integrated front end and a &#8220;meatier&#8221; server for all
 API calls which would include requesting queries from your reporting
@@ -332,9 +288,9 @@ database(s).</p>
 </ul>
 </dd>
 </dl>
-<div class="figure" id="id9">
+<div class="figure" id="id6">
 <img alt="../_images/MVC1ArchDiagram.png" src="../_images/MVC1ArchDiagram.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A diagram of implementation</span></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A diagram of implementation</span></p>
 </div>
 </li>
 <li><dl class="first docutils">
@@ -354,8 +310,52 @@ database(s).</p>
 </ul>
 </dd>
 </dl>
-<div class="figure" id="id10">
+<div class="figure" id="id7">
 <img alt="../_images/Angular1ArchDiagram2.png" src="../_images/Angular1ArchDiagram2.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A diagram of implementation</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="deployment-mode-3-fully-integrated">
+<h2>Deployment Mode 3: Fully Integrated<a class="headerlink" href="#deployment-mode-3-fully-integrated" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The Fully Integrated Deployment style features an integrated front
+end and back end. The goal for this deployment is to create a
+seamless experience for your user while making the code intuitive and
+maintainable.</p>
+<ul class="simple">
+<li>Allows for Single Sign-On Authentication through your application.</li>
+<li>Allows for full-page renders of Izenda as well as granular element
+renders to allow unique page configurations within your
+application.</li>
+<li>Allows for tenant-level white labeling of colors, graphics, and
+page schemes.</li>
+</ul>
+<div class="figure" id="id8">
+<img alt="../_images/Fully_Embedded.jpg" src="../_images/Fully_Embedded.jpg" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">A diagram of Izenda&#8217;s fully integrated architecture</span></p>
+</div>
+</li>
+<li><dl class="first docutils">
+<dt><strong>MVC Implementation</strong></dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Requirements:</dt>
+<dd><ul class="first last">
+<li>API</li>
+<li>Embedded UI</li>
+<li>Empty database</li>
+<li>MVC Starter Kit found <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/">here</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="figure" id="id9">
+<img alt="../_images/MVC3ArchDiagram.png" src="../_images/MVC3ArchDiagram.png" />
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A diagram of implementation</span></p>
 </div>
 </li>
