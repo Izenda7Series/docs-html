@@ -22,14 +22,12 @@ Welcome to Izenda's BI documentation!
    ui/.administrator_guide
    ui/.user_guide
    dev/.developer_guide
-   dev/.developer_guide_integrated_scenarios
    ref/.system_reference
    faq/.faq
    ref/.glossary
    release_notes
    acknowledgements
    6 Series Documentation <http://wiki.izenda.us>
-   White Labeling Documentation <https://github.com/Izenda7Series/docs/wiki>
 
 
 Indices and tables
