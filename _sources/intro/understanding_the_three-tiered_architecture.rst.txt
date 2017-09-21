@@ -50,8 +50,8 @@ Deployment Mode 0: Standalone Deployment
 BI Platform Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   -  Requirements 
-      - `API <http://downloads.izenda.com/latest/API.zip/>`_
+-  Requirements 
+   - `API <http://downloads.izenda.com/latest/API.zip/>`_
       - `StandaloneUI <http://downloads.izenda.com/latest/StandaloneUI.zip>`_
       - An empty database
 
@@ -76,11 +76,12 @@ Deployment Mode 1: Back End Standalone, Front End Integrated
 MVC 5 Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-      - Requirements:
-         - API
-         - Embedded UI
-         - Empty database
-         - MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
+- Requirements:
+   - API
+   - Embedded UI
+   - Empty database
+
+- MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
    .. figure::  /_static/images/MVC1ArchDiagram.png
 
@@ -89,11 +90,11 @@ MVC 5 Implementation
 Angular 2 Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-      - Requirements:
-         - API
-         - Embedded UI
-         - Empty database
-         - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
+- Requirements:
+   - API
+   - Embedded UI
+   - Empty database
+   - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
 
    .. figure::  /_static/images/Angular1ArchDiagram2.png
 
@@ -121,13 +122,11 @@ Deployment Mode 3: Fully Integrated
 
 MVC Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      - Requirements:
-         - API
-         - Embedded UI
-         - Empty database
-         - MVC Starter Kit found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
-
-
+- Requirements:
+   - API
+   - Embedded UI
+   - Empty database
+- MVC Starter Kit found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
    .. figure::  /_static/images/MVC3ArchDiagram.png
 
