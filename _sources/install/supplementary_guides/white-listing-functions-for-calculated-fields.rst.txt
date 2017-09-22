@@ -19,6 +19,7 @@ The following are some examples (not all encompassing) of aggregated functions w
 -  VAR_POP
 -  VAR_SAMP
 -  VARIANCE
+-  RANK
 |
 
 Installation & Configuration
