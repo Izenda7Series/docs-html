@@ -10,7 +10,7 @@ Izenda is split into three levels: the Front End (UI), the Back End
 configured to support a fully standalone instance of Izenda as well as seamless,
 fully-integrated instances.
 
-For more informaton about embedding Izenda, please refer to our :doc:`Developer Guide <dev/.developer_guide>`.
+For more informaton about embedding Izenda, please refer to our :doc:`Developer Guide </dev/.developer_guide>`.
 
 *  Izenda offers a number of Integration Options.
 
