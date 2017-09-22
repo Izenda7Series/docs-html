@@ -1,5 +1,5 @@
 ==========================
-Hosting Izenda Yourself
+Hosting Izenda
 ==========================
 
 .. note::
