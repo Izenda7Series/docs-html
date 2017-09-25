@@ -445,6 +445,22 @@ Deprecated, please use <a class="reference internal" href="#post-report-loadfore
 </td>
 <td>To be updated</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-findbysourceids">POST report/findBySourceIds</a></td>
+<td><p class="first">Returns a list of report definitions based on the provided report source Ids</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.4.4.</span></p>
+</div>
+</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-findreportpartsbysourceids">POST report/findReportPartsBySourceIds</a></td>
+<td><p class="first">Returns a list of report parts based on the provided report part source Ids</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.4.4.</span></p>
+</div>
+</td>
+<td>To be updated</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -5671,6 +5687,46 @@ string (GUID)</td>
 <p><strong>Samples</strong></p>
 <blockquote>
 <div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-report-findbysourceids">
+<h2>POST report/findBySourceIds<a class="headerlink" href="#post-report-findbysourceids" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of report definitions based on the provided report source Ids</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a list of report source Ids</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A list of <a class="reference internal" href="models/ReportDefinition.html"><span class="doc">ReportDefinition</span></a> objects.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/findBySourceIds</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;89B6301D-2068-4720-B89B-3F716DF2076F&#39;</span><span class="p">,</span><span class="s1">&#39;E67CE38D-61E5-4F97-BA2C-F9AA4855959D&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-report-findreportpartsbysourceids">
+<h2>POST report/findReportPartsBySourceIds<a class="headerlink" href="#post-report-findreportpartsbysourceids" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of report parts based on the provided report part source Ids</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a list of report part source Ids</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A list of <a class="reference internal" href="models/ReportPartDefinition.html"><span class="doc">ReportPartDefinition</span></a> objects.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/findReportPartsBySourceIds</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;89B6301D-2068-4720-B89B-3F716DF2076F&#39;</span><span class="p">,</span><span class="s1">&#39;E67CE38D-61E5-4F97-BA2C-F9AA4855959D&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 </div>
 

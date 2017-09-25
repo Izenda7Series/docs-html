@@ -182,6 +182,18 @@ Summary
 
        .. versionadded:: 2.2.2
      - To be updated
+	 
+   * - `POST report/findBySourceIds`_
+     - Returns a list of report definitions based on the provided report source Ids
+
+       .. versionadded:: 2.4.4   
+     - To be updated
+   
+   * - `POST report/findReportPartsBySourceIds`_
+     - Returns a list of report parts based on the provided report part source Ids
+
+       .. versionadded:: 2.4.4  
+     - To be updated
 
 GET report/category/{type}/(tenant\_id)
 ---------------------------------------
@@ -5426,3 +5438,49 @@ Validates that logged in user can access one and only one report part from the s
 **Samples**
 
    To be updated
+
+POST report/findBySourceIds
+---------------------------------------
+
+Returns a list of report definitions based on the provided report source Ids
+
+**Request**
+
+   Payload: a list of report source Ids
+
+**Response**
+
+   A list of :doc:`models/ReportDefinition` objects.
+    
+**Samples**
+
+    .. code-block:: http
+
+       POST /api/report/findBySourceIds HTTP/1.1
+
+    Request Payload::
+
+	   ['89B6301D-2068-4720-B89B-3F716DF2076F','E67CE38D-61E5-4F97-BA2C-F9AA4855959D']
+   
+POST report/findReportPartsBySourceIds
+---------------------------------------
+
+Returns a list of report parts based on the provided report part source Ids
+
+**Request**
+
+   Payload: a list of report part source Ids
+
+**Response**
+
+   A list of :doc:`models/ReportPartDefinition` objects.
+
+**Samples**
+
+    .. code-block:: http
+
+       POST /api/report/findReportPartsBySourceIds HTTP/1.1
+
+    Request Payload::
+
+	   ['89B6301D-2068-4720-B89B-3F716DF2076F','E67CE38D-61E5-4F97-BA2C-F9AA4855959D']

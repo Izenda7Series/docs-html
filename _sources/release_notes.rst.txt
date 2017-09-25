@@ -7,6 +7,26 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v.2.4.4 September 25, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+ENHANCEMENTS
+^^^^^^^^^^^^^
+-  New APIs created 
+	-  POST /api/report/findBySourceIds 
+	-  POST /api/report/findReportPartsBySourceIds 
+
+FIXES
+^^^^^
+-  Defect  18312  When Report is moved from one category to another in the report list, the role permissions do not appear to be properly updated on the role permissions, even though the user can see the report.
+-  Defect  18275  Global report/dashboard which is shared to specific role can't be accessed by this newly role in existing tenant or new tenant
+-  Defect  18237  Null values should show blank in pivot/drilldown but showing as 0 when convert null to empty string is enabled
+-  Defect  18093  System shows dirty form message but no response after that when user config Custom URL on field with option Open Link in Current Window
+-  Defect  17745  Report Part of Dashboard is cotinues loading indefinitely when user opens an existing dashboard in some Angular enviroments.
+-  Defect  17724  Grand Total configuration is removed when user sets both sub total & grand total then change to HTML tag or Saves report on form report part
+
+
 v.2.4.3 September 18, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1878,9 +1898,6 @@ Known Issues
    * - Defect
      - 17725
      - Time only fields are not exported with proper formats in excel.
-   * - Defect
-     - 17724
-     - Grand Total configuration is removed when user sets both sub total & grand total then change to HTML tag or Saves report on form report part
    * - Defect
      - 17723
      - In User Set up, There is a error "Uncaught TypeError: Cannot read property 'apply' of undefined" in console log. This error does not affect saving user info but should not be displaying in the console.
