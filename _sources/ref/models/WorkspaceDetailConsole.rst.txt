@@ -25,7 +25,10 @@ WorkspaceDetailConsole
    *  -  **mappingType** |br|
          integer
       -
-      -  Whether Database mapping or Schema mapping
+      -  Specifies the database mapping type. 
+      
+         * 1 = Schema Mapping
+         * 2 = Database Mapping
       -
    *  -  **dataSourceConnections** |br|
          object
