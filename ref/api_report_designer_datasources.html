@@ -249,7 +249,10 @@ Compared with <a class="reference internal" href="#get-report-datasourcecategory
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#post-report-loadquerysources">POST report/loadQuerySources</a></td>
 <td>Returns details for a list of query sources and a list of related query sources.</td>
-<td>To be updated</td>
+<td>- Switch to Simple mode <br clear="right" />
+- Create a new report OR open an existing report <br clear="right" />
+- In Data Source tab, choose a data source <br clear="right" />
+- OR switch from the others to Data Source tab</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-report-loadrelationships">POST report/loadRelationships</a></td>
 <td>Returns an updated list of relationships from an existing report together with an updated list of data sources.</td>
@@ -261,7 +264,7 @@ Compared with <a class="reference internal" href="#get-report-datasourcecategory
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-report-detectrelationshipschange">POST report/detectRelationshipsChange</a></td>
 <td>Detects if any relationship should be removed because of changes in data sources.</td>
-<td>To be updated</td>
+<td>Not used</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#id2">POST report/availableQuerySourceFields</a></td>
 <td>Returns a list of data source fields in selected query sources of a report.</td>
@@ -510,47 +513,55 @@ Compared with <a class="reference internal" href="#get-report-datasourcecategory
 </div>
 <p>Request payload:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;39e2a9b9-3be3-4b8b-ae86-0823ecb3c533&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span>
+   <span class="s2">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;126c58e7-e061-4f27-83c8-47c9135dde2c&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">2</span>
    <span class="p">}],</span>
-  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;criteria&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="s2">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="n">null</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;b5b3a5cc-9e55-424c-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">}],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;sortOrders&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Category&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;descending&quot;</span><span class="p">:</span> <span class="n">true</span>
+   <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;relatedQuerySources&quot;</span><span class="p">:</span> <span class="p">[{</span>
-      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;39e2a9b9-3be3-4b8b-ae86-0823ecb3c533&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;isNew&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;126c58e7-e061-4f27-83c8-47c9135dde2c&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
       <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span>
-   <span class="p">},</span> <span class="p">{</span>
-      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c25dc1d3-8066-4fe2-9adb-179060780088&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;isNew&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;isNew&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;735f70b1-8e33-4b02-bf62-53d2c57b9498&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
       <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span>
-   <span class="p">},</span> <span class="p">{</span>
-      <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;2c26efb2-9ff8-43ea-bcc7-6f1063e1f635&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;isNew&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-      <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="s2">&quot;isNew&quot;</span><span class="p">:</span> <span class="n">false</span>
    <span class="p">}],</span>
+   <span class="s2">&quot;relatedDataSourceCategories&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[{</span>
-      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;39e2a9b9-3be3-4b8b-ae86-0823ecb3c533&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-      <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;dataObject&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerCustomerDemo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;126c58e7-e061-4f27-83c8-47c9135dde2c&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL-Northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;schemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dataObject&quot;</span><span class="p">:</span> <span class="s2">&quot;order details&quot;</span><span class="p">,</span>
       <span class="s2">&quot;dataObjectType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span>
    <span class="p">}],</span>
-   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
    <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -783,7 +794,52 @@ Compared with <a class="reference internal" href="#get-report-datasourcecategory
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/detectRelationshipsChange</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;objectId&quot;</span><span class="p">:</span> <span class="s2">&quot;9197f210-766a-45d3-a1f9-5c4f4a4aa8ba&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+   <span class="s2">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;d38e8059-6b7e-49a7-be68-ec02d2b42168&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;205c0e5f-fff8-409b-a54a-b6687619486d&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;ec580d6d-709a-41fd-b71e-489795e7428f&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;relationshipOrders&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;selectedDataSourceChanged&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">false</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-report-availablequerysourcefields">
 <span id="id2"></span><h2>POST report/availableQuerySourceFields<a class="headerlink" href="#post-report-availablequerysourcefields" title="Permalink to this headline">¶</a></h2>

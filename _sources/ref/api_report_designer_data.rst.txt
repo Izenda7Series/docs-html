@@ -1799,7 +1799,52 @@ Loads report part data with paging and optional overridden filter values and ope
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/fusion/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/90ff323c-38f8-4663-823f-35afd85239ee HTTP/1.1
+
+   Sample response::
+
+      {
+         "grandTotalMapping": [],
+         "subTotalMapping": [],
+         "sideTotalMapping": [],
+         "executionTrace": [],
+         "records": [
+            {
+                  "orderid_2be8c595_91a3_": 10250,
+                  "shipcountry_bfeceef4_e536_": "Brazil",
+                  "rowNumber": 1
+            },
+            {
+                  "orderid_2be8c595_91a3_": 10253,
+                  "shipcountry_bfeceef4_e536_": "Brazil",
+                  "rowNumber": 2
+            },
+         ],
+         "fieldsMapping": [
+            {
+                  "fieldId": "2be8c595-91a3-4250-8828-dbbc07eaba83",
+                  "fieldNameAlias": "OrderID",
+                  "columnName": "orderid_2be8c595_91a3_"
+            },
+            {
+                  "fieldId": "bfeceef4-e536-4823-8cde-adb8f71d52f5",
+                  "fieldNameAlias": "ShipCountry",
+                  "columnName": "shipcountry_bfeceef4_e536_"
+            }
+         ],
+         "paging": {
+            "pageIndex": 1,
+            "pageSize": 100000,
+            "total": 2,
+            "skipItems": 0,
+            "isLastPage": false
+         },
+         "pivotHeaderValues": [],
+         "cities": [],
+         "postalCodes": []
+      }
 
 
 POST fusion/validateDataModelExpression
@@ -1878,7 +1923,29 @@ Obsolete, use `POST fusion/validateExpression`_ instead
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/fusion/previewCalculatedField HTTP/1.1
+
+   Request payload::
+
+      {
+         "reportKey": {
+            "key": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba"
+         },
+         "expression": "Sum([Northwind-BA].[dbo].[Orders].[Freight])",
+         "izendaDataType": "Money",
+         "querySourceFieldId": null,
+         "previewRecord": 10
+      }
+
+   Sample response::
+
+      {
+         "value": 25733.12,
+         "hasRecord": true,
+         "dataType": "Money"
+      }
 
 POST fusion/previewSubTotal
 --------------------------------------------------------------
@@ -2979,7 +3046,916 @@ Returns random expanded level data.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/fusion/retrieveRandomExpandedLevelData HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Request payload::
+
+      .. code-block:: json
+
+            {
+               "reportKey": {
+                  "key": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+                  "modified": null,
+                  "tenantId": null
+               },
+               "section": 2,
+               "saveAs": false,
+               "ignoreCheckChange": false,
+               "report": {
+                  "name": "091217-test",
+                  "type": 0,
+                  "previewRecord": 10,
+                  "advancedMode": true,
+                  "allowNulls": false,
+                  "isDistinct": false,
+                  "categoryId": "dc04087a-a761-43fb-b82d-5dd56fe8d9e3",
+                  "category": {
+                     "id": "dc04087a-a761-43fb-b82d-5dd56fe8d9e3",
+                     "name": "",
+                     "type": 0,
+                     "tenantId": null
+                  },
+                  "subCategory": {
+                     "id": null,
+                     "name": "",
+                     "type": 0,
+                     "tenantId": null
+                  },
+                  "subCategoryId": null,
+                  "reportDataSource": [{
+                     "reportId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+                     "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+                     "querySourceUniqueName": "[con;#0].[cat;#0].[Orders]",
+                     "querySourceCategoryId": null,
+                     "connectionId": null,
+                     "selected": false,
+                     "id": "e8cd9782-98bc-4f6b-9251-e48c756c9937",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 1,
+                     "created": "2017-09-12T06:30:52.84",
+                     "createdBy": "System5 Admin5",
+                     "modified": "2017-09-12T06:30:52.84",
+                     "modifiedBy": "System5 Admin5"
+                  }],
+                  "reportRelationship": [],
+                  "reportFilter": {
+                     "logic": "",
+                     "visible": false,
+                     "filterFields": [],
+                     "id": "e7845036-2d0c-4576-ab76-53b0e0e41ea3",
+                     "reportId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba"
+                  },
+                  "reportPart": [{
+                     "isDirty": true,
+                     "reportPartContent": {
+                        "subReportDefinitionCollection": [],
+                        "collapseStatus": 0,
+                        "isDirty": true,
+                        "isCrossFiltering": false,
+                        "type": 3,
+                        "columns": {
+                           "text": null,
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              
+                           },
+                           "elements": [{
+                              "reportPartContent": null,
+                              "isDirty": false,
+                              "name": "OrderID",
+                              "properties": {
+                                 "isDirty": false,
+                                 "fieldItemVisible": true,
+                                 "dataFormattings": {
+                                    "function": "7f942ac7-08d8-41fa-9e89-bad96f07f102",
+                                    "functionInfo": {
+                                       "dataType": "Numeric",
+                                       "expression": null,
+                                       "expressionSyntax": null,
+                                       "extendedProperties": {
+                                          
+                                       },
+                                       "id": "7f942ac7-08d8-41fa-9e89-bad96f07f102",
+                                       "isOperator": false,
+                                       "name": "Group",
+                                       "syntax": null,
+                                       "userDefined": false,
+                                       "formatDataType": "Numeric"
+                                    },
+                                    "format": {
+                                       "createNewHiddenPercenOfGroupField": false
+                                    },
+                                    "font": {
+                                       "family": "Roboto",
+                                       "size": 14,
+                                       "bold": false,
+                                       "italic": false,
+                                       "underline": false,
+                                       "color": "",
+                                       "backgroundColor": ""
+                                    },
+                                    "width": {
+                                       "value": null
+                                    },
+                                    "alignment": "alignLeft",
+                                    "sort": "Unsort",
+                                    "color": {
+                                       "textColor": {
+                                          "rangePercent": null,
+                                          "rangeValue": null,
+                                          "value": null
+                                       },
+                                       "cellColor": {
+                                          "rangePercent": null,
+                                          "rangeValue": null,
+                                          "value": null
+                                       }
+                                    },
+                                    "alternativeText": {
+                                       "rangePercent": null,
+                                       "rangeValue": null,
+                                       "value": null
+                                    },
+                                    "customURL": {
+                                       "url": "",
+                                       "option": "LINK_NEW_WINDOW"
+                                    },
+                                    "embeddedJavascript": {
+                                       "script": ""
+                                    },
+                                    "subTotal": {
+                                       "label": "",
+                                       "function": "",
+                                       "expression": "",
+                                       "dataType": "",
+                                       "format": {
+                                          
+                                       },
+                                       "previewResult": ""
+                                    },
+                                    "grandTotal": {
+                                       "label": "",
+                                       "function": "",
+                                       "expression": "",
+                                       "dataType": "",
+                                       "format": {
+                                          
+                                       },
+                                       "previewResult": ""
+                                    }
+                                 },
+                                 "headerFormating": {
+                                    "font": {
+                                       "family": null,
+                                       "size": null,
+                                       "bold": null,
+                                       "italic": null,
+                                       "underline": null,
+                                       "color": null,
+                                       "backgroundColor": null
+                                    },
+                                    "alignment": null,
+                                    "wordWrap": null,
+                                    "columnGroup": ""
+                                 },
+                                 "drillDown": {
+                                    "subReport": {
+                                       "selectedReport": null,
+                                       "style": null,
+                                       "reportPartUsed": null,
+                                       "reportFilter": true,
+                                       "mappingFields": [],
+                                       "selectedIconValue": {
+                                          "icon": null,
+                                          "value": null
+                                       },
+                                       "viewSettingByLink": null
+                                    }
+                                 },
+                                 "otherProps": {
+                                    
+                                 }
+                              },
+                              "position": 1,
+                              "field": {
+                                 "fieldId": "2be8c595-91a3-4250-8828-dbbc07eaba83",
+                                 "fieldName": "OrderID",
+                                 "fieldNameAlias": "OrderID",
+                                 "dataFieldType": "Numeric",
+                                 "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+                                 "querySourceType": "Table",
+                                 "sourceAlias": "Orders",
+                                 "relationshipId": "00000000-0000-0000-0000-000000000000",
+                                 "visible": true,
+                                 "calculatedTree": null,
+                                 "isCalculated": false,
+                                 "hasAggregatedFunction": false
+                              },
+                              "isDeleted": false,
+                              "isSelected": false,
+                              "offset": {
+                                 
+                              }
+                           }],
+                           "name": "columns"
+                        },
+                        "rows": {
+                           "text": null,
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              
+                           },
+                           "elements": [],
+                           "name": "rows"
+                        },
+                        "values": {
+                           "text": null,
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              
+                           },
+                           "elements": [],
+                           "name": "values"
+                        },
+                        "separators": {
+                           "text": null,
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              
+                           },
+                           "elements": [],
+                           "name": "separators"
+                        },
+                        "properties": {
+                           "isDirty": true,
+                           "generalInfo": {
+                              "gridStyle": "Vertical",
+                              "separatorStyle": "Comma"
+                           },
+                           "table": {
+                              "border": {
+                                 "top": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 },
+                                 "right": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 },
+                                 "bottom": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 },
+                                 "midVer": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 },
+                                 "left": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 },
+                                 "midHor": {
+                                    "color": null,
+                                    "dashStyle": null,
+                                    "thinkness": null
+                                 }
+                              },
+                              "backgroundColor": "#fff"
+                           },
+                           "columns": {
+                              "width": {
+                                 "value": 150
+                              },
+                              "alterBackgroundColor": false
+                           },
+                           "rows": {
+                              "alterBackgroundColor": false
+                           },
+                           "headers": {
+                              "font": {
+                                 "family": "Roboto",
+                                 "size": 14,
+                                 "bold": true,
+                                 "italic": false,
+                                 "underline": false,
+                                 "color": "#000000",
+                                 "backgroundColor": "#E4E4E4"
+                              },
+                              "alignment": "center",
+                              "wordWrap": false,
+                              "removeHeaderForExport": false
+                           },
+                           "grouping": {
+                              "useSeparator": true
+                           },
+                           "view": {
+                              "dataRefreshInterval": {
+                                 "enable": false,
+                                 "updateInterval": 0,
+                                 "isAll": true,
+                                 "latestRecord": 0
+                              },
+                              "usePagination": true,
+                              "collapseDrilldownByDefault": false,
+                              "pageSize": 10,
+                              "pivotColumnsPerExportedPage": ""
+                           },
+                           "printing": {
+                              "usePageBreakAfterSeparator": false
+                           }
+                        },
+                        "settings": {
+                           
+                        },
+                        "changeGridStyleStatus": true,
+                        "inconsitentFunction": false,
+                        "dataSource": {
+                           
+                        },
+                        "title": {
+                           "text": "",
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              "font": {
+                                 "family": "",
+                                 "size": 14,
+                                 "bold": true,
+                                 "italic": false,
+                                 "underline": false,
+                                 "color": "",
+                                 "highlightColor": ""
+                              },
+                              "alignment": {
+                                 "alignment": ""
+                              }
+                           },
+                           "elements": []
+                        },
+                        "description": {
+                           "text": "",
+                           "properties": {
+                              
+                           },
+                           "settings": {
+                              "font": {
+                                 "family": "",
+                                 "size": 14,
+                                 "bold": false,
+                                 "italic": false,
+                                 "underline": false,
+                                 "color": "",
+                                 "highlightColor": ""
+                              },
+                              "alignment": {
+                                 "alignment": ""
+                              }
+                           },
+                           "elements": []
+                        }
+                     },
+                     "reportId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+                     "width": 5,
+                     "height": 6,
+                     "state": 3,
+                     "modified": null,
+                     "numberOfRecord": null,
+                     "configField": null,
+                     "stateReview": 0,
+                     "refreshDataProcess": null,
+                     "refreshDataInterval": null,
+                     "positionY": 0,
+                     "positionX": 0,
+                     "title": "Grid",
+                     "id": "90ff323c-38f8-4663-823f-35afd85239ee"
+                  }],
+                  "header": {
+                     "visible": false,
+                     "items": [{
+                        "isDirty": false,
+                        "type": "image",
+                        "label": "Image",
+                        "id": "formatDetails_154",
+                        "positionX": 0,
+                        "positionY": 0,
+                        "width": 6,
+                        "height": 6,
+                        "name": "Logo Image",
+                        "value": "",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "imageUrl": "http://",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_155",
+                        "positionX": 20,
+                        "positionY": 0,
+                        "width": 12,
+                        "height": 2,
+                        "name": "Report Name",
+                        "value": "{reportName}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "thinHorizontalRule",
+                        "label": "Horizontal Rule",
+                        "id": "formatDetails_156",
+                        "positionX": 20,
+                        "positionY": 4,
+                        "width": 12,
+                        "height": 1,
+                        "name": "Upper Separator Line",
+                        "value": "{horizontalRule}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 2,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_157",
+                        "positionX": 20,
+                        "positionY": 5,
+                        "width": 6,
+                        "height": 2,
+                        "name": "Report Generated",
+                        "value": "Report Generated:",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_158",
+                        "positionX": 20,
+                        "positionY": 7,
+                        "width": 6,
+                        "height": 2,
+                        "name": "User",
+                        "value": "User:",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_159",
+                        "positionX": 20,
+                        "positionY": 9,
+                        "width": 6,
+                        "height": 2,
+                        "name": "Tenant",
+                        "value": "Tenant:",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "dateTime",
+                        "label": "Date Time",
+                        "id": "formatDetails_160",
+                        "positionX": 26,
+                        "positionY": 5,
+                        "width": 6,
+                        "height": 2,
+                        "name": "Current Date Time",
+                        "value": "{currentDateTime}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_161",
+                        "positionX": 26,
+                        "positionY": 7,
+                        "width": 6,
+                        "height": 2,
+                        "name": "Current User Name",
+                        "value": "{currentUserName}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_162",
+                        "positionX": 26,
+                        "positionY": 9,
+                        "width": 6,
+                        "height": 2,
+                        "name": "Tenant Name",
+                        "value": "{tenantName}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "horizontalRule",
+                        "label": "Horizontal Rule",
+                        "id": "formatDetails_163",
+                        "positionX": 0,
+                        "positionY": 11,
+                        "width": 32,
+                        "height": 1,
+                        "name": "Lower Separator Line",
+                        "value": "{horizontalRule}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 4,
+                        "isSelected": false
+                     }]
+                  },
+                  "footer": {
+                     "visible": false,
+                     "items": [{
+                        "isDirty": false,
+                        "type": "horizontalRule",
+                        "label": "Horizontal Rule",
+                        "id": "formatDetails_164",
+                        "positionX": 0,
+                        "positionY": 0,
+                        "width": 32,
+                        "height": 1,
+                        "name": "Separator Line",
+                        "value": "{horizontalRule}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 4,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_165",
+                        "positionX": 0,
+                        "positionY": 1,
+                        "width": 10,
+                        "height": 2,
+                        "name": "Footer Text",
+                        "value": "Footer Text",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "text",
+                        "label": "Text",
+                        "id": "formatDetails_166",
+                        "positionX": 20,
+                        "positionY": 1,
+                        "width": 4,
+                        "height": 2,
+                        "name": "Page",
+                        "value": "Page",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "pageNumber",
+                        "label": "Page Number",
+                        "id": "formatDetails_167",
+                        "positionX": 24,
+                        "positionY": 1,
+                        "width": 8,
+                        "height": 2,
+                        "name": "Page Number",
+                        "value": "{pageNumber}",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     }]
+                  },
+                  "titleDescription": {
+                     "visible": false,
+                     "items": [{
+                        "isDirty": false,
+                        "type": "title",
+                        "label": "Title",
+                        "id": "formatDetails_168",
+                        "name": "Title",
+                        "value": "",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     },
+                     {
+                        "isDirty": false,
+                        "type": "description",
+                        "label": "Description",
+                        "id": "formatDetails_169",
+                        "name": "Description",
+                        "value": "",
+                        "font": {
+                           "family": "Roboto",
+                           "size": 14,
+                           "bold": false,
+                           "italic": false,
+                           "underline": false,
+                           "color": "#000",
+                           "backgroundColor": "#fff"
+                        },
+                        "color": "#000",
+                        "dashStyle": "solid",
+                        "thickness": 1,
+                        "isSelected": false
+                     }]
+                  },
+                  "version": 4,
+                  "schedules": [],
+                  "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                  "accesses": [],
+                  "exportFormatSetting": {
+                     "orientation": 0,
+                     "margins": 0,
+                     "centerOnPage": {
+                        "horizontally": false,
+                        "vertically": false
+                     },
+                     "pageBreakAfterReportPart": false,
+                     "marginSettings": [{
+                        "type": 0,
+                        "topValue": 0.75,
+                        "bottomValue": 0.75,
+                        "leftValue": 0.7,
+                        "rightValue": 0.7,
+                        "headerValue": 0.3,
+                        "footerValue": 0.3
+                     },
+                     {
+                        "type": 1,
+                        "topValue": 0.75,
+                        "bottomValue": 0.75,
+                        "leftValue": 0.25,
+                        "rightValue": 0.25,
+                        "headerValue": 0.3,
+                        "footerValue": 0.3
+                     },
+                     {
+                        "type": 2,
+                        "topValue": 1,
+                        "bottomValue": 1,
+                        "leftValue": 1,
+                        "rightValue": 1,
+                        "headerValue": 0.5,
+                        "footerValue": 0.5
+                     },
+                     {
+                        "type": 3,
+                        "topValue": 0.75,
+                        "bottomValue": 0.75,
+                        "leftValue": 0.7,
+                        "rightValue": 0.7,
+                        "headerValue": 0.3,
+                        "footerValue": 0.3
+                     }]
+                  },
+                  "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                  "dynamicQuerySourceFields": [],
+                  "snapToGrid": false,
+                  "excludedRelationships": "",
+                  "isGlobal": false
+               },
+               "expandedLevel": -1,
+               "title": "Grid",
+               "paging": {
+                  "pageIndex": 1,
+                  "pageSize": 10
+               },
+               "sortOrders": [{
+                  "key": "OrderID",
+                  "sortingType": "Unsort"
+               }],
+               "filters": []
+            }
+
+   Response::
+
+      {
+         "grandTotalMapping": [],
+         "subTotalMapping": [],
+         "sideTotalMapping": [],
+         "executionTrace": [],
+         "records": [
+            {
+                  "orderid_2be8c595_91a3_": 10250,
+                  "rowNumber": 1
+            },
+            {
+                  "orderid_2be8c595_91a3_": 10283,
+                  "rowNumber": 10
+            }
+         ],
+         "fieldsMapping": [
+            {
+                  "fieldId": "2be8c595-91a3-4250-8828-dbbc07eaba83",
+                  "fieldNameAlias": "OrderID",
+                  "columnName": "orderid_2be8c595_91a3_"
+            }
+         ],
+         "paging": {
+            "pageIndex": 1,
+            "pageSize": 10,
+            "total": 2,
+            "skipItems": 0,
+            "isLastPage": false
+         },
+         "pivotHeaderValues": [],
+         "cities": [],
+         "postalCodes": []
+      }
 
 POST fusion/printQuery
 --------------------------------------------------------------
@@ -2996,7 +3972,37 @@ Returns the sql query for a data request.
 
 **Samples**
 
-   To be updated
+   .. code-block:: HTTP
+
+      POST /api/fusion/printQuery HTTP/1.1
+
+   Request payload::
+
+      {
+         "loadDraft": false,
+         "reportId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+         "reportPartId": "90ff323c-38f8-4663-823f-35afd85239ee",
+         "tenantId": null,
+         "userAction": null,
+         "paging": {
+            "pageIndex": 1,
+            "pageSize": 10
+         },
+         "expandedLevel": -1,
+         "sortOrders": [{
+            "key": "OrderID",
+            "sortingType": "Unsort"
+         },
+         {
+            "key": "Sum(Frieght)",
+            "sortingType": "Unsort"
+         },
+         {
+            "key": "ShipCountry",
+            "sortingType": "ASC"
+         }],
+         "filters": []
+      }
 
 POST fusion/printQuery/reportPartPreview
 --------------------------------------------------------------
@@ -3013,7 +4019,223 @@ Returns the sql query for a report part preview request.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/fusion/printQuery/reportPartPreview HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Request payload::
+
+      .. code-block:: json
+
+            {
+               "reportKey": {
+                  "key": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+                  "modified": null,
+                  "tenantId": null
+               },
+               "section": 2,
+               "saveAs": false,
+               "ignoreCheckChange": true,
+               "report": {
+                  "name": "091217-test",
+                  "type": 0,
+                  "previewRecord": 10,
+                  "advancedMode": true,
+                  "allowNulls": false,
+                  "isDistinct": false,
+                  "categoryId": "dc04087a-a761-43fb-b82d-5dd56fe8d9e3",
+                  "category": {
+                     "id": "dc04087a-a761-43fb-b82d-5dd56fe8d9e3",
+                     "name": "",
+                     "type": 0,
+                     "tenantId": null
+                  },
+                  "subCategory": {
+                     "id": null,
+                     "name": "",
+                     "type": 0,
+                     "tenantId": null
+                  },
+                  "subCategoryId": null,
+                  "reportDataSource": [{
+                     "reportId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+                     "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+                     "querySourceUniqueName": "[con;#0].[cat;#0].[Orders]",
+                     "querySourceCategoryId": null,
+                     "connectionId": null,
+                     "selected": false,
+                     "id": "e8cd9782-98bc-4f6b-9251-e48c756c9937",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 1,
+                     "created": "2017-09-12T06:30:52.84",
+                     "createdBy": "System5 Admin5",
+                     "modified": "2017-09-12T06:30:52.84",
+                     "modifiedBy": "System5 Admin5"
+                  }],
+                  "reportRelationship": [],
+                  "reportFilter": null,
+                  "reportPart": [{
+                     "isDirty": true,
+                     "reportPartContent": {
+                        "subReportDefinitionCollection": [],
+                        "collapseStatus": 0,
+                        "isDirty": false,
+                        "isCrossFiltering": false,
+                        "type": 3,
+                        "columns": {
+                           "elements": [{
+                              "reportPartContent": null,
+                              "isDirty": false,
+                              "name": "OrderID",
+                              "properties": {
+                                 "isDirty": false,
+                                 "fieldItemVisible": true,
+                                 "dataFormattings": null,
+                                 "headerFormating": null,
+                                 "drillDown": {
+                                    "subReport": {
+                                       "selectedReport": null,
+                                       "style": null,
+                                       "reportPartUsed": null,
+                                       "reportFilter": true,
+                                       "mappingFields": [],
+                                       "selectedIconValue": {
+                                          "icon": null,
+                                          "value": null
+                                       },
+                                       "viewSettingByLink": null
+                                    }
+                                 },
+                                 "otherProps": {
+                                    
+                                 }
+                              },
+                              "position": 1,
+                              "field": {
+                                 "fieldId": "2be8c595-91a3-4250-8828-dbbc07eaba83",
+                                 "fieldName": "OrderID",
+                                 "fieldNameAlias": "OrderID",
+                                 "dataFieldType": "Numeric",
+                                 "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+                                 "querySourceType": "Table",
+                                 "sourceAlias": "Orders",
+                                 "relationshipId": null,
+                                 "visible": true,
+                                 "calculatedTree": null,
+                                 "schemaName": "dbo",
+                                 "querySourceName": "Orders",
+                                 "databaseName": "Northwind-BA",
+                                 "isCalculated": false,
+                                 "hasAggregatedFunction": false
+                              },
+                              "isDeleted": false,
+                              "isSelected": false,
+                              "offset": {
+                                 
+                              }
+                           }],
+                           "name": "columns"
+                        },
+                        "rows": {
+                           "elements": [],
+                           "name": "rows"
+                        },
+                        "values": {
+                           "elements": [],
+                           "name": "values"
+                        },
+                        "separators": {
+                           "elements": [],
+                           "name": "separators"
+                        },
+                        "properties": {
+                           "isDirty": false,
+                           "generalInfo": {
+                              "gridStyle": "Vertical",
+                              "separatorStyle": "Comma"
+                           },
+                           "table": null,
+                           "columns": {
+                              "width": {
+                                 "value": 150
+                              },
+                              "alterBackgroundColor": false
+                           },
+                           "rows": {
+                              "alterBackgroundColor": false
+                           },
+                           "headers": null,
+                           "grouping": {
+                              "useSeparator": true
+                           },
+                           "view": {
+                              "dataRefreshInterval": {
+                                 "enable": false,
+                                 "updateInterval": 0,
+                                 "isAll": true,
+                                 "latestRecord": 0
+                              },
+                              "usePagination": true,
+                              "collapseDrilldownByDefault": false,
+                              "pageSize": 10,
+                              "pivotColumnsPerExportedPage": ""
+                           },
+                           "printing": {
+                              "usePageBreakAfterSeparator": false
+                           }
+                        },
+                        "settings": {
+                           
+                        },
+                        "changeGridStyleStatus": true,
+                        "inconsitentFunction": false,
+                        "title": null,
+                        "description": null
+                     },
+                     "width": 0,
+                     "height": 0,
+                     "state": 1,
+                     "modified": null,
+                     "configField": {
+                        
+                     },
+                     "stateReview": 0,
+                     "positionY": 0,
+                     "positionX": 0,
+                     "title": "Grid"
+                  }],
+                  "header": null,
+                  "footer": null,
+                  "titleDescription": null,
+                  "version": 5,
+                  "schedules": [],
+                  "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                  "accesses": [],
+                  "exportFormatSetting": null,
+                  "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                  "dynamicQuerySourceFields": [],
+                  "snapToGrid": false,
+                  "excludedRelationships": "",
+                  "isGlobal": false
+               },
+               "expandedLevel": -1,
+               "title": "Grid",
+               "paging": {
+                  "pageIndex": 1,
+                  "pageSize": 10
+               },
+               "sortOrders": [{
+                  "key": "OrderID",
+                  "sortingType": "Unsort"
+               }],
+               "filters": []
+            }
 
 GET fusion/printQuery/{reportId}/{reportPartId}/(pageIndex)/(pageSize)
 -------------------------------------------------------------------------
@@ -3030,4 +4252,6 @@ Returns the sql query for a report part load with paging and optional overridden
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/fusion/printQuery/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/79bf6715-4467-4f1b-8289-ad81c9defd6b HTTP/1.1

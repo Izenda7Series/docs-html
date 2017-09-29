@@ -153,6 +153,7 @@
 <li class="toctree-l4"><a class="reference internal" href="ReportRelationshipResult.html">ReportRelationshipResult</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReportRenameParameter.html">ReportRenameParameter</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">ReportSelectedPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reportpagedrequest">ReportPagedRequest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReportSelectedQuerySourceResult.html">ReportSelectedQuerySourceResult</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SchemaRequest.html">SchemaRequest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SchemaResult.html">SchemaResult</a></li>
@@ -274,23 +275,56 @@ array of objects</td>
 <td>An array of <a class="reference internal" href="ReportSelectedQuerySource.html"><span class="doc">ReportSelectedQuerySource</span></a> objects</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>categoryId</strong> <br clear="right" />
+</tbody>
+</table>
+<p>Inherited fields:</p>
+</div>
+<div class="section" id="reportpagedrequest">
+<h1>ReportPagedRequest<a class="headerlink" href="#reportpagedrequest" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="60%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>categoryId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
 <td>The id of the category if available</td>
-<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>subCategoryId</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>subCategoryId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
 <td>The id of the sub-category if available</td>
-<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>isGlobal</strong> <br clear="right" />
+boolean</td>
+<td>Y</td>
+<td>Whether to load global reports</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><strong>timestampOffset</strong> <br clear="right" />
 real number</td>
 <td>&#160;</td>
 <td>The timestamp offset. See <a class="reference internal" href="../../ui/doc_user_setup.html"><span class="doc">User Setup</span></a>.</td>
-<td>Inherited from <a class="reference internal" href="ReportPagedRequest.html"><span class="doc">ReportPagedRequest</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>excludeIds</strong> <br clear="right" />
+array of strings (GUIDs)</td>
+<td>&#160;</td>
+<td>The list of report ids to exclude</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -387,6 +421,30 @@ boolean</td>
       <span class="nt">&quot;descending&quot;</span><span class="p">:</span> <span class="kc">true</span>
     <span class="p">}</span>
   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>ReportPagedRequest Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+          <span class="nt">&quot;subcategoryid&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="nt">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                          <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;reportname&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;descending&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+                  <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;criteria&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                          <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;reportName&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;operation&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+                  <span class="p">}</span>
+          <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>

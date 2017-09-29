@@ -5,7 +5,9 @@ Data Model
 .. toctree::
    :titlesonly:
 
+   CalculatedFieldFunctionParam
    Connection
+   ConnectionColor
    CopiedItem
    CopyStatus
    DatabaseMapping
@@ -23,6 +25,7 @@ Data Model
    Overwrite
    QuerySource
    QuerySourceCategory
+   QuerySourceCategoryPagedRequest
    QuerySourceField
    QuerySourceFieldInfo
    QuerySourceFieldSchema

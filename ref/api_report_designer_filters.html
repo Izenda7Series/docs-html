@@ -247,7 +247,7 @@
 <tr class="row-odd"><td><a class="reference internal" href="#post-report-loadfilter">POST report/loadFilter</a></td>
 <td>Returns the report&#8217;s filter fields, with data source and data source field names replaced by correct alias defined in Data Model.</td>
 </tr>
-<tr class="row-even"><td>POST report/filter/loadFields</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-filter-loadfields">POST report/filter/loadFields</a></td>
 <td>Obsolete</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#get-report-filter-timeperiods">GET report/filter/timePeriods</a></td>
@@ -1080,10 +1080,104 @@ Sample response:</div>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="post-report-filter-loadfields">
+<h2>POST report/filter/loadFields<a class="headerlink" href="#post-report-filter-loadfields" title="Permalink to this headline">¶</a></h2>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/ReportFilterParameter.html"><span class="doc">ReportFilterParameter</span></a> object.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/ReportFilterField.html"><span class="doc">ReportFilterField</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/filter/loadFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;reportKey&quot;</span><span class="p">:{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;5447a5c1-a0c8-4bf6-bd68-f09234ba5e84&quot;</span><span class="p">},</span>
+   <span class="s2">&quot;filterId&quot;</span> <span class="p">:</span> <span class="s2">&quot;021c76a2-b108-4dd3-962c-4d5d2d1b22fe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;4f43a428-6e23-42c9-bb51-ab19f7966943&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;connectionName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;sourceFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipperID&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sourceFieldVisible&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;sourceFieldFilterable&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;sourceDataObjectName&quot;</span><span class="p">:</span> <span class="s2">&quot;Shippers&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;sourceDataObjectFullName&quot;</span><span class="p">:</span> <span class="s2">&quot;SQL-Northwind.dbo.Shippers&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;dataType&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;isParameter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;compareFieldCalculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;compareValueCalculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;compareField&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;dataFormat&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;reportId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;useMappedFieldAlias&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;uniqueId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;comparisionValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;inTimePeriodType&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;valueInTimePeriod&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;hasModifiedCalculatedTree&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;isHiddenFilter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;isInheritableFilter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;operatorName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;isDrillDown&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;filterId&quot;</span><span class="p">:</span> <span class="s2">&quot;021c76a2-b108-4dd3-962c-4d5d2d1b22fe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;reportFieldAlias&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;reportPartTitle&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;d5a8a521-6832-4973-8b2c-3360dc52814c&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipperID&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;cascading&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;operatorId&quot;</span><span class="p">:</span> <span class="s2">&quot;737307d1-1e5f-407f-889f-1b3c9a66dd6f&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;operatorSetting&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;dataFormatId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;sortType&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fontFamily&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fontSize&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+   <span class="s2">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#000&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#fff&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fontBold&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;fontItalic&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;fontUnderline&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;[con;#0].[cat;#0].[Shippers]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;querySourceFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipperID&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;comparisonFieldUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;isNegative&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4f43a428-6e23-42c9-bb51-ab19f7966943&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-28T07:49:39.2630000+07:00&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-28T07:49:39.2630000+07:00&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="get-report-filter-timeperiods">
 <h2>GET report/filter/timePeriods<a class="headerlink" href="#get-report-filter-timeperiods" title="Permalink to this headline">¶</a></h2>
 <p>Returns pre-defined time periods (last week, next year, etc).</p>
-<p>This API also returns custom time periods if available (see <a class="reference internal" href="api_report_designer_details.html#post-report-timeperiod"><span class="std std-ref">POST report/timePeriod</span></a> and IAdHocExtension&#8217;s <a class="reference internal" href="../dev/ref_iadhocextension.html#customtimeperiod"><span class="std std-ref">CustomTimePeriod</span></a>).</p>
+<p>This API also returns custom time periods if available (see <span class="xref std std-ref">POST_report/timePeriod</span> and IAdHocExtension&#8217;s <a class="reference internal" href="../dev/ref_iadhocextension.html#customtimeperiod"><span class="std std-ref">CustomTimePeriod</span></a>).</p>
 <p><strong>Request</strong></p>
 <blockquote>
 <div>No payload</div></blockquote>
@@ -5427,7 +5521,161 @@ Sample response:</div>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of string values</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/loadPartialFilterFieldData</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Request payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+   <span class="nt">&quot;reportParameter&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;968a482b-bda8-4650-b09a-bf35b4d734b3&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;section&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;saveAs&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;ignoreCheckChange&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;report&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Report&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+         <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;subCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;aliasId&quot;</span><span class="p">:</span> <span class="s2">&quot;205c0e5f-fff8-409b-a54a-b6687619486d_Orders&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;205c0e5f-fff8-409b-a54a-b6687619486d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;fe0c29b6-6f72-40f4-bb92-cfb6b05bd00e&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;primaryFields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;allowDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;filterable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;expressionFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="nt">&quot;filteredValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;groupPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;matchedTenant&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;isParameter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inaccessible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2be8c595-91a3-4250-8828-dbbc07eaba83&quot;</span>
+            <span class="p">}]</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;reportRelationship&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;logic&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;filterFields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;connectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-BA&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipPostalCode&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceFieldVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;sourceFieldFilterable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;sourceDataObjectName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;filterId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;cacc4fe7-797f-405e-bb92-7a4b8afcddcc&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;205c0e5f-fff8-409b-a54a-b6687619486d&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipPostalCode&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;cascading&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;operatorId&quot;</span><span class="p">:</span> <span class="s2">&quot;737307d1-1e5f-407f-889f-1b3c9a66dd6f&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sortType&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fontBold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;fontItalic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;fontUnderline&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;isParameter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;sourceDataObjectFullName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-BA.dbo.Orders&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;uniqueId&quot;</span><span class="p">:</span> <span class="s2">&quot;42&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;isInheritableFilter&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">}],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;0a1a5771-dbe9-4148-9d2f-f79a4c83b962&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;968a482b-bda8-4650-b09a-bf35b4d734b3&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;reportPart&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;schedules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;accesses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;dynamicQuerySourceFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;snapToGrid&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;expandedLevel&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;reportState&quot;</span><span class="p">:</span> <span class="mi">0</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;includeAll&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;includeBlank&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;filter&quot;</span>
+   <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;[BLANK]&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;[NULL]&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;02389-673&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;82520&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;83720&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PO31 7PJ&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;T2F 8M4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;V3F 2K1&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-report-loadpartialfilterfielddataastree">
 <h2>POST report/loadPartialFilterFieldDataAsTree<a class="headerlink" href="#post-report-loadpartialfilterfielddataastree" title="Permalink to this headline">¶</a></h2>
@@ -5440,7 +5688,143 @@ Sample response:</div>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/ValueTreeNode.html"><span class="doc">ValueTreeNode</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/report/loadPartialFilterFieldDataAsTree</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample Response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+            <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;[Blank]&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;[Blank]&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;[Null]&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;[Null]&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;02389-673&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;02389-673&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;82520&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;82520&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;83720&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;83720&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;PO31 7PJ&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;PO31 7PJ&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;T2F 8M4&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;T2F 8M4&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                  <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;V3F 2K1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;V3F 2K1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;[All]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;[All]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+   <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-report-loadallfilterfieldsdata">
 <h2>POST report/loadAllFilterFieldsData<a class="headerlink" href="#post-report-loadallfilterfieldsdata" title="Permalink to this headline">¶</a></h2>

@@ -35,7 +35,11 @@ Summary
      - Report Designer > Data Source
    * - `POST report/loadQuerySources`_
      - Returns details for a list of query sources and a list of related query sources.
-     - To be updated
+     - 
+       \- Switch to Simple mode |br|
+       \- Create a new report OR open an existing report |br|
+       \- In Data Source tab, choose a data source |br|
+       \- OR switch from the others to Data Source tab
    * - `POST report/loadRelationships`_
      - Returns an updated list of relationships from an existing report together with an updated list of data sources.
      - Report Designer for an existing report
@@ -44,7 +48,7 @@ Summary
      - Report Designer > Data Source > Validate Syntax
    * - `POST report/detectRelationshipsChange`_
      - Detects if any relationship should be removed because of changes in data sources.
-     - To be updated
+     - Not used
    * - `POST report/availableQuerySourceFields`_
      - Returns a list of data source fields in selected query sources of a report.
      - Report Designer > Data Source > select a data source
@@ -298,47 +302,55 @@ Returns details for a list of query sources and a list of related query sources.
    Request payload::
 
       {
-        "querySources" : [{
-            "querySourceId": "39e2a9b9-3be3-4b8b-ae86-0823ecb3c533",
-            "selected": true
+         "querySources": [{
+            "querySourceId": "126c58e7-e061-4f27-83c8-47c9135dde2c",
+            "selected": true,
+            "physicalChange": 0,
+            "state": 2
          }],
-        "tenantId" : null,
-        "criteria" : null,
-        "pageIndex" : 1,
-        "pageSize" : 10,
-        "sortOrders" : null
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+         "criteria": [{
+            "key": "All",
+            "value": "",
+            "operation": 1
+         }],
+         "pageIndex": 1,
+         "pageSize": 10,
+         "sortOrders": [{
+            "key": "Category",
+            "descending": true
+         }]
       }
 
    Sample response::
 
       {
          "relatedQuerySources": [{
-            "querySourceId": "39e2a9b9-3be3-4b8b-ae86-0823ecb3c533",
-            "isNew": false,
+            "querySourceId": "126c58e7-e061-4f27-83c8-47c9135dde2c",
+            "selected": false,
             "physicalChange": 0,
-            "selected": false
-         }, {
-            "querySourceId": "c25dc1d3-8066-4fe2-9adb-179060780088",
-            "isNew": false,
+            "isNew": false
+         },
+         {
+            "querySourceId": "735f70b1-8e33-4b02-bf62-53d2c57b9498",
+            "selected": false,
             "physicalChange": 0,
-            "selected": false
-         }, {
-            "querySourceId": "2c26efb2-9ff8-43ea-bcc7-6f1063e1f635",
-            "isNew": false,
-            "physicalChange": 0,
-            "selected": false
+            "isNew": false
          }],
+         "relatedDataSourceCategories": null,
          "result": [{
-            "id": "39e2a9b9-3be3-4b8b-ae86-0823ecb3c533",
-            "category": null,
-            "databaseName": "Northwind",
-            "schemaName": "dbo",
-            "dataObject": "CustomerCustomerDemo",
+            "id": "126c58e7-e061-4f27-83c8-47c9135dde2c",
+            "category": "MySQL-Northwind",
+            "databaseName": "northwind",
+            "schemaName": "northwind",
+            "dataObject": "order details",
             "dataObjectType": "Table"
          }],
-         "total": 1,
          "pageIndex": 1,
-         "pageSize": 10
+         "pageSize": 10,
+         "total": 1,
+         "skipItems": 0,
+         "isLastPage": false
       }
 
 POST report/loadRelationships
@@ -579,7 +591,51 @@ Detects if any relationship should be removed because of changes in data sources
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/report/detectRelationshipsChange HTTP/1.1
+
+   Request payload::
+
+      {
+         "objectId": "9197f210-766a-45d3-a1f9-5c4f4a4aa8ba",
+         "criteria": [
+            {
+               "key": "All",
+               "value": "",
+               "operation": 1
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 1000,
+         "querySources": [
+            {
+               "querySourceId": "d38e8059-6b7e-49a7-be68-ec02d2b42168",
+               "selected": true,
+               "physicalChange": 0,
+               "state": 1
+            },
+            {
+               "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+               "selected": true,
+               "physicalChange": 0,
+               "state": 1
+            },
+            {
+               "querySourceId": "ec580d6d-709a-41fd-b71e-489795e7428f",
+               "selected": true,
+               "physicalChange": 2,
+               "state": 1
+            }
+         ],
+         "relationshipOrders": [],
+         "tenantId": null,
+         "selectedDataSourceChanged": true
+      }
+
+   Response::
+
+      false
 
 .. _POST_report/availableQuerySourceFields:
 

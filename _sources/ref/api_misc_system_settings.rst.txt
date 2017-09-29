@@ -815,7 +815,11 @@ Returns an array of system variable names.
 
    Sample response::
 
-      ["Tenant ID","User ID","Role ID"]
+      [
+         "@Tenant ID",
+         "@User ID",
+         "@Role ID"
+      ]
 
 
 
@@ -830,21 +834,7 @@ Returns an array of supported data source types.
 
 **Response**
 
-    .. list-table::
-       :header-rows: 1
-
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string
-          -  The unique key of the data source type (same as the name)
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the data source type
-          -
-
+   A list :doc:`models/Item` objects.
 **Samples**
 
    .. code-block:: http
@@ -853,21 +843,26 @@ Returns an array of supported data source types.
 
    Sample response::
 
-      [{
-           "key" : "Table",
-           "value" : "Table"
-        }, {
-           "key" : "View",
-           "value" : "View"
-        }, {
-           "key" : "Stored Procedure",
-           "value" : "Stored Procedure"
-        }, {
-           "key" : "Function",
-           "value" : "Function"
-        }
+      [
+         {
+            "key": "Table",
+            "value": "Table",
+            "originalValue": null,
+            "dataFormat": null,
+            "intimePeriodType": null,
+            "valueInTimePeriod": 0,
+            "function": null
+         },
+         {
+            "key": "View",
+            "value": "View",
+            "originalValue": null,
+            "dataFormat": null,
+            "intimePeriodType": null,
+            "valueInTimePeriod": 0,
+            "function": null
+         }
       ]
-
 
 
 POST systemSetting/loadEmailVariables

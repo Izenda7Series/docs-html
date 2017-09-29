@@ -666,7 +666,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                  new DataFormat
                 {
                     Name = "By Hour",
-                    DataType = IzendaDataType.DatetimeType,
+                    DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
                     FormatFunc = (x) =>
                     {
@@ -677,7 +677,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                 new DataFormat
                 {
                     Name = "dd MM:mm",
-                    DataType = IzendaDataType.DatetimeType,
+                    DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
                     FormatFunc = (x) =>
                     {
@@ -688,7 +688,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                 new DataFormat
                 {
                     Name = "dd HH:mm:ss",
-                    DataType = IzendaDataType.DatetimeType,
+                    DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
                     FormatFunc = (x) =>
                     {
@@ -699,7 +699,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                 new DataFormat
                 {
                     Name = "dd mm:ss",
-                    DataType = IzendaDataType.DatetimeType,
+                    DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
                     FormatFunc = (x) =>
                     {
@@ -710,7 +710,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                 new DataFormat
                     {
                         Name = "£0,000",
-                        DataType = IzendaDataType.NumericType,
+                        DataType = DataType.Numeric,
                         Category = IzendaKey.CustomFormat,
                         FormatFunc = (x) =>
                         {
@@ -720,7 +720,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                     new DataFormat
                     {
                         Name = "¥0,000",
-                        DataType = IzendaDataType.NumericType,
+                        DataType = DataType.Numeric,
                         Category = IzendaKey.CustomFormat,
                         FormatFunc = (x) =>
                         {
@@ -731,7 +731,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                     new DataFormat
                     {
                         Name = "0,000",
-                        DataType = IzendaDataType.NumericType,
+                        DataType = DataType.Numeric,
                         Category = IzendaKey.CustomFormat,
                         FormatFunc = (x) =>
                         {
@@ -742,7 +742,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                         new DataFormat
                         {
                             Name = "$0,000",
-                            DataType = IzendaDataType.NumericType,
+                            DataType = DataType.Numeric,
                             Category = IzendaKey.CustomFormat,
                             FormatFunc = (x) =>
                             {
@@ -753,7 +753,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                         new DataFormat
                         {
                             Name = "HH:MM:SS",
-                            DataType = IzendaDataType.NumericType,
+                            DataType = DataType.Numeric,
                             Category = IzendaKey.CustomFormat,
                             FormatFunc = (x) =>
                             {

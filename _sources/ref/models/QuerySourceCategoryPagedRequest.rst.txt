@@ -13,10 +13,9 @@ QuerySourceCategoryPagedRequest
       -  Description
       -  Note
    *  -  **ConnectionId** |br|
-         string (GUID)
+         string
       -
-      -  The id of the connection containing the query source category.
-      -
+      -  The id of the :doc:`Connection`
 
 Inherited fields:
 
@@ -31,15 +30,14 @@ Inherited fields:
    .. code-block:: json
 
       {
-        "connectionId" : "ed13d1d0-cc0c-49bc-8925-3a11da65ef65",
+        "ConnectionId" : "2046c03b-3830-4385-9ac0-bdc95e92ea49",
+        "criteria" : [],
         "tenantId" : null,
-        "criteria" : [{
-              "key" : "All",
-              "value" : "demo",
-              "operation" : 1
-           }
-        ],
         "pageIndex" : 1,
         "pageSize" : 1,
-        "sortOrders" : null
+        "sortOrders" : [{
+              "key" : "value",
+              "descending" : false
+           }
+        ]
       }

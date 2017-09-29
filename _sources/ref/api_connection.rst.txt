@@ -321,12 +321,19 @@ The connection string will be validated before saving.
         }
       }
 
-   Sample response::
+   Sample response (in case user has System Admin Permission)::
 
       {
         "success" : true,
         "connectionId" : "f5180bc0-7c07-48db-b672-e66a5adde027",
         "connectionErrors" : []
+      }
+
+   Response in case user does not have System Admin Permission::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
       }
 
 GET connection/(tenant_id)
@@ -760,12 +767,20 @@ Hides from Data Model and Reports all query sources in the connection specified 
 
       POST /api/connection/invisible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3 HTTP/1.1
 
-   Successful response::
+   Successful response (in case user has System Admin Permission)::
 
       {
          "success": true,
          "messages": null
       }
+
+   Response in case user does not have System Admin Permission::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
+      }
+
 
 POST connection/visible/{connection_id}
 --------------------------------------------------------------
@@ -812,11 +827,18 @@ Deletes the connection specified by the {connection_id} value.
 
       DELETE /api/connection/f5180bc0-7c07-48db-b672-e66a5adde027 HTTP/1.1
 
-   Successful response::
+   Successful response (in case user has System Admin Permission)::
 
       {
         "success" : true,
         "messages" : null
+      }
+
+   Response in case user does not have System Asmin Permission)::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
       }
 
 POST connection/reloadRemoteSchema
@@ -991,9 +1013,17 @@ Returns the count of visible connections, filtered by tenant_id if available.
 
       GET /api/connection/visible/count HTTP/1.1
 
-   Sample response::
+   Sample response (in case user has System Asmin Permission)::
 
       2
+
+   Reponse in case user does not have System Admin Permission::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
+      }
+
 
 .. _POST_connection/loadDistinctConnections:
 

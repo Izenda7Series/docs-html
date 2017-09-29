@@ -17,25 +17,10 @@ ReportSelectedPagedRequest
       -
       -  An array of :doc:`ReportSelectedQuerySource` objects
       -
-   *  -  **categoryId** |br|
-         string (GUID)
-      -  Y
-      -  The id of the category if available
-      -  Inherited from :doc:`ReportPagedRequest`
-   *  -  **subCategoryId** |br|
-         string (GUID)
-      -  Y
-      -  The id of the sub-category if available
-      -  Inherited from :doc:`ReportPagedRequest`
-   *  -  **timestampOffset** |br|
-         real number
-      -
-      -  The timestamp offset. See :doc:`/ui/doc_user_setup`.
-      -  Inherited from :doc:`ReportPagedRequest`
 
 Inherited fields:
 
-.. include:: PagedRequest.rst
+.. include:: ReportPagedRequest.rst
 
 .. container:: toggle
 

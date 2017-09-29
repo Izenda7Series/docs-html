@@ -41,6 +41,10 @@ List of APIs
      - Returns an array of the :term:`query source categories <query source category>` in the specified connection.
      
        .. versionadded:: 2.0.3
+   * - `POST dataModel/basicQuerySourceCategoriesInfo`_
+     - Returns an array of the :term:`query source categories <query source category>` with paging in the specified connection.
+     
+       .. versionadded:: 2.4.0
    * - `GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)`_
      - Returns an array of id and name of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).
    * - `GET dataModel/querySourcesInfo/{connection_id}/(type)`_
@@ -57,7 +61,7 @@ List of APIs
      - Returns the schema of stored procedures after using user-supplied parameters to try running them.
    * - `POST dataModel/validateCalculatedField`_
      - Validates a calculated field for duplicated name before saving.
-   * - `GET dataModel/functionOperators/(tenant_id)`_
+   * - `POST dataModel/functionOperators/`_
      - Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.
    * - `POST dataModel/loadRelationships`_
      - Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.
@@ -113,51 +117,66 @@ Returns an array of visible query sources, paged and sorted, filtered by type an
    Request payload::
 
       {
-        "querySourceType" : "Table",
-        "tenantId" : null,
-        "criteria" : [{
-              "key" : "DataSourceName",
-              "value" : "demo",
-              "operation" : 1
-           }
-        ],
-        "pageIndex" : 1,
-        "pageSize" : 1,
-        "sortOrders" : [{
-              "key" : "Category",
-              "descending" : true
-           }
-        ]
+         "querySourceType": "Table",
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+         "criteria": [{
+            "key": "DataSourceName",
+            "value": "order",
+            "operation": 1
+         }],
+         "pageIndex": 1,
+         "pageSize": 10,
+         "sortOrders": [{
+            "key": "Category",
+            "descending": true
+         }]
       }
 
    Sample response::
 
       {
-        "result" : [{
-              "id" : "24fa8fec-afe0-489d-b036-aaca514a7a0b",
-              "name" : "dbo.CustomerDemographics",
-              "type" : "Table",
-              "parentQuerySourceId" : null,
-              "categoryId" : null,
-              "selected" : false,
-              "connectionId" : "48733501-c57d-48ca-aded-501d5ebdaad9",
-              "connectionName" : "Northwind",
-              "childs" : null,
-              "dataSourceCategoryId" : "feb74cd9-bc6d-4933-bf72-296b394d0f77",
-              "dataSourceCategoryName" : "Cat_Customer",
-              "alias" : "Cus_D",
-              "querySourceFields" : [],
-              "querySourceCategory" : null,
-              "modified" : null,
-              "extendedProperties" : null,
-              "physicalChange" : 0,
-              "approval" : 0,
-              "existed" : false
-           }
-        ],
-        "total" : 2,
-        "pageIndex" : 1,
-        "pageSize" : 1
+         "result": [        
+            {
+                  "realName": "orders_new",
+                  "id": "18f55edc-b521-4614-9c06-817dac726284",
+                  "name": "northwind.orders_new",
+                  "type": "Table",
+                  "parentQuerySourceId": null,
+                  "categoryId": "94454a0a-17a2-49e5-bebf-9c0d07d95587",
+                  "selected": false,
+                  "deleted": false,
+                  "connectionId": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+                  "connectionName": "northwind",
+                  "childs": null,
+                  "dataSourceCategoryId": null,
+                  "dataSourceCategoryName": null,
+                  "alias": null,
+                  "originalAlias": null,
+                  "querySourceFields": [],
+                  "querySourceCategoryName": "northwind",
+                  "querySourceCategory": null,
+                  "modified": "2017-09-14T03:37:29.653",
+                  "extendedProperties": null,
+                  "physicalChange": 0,
+                  "approval": 0,
+                  "existed": false,
+                  "checked": false,
+                  "belongToCopiedReport": false,
+                  "customDefinition": null,
+                  "isCustomQuerySource": false,
+                  "isCheck": false,
+                  "disabled": false,
+                  "fullPath": null,
+                  "indeterminate": false,
+                  "numOfChilds": 0,
+                  "numOfCheckedChilds": 0
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 10,
+         "total": 1,
+         "skipItems": 0,
+         "isLastPage": false
       }
 
 .. _POST_dataModel/loadQuerySourceFields:
@@ -204,30 +223,60 @@ Will load from remote connection if they are not yet populated in system.
    Sample response::
 
       {
-         "result": [{
-            "id": "04ff2dc5-df20-48e3-bae8-443b400b0b89",
-            "name": "CustomerTypeID",
-            "alias": "CTypeID",
-            "dataType": "nchar",
-            "visible": true,
-            "filterable": true,
-            "deleted": false,
-            "querySourceId": "9fa90af2-5329-44ac-a753-50c27f9d6fd5",
-            "parentId": null,
-            "children": null,
-            "modified": "2016-04-07T04:51:17",
-            "filteredValue": "{}",
-            "type": 0,
-            "position": 0,
-            "extendedProperties": "{\"PrimaryKey\":true}",
-            "physicalChange": 0,
-            "approval": 0,
-            "existed": false,
-            "matchedTenant": false
-         }],
-         "total": 2,
+         "result": [
+            {
+                  "name": "ShipVia",
+                  "alias": "",
+                  "dataType": "int",
+                  "izendaDataType": "Numeric",
+                  "allowDistinct": true,
+                  "visible": true,
+                  "filterable": true,
+                  "querySourceId": "18f55edc-b521-4614-9c06-817dac726284",
+                  "parentId": null,
+                  "expressionFields": [],
+                  "filteredValue": "",
+                  "type": 0,
+                  "groupPosition": 0,
+                  "position": 7,
+                  "extendedProperties": "{\"PrimaryKey\":true}",
+                  "physicalChange": 0,
+                  "approval": 0,
+                  "existed": false,
+                  "matchedTenant": false,
+                  "functionName": null,
+                  "expression": null,
+                  "fullName": null,
+                  "calculatedTree": null,
+                  "reportId": null,
+                  "originalName": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isParameter": false,
+                  "isCalculated": false,
+                  "hasAggregatedFunction": false,
+                  "querySource": null,
+                  "querySourceName": null,
+                  "categoryName": null,
+                  "inaccessible": false,
+                  "originalAlias": null,
+                  "fullPath": null,
+                  "isCheck": false,
+                  "id": "0b0645cc-c401-4574-a868-aacaada4cb16",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "acme",
+                  "modified": "2017-09-14T03:35:32.33",
+                  "modifiedBy": null
+            }
+         ],
          "pageIndex": 1,
-         "pageSize": 1
+         "pageSize": 1,
+         "total": 14,
+         "skipItems": 0,
+         "isLastPage": true
       }
 
 
@@ -246,22 +295,10 @@ Returns an array of id and name of connections (filtered by tenant_id if given).
 
 **Response**
 
-    An array of objects with two fields **key** and **value**
-    
-    .. list-table::
-       :header-rows: 1
+   An array of :doc:`models/Item` objects with:
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string (GUID)
-          -  The id of the connection
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the connection
-          -
+      \- **key** is the id of the connection |br|
+      \- **value** is the name of the connection
 
 **Samples**
 
@@ -271,10 +308,73 @@ Returns an array of id and name of connections (filtered by tenant_id if given).
 
    Sample response::
 
-      [{
-         "key": "48733501-c57d-48ca-aded-501d5ebdaad9",
-         "value": "Northwind"
-      }]
+      [
+         {
+            "key": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+            "value": "northwind",
+            "originalValue": null,
+            "dataFormat": null,
+            "intimePeriodType": null,
+            "valueInTimePeriod": 0,
+            "function": null
+         }
+      ]
+
+POST dataModel/basicConnectionsInfo
+--------------------------------------------------------------
+
+Returns an array of connections infor with paging.
+
+.. versionadded:: 2.4.0
+
+.. note::
+
+   The same as :ref:`GET_connection/basicInfo/(tenant_id)`
+
+**Request**
+
+   Payload: a :doc:`models/PagedRequest` object.
+
+**Response**
+
+   A :doc:`models/PagedResult` object with **result** field containing a list of :doc:`models/Item` objects whose each **key** is the connectionsId and **value** is the connectionName.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/dataModel/basicConnectionsInfo HTTP/1.1
+
+   Sample response::
+
+      {
+         "result": [
+            {
+                  "key": "2046c03b-3830-4385-9ac0-bdc95e92ea49",
+                  "value": "[MSSQL]My Test 1",
+                  "originalValue": null,
+                  "dataFormat": null,
+                  "intimePeriodType": null,
+                  "valueInTimePeriod": 0,
+                  "function": null
+            },
+            {
+                  "key": "7e682625-52c8-4524-a19d-4d8225aa9ea8",
+                  "value": "[MSSQL]My Test 2",
+                  "originalValue": null,
+                  "dataFormat": null,
+                  "intimePeriodType": null,
+                  "valueInTimePeriod": 0,
+                  "function": null
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 2,
+         "total": 19,
+         "skipItems": 0,
+         "isLastPage": false
+      }
+
 
 POST dataModel/basicConnectionsInfo
 --------------------------------------------------------------
@@ -350,11 +450,81 @@ Returns an array of the :term:`query source categories <query source category>` 
 
 **Response**
 
-    To be updated
+   An array of :doc:`models/Item` objects with:
+
+      \- **key** is the id of the :doc:`models/QuerySourceCategory` |br|
+      \- **value** is the name of the :doc:`models/QuerySourceCategory`
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      GET /api/dataModel/basicQuerySourceCategoriesInfo/2046c03b-3830-4385-9ac0-bdc95e92ea49 HTTP/1.1
+
+   Sample response::
+
+      [
+        {
+          "key": "34dc82ea-890d-4e3a-86a9-91ef171fd6f5",
+          "value": "Application",
+          "originalValue": null,
+          "dataFormat": null,
+          "intimePeriodType": null,
+          "valueInTimePeriod": 0,
+          "function": null
+        },
+        {
+          "key": "e3354049-cffc-4b3d-1g25-e9f518d12d01",
+          "value": "DataLoadSimulation",
+          "originalValue": null,
+          "dataFormat": null,
+          "intimePeriodType": null,
+          "valueInTimePeriod": 0,
+          "function": null
+        }
+      ]
+
+POST dataModel/basicQuerySourceCategoriesInfo/
+--------------------------------------------------------------
+
+Returns an array of the :term:`query source categories <query source category>` with paging.
+
+.. versionadded:: 2.4.0
+
+**Request**
+
+    Payload: a :doc:`models/QuerySourceCategoryPagedRequest` object.
+
+**Response**
+
+       A :doc:`models/PagedResult` object with **result** field containing a list of :doc:`models/Item` objects whose each **key** is the id of the :doc:`models/QuerySourceCategory` and **value** is the name of the the :doc:`models/QuerySourceCategory`.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/dataModel/basicQuerySourceCategoriesInfo HTTP/1.1
+
+   Sample response::
+
+      {
+         "result": [
+            {
+                  "key": "34dc82ea-890d-4e3a-86a9-91ef171f4ca5",
+                  "value": "Application",
+                  "originalValue": null,
+                  "dataFormat": null,
+                  "intimePeriodType": null,
+                  "valueInTimePeriod": 0,
+                  "function": null
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 1,
+         "total": 11,
+         "skipItems": 0,
+         "isLastPage": false
+      }
 
 POST dataModel/basicQuerySourceCategoriesInfo/
 --------------------------------------------------------------
@@ -392,23 +562,10 @@ Returns an array of id and name of the query sources in the specified connection
 
 **Response**
 
-    An array of objects with two fields **key** and **value**
-    
-    .. list-table::
-       :header-rows: 1
+   An array of :doc:`models/Item` objects with:
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string (GUID)
-          -  The id of the query source
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the query source, qualified with the schema name
-          -
-
+      \- **key** is the id of the :doc:`models/QuerySource` |br|
+      \- **value** is the name of the :doc:`models/QuerySource`
 
 **Samples**
 
@@ -420,10 +577,20 @@ Returns an array of id and name of the query sources in the specified connection
 
       [{
          "key": "4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8",
-         "value": "dbo.Suppliers"
+         "value": "dbo.Suppliers",
+         "originalValue": null,
+         "dataFormat": null,
+         "intimePeriodType": null,
+         "valueInTimePeriod": 0,
+         "function": null
       }, {
          "key": "42f7c4ff-f44e-4460-bd50-10540d99a276",
-         "value": "dbo.Order Details"
+         "value": "dbo.Order Details",
+         "originalValue": null,
+         "dataFormat": null,
+         "intimePeriodType": null,
+         "valueInTimePeriod": 0,
+         "function": null
       }]
 
 
@@ -462,7 +629,9 @@ Returns an array of the query sources in the specified connection, filtered by t
           "category": "dbo",
           "serverTypeId": "00000000-0000-0000-0000-000000000000",
           "connectionStringId": "00000000-0000-0000-0000-000000000000",
-          "connectionString": null
+          "connectionString": null,
+          "connectionName": null,
+          "querySourceCategoryName": null
         },
         {
           "id": "55329213-9db0-4835-b465-44b3ac9b19fa",
@@ -471,7 +640,9 @@ Returns an array of the query sources in the specified connection, filtered by t
           "category": "dbo",
           "serverTypeId": "00000000-0000-0000-0000-000000000000",
           "connectionStringId": "00000000-0000-0000-0000-000000000000",
-          "connectionString": null
+          "connectionString": null,
+          "connectionName": null,
+          "querySourceCategoryName": null
         }]
 
 
@@ -511,22 +682,10 @@ Returns an array of id and name of the query source fields in the query source s
 
 **Response**
 
-    An array of objects with two fields **key** and **value**
-    
-    .. list-table::
-       :header-rows: 1
+   An array of :doc:`models/Item` objects with:
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string (GUID)
-          -  The id of the query source field
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the query source field
-          -
+      \- **key** is the id of the :doc:`models/QuerySourceField` |br|
+      \- **value** if the name of the :doc:`models/QuerySourceField`
 
 **Samples**
 
@@ -538,13 +697,28 @@ Returns an array of id and name of the query source fields in the query source s
 
       [{
          "key": "f8c2a34b-b304-4f1d-9d90-96c018ec3d2a",
-         "value": "ContactName"
+         "value": "ContactName",
+         "originalValue": null,
+         "dataFormat": null,
+         "intimePeriodType": null,
+         "valueInTimePeriod": 0,
+         "function": null
       }, {
          "key": "a895434e-a77b-452e-8ed1-9b5fa339f1a8",
-         "value": "CompanyName"
+         "value": "CompanyName",
+         "originalValue": null,
+         "dataFormat": null,
+         "intimePeriodType": null,
+         "valueInTimePeriod": 0,
+         "function": null
       }, {
          "key": "3b266337-0142-4a4b-8351-ea0a74a7f234",
-         "value": "SupplierID"
+         "value": "SupplierID",
+         "originalValue": null,
+         "dataFormat": null,
+         "intimePeriodType": null,
+         "valueInTimePeriod": 0,
+         "function": null
       }]
 
 .. _POST_dataModel:
@@ -758,7 +932,8 @@ Saves a list of query sources.
 
       {
         "success" : true,
-        "messages" : []
+        "messages" : [],
+        "data" : null
       }
 
 GET dataModel/indicator/(tenant_id)
@@ -772,22 +947,10 @@ Returns the number of physical changes in Data Model for each type Table, View, 
 
 **Response**
 
-    An array of objects with two fields **key** and **value**
-    
-    .. list-table::
-       :header-rows: 1
+   An array of :doc:`models/Item` objects with:
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string
-          -  Either "Table", "View", "Stored procedure" or "Function"
-          -
-       *  -  **value** |br|
-             integer
-          -  The number of changes for each type
-          -
+      \- **key** is Either "Table", "View", "Stored procedure" or "Function" |br|
+      \- **value** is the number of changes for each type
 
 **Samples**
 
@@ -799,10 +962,20 @@ Returns the number of physical changes in Data Model for each type Table, View, 
 
       [{
         "key" : "Table",
-        "value" : 2
+        "value" : 2,
+        "originalValue": null,
+        "dataFormat": null,
+        "intimePeriodType": null,
+        "valueInTimePeriod": 0,
+        "function": null
       }, {
         "key" : "View",
-        "value" : 1
+        "value" : 1,
+        "originalValue": null,
+        "dataFormat": null,
+        "intimePeriodType": null,
+        "valueInTimePeriod": 0,
+        "function": null
       }]
 
 
@@ -873,59 +1046,121 @@ Returns the schema of stored procedures after using user-supplied parameters to 
         ]
       }
 
-   Sample response::
+   .. container:: toggle
 
-      {
-        "data" : {
-           "result" : [{
-                 "id" : "00000000-0000-0000-0000-000000000000",
-                 "name" : "ProductName",
-                 "alias" : "",
-                 "dataType" : "nvarchar",
-                 "visible" : true,
-                 "filterable" : true,
-                 "deleted" : false,
-                 "querySourceId" : "0cd0f186-48f1-47a9-9975-1f2bded3a5cc",
-                 "parentId" : null,
-                 "children" : null,
-                 "modified" : "0001-01-01T00:00:00",
-                 "filteredValue" : "",
-                 "type" : 0,
-                 "position" : 0,
-                 "extendedProperties" : null,
-                 "physicalChange" : 0,
-                 "approval" : 0,
-                 "existed" : false,
-                 "matchedTenant" : false
-              }, {
-                 "id" : "8ccfac80-c883-446b-948d-18568dc4d173",
-                 "name" : "@OrderID",
-                 "alias" : "",
-                 "dataType" : "int",
-                 "visible" : true,
-                 "filterable" : true,
-                 "deleted" : false,
-                 "querySourceId" : "0cd0f186-48f1-47a9-9975-1f2bded3a5cc",
-                 "parentId" : null,
-                 "children" : null,
-                 "modified" : "2016-04-14T04:19:48",
-                 "filteredValue" : "{}",
-                 "type" : 1,
-                 "position" : 1,
-                 "extendedProperties" : null,
-                 "physicalChange" : 0,
-                 "approval" : 0,
-                 "existed" : false,
-                 "matchedTenant" : false
-              }
-           ],
-           "total" : 2,
-           "pageIndex" : 0,
-           "pageSize" : 1000
-        },
-        "success" : true,
-        "messages" : null
-      }
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         {
+            "data": {
+               "result": [
+                     {
+                        "name": "ProductName",
+                        "alias": "",
+                        "dataType": "nvarchar",
+                        "izendaDataType": "Text",
+                        "allowDistinct": true,
+                        "visible": true,
+                        "filterable": true,
+                        "querySourceId": "00000000-0000-0000-0000-000000000000",
+                        "parentId": null,
+                        "expressionFields": [],
+                        "filteredValue": "{}",
+                        "type": 0,
+                        "groupPosition": 1,
+                        "position": 3,
+                        "extendedProperties": null,
+                        "physicalChange": 0,
+                        "approval": 0,
+                        "existed": false,
+                        "matchedTenant": false,
+                        "functionName": null,
+                        "expression": null,
+                        "fullName": null,
+                        "calculatedTree": null,
+                        "reportId": null,
+                        "originalName": null,
+                        "originalId": "00000000-0000-0000-0000-000000000000",
+                        "isParameter": false,
+                        "isCalculated": false,
+                        "hasAggregatedFunction": false,
+                        "querySource": null,
+                        "querySourceName": null,
+                        "categoryName": null,
+                        "inaccessible": false,
+                        "originalAlias": null,
+                        "fullPath": null,
+                        "isCheck": false,
+                        "id": "156f529f-af43-44b1-82b8-419e4a5ed086",
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "acme",
+                        "modified": "0001-01-01T00:00:00",
+                        "modifiedBy": null
+                     },
+                     {
+                        "name": "@OrderID",
+                        "alias": "",
+                        "dataType": "int",
+                        "izendaDataType": "Int",
+                        "allowDistinct": true,
+                        "visible": true,
+                        "filterable": true,
+                        "querySourceId": "00000000-0000-0000-0000-000000000000",
+                        "parentId": null,
+                        "expressionFields": [],
+                        "filteredValue": "{}",
+                        "type": 0,
+                        "groupPosition": 1,
+                        "position": 2,
+                        "extendedProperties": null,
+                        "physicalChange": 0,
+                        "approval": 0,
+                        "existed": false,
+                        "matchedTenant": false,
+                        "functionName": null,
+                        "expression": null,
+                        "fullName": null,
+                        "calculatedTree": null,
+                        "reportId": null,
+                        "originalName": null,
+                        "originalId": "00000000-0000-0000-0000-000000000000",
+                        "isParameter": false,
+                        "isCalculated": false,
+                        "hasAggregatedFunction": false,
+                        "querySource": null,
+                        "querySourceName": null,
+                        "categoryName": null,
+                        "inaccessible": false,
+                        "originalAlias": null,
+                        "fullPath": null,
+                        "isCheck": false,
+                        "id": "086d5f37-d6b4-4aa4-807e-f6edac2f05b2",
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "acme",
+                        "modified": "0001-01-01T00:00:00",
+                        "modifiedBy": null
+                     },
+               ],
+               "pageIndex": 0,
+               "pageSize": 10,
+               "total": 2,
+               "skipItems": 0,
+               "isLastPage": true
+            },
+            "success": true,
+            "messages": null
+         }
 
 
 POST dataModel/validateCalculatedField
@@ -957,17 +1192,21 @@ Validates a calculated field for duplicated name before saving.
 
    Sample response::
 
-      true
+      {
+         "success": true,
+         "messages": null,
+         "data": null
+      }
 
 
-GET dataModel/functionOperators/(tenant_id)
+POST dataModel/functionOperators/
 --------------------------------------------------------------
 
 Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.
 
 **Request**
 
-    No payload
+    A :doc:`models/CalculatedFieldFunctionParam` object.
 
 **Response**
 
@@ -977,7 +1216,19 @@ Returns an array of functions/operators that support calculated fields, filtered
 
    .. code-block:: http
 
-      GET /api/dataModel/functionOperators HTTP/1.1
+      POST /api/dataModel/functionOperators HTTP/1.1
+
+   Sample Payload::
+
+      {
+         "tenantId" : "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+         "querySourceIds" : [
+            "273badf8-d210-494f-a458-25e8f462891f",
+            "5cc9e1dd-239c-43ac-8098-6b1c4b9e4478",
+            "25ac2696-cabb-41df-a9aa-1b46f46c42f1",
+            "f7ae5b5d-628e-4eaf-b8b2-fd823a484a35"		
+         ]
+      }
 
    .. container:: toggle
 
@@ -995,7 +1246,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression - expression",
             "expressionSyntax": "-",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "*",
@@ -1004,7 +1257,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression * expression",
             "expressionSyntax": "*",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "/",
@@ -1013,7 +1268,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression / expression",
             "expressionSyntax": "/",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "+",
@@ -1022,7 +1279,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression + expression",
             "expressionSyntax": "+",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "<",
@@ -1031,7 +1290,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression < expression",
             "expressionSyntax": "<",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "<=",
@@ -1040,7 +1301,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression <= expression",
             "expressionSyntax": "<=",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "<>",
@@ -1049,7 +1312,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression <> expression",
             "expressionSyntax": "<>",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "=",
@@ -1058,7 +1323,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression = expression",
             "expressionSyntax": "=",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": ">",
@@ -1067,7 +1334,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression > expression",
             "expressionSyntax": ">",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": ">=",
@@ -1076,7 +1345,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "expression >= expression",
             "expressionSyntax": ">=",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "AND",
@@ -1085,7 +1356,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "boolean_expression AND boolean_expression",
             "expressionSyntax": "AND",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "AVG",
@@ -1094,7 +1367,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "AVG (expression)",
             "expressionSyntax": "AVG",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "BETWEEN",
@@ -1103,7 +1378,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "BETWEEN (test_expression, begin_expression, end_expression)",
             "expressionSyntax": "BETWEEN",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "CASE WHEN...THEN...ELSE...END",
@@ -1112,7 +1389,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "CASE WHEN (boolean_expression) THEN (result_expression) [...n] [ELSE (else_result_expression)] END",
             "expressionSyntax": "CASE...WHEN...THEN...ELSE...END",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "CASE...WHEN...THEN...ELSE...END",
@@ -1121,7 +1400,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "CASE (input_expression) WHEN (when_expression) THEN (result_expression) [...n] [ELSE (else_result_expression)] END",
             "expressionSyntax": "CASE...WHEN...THEN...ELSE...END",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "CAST...AS",
@@ -1130,7 +1411,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "CAST (expression AS data_type)",
             "expressionSyntax": "CAST...AS",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "CONVERT",
@@ -1139,7 +1422,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "CONVERT (data_type [( length)], expression[, style])",
             "expressionSyntax": "CONVERT",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "COUNT",
@@ -1148,7 +1433,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "COUNT (expression)",
             "expressionSyntax": "COUNT",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "DATEADD",
@@ -1157,7 +1444,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "DATEADD (datepart, number, expression)",
             "expressionSyntax": "DATEADD",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "DATEDIFF",
@@ -1166,7 +1455,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "DATEDIFF (datepart, startdate, enddate)",
             "expressionSyntax": "DATEDIFF",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "DATEPART",
@@ -1175,7 +1466,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "DATEPART (datepart, date)",
             "expressionSyntax": "DATEPART",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "DISTINCT",
@@ -1184,7 +1477,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "DISTINCT (column) or DISTINCT column",
             "expressionSyntax": "DISTINCT",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "GETDATE",
@@ -1193,7 +1488,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "GETDATE ()",
             "expressionSyntax": "GETDATE",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "IF...THEN...ELSE...END",
@@ -1202,7 +1499,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "IF (boolean_expression) THEN (true_expression) [ELSE (false_expression)] END",
             "expressionSyntax": "IF...THEN...ELSE...END",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "IIF",
@@ -1211,7 +1510,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "IIF (boolean_expression, true_expression, [false_expression])",
             "expressionSyntax": "IIF",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "ISNULL",
@@ -1220,7 +1521,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "ISNULL (check_expression, replacement_value)",
             "expressionSyntax": "ISNULL",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "LEN",
@@ -1229,7 +1532,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "LEN (expression)",
             "expressionSyntax": "LEN",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "MAX",
@@ -1238,7 +1543,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "MAX (expression)",
             "expressionSyntax": "MAX",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "MIN",
@@ -1247,7 +1554,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "MIN (expression)",
             "expressionSyntax": "MIN",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "NOTBETWEEN",
@@ -1256,7 +1565,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "NOTBETWEEN (test_expression, begin_expression, end_expression)",
             "expressionSyntax": "NOTBETWEEN",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "OR",
@@ -1265,7 +1576,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "boolean_expression OR boolean_expression",
             "expressionSyntax": "OR",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "ROUND",
@@ -1274,7 +1587,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "ROUND (expression, length[, function])",
             "expressionSyntax": "ROUND",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "RUNNING AVG",
@@ -1283,7 +1598,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "RUNNINGAVG (column)",
             "expressionSyntax": "RUNNINGAVG",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "RUNNING COUNT",
@@ -1292,7 +1609,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "RUNNINGCOUNT (column)",
             "expressionSyntax": "RUNNINGCOUNT",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "RUNNING SUM",
@@ -1301,7 +1620,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "RUNNINGSUM (column)",
             "expressionSyntax": "RUNNINGSUM",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }, {
             "id": null,
             "name": "SUM",
@@ -1310,7 +1631,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "formatDataType": null,
             "syntax": "SUM (expression)",
             "expressionSyntax": "SUM",
-            "isOperator": false
+            "isOperator": false,
+            "userDefined": false,
+            "extendedProperties": {}
          }]
 
 
@@ -1336,59 +1659,83 @@ Returns an array of relationships of visible data sources, paged and sorted, fil
    Request payload::
 
       {
-        "querySourceId" : null,
-        "tenentId" : "",
-        "criteria" : [{
-              "key" : "All",
-              "value" : "",
-              "operation" : 1
-           }
-        ],
-        "pageIndex" : 1,
-        "pageSize" : 1,
-        "sortOrders" : [{
-              "key" : "DatabaseName",
-              "descending" : true
-           }
-        ]
+         "querySourceId": null,
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+         "criteria": [{
+            "key": "All",
+            "value": "SQL-North",
+            "operation": 1
+         }],
+         "pageIndex": 1,
+         "pageSize": 1,
+         "sortOrders": [{
+            "key": "DatabaseName",
+            "descending": true
+         }]
       }
 
    Sample response::
 
       {
-        "result" : [{
-              "joinConnectionId" : "ca24a47e-ffdd-4391-a82a-254f48b451e5",
-              "foreignConnectionId" : "ca24a47e-ffdd-4391-a82a-254f48b451e5",
-              "joinQuerySourceId" : "e03b8805-60ae-41df-b69a-f3bece9721c5",
-              "joinQuerySourceName" : "EmployeeDepartmentHistory",
-              "joinDataSourceCategoryName" : null,
-              "joinDataSourceCategoryId" : "00000000-0000-0000-0000-000000000000",
-              "foreignDataSourceCategoryName" : null,
-              "foreignDataSourceCategoryId" : "00000000-0000-0000-0000-000000000000",
-              "foreignQuerySourceId" : "9fb719f8-8a70-4f4e-91d5-4e8372413d92",
-              "foreignQuerySourceName" : "Employee",
-              "joinFieldId" : "322d9f3d-1f65-4d60-9cac-933a2c40db9d",
-              "joinFieldName" : "BusinessEntityID",
-              "foreignFieldId" : "484817ea-f130-417b-a096-32c13249b7d0",
-              "foreignFieldName" : "BusinessEntityID",
-              "alias" : "abc",
-              "systemRelationship" : true,
-              "joinType" : "Inner",
-              "parentRelationshipId" : "00000000-0000-0000-0000-000000000000",
-              "deleted" : false,
-              "position" : null,
-              "relationshipKeyJoins" : null,
-              "reportId" : "00000000-0000-0000-0000-000000000000",
-              "foreignAlias" : null,
-              "selectedForeignAlias" : "9fb719f8-8a70-4f4e-91d5-4e8372413d92_Employee",
-              "id" : "48ab1f19-db84-4d8b-9c18-02312d16c282",
-              "state" : 0,
-              "modified" : "2016-04-15T06:27:16.023"
-           }
-        ],
-        "total" : 60,
-        "pageIndex" : 1,
-        "pageSize" : 1
+         "result": [
+            {
+                  "joinConnectionId": "5e97b5e4-bf85-4be8-8244-cf195bdf4739",
+                  "foreignConnectionId": "5e97b5e4-bf85-4be8-8244-cf195bdf4739",
+                  "joinQuerySourceAlias": null,
+                  "foreignQuerySourceAlias": null,
+                  "joinFieldAlias": "",
+                  "specifictJoinFieldAlias": null,
+                  "foreignFieldAlias": "",
+                  "specifictForeignFieldAlias": null,
+                  "alias": null,
+                  "systemRelationship": true,
+                  "joinType": "Inner",
+                  "parentRelationshipId": null,
+                  "position": null,
+                  "relationshipPosition": 0,
+                  "relationshipKeyJoins": [],
+                  "reportId": null,
+                  "foreignAlias": null,
+                  "joinQuerySourceUniqueName": null,
+                  "joinFieldUniqueName": null,
+                  "forgeinQuerySourceUniqueName": null,
+                  "forgeinFieldUniqueName": null,
+                  "tempId": null,
+                  "aliasTempId": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isForeignDataObjectAlias": false,
+                  "selectedForeignAlias": "c7341994-3506-4f4a-acd9-96f9b8936ec2_Orders",
+                  "joinQuerySourceName": "Order Details",
+                  "joinQuerySourceId": "7f9cd714-9b06-4aaf-9a8b-5475ea0cdefc",
+                  "joinFieldId": "b577df4a-4419-4229-aefd-ad9caa0543ce",
+                  "joinFieldType": null,
+                  "foreignQuerySourceName": "Orders",
+                  "foreignQuerySourceId": "c7341994-3506-4f4a-acd9-96f9b8936ec2",
+                  "foreignFieldId": "da29f67c-6cc5-4aa8-b456-0b192ec07fa1",
+                  "foreignFieldType": null,
+                  "joinFieldName": "OrderID",
+                  "foreignFieldName": "OrderID",
+                  "joinDataSourceCategoryId": "31df942e-62be-4cda-8866-7ae7a65365f0",
+                  "joinDataSourceCategoryName": "Northwind-MSSQL",
+                  "foreignDataSourceCategoryId": "31df942e-62be-4cda-8866-7ae7a65365f0",
+                  "foreignDataSourceCategoryName": "Northwind-MSSQL",
+                  "comparisonOperator": null,
+                  "id": "fb386813-a7f8-4033-862a-4a9cafbad38c",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "Pika Chu",
+                  "modified": "2017-09-14T10:12:06.667",
+                  "modifiedBy": null
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 1,
+         "total": 7,
+         "skipItems": 0,
+         "isLastPage": false
       }
 
 
@@ -1446,7 +1793,8 @@ After adding a new relationship, `POST DataModel/loadRelationships`_ should be c
 
       {
         "success" : true,
-        "messages" : []
+        "messages" : [],
+        "data" : null
       }
 
 
@@ -1473,7 +1821,8 @@ Deletes the relationship specified by the {relationship_id} value.
 
       {
         "success" : true,
-        "messages" : []
+        "messages" : [],
+        "data" : null
       }
 
    Response when trying to delete a system relationship::
@@ -1583,7 +1932,35 @@ POST dataModel/schema/updateConnectionColor
 
 Updates the connection color.
 
-To be updated
+**Request**
+
+    A :doc:`models/ConnectionColor` object.
+
+**Response**
+
+    An :doc:`models/OperationResult` object.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST api/dataModel/schema/updateConnectionColor HTTP/1.1
+
+   Request Payload::
+
+      {
+         "connectionId" : "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+         "color": null,
+         "modified": "2017-09-15T03:11:24"
+      }
+
+   Sample Response::
+
+      {
+         "success": true,
+         "messages": null,
+         "data": null
+      }
 
 GET dataModel/relationship/joinTypes
 --------------------------------------------------------------
@@ -1692,11 +2069,20 @@ Saves an array of database mappings.
          }
       ]
 
-   Sample response::
+   Sample response in case user has System Admin Permission::
 
       {
          "success":true
+         "messages" : [],
+         "data" : null
       }
+
+   Sample response in case user does not have System Admin Permission::
+
+    {
+      "message" : "You don't have permission to perform this action",
+      "detail" : "NoPermission"
+    }
 
 POST dataModel/loadDatabaseNames
 --------------------------------------------------------------
@@ -1863,7 +2249,110 @@ Executes and saves a custom query source.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST api/dataModel/customQuerySource HTTP/1.1
+
+   Request Payload::
+
+      {
+         "name": "test",
+         "connectionId": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+         "categoryId": "94454a0a-17a2-49e5-bebf-9c0d07d95587",
+         "customDefinition": "Select OrderID\nfrom orders"
+      }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         {
+            "realName": "test",
+            "id": "193a0a94-decf-4217-9e0c-1956f0335f59",
+            "name": "northwind.test",
+            "type": "View",
+            "parentQuerySourceId": null,
+            "categoryId": "94454a0a-17a2-49e5-bebf-9c0d07d95587",
+            "selected": true,
+            "deleted": false,
+            "connectionId": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+            "connectionName": null,
+            "childs": null,
+            "dataSourceCategoryId": null,
+            "dataSourceCategoryName": null,
+            "alias": "",
+            "originalAlias": null,
+            "querySourceFields": [
+               {
+                     "name": "OrderID",
+                     "alias": "",
+                     "dataType": "INT",
+                     "izendaDataType": "Numeric",
+                     "allowDistinct": true,
+                     "visible": false,
+                     "filterable": false,
+                     "querySourceId": "193a0a94-decf-4217-9e0c-1956f0335f59",
+                     "parentId": null,
+                     "expressionFields": [],
+                     "filteredValue": "",
+                     "type": 0,
+                     "groupPosition": 0,
+                     "position": 1,
+                     "extendedProperties": "",
+                     "physicalChange": 0,
+                     "approval": 0,
+                     "existed": false,
+                     "matchedTenant": false,
+                     "functionName": null,
+                     "expression": null,
+                     "fullName": null,
+                     "calculatedTree": null,
+                     "reportId": null,
+                     "originalName": null,
+                     "originalId": "00000000-0000-0000-0000-000000000000",
+                     "isParameter": false,
+                     "isCalculated": false,
+                     "hasAggregatedFunction": false,
+                     "querySource": null,
+                     "querySourceName": null,
+                     "categoryName": null,
+                     "inaccessible": false,
+                     "originalAlias": null,
+                     "fullPath": null,
+                     "isCheck": false,
+                     "id": "269987d3-7a92-4ba4-9e99-3829905f471b",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": null,
+                     "created": null,
+                     "createdBy": "System5 Admin5",
+                     "modified": "2017-09-15T04:52:03.0678276",
+                     "modifiedBy": null
+               }
+            ],
+            "querySourceCategoryName": null,
+            "querySourceCategory": null,
+            "modified": "2017-09-15T04:52:02.9811771",
+            "extendedProperties": null,
+            "physicalChange": 0,
+            "approval": 0,
+            "existed": false,
+            "checked": false,
+            "belongToCopiedReport": false,
+            "customDefinition": "Select OrderID\nfrom orders",
+            "isCustomQuerySource": true,
+            "isCheck": false,
+            "disabled": false,
+            "fullPath": null,
+            "indeterminate": false,
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0
+         }
 
 POST dataModel/validateCustomQuerySource
 --------------------------------------------------------------
@@ -1876,11 +2365,30 @@ Validates that name of custom query source is unique.
 
 **Response**
 
-   An :doc:`models/OperationResult` object, with **success** field true if name of custom query source is unique.
+   An :doc:`models/OperationResult` object, with **success** field true if View Name is unique and other custom view contents are valid.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST api/dataModel/validateCustomQuerySource HTTP/1.1
+
+   Request Payload::
+
+      {
+        "name": "Test",
+        "connectionId": "3562497d-07a1-4a0a-823d-811b8a098d73",
+        "categoryId": "533f001b-88ef-46d5-b0c1-69b774c81aba",
+        "customDefinition": "SELECT customerID,employeeID\nFROM  Orders "
+      }
+
+   Sample response::
+
+      {
+        "success": true,
+        "confirmation": false,
+        "messages": []
+      }
 
 POST dataModel/deleteCustomQuerySource
 --------------------------------------------------------------
@@ -1897,7 +2405,19 @@ Deletes a custom query source.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST api/dataModel/deleteCustomQuerySource HTTP/1.1
+
+   Request Payload::
+
+      {"id":"e26a908a-5d76-473e-a364-91afe9147023"}
+
+   Sample Response::
+
+      {
+         "success": true
+      }
 
 GET dataModel/querySource/{query_source_id}
 --------------------------------------------------------------
@@ -1914,4 +2434,44 @@ Returns the query source specified by query_source_id.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      GET api/dataModel/querySource/c7341994-3506-4f4a-acd9-96f9b8936ec2 HTTP/1.1
+
+   Sample Response::
+
+      {
+         "realName": null,
+         "id": "c7341994-3506-4f4a-acd9-96f9b8936ec2",
+         "name": "Orders",
+         "type": "Table",
+         "parentQuerySourceId": null,
+         "categoryId": "942c529a-38c7-4ffc-9e46-044c3f364130",
+         "selected": true,
+         "deleted": false,
+         "connectionId": "00000000-0000-0000-0000-000000000000",
+         "connectionName": null,
+         "childs": null,
+         "dataSourceCategoryId": "31df942e-62be-4cda-8866-7ae7a65365f0",
+         "dataSourceCategoryName": null,
+         "alias": null,
+         "originalAlias": null,
+         "querySourceFields": [],
+         "querySourceCategoryName": null,
+         "querySourceCategory": null,
+         "modified": "2017-09-15T03:57:38",
+         "extendedProperties": null,
+         "physicalChange": 0,
+         "approval": 0,
+         "existed": false,
+         "checked": false,
+         "belongToCopiedReport": false,
+         "customDefinition": null,
+         "isCustomQuerySource": false,
+         "isCheck": false,
+         "disabled": false,
+         "fullPath": null,
+         "indeterminate": false,
+         "numOfChilds": 0,
+         "numOfCheckedChilds": 0
+      }

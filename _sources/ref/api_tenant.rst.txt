@@ -80,8 +80,16 @@ Returns an array of all tenants.
            "active" : true,
            "deleted" : false,
            "modules" : "Report Template/ Component; Scheduling",
-           "modified" : "2016-05-22T03:27:13.5070000+07:00",
-           "tenantModules" : ["Report Template/ Component", "Scheduling"]
+           "tenantModules" : ["Report Template/ Component", "Scheduling"],
+           "permissionData" : null,
+           "permission": null,
+           "state" : 0,
+           "inserted" : true,
+           "version" : 2,
+           "created" "2017-06-15T09:03:04.7770000+07:00",
+           "createdBy": "System2 Admin2",
+           "modified" : "2017-09-05T07:59:14.6970000+07:00",
+           "modifiedBy": "System2 Admin2"
         }, {
            "id" : "811e2d3b-c656-46fa-b70e-7fe95bc6529f",
            "tenantID" : "doe",
@@ -91,7 +99,16 @@ Returns an array of all tenants.
            "deleted" : false,
            "modules" : "Report Template/ Component; Scheduling",
            "modified" : "2016-05-22T03:26:32.0000000+07:00",
-           "tenantModules" : ["Report Template/ Component", "Scheduling"]
+           "tenantModules" : ["Report Template/ Component", "Scheduling"],
+           "permissionData" : null,
+           "permission": null,
+           "state" : 0,
+           "inserted" : true,
+           "version" : 2,
+           "created" "2017-06-23T08:07:50.5700000+07:00",
+           "createdBy": "$RootAdmin$",
+           "modified" : "2017-08-16T09:15:59.5400000+07:00",
+           "modifiedBy": "$RootAdmin$"
         }
       ]
 
@@ -113,21 +130,302 @@ Returns the tenant specified by tenant_id.
 
    .. code-block:: http
 
-      POST /api/tenant/e4c784eb-3e41-4849-925c-a9094b73dfb7 HTTP/1.1
+      GET /api/tenant/e4c784eb-3e41-4849-925c-a9094b73dfb7 HTTP/1.1
 
-   Sample response::
+   .. container:: toggle
 
-      {
-         "id": "e4c784eb-3e41-4849-925c-a9094b73dfb7",
-         "tenantID": "acme",
-         "name": "ACME Corporation",
-         "description": null,
-         "active": false,
-         "deleted": false,
-         "modules": "Report Template/ Component; Scheduling",
-         "modified": "2016-05-22T03:27:13.5070000+07:00",
-         "tenantModules": ["Report Template/ Component", "Scheduling"]
-      }
+      .. container:: header
+
+         Sample Response :
+
+      .. code-block:: json
+
+         {
+            "tenantID": "acme",
+            "name": "ACME Corporation",
+            "description": null,
+            "active": true,
+            "modules": "maUqbVKEX7hSyzaUp2nEAdVdmBVmue6S2e72m8XBl/OHx7ysEcRYz7YEjYqMhOnL0jpxXGB7saUIPgZ+58bWkH+ZBadLbo4SqixBr9Dtv+uIrVWFs1JJDdudOyn+nSr+sjPDAbD/BzjU3NGFV9mjBA==",
+            "tenantModules": [
+               "Alerting",
+               "Report Templates",
+               "Report Designer",
+               "Form",
+               "Scheduling",
+               "Charting",
+               "Dashboard",
+               "Exporting",
+               "Maps"
+            ],
+            "permission": {
+               "systemAdmin": false,
+               "fullReportAndDashboardAccess": false,
+               "systemConfiguration": {
+                     "scheduledInstances": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "dataSetup": {
+                     "dataModel": {
+                        "value": true,
+                        "customView": {
+                           "create": true,
+                           "edit": true,
+                           "delete": true,
+                           "tenantAccess": 1
+                        },
+                        "tenantAccess": 1
+                     },
+                     "advancedSettings": {
+                        "category": true,
+                        "others": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "userSetup": {
+                     "userRoleAssociation": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "actions": {
+                        "create": true,
+                        "edit": true,
+                        "del": true,
+                        "configureSecurityOptions": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "roleSetup": {
+                     "actions": {
+                        "create": true,
+                        "edit": true,
+                        "del": true,
+                        "tenantAccess": 1
+                     },
+                     "dataModelAccess": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "permissions": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "grantRoleWithFullReportAndDashboardAccess": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "reports": {
+                     "canCreateNewReport": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "dataSources": {
+                        "simpleDataSources": false,
+                        "advancedDataSources": true,
+                        "tenantAccess": 1
+                     },
+                     "reportPartTypes": {
+                        "chart": true,
+                        "form": true,
+                        "gauge": true,
+                        "map": true,
+                        "tenantAccess": 1
+                     },
+                     "reportCategoriesSubcategories": {
+                        "canCreateNewCategory": {
+                           "value": true,
+                           "tenantAccess": 1
+                        },
+                        "categoryAccessibility": {
+                           "categories": [],
+                           "tenantAccess": 1
+                        }
+                     },
+                     "filterProperties": {
+                        "filterLogic": true,
+                        "crossFiltering": true,
+                        "tenantAccess": 1
+                     },
+                     "fieldProperties": {
+                        "customURL": true,
+                        "embeddedJavaScript": true,
+                        "subreport": true,
+                        "tenantAccess": 1
+                     },
+                     "actions": {
+                        "schedule": true,
+                        "email": true,
+                        "viewReportHistory": true,
+                        "del": true,
+                        "registerForAlerts": true,
+                        "print": true,
+                        "unarchiveReportVersions": true,
+                        "overwriteExistingReport": true,
+                        "subscribe": true,
+                        "exporting": true,
+                        "configureAccessRights": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "tenantSetup": {
+                     "actions": {
+                        "create": false,
+                        "edit": false,
+                        "del": false,
+                        "tenantAccess": 1
+                     },
+                     "permissions": {
+                        "value": false,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "dashboards": {
+                     "canCreateNewDashboard": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "dashboardCategoriesSubcategories": {
+                        "canCreateNewCategory": {
+                           "value": true,
+                           "tenantAccess": 1
+                        },
+                        "categoryAccessibility": {
+                           "categories": [],
+                           "tenantAccess": 1
+                        }
+                     },
+                     "actions": {
+                        "schedule": true,
+                        "email": true,
+                        "del": true,
+                        "subscribe": true,
+                        "print": true,
+                        "overwriteExistingDashboard": true,
+                        "configureAccessRights": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "access": {
+                     "accessLimits": {
+                        "value": [
+                           {
+                                 "users": [],
+                                 "tenantUniqueName": null,
+                                 "permission": null,
+                                 "visibleQuerySources": null,
+                                 "name": "Manager",
+                                 "tenantId": null,
+                                 "active": false,
+                                 "notAllowSharing": false,
+                                 "id": "d256d058-aeb7-468f-9f95-962d65979707",
+                                 "state": 0,
+                                 "deleted": false,
+                                 "inserted": true,
+                                 "version": null,
+                                 "created": null,
+                                 "createdBy": "$RootAdmin$",
+                                 "modified": null,
+                                 "modifiedBy": null
+                           }
+                        ],
+                        "tenantAccess": 1
+                     },
+                     "accessDefaults": {
+                        "value": [],
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "scheduling": {
+                     "schedulingLimits": {
+                        "value": [
+                           {
+                                 "users": [],
+                                 "tenantUniqueName": null,
+                                 "permission": null,
+                                 "visibleQuerySources": null,
+                                 "name": "Manager",
+                                 "tenantId": null,
+                                 "active": false,
+                                 "notAllowSharing": false,
+                                 "id": "d256d058-aeb7-468f-9f95-962d65979707",
+                                 "state": 0,
+                                 "deleted": false,
+                                 "inserted": true,
+                                 "version": null,
+                                 "created": null,
+                                 "createdBy": "$RootAdmin$",
+                                 "modified": null,
+                                 "modifiedBy": null
+                           }
+                        ],
+                        "tenantAccess": 1
+                     },
+                     "schedulingScope": {
+                        "systemUsers": true,
+                        "externalUsers": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "emailing": {
+                     "deliveryMethod": {
+                        "link": true,
+                        "embeddedHTML": true,
+                        "attachment": true,
+                        "tenantAccess": 1
+                     },
+                     "attachmentType": {
+                        "word": true,
+                        "excel": true,
+                        "pdf": true,
+                        "csv": true,
+                        "xml": true,
+                        "json": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "exporting": {
+                     "exportingFormat": {
+                        "word": true,
+                        "excel": true,
+                        "pdf": true,
+                        "csv": true,
+                        "xml": true,
+                        "json": true,
+                        "queryExecution": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               },
+               "systemwide": {
+                     "canSeeSystemMessages": {
+                        "value": true,
+                        "tenantAccess": 1
+                     },
+                     "tenantAccess": 1
+               }
+            },
+            "id": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": 6,
+            "created": "2017-09-08T07:11:10.857",
+            "createdBy": "$RootAdmin$",
+            "modified": "2017-09-14T02:30:28.627",
+            "modifiedBy": "$RootAdmin$"
+         }
 
 .. _POST_tenant:
 
@@ -430,7 +728,8 @@ Sets active for the tenant specified by tenant_id.
 
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data": null
       }
 
 
@@ -457,7 +756,8 @@ Sets inactive for the tenant specified by tenant_id.
 
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data": null
       }
 
 
@@ -484,7 +784,8 @@ Deletes the tenant specified by tenant_id.
 
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data": null
       }
 
 .. _GET_tenant/activeTenants:
@@ -511,15 +812,23 @@ Returns an array of active tenants.
    Sample response::
 
       [{
-         "id": "e4c784eb-3e41-4849-925c-a9094b73dfb7",
-         "tenantID": "acme",
-         "name": "ACME Corporation",
-         "description": null,
-         "active": true,
-         "deleted": false,
-         "modules": "encrypted",
-         "modified": "2016-04-22T03:27:13.5070000+07:00",
-         "tenantModules": ["Report Template/ Component", "Scheduling"]
+        "tenantID": "acme",
+        "name": "ACME Corporation",
+        "description": null,
+        "active": true,
+        "modules": null,
+        "permissionData": null,
+        "tenantModules": [],
+        "permission": null,
+        "id": "1658c545-2ee4-4952-98f8-7d4e8b6c4e04",
+        "state": 0,
+        "deleted": false,
+        "inserted": true,
+        "version": null,
+        "created": null,
+        "createdBy": null,
+        "modified": null,
+        "modifiedBy": null
       }]
 
 
@@ -548,77 +857,66 @@ Returns an array of available categories for report/template (type=0) or dashboa
    Sample response::
 
       [{
-           "reports" : null,
-           "name" : "Sample",
-           "type" : 0,
-           "parentId" : null,
-           "tenantId" : null,
-           "canDelete" : true,
-           "savable" : false,
-           "subCategories" : [],
-           "status" : 2,
-           "id" : "7b604d85-83b6-4c55-8392-eb517f30b75a",
-           "state" : 0,
-           "inserted" : true,
-           "version" : null,
-           "created" : null,
-           "createdBy" : null,
-           "modified" : null,
-           "modifiedBy" : null
-        }, {
-           "reports" : null,
-           "name" : "Sample",
-           "type" : 0,
-           "parentId" : null,
-           "tenantId" : null,
-           "canDelete" : true,
-           "savable" : false,
-           "subCategories" : [{
-                 "reports" : null,
-                 "name" : "Sub",
-                 "type" : 0,
-                 "parentId" : "8f966b73-bf1d-4c03-87ca-a946898a91db",
-                 "tenantId" : null,
-                 "canDelete" : true,
-                 "savable" : false,
-                 "subCategories" : [],
-                 "status" : 2,
-                 "id" : "ac4219e1-91a7-4c2d-b42c-e27b12681c3c",
-                 "state" : 0,
-                 "inserted" : true,
-                 "version" : null,
-                 "created" : null,
-                 "createdBy" : null,
-                 "modified" : null,
-                 "modifiedBy" : null
-              }
-           ],
-           "status" : 2,
-           "id" : "8f966b73-bf1d-4c03-87ca-a946898a91db",
-           "state" : 0,
-           "inserted" : true,
-           "version" : null,
-           "created" : null,
-           "createdBy" : null,
-           "modified" : null,
-           "modifiedBy" : null
-        }, {
-           "name" : "Uncategorized",
-           "type" : 0,
-           "parentId" : null,
-           "tenantId" : null,
-           "canDelete" : false,
-           "savable" : false,
-           "subCategories" : [],
-           "status" : 1,
-           "id" : "00000000-0000-0000-0000-000000000000",
-           "state" : 0,
-           "inserted" : true,
-           "version" : null,
-           "created" : null,
-           "createdBy" : null,
-           "modified" : null,
-           "modifiedBy" : null
+            "name": "0 july 19",
+            "type": 0,
+            "parentId": null,
+            "tenantId": null,
+            "isGlobal": false,
+            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "canDelete": false,
+            "editable": false,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": null,
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 2,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "e6b0d0e1-85f0-4708-bd3e-6ca074de94c8",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
+        },
+        {
+            "name": "12062017",
+            "type": 0,
+            "parentId": null,
+            "tenantId": null,
+            "isGlobal": false,
+            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "canDelete": false,
+            "editable": false,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": null,
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 2,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "f0e8668a-ff01-4d94-8f59-3dab8bf373ff",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
         }
       ]
 
@@ -638,7 +936,34 @@ Adds or updates external tenant.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/tenant/intergration/saveTenant HTTP/1.1
+
+   Simple Request payload::
+
+      {
+         "tenantID": "Pikachu",
+         "name": "Pikachu",
+         "description": "abc",
+         "active": true,
+         "modules": null,
+         "tenantModules": [],
+         "permission": null,
+         "id": "c1703d12-6f50-454a-82bc-16efc00bbedd",
+         "state": 0,
+         "deleted": false,
+         "inserted": true,
+         "version": 1,
+         "created": "2017-09-11T09:14:39.7",
+         "createdBy": "$RootAdmin$",
+         "modified": "2017-09-11T09:14:39.7",
+         "modifiedBy": "$RootAdmin$"
+      }
+
+   Response::
+
+      true
 
 GET tenant/basicInfos
 --------------------------------------------------------------
@@ -692,13 +1017,46 @@ Returns only the current tenant with basic info if logged in user is a tenant us
 
       GET /api/tenant/basicInfos HTTP/1.1
 
-   Sample response if logged in user is system user::
+   Sample response::
 
-      To be updated
-
-   Sample response if logged in user is tenant user::
-
-      To be updated
+      [
+         {
+            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "tenantID": "acme",
+            "name": "Acme Yo",
+            "active": true,
+            "description": null,
+            "tenantModules": [
+                  "Alerting",
+                  "Report Templates",
+                  "Report Designer",
+                  "Form",
+                  "Scheduling",
+                  "Charting",
+                  "Dashboard",
+                  "Exporting",
+                  "Maps"
+            ]
+         },
+         {
+            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
+            "tenantID": "System",
+            "name": "System",
+            "active": true,
+            "description": null,
+            "tenantModules": [
+                  "Alerting",
+                  "Report Templates",
+                  "Report Designer",
+                  "Form",
+                  "Scheduling",
+                  "Charting",
+                  "Exporting",
+                  "Dashboard",
+                  "Maps"
+            ]
+         }
+      ]
 
 GET tenant/namesOnly
 --------------------------------------------------------------
@@ -740,10 +1098,17 @@ Returns only the current tenant with name only if logged in user is a tenant use
 
       GET /api/tenant/namesOnly HTTP/1.1
 
-   Sample response if logged in user is system user::
+   Sample response::
 
-      To be updated
-
-   Sample response if logged in user is tenant user::
-
-      To be updated
+      [
+         {
+            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "tenantID": "acme",
+            "name": "Acme Yo"
+         },
+         {
+            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
+            "tenantID": "System",
+            "name": "System"
+         }
+      ]

@@ -545,11 +545,18 @@ Only visible query sources should be saved. <br clear="right" /> <br clear="righ
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Sample response:</p>
+<p>Sample response (in case user has System Admin Permission):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;f5180bc0-7c07-48db-b672-e66a5adde027&quot;</span><span class="p">,</span>
   <span class="s2">&quot;connectionErrors&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case user does not have System Admin Permission:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1018,10 +1025,17 @@ integer</td>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/invisible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Successful response:</p>
+<p>Successful response (in case user has System Admin Permission):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case user does not have System Admin Permission:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1064,10 +1078,17 @@ integer</td>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/connection/f5180bc0-7c07-48db-b672-e66a5adde027</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Successful response:</p>
+<p>Successful response (in case user has System Admin Permission):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case user does not have System Asmin Permission):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1234,8 +1255,15 @@ integer</td>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/visible/count</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Sample response:</p>
+<p>Sample response (in case user has System Asmin Permission):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Reponse in case user does not have System Admin Permission:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
