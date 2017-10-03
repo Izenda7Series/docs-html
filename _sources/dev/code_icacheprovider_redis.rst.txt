@@ -23,6 +23,11 @@ Summary of the Steps
 #. :ref:`Replace the built-in caching library file
    Izenda.BI.CacheProvider.Memcache.dll with our own library
    file. <Replace_the_Built-in_Caching_Library>`
+   
+.. Note::
+
+ Please refer to our GitHub repo for the latest code samples
+ https://github.com/Izenda7Series/RedisCacheProvider
 
 Preparation
 -----------
@@ -132,271 +137,423 @@ Implement the ICacheProvider Interface
    .. container:: header
 
       Full sample code:
-
+	  
    .. code-block:: csharp
 
-      using System;
-      using System.Collections.Generic;
-      using System.ComponentModel.Composition;
-      using System.Threading;
-      using StackExchange.Redis;
-      
-      namespace Izenda.BI.CacheProvider.Redis
-      {
-         /// <summary>
-         /// Redis cache provider
-         /// </summary>
-         [Export(typeof(ICacheProvider))]
-         public class RedisCacheProvider : ICacheProvider, IDisposable
-         {
-            private bool disposed = false;
-            private readonly ReaderWriterLockSlim lockCache = new ReaderWriterLockSlim();
-            private static ConnectionMultiplexer redis;
-            private static String serverAddress = "localhost";
-      
-            public RedisCacheProvider()
-            {
-                 redis = ConnectionMultiplexer.Connect(serverAddress);
-            }
-      
-            /// <summary>
-            ///     Adds an item to the underlying cache using the specified key.
-            /// </summary>
-            /// <param name="key"> The key. </param>
-            /// <param name="value"> The value. </param>
-            public void Add<T>(string key, T value)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 String stringValue = (String) Convert.ChangeType(value, System.TypeCode.String);
-                 db.StringSet(key, stringValue);
-            }
-      
-            /// <summary>
-            ///     Adds an item to the underlying cache using the specified key with normal priority.
-            /// </summary>
-            /// <param name="key"> The key. </param>
-            /// <param name="value"> The value. </param>
-            /// <param name="expiration"> The expiration timeout as a timespan. This is a sliding value. </param>
-            public void AddWithExactLifetime(string key, object value, TimeSpan expiration)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 String stringValue = (String)Convert.ChangeType(value, System.TypeCode.String);
-                 // StackExchange.Redis client does not support exact datetime expiration, so sliding option is used.
-                 db.StringSet(key, stringValue, expiration);
-            }
-      
-            /// <summary>
-            ///     Adds an item to the underlying cache using the specified key with normal priority.
-            /// </summary>
-            /// <param name="key"> The key. </param>
-            /// <param name="value"> The value. </param>
-            /// <param name="expiration"> The expiration timeout as a timespan. This is a sliding value. </param>
-            public void AddWithSlidingLifetime(string key, object value, TimeSpan expiration)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 String stringValue = (String)Convert.ChangeType(value, System.TypeCode.String);
-                 db.StringSet(key, stringValue, expiration);
-            }
-      
-            /// <summary>
-            ///     Determines whether the cache contains the specified key.
-            /// </summary>
-            /// <param name="key">The key.</param>
-            /// <returns>
-            ///     <c>true</c> if the underlying cache contains the key otherwise, <c>false</c>.
-            /// </returns>
-            public bool Contains(string key)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 return db.KeyExists(key);
-            }
-      
-            /// <summary>
-            /// Get object from cache. Build and add the cache if not exist.
-            /// </summary>
-            /// <typeparam name="T">The type to convert the object to.</typeparam>
-            /// <param name="key">The key.</param>
-            /// <param name="executor">The function call that returns the data.</param>
-            public T Ensure<T>(string key, Func<T> executor)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 return EnsureCache(executor, key, TimeSpan.Zero, (caheKey, result, expiration) =>
-                 {
-                     Add(caheKey, result);
-                 });
-            }
-      
-            /// <summary>
-            /// Get object from cache. Build and add the cache if not exist.
-            /// </summary>
-            /// <typeparam name="T">The type to convert the object to.</typeparam>
-            /// <param name="key">The key.</param>
-            /// <param name="expiration">The expiration timeout as a timespan. This is a sliding value.</param>
-            /// <param name="executor">The function call that returns the data.</param>
-            public T EnsureWithSlidingLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 return EnsureCache(executor, key, expiration, (caheKey, result, expirationTime) =>
-                 {
-                     AddWithSlidingLifetime(caheKey, result, expirationTime);
-                 });
-            }
-      
-            /// <summary>
-            /// Update and add the cache if not exist.
-            /// </summary>
-            /// <typeparam name="T">The type to convert the object to.</typeparam>
-            /// <param name="key">The key.</param>
-            /// <param name="expiration">The expiration timeout as a timespan. This is a sliding value.</param>
-            /// <param name="executor">The function call that returns the data.</param>
-            public T UpdateWithSlidingLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
-            {
-                 IDatabase db = redis.GetDatabase();
-      
-                 var updatingValue = executor();
-                 lockCache.EnterWriteLock();
-      
-                 try
-                 {
-                     if (updatingValue != null)
-                     {
-                         String stringValue = (String)Convert.ChangeType(updatingValue, System.TypeCode.String);
-                         db.StringSet(key, stringValue, expiration);
-                     }
-                 }
-                 catch
-                 {
-                     System.Diagnostics.Trace.Write("**********----------Izenda: Fail set item to cache----------**********");
-                 }
-                 finally
-                 {
-                     lockCache.ExitWriteLock();
-                 }
-      
-                 return updatingValue;
-            }
-      
-            /// <summary>
-            /// Get object from cache. Build and add the cache if not exist.
-            /// </summary>
-            /// <typeparam name="T">The type to convert the object to.</typeparam>
-            /// <param name="key">The key.</param>
-            /// <param name="expiration">The expiration timeout as a timespan. This is a exact value.</param>
-            /// <param name="executor">The function call that returns the data.</param>
-            public T EnsureWithExactLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 return EnsureCache(executor, key, expiration, (caheKey, result, expirationTime) =>
-                 {
-                     AddWithExactLifetime(caheKey, result, expirationTime);
-                 });
-            }
-      
-            /// <summary>
-            ///     Removes the specified item from the cache.
-            /// </summary>
-            /// <param name="key">The key</param>
-            public void Remove(string key)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 db.KeyDelete(key);
-            }
-      
-            /// <summary>
-            /// Get object from cache. Build and add the cache if not exist.
-            /// </summary>
-            /// <typeparam name="T">The type to convert the object to.</typeparam>
-            /// <param name="executor">The function call that returns the data.</param>
-            /// <param name="key">The key.</param>
-            /// <param name="expiration">The expiration timeout as a timespan.</param>
-            private T EnsureCache<T>(Func<T> executor, string key, TimeSpan expiration, Action<string, T, TimeSpan> addItemToCache)
-            {
-                 var result = Get<T>(key);
-      
-                 if (EqualityComparer<T>.Default.Equals(result, default(T)))
-                 {
-                     var addingValue = executor();
-                     lockCache.EnterWriteLock();
-      
-                     try
-                     {
-                         //Todo: remove log
-                         System.Diagnostics.Trace.Write("**********----------Izenda: Adding item to cache----------**********");
-                         result = addingValue;
-      
-                         if (result != null)
-                         {
-                             addItemToCache(key, result, expiration);
-                         }
-                     }
-                     catch
-                     {
-                         System.Diagnostics.Trace.Write("**********----------Izenda: Fail add item to cache----------**********");
-                     }
-                     finally
-                     {
-                         lockCache.ExitWriteLock();
-                     }
-                 }
-      
-                 return result;
-            }
-      
-            /// <summary>
-            ///     Convenience method to retrieve and convert the object result from the cache.
-            /// </summary>
-            /// <typeparam name="T"> The type to convert the object to. </typeparam>
-            /// <param name="key"> The key. </param>
-            /// <returns> The instance of the object in the cache or the default value for the type if not found. </returns>
-            public T Get<T>(string key)
-            {
-                 IDatabase db = redis.GetDatabase();
-                 var result = db.StringGet(key);
-      
-                 if (result.IsNull)
-                 {
-                     return default(T);
-                 }
-      
-                 return (T) Convert.ChangeType(result, typeof(T));
-            }
-      
-            /// <summary>
-            /// Dispose object
-            /// </summary>
-            public void Dispose()
-            {
-                 Dispose(true);
-                 GC.SuppressFinalize(this);
-            }
-      
-            /// <summary>
-            /// Dispose object
-            /// </summary>
-            /// <param name="disposing"></param>
-            protected virtual void Dispose(bool disposing)
-            {
-                 if (disposed)
-                     return;
-      
-                 if (disposing)
-                 {
-                     lockCache.Dispose();
-                 }
-      
-                 disposed = true;
-            }
-      
-            /// <summary>
-            /// Dispose object
-            /// </summary>
-            ~RedisCacheProvider()
-            {
-                 Dispose(false);
-            }
-         }
-      }
+		using Izenda.BI.CacheProvider.RedisCache.Constants;
+		using Izenda.BI.CacheProvider.RedisCache.Converters;
+		using Izenda.BI.CacheProvider.RedisCache.Resolvers;
+		using Izenda.BI.Framework.Models.ReportDesigner;
+		using Newtonsoft.Json;
+		using StackExchange.Redis;
+		using System;
+		using System.Collections.Generic;
+		using System.ComponentModel.Composition;
+		using System.Diagnostics;
+		using System.Threading;
+		using System.Linq;
+		using Izenda.BI.Framework.CustomAttributes;
+		using System.Collections.Concurrent;
+		using Izenda.BI.Framework.Constants;
 
+		namespace Izenda.BI.CacheProvider.RedisCache
+		{
+			/// <summary>
+			/// Redis cache provider
+			/// </summary>
+			[Export(typeof(ICacheProvider))]
+			public class RedisCacheProvider : ICacheProvider, IDisposable
+			{
+				private static ConcurrentDictionary<string, object> _mem = new ConcurrentDictionary<string, object>();
+				private bool _disposed = false;
+				private JsonSerializerSettings _serializerSettings = new JsonSerializerSettings();
+				private readonly ReaderWriterLockSlim _lockCache = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+				private readonly IDatabase _cache;
+				private readonly IServer _server;
+
+				public RedisCacheProvider()
+				{
+					_cache = RedisHelper.Database;
+					_server = RedisHelper.Server;
+
+					InitSerializer();
+				}
+
+				public RedisCacheProvider(IDatabase cache)
+				{
+					_cache = cache;
+					InitSerializer();
+				}
+
+				/// <summary>
+				/// Initializes the JSON serializer
+				/// </summary>
+				private void InitSerializer()
+				{
+					var resolver = new IzendaSerializerContractResolver();
+					resolver.Ignore(typeof(ReportPartDefinition), "ReportPartContent");
+
+					_serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+					_serializerSettings.TypeNameHandling = TypeNameHandling.Objects;
+					_serializerSettings.TypeNameAssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple;
+
+					_serializerSettings.Converters.Add(new DBServerTypeSupportingConverter());
+					_serializerSettings.ContractResolver = resolver;
+				}
+
+				/// <summary>
+				/// Serializes the obj to json
+				/// </summary>
+				/// <param name="obj"></param>
+				/// <returns> A json string of the object</returns>
+				private string Serialize(object obj)
+				{
+					return JsonConvert.SerializeObject(obj, _serializerSettings);
+				}
+
+				/// <summary>
+				/// Deserializes the json string to the specified type
+				/// </summary>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="serialized">The serialized object</param>
+				/// <returns>THe deserialized object</returns>
+				private T Deserialize<T>(string serialized)
+				{
+					return JsonConvert.DeserializeObject<T>(serialized, _serializerSettings);
+				}
+
+				/// <summary>
+				/// Adds an item to the cache using the specified key.
+				/// </summary>
+				/// <param name="key"> The key </param>
+				/// <param name="value"> The value </param>
+				public void Add<T>(string key, T value)
+				{
+					try
+					{
+						_lockCache.EnterWriteLock();
+						if(IsInMemoryCache(key, typeof(T)))
+						{
+							_mem.AddOrUpdate(key, value, (existingKey, oldValue) => value);
+						}
+						else
+						{
+							_cache.StringSet(key, Serialize(value));
+						}
+					}
+					catch (Exception ex)
+					{
+						Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+					}
+					finally
+					{
+						_lockCache.ExitWriteLock();
+					}
+				}
+
+				private bool IsInMemoryCache(string key, Type type)
+				{
+					return key == IzendaKey.HashCodeMetadata
+						|| (type.IsGenericType && type.GenericTypeArguments.Any(t => t == typeof(Object)))
+						|| type.FullName.StartsWith("Izenda.BI.DataAdaptor.IDataSourceAdaptor")
+						|| type.FullName.StartsWith("Izenda.BI.Logging.ILogManager")
+						|| type.FullName.StartsWith("Izenda.BI.SystemRepository.ISystemRepository")
+						|| type.FullName.StartsWith("Izenda.BI.Framework.Models.Contexts.UserContext");
+				}
+
+				/// <summary>
+				/// Adds an item to the cache using the specified key and sets an expiration
+				/// </summary>
+				/// <param name="key"> The key </param>
+				/// <param name="value"> The value</param>
+				/// <param name="expiration"> The expiration </param>
+				public void AddWithExactLifetime(string key, object value, TimeSpan expiration)
+				{  
+					try
+					{
+						_lockCache.EnterWriteLock();
+						if (IsInMemoryCache(key, value.GetType()))
+						{
+							_mem.AddOrUpdate(key, value, (existingKey, oldValue) => value);
+						}
+						else
+						{
+							_cache.StringSet(key, Serialize(value), expiration);
+						}
+					}
+					catch (Exception ex)
+					{
+						Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+					}
+					finally
+					{
+						_lockCache.ExitWriteLock();
+					}
+				}
+
+				/// <summary>
+				/// Adds an item to the cache using the specified key and sets a sliding expiration
+				/// </summary>
+				/// <param name="key"> The key </param>
+				/// <param name="value"> The value</param>
+				/// <param name="expiration"> The expiration </param>
+				public void AddWithSlidingLifetime(string key, object value, TimeSpan expiration)
+				{
+					AddWithExactLifetime(key, value, expiration);
+				}
+
+				/// <summary>
+				/// Checks if the cache contains the given key
+				/// </summary>
+				/// <param name="key"> The key</param>
+				/// <returns>true if the cache contains the key, false otherwise</returns>
+				public bool Contains(string key)
+				{
+					return _mem.ContainsKey(key) ? true : _cache.KeyExists(key);
+				}
+
+				/// <summary>
+				/// Retrieves the specified key from the cache
+				/// </summary>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="key">The key</param>
+				/// <returns></returns>
+				public T Get<T>(string key)
+				{
+					
+					if (IsInMemoryCache(key, typeof(T)))
+					{
+						object value;
+						_mem.TryGetValue(key, out value);
+						return (T)value;
+					}
+					else
+					{
+						var result = _cache.StringGet(key);
+						if (result.IsNullOrEmpty)
+							return default(T);
+
+						return Deserialize<T>(result);
+					}
+				}
+
+				/// <summary>
+				/// Removes the specified item from the cache.
+				/// </summary>
+				/// <param name="key">The key</param>
+				public void Remove(string key)
+				{
+					try
+					{
+						_lockCache.EnterWriteLock();
+						object value;
+						if(!_mem.TryRemove(key, out value))
+						{
+							_cache.KeyDelete(key);
+						}
+					}
+					catch (Exception ex)
+					{
+						Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+					}
+					finally
+					{
+						_lockCache.ExitWriteLock();
+					}
+				}
+
+				/// <summary>
+				/// Removes the keys matching the specified pattern.
+				/// </summary>
+				/// <param name="pattern">The pattern. </param>
+				public void RemoveKeyWithPattern(string pattern)
+				{
+					var keysToRemove = _server.Keys(_cache.Database, pattern);
+
+					try
+					{
+						_lockCache.EnterWriteLock();
+
+						foreach (var key in keysToRemove)
+						{
+							object value;
+							if (!_mem.TryRemove(key, out value))
+							{
+								_cache.KeyDelete(key);
+							}
+						}
+					}
+					catch (Exception ex)
+					{
+						Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+					}
+					finally
+					{
+						_lockCache.ExitWriteLock();
+					}
+				}
+
+				/// <summary>
+				/// Retrieves the specified key from the cache. If no value exists, a cache entry is created. 
+				/// </summary>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="key">The key</param>
+				/// <param name="executor">The function call that returns the data.</param>
+				/// <returns></returns>
+				public T Ensure<T>(string key, Func<T> executor)
+				{
+					return EnsureCache(executor, key, TimeSpan.Zero, (cacheKey, result, expiration) =>
+					{
+						Add(cacheKey, result);
+					});
+				}
+
+				/// <summary>
+				/// Retrieves the specified key from the cache. If no value exists, a cache entry is created. 
+				/// </summary>
+				/// <typeparam name="T">The type to convert the object to.</typeparam>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="expiration"> The expiration </param>
+				/// <param name="executor">The function call that returns the data.</param>
+				public T EnsureWithExactLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
+				{
+					return EnsureCache(executor, key, expiration, (cacheKey, result, expirationTime) =>
+					{
+						AddWithExactLifetime(cacheKey, result, expirationTime);
+					});
+				}
+
+				/// <summary>
+				/// Retrieves the specified key from the cache. If no value exists, a cache entry is created. 
+				/// </summary>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="expiration"> The sliding expiration </param>
+				/// <param name="executor">The function call that returns the data.</param>
+				public T EnsureWithSlidingLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
+				{
+					return EnsureWithExactLifetime<T>(key, expiration, executor);
+				}
+
+				/// <summary>
+				/// Update the cache with the specified value, if the cache does not exist, it is created.
+				/// </summary>
+				/// <typeparam name="T">The object type</typeparam>
+				/// <param name="key">The key.</param>
+				/// <param name="expiration">The expiration timeout as a timespan. This is a sliding value.</param>
+				/// <param name="executor">The function call that returns the data.</param>
+				public T UpdateWithSlidingLifetime<T>(string key, TimeSpan expiration, Func<T> executor)
+				{
+					var newValue = executor();
+
+					try
+					{
+						_lockCache.EnterWriteLock();
+						if (newValue != null)
+						{
+							if (IsInMemoryCache(key, typeof(T)))
+							{
+								_mem.AddOrUpdate(key, newValue, (existingKey, oldValue) => newValue);
+							}
+							else
+							{
+								_cache.StringSet(key, Serialize(newValue), expiration);
+							}
+						}
+					}
+					catch (Exception ex)
+					{
+						Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+					}
+					finally
+					{
+						_lockCache.ExitWriteLock();
+					}
+
+					return newValue;
+				}
+
+				/// <summary>
+				/// Retrieves the specified key from the cache. If no value exists, a cache entry is created. 
+				/// </summary>
+				/// <typeparam name="T">The type to convert the object to.</typeparam>
+				/// <param name="executor">The function call that returns the data.</param>
+				/// <param name="key">The key.</param>
+				/// <param name="expiration">The expiration timeout as a timespan.</param>
+				private T EnsureCache<T>(Func<T> executor, string key, TimeSpan expiration, Action<string, T, TimeSpan> addItemToCache)
+				{
+					var result = Get<T>(key);
+
+					if (EqualityComparer<T>.Default.Equals(result, default(T)))
+					{               
+						try
+						{
+							_lockCache.EnterWriteLock();
+
+							result = Get<T>(key);
+
+							if (EqualityComparer<T>.Default.Equals(result, default(T)))
+							{
+								var newValue = executor();
+
+								result = newValue;
+							}
+
+							if (result != null)
+							{
+								addItemToCache(key, result, expiration);
+							}
+						}
+						catch (Exception ex)
+						{
+							Trace.Write(string.Format(AppConstants.ExceptionTemplate, ex.ToString()));
+						}
+						finally
+						{
+							_lockCache.ExitWriteLock();
+						}
+					}
+
+					return result;
+				}
+
+				/// <summary>
+				/// Dispose object
+				/// </summary>
+				public void Dispose()
+				{
+					Dispose(true);
+					GC.SuppressFinalize(this);
+				}
+
+				/// <summary>
+				/// Dispose object
+				/// </summary>
+				/// <param name="disposing"></param>
+				protected virtual void Dispose(bool disposing)
+				{
+					if (_disposed)
+						return;
+
+					if (disposing)
+					{
+						_lockCache.Dispose();
+					}
+
+					_disposed = true;
+				}
+
+				/// <summary>
+				/// Dispose object
+				/// </summary>
+				~RedisCacheProvider()
+				{
+					Dispose(false);
+				}
+			}
+		}
+
+		
+		 
 Add UnitTest Project
 ~~~~~~~~~~~~~~~~~~~~
 

@@ -201,6 +201,11 @@ Memcached and Redis here, we just pick Redis as an example.</p>
 Izenda.BI.CacheProvider.Memcache.dll with our own library
 file.</span></a></li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please refer to our GitHub repo for the latest code samples
+<a class="reference external" href="https://github.com/Izenda7Series/RedisCacheProvider">https://github.com/Izenda7Series/RedisCacheProvider</a></p>
+</div>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -317,266 +322,416 @@ in Assemblies &gt; Framework).</li>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Full sample code:</div>
-<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.CacheProvider.RedisCache.Constants</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.CacheProvider.RedisCache.Converters</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.CacheProvider.RedisCache.Resolvers</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.ReportDesigner</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">StackExchange.Redis</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.ComponentModel.Composition</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">StackExchange.Redis</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.CustomAttributes</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Concurrent</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Constants</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nn">Izenda.BI.CacheProvider.Redis</span>
+<span class="k">namespace</span> <span class="nn">Izenda.BI.CacheProvider.RedisCache</span>
 <span class="p">{</span>
-   <span class="c1">/// &lt;summary&gt;</span>
-   <span class="c1">/// Redis cache provider</span>
-   <span class="c1">/// &lt;/summary&gt;</span>
-<span class="na">   [Export(typeof(ICacheProvider))]</span>
-   <span class="k">public</span> <span class="k">class</span> <span class="nc">RedisCacheProvider</span> <span class="p">:</span> <span class="n">ICacheProvider</span><span class="p">,</span> <span class="n">IDisposable</span>
-   <span class="p">{</span>
-      <span class="k">private</span> <span class="kt">bool</span> <span class="n">disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-      <span class="k">private</span> <span class="k">readonly</span> <span class="n">ReaderWriterLockSlim</span> <span class="n">lockCache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReaderWriterLockSlim</span><span class="p">();</span>
-      <span class="k">private</span> <span class="k">static</span> <span class="n">ConnectionMultiplexer</span> <span class="n">redis</span><span class="p">;</span>
-      <span class="k">private</span> <span class="k">static</span> <span class="n">String</span> <span class="n">serverAddress</span> <span class="p">=</span> <span class="s">&quot;localhost&quot;</span><span class="p">;</span>
+        <span class="c1">/// &lt;summary&gt;</span>
+        <span class="c1">/// Redis cache provider</span>
+        <span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">        [Export(typeof(ICacheProvider))]</span>
+        <span class="k">public</span> <span class="k">class</span> <span class="nc">RedisCacheProvider</span> <span class="p">:</span> <span class="n">ICacheProvider</span><span class="p">,</span> <span class="n">IDisposable</span>
+        <span class="p">{</span>
+                <span class="k">private</span> <span class="k">static</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">_mem</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;();</span>
+                <span class="k">private</span> <span class="kt">bool</span> <span class="n">_disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="k">private</span> <span class="n">JsonSerializerSettings</span> <span class="n">_serializerSettings</span> <span class="p">=</span> <span class="k">new</span> <span class="n">JsonSerializerSettings</span><span class="p">();</span>
+                <span class="k">private</span> <span class="k">readonly</span> <span class="n">ReaderWriterLockSlim</span> <span class="n">_lockCache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ReaderWriterLockSlim</span><span class="p">(</span><span class="n">LockRecursionPolicy</span><span class="p">.</span><span class="n">SupportsRecursion</span><span class="p">);</span>
+                <span class="k">private</span> <span class="k">readonly</span> <span class="n">IDatabase</span> <span class="n">_cache</span><span class="p">;</span>
+                <span class="k">private</span> <span class="k">readonly</span> <span class="n">IServer</span> <span class="n">_server</span><span class="p">;</span>
 
-      <span class="k">public</span> <span class="nf">RedisCacheProvider</span><span class="p">()</span>
-      <span class="p">{</span>
-           <span class="n">redis</span> <span class="p">=</span> <span class="n">ConnectionMultiplexer</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">serverAddress</span><span class="p">);</span>
-      <span class="p">}</span>
+                <span class="k">public</span> <span class="nf">RedisCacheProvider</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">_cache</span> <span class="p">=</span> <span class="n">RedisHelper</span><span class="p">.</span><span class="n">Database</span><span class="p">;</span>
+                        <span class="n">_server</span> <span class="p">=</span> <span class="n">RedisHelper</span><span class="p">.</span><span class="n">Server</span><span class="p">;</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Adds an item to the underlying cache using the specified key.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
-      <span class="k">public</span> <span class="k">void</span> <span class="n">Add</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
-           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">);</span>
-      <span class="p">}</span>
+                        <span class="n">InitSerializer</span><span class="p">();</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Adds an item to the underlying cache using the specified key with normal priority.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration timeout as a timespan. This is a sliding value. &lt;/param&gt;</span>
-      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithExactLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
-           <span class="c1">// StackExchange.Redis client does not support exact datetime expiration, so sliding option is used.</span>
-           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
-      <span class="p">}</span>
+                <span class="k">public</span> <span class="nf">RedisCacheProvider</span><span class="p">(</span><span class="n">IDatabase</span> <span class="n">cache</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">_cache</span> <span class="p">=</span> <span class="n">cache</span><span class="p">;</span>
+                        <span class="n">InitSerializer</span><span class="p">();</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Adds an item to the underlying cache using the specified key with normal priority.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration timeout as a timespan. This is a sliding value. &lt;/param&gt;</span>
-      <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithSlidingLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
-           <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Initializes the JSON serializer</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="k">private</span> <span class="k">void</span> <span class="nf">InitSerializer</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">resolver</span> <span class="p">=</span> <span class="k">new</span> <span class="n">IzendaSerializerContractResolver</span><span class="p">();</span>
+                        <span class="n">resolver</span><span class="p">.</span><span class="n">Ignore</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ReportPartDefinition</span><span class="p">),</span> <span class="s">&quot;ReportPartContent&quot;</span><span class="p">);</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Determines whether the cache contains the specified key.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;returns&gt;</span>
-      <span class="c1">///     &lt;c&gt;true&lt;/c&gt; if the underlying cache contains the key otherwise, &lt;c&gt;false&lt;/c&gt;.</span>
-      <span class="c1">/// &lt;/returns&gt;</span>
-      <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Contains</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">KeyExists</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
-      <span class="p">}</span>
+                        <span class="n">_serializerSettings</span><span class="p">.</span><span class="n">ReferenceLoopHandling</span> <span class="p">=</span> <span class="n">ReferenceLoopHandling</span><span class="p">.</span><span class="n">Ignore</span><span class="p">;</span>
+                        <span class="n">_serializerSettings</span><span class="p">.</span><span class="n">TypeNameHandling</span> <span class="p">=</span> <span class="n">TypeNameHandling</span><span class="p">.</span><span class="n">Objects</span><span class="p">;</span>
+                        <span class="n">_serializerSettings</span><span class="p">.</span><span class="n">TypeNameAssemblyFormat</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="n">Formatters</span><span class="p">.</span><span class="n">FormatterAssemblyStyle</span><span class="p">.</span><span class="n">Simple</span><span class="p">;</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
-      <span class="k">public</span> <span class="n">T</span> <span class="n">Ensure</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">Zero</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">)</span> <span class="p">=&gt;</span>
-           <span class="p">{</span>
-               <span class="n">Add</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
-           <span class="p">});</span>
-      <span class="p">}</span>
+                        <span class="n">_serializerSettings</span><span class="p">.</span><span class="n">Converters</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">DBServerTypeSupportingConverter</span><span class="p">());</span>
+                        <span class="n">_serializerSettings</span><span class="p">.</span><span class="n">ContractResolver</span> <span class="p">=</span> <span class="n">resolver</span><span class="p">;</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a sliding value.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
-      <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">)</span> <span class="p">=&gt;</span>
-           <span class="p">{</span>
-               <span class="n">AddWithSlidingLifetime</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">);</span>
-           <span class="p">});</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Serializes the obj to json</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;obj&quot;&gt;&lt;/param&gt;</span>
+                <span class="c1">/// &lt;returns&gt; A json string of the object&lt;/returns&gt;</span>
+                <span class="k">private</span> <span class="kt">string</span> <span class="nf">Serialize</span><span class="p">(</span><span class="kt">object</span> <span class="n">obj</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">_serializerSettings</span><span class="p">);</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Update and add the cache if not exist.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a sliding value.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
-      <span class="k">public</span> <span class="n">T</span> <span class="n">UpdateWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Deserializes the json string to the specified type</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;serialized&quot;&gt;The serialized object&lt;/param&gt;</span>
+                <span class="c1">/// &lt;returns&gt;THe deserialized object&lt;/returns&gt;</span>
+                <span class="k">private</span> <span class="n">T</span> <span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">serialized</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">serialized</span><span class="p">,</span> <span class="n">_serializerSettings</span><span class="p">);</span>
+                <span class="p">}</span>
 
-           <span class="kt">var</span> <span class="n">updatingValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
-           <span class="n">lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Adds an item to the cache using the specified key.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key &lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value &lt;/param&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="n">Add</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">try</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                                <span class="k">if</span><span class="p">(</span><span class="n">IsInMemoryCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+                                <span class="p">{</span>
+                                        <span class="n">_mem</span><span class="p">.</span><span class="n">AddOrUpdate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">,</span> <span class="p">(</span><span class="n">existingKey</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">value</span><span class="p">);</span>
+                                <span class="p">}</span>
+                                <span class="k">else</span>
+                                <span class="p">{</span>
+                                        <span class="n">_cache</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Serialize</span><span class="p">(</span><span class="k">value</span><span class="p">));</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                        <span class="p">}</span>
+                        <span class="k">finally</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
 
-           <span class="k">try</span>
-           <span class="p">{</span>
-               <span class="k">if</span> <span class="p">(</span><span class="n">updatingValue</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
-               <span class="p">{</span>
-                   <span class="n">String</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="n">updatingValue</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">TypeCode</span><span class="p">.</span><span class="n">String</span><span class="p">);</span>
-                   <span class="n">db</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">stringValue</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
-               <span class="p">}</span>
-           <span class="p">}</span>
-           <span class="k">catch</span>
-           <span class="p">{</span>
-               <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Fail set item to cache----------**********&quot;</span><span class="p">);</span>
-           <span class="p">}</span>
-           <span class="k">finally</span>
-           <span class="p">{</span>
-               <span class="n">lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
-           <span class="p">}</span>
+                <span class="k">private</span> <span class="kt">bool</span> <span class="nf">IsInMemoryCache</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Type</span> <span class="n">type</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">key</span> <span class="p">==</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">HashCodeMetadata</span>
+                                <span class="p">||</span> <span class="p">(</span><span class="n">type</span><span class="p">.</span><span class="n">IsGenericType</span> <span class="p">&amp;&amp;</span> <span class="n">type</span><span class="p">.</span><span class="n">GenericTypeArguments</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="n">t</span> <span class="p">=&gt;</span> <span class="n">t</span> <span class="p">==</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Object</span><span class="p">)))</span>
+                                <span class="p">||</span> <span class="n">type</span><span class="p">.</span><span class="n">FullName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&quot;Izenda.BI.DataAdaptor.IDataSourceAdaptor&quot;</span><span class="p">)</span>
+                                <span class="p">||</span> <span class="n">type</span><span class="p">.</span><span class="n">FullName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&quot;Izenda.BI.Logging.ILogManager&quot;</span><span class="p">)</span>
+                                <span class="p">||</span> <span class="n">type</span><span class="p">.</span><span class="n">FullName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&quot;Izenda.BI.SystemRepository.ISystemRepository&quot;</span><span class="p">)</span>
+                                <span class="p">||</span> <span class="n">type</span><span class="p">.</span><span class="n">FullName</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&quot;Izenda.BI.Framework.Models.Contexts.UserContext&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
 
-           <span class="k">return</span> <span class="n">updatingValue</span><span class="p">;</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Adds an item to the cache using the specified key and sets an expiration</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key &lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration &lt;/param&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithExactLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">try</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">IsInMemoryCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">.</span><span class="n">GetType</span><span class="p">()))</span>
+                                <span class="p">{</span>
+                                        <span class="n">_mem</span><span class="p">.</span><span class="n">AddOrUpdate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">,</span> <span class="p">(</span><span class="n">existingKey</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">value</span><span class="p">);</span>
+                                <span class="p">}</span>
+                                <span class="k">else</span>
+                                <span class="p">{</span>
+                                        <span class="n">_cache</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Serialize</span><span class="p">(</span><span class="k">value</span><span class="p">),</span> <span class="n">expiration</span><span class="p">);</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                        <span class="p">}</span>
+                        <span class="k">finally</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a exact value.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
-      <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithExactLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">)</span> <span class="p">=&gt;</span>
-           <span class="p">{</span>
-               <span class="n">AddWithExactLifetime</span><span class="p">(</span><span class="n">caheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">);</span>
-           <span class="p">});</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Adds an item to the cache using the specified key and sets a sliding expiration</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key &lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;value&quot;&gt; The value&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration &lt;/param&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="nf">AddWithSlidingLifetime</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">object</span> <span class="k">value</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">AddWithExactLifetime</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">value</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Removes the specified item from the cache.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key&lt;/param&gt;</span>
-      <span class="k">public</span> <span class="k">void</span> <span class="nf">Remove</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="n">db</span><span class="p">.</span><span class="n">KeyDelete</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Checks if the cache contains the given key</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key&lt;/param&gt;</span>
+                <span class="c1">/// &lt;returns&gt;true if the cache contains the key, false otherwise&lt;/returns&gt;</span>
+                <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Contains</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">_mem</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">?</span> <span class="k">true</span> <span class="p">:</span> <span class="n">_cache</span><span class="p">.</span><span class="n">KeyExists</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Get object from cache. Build and add the cache if not exist.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan.&lt;/param&gt;</span>
-      <span class="k">private</span> <span class="n">T</span> <span class="n">EnsureCache</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">&gt;</span> <span class="n">addItemToCache</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">key</span><span class="p">);</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Retrieves the specified key from the cache</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key&lt;/param&gt;</span>
+                <span class="c1">/// &lt;returns&gt;&lt;/returns&gt;</span>
+                <span class="k">public</span> <span class="n">T</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+                <span class="p">{</span>
 
-           <span class="k">if</span> <span class="p">(</span><span class="n">EqualityComparer</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">Default</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">default</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
-           <span class="p">{</span>
-               <span class="kt">var</span> <span class="n">addingValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
-               <span class="n">lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">IsInMemoryCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+                        <span class="p">{</span>
+                                <span class="kt">object</span> <span class="k">value</span><span class="p">;</span>
+                                <span class="n">_mem</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="k">value</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="k">value</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                        <span class="p">{</span>
+                                <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">_cache</span><span class="p">.</span><span class="n">StringGet</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">)</span>
+                                        <span class="k">return</span> <span class="nf">default</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
 
-               <span class="k">try</span>
-               <span class="p">{</span>
-                   <span class="c1">//Todo: remove log</span>
-                   <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Adding item to cache----------**********&quot;</span><span class="p">);</span>
-                   <span class="n">result</span> <span class="p">=</span> <span class="n">addingValue</span><span class="p">;</span>
+                                <span class="k">return</span> <span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">result</span><span class="p">);</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
 
-                   <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
-                   <span class="p">{</span>
-                       <span class="n">addItemToCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
-                   <span class="p">}</span>
-               <span class="p">}</span>
-               <span class="k">catch</span>
-               <span class="p">{</span>
-                   <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;**********----------Izenda: Fail add item to cache----------**********&quot;</span><span class="p">);</span>
-               <span class="p">}</span>
-               <span class="k">finally</span>
-               <span class="p">{</span>
-                   <span class="n">lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
-               <span class="p">}</span>
-           <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Removes the specified item from the cache.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key&lt;/param&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="nf">Remove</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">try</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                                <span class="kt">object</span> <span class="k">value</span><span class="p">;</span>
+                                <span class="k">if</span><span class="p">(!</span><span class="n">_mem</span><span class="p">.</span><span class="n">TryRemove</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="k">value</span><span class="p">))</span>
+                                <span class="p">{</span>
+                                        <span class="n">_cache</span><span class="p">.</span><span class="n">KeyDelete</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                        <span class="p">}</span>
+                        <span class="k">finally</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
 
-           <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Removes the keys matching the specified pattern.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;pattern&quot;&gt;The pattern. &lt;/param&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="nf">RemoveKeyWithPattern</span><span class="p">(</span><span class="kt">string</span> <span class="n">pattern</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">keysToRemove</span> <span class="p">=</span> <span class="n">_server</span><span class="p">.</span><span class="n">Keys</span><span class="p">(</span><span class="n">_cache</span><span class="p">.</span><span class="n">Database</span><span class="p">,</span> <span class="n">pattern</span><span class="p">);</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">///     Convenience method to retrieve and convert the object result from the cache.</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt; The type to convert the object to. &lt;/typeparam&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;key&quot;&gt; The key. &lt;/param&gt;</span>
-      <span class="c1">/// &lt;returns&gt; The instance of the object in the cache or the default value for the type if not found. &lt;/returns&gt;</span>
-      <span class="k">public</span> <span class="n">T</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="n">IDatabase</span> <span class="n">db</span> <span class="p">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">GetDatabase</span><span class="p">();</span>
-           <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">db</span><span class="p">.</span><span class="n">StringGet</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+                        <span class="k">try</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
 
-           <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">IsNull</span><span class="p">)</span>
-           <span class="p">{</span>
-               <span class="k">return</span> <span class="nf">default</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
-           <span class="p">}</span>
+                                <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">key</span> <span class="k">in</span> <span class="n">keysToRemove</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="kt">object</span> <span class="k">value</span><span class="p">;</span>
+                                        <span class="k">if</span> <span class="p">(!</span><span class="n">_mem</span><span class="p">.</span><span class="n">TryRemove</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="k">value</span><span class="p">))</span>
+                                        <span class="p">{</span>
+                                                <span class="n">_cache</span><span class="p">.</span><span class="n">KeyDelete</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+                                        <span class="p">}</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                        <span class="p">}</span>
+                        <span class="k">finally</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
 
-           <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ChangeType</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Retrieves the specified key from the cache. If no value exists, a cache entry is created.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+                <span class="c1">/// &lt;returns&gt;&lt;/returns&gt;</span>
+                <span class="k">public</span> <span class="n">T</span> <span class="n">Ensure</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">Zero</span><span class="p">,</span> <span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">)</span> <span class="p">=&gt;</span>
+                        <span class="p">{</span>
+                                <span class="n">Add</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+                        <span class="p">});</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Dispose object</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
-      <span class="p">{</span>
-           <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
-           <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-      <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Retrieves the specified key from the cache. If no value exists, a cache entry is created.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The expiration &lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+                <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithExactLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="nf">EnsureCache</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">)</span> <span class="p">=&gt;</span>
+                        <span class="p">{</span>
+                                <span class="n">AddWithExactLifetime</span><span class="p">(</span><span class="n">cacheKey</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expirationTime</span><span class="p">);</span>
+                        <span class="p">});</span>
+                <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Dispose object</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="c1">/// &lt;param name=&quot;disposing&quot;&gt;&lt;/param&gt;</span>
-      <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
-      <span class="p">{</span>
-           <span class="k">if</span> <span class="p">(</span><span class="n">disposed</span><span class="p">)</span>
-               <span class="k">return</span><span class="p">;</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Retrieves the specified key from the cache. If no value exists, a cache entry is created.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt; The sliding expiration &lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+                <span class="k">public</span> <span class="n">T</span> <span class="n">EnsureWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">EnsureWithExactLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">key</span><span class="p">,</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">executor</span><span class="p">);</span>
+                <span class="p">}</span>
 
-           <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span>
-           <span class="p">{</span>
-               <span class="n">lockCache</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
-           <span class="p">}</span>
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Update the cache with the specified value, if the cache does not exist, it is created.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The object type&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan. This is a sliding value.&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+                <span class="k">public</span> <span class="n">T</span> <span class="n">UpdateWithSlidingLifetime</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">newValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
 
-           <span class="n">disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
-      <span class="p">}</span>
+                        <span class="k">try</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">newValue</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">IsInMemoryCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+                                        <span class="p">{</span>
+                                                <span class="n">_mem</span><span class="p">.</span><span class="n">AddOrUpdate</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">newValue</span><span class="p">,</span> <span class="p">(</span><span class="n">existingKey</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">newValue</span><span class="p">);</span>
+                                        <span class="p">}</span>
+                                        <span class="k">else</span>
+                                        <span class="p">{</span>
+                                                <span class="n">_cache</span><span class="p">.</span><span class="n">StringSet</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Serialize</span><span class="p">(</span><span class="n">newValue</span><span class="p">),</span> <span class="n">expiration</span><span class="p">);</span>
+                                        <span class="p">}</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                        <span class="p">}</span>
+                        <span class="k">finally</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                        <span class="p">}</span>
 
-      <span class="c1">/// &lt;summary&gt;</span>
-      <span class="c1">/// Dispose object</span>
-      <span class="c1">/// &lt;/summary&gt;</span>
-      <span class="p">~</span><span class="n">RedisCacheProvider</span><span class="p">()</span>
-      <span class="p">{</span>
-           <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
+                        <span class="k">return</span> <span class="n">newValue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Retrieves the specified key from the cache. If no value exists, a cache entry is created.</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;The type to convert the object to.&lt;/typeparam&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;executor&quot;&gt;The function call that returns the data.&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;key&quot;&gt;The key.&lt;/param&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;expiration&quot;&gt;The expiration timeout as a timespan.&lt;/param&gt;</span>
+                <span class="k">private</span> <span class="n">T</span> <span class="n">EnsureCache</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">executor</span><span class="p">,</span> <span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">TimeSpan</span><span class="p">&gt;</span> <span class="n">addItemToCache</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">key</span><span class="p">);</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">EqualityComparer</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">Default</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">default</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+                        <span class="p">{</span>
+                                <span class="k">try</span>
+                                <span class="p">{</span>
+                                        <span class="n">_lockCache</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+
+                                        <span class="n">result</span> <span class="p">=</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">key</span><span class="p">);</span>
+
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">EqualityComparer</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">Default</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">default</span><span class="p">(</span><span class="n">T</span><span class="p">)))</span>
+                                        <span class="p">{</span>
+                                                <span class="kt">var</span> <span class="n">newValue</span> <span class="p">=</span> <span class="n">executor</span><span class="p">();</span>
+
+                                                <span class="n">result</span> <span class="p">=</span> <span class="n">newValue</span><span class="p">;</span>
+                                        <span class="p">}</span>
+
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                                        <span class="p">{</span>
+                                                <span class="n">addItemToCache</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">expiration</span><span class="p">);</span>
+                                        <span class="p">}</span>
+                                <span class="p">}</span>
+                                <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+                                <span class="p">{</span>
+                                        <span class="n">Trace</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">AppConstants</span><span class="p">.</span><span class="n">ExceptionTemplate</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">ToString</span><span class="p">()));</span>
+                                <span class="p">}</span>
+                                <span class="k">finally</span>
+                                <span class="p">{</span>
+                                        <span class="n">_lockCache</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+                                <span class="p">}</span>
+                        <span class="p">}</span>
+
+                        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Dispose object</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+                        <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Dispose object</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="c1">/// &lt;param name=&quot;disposing&quot;&gt;&lt;/param&gt;</span>
+                <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">_disposed</span><span class="p">)</span>
+                                <span class="k">return</span><span class="p">;</span>
+
+                        <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">_lockCache</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+                        <span class="p">}</span>
+
+                        <span class="n">_disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">/// &lt;summary&gt;</span>
+                <span class="c1">/// Dispose object</span>
+                <span class="c1">/// &lt;/summary&gt;</span>
+                <span class="p">~</span><span class="n">RedisCacheProvider</span><span class="p">()</span>
+                <span class="p">{</span>
+                        <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
