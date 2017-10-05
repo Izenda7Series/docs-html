@@ -11,7 +11,7 @@ Izenda fully supports the following database servers:
       -  Microsoft Azure
       -  Oracle 10.2 or later
       -  MySQL (For optimal performance MySQL 5.7+ is suggested. MySQL 5.7 includes major performance enhancements to derived tables/subqueries which are used throughout Izenda.)
-      -  PostgreSQL
+      -  PostgreSQL 9.3+
 
 Cubes Support
 ~~~~~~~~~~~~~
