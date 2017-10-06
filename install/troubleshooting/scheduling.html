@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>General &mdash; Izenda BI 2.4.0 documentation</title>
+  <title>Scheduling &mdash; Izenda BI 2.4.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.4.0 documentation" href="../../index.html"/>
         <link rel="up" title="Troubleshooting" href="../troubleshooting.html"/>
-        <link rel="next" title="Serialization" href="serialization.html"/>
-        <link rel="prev" title="Logging" href="logging.html"/> 
+        <link rel="next" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
+        <link rel="prev" title="Serialization" href="serialization.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -110,12 +110,12 @@
 <li class="toctree-l3"><a class="reference internal" href="exporting.html">Exporting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="http.html">HTTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">General</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#your-user-id-is-inactive-integrated-mode-only">Your user ID is inactive. (Integrated Mode Only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="general.html">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scheduling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scheduled-items-are-not-being-sent-on-time">Scheduled items are not being sent on time</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="serialization.html">Serialization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scheduling.html">Scheduling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../.supplementary_installation_guides.html">Supplementary Guides</a></li>
@@ -178,13 +178,13 @@
         
           <li><a href="../troubleshooting.html">Troubleshooting</a> &raquo;</li>
         
-      <li>General</li>
+      <li>Scheduling</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/install/troubleshooting/general.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/install/troubleshooting/scheduling.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,23 +197,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="general">
-<h1>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scheduling">
+<h1>Scheduling<a class="headerlink" href="#scheduling" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="section" id="your-user-id-is-inactive-integrated-mode-only">
-<h2>Your user ID is inactive. (Integrated Mode Only)<a class="headerlink" href="#your-user-id-is-inactive-integrated-mode-only" title="Permalink to this headline">¶</a></h2>
-<p>This issue can occur if you used the /api/user (POST) endpoint to create users in integrated modes. Please ensure that you are using the user/integration/saveUser (POST) endpoint to create users in integrated modes.</p>
-<p>You can use the script below to manually active users.</p>
+<div class="section" id="scheduled-items-are-not-being-sent-on-time">
+<h2>Scheduled items are not being sent on time<a class="headerlink" href="#scheduled-items-are-not-being-sent-on-time" title="Permalink to this headline">¶</a></h2>
+<p>This issue can occur if the API site has been shutdown or stopped via an IIS reset/recycle or a similar event. This may be evident in the API logs by large time gaps in activity.</p>
+<p>If there is a scheduled iis reset or recycle, the application must be reinitialized for the scheduler to continue to ping and operate as expected. This can be as simple as logging in to the application, or a scheduled task that re-initializes the application. Once the  Izenda application has been initialized, it will continue to ping the server to keep iis running every 5 minutes (default interval).</p>
+<p>The system will use the settings below (IzendaSystemSetting table) to ping our API to ensure that scheduled and subscribed items are delivered as expected. The SubscriptionJobInterval value will determine (in minutes) how often the API gets a ping to keep it up and running.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>WebAPIUrl</td>
+<td><a class="reference external" href="http://localhost/">http://localhost/</a></td>
+</tr>
+<tr class="row-odd"><td>SubscriptionJobInterval</td>
+<td>5 (default)</td>
+</tr>
+</tbody>
+</table>
+<p>If the WebAPIUrl is not set, you will see the error message below in the Izenda API logs:</p>
 <blockquote>
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This is a MSSQL snippet, you may need to adjust the query for other databases.</span>
+<div>[DefaultQuartzScheduler_Worker-1][INFO ][SubscriptionJob] Ping system status failure: The remote server returned an error: (404) Not Found.</div></blockquote>
+<p>You can use the script below to add the WebAPIUrl:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This is a MSSQL snippet, you may need to adjust the query for other databases.</span>
 <span class="k">UPDATE</span> <span class="p">[</span><span class="n">IzendaSystemSetting</span><span class="p">]</span>
 <span class="k">SET</span> <span class="p">[</span><span class="n">Value</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;your url here including the trailing slash&gt;&#39;</span>
-<span class="k">WHERE</span> <span class="p">[</span><span class="n">Name</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;WebUrl&#39;</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">Name</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;WebAPIUrl&#39;</span>
 </pre></div>
 </div>
-</div></blockquote>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">As general best practice, we recommend backing up your database before making any manual updates.</p>
@@ -231,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="serialization.html" class="btn btn-neutral float-right" title="Serialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../.supplementary_installation_guides.html" class="btn btn-neutral float-right" title="Supplementary Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="logging.html" class="btn btn-neutral" title="Logging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="serialization.html" class="btn btn-neutral" title="Serialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
