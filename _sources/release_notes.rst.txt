@@ -8,6 +8,27 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.5.1 October 9, 2017
+~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18471  Invisible filter still displays in Export/Subscribe/Schedule filter area.
+-  Defect  18464  User can not drag Filter Fields to change their position in Filter section without error.
+-  Defect  18454  PostgreSQL Custom Views will fail when using  :: for converting data types
+-  Defect  18445  System shows error msg "No operator type or operator is defined for the filter" when creating a report from 2 Dynamic stored procedures
+-  Defect  18386  Printing dashboad is not properly spacing tiles and results in items missing on page.
+-  Defect  18383  Report part hangs after adding a Calculated Field into container then user clicks on Add a field link (the +) next to the field container.
+-  Defect  18360  The print preview page is blank when User prints a form Report and the form is not printed on printer.
+-  Defect  18333  Aggregated Calculated Field fails to render in Map
+-  Defect  18304  Subreport Popup Option only allows you to navigate into two levels of  popup subreports
+-  Defect  18270  Sorting does not change when using Day of Week format in chart when moving from A-Z and Z-A
+-  Defect  18215  Required filter warning shows Position and # and should only show # of filter in viewer.
+-  Defect  18040  Dashboard save popup overflows in responsive mode
+-  Defect  18039  Name, title and description of dashboard tile part are overlapped in Presentation mode
+-  Defect  17947  PDF scaling is incorrect, the page is not fully utilized.
+-  Defect  17614  User name in users profile should not be editable in any embedded modes as it is used to keep application in sync and should not be editable.
+
 v.2.5.0 September 29, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1457,9 +1478,6 @@ Known Issues
      - 18446
      - Error message shows when selecting a date from calendar for Time filter field
    * - Defect
-     - 18445
-     - System shows error msg "No operator type or operator is defined for the filter" when creating a report from 2 Dynamic stored procedures
-   * - Defect
      - 18444
      - System shows error msg when user clicks on Update Result after creating a report from 1 Dynamic stored procedure and 1 normal data source
    * - Defect
@@ -1523,14 +1541,8 @@ Known Issues
      - 18388
      - Error displays for circular relationship when the keyjoin is not at the end of the list
    * - Defect
-     - 18386
-     - Printing dashboad is not properly spacing tiles and results in items missing on page.
-   * - Defect
      - 18384
      - Aggregated Field does NOT show user-defined function in dropdown list
-   * - Defect
-     - 18383
-     - Report part hangs after adding a Calculated Field into container then user clicks on Add a field link (the +) next to the field container.
    * - Defect
      - 18381
      - Scatter chart does not show all metric of 'Value labels'
@@ -1552,9 +1564,6 @@ Known Issues
    * - Defect
      - 18363
      - System adds new duplicated category when save a report into existed category name
-   * - Defect
-     - 18360
-     - The print preview page is blank when User prints a form Report and the form is not printed on printer.
    * - Defect
      - 18359
      - When using Oracle the Wrong Data Type in calculated field causes application error when using calculated field as a filter
@@ -1582,9 +1591,6 @@ Known Issues
    * - Defect
      - 18335
      - Stored procedure Input paramaeter is not properly respected as tenant field, no value is passed to the input parameter when visible or tenant field is hidden.
-   * - Defect
-     - 18333
-     - Aggregated Calculated Field fails to render in Map
    * - Defect
      - 18330
      - No filter dropdown shows under Filter Value Selection in Schedule/Subscribe popup if filter operator = Equivalence/Blank
@@ -1615,9 +1621,6 @@ Known Issues
    * - Defect
      - 18305
      - Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
-   * - Defect
-     - 18304
-     - Subreport Popup Option only allows you to navigate into two levels of  popup subreports
    * - Defect
      - 18303
      - When setting alternative text in a vertical grid for value of 0 to be any other value the alternative text setting is ignored.
@@ -1664,9 +1667,6 @@ Known Issues
      - 18272
      - In report part map the "Border" still shows on "Preview" section even though the user unchecked it
    * - Defect
-     - 18270
-     - Sorting does not change when using Day of Week format in chart when moving from A-Z and Z-A
-   * - Defect
      - 18264
      - When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.
    * - Defect
@@ -1711,9 +1711,6 @@ Known Issues
    * - Defect
      - 18217
      - No record is found when searching relationships of report designer when using  "Uncategorized" in datasource
-   * - Defect
-     - 18215
-     - Required filter warning shows Position and # and should only show # of filter in viewer.
    * - Defect
      - 18213
      - Report header is readable in the report viewer, but the spacing is overlapped in Word export.
@@ -1856,12 +1853,6 @@ Known Issues
      - 18041
      - Sort control on report list disappears in responsive mode until screen is refreshed
    * - Defect
-     - 18040
-     - Dashboard save popup overflows in responsive mode
-   * - Defect
-     - 18039
-     - Name, title and description of dashboard tile part are overlapped in Presentation mode
-   * - Defect
      - 18038
      - Hover Text positioning is incorrect on chart with separator and only one value. 
    * - Defect
@@ -1957,9 +1948,6 @@ Known Issues
    * - Defect
      - 17950
      - Unable to search report name that contains [ or ]
-   * - Defect
-     - 17947
-     - PDF scaling is incorrect, the page is not fully utilized.
    * - Defect
      - 17938
      - User has to click Fields tab tow times to navigate to Field tab after inputting filter value for param of dynamic stored procedure
@@ -2203,9 +2191,6 @@ Known Issues
    * - Defect
      - 17615
      - When using a Bit data type as separator on chart legend shows series 1 not false
-   * - Defect
-     - 17614
-     - User name in users profile should not be editable in any embedded modes as it is used to keep application in sync and should not be editable.
    * - Defect
      - 17609
      - Security questions are enabled when not selected when you create or reset your password with username which has Backslash
