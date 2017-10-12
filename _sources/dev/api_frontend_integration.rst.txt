@@ -37,11 +37,11 @@ List of APIs
      - Render Izenda Report Designer Page (New/Edit Report) inside hosting web
    * - .. container:: lpad2
    
-          `renderReportViewerPage(element,report_id)`_
+          `renderReportViewerPage(element,report_id, filter,integrationStyle)`_
      - Render Izenda Report Viewer page only inside hosting web
    * - .. container:: lpad2
    
-          `renderReportPart(element,{"id":report_part_id})`_
+          `renderReportPart(element,params)`_
      - Render specific :term:`Report Part` inside hosting web
    * - .. container:: lpad2
    
