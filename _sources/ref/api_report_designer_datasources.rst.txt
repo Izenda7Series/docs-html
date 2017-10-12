@@ -40,12 +40,23 @@ Summary
        \- Create a new report OR open an existing report |br|
        \- In Data Source tab, choose a data source |br|
        \- OR switch from the others to Data Source tab
+   * - `POST report/loadJoinQuerySourceByRelationship`_
+     - Get join query source by relationship
+
+       .. versionadded:: 2.6.0
+     - To be updated
    * - `POST report/loadRelationships`_
      - Returns an updated list of relationships from an existing report together with an updated list of data sources.
      - Report Designer for an existing report
    * - `POST report/validateRelationshipSyntax`_
      - Validates relationship syntax.
      - Report Designer > Data Source > Validate Syntax
+   * - `POST report/validateCycleRelationships`_
+     - Validates cycle relationships
+
+       .. versionadded:: 2.6.0
+     - In Report Designer, switch from Data Source tab to the others.
+       Report Designer > Data Source > Validate Syntax
    * - `POST report/detectRelationshipsChange`_
      - Detects if any relationship should be removed because of changes in data sources.
      - Not used
@@ -353,6 +364,44 @@ Returns details for a list of query sources and a list of related query sources.
          "isLastPage": false
       }
 
+POST report/loadJoinQuerySourceByRelationship
+----------------------------------------------
+
+Return a list of join query source.
+
+**Request**
+
+    Payload: a :doc:`models/ReportParameter` object
+
+**Response**
+
+    An array of :doc:`models/RelationshipQuerySource` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadJoinQuerySourceByRelationship HTTP/1.1
+
+   Sample Request Payload::
+
+      {
+         "reportKey":{"key":"c0091e01-22f9-44a5-99e3-eb656a1fcebd"},
+         "relationshipIds": ["f03fcf35-5994-4cc4-ac5f-c4ae5f4bd26a"]
+      }
+
+   Sample Response::
+
+      [
+         {
+            "relationshipId": "f03fcf35-5994-4cc4-ac5f-c4ae5f4bd26a",
+            "querySourceId": "7f9cd714-9b06-4aaf-9a8b-5475ea0cdefc",
+            "querySourceName": "Order Details",
+            "dataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+            "dataSourceCategoryName": ""
+         }
+      ]
+
 POST report/loadRelationships
 ------------------------------------------------
 
@@ -573,6 +622,207 @@ In Report Advanced mode, validates that specified relationships correctly joins 
             "key": "",
             "messages": ["A valid SQL statement can be constructed from the given relationships."]
          }]
+      }
+
+POST report/validateCycleRelationships
+----------------------------------------
+Validate if cycle relationships error occurs.
+
+**Request**
+
+    Payload: a :doc:`models/Relationship` object
+
+**Response**
+
+    A :doc:`models/OperationResult` object
+
+    * success = true when there is no cycle relationship
+    * success = false and error message when cycle relationship occurs
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/validateCycleRelationships HTTP/1.1
+
+   Request payload do not contain cycle relationship::
+
+      [{
+         "previousAlias": "",
+         "tempId": "relationship_65",
+         "joinConnectionId": null,
+         "foreignConnectionId": null,
+         "joinQuerySourceId": "5eec76ff-4de9-403a-a7dd-66a9db4e6eba",
+         "joinQuerySourceName": "orders",
+         "joinDataSourceCategoryName": "MySQL-Northwind",
+         "joinDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+         "foreignDataSourceCategoryName": "",
+         "foreignDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+         "foreignQuerySourceId": null,
+         "foreignQuerySourceName": "order details",
+         "joinFieldId": "b5ea4297-8fe1-47d2-bfde-13b2eef6c36d",
+         "joinFieldName": "OrderID",
+         "foreignFieldId": "368088ba-5e24-4bf8-b709-1c44fe3e80e5",
+         "foreignFieldName": "OrderID",
+         "alias": "",
+         "aliasTempId": "alias_66",
+         "systemRelationship": false,
+         "joinType": "Inner",
+         "parentRelationshipId": null,
+         "position": null,
+         "relationshipKeyJoins": [],
+         "reportId": null,
+         "selectedForeignAlias": "126c58e7-e061-4f27-83c8-47c9135dde2c_order details",
+         "isForeignDataObjectAlias": false,
+         "id": null,
+         "state": 1,
+         "validationKey": "relationship_65",
+         "relationshipPosition": 0,
+         "needAlias": false,
+         "level": 1,
+         "comparisonOperator": "= (Field)",
+         "comparisonValue": null,
+         "hidden": false,
+         "isDirty": true
+      }]
+
+   Success Response::
+
+      {"success" : true, "message" : null, "data" : null}
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample Payload contains cycle relationship:
+
+      .. code-block:: json
+
+         [{
+            "previousAlias": "",
+            "tempId": "d9260bf3-c979-4969-9f9f-55d42c76bd64",
+            "joinConnectionId": "00000000-0000-0000-0000-000000000000",
+            "foreignConnectionId": "00000000-0000-0000-0000-000000000000",
+            "joinQuerySourceId": "5eec76ff-4de9-403a-a7dd-66a9db4e6eba",
+            "joinQuerySourceName": "orders",
+            "joinDataSourceCategoryName": "MySQL-Northwind",
+            "joinDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignDataSourceCategoryName": "",
+            "foreignDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignQuerySourceId": "126c58e7-e061-4f27-83c8-47c9135dde2c",
+            "foreignQuerySourceName": "order details",
+            "joinFieldId": "b5ea4297-8fe1-47d2-bfde-13b2eef6c36d",
+            "joinFieldName": "OrderID",
+            "foreignFieldId": "368088ba-5e24-4bf8-b709-1c44fe3e80e5",
+            "foreignFieldName": "OrderID",
+            "alias": "",
+            "aliasTempId": "alias_93",
+            "systemRelationship": false,
+            "joinType": "Inner",
+            "parentRelationshipId": null,
+            "position": null,
+            "relationshipKeyJoins": [],
+            "reportId": "85df9d52-f992-4be4-a58f-bd6c6c6b79fa",
+            "selectedForeignAlias": "126c58e7-e061-4f27-83c8-47c9135dde2c_order details",
+            "isForeignDataObjectAlias": false,
+            "id": "d9260bf3-c979-4969-9f9f-55d42c76bd64",
+            "state": 1,
+            "validationKey": "d9260bf3-c979-4969-9f9f-55d42c76bd64",
+            "relationshipPosition": 0,
+            "needAlias": false,
+            "level": 1,
+            "comparisonOperator": "= (Field)",
+            "comparisonValue": null,
+            "hidden": false,
+            "isDirty": false
+         },
+         {
+            "previousAlias": "",
+            "tempId": "54c64a53-1c91-4415-b812-dae4a5062cdf",
+            "joinConnectionId": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+            "foreignConnectionId": "6cc06e5b-0627-432c-bc33-708b0843c7c7",
+            "joinQuerySourceId": "126c58e7-e061-4f27-83c8-47c9135dde2c",
+            "joinQuerySourceName": "order details",
+            "joinDataSourceCategoryName": "MySQL-Northwind",
+            "joinDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignDataSourceCategoryName": "MySQL-Northwind",
+            "foreignDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignQuerySourceId": "735f70b1-8e33-4b02-bf62-53d2c57b9498",
+            "foreignQuerySourceName": "products",
+            "joinFieldId": "61066219-3ab6-405a-ba80-770cb1aad8b0",
+            "joinFieldName": "ProductID",
+            "foreignFieldId": "989242ea-6671-419d-b6f4-6bfb450b9500",
+            "foreignFieldName": "ProductID",
+            "alias": "",
+            "aliasTempId": "alias_144",
+            "systemRelationship": true,
+            "joinType": "Inner",
+            "parentRelationshipId": null,
+            "position": null,
+            "relationshipKeyJoins": [],
+            "reportId": null,
+            "selectedForeignAlias": "735f70b1-8e33-4b02-bf62-53d2c57b9498_products",
+            "isForeignDataObjectAlias": false,
+            "id": "54c64a53-1c91-4415-b812-dae4a5062cdf",
+            "state": 0,
+            "validationKey": "54c64a53-1c91-4415-b812-dae4a5062cdf",
+            "relationshipPosition": 1,
+            "needAlias": false,
+            "level": 2,
+            "comparisonOperator": "= (Field)",
+            "comparisonValue": null,
+            "hidden": false,
+            "isDirty": false
+         },
+         {
+            "previousAlias": "",
+            "tempId": "relationship_146",
+            "joinConnectionId": null,
+            "foreignConnectionId": null,
+            "joinQuerySourceId": "735f70b1-8e33-4b02-bf62-53d2c57b9498",
+            "joinQuerySourceName": "products",
+            "joinDataSourceCategoryName": "MySQL-Northwind",
+            "joinDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignDataSourceCategoryName": "",
+            "foreignDataSourceCategoryId": "42d34867-a67c-4423-a846-08f2d7e49f8f",
+            "foreignQuerySourceId": null,
+            "foreignQuerySourceName": "orders",
+            "joinFieldId": "989242ea-6671-419d-b6f4-6bfb450b9500",
+            "joinFieldName": "ProductID",
+            "foreignFieldId": "b5ea4297-8fe1-47d2-bfde-13b2eef6c36d",
+            "foreignFieldName": "OrderID",
+            "alias": "",
+            "aliasTempId": "alias_147",
+            "systemRelationship": false,
+            "joinType": "Inner",
+            "parentRelationshipId": null,
+            "position": null,
+            "relationshipKeyJoins": [],
+            "reportId": null,
+            "selectedForeignAlias": "5eec76ff-4de9-403a-a7dd-66a9db4e6eba_orders",
+            "isForeignDataObjectAlias": false,
+            "id": null,
+            "state": 1,
+            "validationKey": "relationship_146",
+            "relationshipPosition": 2,
+            "needAlias": false,
+            "level": 3,
+            "comparisonOperator": "= (Field)",
+            "comparisonValue": null,
+            "hidden": false,
+            "isDirty": true
+         }]
+
+   Sample Response::
+
+      {
+         "success": false,
+         "messages": [{
+            "key": "",
+            "detail": null,
+            "messages": ["Relationships are invalid. Please update the relationships before navigating to another screen in Report Designer."]
+         }],
+         "data": null
       }
 
 POST report/detectRelationshipsChange

@@ -21,3 +21,12 @@ ReportParameter
       -
       -  The numer of records to preview
       -
+   *  -  **relationShipIds** |br|
+         array of string (GUID)
+      -
+      -  The array of the relationship Ids
+      -
+
+Inherited fields:
+
+.. include:: PagedRequest.rst

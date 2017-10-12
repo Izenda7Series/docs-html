@@ -101,6 +101,8 @@ Summary
      - Report Designer
    * - `POST report/reportMode/{value}`_
      - Sets the report mode to Simple or Advanced.
+
+       Deleted in version 2.6.0
      - Not used
    * - `POST report/detectReportChange`_
      - Verifies that all report details are up to date, without physical changes, and valid.
@@ -179,9 +181,7 @@ Summary
      - 
        \- Create a Form report part |br|
        \- Drag and drop a field to the container |br|
-       \- In Report Part Properties tab, choose Embedded Report Settings, choose a report and report part |br|
-       \- Switch to preview mode OR Save the report and switch to Report Viewer
-     - To be updated
+       \- In Report Part Properties tab, choose Embedded Report Settings, choose a report and report part
 	 
    * - `POST report/findBySourceIds`_
      - Returns a list of report definitions based on the provided report source Ids
@@ -6079,7 +6079,16 @@ Validates that logged in user can access one and only one report part from the s
 
 **Samples**
 
- To be updated
+   .. code-block:: http
+
+       GET /api/report/validateEmbeddedReport/b5b3a5cc-9e55-424c-ae85-ba92ec3b934e?reportId=b8822cba-53f1-4f83-b6a2-1f45557fe62e&reportName=092917-chart&reportPartName=Chart HTTP/1.1
+
+   Response::
+
+      {
+         "reportId": "b8822cba-53f1-4f83-b6a2-1f45557fe62e",
+         "reportPartId": "faa882ed-5c20-4faa-861c-03adb8a23edd"
+      }
 
 POST report/findBySourceIds
 ---------------------------------------

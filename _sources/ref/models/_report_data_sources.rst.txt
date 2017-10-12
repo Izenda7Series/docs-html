@@ -11,3 +11,4 @@ Report Datasources
    ReportDataSourceCategory
    ReportQuerySource
    ReportField
+   RelationshipQuerySource

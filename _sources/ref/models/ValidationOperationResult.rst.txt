@@ -15,7 +15,9 @@ ValidationOperationResult
    *  -  **result** |br|
          object
       -
-      -  An object with a string field **izendaDataType** containing the suggested data type
+      -  An object with |br|
+         \- a string field **izendaDataType** containing the suggested data type |br|
+         \- a boolean field **isRunningField** whether expression in request payload contains running field
       -
 
 Inherited fields:
@@ -26,14 +28,16 @@ Inherited fields:
 
    .. container:: header
 
-      **Sample**:
+      **ValidationOperationResult Sample**:
 
    .. code-block:: json
 
       {
-        "result" : {
-           "izendaDataType" : "Money"
-        },
-        "success" : true,
-        "messages" : []
+         "result": {
+            "izendaDataType": "Numeric",
+            "isRunningField": true
+         },
+         "success": true,
+         "messages": [],
+         "data": null
       }

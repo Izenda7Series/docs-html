@@ -98,20 +98,25 @@ See also: `POST fusion/validateDataModelExpression`_
    Request payload::
 
       {
-        "reportKey" : {
-           "key" : "e40d635c-c90f-45f7-bf7a-5750db7ef9cf"
-        },
-        "expression" : "[Northwind].[dbo].[Products].[UnitsInStock] * [Northwind].[dbo].[Products].[UnitPrice]"
+            "reportKey": {
+                  "key": "c0091e01-22f9-44a5-99e3-eb656a1fcebd"
+            },
+            "expression": "RUNNINGCOUNT([SQL-Northwind].[dbo].[Order Details].[OrderID])",
+            "izendaDataType": "Numeric",
+            "querySourceFieldId": null,
+            "previewRecord": 10
       }
 
    Response::
 
       {
-        "result" : {
-           "izendaDataType" : "Money"
-        },
-        "success" : true,
-        "messages" : []
+         "result": {
+            "izendaDataType": "Numeric",
+            "isRunningField": true
+         },
+         "success": true,
+         "messages": [],
+         "data": null
       }
 
 
@@ -1877,6 +1882,16 @@ See also: `POST fusion/validateExpression`_
           -
           -  The output data type
           -
+       *  -  **querySourceFieldId** |br|
+             string (GUID)
+          -
+          -  The id of the query source field
+          -
+       *  -  **tenantId** |br|
+             string (GUID)
+          -
+          -  The id of the tenant
+          -
 
 **Response**
 
@@ -1891,19 +1906,23 @@ See also: `POST fusion/validateExpression`_
    Request payload::
 
       {
-        "querySourceId" : "72bf3820-3259-4b77-8f99-c2c001388413",
-        "expression" : "[Discount] * [UnitPrice]",
-        "izendaDataType" : "Numeric"
+         "querySourceId": "e1bc9a64-c12c-41fd-b8c9-5e7bccf754e9",
+         "expression": "RUNNINGSUM([FREIGHT])",
+         "izendaDataType": null,
+         "querySourceFieldId": null,
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e"
       }
 
    Sample response::
 
       {
-        "result" : {
-           "izendaDataType" : "Numeric"
-        },
-        "success" : true,
-        "messages" : []
+         "result": {
+            "izendaDataType": null,
+            "isRunningField": true
+         },
+         "success": true,
+         "messages": [],
+         "data": null
       }
 
 

@@ -21,6 +21,11 @@ CalculatedFieldFunctionParam
       -
       -  The ids of the Query Sources
       -
+   *  -  **includeCustomJsonFunction** |br|
+         boolean
+      -
+      -  Whether this is include custom json function or not
+      -
 
 .. container:: toggle
 
@@ -37,5 +42,6 @@ CalculatedFieldFunctionParam
             "5cc9e1dd-239c-43ac-8098-6b1c4b9e4478",
             "25ac2696-cabb-41df-a9aa-1b46f46c42f1",
             "f7ae5b5d-628e-4eaf-b8b2-fd823a484a35"		
-         ]
+         ],
+         "includeCustomJsonFunction" : false
       }

@@ -430,8 +430,112 @@ integer</td>
 <td>The numer of records to preview</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-even"><td><strong>relationShipIds</strong> <br clear="right" />
+array of string (GUID)</td>
+<td>&#160;</td>
+<td>The array of the relationship Ids</td>
+<td>&#160;</td>
+</tr>
 </tbody>
 </table>
+<p>Inherited fields:</p>
+</div>
+<div class="section" id="pagedrequest">
+<h2>PagedRequest<a class="headerlink" href="#pagedrequest" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="60%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>criteria</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="SearchCriteria.html"><span class="doc">SearchCriteria</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>sortOrders</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="SortOrder.html"><span class="doc">SortOrder</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>parentIds</strong> <br clear="right" />
+array of strings (GUIDs)</td>
+<td>&#160;</td>
+<td>Ids of the parents</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>pageIndex</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The index of the page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>pageSize</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The size of the page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>total</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The total number of rows</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-odd"><td><strong>skipItems</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>Skip items</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>isLastPage</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether this is the last page</td>
+<td>Inherited from <a class="reference internal" href="PagingInfo.html"><span class="doc">PagingInfo</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>PagedRequest Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nt">&quot;sortOrders&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;shareWith&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;descending&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="toggle docutils container">
 <div class="header docutils container">
 <strong>Sample</strong>:</div>

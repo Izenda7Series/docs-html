@@ -251,7 +251,7 @@ Will load from remote connection if they are not yet populated in system.</td>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a href="#id6"><span class="problematic" id="id7">`POST dataModel/basicConnectionsInfo`_</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-basicconnectionsinfo">POST dataModel/basicConnectionsInfo</a></td>
 <td>Returns an array of connections infor with paging.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id">GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}</a></td>
@@ -261,7 +261,7 @@ Will load from remote connection if they are not yet populated in system.</td>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a href="#id8"><span class="problematic" id="id9">`POST dataModel/basicQuerySourceCategoriesInfo`_</span></a></td>
+<tr class="row-odd"><td><a href="#id4"><span class="problematic" id="id5">`POST dataModel/basicQuerySourceCategoriesInfo`_</span></a></td>
 <td><p class="first">Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> with paging in the specified connection.</p>
 <div class="last versionadded">
 <p><span class="versionmodified">New in version 2.4.0.</span></p>
@@ -280,7 +280,7 @@ Will load from remote connection if they are not yet populated in system.</td>
 <tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-basicquerysourcefieldsinfo-query-source-id">GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}</a></td>
 <td>Returns an array of id and name of the query source fields in the query source specified by the {query_source_id} value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#id5">POST dataModel</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#id3">POST dataModel</a></td>
 <td>Saves a list of query sources.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-indicator-tenant-id">GET dataModel/indicator/(tenant_id)</a></td>
@@ -607,78 +607,6 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2>POST dataModel/basicConnectionsInfo<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of connections infor with paging.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.4.0.</span></p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The same as <a class="reference internal" href="api_connection.html#get-connection-basicinfo-tenant-id"><span class="std std-ref">GET connection/basicInfo/(tenant_id)</span></a></p>
-</div>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>Payload: a <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>An array of objects with two fields <strong>key</strong> and <strong>value</strong></li>
-</ul>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
-<th class="head">Note</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>key</strong> <br clear="right" />
-string (GUID)</td>
-<td>The id of the connection</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
-string</td>
-<td>The name of the connection</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li>A <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</li>
-</ul>
-</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="p">[{</span>
-    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;48733501-c57d-48ca-aded-501d5ebdaad9&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;ed13d1d0-cc0c-49bc-8925-3a11da65ef65&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;MVC5-ViTest&quot;</span><span class="p">,</span>
-  <span class="p">}],</span>
-  <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-  <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-  <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">true</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
 <div class="section" id="get-datamodel-basicquerysourcecategoriesinfo-connection-id">
 <h2>GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}<a class="headerlink" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id" title="Permalink to this headline">¶</a></h2>
 <p>Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> in the specified connection.</p>
@@ -764,22 +692,6 @@ string</td>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="id4">
-<h2>POST dataModel/basicQuerySourceCategoriesInfo/<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> with paging.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 2.4.0.</span></p>
-</div>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>Payload: a <a class="reference internal" href="models/QuerySourceCategoryPagedRequest.html"><span class="doc">QuerySourceCategoryPagedRequest</span></a> object.</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div>To be updated</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div>To be updated</div></blockquote>
 </div>
 <div class="section" id="get-datamodel-basicquerysourcesinfo-connection-id-type">
 <h2>GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)<a class="headerlink" href="#get-datamodel-basicquerysourcesinfo-connection-id-type" title="Permalink to this headline">¶</a></h2>
@@ -950,7 +862,7 @@ string</td>
 </div></blockquote>
 </div>
 <div class="section" id="post-datamodel">
-<span id="id5"></span><h2>POST dataModel<a class="headerlink" href="#post-datamodel" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>POST dataModel<a class="headerlink" href="#post-datamodel" title="Permalink to this headline">¶</a></h2>
 <p>Saves a list of query sources.</p>
 <p><strong>Request</strong></p>
 <blockquote>
@@ -1433,7 +1345,8 @@ Sample response:</div>
       <span class="s2">&quot;5cc9e1dd-239c-43ac-8098-6b1c4b9e4478&quot;</span><span class="p">,</span>
       <span class="s2">&quot;25ac2696-cabb-41df-a9aa-1b46f46c42f1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;f7ae5b5d-628e-4eaf-b8b2-fd823a484a35&quot;</span>
-   <span class="p">]</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;includeCustomJsonFunction&quot;</span> <span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>

@@ -375,68 +375,6 @@ Returns an array of connections infor with paging.
          "isLastPage": false
       }
 
-
-POST dataModel/basicConnectionsInfo
---------------------------------------------------------------
-
-Returns an array of connections infor with paging.
-
-.. versionadded:: 2.4.0
-
-.. note::
-
-   The same as :ref:`GET_connection/basicInfo/(tenant_id)`
-
-**Request**
-
-    Payload: a :doc:`models/PagedRequest` object.
-
-**Response**
-
-    - An array of objects with two fields **key** and **value** 
-    
-    .. list-table::
-       :header-rows: 1
-
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string (GUID)
-          -  The id of the connection
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the connection
-          -
-
-    - A :doc:`models/PagedRequest` object.
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/dataModel/basicConnectionsInfo HTTP/1.1
-
-   Sample response::
-
-      {
-        [{
-          "key": "48733501-c57d-48ca-aded-501d5ebdaad9",
-          "value": "Northwind"
-        },
-        {
-          "key": "ed13d1d0-cc0c-49bc-8925-3a11da65ef65",
-          "value": "MVC5-ViTest",
-        }],
-        "pageIndex": 0,
-        "pageSize": 1000,
-        "total": 17,
-        "skipItems": 0,
-        "isLastPage": true
-      }
-
-
 GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}
 --------------------------------------------------------------
 
@@ -525,25 +463,6 @@ Returns an array of the :term:`query source categories <query source category>` 
          "skipItems": 0,
          "isLastPage": false
       }
-
-POST dataModel/basicQuerySourceCategoriesInfo/
---------------------------------------------------------------
-
-Returns an array of the :term:`query source categories <query source category>` with paging.
-
-.. versionadded:: 2.4.0
-
-**Request**
-
-    Payload: a :doc:`models/QuerySourceCategoryPagedRequest` object.
-
-**Response**
-
-    To be updated
-
-**Samples**
-
-   To be updated
 
 GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)
 --------------------------------------------------------------
@@ -1226,8 +1145,9 @@ Returns an array of functions/operators that support calculated fields, filtered
             "273badf8-d210-494f-a458-25e8f462891f",
             "5cc9e1dd-239c-43ac-8098-6b1c4b9e4478",
             "25ac2696-cabb-41df-a9aa-1b46f46c42f1",
-            "f7ae5b5d-628e-4eaf-b8b2-fd823a484a35"		
-         ]
+            "f7ae5b5d-628e-4eaf-b8b2-fd823a484a35"
+         ],
+         "includeCustomJsonFunction" : false
       }
 
    .. container:: toggle

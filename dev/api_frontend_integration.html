@@ -240,12 +240,12 @@
 <td>Render Izenda Report Designer Page (New/Edit Report) inside hosting web</td>
 </tr>
 <tr class="row-even"><td><div class="lpad2 first last docutils container">
-<a class="reference internal" href="#renderreportviewerpage-element-report-id">renderReportViewerPage(element,report_id)</a></div>
+<a href="#id9"><span class="problematic" id="id10">`renderReportViewerPage(element,report_id)`_</span></a></div>
 </td>
 <td>Render Izenda Report Viewer page only inside hosting web</td>
 </tr>
 <tr class="row-odd"><td><div class="lpad2 first last docutils container">
-<a class="reference internal" href="#renderreportpart-element-id-report-part-id">renderReportPart(element,{&#8220;id&#8221;:report_part_id})</a></div>
+<a href="#id11"><span class="problematic" id="id12">`renderReportPart(element,{&#8220;id&#8221;:report_part_id})`_</span></a></div>
 </td>
 <td>Render specific <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">Report Part</span></a> inside hosting web</td>
 </tr>
@@ -402,16 +402,43 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="renderreportviewerpage-element-report-id">
-<h2>renderReportViewerPage(element,report_id)<a class="headerlink" href="#renderreportviewerpage-element-report-id" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="renderreportviewerpage-element-report-id-filter-integrationstyle">
+<h2>renderReportViewerPage(element,report_id, filter,integrationStyle)<a class="headerlink" href="#renderreportviewerpage-element-report-id-filter-integrationstyle" title="Permalink to this headline">¶</a></h2>
 <p>Render Izenda Report Viewer page only inside hosting web</p>
 <p><strong>Parameters</strong></p>
 <blockquote>
-<div>element <br clear="right" />
-report_id</div></blockquote>
+<div><table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>element</strong> <br clear="right" />
+A DOM element to render in</td>
+<td>Element to render in</td>
+</tr>
+<tr class="row-odd"><td><strong>report_id</strong> <br clear="right" />
+String (GUID)</td>
+<td>The report Id</td>
+</tr>
+<tr class="row-even"><td><strong>filter</strong> <br clear="right" />
+A filter object</td>
+<td>The values for the filters, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">p1:</span> <span class="pre">a_value,</span> <span class="pre">p2:</span> <span class="pre">another_value,</span> <span class="pre">..</span> <span class="pre">}</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>integrationStyle</strong> <br clear="right" /></td>
+<td>The options for toolbar and filter section, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">&quot;hideToolbar&quot;:</span> <span class="pre">true/false,</span> <span class="pre">&quot;hideFilter&quot;:</span> <span class="pre">true/false</span> <span class="pre">}</span></code></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportViewerPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">),</span> <span class="s2">&quot;C2946606-7159-4FB3-82B7-E7D4ED3162A0&quot;</span><span class="p">);</span>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportViewerPage</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">),</span> <span class="s2">&quot;C2946606-7159-4FB3-82B7-E7D4ED3162A0&quot;</span><span class="p">,</span><span class="kc">null</span><span class="p">,{</span> <span class="s2">&quot;hideFilter&quot;</span> <span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </pre></div>
 </div>
 <div class="figure" id="id5">
@@ -420,17 +447,75 @@ report_id</div></blockquote>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="renderreportpart-element-id-report-part-id">
-<h2>renderReportPart(element,{&#8220;id&#8221;:report_part_id})<a class="headerlink" href="#renderreportpart-element-id-report-part-id" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="renderreportpart-element-params">
+<h2>renderReportPart(element,params)<a class="headerlink" href="#renderreportpart-element-params" title="Permalink to this headline">¶</a></h2>
 <p>Render specific <a class="reference internal" href="../ref/.glossary.html#term-report-part"><span class="xref std std-term">Report Part</span></a> inside hosting web</p>
 <p><strong>Parameters</strong></p>
 <blockquote>
-<div>element <br clear="right" />
-report_part_id</div></blockquote>
+<div><p>element : a DOM element <br clear="right" />
+params : an object contains fields below:</p>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="35%" />
+<col width="40%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
+String (GUID)</td>
+<td>The report part Id</td>
+<td>Required</td>
+</tr>
+<tr class="row-odd"><td><strong>filter</strong> <br clear="right" />
+An array of Object with <strong>key</strong> and <strong>value</strong></td>
+<td>Filters on sub report</td>
+<td>Optional</td>
+</tr>
+<tr class="row-even"><td><strong>crosssfilters</strong> <br clear="right" />
+An array of Object with <strong>key</strong> and <strong>value</strong></td>
+<td>Cross filtering&#8217;s filter on report</td>
+<td>Optional</td>
+</tr>
+<tr class="row-odd"><td><strong>overridingFilterValue</strong> <br clear="right" /></td>
+<td>Override all or specified default fillter values by using <strong>pvalue</strong></td>
+<td>Optional</td>
+</tr>
+<tr class="row-even"><td><strong>onPublishDrillInfo</strong> <br clear="right" />
+A function</td>
+<td>This function which will be invoked when drilldown</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportPart</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-part1&#39;</span><span class="p">),</span> <span class="p">{</span>
-   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;804B35C8-44A4-4535-A484-F27E8ABA410D&quot;</span>
+   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;804B35C8-44A4-4535-A484-F27E8ABA410D&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;filters&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+        <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;[northwind].[dbo].[Order].[ShipCountry]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Australia&quot;</span>
+     <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;overridingFilterValue&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">p1value</span> <span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">},</span>
+   <span class="s2">&quot;crosssfilters&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+        <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;[northwind].[dbo].[Order].[ProductID]&quot;</span><span class="p">,</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="mi">23</span>
+     <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="nx">onPublishDrillInfo</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">drillInfo</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;drillInfo&quot;</span><span class="p">,</span> <span class="nx">drillInfo</span><span class="p">);</span>
+     <span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -503,16 +588,16 @@ access_token</div></blockquote>
 <col width="80%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>element</td>
+<tr class="row-odd"><td><strong>element</strong></td>
 <td>The element to render in</td>
 </tr>
-<tr class="row-even"><td>dashboard_id</td>
+<tr class="row-even"><td><strong>dashboard_id</strong></td>
 <td>The id of the dashboard</td>
 </tr>
-<tr class="row-odd"><td>filter</td>
+<tr class="row-odd"><td><strong>filter</strong></td>
 <td>The values for the filters, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">p1:</span> <span class="pre">a_value,</span> <span class="pre">p2:</span> <span class="pre">another_value,</span> <span class="pre">..</span> <span class="pre">}</span></code></td>
 </tr>
-<tr class="row-even"><td>integrationStyle</td>
+<tr class="row-even"><td><strong>integrationStyle</strong></td>
 <td>The options for toolbar and common filter section, in this format <code class="docutils literal"><span class="pre">{</span> <span class="pre">hideDashboardToolbar:</span> <span class="pre">true/false,</span> <span class="pre">hideCommonFilter:</span> <span class="pre">true/false</span> <span class="pre">}</span></code></td>
 </tr>
 </tbody>

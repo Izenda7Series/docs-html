@@ -224,6 +224,240 @@
 <p>This page documents the APIs related to report details.</p>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="40%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API</th>
+<th class="head">Purpose</th>
+<th class="head">Usage in Izenda Front-end</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#get-report-category-type-tenant-id">GET report/category/{type}/(tenant_id)</a></td>
+<td>Returns an array of allowed saving categories for Report (type=0), Template (type=1) or Dashboard (type=2).</td>
+<td>- Report Designer &gt; Save (As) &gt; Category <br clear="right" />
+- Report List &gt; Expand a report &gt; Copy/Move &gt; Category</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-allowedsavingcategories">POST report/allowedSavingCategories</a></td>
+<td>Returns an array of allowed saving categories for Report, with total number of items.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-allowedsavingsubcategories">POST report/allowedSavingSubCategories</a></td>
+<td>Returns an array of allowed saving sub-categories for Report, with total number of items.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-subcategory-parent-category-id">GET report/subcategory/{parent_category_id}</a></td>
+<td>Returns an array of allowed saving sub-categories under the Report category specified by parent_category_id.</td>
+<td>- Report Designer &gt; Save (As) &gt; Category &gt; Sub-category <br clear="right" />
+- Report List &gt; Expand a report &gt; Copy/Move &gt; Category &gt; Sub-category</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id1">GET report/allCategories/{type}/(tenant_id)</a></td>
+<td>Returns the list of categories by type (Reports/Templates/Dashboards) in parent-child hierarchy.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-allcategories">POST report/allCategories</a></td>
+<td>Returns the list of categories in parent-child hierarchy, with total number of items.</td>
+<td>Report List</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-category">POST report/category</a></td>
+<td>Renames a report category.</td>
+<td>Report List &gt; Rename icon &gt; Update change</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-report-category-report-category-id">DELETE report/category/{report_category_id}</a></td>
+<td>Removes the report category specified by report_category_id.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-validatecategoryname">POST report/validateCategoryName</a></td>
+<td>Validates a report category name.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-reportbyproperty-report-id-property">GET report/reportByProperty/{report_id}/{property}</a></td>
+<td>Returns a report section.</td>
+<td>Dashboard Designer</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id2">POST report</a></td>
+<td>Saves a report.</td>
+<td>Report Designer &gt; Save (As)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id3">POST report/draft</a></td>
+<td>Saves a report as draft.</td>
+<td>- Report Designer, when switching between Data Source, Fields, Format.. sections - to store unsaved changes <br clear="right" />
+- Update Result <br clear="right" />
+- Save <br clear="right" /></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-cancel">POST report/cancel</a></td>
+<td>Deletes temporary data of a report.</td>
+<td>Report Designer &gt; Cancel</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-loadforedit">POST report/loadForEdit</a></td>
+<td>Returns an object with report key and report&#8217;s data.</td>
+<td>- Report List &gt; Expand a report &gt; Edit &gt; Design <br clear="right" />
+- Report Viewer &gt; Edit &gt; Design</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-report-tenant-id">GET report/(tenant_id)</a></td>
+<td>Returns all report categories together with the reports inside.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-validatereportname">POST report/validateReportName</a></td>
+<td>Validates that a report name is unique and not empty.</td>
+<td>- Report Designer &gt; Save (As) &gt; OK <br clear="right" />
+- Report Designer &gt; Rename icon &gt; Update change <br clear="right" />
+- Report List &gt; Expand a report &gt; Rename icon &gt; Update change <br clear="right" />
+- Report Viewer &gt; Rename icon &gt; Update change</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-validate">POST report/validate</a></td>
+<td>Validates that a report name is unique and its filter and relationships are valid.</td>
+<td>Report Designer &gt; Update Result</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-search">POST report/search</a></td>
+<td><div class="first deprecated">
+<p><span class="versionmodified">Deprecated since version 2.0.0: </span>superseded by <a class="reference internal" href="#post-report-search2">POST report/search2</a> <br clear="right" /> <br clear="right" /></p>
+</div>
+<p class="last">Searches for reports.</p>
+</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-search2">POST report/search2</a></td>
+<td>Searches for reports, with total number of items.</td>
+<td>Not used, replaced by <a class="reference internal" href="api_report_list.html#post-report-list2"><span class="std std-ref">POST report/list2(?includeHashCode=true)</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-advancedsearch">POST report/advancedSearch</a></td>
+<td>Searches for reports with advanced options.</td>
+<td>Not used, replaced by <a class="reference internal" href="api_report_list.html#post-report-list2"><span class="std std-ref">POST report/list2(?includeHashCode=true)</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id4">GET report/reportMode</a></td>
+<td>Returns the report mode.</td>
+<td>Report Designer</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id5">POST report/reportMode/{value}</a></td>
+<td><p class="first">Sets the report mode to Simple or Advanced.</p>
+<p class="last">Deleted in version 2.6.0</p>
+</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-detectreportchange">POST report/detectReportChange</a></td>
+<td>Verifies that all report details are up to date, without physical changes, and valid.</td>
+<td>Report Designer, when switching between Data Source, Fields, Format.. sections</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id6">POST report/function/{function_mode}/{data_type}/(tenant_id)</a></td>
+<td><p class="first">Returns a list of report functions filtered by mode (field, sub-total, grand-total), data type, tenant_id, and optionally filtered by connections of the selected query source ids in payload.</p>
+<div class="last versionchanged">
+<p><span class="versionmodified">Changed in version 1.25: </span>Changed from GET to POST</p>
+</div>
+</td>
+<td>Report Designer, when adding a data source field to a report part</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-report-allreports-tenant-id">GET report/allReports/(tenant_id)</a></td>
+<td>Returns a list of all reports filtered by tenant_id if provided.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-detectschemachange">POST report/detectSchemaChange</a></td>
+<td>Verifies that all report filter fields are without changes.</td>
+<td>- Report Designer, when switching between Data Source, Fields, Format.. sections <br clear="right" />
+- Report Designer &gt; Update Result</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-updateresults">POST report/updateResults</a></td>
+<td>Updates the report data model.</td>
+<td>- Create a report, in Data Source tab, choose a dynamic Store Procedure <br clear="right" />
+- Input parameter values <br clear="right" />
+- Click <strong>Update Result</strong> button</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-loadaccesses">POST report/loadAccesses</a></td>
+<td>Returns a list of all accesses.</td>
+<td>Report Designer &gt; Access</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-loadschedules">POST report/loadSchedules</a></td>
+<td>Returns a list of all scheduled deliveries.</td>
+<td>Report Designer &gt; Schedules</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-reportpart-report-part-id-report-id">GET report/reportPart/{report_part_id}/(report_id)</a></td>
+<td>Returns the report part definition specified by report_part_id from draft (using report_id) or from database (without report_id).</td>
+<td>Dashboard Designer</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id7">POST report/validateExistingField</a></td>
+<td>Validates that some fields exist in a report.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-reportid-tenant-id-reportname-value-categoryname-value">GET report/reportId/(tenant_id)?reportName=value&amp;categoryName=value</a></td>
+<td>Returns report id from report name and category name.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id8">POST report/validateExistingReport</a></td>
+<td>Validates that a report exists in a category.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-reportsbytenant-tenant-id">GET report/reportsByTenant/(tenant_id)</a></td>
+<td>Returns list of reports by tenant, with each report containing a list of report parts.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-updaterenderingtime">POST report/updateRenderingTime</a></td>
+<td>Updates the rendering time of a report.</td>
+<td>- Report Viewer <br clear="right" />
+- Report List &gt; Expand a report &gt; Edit &gt; Quick Edit</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-isreportvalid-report-id">GET report/isReportValid/(report_id)</a></td>
+<td>Returns true if there is a report definition for the specified report_id.</td>
+<td>- Report Designer for an existing report <br clear="right" />
+- Report Viewer <br clear="right" />
+- Report List &gt; Expand a report &gt; Edit &gt; Quick Edit <br clear="right" />
+- Dashboard Viewer</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-arereportsvalid">POST report/areReportsValid</a></td>
+<td>Validates if reports are valid.</td>
+<td>Not used</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-printdraft">POST report/printDraft</a></td>
+<td>Saves report as draft and print.</td>
+<td>Report Designer &gt; Export - to allow printing unsaved changes</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-report-printdraft-report-id">GET report/printDraft/{report_id}</a></td>
+<td>Gets report as draft for printing.</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-accesspriority-report-dashboard-id">GET report/accessPriority/(report_dashboard_id)</a></td>
+<td>Returns access priority for report/dashboard.</td>
+<td>Open a report in Design mode OR open a dashboard</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-report-reportpart-crossfiltering-report-part-id">GET report/reportPart/crossfiltering/{report_part_id}</a></td>
+<td><p class="first">Returns a list of ids of cross-filtering report parts in the same report as the specified report part, including itself.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.0.6.</span></p>
+</div>
+</td>
+<td>Not used</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-validateembeddedreport-tenant-id-reportid-value-reportname-value-reportpartname-value">GET report/validateEmbeddedReport/(tenant_id)?reportId=value&amp;reportName=value&amp;reportPartName=value</a></td>
+<td><p class="first">Validates that logged in user can access one and only one report part from the specified reportName and reportPartName.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.2.2.</span></p>
+</div>
+</td>
+<td>- Create a Form report part <br clear="right" />
+- Drag and drop a field to the container <br clear="right" />
+- In Report Part Properties tab, choose Embedded Report Settings, choose a report and report part</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-findbysourceids">POST report/findBySourceIds</a></td>
+<td><p class="first">Returns a list of report definitions based on the provided report source Ids</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.4.4.</span></p>
+</div>
+</td>
+<td>To be updated</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-report-findreportpartsbysourceids">POST report/findReportPartsBySourceIds</a></td>
+<td><p class="first">Returns a list of report parts based on the provided report part source Ids</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.4.4.</span></p>
+</div>
+</td>
+<td>To be updated</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="get-report-category-type-tenant-id">
 <h2>GET report/category/{type}/(tenant_id)<a class="headerlink" href="#get-report-category-type-tenant-id" title="Permalink to this headline">¶</a></h2>
@@ -6093,7 +6327,17 @@ string (GUID)</td>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/report/validateEmbeddedReport/b5b3a5cc-9e55-424c-ae85-ba92ec3b934e?reportId=b8822cba-53f1-4f83-b6a2-1f45557fe62e&amp;reportName=092917-chart&amp;reportPartName=Chart</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;b8822cba-53f1-4f83-b6a2-1f45557fe62e&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;reportPartId&quot;</span><span class="p">:</span> <span class="s2">&quot;faa882ed-5c20-4faa-861c-03adb8a23edd&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-report-findbysourceids">
 <h2>POST report/findBySourceIds<a class="headerlink" href="#post-report-findbysourceids" title="Permalink to this headline">¶</a></h2>
