@@ -8,6 +8,31 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.5.2 October 16, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18530  Unable to save checked state of Dynamic checkbox on Stored Procedure in Data Model
+-  Defect  18476  Run Copy for Data Model and Dashboards failed in Copy Management UI
+-  Defect  18475  System shows "This Field is invalid" when user updates Data Model alias for report has this Field in function
+-  Defect  18474  In Form report parts fields don't inherit font from parent HTML Element in PDF exports
+-  Defect  18466  Grand totals are being cut off when they are money field types
+-  Defect  18460  When using [NULL] in filter option for SP the value passed to param is incorrect, null is '[NULL]'
+-  Defect  18417  System will not allow whitelisting of database functions which require no parameters.
+-  Defect  18411  Reports created prior to v2.0 are broken when being renamed in report list
+-  Defect  18311  Tenant user cannot delete subscription  they created.
+-  Defect  18303  When setting alternative text in a vertical grid for value of 0 to be any other value the alternative text setting is ignored.
+-  Defect  18257  Schema query to add data to data model should include database name in where clause based on given database from connection string.
+-  Defect  18213  Report header is readable in the report viewer, but the spacing is overlapped in Word export.
+-  Defect  18132  No roles/users are displayed when tenant user with Full sharing access in their role
+-  Defect  18130  API security vulnerability resolved. 
+-  Defect  18078  Sub Total is counted incorrectly when sorting in grid
+-  Defect  17625  Fields with alias in data model are removed from form when saving form. 
+-  Defect  17250  "The query syntax is incorrect" error message displays when creating report with "Full" join type relationship
+-  Defect  17161  Chart Legend shows incorrect color values when altered in field properties.
+
+
 v.2.5.1 October 9, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1505,14 +1530,8 @@ Known Issues
      - 18423
      - Subreport link in grid on datetime field to chart is failing with system error
    * - Defect
-     - 18417
-     - System will not allow whitelisting of database functions which require no parameters.
-   * - Defect
      - 18412
      - Border settings are not kept on "Configuration" section of report part grid.
-   * - Defect
-     - 18411
-     - The legacy report (prior v2.0) is broken when being renamed in report list
    * - Defect
      - 18409
      - Calculated Field - Need to allow database data type to be used in the CONVERT function
@@ -1610,9 +1629,6 @@ Known Issues
      - 18313
      - Separator Order Changes During Drilldown for some data combinations
    * - Defect
-     - 18311
-     - Tenant user cannot delete subscription  they created.
-   * - Defect
      - 18308
      - List of DataSources grouped by DataSourceCaregory are still returned in JSON Response when sending "POST report/loadDataSourceCategory" api request with Non-Existing reportKey
    * - Defect
@@ -1621,9 +1637,6 @@ Known Issues
    * - Defect
      - 18305
      - Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
-   * - Defect
-     - 18303
-     - When setting alternative text in a vertical grid for value of 0 to be any other value the alternative text setting is ignored.
    * - Defect
      - 18302
      - Alternative text is not shown when user changes the alias of value with alternative text setting
@@ -1679,9 +1692,6 @@ Known Issues
      - 18258
      - Embedded Subreport in Form is broken in destination when coyping with Copy Console
    * - Defect
-     - 18257
-     - Schema query to add data to data model should include database name in where clause based on given database from connection string.
-   * - Defect
      - 18255
      - Uncheck a stored procedure which is already executed in the Report Designer then click on Update Results, the stored procedure parameter is auto returned to Filter Field
    * - Defect
@@ -1711,9 +1721,6 @@ Known Issues
    * - Defect
      - 18217
      - No record is found when searching relationships of report designer when using  "Uncategorized" in datasource
-   * - Defect
-     - 18213
-     - Report header is readable in the report viewer, but the spacing is overlapped in Word export.
    * - Defect
      - 18204
      - In Edge Browser the HTML of form is shown in visual tab
@@ -1769,9 +1776,6 @@ Known Issues
      - 18136
      - Cursor always comes back the left most of Search Report textbox after entering some text in Copy Management UI
    * - Defect
-     - 18132
-     - No roles/users are displayed when tenant user with Full sharing access in their role
-   * - Defect
      - 18129
      - Destination dashboard is empty when copying dashboard without overwrite on second copy
    * - Defect
@@ -1822,9 +1826,6 @@ Known Issues
    * - Defect
      - 18079
      - Changing Items per page expands redundant spaces of the first row of Data Model Page
-   * - Defect
-     - 18078
-     - Sub Total is counted incorrectly when sorting in grid
    * - Defect
      - 18068
      - Loading bar continues to show after User input character in "Width" text box and save Report
@@ -2177,9 +2178,6 @@ Known Issues
      - 17626
      - When alias are not matching or do not exist from System to Tenant some fields  are not found when using Global Report
    * - Defect
-     - 17625
-     - Fields with alias in datamodel are removed from form when saving form
-   * - Defect
      - 17624
      - System shows error msg when user creates a  calculated field with Round function
    * - Defect
@@ -2360,9 +2358,6 @@ Known Issues
      - 17262
      - System works incorrectly when user add tag <Repeater> instead of <repeater> (case sensitive) in Form report part
    * - Defect
-     - 17250
-     - "The query syntax is incorrect" error message displays when creating report with "Full" join type relationship
-   * - Defect
      - 17240
      - In Oracle data model Fields of 2 tables with same name all show in one table in data model, while the other table has no field.
    * - Defect
@@ -2401,9 +2396,6 @@ Known Issues
    * - Defect
      - 17171
      - Missing plus (+) when mouseover on the first tile of dashboard when creating blank dashoard type
-   * - Defect
-     - 17161
-     - Chart Legend shows incorrect color values when altered in field properties.
    * - Defect
      - 17160
      - Tenant Dropdown wasn't Responsive on Smaller Mobile Resolutions
