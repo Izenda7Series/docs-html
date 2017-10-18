@@ -10,6 +10,11 @@ The **Tenant Setup** page allows user to
 -  manage tenant's modules
 -  manage tenant's permissions
 
+.. note::
+
+   When in integrated mode (DeploymentMode <> 0) adding and removing tenants from the UI is not available. This is to ensure the host application and Izenda stay in sync. API's must be used for these functions in integrated environments. For more information on the API's please review the documentation 
+   `here <https://www.izenda.com/docs/ref/api_tenant.html?highlight=post%20tenant%20intergration%20savetenant#post-tenant-intergration-savetenant>`_.
+
 List and View Tenants
 ---------------------
 
@@ -47,7 +52,7 @@ The Search box at the top allows user to search for specific tenants.
 
 Add Tenant
 ----------
-
+  
 #. .. _Tenant_Setup_Add_button:
 
    .. figure:: /_static/images/Tenant_Setup_Add_button.png
