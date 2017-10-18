@@ -4,10 +4,26 @@
 Report Designer/Schedule
 ==========================
 
-The **Report Designer/Schedule** page allows user to
+The **Report Designer/Schedule** page allows users to
 
--  view scheduled deliveries
--  add, copy and remove schedules
+-  View scheduled deliveries
+-  Add, copy, and remove schedules
+
+Methods of Delivering Scheduled Reports
+---------------------------------------
+
++------------------------+---------------------+----------------------------------------+--------------------------------------------+-----------------------------------------------+
+| Delivery Method        | Recipient Options   | Delivery Options                       | Sending Location                           | Applied Filters                               |
++========================+=====================+========================================+============================================+===============================================+
+| Subscription           | Self                | - Scheduled Alert                      | - Subscription Button in Report Viewer     | Configured in Subscription Scheduler window   |
+|                        | (Current User)      | - Scheduled Reporting Item             | - Subscription Button in Report List       |                                               |
++------------------------+---------------------+----------------------------------------+--------------------------------------------+-----------------------------------------------+
+| Scheduled              | All Users, Others   | - Scheduled Alert                      | - Schedule Tab in Report Designer          | Configured in Report Scheduler window         |
+|                        | and Self            | - Scheduled Reporting Item             |                                            |                                               |
++------------------------+---------------------+----------------------------------------+--------------------------------------------+-----------------------------------------------+
+| Instant Delivery       | All Users, Others   | - Instantly delivered report via email | - Email Button in Report Viewer            | Currently configured filters in report        |
+|                        | and Self            |                                        | - Email Button in Report List              |                                               |
++------------------------+---------------------+----------------------------------------+--------------------------------------------+-----------------------------------------------+
 
 View Schedule List
 ------------------
@@ -59,11 +75,11 @@ to open the Add Schedule pop-up.
 
    #. Select Scheduling Type:
 
-      -  Scheduled Alert: deliver only if it has data at scheduled time.
-      -  Scheduled Reporting Item: deliver regardless whether it has
+      -  Scheduled Alert: delivered only if report has data at scheduled time.
+      -  Scheduled Reporting Item: delivered regardless whether it has
          data or not at scheduled time.
 
-   #. Select a more suitable time zone than the default if needed.
+   #. Select desired time zone.
    #. Select a start date in the future.
    #. Enter the start time (some common values can be quickly selected
       from the pre-defined list).

@@ -112,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Report Designer/Schedule</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#methods-of-delivering-scheduled-reports">Methods of Delivering Scheduled Reports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#view-schedule-list">View Schedule List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#search-for-schedules">Search for Schedules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#add-a-schedule">Add a Schedule</a></li>
@@ -211,11 +212,76 @@
             
   <div class="section" id="report-designer-schedule">
 <h1>Report Designer/Schedule<a class="headerlink" href="#report-designer-schedule" title="Permalink to this headline">¶</a></h1>
-<p>The <strong>Report Designer/Schedule</strong> page allows user to</p>
+<p>The <strong>Report Designer/Schedule</strong> page allows users to</p>
 <ul class="simple">
-<li>view scheduled deliveries</li>
-<li>add, copy and remove schedules</li>
+<li>View scheduled deliveries</li>
+<li>Add, copy, and remove schedules</li>
 </ul>
+<div class="section" id="methods-of-delivering-scheduled-reports">
+<h2>Methods of Delivering Scheduled Reports<a class="headerlink" href="#methods-of-delivering-scheduled-reports" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="23%" />
+<col width="25%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Delivery Method</th>
+<th class="head">Recipient Options</th>
+<th class="head">Delivery Options</th>
+<th class="head">Sending Location</th>
+<th class="head">Applied Filters</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Subscription</td>
+<td>Self
+(Current User)</td>
+<td><ul class="first last simple">
+<li>Scheduled Alert</li>
+<li>Scheduled Reporting Item</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Subscription Button in Report Viewer</li>
+<li>Subscription Button in Report List</li>
+</ul>
+</td>
+<td>Configured in Subscription Scheduler window</td>
+</tr>
+<tr class="row-odd"><td>Scheduled</td>
+<td>All Users, Others
+and Self</td>
+<td><ul class="first last simple">
+<li>Scheduled Alert</li>
+<li>Scheduled Reporting Item</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Schedule Tab in Report Designer</li>
+</ul>
+</td>
+<td>Configured in Report Scheduler window</td>
+</tr>
+<tr class="row-even"><td>Instant Delivery</td>
+<td>All Users, Others
+and Self</td>
+<td><ul class="first last simple">
+<li>Instantly delivered report via email</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Email Button in Report Viewer</li>
+<li>Email Button in Report List</li>
+</ul>
+</td>
+<td>Currently configured filters in report</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="view-schedule-list">
 <h2>View Schedule List<a class="headerlink" href="#view-schedule-list" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -258,12 +324,12 @@ to open the Add Schedule pop-up.</p>
 <li><p class="first">In Schedule tab:</p>
 <ol class="arabic simple">
 <li>Select Scheduling Type:<ul>
-<li>Scheduled Alert: deliver only if it has data at scheduled time.</li>
-<li>Scheduled Reporting Item: deliver regardless whether it has
+<li>Scheduled Alert: delivered only if report has data at scheduled time.</li>
+<li>Scheduled Reporting Item: delivered regardless whether it has
 data or not at scheduled time.</li>
 </ul>
 </li>
-<li>Select a more suitable time zone than the default if needed.</li>
+<li>Select desired time zone.</li>
 <li>Select a start date in the future.</li>
 <li>Enter the start time (some common values can be quickly selected
 from the pre-defined list).</li>

@@ -112,6 +112,8 @@
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">General</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#your-user-id-is-inactive-integrated-mode-only">Your user ID is inactive. (Integrated Mode Only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reports-and-or-dashboards-not-visible-after-upgrading">Reports And/Or Dashboards Not Visible After Upgrading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cannot-load-repository">Cannot Load Repository</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="serialization.html">Serialization</a></li>
@@ -199,13 +201,10 @@
             
   <div class="section" id="general">
 <h1>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <div class="section" id="your-user-id-is-inactive-integrated-mode-only">
 <h2>Your user ID is inactive. (Integrated Mode Only)<a class="headerlink" href="#your-user-id-is-inactive-integrated-mode-only" title="Permalink to this headline">¶</a></h2>
-<p>This issue can occur if you used the /api/user (POST) endpoint to create users in integrated modes. Please ensure that you are using the user/integration/saveUser (POST) endpoint to create users in integrated modes.</p>
-<p>You can use the script below to manually active users.</p>
+<p>This issue can occur if you used the /api/user (POST) endpoint to create users in integrated modes. Ensure that you are using the user/integration/saveUser (POST) endpoint to create users in integrated modes.</p>
+<p>Use the script below to manually active users.</p>
 <blockquote>
 <div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This is a MSSQL snippet, you may need to adjust the query for other databases.</span>
 <span class="k">UPDATE</span> <span class="p">[</span><span class="n">IzendaSystemSetting</span><span class="p">]</span>
@@ -217,6 +216,49 @@
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">As general best practice, we recommend backing up your database before making any manual updates.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="reports-and-or-dashboards-not-visible-after-upgrading">
+<h2>Reports And/Or Dashboards Not Visible After Upgrading<a class="headerlink" href="#reports-and-or-dashboards-not-visible-after-upgrading" title="Permalink to this headline">¶</a></h2>
+<p>This issue can occur if the User Interface and API versions are not the same. See: Check the Izenda Version subsection below</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="cannot-load-repository">
+<h2>Cannot Load Repository<a class="headerlink" href="#cannot-load-repository" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="check-the-connection-string">
+<h3><em>Check the Connection String:</em><a class="headerlink" href="#check-the-connection-string" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>The error suggests that you may not have a clear connection from the API to the Izenda Configuration database. In the izendadb.config file of the API, there should be a connection string.</dt>
+<dd><ul class="first last simple">
+<li>If this value is in plain text, attempt to connect to it via SSMS</li>
+<li>If this value is in plain text, any &#8216;&#8217; present will need to be escaped (e.g. &#8216;\&#8217;)</li>
+<li>If this value is encrypted, replace it with an unencrypted version and reset IIS</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="check-the-deployment-mode">
+<h3><em>Check the Deployment Mode:</em><a class="headerlink" href="#check-the-deployment-mode" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>If you can successfully connect to the database using the connection string above, check the deployment mode.</dt>
+<dd><ul class="first last simple">
+<li>In the SystemSetting table of the Izenda Configuration Database, check the deployment mode value is set to the correct value for your kit. If using the Back End Standalone Kit, this should be a value of 1.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="check-the-izenda-version">
+<h3><em>Check the Izenda Version:</em><a class="headerlink" href="#check-the-izenda-version" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>In order for Izenda to run successfully, the Izenda Configuration Database, Izenda API, and Izenda Front End resources must be the same version.</dt>
+<dd><ul class="first last simple">
+<li>The Izenda Configuration Database: Found in the IzendaDBVersion table.</li>
+<li>The Izenda API: Navigate to the bin directory of the API. Select an Izenda prefixed dll (e.g. Izenda.BI.Core). Right click this dll, select properties, and navigate to the details tab. The version can be found in the properties panel.</li>
+<li>The Izenda UI: The simplest way to ensure that your Izenda front end resources match the API and Configuration Database is to download the corresponding version from our downloads page (downloads.izenda.com)</li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 </div>
