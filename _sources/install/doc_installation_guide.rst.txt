@@ -189,6 +189,10 @@ The most common testing scenario places the front-end and the back-end on two se
  - Common Izenda Stand-alone Installation Issues
  - Editing the Configuration Files
 
+
+----------------------------------------------------------------
+
+
 Deploying Izenda as a Virtual Directory or Application
 ------------------------------------------------------
  Installing Izenda as a virtual directorys will mirror the steps taken required to deploy Izenda using two separate websites but additional modifications are necessary for the front end and back end to interact correctly together.
