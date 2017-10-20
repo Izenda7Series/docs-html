@@ -114,6 +114,8 @@ When creating your Izenda Sites please ensure you set the Managed pipeline mode 
 
 |
 
+----------------------------------------------------------------
+
 Izenda Installation As Two Separate Sites
 ------------------------------------------
 
