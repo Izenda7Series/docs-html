@@ -313,3 +313,64 @@ The following can be found in the Chrome Web Store for download.
 .. |Red| raw:: html
 
    <div style="background: Red">&nbsp;&nbsp;</div>
+
+
+
+Common CSS Customizations
+-------------------------
+
+- **Customize the default cell padding in grid report parts**
+  
+  .. code-block:: css
+     
+    .izenda .table .table-cell-content {
+	    padding: 5px !important;
+    }
+  
+  .. figure::   /_static/images/custom_css/DefaultReportGridPadding.png
+  
+     Default grid padding
+  
+  .. figure:: /_static/images/custom_css/CustomReportGridPadding.png
+
+    After customizing the grid's padding
+
+- **Customize the width of the report list to increase the width of the report name**
+
+  .. code-block:: css
+  
+    .panel.report-detail .izenda-GridLayout-Row .izenda-GridLayout-Col2 {
+      width: 41.66667% !important;
+    }
+    .panel.report-detail .izenda-GridLayout-Row .izenda-GridLayout-Col6 {
+      width: 25% !important;
+    }
+    .panel.report-detail .izenda-GridLayout-Row .izenda-GridLayout-Col3 {
+      width: 25% !important;
+    }
+    .panel.report-detail .izenda-GridLayout-Row .izenda-GridLayout-Col1 {
+      width: 8.33333% !important;
+    }
+
+  .. figure:: /_static/images/custom_css/DefaultReportListWidths.png
+  
+     Default report list widths
+  
+  .. figure:: /_static/images/custom_css/CustomReportListWidths.png
+    
+     After customizing the report list widths
+
+- **Hide filters' description including the type and operator in the report viewer**
+
+  .. code-block:: css
+
+    .filter-label .operator {
+	    visibility: hidden !important;
+    }
+    .filter-item-label {
+	    pointer-events: none !important;
+    }
+
+  .. figure::   /_static/images/custom_css/VisibleFilterDescription.png
+  
+     Filter with visible (default) description
