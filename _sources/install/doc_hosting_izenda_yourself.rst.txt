@@ -14,6 +14,10 @@ Minimum Hardware Requirements
 *  RAM: 16 GB
 *  Free Hard Disk Space: 100 MB
 
+.. note::
+
+    This is the minimum recommended for both the Database and the API servers. Your actual needs may vary based on the size of your database(s) and the number of concurrent users.
+
 Software Requirements
 ------------------------------
 
