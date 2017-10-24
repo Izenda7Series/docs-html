@@ -24,12 +24,15 @@ Request and Response
    RelationshipPagedRequest
    ReloadQuerySourceRequest
    ReportCalculatedFieldParameter
+   ReportCategoryParam
+   ReportConnectionParam
    ReportDataSourceParameter
    ReportExpressionParameter
    ReportFilterParameter
    ReportFilterFieldPagedRequest
    ReportHistoryPagedRequest
    ReportPagedRequest
+   ReportParam
    ReportPartPreviewParameter
    ReportPartValidateExpressionParameter
    ReportRelationshipResult
