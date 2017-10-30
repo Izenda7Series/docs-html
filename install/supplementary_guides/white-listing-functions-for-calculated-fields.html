@@ -421,12 +421,17 @@
 <div class="figure">
 <img alt="../../_images/customizations_folder.png" src="../../_images/customizations_folder.png" />
 </div>
-<p>Next, you will need to update the &#8216;CustomFunctionFilePath&#8217; in the IzendaSystemSettings table. You can use the script below, be sure to include the full path to your file.</p>
+<p>Next, you will need to update the &#8216;CustomFunctionFilePath&#8217; in the IzendaSystemSettings table. You can use the script below, be sure to include the absolute path to your file.</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="c1">-- This is a MSSQL snippet, you may need to adjust the query for other databases.</span>
 <span class="k">UPDATE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">IzendaSystemSetting</span><span class="p">]</span>
 <span class="k">SET</span> <span class="n">Value</span> <span class="o">=</span> <span class="s1">&#39;C:\inetpub\wwwroot\API\customizations\CustomFunctionSample.config&#39;</span> <span class="c1">-- &lt;&lt; Use your actual path here</span>
 <span class="k">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;CustomFunctionFilePath&#39;</span>
 </pre></div>
+</div>
+<p>Alternatively, you can use a relative path, but the file <strong>MUST</strong> be under the &#8220;bin&#8221; folder of the API. In the example above, the path would change to <strong>&#8216;customizations\CustomFunctionSample.config&#8217;</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using an Azure website or a similar service and the absolute path is unknown, then using a relative path may be required.</p>
 </div>
 </div>
 <div class="section" id="restarting-the-web-sites">

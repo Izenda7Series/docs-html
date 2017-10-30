@@ -133,7 +133,7 @@ After white-listing the desired functions, save the file and deploy it to the AP
 
 .. figure:: images/customizations_folder.png
 
-Next, you will need to update the 'CustomFunctionFilePath' in the IzendaSystemSettings table. You can use the script below, be sure to include the full path to your file.
+Next, you will need to update the 'CustomFunctionFilePath' in the IzendaSystemSettings table. You can use the script below, be sure to include the absolute path to your file.
 
 .. code-block:: sql
 
@@ -142,6 +142,11 @@ Next, you will need to update the 'CustomFunctionFilePath' in the IzendaSystemSe
 	SET Value = 'C:\inetpub\wwwroot\API\customizations\CustomFunctionSample.config' -- << Use your actual path here
 	WHERE Name = 'CustomFunctionFilePath'
 
+Alternatively, you can use a relative path, but the file **MUST** be under the "bin" folder of the API. In the example above, the path would change to **'customizations\\CustomFunctionSample.config'**.
+
+.. note::
+
+	If you are using an Azure website or a similar service and the absolute path is unknown, then using a relative path may be required.
 
 Restarting the web sites
 ###############################
