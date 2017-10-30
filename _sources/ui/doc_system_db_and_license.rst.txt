@@ -80,7 +80,25 @@ information.
 
    This step can be bypassed when user already knows the connection
    string. In this case, it can be copied and pasted straight into the
-   Connection String box. |br|
+   Connection String box. Some connection string examples are also
+   provided below. |br|
+
+   Example Connection Strings:
+
+   - Oracle:
+      - Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=user;Password=password;
+      - Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SID=xe)));User Id=user;Password=password;
+   
+   - Microsoft SQL Server:
+      - Server=192.168.45.37,1433;Database=izendaconfig;User ID=user;Password=password
+      - Server=HOST-PC;Database=izendaconfig;User ID=user;Password=password
+
+   - MySQL:
+      - Server=MY-PC;Port=3306;Database=izendaconfig;User ID=user;Password=password
+   
+   - PostgreSQL:
+      - Server=mydomainname;Port=5432;Database=izendaconfig;User ID=user;Password=password
+
 #. Click the Connect button to test database connection and all
    necessary permissions for Izenda to work.
 
