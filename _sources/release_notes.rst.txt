@@ -8,6 +8,47 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.0 October 31, 2017
+~~~~~~~~~~~~~~~~~~~~~
+FEATURES
+^^^^^^^^
+-  Added Field formats for % of Grand Total and % of Subtotal. This feature will allow you to set a field to show it's % of either the sum(default) or the actual sub/grand total set in the field. Pivots also offer a % of Sidetotal. In addition, when creating a sub or grand total you can set the values to show the subtotal’s % of the grand total. Please see the  `Configure field properties in Data Formatting <https://www.izenda.com/docs/ui/doc_report_designer_fields.html#configure-field-properties-in-data-formatting-section/>`_ section guide for more information on how to use this new feature.
+
+
+FIXES
+^^^^^
+-  Defect  18635  Could not save report when adding new filter using add filter button, user receives error message stating no operator type is defined
+-  Defect  18626  Global forms type report parts are missing report columns at the tenant level 
+-  Defect  18625  Global form report has relationship that contains an alias, it does not show data on Tenant level
+-  Defect  18624  Error message appears when adding aggregated field into Filters then changing format of this field
+-  Defect  18590  Page freezes when pressing Save on Functions page of Data Sources
+-  Defect  18587  System user selects Tenant, the content panel does not load the selected item
+-  Defect  18577  User cannot save Template Report Type on Oracle configuration database
+-  Defect  18574  When creating subreport on x axis value date and setting the interval  on the x axis as 1 the system shows error
+-  Defect  18570  Nextscheduledrundate and lastscuccessful run are incorrectly altered when schedule instance is edited.
+-  Defect  18569  Sort is backward on values in chart, A-Z should be 1-x and Z-A should be x-1
+-  Defect  18546  Success status is returned as TRUE when sending "POST report/validate" with EMPTY accesses-role-name
+-  Defect  18531  Error message is not displayed When the Custom URL and Embedded JavaScript select the same link/icons.
+-  Defect  18472  When validating Template name the response message returned is "Report name is required." ,response message should be "Template name is required."
+-  Defect  18453  MaxValue(inches) for exportFormatSetting-marginSettings of Custom Margin-Landscape Orientation is not enforced properly by the system
+-  Defect  18452  The API "GET report/isReportValid/(report_id)" response returned incorrectly when sending invalid report id
+-  Defect  18444  System shows error msg when user clicks on Update Result after creating a report from 1 Dynamic stored procedure and 1 normal data source
+-  Defect  18428  Error messages is not displayed when input Filter logic contains the word "between". System missing checking invalid expression operator check.
+-  Defect  18421  Existing calculated field on Data model, report designer is not reflected the update from column alias
+-  Defect  18397  Remove call to API /api/report/detectSchemaChange for static stored procedure when user moves to Field tab of report designer
+-  Defect  18363  System adds new duplicated category when save a report into existed category name
+-  Defect  18357  User can add duplicated Calculated Field Name by sending "POST dataModel" API request multiple times
+-  Defect  18330  No filter dropdown shows under Filter Value Selection in Schedule/Subscribe popup if filter operator = Equivalence/Blank
+-  Defect  18315  Stacked area chart appearance is incorrect when using large data volumes.
+-  Defect  18308  List of DataSources grouped by DataSourceCaregory are still returned in JSON Response when sending "POST report/loadDataSourceCategory" api request with Non-Existing reportKey
+-  Defect  18295  User can save a Custom View with empty name
+-  Defect  18292  New Report contains invalid field based on DataType in Report Container (Columns,Separators,Rows,Values) and can be saved successfully to DB by sending "POST report" request
+-  Defect  18080  User can save duplicated Report Category by sending "POST Report" request multiple times with non-existing categoryID
+-  Defect  17934  Data Model change notifications would not disappear upon saving.
+-  Defect  17788  Default URL type of Custom URL is not present once this setting is removed and re-added.
+-  Defect  17755  Using Post request to add database mapping, type value is not properly verified and user can post invalid data
+
+
 v.2.5.3 October 23, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1516,18 +1557,330 @@ Known Issues
    :header-rows: 1
    :widths: 10 15 75
 
+   * - Type
+     - Item No
+     - Description
+   * - Defect
+     - 18672
+     - Dashboard filters set from the "delivery" tab are ignored.
+   * - Defect
+     - 18670
+     - System does not show error message when user creates stored procedure which has schema that contains duplicate Fields
+   * - Defect
+     - 18665
+     - When form report part contains not-existing embedded reportPartName it is still saved to DB successfully and displayed in Report List when sending "POST report"
+   * - Defect
+     - 18663
+     - Sort function is not properly applied to Date time field when using Month format 
+   * - Defect
+     - 18660
+     - Form report containing not-existing embedded report ID is still saved to DB successfully and displayed in Report List when sending "POST report"
+   * - Defect
+     - 18651
+     - Font sizes set in forms were not respected when exported.
+   * - Defect
+     - 18650
+     - System automatically changes dynamic SP to non-dynamic SP when user reconnects to connection string
+   * - Defect
+     - 18649
+     - Report failed when opening the global report containing dynamic stored procedure in tenant level
+   * - Defect
+     - 18648
+     - Error displayed displays when using case statement in calculated field in a chart report part
+   * - Defect
+     - 18647
+     - Alternative text Settings are not applied for Percentage Range in the report_Grid_Chart
+   * - Defect
+     - 18646
+     - Form report containing non-existing fieldId in <field-prop key="fieldId"> tag of htmlContent is still saved to DB successfully and displayed in Report List when sending "POST report"
+   * - Defect
+     - 18645
+     - Sub-report link is not shown in Chart x-axis when using date field type
+   * - Defect
+     - 18644
+     - Invisible field of Form report is still displayed in Report Viewer after being created by sending "POST report" request with visible = "false" in <field-prop> tag of htmlContent
+   * - Defect
+     - 18674
+     - Forms copied using the copy console would lose fields
+   * - Defect
+     - 18643
+     - Form report can be still saved to DB when sending "POST report" request containing at least one field has function = "empty" while others has function
+   * - Defect
+     - 18642
+     - Report displays data corresponding with the input htmlContent-field-name instead of fieldId when opening the Form report created by sending "POST report" request on MVC GUI
+   * - Defect
+     - 18641
+     - FunctionId in htmlContent is displayed incorrectly when loading Form report which is created by sending "POST report" request
+   * - Defect
+     - 18634
+     - User can drag and drop a Running Sum CF to Filter Area which is not allowed
+   * - Defect
+     - 18632
+     - SubTotal and GrandTotal should display 8 decimal number maximum
+   * - Defect
+     - 18631
+     - In report designer if user changes filter to new field, Value list in Filter Operator section still displays value of old filter
+   * - Defect
+     - 18630
+     - When user has access to reports in uncategorized only they cannot see reports until they have access to a named category, then they see both uncategorized and the other categories 
+   * - Defect
+     - 18629
+     - Browser consumes high memory when loading a role detail in Role Setup having thousands of users
+   * - Defect
+     - 18628
+     - Subtotal/GrandTotal shows incorrectly for fields in Rows container of Pivot grid
+   * - Defect
+     - 18627
+     - Application errors when changing to data source of another connection string and report body of an existing report contains a calculated field then saves report
+   * - Defect
+     - 18623
+     - System does not show error msg when user delete CF which was used in Form
+   * - Defect
+     - 18622
+     - When changing text color using Percentage Range, the value of the field is changed to a percentage
+   * - Defect
+     - 18621
+     - Filter Values (pvalues) does not work when user opens the link of schedule/subscribe in email
+   * - Defect
+     - 18620
+     - Schedule/Subscribe popup always shows default filter value even user changed and saved
+   * - Defect
+     - 18619
+     - System calculated incorrect Start Date for schedule/subscription when user select 1 item in Yearly
+   * - Defect
+     - 18617
+     - Master report from dashboard only passes the saved default filter values from the report definition to the subreport, not the new filter values added while in the dashboard tile or common filter.
+   * - Defect
+     - 18616
+     - When using a calculated field containing a case statement and another calculated field with a case statement that refers to the first calculated field the system shows an error.
+   * - Defect
+     - 18615
+     - In Scheduler Button for delete multi items (Trash icon) does not work
+   * - Defect
+     - 18614
+     - The "No record found" message is shown after User updates calculated field filter value with Equal Tree operator
+   * - Defect
+     - 18600
+     -  List of filter values shows incorrectly for "Time" field type
+   * - Defect
+     - 18596
+     - Export of pivot fails when there is an aggregate in the row values
+   * - Defect
+     - 18593
+     - When exporting report some grand totals with the same name do not appear on the same line in the exported document
+   * - Defect
+     - 18592
+     - Area range chart with average does not draw chart.
+   * - Defect
+     - 18591
+     - Format of field effects format of SubTotal and user cannot override using subtotal format
+   * - Defect
+     - 18589
+     - Collapse All button does not work correctly when separator is number value
+   * - Defect
+     - 18585
+     - Subreport displays data incorrectly when mapping field is aggregated field
+   * - Defect
+     - 18584
+     - When user drills into a State/Province shows bubble metric for cities in surrounding state/province for Canada Map
+   * - Defect
+     - 18582
+     - When Disable is Null in IzendaQuerySource it causes reports to show as invalid and should not be.
+   * - Defect
+     - 18581
+     - Some Provinces not working/missing (Quebec) in Canada
+   * - Defect
+     - 18580
+     - Drill In/Out Doesn't Always Work Until you update results on map report part
+   * - Defect
+     - 18579
+     - Full Report and Dashboard users cannot have Access Default Sharing Rights.
+   * - Defect
+     - 18578
+     - In Form repeater the whole row of a table is moved to the top if repeated
+   * - Defect
+     - 18576
+     - In Heatmap report part clicking on the link on X axis will pass the value of Y axis when both X and Y have subreport/customURL/Javascript link configured
+   * - Defect
+     - 18575
+     - Fields of dynamic stored procedure remain when changing from stored procedure data source to a table or view in the report designer
+   * - Defect
+     - 18573
+     - Logging for /api/report/isReportValid/ does not include detail message from invalid reports.
+   * - Defect
+     - 18571
+     - Filter Descriptions (when using Show Filters Under Report Description) shows as undefined when using In Time Period filter
+   * - Defect
+     - 18568
+     - User should NOT be allowed to add/edit a duplicate calculated field, error message should be displayed
+   * - Defect
+     - 18566
+     - Error message is not displayed When enter special character on Custom URL
+   * - Defect
+     - 18565
+     - System shows incorrect data for DateTime Field with Group by Year when it is added 2 times in report container
+   * - Defect
+     - 18563
+     - Running type function on fields shows incorrectly in Pivot grid report part
+   * - Defect
+     - 18561
+     - In IAdHoc for Load Custom Format defined custom format for Date Time type  cannot be loaded
+   * - Defect
+     - 18557
+     - Can't delete standard system admin even if another admin exists in the system
+   * - Defect
+     - 18556
+     - Formatting Chart Value as % of Group with or without rounding, the y axis is showing the actual values with a % appended.
+   * - Defect
+     - 18555
+     - Sort order is incorrect on pivot when using dates and some formats in column
+   * - Defect
+     - 18554
+     - Error message is displayed when user changes View option in CustomURL or EmbeddedJS from link to icon 
+   * - Defect
+     - 18553
+     - API report/detectReportChange did not return error message when fields were changed in logical/physical
+   * - Defect
+     - 18551
+     - User cannot delete calculated field from report designer once the report is saved even if it is not used in a report part
+   * - Defect
+     - 18549
+     - Report Review displays with no record if selecting "Decimal Number" for Filter
+   * - Defect
+     - 18545
+     - The unexpected text is displayed in Visual tab of form and cannot Save Form report when user inputs special characters (&,~,$, etc) data to Alternative Text Setting
+   * - Defect
+     - 18544
+     - Setting - System Configuration - Scheduling - Search fails with 500 Internal Server Error
+   * - Defect
+     - 18542
+     - Report part fails to render and error is shown when user adds Number of Records for the report part to be "2147483648", tool tip should show error over max value
+   * - Defect
+     - 18541
+     - Confirmation popup for losing change displays after saving report when editing calculated field
+   * - Defect
+     - 18540
+     - When user configures open subreport in current window and tries to navigate there from the report designer, confirmation window shows that changes will be lost, but user is not shown the report when clicking ok
+   * - Defect
+     - 18538
+     - Calculated Field in chart shows incorrect values and placement of points on chart. 
+   * - Defect
+     - 18536
+     - Disable appending source URL doesn't work when set Integration to false
+   * - Defect
+     - 18535
+     - System should not display Subtotal/Grand total icon in Field Properties when user adds Image/LOB datatype
+   * - Defect
+     - 18532
+     - Settings of SubTotal is lost in form report part after setting it the first time
+   * - Defect
+     - 18527
+     - Error 400/Bad Request when setting SubTotal for calculated field that has () characters
+   * - Defect
+     - 18522
+     - Using CTE in custom view fails with error message when saving custom view.
+   * - Defect
+     - 18521
+     - Report Content Overlaps Header/Footer in Export Preview
+   * - Defect
+     - 18520
+     - Filters created from aggregated fields should be removed after changing the function of the aggregated field to no aggregation.
+   * - Defect
+     - 18518
+     - System shows query error when drilling down on chart with null value 
+   * - Defect
+     - 18517
+     - Report Parts when used in integrated environments should each have their own separate progress bar
+   * - Defect
+     - 18514
+     - User cannot print a dashboard after creating a "Schedule" prior to saving the dashboard
+   * - Defect
+     - 18511
+     - Copy Console will duplicate Report name in same category
+   * - Defect
+     - 18507
+     - Sort icon does not display for field in Columns/Rows container in Pivot grid
+   * - Defect
+     - 18504
+     - When specifying filter logic and not utilizing all filter values present in the filter panel a warning should be displayed on save to show that the unspecified filters will be ignored.
+   * - Defect
+     - 18502
+     - Report part is NOT updated after modifying the relationships and pressing "Save" in Data Source tab then navigating to Field tabs
+   * - Defect
+     - 18501
+     - Data Refresh Interval only works once time after setting it
+   * - Defect
+     - 18500
+     - "Remove Header for Export" does not work when exporting report
+   * - Defect
+     - 18499
+     - Day of Week format does not work when the field is not grouped
+   * - Defect
+     - 18495
+     - In schedule/subscription pop up cascaded filter value list is not updated when changing value of the 1st filter from the 2nd change
+   * - Defect
+     - 18491
+     - X-axis is sorted incorrectly after drilldown to second level of chart
+   * - Defect
+     - 18485
+     - Selected function is not properly applied after user set a function for a field when report part is in preview mode
+   * - Defect
+     - 18484
+     - In Subtotal/ Grand total system is unable to convert text to numeric
+   * - Defect
+     - 18482
+     - User should not be allowed to enter negative value into field with on field properties
+   * - Defect
+     - 18481
+     - Cannot save drilldown grid using time data type in groups 
+   * - Defect
+     - 18480
+     - Mapping Field is not updated automatically when user update Field Name Alias on Field Properties for master/sub report
+   * - Defect
+     - 18478
+     - On filter operator Manual Entry No Auto-Complete, no tool tip displays when hovering on the invalid input 
+   * - Defect
+     - 18477
+     - When using MS Edge browser redundant horizontal scrollbar appears on dropdown lists
+   * - Defect
+     - 18473
+     - Sort icon for Y-Axis field of Chart is still enabled when selecting Linear for X-Axis
+   * - Defect
+     - 18469
+     - Status of mouse is wrong when hovering on sort icon
+   * - Defect
+     - 18467
+     - Last value label of funnel chart can be cut off by pagination based on the width of the slice
+   * - Defect
+     - 18465
+     - System should display invalid connection string if it contains [] characters
+   * - Defect
+     - 18462
+     - The metric dropdown is auto set to All but no data is shown in preview section after the selected metric is set to not visible
+   * - Defect
+     - 18459
+     - System shows "The field is invalid.:" when coping 1 Report (Chart/Gauge) which contains Field which has Data Model Alias
+   * - Defect
+     - 18458
+     - System doesn't show any Datasource when creating a new report when using Oracle configuration database
+   * - Defect
+     - 18456
+     - After deleting a data source category it is deleted properly but user is shown wrong message that no change found
+   * - Defect
+     - 18451
+     - Filter logic is missing error message when multiple errors occur at the same time
+   * - Defect
+     - 18450
+     - API returns "hasAggregatedField: false" when aggregated field is called in an another calculated field
+   * - Defect
+     - 18449
+     - Popup Sub Reports Do Not Work In Presentation Mode In Full Screen
+   * - Defect
+     - 18448
+     - Milliseconds Trimmed from UTC DateTimes in API
    * - Defect
      - 18447
      - Report filter with nvarchar2 datatype in Oracle and 'Tree' Operator fails to load it values
-   * - Defect
-     - 18446
-     - Error message shows when selecting a date from calendar for Time filter field
-   * - Defect
-     - 18444
-     - System shows error msg when user clicks on Update Result after creating a report from 1 Dynamic stored procedure and 1 normal data source
-   * - Defect
-     - 18443
-     - The "add a field" function on X,Y axis is not responding after adding calculated field on report designer
    * - Defect
      - 18439
      - SubTotal/GrandTotal function list should be based on aggregated function for selected field instead of only data of selected field only
@@ -1541,8 +1894,8 @@ Known Issues
      - 18429
      - Text Positioning on Text type Dashboard tiles fails to properly for verrtical alignment and blank lines are removed from front side of dashboard tile. 
    * - Defect
-     - 18428
-     - Error messages is not displayed when input Filter logic contains the word "between". System missing checking invalid expression operator check.
+     - 18427
+     - Relationships in multiple joins are disappearing after circular setting is added
    * - Defect
      - 18426
      - Number of rows is not updated after cross filtering in report part on pagination control
@@ -1552,12 +1905,6 @@ Known Issues
    * - Defect
      - 18412
      - Border settings are not kept on "Configuration" section of report part grid.
-   * - Defect
-     - 18409
-     - Calculated Field - Need to allow database data type to be used in the CONVERT function
-   * - Defect
-     - 18407
-     - Deleted joins with same alias as newly created joins, cause duplicate key error in accessing subreport links. 
    * - Defect
      - 18403
      - Page continues to load when adding calcualted field with invalid data types for expression and clicking on OK button
@@ -1571,6 +1918,9 @@ Known Issues
      - 18396
      - Error message appears when user adds field with user-defined function and RUNNING field into grid
    * - Defect
+     - 18392
+     - In report viewer page freezes if entering invalid value and triggering the filter list twice
+   * - Defect
      - 18391
      - When user changes report part type fields which are not allowed for use in this report part type must be removed.
    * - Defect
@@ -1580,14 +1930,14 @@ Known Issues
      - 18384
      - Aggregated Field does NOT show user-defined function in dropdown list
    * - Defect
-     - 18378
-     - The join type should not be changed when user creates multiple joins for the same 2 data objects but different join fields
-   * - Defect
      - 18377
      - When loading subreport of chart/gauge/map to grid of master report, when the grid cell should be sized to show the report part or an icon to note the cell size must be larger, currently not showing the icon to note the cell must be larger to display
    * - Defect
      - 18373
      - Field is not unique error is shown if joining Custom View and table having the same field
+   * - Defect
+     - 18371
+     - When using comparison field filter operator the selected field should not show on Equal (Field) list.
    * - Defect
      - 18369
      - In Dashboard toggling between a small window and fullscreen incorrectly scales tiles
@@ -1595,17 +1945,14 @@ Known Issues
      - 18364
      - System shows blank for Form report part which has text only in Export - Excel file
    * - Defect
-     - 18363
-     - System adds new duplicated category when save a report into existed category name
-   * - Defect
      - 18359
      - When using Oracle the Wrong Data Type in calculated field causes application error when using calculated field as a filter
    * - Defect
      - 18358
      - LoadCustomDataFormat - drilldown chart cannot display when a  custom data format is applied
    * - Defect
-     - 18357
-     - User can add duplicated Calculated Field Name by sending "POST dataModel" API request multiple times
+     - 18352
+     - Email function breaks. "Nullable object must have a value" from report list.
    * - Defect
      - 18351
      - When creating a role, the Permissions page shows 'Configure Password Options' under the User Setup > Actions area. In the Permission Summary page it shows that same area as 'Configure Security Options'
@@ -1619,14 +1966,8 @@ Known Issues
      - 18341
      - No Changes Found shows when Modifying an Existing Report Title & Description When First Opening Report Designer
    * - Defect
-     - 18337
-     - A blank page is shown after User hold and drag vertical scroll bar
-   * - Defect
      - 18335
      - Stored procedure Input paramaeter is not properly respected as tenant field, no value is passed to the input parameter when visible or tenant field is hidden.
-   * - Defect
-     - 18330
-     - No filter dropdown shows under Filter Value Selection in Schedule/Subscribe popup if filter operator = Equivalence/Blank
    * - Defect
      - 18329
      - No value is shown in Report Designer when using a Data Model CF that is created without clicking on Preview button
@@ -1637,14 +1978,8 @@ Known Issues
      - 18318
      - Save confirmation not shown when user adds calculated field to one data source and moves directly to another datasource without saving
    * - Defect
-     - 18315
-     - Stacked area chart appearance is incorrect when using large data volumes.
-   * - Defect
      - 18313
      - Separator Order Changes During Drilldown for some data combinations
-   * - Defect
-     - 18308
-     - List of DataSources grouped by DataSourceCaregory are still returned in JSON Response when sending "POST report/loadDataSourceCategory" api request with Non-Existing reportKey
    * - Defect
      - 18307
      - When using Days Old function for Field in Value container of pivot or drilldown an error is shown as the value is not grouped properly.
@@ -1652,29 +1987,23 @@ Known Issues
      - 18305
      - Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
    * - Defect
-     - 18302
-     - Alternative text is not shown when user changes the alias of value with alternative text setting
-   * - Defect
      - 18300
      - After user unchecks a dynamic stored procedure which is already executed the schema should be updated
    * - Defect
      - 18299
      - Error message does not appear when draging one key join relationship and drops it in another relationship destination that is not eligible
    * - Defect
+     - 18298
+     - Report is Missing Save button on the report opened from sub report link
+   * - Defect
      - 18297
      - Error message does not appear when "Distinct" checkbox is selected AND the relationship among data objects does not support the distinct request
-   * - Defect
-     - 18295
-     - User can save a Custom View with empty name
    * - Defect
      - 18294
      - Search result in join of report designer data sources does not return the join alias that is used in keyjoin
    * - Defect
      - 18293
      - Searching value remains and the search box is blank while going back to datasource from other pages
-   * - Defect
-     - 18292
-     - New Report contains invalid field based on DataType in Report Container (Columns,Separators,Rows,Values) and can be saved successfully to DB by sending "POST report" request
    * - Defect
      - 18288
      - When a report is created from 2 data sources joined and user removes one data source from the model the report is broken and cannot be fixed.
@@ -1712,11 +2041,17 @@ Known Issues
      - 18250
      - In some Angular integrations Datetime filter is auto set to today value although param has value for datetime
    * - Defect
+     - 18245
+     - Report part is blank when copying a report part again after deleting it
+   * - Defect
      - 18241
      - When creating a calculated field with physical field, if user attempts to alias this calculated field with the actual field name the system should show duplicate validation message (this should be the same for field or filter alias)
    * - Defect
      - 18240
      - The scrollbar should be back to the top of result list after seaching with new keysearch or clear the keysearch
+   * - Defect
+     - 18236
+     - In Gauge report part the layout and content of Print preview page, print page are shown incorrect
    * - Defect
      - 18233
      -  Content section scales after User open "Subscribe" page
@@ -1750,9 +2085,6 @@ Known Issues
    * - Defect
      - 18165
      - Cannot render multiple Izenda components in only one Angular 2 component, relate to routing mechanism in Izenda.
-   * - Defect
-     - 18161
-     - Permission Summary shows "Can create new category?" instead of "Can create new report?" under Report Categories/Sub Categories permission
    * - Defect
      - 18159
      - User cannot select System Variables in Delivery tab when add/edit a Schedule
@@ -1832,14 +2164,17 @@ Known Issues
      - 18082
      - Border icon is shown as checked after user removes the setting in chart/gauge/map/form
    * - Defect
-     - 18080
-     - User can save duplicated Report Category by sending "POST Report" request multiple times with non-existing categoryID
-   * - Defect
      - 18079
      - Changing Items per page expands redundant spaces of the first row of Data Model Page
    * - Defect
+     - 18077
+     - When field width is set to largest number value the report no longer displays correctly
+   * - Defect
      - 18068
      - Loading bar continues to show after User input character in "Width" text box and save Report
+   * - Defect
+     - 18067
+     - In Role Setup Select All checkbox of total settings does NOT work properly on Permission tab.
    * - Defect
      - 18066
      - "Reset to Default value" icons for Data Offset and Timestamp Offset work incorrectly and missing tooltips
@@ -1852,9 +2187,6 @@ Known Issues
    * - Defect
      - 18056
      - System works incorrect when sub category is duplicated with another category
-   * - Defect
-     - 18053
-     - Setting levels is enable when refreshing a report in report designer
    * - Defect
      - 18052
      - System level remains if pasting a tenant level dashboard url  into browser while being at system level
@@ -1876,9 +2208,6 @@ Known Issues
    * - Defect
      - 18031
      - One of report parts disappears if embedding 2 same type report parts on form report
-   * - Defect
-     - 18028
-     - Unable to save workspace when select Data Mode and Dashboards items in Copy Management.
    * - Defect
      - 18026
      - User is unable to Unable to delete an invalid report part in dashboard after adding
@@ -1929,7 +2258,7 @@ Known Issues
      - New Filters added in quick edit mode do not show in Report Filter Info (show filters under report description) until user saves the report.
    * - Defect
      - 17970
-     - The reports are collapsed when user scrolls down to bottom after clicking expand icon on top right page, when lazy loading is applied
+     - The reports are collapsed when user scrolls down to bottom after clicking expand icon on top right page. Lazy loading is not applying the expanded view when adding additional items to the page.
    * - Defect
      - 17969
      - Scheduled and Subscribed reports can be sent without required filter values 
@@ -1943,29 +2272,29 @@ Known Issues
      - 17960
      - Copy report message says "template" instead of "report"
    * - Defect
-     - 17956
-     - The colored notification icon doesn't disappear on DataModel/Views after delete field
+     - 17955
+     - In Chart type Pie, Funel, Donut Pagination section does not appear while the use pagination checkbox is checked
    * - Defect
      - 17953
      - Category selected in report list looses focus and highlight after user moves mouse off of category
    * - Defect
      - 17952
-     - Error message 'This filter has duplicate filter alias' displays after deselecting, then selecting a Store Procedure again in datasource tab
+     - This filter has duplicate filter alias message displays after deselecting then selecting a Store Procedure again in datasource tab of report designer
    * - Defect
      - 17950
-     - Unable to search report name that contains [ or ]
+     - Unable to search report name that contains bracket or pipe character
+   * - Defect
+     - 17942
+     - In report part form there is unnecessary Spacing With Subreports that don't return data
+   * - Defect
+     - 17941
+     - Italic font does not work in Filter Formatting tab
    * - Defect
      - 17938
      - User has to click Fields tab tow times to navigate to Field tab after inputting filter value for param of dynamic stored procedure
    * - Defect
-     - 17934
-     - Data Model change notifications would not disappear upon saving.
-   * - Defect
      - 17931
      - Grid Padding when text is right justified is not correct when exporting to word
-   * - Defect
-     - 17929
-     - Sub Total is counted incorrectly when user add 1 Field to separator 2 times
    * - Defect
      - 17927
      - Categories displays categories incorrectly when category and sub category same name
@@ -1987,6 +2316,9 @@ Known Issues
    * - Defect
      - 17901
      - Map fails to redraw if adding field to value container after going back from datasource
+   * - Defect
+     - 17896
+     - In report filter popup style if user selects value and clicks cancel the actual selected value remains selected
    * - Defect
      - 17890
      - Header/footer {datetime} field does not display time in the report viewer only date
@@ -2052,19 +2384,13 @@ Known Issues
      - In report/dashboard scheduling selected system variables are not added into the email body
    * - Defect
      - 17791
-     - User is unable to copy local dashboard which contains both local report parts and global report parts
+     -  User is unable to copy local dashboard which contains both local report parts and global report parts
    * - Defect
      - 17790
      - Custom URL will not work with partial URL for internal links (example: /report/view/{GUID}
    * - Defect
-     - 17789
-     - System shows custom URL in new tab after user configured it to open in New Window
-   * - Defect
-     - 17788
-     - Default URL type of Custom URL is not present once this setting is removed and re-added.
-   * - Defect
      - 17786
-     - "Case when...then...else...end" function shows the same syntax when selected as "Case ...when...Then...else....end"
+     -  "Case when...then...else...end" function shows the same syntax when selected as "Case ...when...Then...else....end"
    * - Defect
      - 17785
      - When deleting a relationship in the data model and saving - the system shows "no changes found" but should show Details saved.
@@ -2081,9 +2407,6 @@ Known Issues
      - 17757
      - Report body is resized after user subscribes then un-subcribes to the report.
    * - Defect
-     - 17755
-     - Using Post request to add database mapping, type value is  not properly verified and user can post invalid data
-   * - Defect
      - 17754
      - dataModel/databaseMapping accepts bad data for fromserver value
    * - Defect
@@ -2092,9 +2415,6 @@ Known Issues
    * - Defect
      - 17747
      - When setting Data Setup > Advanced Settings > Show Schema Name at system level, this setting is being used at all tenant levels too.
-   * - Defect
-     - 17735
-     - Y-Axis scales would not adjust properly when using the '% of Group' format in charts 
    * - Defect
      - 17734
      - When formatting the y axis of stacked column chart the y axis labels show with this new format instead of %.
@@ -2110,6 +2430,9 @@ Known Issues
    * - Defect
      - 17725
      - Time only fields are not exported with proper formats in excel.
+   * - Defect
+     - 17724
+     - Grand Total configuration is removed when user sets both sub total & grand total then change to HTML tag or Saves report on form report part
    * - Defect
      - 17723
      - In User Set up, There is a error "Uncaught TypeError: Cannot read property 'apply' of undefined" in console log. This error does not affect saving user info but should not be displaying in the console.
@@ -2142,13 +2465,13 @@ Known Issues
      - Redundant css class "btn-primary" in Update Result and Add Report Part button
    * - Defect
      - 17694
-     - In IE/MS Edge browsers clicking on 'Full screen' icon or 'Show Next Slide After' textboxes do not respond
+     - In IE/MS Edge browsers Layout: 'Full screen' icon and 'Show Next Slide After' textboxes are hidden by report
    * - Defect
      - 17689
      - Column Alias is lost when executing stored procedure when there is no change to the field in the physical database
    * - Defect
      - 17682
-     - In Form 'The report part [ ] is not found' mesage is displays when editing then restoring id of embedded-report
+     - In Form ""The report part [ ] is not found' mesage is displays when editing then restoring id of embedded-report
    * - Defect
      - 17673
      - System shows ability for user to create sub total/Grand total with Boolean using AVG, SUM and SUM Distinct, this is not allowed by database and these options should be removed for this data type.
@@ -2171,6 +2494,9 @@ Known Issues
      - 17630
      - Change alternating background color from inline style to css class
    * - Defect
+     - 17629
+     - TenantIntegrationConfig.AddOrUpdateTenant(izendaTenant)can cause a race condition allowing multiple tenants to be added simultaneously if the request happens fast enough
+   * - Defect
      - 17628
      - System shows not unique Field when user creates a calculated field in the report designer a calculated field created in the Data Model
    * - Defect
@@ -2182,6 +2508,9 @@ Known Issues
    * - Defect
      - 17624
      - System shows error msg when user creates a  calculated field with Round function
+   * - Defect
+     - 17621
+     - Filter displays normally when user un-checks column is Filterable in Data Model
    * - Defect
      - 17620
      - Error displays when naming calcualted field with () and more than 8 characters.
@@ -2203,9 +2532,6 @@ Known Issues
    * - Defect
      - 17580
      - Chart Exports in Integrated Scenarios Would Cut Off Several Values
-   * - Defect
-     - 17577
-     - Fields added from Data Source which has Join Alias are removed when user saves form report part.
    * - Defect
      - 17576
      - Gauges are not displaying in print preview of report designer
@@ -2411,9 +2737,6 @@ Known Issues
      - 17136
      - In Tenant Permissions page The section in the header section is not auto highlighted when its name hits the bottom of the header section.
    * - Defect
-     - 17123
-     - Cannot create report type chart on Mac OS Safari
-   * - Defect
      - 17117
      - In schedule and subscription  "End by" option is not saved after editing
    * - Defect
@@ -2426,8 +2749,8 @@ Known Issues
      - 17105
      - In FF Browser Grid Report is blank when Preview Record = 1000/10000/All & Items per Page = 200
    * - Defect
-     - 17103
-     - In MVC integration example kit User must select tenant 2 times to change selected tenant in settings level dropdown
+     - 17102
+     - Report part map is not changed correctly after selecting with county is USA
    * - Defect
      - 17101
      - Country level map is missing resources for Italy, Hoduras, Hungary, Iran, Vanuata, Uganda, Taiwan, Slovakia, Mauritaria, Norway, Peru, Republic of Serbia, United Replic of Tanzania and shows error when attempting to create these maps
@@ -2464,6 +2787,9 @@ Known Issues
    * - Defect
      - 17007
      - Icons of Report Part Title in Report Body are not aligned
+   * - Defect
+     - 17001
+     - Gauge report is not sorted properly
    * - Defect
      - 16987
      - Null value is formatted in gauge separator causing duplicate value in the report part
@@ -2536,9 +2862,6 @@ Known Issues
    * - Defect
      - 16750
      - Cross filtering is not properly applying to dashboard when user is in presentation mode.
-   * - Defect
-     - 16741
-     - Values list of filter 2 is not updated based on the selected value of filter 1 when 'Cascading' is checked
    * - Defect
      - 16730
      - When cross filtering report part fails to drill up after updating result
@@ -2741,9 +3064,6 @@ Known Issues
      - 15472
      - Datetime fields Between function, the TO date/time should be restricted to be after the FROM datetime
    * - Defect
-     - 15435
-     - User can not drag and drop the Key Join in data source tab of report designer
-   * - Defect
      - 15398
      - Subtotals on Drill Down Grid Inaccurate When Collapsed
    * - Defect
@@ -2929,3 +3249,4 @@ Known Issues
    * - Defect
      - 9200
      - Between values are not validated in filters to ensure beginning value is less than ending value
+
