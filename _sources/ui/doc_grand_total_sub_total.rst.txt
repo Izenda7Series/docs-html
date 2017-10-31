@@ -14,14 +14,12 @@ For example, in a report for Northwind database's Orders table, the Grand Total 
    .. figure:: /_static/images/GrandTotal_For_Freight_Preview.png
       :align: center
       :width: 992px
-      :height: 370px
 
       Grand Total Freight field.
 
    .. figure:: /_static/images/Grand_Total_Setting_For_Freight.png
       :align: center
       :width: 908px
-      :height: 674px
 
       Grand Total setting for Freight field.
 
@@ -63,14 +61,12 @@ For example, in a report for Northwind database's Orders table, to have the sum 
    .. figure:: /_static/images/Sub_Total_Freight_Preview.png
       :align: center
       :width: 1008px
-      :height: 558px
 
       Sub Total Freight field seperated by ShipCountry.
 
    .. figure:: /_static/images/Sub_Total_Freight_Setting.png
       :align: center
       :width: 904px
-      :height: 670px
 
       Sub Total setting for Freight field.
 
