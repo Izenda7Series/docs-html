@@ -709,8 +709,21 @@ In this section, user can:
 
 -  Choose a display format for the field.
 
-       The list of available dispaly formats depends on the data type of
+       The list of available formats depends on the data type of
        the field.
+
+       .. note::
+
+          .. versionadded:: 2.6.0 Add new formats for Numeric and Money Data Types.
+         
+          \- % of Subtotal |br|
+          \- % of Subtotal (with rounding) |br|
+          \- % of Grandtotal |br|
+          \- % of Grandtotal (with rounding) |br|
+          \- % of Sidetotal |br|
+          \- % of Sidetotal (with rounding) |br|
+          
+          When a sub/grand total is not yet defined, it should default to the sum.
 
 -  Choose a font face and font size.
 
@@ -795,7 +808,9 @@ In this section, user can:
 
    To have the sum for all Freight costs to each country without having to create additional reports, Grouping and Sub Total can be used. Grouping will group data for each ShipCountry together, while Sub Total for Freight field will give the sum of all Freight costs in each country/group. Screenshot to be updated.
 
-   Grand Total and Sub Total is not necessarily the sum calculation. Other functions include minimum, maximum, average and count.
+   Grand Total and Sub Total is not necessarily the sum calculation. Other functions include minimum, maximum, average, count and user-defined expression.
+
+   For more detail about Grand Total and Sub Total please read :doc:`doc_grand_total_sub_total`.
 
 |br|
 
@@ -829,6 +844,14 @@ To set up both Grand Total and Sub Total for Freight costs in Northwind database
     #. Select Sum in Grand Total Function drop-down.
     #. The data type Money is automatically suggested in Data Type
        drop-down.
+    #. Select a format in Format drop-down.
+       
+       .. versionadded:: 2.6.0 Add new formats:
+
+          \- % of Subtotal |br|
+          \- % of Subtotal (with rounding) |br|
+          \- % of Grandtotal |br|
+          \- % of Grandtotal (with rounding)
     #. Click OK to close the pop-up.
 
        .. _Report_Designer_Freight_Grand_Total_Sum:
@@ -845,6 +868,16 @@ To set up both Grand Total and Sub Total for Freight costs in Northwind database
     #. Select Sum in Subtotal Function drop-down.
     #. The data type Money is automatically suggested in Data Type
        drop-down.
+    #. Select a format in Format drop-down.
+       
+       .. versionadded:: 2.6.0 Add new formats:
+
+          \- % of Subtotal |br|
+          \- % of Subtotal (with rounding) |br|
+          \- % of Grandtotal |br|
+          \- % of Grandtotal (with rounding)
+
+    #. Click OK to close the pop-up.
     #. Click OK to close the pop-up.
 
        .. _Report_Designer_Freight_Sub_Total_Sum:

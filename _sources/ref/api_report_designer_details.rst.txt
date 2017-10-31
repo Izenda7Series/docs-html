@@ -137,13 +137,17 @@ Summary
      - Dashboard Designer
    * - `POST report/validateExistingField`_
      - Validates that some fields exist in a report.
-     - To be updated
+     - \- In Report Designer page > Field properties > Custom URL |br|
+       \- Leave a custome URL to another report > click OK button |br|
+       \- Click on any hyperlink
    * - `GET report/reportId/(tenant\_id)?reportName=value&categoryName=value`_
      - Returns report id from report name and category name.
      - To be updated
    * - `POST report/validateExistingReport`_
      - Validates that a report exists in a category.
-     - To be updated
+     - \- In Report Designer page > Field properties > Custom URL |br|
+       \- Leave a custome URL to another report > click OK button |br|
+       \- Click on any hyperlink
    * - `GET report/reportsByTenant/(tenant\_id)`_
      - Returns list of reports by tenant, with each report containing a list of report parts.
      - To be updated

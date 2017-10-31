@@ -131,6 +131,7 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_grand_total_sub_total.html">Grand Total and Sub Total</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
@@ -427,9 +428,9 @@ data source fields are added to Rows text box.</p>
 </div>
 <div class="section" id="define-a-pivot-grid-content">
 <h2>Define a Pivot Grid Content<a class="headerlink" href="#define-a-pivot-grid-content" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-right" id="id14">
-<span id="grid-nw-orders-order-count-by-orderyear-shipcountry-shipcity"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png"><img alt="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png" src="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png" style="width: 387px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 227 </span><span class="caption-text">Order Count by OrderYear, ShipCountry and ShipCity</span></p>
+<div class="figure align-center" id="id14">
+<span id="grid-nw-orders-order-count-by-orderyear-shipcountry-shipcity"></span><a class="reference internal image-reference" href="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png"><img alt="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png" src="../_images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png" style="width: 1204px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 227 </span><span class="caption-text">Order Count and Freight Sum by OrderYear, ShipCountry and ShipCity</span></p>
 </div>
 <p>To
 define this sample report:</p>
@@ -442,27 +443,41 @@ is used as expected).</li>
 <li>Select the field in Columns box to open the Field Properties.</li>
 <li>Check to confirm that in Data Formatting group, &#8220;Year&#8221; is selected
 for the format.</li>
-<li>Drag ShipCountry field in Orders table from Middle Panel into Columns
+<li>Drag ShipCountry field in Orders table from Middle Panel into Rows
 box.</li>
 <li>The field will be given the alias &#8220;Group(ShipCountry)&#8221; (Group
 function is used as expected).</li>
-<li>Drag ShipCity field in Orders table from Middle Panel into Columns
+<li>Drag ShipCity field in Orders table from Middle Panel into Rows
 box.</li>
 <li>The field will be given the alias &#8220;Group(ShipCity)&#8221; (Group function
 is used as expected).</li>
-<li>Drag OrderID field in Orders table from Middle Panel into Columns
+<li>Drag OrderID field in Orders table from Middle Panel into Values
 box.</li>
 <li>The field will be given the alias &#8220;Sum(OrderID)&#8221; (not the expected
 Count function).</li>
-<li>Select the field in Columns box to open the Field Properties.</li>
-<li>In Data Formatting, select &#8220;Count&#8221; as the Function. <br clear="right" /></li>
+<li>Select the field in Values box to open the Field Properties.</li>
+<li>In Data Formatting, select &#8220;Count&#8221; as the Function.</li>
+<li>Drag Freight field in Orders table from Middle Panel into Values
+box.</li>
+<li>The field will be given the alias &#8220;Sum(Freight)&#8221; (Sum function
+is used as expected). <br clear="right" /></li>
 </ol>
+<div class="topic">
+<p class="topic-title first">Side Total</p>
+<p>In a Pivot Grid report, Side Total values will provide the sum of all values for each field in Values box across each row.</p>
+<p>To set up Side Total for a Pivot Grid report, check on the “Add Side Total” checkbox under Columns section in Configuration Section in report part backside.</p>
+<div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="_static/images/NW_Side_Total_Example.png"><img alt="_static/images/NW_Side_Total_Example.png" src="_static/images/NW_Side_Total_Example.png" style="width: 1555px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 228 </span><span class="caption-text">Side Total for Count(OrderID) and Sum(Freight) for each ShipCity through the years.</span></p>
+</div>
+</div>
+<p><br clear="right" /></p>
 </div>
 <div class="section" id="define-a-drill-down-grid-content">
 <h2>Define a Drill Down Grid Content<a class="headerlink" href="#define-a-drill-down-grid-content" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-right" id="id15">
+<div class="figure align-right" id="id16">
 <span id="grid-nw-suppliers-drill-down-preview"></span><a class="reference internal image-reference" href="../_images/NW_Suppliers_Drill-down_Preview.png"><img alt="../_images/NW_Suppliers_Drill-down_Preview.png" src="../_images/NW_Suppliers_Drill-down_Preview.png" style="width: 341px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 228 </span><span class="caption-text">Supplier Count by Country, Region and City</span></p>
+<p class="caption"><span class="caption-number">Fig. 229 </span><span class="caption-text">Supplier Count by Country, Region and City</span></p>
 </div>
 <p>To define this
 sample report:</p>

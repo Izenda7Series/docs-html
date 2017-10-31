@@ -26,53 +26,71 @@ List of APIs
 
 .. list-table::
    :class: apitable
-   :widths: 35 65
+   :widths: 30 35 35
    :header-rows: 1
 
    * - API
      - Purpose
-   * - GET copyManagement/workspace/{workspace_id}
+     - Usage in Izenda Front-end
+   * - `GET copyManagement/workspace/{workspace_id}`_
      - Returns details of the workspace specified by workspace_id.
-   * - GET copyManagement/workspaces/{tenant_id}/{onlyMyWorkspace}
+     -
+   * - `GET copyManagement/workspaces/{tenant_id}/{onlyMyWorkspace}`_
      - Returns a list of workspaces filtered by tenant_id if not null, and by current logged on user if onlyMyWorkspace equals true.
-   * - POST copyManagement/workspace/validateName
+     - Setting > Data Setup > Copy Management > Show only my workspaces OR make some changes and Save
+   * - `POST copyManagement/workspace/validateName`_
      - Validates if workspace name is unique.
-   * - POST copyManagement
+     -
+   * - `POST copyManagement`_
      - Saves a workspace.
 
        .. note::
 
           Not POST copyManagement/workspace
-   * - DELETE copyManagement/workspace/{workspace_id}
+     -
+   * - `DELETE copyManagement/workspace/{workspace_id}`_
      - Deletes the workspace specified by workspace_id.
-   * - POST copyManagement/copy
+     - 
+   * - `POST copyManagement/copy`_
      - Run the copy operation based on settings in a workspace.
-   * - POST copyManagement/connectionsHasDataModel
+     -
+   * - `POST copyManagement/connectionsHasDataModel`_
      - Checks if connections have already had data model.
-   * - POST copyManagement/workspace/loadDestinationConnections'''
+     -
+   * - POST copyManagement/workspace/loadDestinationConnections
      - Returns a list of connections for destination drop-down.
 
        .. note::
 
           Obsolete, use :ref:`POST_connection/loadDistinctConnections` instead
-   * - POST copyManagement/workspace/validate
+     -
+   * - `POST copyManagement/workspace/validate`_
      - Validates the workspace.
-   * - POST copyManagement/workspace/validateWorkspaceTenant
+     - Not used
+   * - `POST copyManagement/workspace/validateWorkspaceTenant`_
      - Validates that the mappings are valid, destination tenants have the same connections, and have no physical changes.
-   * - POST copyManagement/workspace/validateConcurrency
+     -
+   * - `POST copyManagement/workspace/validateConcurrency`_
      - Validates workspace concurrency.
-   * - POST copyManagement/workspace/detectConflictingTenantPermissions
+     -
+   * - `POST copyManagement/workspace/detectConflictingTenantPermissions`_
      - Detect conflicting tenant's permissions.
-   * - POST copyManagement/workspace/detectConflictingAdvancedSettings
+     -
+   * - `POST copyManagement/workspace/detectConflictingAdvancedSettings`_
      - Detect conflicting tenant's advanced settings.
-   * - POST copyManagement/workspace/detectConflictingReport
+     -
+   * - `POST copyManagement/workspace/detectConflictingReport`_
      - Detect conflicting tenant's reports.
-   * - POST copyManagement/workspace/detectConflictingRolePermission
+     -
+   * - `POST copyManagement/workspace/detectConflictingRolePermission`_
      - Detect role names already existing in destination tenants.
-   * - POST copyManagement/workspace/detectConflictingTemplate
+     -
+   * - `POST copyManagement/workspace/detectConflictingTemplate`_
      - Detect conflicting tenant's templates.
-   * - POST copyManagement/workspace/detectConflictingDashboard
+     -
+   * - `POST copyManagement/workspace/detectConflictingDashboard`_
      - Detect conflicting tenant's dashboards.
+     -
 
 
 GET copyManagement/workspace/{workspace_id}
@@ -336,10 +354,25 @@ Validates if workspace name is unique.
         "Name" : "Workspace01"
       }
 
-   Sample response::
+   Sample success response::
 
       true
 
+   Sample failure response::
+
+      {
+         "success": false,
+         "messages": [
+            {
+                  "key": "Name",
+                  "detail": null,
+                  "messages": [
+                     "The workspace Workspace01 already exists"
+                  ]
+            }
+         ],
+         "data": null
+      }
 
 POST copyManagement
 --------------------------------------------------------------
@@ -4066,13 +4099,333 @@ Detect conflicting tenant's reports.
 
       POST /api/copyManagement/workspace/detectConflictingReport HTTP/1.1
 
-   Request payload::
+   .. container:: toggle
 
-      To be updated
+      .. container:: header
 
-   Sample response::
+         Sample payload:
 
-      To be updated
+      .. code-block:: json
+
+         {
+            "id": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+            "name": "acme-wonka",
+            "description": "",
+            "tenantId": null,
+            "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "created": "2017-10-18T03:06:40.467",
+            "createdBy": "System5 Admin5",
+            "modified": "2017-10-18T03:28:26",
+            "copyDataModel": false,
+            "copyRoles": false,
+            "copyRolePermission": false,
+            "copyAdvancedSettings": false,
+            "copyTenantPermissions": false,
+            "copyDashboard": false,
+            "copyReport": true,
+            "sourceId": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "sourceHashCode": "3b81ceb0de496d4f31d30619021",
+            "state": 0,
+            "selectAllTenants": false,
+            "workspaceTenants": [{
+               "isDirty": true,
+               "tenantName": "Wonka - Wonka",
+               "name": "Wonka",
+               "tenantUniqueName": "Wonka",
+               "workspaceId": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+               "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+               "status": 1,
+               "state": 0,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null,
+               "destinationHashCode": "3b81ceb0de496d4f31d30619021",
+               "dataMapping": [],
+               "databaseSources": [],
+               "querySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               },
+               "destinationQuerySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               }
+            }],
+            "workspaceMappings": [],
+            "copyOption": {
+               
+            },
+            "copyAdvancedSettingOption": {
+               
+            },
+            "copyDashboardOption": {
+               
+            },
+            "copyReportOption": {
+               
+            },
+            "copyTemplateOption": {
+               
+            },
+            "copyTenantPermissionOption": {
+               
+            },
+            "copyRolePermissionOption": {
+               
+            },
+            "copiedRoles": [],
+            "copiedRolePermission": [],
+            "allHashcodes": {
+               "advancedSettings": "",
+               "tenantPermission": "",
+               "roles": "ae94be3cd532ce4a025884819eb",
+               "rolePermissions": "e20838cf93c8cd6212cda1530d4",
+               "dashboards": "",
+               "reports": "8b6719a00dc9faec05ba1ec69ba",
+               "templates": "0bea5c30063e9a627a31d8bf3fd"
+            },
+            "sourceDashboards": [],
+            "sourceReports": [{
+               "id": null,
+               "type": 0,
+               "name": null,
+               "parentId": null,
+               "state": 0,
+               "modified": null,
+               "canDelete": false,
+               "subCategories": [{
+                  "id": null,
+                  "type": 0,
+                  "name": null,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "state": 0,
+                  "modified": null,
+                  "canDelete": false,
+                  "subCategories": [],
+                  "dashboards": [],
+                  "reports": [{
+                     "reportDataSource": [{
+                        "reportId": "a657c5f7-c361-422b-868c-d8e7b81a0184",
+                        "querySourceId": "c7d1a927-dd58-4224-960e-a84e7de0b760",
+                        "querySourceUniqueName": "[con;#0].[cat;#0].[actor]",
+                        "querySourceCategoryId": "7fb73c89-2821-489c-8e97-497eaf544568",
+                        "connectionId": "30625587-4960-46aa-bfde-ae9aae18d32b",
+                        "selected": false,
+                        "id": null,
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "System5 Admin5",
+                        "modified": null,
+                        "modifiedBy": null
+                     }],
+                     "id": "a657c5f7-c361-422b-868c-d8e7b81a0184",
+                     "name": "Ex01",
+                     "type": 0,
+                     "previewRecord": 0,
+                     "advancedMode": false,
+                     "allowNulls": false,
+                     "isDistinct": false,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+                     "description": "",
+                     "createdBy": "System5 Admin5",
+                     "created": "2017-10-18T03:03:26.46",
+                     "modifiedBy": "System5 Admin5",
+                     "version": 1,
+                     "numberOfView": 1,
+                     "renderingTime": 4212,
+                     "owner": "System5 Admin5",
+                     "state": 0,
+                     "modified": "2017-10-18T03:03:26.46",
+                     "isShowDetail": false,
+                     "lastViewed": "2017-10-18T06:48:31.647",
+                     "isSubscribeMode": false,
+                     "deletable": true,
+                     "copyable": true,
+                     "movable": true,
+                     "accessPriority": 1,
+                     "checked": true,
+                     "indeterminate": false,
+                     "isGlobal": false,
+                     "isEditMode": false
+                  }],
+                  "checked": true,
+                  "indeterminate": false,
+                  "numOfCheckedChilds": 0,
+                  "numOfChilds": 0,
+                  "isGlobal": false,
+                  "isEditing": false,
+                  "editable": false,
+                  "tenantId": null
+               }],
+               "dashboards": [],
+               "reports": [],
+               "checked": true,
+               "indeterminate": false,
+               "numOfCheckedChilds": 0,
+               "numOfChilds": 0,
+               "isGlobal": false,
+               "isEditing": false,
+               "editable": false,
+               "tenantId": null
+            }],
+            "sourceTemplates": []
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         [{
+            "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+            "tenantName": "Wonka - Wonka",
+            "categories": [{
+               "name": null,
+               "type": 0,
+               "parentId": null,
+               "tenantId": null,
+               "isGlobal": false,
+               "canDelete": false,
+               "editable": false,
+               "savable": false,
+               "subCategories": [{
+                  "name": null,
+                  "type": 0,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "tenantId": null,
+                  "isGlobal": false,
+                  "canDelete": false,
+                  "editable": false,
+                  "savable": false,
+                  "subCategories": [],
+                  "checked": true,
+                  "reports": [{
+                     "name": "Ex01",
+                     "reportDataSource": [{
+                        "reportId": "29e70154-17db-4ad3-b3df-cafff03309ef",
+                        "querySourceId": "45a16d82-18be-4871-a530-783e09a6bac6",
+                        "querySourceUniqueName": "[con;#0].[cat;#0].[actor]",
+                        "querySourceCategoryId": "6ebca7b7-c8f3-4b10-85af-9db3f582c307",
+                        "connectionId": "b75f5e99-18c3-48c2-b9b6-959034edcbfb",
+                        "selected": false,
+                        "id": null,
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "System5 Admin5",
+                        "modified": null,
+                        "modifiedBy": null
+                     }],
+                     "type": 0,
+                     "previewRecord": 0,
+                     "advancedMode": false,
+                     "allowNulls": false,
+                     "isDistinct": false,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+                     "tenantName": null,
+                     "description": "",
+                     "title": null,
+                     "lastViewed": "2017-10-18T07:56:41.453",
+                     "owner": "IzendaAdmin@system.com",
+                     "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "excludedRelationships": null,
+                     "numberOfView": 0,
+                     "renderingTime": 0.0,
+                     "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "modifiedById": null,
+                     "snapToGrid": false,
+                     "usingFields": null,
+                     "hasDeletedObjects": false,
+                     "header": null,
+                     "footer": null,
+                     "titleDescription": null,
+                     "sourceId": "a657c5f7-c361-422b-868c-d8e7b81a0184",
+                     "checked": true,
+                     "copyDashboard": false,
+                     "exportFormatSetting": null,
+                     "deletable": false,
+                     "editable": false,
+                     "movable": false,
+                     "copyable": false,
+                     "accessPriority": 0,
+                     "active": false,
+                     "fullPath": null,
+                     "computeNameSettings": null,
+                     "isGlobal": false,
+                     "isCheck": true,
+                     "id": "29e70154-17db-4ad3-b3df-cafff03309ef",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 1,
+                     "created": "2017-10-18T07:56:41.453",
+                     "createdBy": "System5 Admin5",
+                     "modified": "2017-10-18T07:56:41.453",
+                     "modifiedBy": "System5 Admin5"
+                  }],
+                  "dashboards": null,
+                  "numOfChilds": 0,
+                  "numOfCheckedChilds": 0,
+                  "indeterminate": false,
+                  "fullPath": null,
+                  "computeNameSettings": null,
+                  "isCheck": true,
+                  "id": null,
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": null,
+                  "modifiedBy": null
+               }],
+               "checked": true,
+               "reports": [],
+               "dashboards": null,
+               "numOfChilds": 0,
+               "numOfCheckedChilds": 0,
+               "indeterminate": false,
+               "fullPath": null,
+               "computeNameSettings": null,
+               "isCheck": true,
+               "id": null,
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null
+            }],
+            "checked": true
+         }]
 
 
 POST copyManagement/workspace/detectConflictingRolePermission
@@ -4125,13 +4478,145 @@ Detect role names already existing in destination tenants.
 
       POST /api/copyManagement/workspace/detectConflictingRolePermission HTTP/1.1
 
-   Request payload::
+   .. container:: toggle
 
-      To be updated
+      .. container:: header
+
+         Sample payload:
+
+      .. code-block:: json
+
+         {
+            "id": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+            "name": "acme-wonka",
+            "description": "",
+            "tenantId": null,
+            "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "created": "2017-10-18T03:06:40.467",
+            "createdBy": "System5 Admin5",
+            "modified": "2017-10-18T03:28:26",
+            "copyDataModel": false,
+            "copyRoles": true,
+            "copyRolePermission": true,
+            "copyAdvancedSettings": false,
+            "copyTenantPermissions": false,
+            "copyDashboard": false,
+            "copyReport": false,
+            "sourceId": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "sourceHashCode": "3b81ceb0de496d4f31d30619021",
+            "state": 0,
+            "selectAllTenants": false,
+            "workspaceTenants": [{
+               "isDirty": false,
+               "tenantName": "Wonka - Wonka",
+               "name": "Wonka",
+               "tenantUniqueName": "Wonka",
+               "workspaceId": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+               "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+               "status": 0,
+               "state": 0,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null,
+               "destinationHashCode": "3b81ceb0de496d4f31d30619021",
+               "dataMapping": [],
+               "databaseSources": [],
+               "querySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               },
+               "destinationQuerySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               }
+            }],
+            "workspaceMappings": [{
+               "isDirty": false,
+               "workspaceId": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+               "fromDatabaseName": "[PGSQL] DVDRental",
+               "type": 1,
+               "fromObject": "public",
+               "fromServer": "192.168.55.183",
+               "toDatabaseName": "[PGSQL] DVDRental",
+               "toObject": "public",
+               "toServer": "192.168.55.183",
+               "isGlobal": false,
+               "id": "4a97058c-5d7e-424f-99ae-d463a9d665d5",
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null,
+               "workspaceMappingTenants": [{
+                  "isDirty": false,
+                  "workspaceMappingId": "4a97058c-5d7e-424f-99ae-d463a9d665d5",
+                  "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+                  "tenantName": "",
+                  "id": null,
+                  "state": 0,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": null,
+                  "modifiedBy": null
+               }]
+            }],
+            "copyOption": {
+               
+            },
+            "copyAdvancedSettingOption": {
+               
+            },
+            "copyDashboardOption": {
+               
+            },
+            "copyReportOption": {
+               
+            },
+            "copyTemplateOption": {
+               
+            },
+            "copyTenantPermissionOption": {
+               
+            },
+            "copyRolePermissionOption": {
+               
+            },
+            "copiedRoles": ["e70f7958-c1a9-4eeb-8860-855332ee5930"],
+            "copiedRolePermission": ["e70f7958-c1a9-4eeb-8860-855332ee5930"],
+            "allHashcodes": {
+               "advancedSettings": "",
+               "tenantPermission": "",
+               "roles": "ae94be3cd532ce4a025884819eb",
+               "rolePermissions": "e20838cf93c8cd6212cda1530d4",
+               "dashboards": "",
+               "reports": "8b6719a00dc9faec05ba1ec69ba",
+               "templates": "d41d8cd98f00b204e9800998ecf"
+            },
+            "sourceDashboards": []
+         }
 
    Sample response::
 
-      To be updated
+      [{
+         "id": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+         "name": "Wonka - Wonka",
+         "roles": [{
+            "id": "8f132fc0-963b-49bb-b41b-8f7c735c28c2",
+            "name": "Manager"
+         }]
+      }]
 
 
 POST copyManagement/workspace/detectConflictingTemplate
@@ -4149,8 +4634,369 @@ Detect conflicting tenant's templates.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
 
+      POST /api/copyManagement/workspace/detectConflictingTemplate HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         {
+            "id": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+            "name": "acme-wonka",
+            "description": "",
+            "tenantId": null,
+            "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "created": "2017-10-18T03:06:40.467",
+            "createdBy": "System5 Admin5",
+            "modified": "2017-10-18T03:28:26",
+            "copyDataModel": false,
+            "copyRoles": false,
+            "copyRolePermission": false,
+            "copyAdvancedSettings": false,
+            "copyTenantPermissions": false,
+            "copyDashboard": false,
+            "copyReport": true,
+            "sourceId": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "sourceHashCode": "3b81ceb0de496d4f31d30619021",
+            "state": 0,
+            "selectAllTenants": false,
+            "workspaceTenants": [{
+               "isDirty": true,
+               "tenantName": "Wonka - Wonka",
+               "name": "Wonka",
+               "tenantUniqueName": "Wonka",
+               "workspaceId": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+               "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+               "status": 1,
+               "state": 0,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null,
+               "destinationHashCode": "3b81ceb0de496d4f31d30619021",
+               "dataMapping": [],
+               "databaseSources": [],
+               "querySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               },
+               "destinationQuerySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               }
+            }],
+            "workspaceMappings": [{
+               "isDirty": false,
+               "workspaceId": "291ddc27-126a-4e57-b7d3-1b09fc482d13",
+               "fromDatabaseName": "[PGSQL] DVDRental",
+               "type": 1,
+               "fromObject": "public",
+               "fromServer": "192.168.55.183",
+               "toDatabaseName": "[PGSQL] DVDRental",
+               "toObject": "public",
+               "toServer": "192.168.55.183",
+               "isGlobal": false,
+               "id": "4a97058c-5d7e-424f-99ae-d463a9d665d5",
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null,
+               "workspaceMappingTenants": [{
+                  "isDirty": false,
+                  "workspaceMappingId": "4a97058c-5d7e-424f-99ae-d463a9d665d5",
+                  "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+                  "tenantName": "",
+                  "id": null,
+                  "state": 0,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": null,
+                  "modifiedBy": null
+               }]
+            }],
+            "copyOption": {
+               
+            },
+            "copyAdvancedSettingOption": {
+               
+            },
+            "copyDashboardOption": {
+               
+            },
+            "copyReportOption": {
+               
+            },
+            "copyTemplateOption": {
+               
+            },
+            "copyTenantPermissionOption": {
+               
+            },
+            "copyRolePermissionOption": {
+               
+            },
+            "copiedRoles": [],
+            "copiedRolePermission": [],
+            "allHashcodes": {
+               "advancedSettings": "",
+               "tenantPermission": "",
+               "roles": "ae94be3cd532ce4a025884819eb",
+               "rolePermissions": "e20838cf93c8cd6212cda1530d4",
+               "dashboards": "",
+               "reports": "8b6719a00dc9faec05ba1ec69ba",
+               "templates": "0bea5c30063e9a627a31d8bf3fd"
+            },
+            "sourceDashboards": [],
+            "sourceReports": [],
+            "sourceTemplates": [{
+               "id": null,
+               "type": 1,
+               "name": null,
+               "parentId": null,
+               "state": 0,
+               "modified": null,
+               "canDelete": false,
+               "subCategories": [{
+                  "id": null,
+                  "type": 1,
+                  "name": null,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "state": 0,
+                  "modified": null,
+                  "canDelete": false,
+                  "subCategories": [],
+                  "dashboards": [],
+                  "reports": [{
+                     "reportDataSource": [{
+                        "reportId": "ba219814-45d3-452a-8542-cacdb85162e9",
+                        "querySourceId": "c7d1a927-dd58-4224-960e-a84e7de0b760",
+                        "querySourceUniqueName": "[con;#0].[cat;#0].[actor]",
+                        "querySourceCategoryId": "7fb73c89-2821-489c-8e97-497eaf544568",
+                        "connectionId": "30625587-4960-46aa-bfde-ae9aae18d32b",
+                        "selected": false,
+                        "id": null,
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "System5 Admin5",
+                        "modified": null,
+                        "modifiedBy": null
+                     }],
+                     "id": "ba219814-45d3-452a-8542-cacdb85162e9",
+                     "name": "exTemplate",
+                     "type": 1,
+                     "previewRecord": 0,
+                     "advancedMode": false,
+                     "allowNulls": false,
+                     "isDistinct": false,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+                     "description": "",
+                     "createdBy": "System5 Admin5",
+                     "created": "2017-10-18T03:44:37.473",
+                     "modifiedBy": "System5 Admin5",
+                     "version": 1,
+                     "numberOfView": 0,
+                     "renderingTime": 0,
+                     "owner": "System5 Admin5",
+                     "state": 0,
+                     "modified": "2017-10-18T03:44:37.473",
+                     "isShowDetail": false,
+                     "lastViewed": null,
+                     "isSubscribeMode": false,
+                     "deletable": true,
+                     "copyable": true,
+                     "movable": true,
+                     "accessPriority": 1,
+                     "checked": true,
+                     "indeterminate": false,
+                     "isGlobal": false,
+                     "isEditMode": false
+                  }],
+                  "checked": true,
+                  "indeterminate": false,
+                  "numOfCheckedChilds": 0,
+                  "numOfChilds": 0,
+                  "isGlobal": false,
+                  "isEditing": false,
+                  "editable": false,
+                  "tenantId": null
+               }],
+               "dashboards": [],
+               "reports": [],
+               "checked": true,
+               "indeterminate": false,
+               "numOfCheckedChilds": 0,
+               "numOfChilds": 0,
+               "isGlobal": false,
+               "isEditing": false,
+               "editable": false,
+               "tenantId": null
+            }]
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         [{
+            "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+            "tenantName": "Wonka - Wonka",
+            "categories": [{
+               "name": null,
+               "type": 1,
+               "parentId": null,
+               "tenantId": null,
+               "isGlobal": false,
+               "canDelete": false,
+               "editable": false,
+               "savable": false,
+               "subCategories": [{
+                  "name": null,
+                  "type": 1,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "tenantId": null,
+                  "isGlobal": false,
+                  "canDelete": false,
+                  "editable": false,
+                  "savable": false,
+                  "subCategories": [],
+                  "checked": true,
+                  "reports": [{
+                     "name": "exTemplate",
+                     "reportDataSource": [{
+                        "reportId": "169ddc07-b458-44d2-83fd-665deb915c57",
+                        "querySourceId": "45a16d82-18be-4871-a530-783e09a6bac6",
+                        "querySourceUniqueName": "[con;#0].[cat;#0].[actor]",
+                        "querySourceCategoryId": "6ebca7b7-c8f3-4b10-85af-9db3f582c307",
+                        "connectionId": "b75f5e99-18c3-48c2-b9b6-959034edcbfb",
+                        "selected": false,
+                        "id": null,
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": "System5 Admin5",
+                        "modified": null,
+                        "modifiedBy": null
+                     }],
+                     "type": 1,
+                     "previewRecord": 0,
+                     "advancedMode": false,
+                     "allowNulls": false,
+                     "isDistinct": false,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+                     "tenantName": null,
+                     "description": "",
+                     "title": null,
+                     "lastViewed": "2017-10-18T07:37:07.707",
+                     "owner": "IzendaAdmin@system.com",
+                     "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "excludedRelationships": null,
+                     "numberOfView": 1,
+                     "renderingTime": 306.0,
+                     "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "modifiedById": null,
+                     "snapToGrid": false,
+                     "usingFields": null,
+                     "hasDeletedObjects": false,
+                     "header": null,
+                     "footer": null,
+                     "titleDescription": null,
+                     "sourceId": "ba219814-45d3-452a-8542-cacdb85162e9",
+                     "checked": true,
+                     "copyDashboard": false,
+                     "exportFormatSetting": null,
+                     "deletable": false,
+                     "editable": false,
+                     "movable": false,
+                     "copyable": false,
+                     "accessPriority": 0,
+                     "active": false,
+                     "fullPath": null,
+                     "computeNameSettings": null,
+                     "isGlobal": false,
+                     "isCheck": true,
+                     "id": "169ddc07-b458-44d2-83fd-665deb915c57",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 1,
+                     "created": "2017-10-18T07:34:32.803",
+                     "createdBy": "System5 Admin5",
+                     "modified": "2017-10-18T07:34:32.803",
+                     "modifiedBy": "System5 Admin5"
+                  }],
+                  "dashboards": null,
+                  "numOfChilds": 0,
+                  "numOfCheckedChilds": 0,
+                  "indeterminate": false,
+                  "fullPath": null,
+                  "computeNameSettings": null,
+                  "isCheck": true,
+                  "id": null,
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": null,
+                  "modifiedBy": null
+               }],
+               "checked": true,
+               "reports": [],
+               "dashboards": null,
+               "numOfChilds": 0,
+               "numOfCheckedChilds": 0,
+               "indeterminate": false,
+               "fullPath": null,
+               "computeNameSettings": null,
+               "isCheck": true,
+               "id": null,
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System5 Admin5",
+               "modified": null,
+               "modifiedBy": null
+            }],
+            "checked": true
+         }]
 
 POST copyManagement/workspace/detectConflictingDashboard
 --------------------------------------------------------------
@@ -4167,4 +5013,282 @@ Detect conflicting tenant's dashboards.
 
 **Samples**
 
-   To be updated
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample payload:
+
+      .. code-block:: json
+
+         {
+            "id": null,
+            "name": "Workspace",
+            "description": "",
+            "tenantId": null,
+            "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "copyDataModel": false,
+            "copyRoles": false,
+            "copyRolePermission": false,
+            "copyAdvancedSettings": false,
+            "copyTenantPermissions": false,
+            "copyDashboard": true,
+            "copyReport": false,
+            "mergeDuplicateMappings": false,
+            "sourceId": "c1703d12-6f50-454a-82bc-16efc00bbedd",
+            "sourceHashCode": "3b81ceb0de496d4f31d30619021",
+            "state": 0,
+            "selectAllTenants": false,
+            "workspaceTenants": [{
+               "isDirty": true,
+               "tenantName": "Wonka - Wonka",
+               "name": "Wonka",
+               "tenantUniqueName": "Wonka",
+               "workspaceId": null,
+               "tenantId": "6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2",
+               "status": 1,
+               "state": 0,
+               "inserted": false,
+               "version": null,
+               "created": null,
+               "createdBy": null,
+               "modified": null,
+               "modifiedBy": null,
+               "destinationHashCode": null,
+               "dataMapping": [],
+               "databaseSources": [],
+               "querySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  },
+                  "querySources": []
+               },
+               "destinationQuerySourceTree": {
+                  "filter": {
+                     "text": "",
+                     "isFilterFields": true
+                  }
+               }
+            }],
+            "workspaceMappings": [],
+            "copyOption": {
+               
+            },
+            "copyAdvancedSettingOption": {
+               
+            },
+            "copyDashboardOption": {
+               
+            },
+            "copyReportOption": {
+               
+            },
+            "copyTemplateOption": {
+               
+            },
+            "copyTenantPermissionOption": {
+               
+            },
+            "copyRolePermissionOption": {
+               
+            },
+            "copiedRoles": [],
+            "copiedRolePermission": [],
+            "allHashcodes": {
+               "advancedSettings": "",
+               "tenantPermission": "",
+               "roles": "ae94be3cd532ce4a025884819eb",
+               "rolePermissions": "234f0b5092bbbab766f84371568",
+               "dashboards": "825980920635e810a1465329872",
+               "reports": "d41d8cd98f00b204e9800998ecf",
+               "templates": "d41d8cd98f00b204e9800998ecf"
+            },
+            "sourceDashboards": [{
+               "id": null,
+               "type": 0,
+               "name": null,
+               "parentId": null,
+               "state": 0,
+               "modified": null,
+               "canDelete": false,
+               "subCategories": [{
+                  "id": null,
+                  "type": 0,
+                  "name": null,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "state": 0,
+                  "modified": null,
+                  "canDelete": false,
+                  "subCategories": [],
+                  "dashboards": [{
+                     "commonFilterFields": [],
+                     "accesses": [],
+                     "subscriptions": [],
+                     "dashboardParts": [],
+                     "name": "ExDashboard",
+                     "description": null,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "c1703d12-6f50-454a-82bc-16efc00bbedd",
+                     "backgroundColor": null,
+                     "imageUrl": null,
+                     "stretchImage": false,
+                     "id": "5d5ecb92-54ed-48de-9e20-d7c2528600a8",
+                     "state": 0,
+                     "inserted": true,
+                     "version": 1,
+                     "created": "2017-10-18T08:54:21.213",
+                     "createdBy": "System Admin",
+                     "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "modified": "2017-10-18T08:54:21.213",
+                     "modifiedBy": "System Admin",
+                     "showFilterDescription": false,
+                     "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "lastViewed": null,
+                     "accessPriority": 1,
+                     "checked": true
+                  }],
+                  "reports": [],
+                  "checked": true,
+                  "indeterminate": false,
+                  "numOfCheckedChilds": 0,
+                  "numOfChilds": 0,
+                  "isGlobal": false,
+                  "isEditing": false,
+                  "editable": false,
+                  "tenantId": null
+               }],
+               "dashboards": [],
+               "reports": [],
+               "checked": true,
+               "indeterminate": false,
+               "numOfCheckedChilds": 0,
+               "numOfChilds": 0,
+               "isGlobal": false,
+               "isEditing": false,
+               "editable": false,
+               "tenantId": null
+            }]
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         [{
+            "tenantId": "6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2",
+            "tenantName": "Wonka - Wonka",
+            "categories": [{
+               "name": null,
+               "type": 0,
+               "parentId": null,
+               "tenantId": null,
+               "isGlobal": false,
+               "canDelete": false,
+               "editable": false,
+               "savable": false,
+               "subCategories": [{
+                  "name": null,
+                  "type": 0,
+                  "parentId": "00000000-0000-0000-0000-000000000000",
+                  "tenantId": null,
+                  "isGlobal": false,
+                  "canDelete": false,
+                  "editable": false,
+                  "savable": false,
+                  "subCategories": [],
+                  "checked": true,
+                  "reports": [],
+                  "dashboards": [{
+                     "commonFilterFields": [],
+                     "accesses": [],
+                     "subscriptions": [],
+                     "inaccessible": false,
+                     "name": "ExDashboard",
+                     "description": null,
+                     "categoryId": null,
+                     "categoryName": null,
+                     "subCategoryId": null,
+                     "subCategoryName": null,
+                     "tenantId": "6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2",
+                     "imageUrl": null,
+                     "stretchImage": false,
+                     "backgroundColor": null,
+                     "showFilterDescription": false,
+                     "lastViewed": "2017-10-18T09:00:43.36",
+                     "owner": "System Admin",
+                     "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+                     "modifiedById": null,
+                     "checked": true,
+                     "numberOfView": 1,
+                     "renderingTime": 252.0,
+                     "sourceId": "5d5ecb92-54ed-48de-9e20-d7c2528600a8",
+                     "isGlobal": false,
+                     "deletable": false,
+                     "editable": false,
+                     "movable": false,
+                     "copyable": false,
+                     "accessPriority": 0,
+                     "dashboardParts": [],
+                     "indeterminate": false,
+                     "fullPath": null,
+                     "computeNameSettings": null,
+                     "isCheck": true,
+                     "id": "02dcc807-50ce-4daf-be7f-30c503326b3e",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 2,
+                     "created": "2017-10-18T09:00:17.67",
+                     "createdBy": "System Admin",
+                     "modified": "2017-10-18T09:01:03.183",
+                     "modifiedBy": "System Admin"
+                  }],
+                  "numOfChilds": 0,
+                  "numOfCheckedChilds": 0,
+                  "indeterminate": false,
+                  "fullPath": null,
+                  "computeNameSettings": null,
+                  "isCheck": true,
+                  "id": null,
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System Admin",
+                  "modified": null,
+                  "modifiedBy": null
+               }],
+               "checked": true,
+               "reports": [],
+               "dashboards": [],
+               "numOfChilds": 0,
+               "numOfCheckedChilds": 0,
+               "indeterminate": false,
+               "fullPath": null,
+               "computeNameSettings": null,
+               "isCheck": true,
+               "id": null,
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System Admin",
+               "modified": null,
+               "modifiedBy": null
+            }],
+            "checked": true
+         }]

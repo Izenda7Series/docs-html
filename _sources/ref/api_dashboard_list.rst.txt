@@ -119,62 +119,71 @@ Returns an array of dashboard categories, filtered by tenant_id if available.
       GET /api/dashboard/categories HTTP/1.1
 
    Response::
-      
-      [{
-           "dashboards" : null,
-           "subCategories" : [{
-                 "dashboards" : null,
-                 "subCategories" : null,
-                 "name" : "Subcategory01",
-                 "type" : 2,
-                 "parentId" : "f5cd474e-0f96-4e59-9612-e98bc3f1d10a",
-                 "tenantId" : null,
-                 "canDelete" : false,
-                 "status" : 2,
-                 "id" : "60d72d90-5a1f-48ab-8b83-072a322669fb",
-                 "state" : 0,
-                 "inserted" : true,
-                 "version" : null,
-                 "created" : null,
-                 "createdBy" : null,
-                 "modified" : null,
-                 "modifiedBy" : null
-              }
-           ],
-           "name" : "Category01",
-           "type" : 2,
-           "parentId" : null,
-           "tenantId" : null,
-           "canDelete" : false,
-           "status" : 2,
-           "id" : "f5cd474e-0f96-4e59-9612-e98bc3f1d10a",
-           "state" : 0,
-           "inserted" : true,
-           "version" : null,
-           "created" : null,
-           "createdBy" : null,
-           "modified" : null,
-           "modifiedBy" : null
-        }, {
-           "dashboards" : null,
-           "subCategories" : null,
-           "name" : "Uncategorized",
-           "type" : 2,
-           "parentId" : null,
-           "tenantId" : null,
-           "canDelete" : false,
-           "status" : 1,
-           "id" : "00000000-0000-0000-0000-000000000000",
-           "state" : 0,
-           "inserted" : true,
-           "version" : null,
-           "created" : null,
-           "createdBy" : null,
-           "modified" : null,
-           "modifiedBy" : null
-        }
+
+      [
+         {
+            "name": "CN",
+            "type": 2,
+            "parentId": null,
+            "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+            "isGlobal": false,
+            "createdById": "88ca2835-81e0-443b-b29e-e694a66b8e7a",
+            "canDelete": false,
+            "editable": true,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": [],
+            "numOfChilds": 1,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 2,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "930831d2-a4fd-48fc-bd64-9ba244d05ebf",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": "acme",
+            "modified": null,
+            "modifiedBy": null
+         },
+         {
+            "name": "Uncategorized",
+            "type": 2,
+            "parentId": null,
+            "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+            "isGlobal": false,
+            "createdById": "88ca2835-81e0-443b-b29e-e694a66b8e7a",
+            "canDelete": false,
+            "editable": false,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": [],
+            "numOfChilds": 1,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 1,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "00000000-0000-0000-0000-000000000000",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": "acme",
+            "modified": null,
+            "modifiedBy": null
+         }
       ]
-      
 
 POST dashboard/categories
 --------------------------------------------------------------
@@ -227,7 +236,86 @@ Returns a paged array of dashboard categories.
 
       POST /api/dashboard/categories HTTP/1.1
 
-   To be updated
+   Request Payload::
+
+      {
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+         "skipItems": 0,
+         "pageSize": 1,
+         "parentIds": [],
+         "includeGlobalCategory": true
+      }
+
+   Sample Response::
+
+      {
+         "data": [
+            {
+                  "name": "Local Categories",
+                  "type": 0,
+                  "parentId": null,
+                  "tenantId": null,
+                  "isGlobal": false,
+                  "canDelete": false,
+                  "editable": false,
+                  "savable": false,
+                  "subCategories": [
+                     {
+                        "name": "Uncategorized",
+                        "type": 2,
+                        "parentId": null,
+                        "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
+                        "isGlobal": false,
+                        "canDelete": false,
+                        "editable": false,
+                        "savable": false,
+                        "subCategories": [],
+                        "checked": false,
+                        "reports": [],
+                        "dashboards": [],
+                        "numOfChilds": 0,
+                        "numOfCheckedChilds": 0,
+                        "indeterminate": false,
+                        "fullPath": null,
+                        "computeNameSettings": null,
+                        "isCheck": false,
+                        "id": null,
+                        "state": 0,
+                        "deleted": false,
+                        "inserted": true,
+                        "version": null,
+                        "created": null,
+                        "createdBy": " acme",
+                        "modified": null,
+                        "modifiedBy": null
+                     }
+                  ],
+                  "checked": false,
+                  "reports": [],
+                  "dashboards": [],
+                  "numOfChilds": 1,
+                  "numOfCheckedChilds": 0,
+                  "indeterminate": false,
+                  "fullPath": null,
+                  "computeNameSettings": null,
+                  "isCheck": false,
+                  "id": "09f8c4ab-0fe8-4e03-82d1-7949e3738f87",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "acme",
+                  "modified": null,
+                  "modifiedBy": null
+            }
+         ],
+         "totalItems": 2,
+         "numOfChilds": 1,
+         "numOfCheckedChilds": 0,
+         "indeterminate": false,
+         "isLastPage": true
+      }
 
 
 POST dashboard/category
@@ -270,7 +358,8 @@ Renames a dashboard category.
       
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data" : null
       }
 
 DELETE dashboard/category/{dashboard_category_id}
@@ -296,7 +385,8 @@ Removes a dashboard category.
       
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data" : null
       }
 
 POST dashboard/validateCategoryName
@@ -314,7 +404,40 @@ Validates dashboard category name.
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      POST /api/dashboard/validateCategoryName HTTP/1.1
+
+   Request Payload::
+
+      {
+         "id": "930831d2-a4fd-48fc-bd64-9ba244d05ebf",
+         "type": 2,
+         "name": "ACME",
+         "parentId": null,
+         "state": 0,
+         "modified": null,
+         "canDelete": false,
+         "subCategories": [],
+         "dashboards": [],
+         "reports": [],
+         "checked": false,
+         "indeterminate": false,
+         "numOfCheckedChilds": 0,
+         "numOfChilds": 0,
+         "isGlobal": false,
+         "isEditing": true,
+         "editable": true,
+         "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e"
+      }
+
+   Sample Response::
+
+      {
+         "success": true,
+         "messages": null,
+         "data": null
+      }
 
 GET dashboard/emailTemplates/{isSubscription}
 --------------------------------------------------------------

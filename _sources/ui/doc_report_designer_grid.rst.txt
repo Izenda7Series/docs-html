@@ -256,10 +256,10 @@ Define a Pivot Grid Content
 .. _Grid_NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity:
 
 .. figure:: /_static/images/NW_Orders_Order_Count_by_OrderYear_ShipCountry_ShipCity.png
-   :align: right
-   :width: 387px
+   :align: center
+   :width: 1204px
 
-   Order Count by OrderYear, ShipCountry and ShipCity
+   Order Count and Freight Sum by OrderYear, ShipCountry and ShipCity
 
 To
 define this sample report:
@@ -272,20 +272,38 @@ define this sample report:
 #. Select the field in Columns box to open the Field Properties.
 #. Check to confirm that in Data Formatting group, "Year" is selected
    for the format.
-#. Drag ShipCountry field in Orders table from Middle Panel into Columns
+#. Drag ShipCountry field in Orders table from Middle Panel into Rows
    box.
 #. The field will be given the alias "Group(ShipCountry)" (Group
    function is used as expected).
-#. Drag ShipCity field in Orders table from Middle Panel into Columns
+#. Drag ShipCity field in Orders table from Middle Panel into Rows
    box.
 #. The field will be given the alias "Group(ShipCity)" (Group function
    is used as expected).
-#. Drag OrderID field in Orders table from Middle Panel into Columns
+#. Drag OrderID field in Orders table from Middle Panel into Values
    box.
 #. The field will be given the alias "Sum(OrderID)" (not the expected
    Count function).
-#. Select the field in Columns box to open the Field Properties.
-#. In Data Formatting, select "Count" as the Function. |br|
+#. Select the field in Values box to open the Field Properties.
+#. In Data Formatting, select "Count" as the Function.
+#. Drag Freight field in Orders table from Middle Panel into Values
+   box.
+#. The field will be given the alias "Sum(Freight)" (Sum function
+   is used as expected). |br|
+
+.. topic:: Side Total
+
+   In a Pivot Grid report, Side Total values will provide the sum of all values for each field in Values box across each row.
+
+   To set up Side Total for a Pivot Grid report, check on the “Add Side Total” checkbox under Columns section in Configuration Section in report part backside.
+
+   .. figure:: /_static/images/NW_Side_Total_Example.png
+      :align: center
+      :width: 1555px
+
+      Side Total for Count(OrderID) and Sum(Freight) for each ShipCity through the years.
+
+|br|
 
 Define a Drill Down Grid Content
 --------------------------------

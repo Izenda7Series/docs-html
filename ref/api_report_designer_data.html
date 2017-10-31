@@ -244,12 +244,12 @@ See also: <a class="reference internal" href="#post-fusion-validatedatamodelexpr
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-fusion-validategrandtotalexpression">POST fusion/validateGrandTotalExpression</a></td>
 <td>Validates grand total expression syntax and returns a suggested data type.</td>
-<td>&#160;</td>
+<td>In Report Designer &gt; Field Properties &gt; Grand Total &gt; Choose [Expression] in Grand Total Funtion dropdown list &gt; Input an expression</td>
 </tr>
-<tr class="row-even"><td>POST fusion/validateSubTotalExpression</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-fusion-validatesubtotalexpression">POST fusion/validateSubTotalExpression</a></td>
 <td>Validates sub total expression syntax and returns a suggested data type. <br clear="right" /> <br clear="right" />
 Same request and response as <a class="reference internal" href="#post-fusion-validategrandtotalexpression">POST fusion/validateGrandTotalExpression</a></td>
-<td>&#160;</td>
+<td>In Report Designer &gt; Field Properties &gt; Sub Total &gt; Choose [Expression] in Sub Total Funtion dropdown list &gt; Input an expression</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-fusion-loaddata">POST fusion/loadData</a></td>
 <td>Loads data for report.</td>
@@ -257,11 +257,13 @@ Same request and response as <a class="reference internal" href="#post-fusion-va
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#post-fusion-reportpartpreview">POST fusion/reportPartPreview</a></td>
 <td>Loads preview data for report part.</td>
-<td>&#160;</td>
+<td>In Report Designer:
+- Add any field to the container <br clear="right" />
+- OR Copy a report part</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-fusion-previewgrandtotal">POST fusion/previewGrandTotal</a></td>
 <td>Loads preview data for grand total.</td>
-<td>&#160;</td>
+<td>In Report Designer &gt; Field Properties &gt; Grand Total &gt; Input all required fields in Grand Total Settings popup &gt; Click on &#8220;Preview&#8221; button</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#get-fusion-report-id-report-part-id-pageindex-pagesize">GET fusion/{report_id}/{report_part_id}/(pageIndex)/(pageSize)</a></td>
 <td>Loads report part data with paging and optional overridden filter values and operators.</td>
@@ -279,7 +281,7 @@ Obsolete, use <a class="reference internal" href="#post-fusion-validateexpressio
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-fusion-previewsubtotal">POST fusion/previewSubTotal</a></td>
 <td>Loads preview data for sub total.</td>
-<td>&#160;</td>
+<td>In Report Designer &gt; Field Properties &gt; Sub Total &gt; Input all required fields in Sub Total Settings popup &gt; Click on &#8220;Preview&#8221; button</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#post-fusion-calculatedfieldvalue">POST fusion/calculatedFieldValue</a></td>
 <td>Returns a single calculated field value for preview section.</td>
@@ -295,7 +297,14 @@ Obsolete, use <a class="reference internal" href="#post-fusion-validateexpressio
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-fusion-reportpartpreview">POST fusion/reportPartPreview</a></td>
 <td>Returns data for a report part preview request.</td>
-<td>Report Designer, preview a report part</td>
+<td><dl class="first last docutils">
+<dt>In Report Designer: <br clear="right" /></dt>
+<dd>- Click on &#8220;Update Result&#8221; button <br clear="right" />
+- OR Add any field to containers <br clear="right" />
+- OR Remove any fiels from containers <br clear="right" />
+- OR Make any field in containers changed</dd>
+</dl>
+</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#get-fusion-printquery-reportid-reportpartid-pageindex-pagesize">GET fusion/printQuery/{reportId}/{reportPartId}/(pageIndex)/(pageSize)</a></td>
 <td>Returns the sql query for a report part load with paging and optional overridden filter values and operators.</td>
@@ -841,11 +850,470 @@ Request payload:</div>
 </div>
 <p>Response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;result&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="s2">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-fusion-validatesubtotalexpression">
+<h2>POST fusion/validateSubTotalExpression<a class="headerlink" href="#post-fusion-validatesubtotalexpression" title="Permalink to this headline">¶</a></h2>
+<p>Validates grand total expression syntax and returns a suggested data type.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/ReportPartValidateExpressionParameter.html"><span class="doc">ReportPartValidateExpressionParameter</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/ValidationOperationResult.html"><span class="doc">ValidationOperationResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/fusion/validateSubTotalExpression</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Request payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;eb627589-cc33-47a6-9031-3ad1f2787638&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;report&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;exReport&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;c279ed4d-f4d0-4abd-8d10-d396512ee77a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;c279ed4d-f4d0-4abd-8d10-d396512ee77a&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myCategory&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;subCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;aliasId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03_film_actor&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;film_actor&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;30077a15-9fef-42af-8b24-d224ab7757ba&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;primaryFields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;actor_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;smallint&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;filterable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;filteredValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;groupPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;matchedTenant&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;functionName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;actor_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isParameter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;querySource&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;inaccessible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;originalAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;070926fc-0ffe-449c-aa4b-867cc09c6399&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;smallint&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;filterable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;filteredValue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;groupPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;matchedTenant&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;functionName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isParameter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;querySource&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;inaccessible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;originalAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;bf92615e-e775-422e-8ef7-335affbe9fad&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}]</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;reportRelationship&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;logic&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;filterFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;f018f1f9-e5ac-4569-869e-c3c5417dbde1&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;eb627589-cc33-47a6-9031-3ad1f2787638&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reportPart&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;reportPartContent&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;subReportDefinitionCollection&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;collapseStatus&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCrossFiltering&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;columns&quot;</span><span class="p">:</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+               <span class="p">},</span>
+               <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+               <span class="p">},</span>
+               <span class="nt">&quot;elements&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;reportPartContent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;actor_id&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;070926fc-0ffe-449c-aa4b-867cc09c6399&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;actor_id&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;actor_id&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_actor&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;isSelected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="kc">null</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;reportPartContent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;functionInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;createNewHiddenPercenOfGroupField&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;alignLeft&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;Unsort&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;alternativeText&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;embeddedJavascript&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Subtotal  film_id&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;function&quot;</span><span class="p">:</span> <span class="s2">&quot;[Expression]&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;COUNT([film_id]) * 10&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+                           <span class="p">},</span>
+                           <span class="nt">&quot;previewResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;fieldDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">10</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;grandTotal&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;family&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;bold&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;italic&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;underline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                        <span class="p">},</span>
+                        <span class="nt">&quot;alignment&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;wordWrap&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;columnGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                           <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                              <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                           <span class="p">},</span>
+                           <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                        <span class="p">}</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+                     <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                  <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;bf92615e-e775-422e-8ef7-335affbe9fad&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_actor&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;isSelected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="kc">null</span>
+               <span class="p">}],</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;columns&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;separators&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;generalInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;gridStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;separatorStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;Comma&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;table&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">150</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;rows&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;alterBackgroundColor&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;grouping&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;useSeparator&quot;</span><span class="p">:</span> <span class="kc">true</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;view&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;dataRefreshInterval&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;enable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;updateInterval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;isAll&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;latestRecord&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;usePagination&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                  <span class="nt">&quot;collapseDrilldownByDefault&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                  <span class="nt">&quot;pivotColumnsPerExportedPage&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;printing&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;usePageBreakAfterSeparator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;changeGridStyleStatus&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;inconsitentFunction&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;dataSource&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+            <span class="p">},</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;eb627589-cc33-47a6-9031-3ad1f2787638&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+         <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;numberOfRecord&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;configField&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;reportPartContent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;fieldItemVisible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;dataFormattings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;headerFormating&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;drillDown&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;subReport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;selectedReport&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportPartUsed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;mappingFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                     <span class="nt">&quot;selectedIconValue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                     <span class="p">},</span>
+                     <span class="nt">&quot;viewSettingByLink&quot;</span><span class="p">:</span> <span class="kc">null</span>
+                  <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;otherProps&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;bf92615e-e775-422e-8ef7-335affbe9fad&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_actor&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;isDeleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isSelected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">561.15625</span><span class="p">,</span>
+               <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">582</span><span class="p">,</span>
+               <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mf">79.84375</span><span class="p">,</span>
+               <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+               <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="mf">561.15625</span><span class="p">,</span>
+               <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="mi">641</span><span class="p">,</span>
+               <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="mi">582</span><span class="p">,</span>
+               <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="mi">604</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;stateReview&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;refreshDataProcess&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;refreshDataInterval&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;positionY&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;positionX&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8a23ae27-7e6f-4236-ad74-8e42c89ddcf1&quot;</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;header&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;footer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;titleDescription&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;schedules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;accesses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;exportFormatSetting&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdById&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dynamicQuerySourceFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;snapToGrid&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;excludedRelationships&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="s2">&quot;COUNT([film_id]) * 10&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;reportField&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;bf92615e-e775-422e-8ef7-335affbe9fad&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fieldNameAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_id&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataFieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sourceAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;film_actor&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;querySourceFieldId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Sample succesful response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:{</span><span class="s2">&quot;izendaDataType&quot;</span><span class="p">:</span><span class="s2">&quot;Numeric&quot;</span><span class="p">},</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:[],</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:</span><span class="n">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1974,7 +2442,7 @@ Request payload:</div>
 </div>
 </div>
 <p>Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">10</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;hasRecord&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;dataType&quot;</span><span class="p">:</span><span class="s2">&quot;Numeric&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -3183,7 +3651,7 @@ Request payload:</div>
 </div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mf">426.0</span><span class="p">,</span><span class="s2">&quot;dataType&quot;</span><span class="p">:</span><span class="s2">&quot;Money&quot;</span><span class="p">}</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mf">426.0</span><span class="p">,</span><span class="s2">&quot;dataType&quot;</span><span class="p">:</span><span class="s2">&quot;Money&quot;</span><span class="p">,</span><span class="s2">&quot;hasRecord&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -3254,6 +3722,7 @@ string (GUID)</td>
 <p>Response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span>
+  <span class="s2">&quot;hasRecord&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;dataType&quot;</span><span class="p">:</span><span class="s2">&quot;Numeric&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -4188,7 +4657,7 @@ Request payload:</div>
 <div>Payload: a <a class="reference internal" href="models/FusionDataRequest.html"><span class="doc">FusionDataRequest</span></a> object</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>The query in a &#8220;query.txt&#8221; file</div></blockquote>
+<div>The query a text (.txt) file</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
 <div><div class="highlight-HTTP"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/fusion/printQuery</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -4232,7 +4701,7 @@ Request payload:</div>
 <div>Payload: a <a class="reference internal" href="models/ReportPartPreviewParameter.html"><span class="doc">ReportPartPreviewParameter</span></a> object</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>The query in a &#8220;query.txt&#8221; file</div></blockquote>
+<div>The query a text (.txt) file</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/fusion/printQuery/reportPartPreview</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -4459,10 +4928,10 @@ Request payload:</div>
 <div>No payload</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>The query in a &#8220;query.txt&#8221; file</div></blockquote>
+<div>The query a text (.txt) file</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/fusion/printQuery/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/79bf6715-4467-4f1b-8289-ad81c9defd6b</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/fusion/printQuery/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/79bf6715-4467-4f1b-8289-ad81c9defd6b</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 </div></blockquote>

@@ -116,6 +116,38 @@ Saves report setting.
       }
 
 
+   Sample Response::
+
+      {
+         "success": true,
+         "reportSetting": {
+            "numOfArchivedVersionToKeepDefault": 5,
+            "enforceVersionHistory": true,
+            "numOfArchivedVersionToKeep": 5,
+            "removeArchivedVersions": true,
+            "isScheduled": false,
+            "localCategoryName": "Local Categories",
+            "globalCategoryName": "Global Categories",
+            "recurrentReportSetting": {
+               "once": false,
+               "recurrence": true,
+               "startDate": "2017-10-17T00:00:00",
+               "startTime": "2017-06-16T17:00:00",
+               "recurrenceType": 0,
+               "occurValue": null
+            },
+            "id": "9af62d45-df46-4db3-83b6-b943da5f7a87",
+            "state": 3,
+            "deleted": false,
+            "inserted": false,
+            "version": null,
+            "created": "2017-10-17T09:19:13.9683186",
+            "createdBy": "System5 Admin5",
+            "modified": "2017-10-17T09:19:13.9839496",
+            "modifiedBy": "System5 Admin5"
+         }
+      }
+
 GET systemSetting/reportSetting
 --------------------------------------------------------------
 
@@ -239,36 +271,71 @@ Updates the security policies.
    Request payload::
 
       {
-        "id": "00000000-0000-0000-0000-000000000000",
-        "state": 0,
-        "inserted": true,
-        "version": null,
-        "created": null,
-        "createdBy": null,
-        "modified": null,
-        "minNumberOfPasswordLenght": 6,
-        "maxNumberOfPasswordLenght": 10,
-        "minNumberOfSpecialCharacter": null,
-        "maxNumberOfSpecialCharacter": null,
-        "minNumberOfUppercaseCharacter": null,
-        "maxNumberOfUppercaseCharacter": null,
-        "minNumberOfLowercaseCharacter": null,
-        "maxNumberOfLowercaseCharacter": null,
-        "minNumberOfNumericCharacter": null,
-        "maxNumberOfNumericCharacter": null,
-        "maxNumberOfRepeatSequential": null,
-        "minNumberOfPasswordAge": null,
-        "maxNumberOfPasswordAge": null,
-        "notifyUseDuring": null,
-        "numberOfPasswordToKeep": null,
-        "passwordLinkValidity": null,
-        "numberOfQuestionProfile": null,
-        "numberOfQuestionResetPassword": null,
-        "numberOfFailedLogonAllowed": null,
-        "numberOfFailedAnswerAllowed": null,
-        "lockoutPeriod": null
+         "id": "1700ffc4-597e-48c2-8220-f17167cb69d2",
+         "state": 0,
+         "inserted": true,
+         "version": 2,
+         "created": "2017-07-14T07:28:14.1500000+07:00",
+         "createdBy": "System5 Admin5",
+         "modified": "2017-09-28T07:03:57.6770000+07:00",
+         "minNumberOfPasswordLenght": 4,
+         "maxNumberOfPasswordLenght": 10,
+         "minNumberOfSpecialCharacter": null,
+         "maxNumberOfSpecialCharacter": null,
+         "minNumberOfUppercaseCharacter": null,
+         "maxNumberOfUppercaseCharacter": null,
+         "minNumberOfLowercaseCharacter": null,
+         "maxNumberOfLowercaseCharacter": null,
+         "minNumberOfNumericCharacter": null,
+         "maxNumberOfNumericCharacter": null,
+         "maxNumberOfRepeatSequential": null,
+         "minNumberOfPasswordAge": null,
+         "maxNumberOfPasswordAge": null,
+         "notifyUseDuring": null,
+         "numberOfPasswordToKeep": null,
+         "passwordLinkValidity": null,
+         "numberOfQuestionProfile": null,
+         "numberOfQuestionResetPassword": null,
+         "numberOfFailedLogonAllowed": null,
+         "numberOfFailedAnswerAllowed": null,
+         "lockoutPeriod": null
       }
 
+   Sample response::
+
+      {
+         "minNumberOfPasswordLenght": 4,
+         "maxNumberOfPasswordLenght": 10,
+         "minNumberOfSpecialCharacter": null,
+         "maxNumberOfSpecialCharacter": null,
+         "minNumberOfUppercaseCharacter": null,
+         "maxNumberOfUppercaseCharacter": null,
+         "minNumberOfLowercaseCharacter": null,
+         "maxNumberOfLowercaseCharacter": null,
+         "minNumberOfNumericCharacter": null,
+         "maxNumberOfNumericCharacter": null,
+         "maxNumberOfRepeatSequential": null,
+         "minNumberOfPasswordAge": null,
+         "maxNumberOfPasswordAge": null,
+         "notifyUseDuring": null,
+         "numberOfPasswordToKeep": null,
+         "passwordLinkValidity": null,
+         "numberOfQuestionProfile": null,
+         "numberOfQuestionResetPassword": null,
+         "numberOfFailedLogonAllowed": null,
+         "numberOfFailedAnswerAllowed": null,
+         "tenantId": null,
+         "lockoutPeriod": null,
+         "id": "1700ffc4-597e-48c2-8220-f17167cb69d2",
+         "state": 0,
+         "deleted": false,
+         "inserted": true,
+         "version": 2,
+         "created": "2017-07-14T07:28:14.1500000+07:00",
+         "createdBy": "System5 Admin5",
+         "modified": "2017-10-17T09:30:53.7169802Z",
+         "modifiedBy": null
+      }
 
 POST systemSetting/loadSchedules
 --------------------------------------------------------------

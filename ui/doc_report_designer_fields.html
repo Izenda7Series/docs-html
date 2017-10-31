@@ -141,6 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_grand_total_sub_total.html">Grand Total and Sub Total</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
@@ -936,8 +937,21 @@ require a single input parameter in a compatible data type.</li>
 <ul>
 <li><p class="first">Choose a display format for the field.</p>
 <blockquote>
-<div><p>The list of available dispaly formats depends on the data type of
+<div><p>The list of available formats depends on the data type of
 the field.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.6.0: </span>Add new formats for Numeric and Money Data Types.</p>
+</div>
+<p>- % of Subtotal <br clear="right" />
+- % of Subtotal (with rounding) <br clear="right" />
+- % of Grandtotal <br clear="right" />
+- % of Grandtotal (with rounding) <br clear="right" />
+- % of Sidetotal <br clear="right" />
+- % of Sidetotal (with rounding) <br clear="right" /></p>
+<p class="last">When a sub/grand total is not yet defined, it should default to the sum.</p>
+</div>
 </div></blockquote>
 </li>
 <li><p class="first">Choose a font face and font size.</p>
@@ -1017,7 +1031,8 @@ current window.</li>
 <p class="topic-title first">Grand Total and Sub Total</p>
 <p>In report tables, the Grand Total for a field will provide the sum of all values within that field across the entire table. For example, in a report for Northwind database&#8217;s Orders table, the Grand Total for Freight field will tell the sum of all Freight costs until now. Screenshot to be updated.</p>
 <p>To have the sum for all Freight costs to each country without having to create additional reports, Grouping and Sub Total can be used. Grouping will group data for each ShipCountry together, while Sub Total for Freight field will give the sum of all Freight costs in each country/group. Screenshot to be updated.</p>
-<p>Grand Total and Sub Total is not necessarily the sum calculation. Other functions include minimum, maximum, average and count.</p>
+<p>Grand Total and Sub Total is not necessarily the sum calculation. Other functions include minimum, maximum, average, count and user-defined expression.</p>
+<p>For more detail about Grand Total and Sub Total please read <a class="reference internal" href="doc_grand_total_sub_total.html"><span class="doc">Grand Total and Sub Total</span></a>.</p>
 </div>
 <p><br clear="right" /></p>
 <p>To set up both Grand Total and Sub Total for Freight costs in Northwind database&#8217;s Orders table as an example:</p>
@@ -1051,6 +1066,15 @@ Freight Costs&#8221;).</p>
 <li><p class="first">The data type Money is automatically suggested in Data Type
 drop-down.</p>
 </li>
+<li><p class="first">Select a format in Format drop-down.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.6.0: </span>Add new formats:</p>
+<p>- % of Subtotal <br clear="right" />
+- % of Subtotal (with rounding) <br clear="right" />
+- % of Grandtotal <br clear="right" />
+- % of Grandtotal (with rounding)</p>
+</div>
+</li>
 <li><p class="first">Click OK to close the pop-up.</p>
 <div class="figure" id="id32">
 <span id="report-designer-freight-grand-total-sum"></span><a class="reference internal image-reference" href="../_images/Report_Designer_Freight_Grand_Total_Sum.png"><img alt="../_images/Report_Designer_Freight_Grand_Total_Sum.png" src="../_images/Report_Designer_Freight_Grand_Total_Sum.png" style="width: 590px;" /></a>
@@ -1067,6 +1091,17 @@ Costs for this Country&#8221;).</p>
 </li>
 <li><p class="first">The data type Money is automatically suggested in Data Type
 drop-down.</p>
+</li>
+<li><p class="first">Select a format in Format drop-down.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.6.0: </span>Add new formats:</p>
+<p>- % of Subtotal <br clear="right" />
+- % of Subtotal (with rounding) <br clear="right" />
+- % of Grandtotal <br clear="right" />
+- % of Grandtotal (with rounding)</p>
+</div>
+</li>
+<li><p class="first">Click OK to close the pop-up.</p>
 </li>
 <li><p class="first">Click OK to close the pop-up.</p>
 <div class="figure" id="id33">

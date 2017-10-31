@@ -31,20 +31,22 @@ Summary
      - Report Designer > Fields > Add Calculated Field > Expression
    * - `POST fusion/validateGrandTotalExpression`_
      - Validates grand total expression syntax and returns a suggested data type.
-     -
-   * - POST fusion/validateSubTotalExpression
+     - In Report Designer > Field Properties > Grand Total > Choose [Expression] in Grand Total Funtion dropdown list > Input an expression
+   * - `POST fusion/validateSubTotalExpression`_
      - Validates sub total expression syntax and returns a suggested data type. |br| |br|
        Same request and response as `POST fusion/validateGrandTotalExpression`_
-     -
+     - In Report Designer > Field Properties > Sub Total > Choose [Expression] in Sub Total Funtion dropdown list > Input an expression
    * - `POST fusion/loadData`_
      - Loads data for report.
      - Report Viewer
    * - `POST fusion/reportPartPreview`_
      - Loads preview data for report part.
-     -
+     - In Report Designer:
+       \- Add any field to the container |br|
+       \- OR Copy a report part
    * - `POST fusion/previewGrandTotal`_
      - Loads preview data for grand total.
-     -
+     - In Report Designer > Field Properties > Grand Total > Input all required fields in Grand Total Settings popup > Click on "Preview" button
    * - `GET fusion/{report_id}/{report_part_id}/(pageIndex)/(pageSize)`_
      - Loads report part data with paging and optional overridden filter values and operators.
      -
@@ -58,7 +60,7 @@ Summary
      - Not used
    * - `POST fusion/previewSubTotal`_
      - Loads preview data for sub total.
-     -
+     - In Report Designer > Field Properties > Sub Total > Input all required fields in Sub Total Settings popup > Click on "Preview" button
    * - `POST fusion/calculatedFieldValue`_
      - Returns a single calculated field value for preview section.
      -
@@ -67,10 +69,14 @@ Summary
      -
    * - `POST fusion/printQuery`_
      - Returns the sql query for a data request.
-     -
+     - 
    * - `POST fusion/reportPartPreview`_
      - Returns data for a report part preview request.
-     - Report Designer, preview a report part
+     - In Report Designer: |br|
+        \- Click on "Update Result" button |br|
+        \- OR Add any field to containers |br|
+        \- OR Remove any fiels from containers |br|
+        \- OR Make any field in containers changed
    * - `GET fusion/printQuery/{reportId}/{reportPartId}/(pageIndex)/(pageSize)`_
      - Returns the sql query for a report part load with paging and optional overridden filter values and operators.
      -
@@ -625,11 +631,476 @@ Validates grand total expression syntax and returns a suggested data type.
    Response::
 
       {
-        "result" : {
-           "izendaDataType" : ""
-        },
-        "success" : true,
-        "messages" : []
+         "result": {
+            "izendaDataType": "Numeric"
+         },
+         "success": true,
+         "messages": [],
+         "data": null
+      }
+
+POST fusion/validateSubTotalExpression
+--------------------------------------------------------------
+
+Validates grand total expression syntax and returns a suggested data type.
+
+**Request**
+
+    Payload: a :doc:`models/ReportPartValidateExpressionParameter` object
+
+**Response**
+
+    An :doc:`models/ValidationOperationResult` object
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/fusion/validateSubTotalExpression HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Request payload:
+
+      .. code-block:: json
+
+         {
+            "reportKey": {
+               "key": "eb627589-cc33-47a6-9031-3ad1f2787638",
+               "tenantId": "28788c9b-4e0d-464e-b588-ea5bee676bd3"
+            },
+            "report": {
+               "name": "exReport",
+               "type": 0,
+               "previewRecord": 10,
+               "advancedMode": true,
+               "allowNulls": false,
+               "isDistinct": false,
+               "categoryId": "c279ed4d-f4d0-4abd-8d10-d396512ee77a",
+               "category": {
+                  "id": "c279ed4d-f4d0-4abd-8d10-d396512ee77a",
+                  "name": "myCategory",
+                  "type": 0,
+                  "tenantId": "28788c9b-4e0d-464e-b588-ea5bee676bd3"
+               },
+               "subCategory": {
+                  "id": null,
+                  "name": "",
+                  "type": 0,
+                  "tenantId": "28788c9b-4e0d-464e-b588-ea5bee676bd3"
+               },
+               "subCategoryId": null,
+               "reportDataSource": [{
+                  "aliasId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03_film_actor",
+                  "querySourceId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03",
+                  "querySourceName": "film_actor",
+                  "selected": true,
+                  "categoryId": "30077a15-9fef-42af-8b24-d224ab7757ba",
+                  "primaryFields": [{
+                     "name": "actor_id",
+                     "alias": "",
+                     "dataType": "smallint",
+                     "izendaDataType": "Numeric",
+                     "allowDistinct": false,
+                     "visible": true,
+                     "filterable": true,
+                     "querySourceId": "00000000-0000-0000-0000-000000000000",
+                     "parentId": null,
+                     "expressionFields": [],
+                     "filteredValue": "",
+                     "type": 0,
+                     "groupPosition": 0,
+                     "position": 0,
+                     "extendedProperties": "{\"PrimaryKey\":true}",
+                     "physicalChange": 0,
+                     "approval": 0,
+                     "existed": false,
+                     "matchedTenant": false,
+                     "functionName": null,
+                     "expression": null,
+                     "isRunningField": false,
+                     "fullName": null,
+                     "calculatedTree": null,
+                     "reportId": null,
+                     "originalName": "actor_id",
+                     "originalId": "00000000-0000-0000-0000-000000000000",
+                     "isParameter": false,
+                     "isCalculated": false,
+                     "hasAggregatedFunction": false,
+                     "querySource": null,
+                     "querySourceName": null,
+                     "categoryName": null,
+                     "inaccessible": false,
+                     "originalAlias": null,
+                     "fullPath": null,
+                     "isCheck": false,
+                     "id": "070926fc-0ffe-449c-aa4b-867cc09c6399",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": null,
+                     "created": null,
+                     "createdBy": "System5 Admin5",
+                     "modified": "0001-01-01T00:00:00",
+                     "modifiedBy": null
+                  },
+                  {
+                     "name": "film_id",
+                     "alias": "",
+                     "dataType": "smallint",
+                     "izendaDataType": "Numeric",
+                     "allowDistinct": false,
+                     "visible": true,
+                     "filterable": true,
+                     "querySourceId": "00000000-0000-0000-0000-000000000000",
+                     "parentId": null,
+                     "expressionFields": [],
+                     "filteredValue": "",
+                     "type": 0,
+                     "groupPosition": 0,
+                     "position": 0,
+                     "extendedProperties": "{\"PrimaryKey\":true}",
+                     "physicalChange": 0,
+                     "approval": 0,
+                     "existed": false,
+                     "matchedTenant": false,
+                     "functionName": null,
+                     "expression": null,
+                     "isRunningField": false,
+                     "fullName": null,
+                     "calculatedTree": null,
+                     "reportId": null,
+                     "originalName": "film_id",
+                     "originalId": "00000000-0000-0000-0000-000000000000",
+                     "isParameter": false,
+                     "isCalculated": false,
+                     "hasAggregatedFunction": false,
+                     "querySource": null,
+                     "querySourceName": null,
+                     "categoryName": null,
+                     "inaccessible": false,
+                     "originalAlias": null,
+                     "fullPath": null,
+                     "isCheck": false,
+                     "id": "bf92615e-e775-422e-8ef7-335affbe9fad",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": null,
+                     "created": null,
+                     "createdBy": "System5 Admin5",
+                     "modified": "0001-01-01T00:00:00",
+                     "modifiedBy": null
+                  }]
+               }],
+               "reportRelationship": [],
+               "reportFilter": {
+                  "logic": "",
+                  "visible": false,
+                  "filterFields": [],
+                  "id": "f018f1f9-e5ac-4569-869e-c3c5417dbde1",
+                  "reportId": "eb627589-cc33-47a6-9031-3ad1f2787638"
+               },
+               "reportPart": [{
+                  "isDirty": false,
+                  "reportPartContent": {
+                     "subReportDefinitionCollection": [],
+                     "collapseStatus": 0,
+                     "isDirty": false,
+                     "isCrossFiltering": false,
+                     "type": "3",
+                     "columns": 
+                     {
+                        "text": null,
+                        "properties": {
+                           
+                        },
+                        "settings": {
+                           
+                        },
+                        "elements": [
+                        {
+                           "reportPartContent": null,
+                           "isDirty": false,
+                           "name": "actor_id",
+                           "properties": null,
+                           "position": 1,
+                           "field": {
+                              "fieldId": "070926fc-0ffe-449c-aa4b-867cc09c6399",
+                              "fieldName": "actor_id",
+                              "fieldNameAlias": "actor_id",
+                              "dataFieldType": "Numeric",
+                              "querySourceId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03",
+                              "querySourceType": "Table",
+                              "sourceAlias": "film_actor",
+                              "relationshipId": "00000000-0000-0000-0000-000000000000",
+                              "visible": true,
+                              "calculatedTree": null,
+                              "isCalculated": false,
+                              "isRunningField": false,
+                              "hasAggregatedFunction": false
+                           },
+                           "isDeleted": false,
+                           "isSelected": false,
+                           "offset": null
+                        },
+                        {
+                           "reportPartContent": null,
+                           "isDirty": false,
+                           "name": "film_id",
+                           "properties": {
+                              "isDirty": false,
+                              "fieldItemVisible": true,
+                              "dataFormattings": {
+                                 "function": "",
+                                 "functionInfo": {
+                                    "id": null,
+                                    "name": ""
+                                 },
+                                 "format": {
+                                    "createNewHiddenPercenOfGroupField": false
+                                 },
+                                 "font": null,
+                                 "width": {
+                                    "value": null
+                                 },
+                                 "alignment": "alignLeft",
+                                 "sort": "Unsort",
+                                 "color": null,
+                                 "alternativeText": null,
+                                 "customURL": null,
+                                 "embeddedJavascript": null,
+                                 "subTotal": {
+                                    "label": "Subtotal  film_id",
+                                    "function": "[Expression]",
+                                    "expression": "COUNT([film_id]) * 10",
+                                    "dataType": "Numeric",
+                                    "format": {
+                                       
+                                    },
+                                    "previewResult": "",
+                                    "fieldDataType": "Numeric",
+                                    "previewRecord": 10
+                                 },
+                                 "grandTotal": null
+                              },
+                              "headerFormating": {
+                                 "font": {
+                                    "family": null,
+                                    "size": null,
+                                    "bold": null,
+                                    "italic": null,
+                                    "underline": null,
+                                    "color": null,
+                                    "backgroundColor": null
+                                 },
+                                 "alignment": null,
+                                 "wordWrap": null,
+                                 "columnGroup": ""
+                              },
+                              "drillDown": {
+                                 "subReport": {
+                                    "selectedReport": null,
+                                    "style": null,
+                                    "reportPartUsed": null,
+                                    "reportFilter": true,
+                                    "mappingFields": [],
+                                    "selectedIconValue": {
+                                       "icon": null,
+                                       "value": null
+                                    },
+                                    "viewSettingByLink": null
+                                 }
+                              },
+                              "otherProps": {
+                                 
+                              }
+                           },
+                           "position": 2,
+                           "field": {
+                              "fieldId": "bf92615e-e775-422e-8ef7-335affbe9fad",
+                              "fieldName": "film_id",
+                              "fieldNameAlias": "film_id",
+                              "dataFieldType": "Numeric",
+                              "querySourceId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03",
+                              "querySourceType": "Table",
+                              "sourceAlias": "film_actor",
+                              "relationshipId": "00000000-0000-0000-0000-000000000000",
+                              "visible": true,
+                              "calculatedTree": null,
+                              "isCalculated": false,
+                              "isRunningField": false,
+                              "hasAggregatedFunction": false
+                           },
+                           "isDeleted": false,
+                           "isSelected": false,
+                           "offset": null
+                        }],
+                        "name": "columns"
+                     },
+                     "rows": null,
+                     "values": null,
+                     "separators": null,
+                     "properties": {
+                        "isDirty": false,
+                        "generalInfo": {
+                           "gridStyle": "Vertical",
+                           "separatorStyle": "Comma"
+                        },
+                        "table": null,
+                        "columns": {
+                           "width": {
+                              "value": 150
+                           },
+                           "alterBackgroundColor": false
+                        },
+                        "rows": {
+                           "alterBackgroundColor": false
+                        },
+                        "headers": null,
+                        "grouping": {
+                           "useSeparator": true
+                        },
+                        "view": {
+                           "dataRefreshInterval": {
+                              "enable": false,
+                              "updateInterval": 0,
+                              "isAll": true,
+                              "latestRecord": 0
+                           },
+                           "usePagination": true,
+                           "collapseDrilldownByDefault": false,
+                           "pageSize": 10,
+                           "pivotColumnsPerExportedPage": ""
+                        },
+                        "printing": {
+                           "usePageBreakAfterSeparator": false
+                        }
+                     },
+                     "settings": null,
+                     "changeGridStyleStatus": true,
+                     "inconsitentFunction": false,
+                     "dataSource": {
+                        
+                     },
+                     "title": null,
+                     "description": null
+                  },
+                  "reportId": "eb627589-cc33-47a6-9031-3ad1f2787638",
+                  "width": 4,
+                  "height": 6,
+                  "state": 0,
+                  "modified": null,
+                  "numberOfRecord": null,
+                  "configField": {
+                     "reportPartContent": null,
+                     "isDirty": false,
+                     "name": "film_id",
+                     "properties": {
+                        "isDirty": false,
+                        "fieldItemVisible": true,
+                        "dataFormattings": null,
+                        "headerFormating": null,
+                        "drillDown": {
+                           "subReport": {
+                              "selectedReport": null,
+                              "style": null,
+                              "reportPartUsed": null,
+                              "reportFilter": true,
+                              "mappingFields": [],
+                              "selectedIconValue": {
+                                 "icon": null,
+                                 "value": null
+                              },
+                              "viewSettingByLink": null
+                           }
+                        },
+                        "otherProps": {
+                           
+                        }
+                     },
+                     "position": 2,
+                     "field": {
+                        "fieldId": "bf92615e-e775-422e-8ef7-335affbe9fad",
+                        "fieldName": "film_id",
+                        "fieldNameAlias": "film_id",
+                        "dataFieldType": "Numeric",
+                        "querySourceId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03",
+                        "querySourceType": "Table",
+                        "sourceAlias": "film_actor",
+                        "relationshipId": "00000000-0000-0000-0000-000000000000",
+                        "visible": true,
+                        "calculatedTree": null,
+                        "isCalculated": false,
+                        "isRunningField": false,
+                        "hasAggregatedFunction": false
+                     },
+                     "isDeleted": false,
+                     "isSelected": false,
+                     "offset": {
+                        "x": 561.15625,
+                        "y": 582,
+                        "width": 79.84375,
+                        "height": 22,
+                        "left": 561.15625,
+                        "right": 641,
+                        "top": 582,
+                        "bottom": 604
+                     }
+                  },
+                  "stateReview": 0,
+                  "refreshDataProcess": null,
+                  "refreshDataInterval": null,
+                  "positionY": 0,
+                  "positionX": 0,
+                  "title": "Grid",
+                  "id": "8a23ae27-7e6f-4236-ad74-8e42c89ddcf1"
+               }],
+               "header": null,
+               "footer": null,
+               "titleDescription": null,
+               "version": 1,
+               "schedules": [],
+               "ownerId": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+               "accesses": [],
+               "exportFormatSetting": null,
+               "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+               "dynamicQuerySourceFields": [],
+               "snapToGrid": false,
+               "excludedRelationships": "",
+               "isGlobal": false
+            },
+            "title": "Grid",
+            "expression": "COUNT([film_id]) * 10",
+            "izendaDataType": "Numeric",
+            "reportField": {
+               "fieldId": "bf92615e-e775-422e-8ef7-335affbe9fad",
+               "fieldName": "film_id",
+               "fieldNameAlias": "film_id",
+               "dataFieldType": "Numeric",
+               "querySourceId": "7a9c6bda-ac03-4f79-9c8e-9d4c21a2bc03",
+               "querySourceType": "Table",
+               "sourceAlias": "film_actor",
+               "relationshipId": "00000000-0000-0000-0000-000000000000",
+               "visible": true,
+               "calculatedTree": null,
+               "isCalculated": false,
+               "isRunningField": false,
+               "hasAggregatedFunction": false
+            },
+            "querySourceFieldId": null,
+            "previewRecord": 10
+         }
+
+   Sample succesful response::
+
+      {
+         "result":{"izendaDataType":"Numeric"},
+         "success":true,
+         "messages":[],
+         "data":null
       }
 
 POST fusion/loadData
@@ -1776,7 +2247,7 @@ Loads preview data for grand total.
 
    Response::
 
-      10
+      {"value":10,"hasRecord":false,"dataType":"Numeric"}
 
 GET fusion/{report_id}/{report_part_id}/(pageIndex)/(pageSize)
 --------------------------------------------------------------
@@ -2986,7 +3457,7 @@ Loads preview data for sub total.
 
    Sample response::
 
-      {"value":426.0,"dataType":"Money"}
+      {"value":426.0,"dataType":"Money","hasRecord":false}
 
 
 POST fusion/calculatedFieldValue
@@ -3046,6 +3517,7 @@ Returns a single calculated field value for preview section.
 
       {
         "value":0.0,
+        "hasRecord": true,
         "dataType":"Numeric"
       }
 
@@ -3987,7 +4459,7 @@ Returns the sql query for a data request.
 
 **Response**
 
-    The query in a "query.txt" file
+    The query a text (.txt) file
 
 **Samples**
 
@@ -4034,7 +4506,7 @@ Returns the sql query for a report part preview request.
 
 **Response**
 
-    The query in a "query.txt" file
+    The query a text (.txt) file
 
 **Samples**
 
@@ -4267,10 +4739,10 @@ Returns the sql query for a report part load with paging and optional overridden
 
 **Response**
 
-    The query in a "query.txt" file
+    The query a text (.txt) file
 
 **Samples**
 
    .. code-block:: http
 
-      POST /api/fusion/printQuery/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/79bf6715-4467-4f1b-8289-ad81c9defd6b HTTP/1.1
+      GET /api/fusion/printQuery/9197f210-766a-45d3-a1f9-5c4f4a4aa8ba/79bf6715-4467-4f1b-8289-ad81c9defd6b HTTP/1.1

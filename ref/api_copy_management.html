@@ -238,75 +238,94 @@
 <h2>List of APIs<a class="headerlink" href="#list-of-apis" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-given apitable docutils">
 <colgroup>
+<col width="30%" />
 <col width="35%" />
-<col width="65%" />
+<col width="35%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">API</th>
 <th class="head">Purpose</th>
+<th class="head">Usage in Izenda Front-end</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>GET copyManagement/workspace/{workspace_id}</td>
+<tr class="row-even"><td><a class="reference internal" href="#get-copymanagement-workspace-workspace-id">GET copyManagement/workspace/{workspace_id}</a></td>
 <td>Returns details of the workspace specified by workspace_id.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>GET copyManagement/workspaces/{tenant_id}/{onlyMyWorkspace}</td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-copymanagement-workspaces-tenant-id-onlymyworkspace">GET copyManagement/workspaces/{tenant_id}/{onlyMyWorkspace}</a></td>
 <td>Returns a list of workspaces filtered by tenant_id if not null, and by current logged on user if onlyMyWorkspace equals true.</td>
+<td>Setting &gt; Data Setup &gt; Copy Management &gt; Show only my workspaces OR make some changes and Save</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/validateName</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-validatename">POST copyManagement/workspace/validateName</a></td>
 <td>Validates if workspace name is unique.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement">POST copyManagement</a></td>
 <td><p class="first">Saves a workspace.</p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Not POST copyManagement/workspace</p>
 </div>
 </td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>DELETE copyManagement/workspace/{workspace_id}</td>
+<tr class="row-even"><td><a class="reference internal" href="#delete-copymanagement-workspace-workspace-id">DELETE copyManagement/workspace/{workspace_id}</a></td>
 <td>Deletes the workspace specified by workspace_id.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/copy</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-copy">POST copyManagement/copy</a></td>
 <td>Run the copy operation based on settings in a workspace.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/connectionsHasDataModel</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-connectionshasdatamodel">POST copyManagement/connectionsHasDataModel</a></td>
 <td>Checks if connections have already had data model.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/loadDestinationConnections&#8217;&#8216;&#8217;</td>
+<tr class="row-odd"><td>POST copyManagement/workspace/loadDestinationConnections</td>
 <td><p class="first">Returns a list of connections for destination drop-down.</p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Obsolete, use <a class="reference internal" href="api_connection.html#post-connection-loaddistinctconnections"><span class="std std-ref">POST connection/loadDistinctConnections</span></a> instead</p>
 </div>
 </td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/validate</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-validate">POST copyManagement/workspace/validate</a></td>
 <td>Validates the workspace.</td>
+<td>Not used</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/validateWorkspaceTenant</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-workspace-validateworkspacetenant">POST copyManagement/workspace/validateWorkspaceTenant</a></td>
 <td>Validates that the mappings are valid, destination tenants have the same connections, and have no physical changes.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/validateConcurrency</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-validateconcurrency">POST copyManagement/workspace/validateConcurrency</a></td>
 <td>Validates workspace concurrency.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/detectConflictingTenantPermissions</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingtenantpermissions">POST copyManagement/workspace/detectConflictingTenantPermissions</a></td>
 <td>Detect conflicting tenant&#8217;s permissions.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/detectConflictingAdvancedSettings</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingadvancedsettings">POST copyManagement/workspace/detectConflictingAdvancedSettings</a></td>
 <td>Detect conflicting tenant&#8217;s advanced settings.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/detectConflictingReport</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingreport">POST copyManagement/workspace/detectConflictingReport</a></td>
 <td>Detect conflicting tenant&#8217;s reports.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/detectConflictingRolePermission</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingrolepermission">POST copyManagement/workspace/detectConflictingRolePermission</a></td>
 <td>Detect role names already existing in destination tenants.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/detectConflictingTemplate</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingtemplate">POST copyManagement/workspace/detectConflictingTemplate</a></td>
 <td>Detect conflicting tenant&#8217;s templates.</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-even"><td>POST copyManagement/workspace/detectConflictingDashboard</td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingdashboard">POST copyManagement/workspace/detectConflictingDashboard</a></td>
 <td>Detect conflicting tenant&#8217;s dashboards.</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -558,8 +577,24 @@ Sample response:</div>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Sample response:</p>
+<p>Sample success response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+</pre></div>
+</div>
+<p>Sample failure response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+            <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="s2">&quot;The workspace Workspace01 already exists&quot;</span>
+            <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -4289,13 +4324,327 @@ Request payload:</div>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/copyManagement/workspace/detectConflictingReport</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;acme-wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:06:40.467&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:28:26&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;copyDataModel&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRoles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRolePermission&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyAdvancedSettings&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyTenantPermissions&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyReport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sourceHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;workspaceTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;destinationHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataMapping&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;databaseSources&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;querySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;destinationQuerySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;workspaceMappings&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;copyOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyAdvancedSettingOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyDashboardOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyReportOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTemplateOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTenantPermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyRolePermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copiedRoles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;copiedRolePermission&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;allHashcodes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantPermission&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="s2">&quot;ae94be3cd532ce4a025884819eb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;rolePermissions&quot;</span><span class="p">:</span> <span class="s2">&quot;e20838cf93c8cd6212cda1530d4&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="s2">&quot;8b6719a00dc9faec05ba1ec69ba&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;templates&quot;</span><span class="p">:</span> <span class="s2">&quot;0bea5c30063e9a627a31d8bf3fd&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;sourceDashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;sourceReports&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;a657c5f7-c361-422b-868c-d8e7b81a0184&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c7d1a927-dd58-4224-960e-a84e7de0b760&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;[con;#0].[cat;#0].[actor]&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;7fb73c89-2821-489c-8e97-497eaf544568&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;30625587-4960-46aa-bfde-ae9aae18d32b&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a657c5f7-c361-422b-868c-d8e7b81a0184&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ex01&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:03:26.46&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;numberOfView&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;renderingTime&quot;</span><span class="p">:</span> <span class="mi">4212</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:03:26.46&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isShowDetail&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T06:48:31.647&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isSubscribeMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;deletable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;copyable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;movable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isEditMode&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;sourceTemplates&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ex01&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;29e70154-17db-4ad3-b3df-cafff03309ef&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;45a16d82-18be-4871-a530-783e09a6bac6&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;[con;#0].[cat;#0].[actor]&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;6ebca7b7-c8f3-4b10-85af-9db3f582c307&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;b75f5e99-18c3-48c2-b9b6-959034edcbfb&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}],</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:56:41.453&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;IzendaAdmin@system.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;excludedRelationships&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;numberOfView&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;renderingTime&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="nt">&quot;createdById&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedById&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;snapToGrid&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;usingFields&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;hasDeletedObjects&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;header&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;footer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;titleDescription&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a657c5f7-c361-422b-868c-d8e7b81a0184&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;exportFormatSetting&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;deletable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;movable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;copyable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;29e70154-17db-4ad3-b3df-cafff03309ef&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:56:41.453&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:56:41.453&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}]</span>
 </pre></div>
+</div>
 </div>
 </div></blockquote>
 </div>
@@ -4357,12 +4706,141 @@ string</div>
 <div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/copyManagement/workspace/detectConflictingRolePermission</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;acme-wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:06:40.467&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:28:26&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;copyDataModel&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRoles&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;copyRolePermission&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;copyAdvancedSettings&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyTenantPermissions&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyReport&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sourceHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;workspaceTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;destinationHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataMapping&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;databaseSources&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;querySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;destinationQuerySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;workspaceMappings&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[PGSQL] DVDRental&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.55.183&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[PGSQL] DVDRental&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.55.183&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4a97058c-5d7e-424f-99ae-d463a9d665d5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceMappingTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;workspaceMappingId&quot;</span><span class="p">:</span> <span class="s2">&quot;4a97058c-5d7e-424f-99ae-d463a9d665d5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}]</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;copyOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyAdvancedSettingOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyDashboardOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyReportOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTemplateOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTenantPermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyRolePermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copiedRoles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e70f7958-c1a9-4eeb-8860-855332ee5930&quot;</span><span class="p">],</span>
+   <span class="nt">&quot;copiedRolePermission&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e70f7958-c1a9-4eeb-8860-855332ee5930&quot;</span><span class="p">],</span>
+   <span class="nt">&quot;allHashcodes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantPermission&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="s2">&quot;ae94be3cd532ce4a025884819eb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;rolePermissions&quot;</span><span class="p">:</span> <span class="s2">&quot;e20838cf93c8cd6212cda1530d4&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="s2">&quot;8b6719a00dc9faec05ba1ec69ba&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;templates&quot;</span><span class="p">:</span> <span class="s2">&quot;d41d8cd98f00b204e9800998ecf&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;sourceDashboards&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8f132fc0-963b-49bb-b41b-8f7c735c28c2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Manager&quot;</span>
+   <span class="p">}]</span>
+<span class="p">}]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -4378,7 +4856,364 @@ string</div>
 <div>An array of <a class="reference internal" href="models/ConflictReportDashboardItem.html"><span class="doc">ConflictReportDashboardItem</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/copyManagement/workspace/detectConflictingTemplate</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;acme-wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:06:40.467&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:28:26&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;copyDataModel&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRoles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRolePermission&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyAdvancedSettings&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyTenantPermissions&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyReport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sourceHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;workspaceTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;destinationHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataMapping&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;databaseSources&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;querySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;destinationQuerySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;workspaceMappings&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="s2">&quot;291ddc27-126a-4e57-b7d3-1b09fc482d13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[PGSQL] DVDRental&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.55.183&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[PGSQL] DVDRental&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.55.183&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4a97058c-5d7e-424f-99ae-d463a9d665d5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceMappingTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;workspaceMappingId&quot;</span><span class="p">:</span> <span class="s2">&quot;4a97058c-5d7e-424f-99ae-d463a9d665d5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}]</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;copyOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyAdvancedSettingOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyDashboardOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyReportOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTemplateOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTenantPermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyRolePermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copiedRoles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;copiedRolePermission&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;allHashcodes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantPermission&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="s2">&quot;ae94be3cd532ce4a025884819eb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;rolePermissions&quot;</span><span class="p">:</span> <span class="s2">&quot;e20838cf93c8cd6212cda1530d4&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="s2">&quot;8b6719a00dc9faec05ba1ec69ba&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;templates&quot;</span><span class="p">:</span> <span class="s2">&quot;0bea5c30063e9a627a31d8bf3fd&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;sourceDashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;sourceReports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;sourceTemplates&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;ba219814-45d3-452a-8542-cacdb85162e9&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c7d1a927-dd58-4224-960e-a84e7de0b760&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;[con;#0].[cat;#0].[actor]&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;7fb73c89-2821-489c-8e97-497eaf544568&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;30625587-4960-46aa-bfde-ae9aae18d32b&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}],</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ba219814-45d3-452a-8542-cacdb85162e9&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;exTemplate&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;28788c9b-4e0d-464e-b588-ea5bee676bd3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:44:37.473&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;numberOfView&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;renderingTime&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T03:44:37.473&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isShowDetail&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isSubscribeMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;deletable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;copyable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;movable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isEditMode&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;exTemplate&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;169ddc07-b458-44d2-83fd-665deb915c57&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;45a16d82-18be-4871-a530-783e09a6bac6&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;[con;#0].[cat;#0].[actor]&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;querySourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;6ebca7b7-c8f3-4b10-85af-9db3f582c307&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;b75f5e99-18c3-48c2-b9b6-959034edcbfb&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+               <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">}],</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;previewRecord&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedMode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;allowNulls&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isDistinct&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;0fc6bbfe-7066-4e1d-92f5-9c6d75558ead&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:37:07.707&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;IzendaAdmin@system.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;excludedRelationships&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;numberOfView&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;renderingTime&quot;</span><span class="p">:</span> <span class="mf">306.0</span><span class="p">,</span>
+            <span class="nt">&quot;createdById&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedById&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;snapToGrid&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;usingFields&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;hasDeletedObjects&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;header&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;footer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;titleDescription&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;ba219814-45d3-452a-8542-cacdb85162e9&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;exportFormatSetting&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;deletable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;movable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;copyable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;169ddc07-b458-44d2-83fd-665deb915c57&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:34:32.803&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T07:34:32.803&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-copymanagement-workspace-detectconflictingdashboard">
 <h2>POST copyManagement/workspace/detectConflictingDashboard<a class="headerlink" href="#post-copymanagement-workspace-detectconflictingdashboard" title="Permalink to this headline">¶</a></h2>
@@ -4391,7 +5226,281 @@ string</div>
 <div>An array of <a class="reference internal" href="models/ConflictReportDashboardItem.html"><span class="doc">ConflictReportDashboardItem</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+Sample payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Workspace&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;copyDataModel&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRoles&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyRolePermission&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyAdvancedSettings&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyTenantPermissions&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyDashboard&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;copyReport&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;mergeDuplicateMappings&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c1703d12-6f50-454a-82bc-16efc00bbedd&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sourceHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;3b81ceb0de496d4f31d30619021&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;workspaceTenants&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;destinationHashCode&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;dataMapping&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;databaseSources&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;querySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;destinationQuerySourceTree&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isFilterFields&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;workspaceMappings&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;copyOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyAdvancedSettingOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyDashboardOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyReportOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTemplateOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyTenantPermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copyRolePermissionOption&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+   <span class="p">},</span>
+   <span class="nt">&quot;copiedRoles&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;copiedRolePermission&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;allHashcodes&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tenantPermission&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="s2">&quot;ae94be3cd532ce4a025884819eb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;rolePermissions&quot;</span><span class="p">:</span> <span class="s2">&quot;234f0b5092bbbab766f84371568&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="s2">&quot;825980920635e810a1465329872&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="s2">&quot;d41d8cd98f00b204e9800998ecf&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;templates&quot;</span><span class="p">:</span> <span class="s2">&quot;d41d8cd98f00b204e9800998ecf&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;sourceDashboards&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;commonFilterFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;accesses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;subscriptions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;dashboardParts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ExDashboard&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;c1703d12-6f50-454a-82bc-16efc00bbedd&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;imageUrl&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;stretchImage&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;5d5ecb92-54ed-48de-9e20-d7c2528600a8&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T08:54:21.213&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdById&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T08:54:21.213&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showFilterDescription&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isEditing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Wonka - Wonka&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;canDelete&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;commonFilterFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;accesses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;subscriptions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;inaccessible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ExDashboard&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;subCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;6a3c2dc8-b915-44f7-aa2a-bb5d2764dfc2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;imageUrl&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;stretchImage&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;showFilterDescription&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T09:00:43.36&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdById&quot;</span><span class="p">:</span> <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedById&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;numberOfView&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;renderingTime&quot;</span><span class="p">:</span> <span class="mf">252.0</span><span class="p">,</span>
+            <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;5d5ecb92-54ed-48de-9e20-d7c2528600a8&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;deletable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;movable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;copyable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;accessPriority&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;dashboardParts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;02dcc807-50ce-4daf-be7f-30c503326b3e&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T09:00:17.67&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-18T09:01:03.183&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
 </div>
 </div>
 
