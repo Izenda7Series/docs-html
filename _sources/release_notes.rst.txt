@@ -8,6 +8,13 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.1 October 31, 2017
+~~~~~~~~~~~~~~~~~~~~~
+FIXES
+^^^^^
+-  Defect  18679  System Fails to open a report in izenda db create from version 2.4.0 or above. This only happens if your Disabled field in the table IzendaQuerySource is in position 14 (or not the last field in the table). ***This issue can be resolved in local instances by updating the IzendaQuerySource table and setting Disabled = 0, but this will need to be done for any new items added to the database until this patch is updated.***
+
+
 v.2.6.0 October 31, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 FEATURES
