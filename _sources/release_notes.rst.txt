@@ -8,7 +8,13 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
-v.2.6.1 October 31, 2017
+v.2.6.2 November 2, 2017
+~~~~~~~~~~~~~~~~~~~~~
+FIXES
+^^^^^
+-  Defect  18692  System Fails to add new connection string when using MySQL and Oracle Izenda configuraiton databases. ***This issue only impacts customers using MySQL and Oracle Izenda configuration databases.***
+
+v.2.6.1 November 1, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 FIXES
 ^^^^^
