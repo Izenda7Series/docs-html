@@ -8,6 +8,25 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.3 November 6, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18706  When adding or updating an Oracle connection string, the system does not show Field where Data Type = VARCHAR2
+-  Defect  18682  When setting up a new instance of Izenda on 2.6.1 all options on security policy tab are enabled by default.
+-  Defect  18648  Error displayed displays when using case statement in calculated field in a chart report part
+-  Defect  18630  When user has access to reports in uncategorized only they cannot see reports until they have access to a named category, then they see both uncategorized and the other categories 
+-  Defect  18629  Browser consumes high memory when loading a role detail in Role Setup having thousands of users
+-  Defect  18628  Subtotal/GrandTotal shows incorrectly for fields in Rows container of Pivot grid
+-  Defect  18620  Schedule/Subscribe popup always shows default filter value even user changed and saved
+-  Defect  18617  Master report from dashboard only passes the saved default filter values from the report definition to the subreport, not the new filter values added while in the dashboard tile or common filter.
+-  Defect  18612  Duplicate name error received when editing filters of dashboard schedule
+-  Defect  18592  Area range chart with average does not draw chart.
+-  Defect  18519  Chart/Gauge/Grid Sort function works incorrectly in some instances with separators
+-  Defect  18507  Sort icon does not display for field in Columns/Rows container in Pivot grid
+-  Defect  18096  Permissions issue noted when items are deselected at the tenant level after role is created
+
 v.2.6.2 November 2, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 FIXES
