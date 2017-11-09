@@ -8,6 +8,13 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.4 November 9, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18725  Tenant, Role Fail to save and role permissions fail to load when adding default access rights or if default access rights were assigned to tenant, role prior to upgrade
+
 v.2.6.3 November 6, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
