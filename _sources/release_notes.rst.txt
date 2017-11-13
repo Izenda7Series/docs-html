@@ -8,6 +8,29 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.5 November 13, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18735  Running function does not re-calculate after cross filtering
+-  Defect  18722  When editing a report (grid) created from version 2.6.2 the sort option is not properly displayed
+-  Defect  18712  In the Angular2 Integration example kit there is an error after navigating to the Settings page.
+-  Defect  18707  Number of Records Set on Report Part not respected on Print/Export
+-  Defect  18696  Forms would not display when Popup was chosen as the style for a subreport.
+-  Defect  18622  When changing text color using Percentage Range, the value of the field is changed to a percentage
+-  Defect  18591  Format of field effects format of SubTotal and user cannot override using subtotal format
+-  Defect  18580  Drill In/Out Doesn't Always Work Until you update results on map report part
+-  Defect  18578  In Form repeater the whole row of a table is moved to the top if repeated
+-  Defect  18563  Running type function on fields shows incorrectly in Pivot grid report part
+-  Defect  18556  Formatting Chart Value as % of Group with or without rounding, the y axis is showing the actual values with a % appended.
+-  Defect  18555  Sort order is incorrect on pivot when using dates and some formats in column
+-  Defect  18549  Report Review displays with no record if selecting "Decimal Number" for Filter
+-  Defect  18538  Calculated Field in chart shows incorrect values and placement of points on chart. 
+-  Defect  18305  Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
+-  Defect  18165  Cannot render multiple Izenda components in only one Angular 2 component, relate to routing mechanism in Izenda.
+
+
 v.2.6.4 November 9, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1660,35 +1683,17 @@ Known Issues
      - 18631
      - In report designer if user changes filter to new field, Value list in Filter Operator section still displays value of old filter
    * - Defect
-     - 18630
-     - When user has access to reports in uncategorized only they cannot see reports until they have access to a named category, then they see both uncategorized and the other categories 
-   * - Defect
-     - 18629
-     - Browser consumes high memory when loading a role detail in Role Setup having thousands of users
-   * - Defect
-     - 18628
-     - Subtotal/GrandTotal shows incorrectly for fields in Rows container of Pivot grid
-   * - Defect
      - 18627
      - Application errors when changing to data source of another connection string and report body of an existing report contains a calculated field then saves report
    * - Defect
      - 18623
      - System does not show error msg when user delete CF which was used in Form
    * - Defect
-     - 18622
-     - When changing text color using Percentage Range, the value of the field is changed to a percentage
-   * - Defect
      - 18621
      - Filter Values (pvalues) does not work when user opens the link of schedule/subscribe in email
    * - Defect
-     - 18620
-     - Schedule/Subscribe popup always shows default filter value even user changed and saved
-   * - Defect
      - 18619
      - System calculated incorrect Start Date for schedule/subscription when user select 1 item in Yearly
-   * - Defect
-     - 18617
-     - Master report from dashboard only passes the saved default filter values from the report definition to the subreport, not the new filter values added while in the dashboard tile or common filter.
    * - Defect
      - 18616
      - When using a calculated field containing a case statement and another calculated field with a case statement that refers to the first calculated field the system shows an error.
@@ -1708,12 +1713,6 @@ Known Issues
      - 18593
      - When exporting report some grand totals with the same name do not appear on the same line in the exported document
    * - Defect
-     - 18592
-     - Area range chart with average does not draw chart.
-   * - Defect
-     - 18591
-     - Format of field effects format of SubTotal and user cannot override using subtotal format
-   * - Defect
      - 18589
      - Collapse All button does not work correctly when separator is number value
    * - Defect
@@ -1729,14 +1728,8 @@ Known Issues
      - 18581
      - Some Provinces not working/missing (Quebec) in Canada
    * - Defect
-     - 18580
-     - Drill In/Out Doesn't Always Work Until you update results on map report part
-   * - Defect
      - 18579
      - Full Report and Dashboard users cannot have Access Default Sharing Rights.
-   * - Defect
-     - 18578
-     - In Form repeater the whole row of a table is moved to the top if repeated
    * - Defect
      - 18576
      - In Heatmap report part clicking on the link on X axis will pass the value of Y axis when both X and Y have subreport/customURL/Javascript link configured
@@ -1759,20 +1752,11 @@ Known Issues
      - 18565
      - System shows incorrect data for DateTime Field with Group by Year when it is added 2 times in report container
    * - Defect
-     - 18563
-     - Running type function on fields shows incorrectly in Pivot grid report part
-   * - Defect
      - 18561
      - In IAdHoc for Load Custom Format defined custom format for Date Time type  cannot be loaded
    * - Defect
      - 18557
      - Can't delete standard system admin even if another admin exists in the system
-   * - Defect
-     - 18556
-     - Formatting Chart Value as % of Group with or without rounding, the y axis is showing the actual values with a % appended.
-   * - Defect
-     - 18555
-     - Sort order is incorrect on pivot when using dates and some formats in column
    * - Defect
      - 18554
      - Error message is displayed when user changes View option in CustomURL or EmbeddedJS from link to icon 
@@ -1782,9 +1766,6 @@ Known Issues
    * - Defect
      - 18551
      - User cannot delete calculated field from report designer once the report is saved even if it is not used in a report part
-   * - Defect
-     - 18549
-     - Report Review displays with no record if selecting "Decimal Number" for Filter
    * - Defect
      - 18545
      - The unexpected text is displayed in Visual tab of form and cannot Save Form report when user inputs special characters (&,~,$, etc) data to Alternative Text Setting
@@ -1799,10 +1780,7 @@ Known Issues
      - Confirmation popup for losing change displays after saving report when editing calculated field
    * - Defect
      - 18540
-     - When user configures open subreport in current window and tries to navigate there from the report designer, confirmation window shows that changes will be lost, but user is not shown the report when clicking ok
-   * - Defect
-     - 18538
-     - Calculated Field in chart shows incorrect values and placement of points on chart. 
+     - When user configures open subreport in current window and tries to navigate there from the report designer, confirmation window shows that changes will be lost, but user is not shown the report when clicking ok 
    * - Defect
      - 18536
      - Disable appending source URL doesn't work when set Integration to false
@@ -1836,9 +1814,6 @@ Known Issues
    * - Defect
      - 18511
      - Copy Console will duplicate Report name in same category
-   * - Defect
-     - 18507
-     - Sort icon does not display for field in Columns/Rows container in Pivot grid
    * - Defect
      - 18504
      - When specifying filter logic and not utilizing all filter values present in the filter panel a warning should be displayed on save to show that the unspecified filters will be ignored.
@@ -2023,9 +1998,6 @@ Known Issues
      - 18307
      - When using Days Old function for Field in Value container of pivot or drilldown an error is shown as the value is not grouped properly.
    * - Defect
-     - 18305
-     - Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
-   * - Defect
      - 18300
      - After user unchecks a dynamic stored procedure which is already executed the schema should be updated
    * - Defect
@@ -2121,9 +2093,6 @@ Known Issues
    * - Defect
      - 18167
      - The warning "Share With Everyone" cannot be used multiple times" message is displayed when user add Sharing access and click Save button many times
-   * - Defect
-     - 18165
-     - Cannot render multiple Izenda components in only one Angular 2 component, relate to routing mechanism in Izenda.
    * - Defect
      - 18159
      - User cannot select System Variables in Delivery tab when add/edit a Schedule
