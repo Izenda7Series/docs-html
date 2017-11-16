@@ -207,48 +207,29 @@ Configure Sharing Access
 
    *  - Interact with shared report
       - Full Access
-      - Quick Edit
       - Save As
       - Locked
       - View Only
       - No Access
-   *  - **View the report with filter interaction**
-      - ✔
+   *  - **View the dashboard with filter interaction**
       - ✔
       - ✔
       - ✖
       - ✔
       - ✖
-   *  - **View the report with NO filter interaction**
-      - ✖
+   *  - **View the dashboard with NO filter interaction**
       - ✖
       - ✖
       - ✔
       - ✖
       - ✖
-   *  - **Modify the report in Quick Edit mode**
-      - ✔
-      - ✔
-      - ✔
-      - ✖
-      - ✖
-      - ✖
-   *  - **Modify the report in Report Designer**
+   *  - **Save changes in the dashboard**
       - ✔
       - ✖
       - ✖
       - ✖
       - ✖
-      - ✖
-   *  - **Save changes in the report**
-      - ✔
-      - ✖
-      - ✖
-      - ✖
-      - ✖
-      - ✖
-   *  - **Save As changes in the report**
-      - ✔
+   *  - **Save As changes in the dashboard**
       - ✔
       - ✔
       - ✖
@@ -261,7 +242,6 @@ Configure Sharing Access
 
    *  - **Access Right**
    *  - Full Access
-   *  - Quick Edit
    *  - Save As
    *  - Locked
    *  - View Only
