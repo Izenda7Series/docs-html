@@ -356,7 +356,7 @@ Apply Cross Filtering to Multiple Report Parts
 
 .. versionadded:: 2.1.0
 
-Cross filtering allows user to drill up and drill down data in multiple :term:`report parts <report part>` together. For each drilling action from user, it will filter related report parts automatically.
+Cross filtering allows user to drill up and drill down data in multiple :term:`report parts <report part>` together. For each drilling action from user, it will filter related report parts automatically. Cross filtering is initalized on charts, gauges, or maps which have more than one x-axis field as the drill down feature of these items is what triggers the cross fitlering functionality for all other report parts. 
 
 .. _Report_Designer_Filter_Cross_Filtering_Sample:
 
