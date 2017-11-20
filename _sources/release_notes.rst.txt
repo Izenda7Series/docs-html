@@ -8,6 +8,35 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v.2.6.6 November 20, 2017
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+Defect  -  18784  Format % of Group for Subtotal calculates incorrectly in Pivot grid
+Defect  -  18783  Separators data in Form report part is missing on Excel export file
+Defect  -  18778  Subtotal disappears when setting % of Group for field in horizontal grid
+Defect  -  18776  Preview record of Subtotal calculation does not show when setting Subtotal in pivot grid
+Defect  -  18765  System returns 'Dashboard Preset Layout' popup when user clicks print on a dashboard after creating
+Defect  -  18763  In some circumstances, the system does not log unhandled exception properly because of failure of resolving log4net log manager
+Defect  -  18761  Any filters used after 'In Time Period' filter will not load values when cascading is used
+Defect  -  18758  Error message appears when drilling in to level City of Map report part when using Oracle, PostgreSQL as Izenda configuration database.
+Defect  -  18752  Datetime fields sorting incorrectly when formatted with mm-yyyy or other month year formats
+Defect  -  18744  Gauge disappears when user adds Separators which is a numeric data type
+Defect  -  18732  Embedded Subreports are not exporting with the top level report , the columns show blank where the subreport was added
+Defect  -  18728  White listed Function Errors in when used in filter
+Defect  -  18703  Error message is not shown when when filter is required and not visible
+Defect  -  18680  No records display in grid when Separator field is set to not visible in Field Properties
+Defect  -  18657  Grid failed to export to Word/PDF if user has configured Alternative Text/Cell Color/Text Color with Percentage Range option
+Defect  -  18522  Using CTE in custom view fails with error message when saving custom view.
+Defect  -  18504  When specifying filter logic and not utilizing all filter values present in the filter panel a warning should be displayed on save to show that the unspecified filters will be ignored.
+Defect  -  18501  Data Refresh Interval only works once time after setting it
+Defect  -  18500  "Remove Header for Export" does not work when exporting report
+Defect  -  18499  Day of Week format does not work when the field is not grouped
+Defect  -  18336  Resolved security issue
+Defect  -  18262  Change query structure for saving role details to improve performance.
+Defect  -  17967  When changing the filter field from the Filter Property panel to a different field an error is displayed when user tries to navigate back to the data source tab
+
 v.2.6.5 November 13, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
