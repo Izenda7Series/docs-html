@@ -943,8 +943,8 @@ Adds or updates external tenant.
    Simple Request payload::
 
       {
-         "tenantID": "Pikachu",
-         "name": "Pikachu",
+         "tenantID": "Tenant1",
+         "name": "Tenant1",
          "description": "abc",
          "active": true,
          "modules": null,
