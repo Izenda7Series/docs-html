@@ -7,6 +7,24 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.6.7 November 27, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18812  The 'Full Report and Dashboard Access' option always defaults to false when creating and saving a role.
+-  Defect  18782  Some date formats cause errors when using Oracle reporting database
+-  Defect  18781  Day of week date format is incorrect when selected and grouping
+-  Defect  18769  Filter descriptions are not updated when altered in QuickEdit Mode until the user saves the report.
+-  Defect  18742  IsRunningField in JSON response is returned as false when sending POST fusion/validateExpression containing space after RUNNING function (RUNNINGAVG/RUNNINGCOUNT/RUNNINGSUM) in expression
+-  Defect  18740  Unable to add new roles in v2.6.4 when migrating from v2.0.0 and prior
+-  Defect  18737  Color Settings/Cell - Percentage Range is not working on horizontal grid - rows container
+-  Defect  18726  Schemas return when connecting to Oracle reporting database when user has no access to items in the schema
+-  Defect  18576  In Heatmap report part clicking on the link on X axis will pass the value of Y axis when both X and Y have subreport/customURL/Javascript link configured
+-  Defect  18403  Page continues to load when adding calcualted field with invalid data types for expression and clicking on OK button
+-  Defect  18318  Save confirmation not shown when user adds calculated field to one data source and moves directly to another datasource without saving
+-  Defect  18258  Embedded Subreport in Form is broken in destination when coyping with Copy Console
+-  Defect  17952  "This filter has duplicate filter alias" displays after deselecting, then selecting a Store Procedure again in datasource tab
 
 v.2.6.6 November 20, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~
