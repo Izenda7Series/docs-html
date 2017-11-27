@@ -219,6 +219,10 @@ Model and Reports</li>
 <h2>Add connection and select visible data sources<a class="headerlink" href="#add-connection-and-select-visible-data-sources" title="Permalink to this headline">¶</a></h2>
 <p>In this step user adds a connection and selects data sources to be
 visible in reports.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please use caution when adding stored procedures to the visible data source list. All stored procedures are executed when added to visible (input parameters are set to NULL) to obtain the resulting fields returned. Some stored procedures are created to do things like delete tables, add data to tables, etc. If these are added to the visible data sources, they will be executed in the database.</p>
+</div>
 <ol class="arabic">
 <li><div class="figure align-right" id="id3">
 <span id="menu-connection-string"></span><a class="reference internal image-reference" href="../_images/Menu_Connection_String.jpg"><img alt="../_images/Menu_Connection_String.jpg" src="../_images/Menu_Connection_String.jpg" style="width: 195px;" /></a>
@@ -278,10 +282,6 @@ visible in reports.</p>
 <div><div class="figure align-right" id="id10">
 <span id="connection-available-data-sources-filter"></span><a class="reference internal image-reference" href="../_images/Connection_Available_Data_Sources_Filter.jpg"><img alt="../_images/Connection_Available_Data_Sources_Filter.jpg" src="../_images/Connection_Available_Data_Sources_Filter.jpg" style="width: 297px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Filter the data sources</span></p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Please use caution when adding stored procedures to the visible data source list. All stored procedures are executed when added to visible (input parameters are set to NULL) to obtain the resulting fields returned. Some stored procedures are created to do things like delete tables, add data to tables, etc. If these are added to the visible data sources, they will be executed in the database.</p>
 </div>
 <p>The data sources can be quickly filtered by typing a partial name in the Search box. (<a class="reference internal" href="#connection-available-data-sources-filter"><span class="std std-numref">Fig. 57</span></a>) <br clear="right" /></p>
 </div></blockquote>

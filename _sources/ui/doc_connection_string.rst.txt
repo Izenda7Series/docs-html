@@ -16,6 +16,10 @@ Add connection and select visible data sources
 In this step user adds a connection and selects data sources to be
 visible in reports.
 
+.. warning::
+
+         Please use caution when adding stored procedures to the visible data source list. All stored procedures are executed when added to visible (input parameters are set to NULL) to obtain the resulting fields returned. Some stored procedures are created to do things like delete tables, add data to tables, etc. If these are added to the visible data sources, they will be executed in the database.
+
 #. .. _Menu_Connection_String:
 
    .. figure:: /_static/images/Menu_Connection_String.jpg
@@ -100,10 +104,6 @@ visible in reports.
 
          Filter the data sources
 
-      .. warning::
-
-         Please use caution when adding stored procedures to the visible data source list. All stored procedures are executed when added to visible (input parameters are set to NULL) to obtain the resulting fields returned. Some stored procedures are created to do things like delete tables, add data to tables, etc. If these are added to the visible data sources, they will be executed in the database.
-
       The data sources can be quickly filtered by typing a partial name in the Search box. (:numref:`Connection_Available_Data_Sources_Filter`) |br|
 #. .. _Connection_Move_Data_Source_to_Visible_List:
 
@@ -112,6 +112,7 @@ visible in reports.
       :width: 611px
 
       Move data sources between the two lists
+      
 
    Click on the data sources to move them between the two lists. (:numref:`Connection_Move_Data_Source_to_Visible_List`) |br|
 
