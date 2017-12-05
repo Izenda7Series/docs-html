@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>System DB and License &mdash; Izenda BI 2.6.7 documentation</title>
+  <title>System DB and License &mdash; Izenda BI 2.6.8 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.6.7 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.6.8 documentation" href="../index.html"/>
         <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
         <link rel="next" title="Connection String" href="doc_connection_string.html"/>
         <link rel="prev" title="System Setup Guide" href=".system_setup_guide.html"/> 
@@ -385,10 +385,31 @@ different tenants or not.</p>
 <h2>Import Map Data<a class="headerlink" href="#import-map-data" title="Permalink to this headline">¶</a></h2>
 <p>Optionally provision Map data. This is only needed if the report part
 type <a class="reference internal" href="doc_report_designer_map.html"><span class="doc">Map</span></a> is to be used in reports and dashboards.</p>
+<p>US zip codes match on first 5 number, and Canadian zip codes will match on the first 3 characters of the zip code.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Izenda Map data contains all countries and all US and Canada cities and will take several minutes to be fully set up.</p>
 </div>
+<p>To upgrade map data when any changes are made by Izenda please follow the instructions below. We do not automatically run these types of upgrades as map report parts will not work until the process is complete:</p>
+<ol class="arabic simple">
+<li>Update IzendaSystemSetting Table in your Izenda Configuration Database as below: <br clear="right" /></li>
+</ol>
+<div class="highlight-sql"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">Update</span> <span class="n">IzendaSystemSetting</span>
+<span class="k">Set</span> <span class="n">Value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">Where</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;ProvisionStaticDataStatus&#39;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As general best practice, we recommend backing up your database before making any manual updates.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>After making these changes, all API instances should be restarted.</li>
+<li>Next you will need to log into the Izenda Application as a System Administrator and Run &#8220;Provision Map Data&#8221; on the Izenda DB &amp; License Page to insert the new data. <br clear="right" /></li>
+</ol>
+<p>Once this is complete, map report parts will be available again.</p>
 </div>
 <div class="section" id="modify-the-license">
 <h2>Modify the License<a class="headerlink" href="#modify-the-license" title="Permalink to this headline">¶</a></h2>
@@ -540,7 +561,7 @@ Connection and License sections respectively.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.6.7',
+            VERSION:'2.6.8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -7,6 +7,27 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.6.8 December 5, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18831  Application shows unknown error when editing a global report if it is currently opened in both system and tenant level.
+-  Defect  18813  When setting alternative text on a calculated field in a chart, the alternative text is not displayed properly in the chart's breadcrumb 
+-  Defect  18808  Range Only option for charts displays error can't draw chart.
+-  Defect  18764  Deadlock noted in Dashboard when editing dashboard
+-  Defect  18746  Can't draw city as bubble on Map report part if the report is saved at point option which is not City (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_  for this process)
+-  Defect  18718  When attempting to print large record sets from the report viewer the print option fails. Moving print option server side for HTML creation to reduce the volume of data processed in the browser.
+-  Defect  18714  User should be able to sort the fields in Values container for Funnel chart 
+-  Defect  18686  Unable to draw maps using postal codes for Canada (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_ for this process)
+-  Defect  18584  When user drills into a State/Province shows bubble metric for cities in surrounding state/province for Canada Map
+-  Defect  18583  For Map report parts user cannot use metrics for state/province without having a country field (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_ for this process)
+-  Defect  18480  Mapping Field is not updated automatically when user update Field Name Alias on Field Properties for master/sub report
+-  Defect  18478  On filter operator Manual Entry No Auto-Complete, no tool tip displays when hovering on the invalid input 
+-  Defect  18274  Map report part is not shown when "Layout" of "Legend settings" is set "Vertical"
+-  Defect  18120  Users receive repeated emails in Schedule function for some emails, this is sporadic functionality. This is due to the need to set up a database job store for schedules when runnning in distributed enviroments. Please see `Scheduler Configuration <https://www.izenda.com/docs/install/troubleshooting/scheduling.html#duplicate-scheduled-items-are-being-sent>`_  for set up instructions.
+-  Defect  18042  System shows error msg when user creates nested CF with aggregated function
+	
 v.2.6.7 November 27, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 

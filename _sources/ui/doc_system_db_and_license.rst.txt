@@ -185,9 +185,32 @@ Import Map Data
 Optionally provision Map data. This is only needed if the report part
 type :doc:`Map <doc_report_designer_map>` is to be used in reports and dashboards.
 
+US zip codes match on first 5 number, and Canadian zip codes will match on the first 3 characters of the zip code.
+
 .. note::
 
    Izenda Map data contains all countries and all US and Canada cities and will take several minutes to be fully set up.
+   
+To upgrade map data when any changes are made by Izenda please follow the instructions below. We do not automatically run these types of upgrades as map report parts will not work until the process is complete:
+
+1. Update IzendaSystemSetting Table in your Izenda Configuration Database as below: |br|
+
+.. code-block:: sql
+	:linenos:
+	
+	Update IzendaSystemSetting
+	Set Value = 0
+	Where Name = 'ProvisionStaticDataStatus'
+	
+.. Warning::
+
+   As general best practice, we recommend backing up your database before making any manual updates.
+
+2. After making these changes, all API instances should be restarted. 
+ 
+3. Next you will need to log into the Izenda Application as a System Administrator and Run "Provision Map Data" on the Izenda DB & License Page to insert the new data. |br|
+
+Once this is complete, map report parts will be available again. 
 
 Modify the License
 ------------------
