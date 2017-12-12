@@ -26,7 +26,8 @@ View Report
    .. _Report_Viewer:
 
    .. figure:: /_static/images/Report_Viewer.png
-      :width: 500px
+      :align: center
+      :width: 773px
 
       View Mode
 
@@ -49,7 +50,8 @@ View Report
 .. _Report_Viewer_Menu:
 
 .. figure:: /_static/images/Report_Viewer_Menu.png
-   :width: 400px
+   :align: center
+   :width: 549px
 
    Report Viewer Edit Options
 
@@ -68,7 +70,8 @@ Quick Edit Report
    .. _Report_Viewer_in_Quick_Edit_mode:
 
    .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode.png
-      :width: 583px
+      :align: center
+      :width: 777px
 
       Quick Edit Mode
 
@@ -76,3 +79,13 @@ Quick Edit Report
    see the effects.
 
 #. Click Save or Save As to apply the changes to report.
+
+.. note:: 
+
+   In the review mode, the report part backside is impacted by the "Show Preview section in Configuration Mode" option in Advanced Setting > Others tab like a report part in Report Designer. Please see :ref:`Hide_Preview_Section` for more details.
+
+   .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode_Hide_Preview.png
+      :align: center
+      :width: 1065px
+
+      Preview section is hidden in a report part backside in Report Review

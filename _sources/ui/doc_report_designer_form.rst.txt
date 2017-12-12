@@ -55,6 +55,17 @@ General Form properties can be configured in Form section:
    #. Select the border thickness (in pixels).
    #. Click OK to close the Form Border Settings pop-up. |br|
 
+   .. note::
+
+      The Preview section will not be shown (as image below) if the **Show Preview section in Configuration Mode** checkbox is unticked in Others tab in Advanced Settings.
+
+         .. figure:: /_static/images/Form_Border_Settings_No_Review.png
+            :width: 458px
+
+         Report Designer - Gauge Border Settings without Preview section
+
+      Please see :ref:`Advanced_Settings_Others` for more details.
+
 -  Form background color
 
    #. Click the color icon to open the color palete.

@@ -6,7 +6,7 @@ PagedRequest
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 60 10
+   :widths: 25 5 55 15
 
    *  -  Field
       -  NULL

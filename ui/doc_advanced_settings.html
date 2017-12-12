@@ -113,11 +113,11 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Settings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#add-data-source-categories">Add data source categories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete-data-source-categories">Delete data source categories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rename-data-source-categories">Rename data source categories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#update-settings-in-performance-security-additive-fields-and-others-group">Update settings in Performance, Security/Additive Fields and Others group</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#update-settings-in-security-tenant-group">Update settings in Security/Tenant group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#steps-to-config-advanced-settings">Steps to config Advanced Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-performance-settings">Update Performance Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-security-settings">Update Security Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-categories-settings">Update Categories Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-others-settings">Update Others Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cancel-the-changes">Cancel the changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
@@ -214,9 +214,132 @@
 <li>manage the list of data source categories</li>
 <li>update system settings in related groups</li>
 </ul>
+<div class="section" id="steps-to-config-advanced-settings">
+<h2>Steps to config Advanced Settings<a class="headerlink" href="#steps-to-config-advanced-settings" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Advanced Settings
+permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Advanced Settings in the left
+menu.</p>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Click on a tab to view values.</p>
+</li>
+<li><p class="first">Hover on information icon following the value name to see the brief guide of that value</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/Advanced_Settings_Performance_Hover_Brief_Guide.png"><img alt="../_images/Advanced_Settings_Performance_Hover_Brief_Guide.png" src="../_images/Advanced_Settings_Performance_Hover_Brief_Guide.png" style="width: 1001px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">Brief guide of a configuration option.</span></p>
+</div>
+</li>
+<li><p class="first">Update the values.</p>
+</li>
+<li><p class="first">Click Save button at the top to save the whole settings.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="update-performance-settings">
+<h2>Update Performance Settings<a class="headerlink" href="#update-performance-settings" title="Permalink to this headline">¶</a></h2>
+<p>In Advanced Settings page, click on Performance tab in Middle Panel to view the items. The Performance items are list as below:</p>
+<blockquote>
+<div><blockquote>
+<div><div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_static/images/Advanced_Settings_Performance.png"><img alt="_static/images/Advanced_Settings_Performance.png" src="_static/images/Advanced_Settings_Performance.png" style="width: 1653px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">Setting values provied in Performance tab</span></p>
+</div>
+</div></blockquote>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="65%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Purpose</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Query Timeout</td>
+<td>To limit the duration of all queries in any page.</td>
+<td>3600</td>
+</tr>
+<tr class="row-odd"><td>Use No Lock</td>
+<td>To not use NOLOCK (dirty read) statement when querying data.</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>Data Source Limit</td>
+<td>To limit the number of data sources in a single report.</td>
+<td>1000</td>
+</tr>
+<tr class="row-odd"><td>Field Limit</td>
+<td>To limit the number of fields in a report part.</td>
+<td>1000</td>
+</tr>
+<tr class="row-even"><td>Query Limit</td>
+<td>To limit the number of values returned from the query in Report Designer, Report Viewer, Dashboard and Export.</td>
+<td>100000</td>
+</tr>
+<tr class="row-odd"><td>Pivot Column Limit</td>
+<td>Limit the number of columns in a pivot report part.</td>
+<td>100000</td>
+</tr>
+<tr class="row-even"><td>Filter Limit</td>
+<td>Limit the number of items displayed in Filter Value dropdown</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Use No Lock setting instructs the database engine to return the current version of data immediately, instead of waiting for all pending transactions to complete. Check the possible consequences <a class="reference external" href="https://www.izenda.com/blog/high-performance-sql-views-using-withnolock/">here</a> before using this option.</p>
+</div>
+</div>
+<div class="section" id="update-security-settings">
+<h2>Update Security Settings<a class="headerlink" href="#update-security-settings" title="Permalink to this headline">¶</a></h2>
+<p>In Advanced Settings page, click on Security tab in Middle Panel to view the items. The Security items are listed as below:</p>
+<blockquote>
+<div><div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_static/images/Advanced_Settings_Sercurity.png"><img alt="_static/images/Advanced_Settings_Sercurity.png" src="_static/images/Advanced_Settings_Sercurity.png" style="width: 1657px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">Setting values provied in Security tab</span></p>
+</div>
+</div></blockquote>
+<div class="section" id="update-settings-in-tenant-group">
+<h3>Update settings in Tenant group<a class="headerlink" href="#update-settings-in-tenant-group" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Tick on&nbsp;Show Tenant Field&nbsp;checkbox will show the field(s) which is(are) sepcififed in Tenant Field in report/dashboard. Otherwise, those fields will be hidden.</p>
+</li>
+<li><p class="first">For security in multi-tenant systems, set up <strong>Tenant Field</strong> then all reports and dashboards will automatically restrict data retrieval to only that of the current tenant. To enable this feature:</p>
+<blockquote>
+<div><p>- Input the name of tenant id field into the Tenant Field box <br clear="right" />
+- The Tenant Field must be enclosed in brackets: [fieldname] <br clear="right" />
+- Press <strong>Enter</strong> to add tenant field  <br clear="right" />
+- You can use multiple tenant fields</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="update-settings-in-additive-fields-group">
+<span id="update-settings-in-security-additive-fields-group"></span><h3>Update settings in Additive Fields group<a class="headerlink" href="#update-settings-in-additive-fields-group" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Tick on <strong>Set Additive Field Auto Visible</strong> will automatically set the additive field when physical data model changes as Visible</li>
+<li>Tick on <strong>Set Additive Field Auto Filterable</strong> will automatically set the additive field when physical data model changes as Filterable</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="update-categories-settings">
+<h2>Update Categories Settings<a class="headerlink" href="#update-categories-settings" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="add-data-source-categories">
-<span id="id1"></span><h2>Add data source categories<a class="headerlink" href="#add-data-source-categories" title="Permalink to this headline">¶</a></h2>
-<p>A category should be added before showing up for assignment to a data
+<span id="id1"></span><h3>Add data source categories<a class="headerlink" href="#add-data-source-categories" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A category should be added before showing up for assignment to a data
 source.</p>
 <ol class="arabic">
 <li><p class="first">In browser, log in to Izenda as a user with Advanced Settings
@@ -227,16 +350,16 @@ menu.</p>
 </li>
 <li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
 </li>
-<li><div class="figure align-right" id="id3">
+<li><div class="figure align-right" id="id5">
 <span id="menu-advanced-settings-category"></span><a class="reference internal image-reference" href="../_images/Menu_Advanced_Settings_Category.jpg"><img alt="../_images/Menu_Advanced_Settings_Category.jpg" src="../_images/Menu_Advanced_Settings_Category.jpg" style="width: 391px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">Category Menu</span></p>
+<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">Category Menu</span></p>
 </div>
-<p>Click Category in the Middle Panel. (<a class="reference internal" href="#menu-advanced-settings-category"><span class="std std-numref">Fig. 103</span></a>) <br clear="right" /></p>
+<p>Click Category in the Middle Panel. (<a class="reference internal" href="#menu-advanced-settings-category"><span class="std std-numref">Fig. 106</span></a>) <br clear="right" /></p>
 </li>
-<li><p class="first">Click Add New + button and type the name into the new text box. (<a class="reference internal" href="#settings-category-add-new"><span class="std std-numref">Fig. 104</span></a>)</p>
-<div class="figure" id="id4">
+<li><p class="first">Click Add New + button and type the name into the new text box. (<a class="reference internal" href="#settings-category-add-new"><span class="std std-numref">Fig. 107</span></a>)</p>
+<div class="figure" id="id6">
 <span id="settings-category-add-new"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Add_New.jpg"><img alt="../_images/Settings_Category_Add_New.jpg" src="../_images/Settings_Category_Add_New.jpg" style="width: 622px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">Add New button <br clear="right" /></span></p>
+<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">Add New button <br clear="right" /></span></p>
 </div>
 </li>
 <li><p class="first">Continue to click Add New + button to enter more categories.</p>
@@ -248,20 +371,22 @@ menu.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">User will not be able to save the list unless there is no duplication.</p>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="delete-data-source-categories">
-<h2>Delete data source categories<a class="headerlink" href="#delete-data-source-categories" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">In the category list, click the delete icon (x) on the right of each category to delete it. (<a class="reference internal" href="#settings-category-delete"><span class="std std-numref">Fig. 105</span></a>)</p>
-<div class="figure" id="id5">
+<h3>Delete data source categories<a class="headerlink" href="#delete-data-source-categories" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">In the category list, click the delete icon (x) on the right of each category to delete it. (<a class="reference internal" href="#settings-category-delete"><span class="std std-numref">Fig. 108</span></a>)</p>
+<div class="figure" id="id7">
 <span id="settings-category-delete"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Delete.jpg"><img alt="../_images/Settings_Category_Delete.jpg" src="../_images/Settings_Category_Delete.jpg" style="width: 621px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">Delete icon <br clear="right" /></span></p>
+<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">Delete icon <br clear="right" /></span></p>
 </div>
 </li>
-<li><p class="first">Click OK in the pop-up confirmation. (<a class="reference internal" href="#category-deletion-confirmation"><span class="std std-numref">Fig. 106</span></a>)</p>
-<div class="figure" id="id6">
+<li><p class="first">Click OK in the pop-up confirmation. (<a class="reference internal" href="#category-deletion-confirmation"><span class="std std-numref">Fig. 109</span></a>)</p>
+<div class="figure" id="id8">
 <span id="category-deletion-confirmation"></span><a class="reference internal image-reference" href="../_images/Category_Deletion_Confirmation.jpg"><img alt="../_images/Category_Deletion_Confirmation.jpg" src="../_images/Category_Deletion_Confirmation.jpg" style="width: 456px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">Delete confirmation <br clear="right" /></span></p>
+<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Delete confirmation <br clear="right" /></span></p>
 </div>
 </li>
 <li><p class="first">The category is deleted immediately.</p>
@@ -278,16 +403,18 @@ menu.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">To change the name of a category, the <a class="reference internal" href="#rename-data-source-categories">Rename data source categories</a> feature should be used instead.</p>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="rename-data-source-categories">
-<h2>Rename data source categories<a class="headerlink" href="#rename-data-source-categories" title="Permalink to this headline">¶</a></h2>
-<p>Renaming a category will only change the name and keep the assignments
+<h3>Rename data source categories<a class="headerlink" href="#rename-data-source-categories" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Renaming a category will only change the name and keep the assignments
 to data sources intact.</p>
 <ol class="arabic">
-<li><p class="first">In the category list, click the text box of any category and change the name. (<a class="reference internal" href="#settings-category-rename"><span class="std std-numref">Fig. 107</span></a>)</p>
-<div class="figure align-right" id="id7">
+<li><p class="first">In the category list, click the text box of any category and change the name. (<a class="reference internal" href="#settings-category-rename"><span class="std std-numref">Fig. 110</span></a>)</p>
+<div class="figure align-right" id="id9">
 <span id="settings-category-rename"></span><a class="reference internal image-reference" href="../_images/Settings_Category_Rename.jpg"><img alt="../_images/Settings_Category_Rename.jpg" src="../_images/Settings_Category_Rename.jpg" style="width: 617px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">Rename categories <br clear="right" /></span></p>
+<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Rename categories <br clear="right" /></span></p>
 </div>
 </li>
 <li><p class="first">Continue to change more category names</p>
@@ -295,82 +422,114 @@ to data sources intact.</p>
 <li><p class="first">Click Save button at the top to save the whole list.</p>
 </li>
 </ol>
+</div></blockquote>
 </div>
-<div class="section" id="update-settings-in-performance-security-additive-fields-and-others-group">
-<span id="id2"></span><h2>Update settings in Performance, Security/Additive Fields and Others group<a class="headerlink" href="#update-settings-in-performance-security-additive-fields-and-others-group" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">In browser, log in to Izenda as a user with Advanced Settings
-permission.</p>
-</li>
-<li><p class="first">Click Settings, then Data Setup then Advanced Settings in the left
-menu.</p>
-</li>
-<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
-</li>
-<li><div class="figure align-right" id="id8">
-<span id="menu-advanced-settings-performance-security-and-others"></span><a class="reference internal image-reference" href="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg"><img alt="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg" src="../_images/Menu_Advanced_Settings_Performance_Security_Others.jpg" style="width: 389px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">Performance, Security and Others</span></p>
 </div>
-<p>Click Performance, Security or Others. (<a class="reference internal" href="#menu-advanced-settings-performance-security-and-others"><span class="std std-numref">Fig. 108</span></a>) <br clear="right" /></p>
-</li>
-<li><p class="first">The settings are listed together with their current values.</p>
-</li>
-<li><p class="first">Update the values.</p>
+<div class="section" id="update-others-settings">
+<span id="advanced-settings-others"></span><h2>Update Others Settings<a class="headerlink" href="#update-others-settings" title="Permalink to this headline">¶</a></h2>
+<p>In Advanced Settings page, click on Others tab in Middle Panel to view the items. The Others items are listed as below:</p>
 <blockquote>
-<div><p>User can revert any setting back to its system default value by clicking the back arrow icon (↺). (<a class="reference internal" href="#advanced-settings-back-to-default-value"><span class="std std-numref">Fig. 109</span></a>)</p>
-<div class="figure" id="id9">
-<span id="advanced-settings-back-to-default-value"></span><a class="reference internal image-reference" href="../_images/Advanced_Settings_Back_to_default_value.jpg"><img alt="../_images/Advanced_Settings_Back_to_default_value.jpg" src="../_images/Advanced_Settings_Back_to_default_value.jpg" style="width: 618px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Revert back to default value <br clear="right" /></span></p>
+<div><blockquote>
+<div><div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="_static/images/Advanced_Settings_Others.png"><img alt="_static/images/Advanced_Settings_Others.png" src="_static/images/Advanced_Settings_Others.png" style="width: 1649px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Setting values provied in Others group</span></p>
 </div>
 </div></blockquote>
-</li>
-<li><p class="first">Click Save button at the top to save the whole setting group.</p>
-<div class="admonition note">
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="65%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Section</th>
+<th class="head">Purpose</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Sort Colum Name</td>
+<td>Tick on this checkbox to alphabetically the lists of column or field names. Otherwise, those lists will not be sort.</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>Trim Time In Joins</td>
+<td>Tick on this checkbox to trim the time portion form the Date Time field in each join statement in Report Designer - Relationship page. Otherwise, system will use Date Time field in each sort statement</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>Timezone for Data Offset</td>
+<td>To set default value for the Timezone Data Offset in Settings &gt; User Setup page. And this setting will effect to displayed data value of Datetime/Time fields in the report part. <br clear="right" />
+For example: <br clear="right" />
+In database the data value is 11:00. If user sets “+5” in the textbox of this section then the data value will be shown as 16:00 in the report part.</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>Timezone for Timestamp Offset</td>
+<td>To set default value for the Timezone Data Offset in Settings &gt; User Setup page. And this setting will effect to all Datetime/Time field in system. <br clear="right" />
+For example: <br clear="right" />
+The created date of report is 11:00. If user sets “+5” in the textbox of this section then the created date will be shown as 16:00 in the system.</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>Convert Null to Empty String</td>
+<td>Tick on this checkbox to convert all null values to blank (empty) in reports or dashboards. Otherwise, null values keep the orginal values.</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>Show Schema Name</td>
+<td>Tick on this checkbox to show schema name together with the the data source name in any place. Otherwise, the schema name will be hidden</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>Show Introduction Text</td>
+<td>To show the Introduction Text in the following section: <br clear="right" />
+- Report Designer &gt; Data Source tab &gt; Content Panel &gt; under Report Name <br clear="right" />
+- Report List &gt; Content Panel &gt; under each report name</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>Send to Disk Path</td>
+<td><p class="first">To define the path to save files for all Scheduled/Subcribed instances with <strong>Send to Disk</strong> delivery method, input path in the textbox of that section.</p>
+<div class="last admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The input boxes only accept a limited range of values and will not allow invalid entries.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>For a detailed description of any setting, point over that setting to see the information icon (i), then point over that icon to see the description tooltip. (<a class="reference internal" href="#advanced-settings-detailed-description-tooltip"><span class="std std-numref">Fig. 110</span></a>)</p>
-<div class="last figure" id="id10">
-<span id="advanced-settings-detailed-description-tooltip"></span><a class="reference internal image-reference" href="../_images/Advanced_Settings_Detailed_description_tooltip.jpg"><img alt="../_images/Advanced_Settings_Detailed_description_tooltip.jpg" src="../_images/Advanced_Settings_Detailed_description_tooltip.jpg" style="width: 617px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Detailed description tooltip <br clear="right" /></span></p>
-</div>
-</div>
-</li>
-</ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Use No Lock setting instructs the database engine to return the current version of data immediately, instead of waiting for all pending transactions to complete. Check the possible consequences <a class="reference external" href="https://www.izenda.com/blog/high-performance-sql-views-using-withnolock/">here</a> before using this option.</p>
-</div>
-</div>
-<div class="section" id="update-settings-in-security-tenant-group">
-<h2>Update settings in Security/Tenant group<a class="headerlink" href="#update-settings-in-security-tenant-group" title="Permalink to this headline">¶</a></h2>
-<p>For security in multi-tenant systems, it is a best practice to have an
-automatic filter condition to always restrict data retrieval to only
-that of the current tenant. To enable this feature:</p>
-<ol class="arabic simple">
-<li>Untick Show Tenant Field check-box.</li>
-<li>Enter the name of tenant id fields into the Tenant Field box. The Tenant Field must be enclosed in brackets [fieldname] and multiple fields should be separated by a semi-colon.</li>
-<li>Click Save button at the top.</li>
-<li>Then:<ul>
-<li>These tenant id fields will be hidden from Report Designer.</li>
-<li>The reports will automatically have a filter condition to restrict
-data retrieval to only that of the current tenant.</li>
+<ul class="last simple">
+<li>When the report is saved into this location, system will save report name together data time so that saving the new version of this report will not overwrite this report. The format when saved: &lt;report name&gt;_&lt;mmddyyyy&gt;_&lt;hhmmss&gt;</li>
+<li><strong>For example:</strong> <br clear="right" />
+If report “ABC” is saved to disk path at 10/22/2016, 23:59:00 then the report will be saved with name = ABC_10222016_235900</li>
 </ul>
-</li>
-</ol>
+</div>
+</td>
+<td>Null</td>
+</tr>
+<tr class="row-even"><td>Determine common filter for the same field based on</td>
+<td><p class="first">To determine how the filters considered whether different or the same in the dashboard so they will be common filter and shown in dashboard filter section or not. There are three available options: <br clear="right" />
+- Same field of the same data object from the same database schema <br clear="right" />
+- Same field name regardless of database schema or connection string <br clear="right" />
+- Same alias name regardless of database schema or connection string <br clear="right" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Stored Procedure stored procedures input parameters are only considered common when they are from the same stored procedure.</p>
+</div>
+<p class="last">Please see <a class="reference internal" href="doc_dashboard_designer.html#dashboard-filters"><span class="std std-ref">Dashboard Filters</span></a> for more details about common filter in dashboard.</p>
+</td>
+<td>Same field of the same data object from the same database schema</td>
+</tr>
+<tr class="row-odd"><td>Allow Multiple Sorts on Grid Header</td>
+<td>By selecting this checkbox, user can sort on multiple columns when clicking on Grid header in Vertical/Horizontal report. Otherwise, user can only sort by one column at a time.</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>Show Preview section in Configuration Mode</td>
+<td>By selecting this checkbox, both Configuration and Preview sections display in the report part’s backside and setting popups. Otherwise, system only shows Configuration section. This is useful when working with very large datasets as the database is not called until the report part is flipped to the front side.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 </div>
 <div class="section" id="cancel-the-changes">
 <h2>Cancel the changes<a class="headerlink" href="#cancel-the-changes" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id11">
 <span id="settings-cancel-confirmation"></span><a class="reference internal image-reference" href="../_images/Cancel_Confirmation.jpg"><img alt="../_images/Cancel_Confirmation.jpg" src="../_images/Cancel_Confirmation.jpg" style="width: 465px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Cancel confirmation pop-up</span></p>
+<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">Cancel confirmation pop-up</span></p>
 </div>
 <p>To cancel any changes without saving:</p>
 <ol class="arabic simple">
 <li>Click the Cancel button at the top.</li>
-<li>Click OK in the confirmation pop-up. (<a class="reference internal" href="#settings-cancel-confirmation"><span class="std std-numref">Fig. 111</span></a>) <br clear="right" /></li>
+<li>Click OK in the confirmation pop-up. (<a class="reference internal" href="#settings-cancel-confirmation"><span class="std std-numref">Fig. 112</span></a>) <br clear="right" /></li>
 </ol>
 </div>
 <div class="section" id="see-also">

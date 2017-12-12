@@ -53,9 +53,11 @@ Preview pane:
       .. _NW_Orders_Chart_Border_Settings:
 
       .. figure:: /_static/images/NW_Orders_Chart_Border_Settings.png
-         :width: 464px
+         :width: 650px
 
          Report Designer - Chart Border Settings |br|
+
+
 
 -  Set the
    background color.
@@ -256,6 +258,25 @@ Preview pane:
    #. Enter an interval between each refresh (in seconds).
    #. Choose to view all data or enter a number to view that specific
       number of latest records only. |br|
+
+.. note:: 
+
+   If the **Show Preview section in Configuration Mode** checkbox (In Others tab in Advanced Settings) is unticked then The Preview section will not be displayed for following pop-ups: 
+
+      \- Chart Border Settings |br|
+      \- Chart Background Color Settings |br|
+      \- XY-Plane Settings |br|
+      \- Grid Lines Settings |br|
+      \- Legend Settings |br|
+      \- Thresholds Settings
+
+      .. figure:: /_static/images/NW_Orders_Chart_Border_Settings_No_Preview.png
+         :align: center
+         :width: 464px
+
+         Report Designer - Chart Border Settings without Preview section |br|
+
+   Please see :ref:`Advanced_Settings_Others` for more details.
 
 Line Chart
 ----------

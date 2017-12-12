@@ -1664,6 +1664,15 @@ Sample payload:</div>
 </pre></div>
 </div>
 </div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In the Izenda UI, for a Form report part payload, the column elements properties in the <strong>reportPart &gt; reportPartContent &gt; columns &gt; elements &gt; properties</strong> has higher precedence than the properties in <strong>htmlcontent</strong> (field-prop). Thus, system will display the field(s) in Izenda UI follow the column elements properties.</p>
+<p>For example: In the image below, the visible property of ShipCountry field is different between the column elements properties and the htmlcontent. Thus, in the Izenda UI, this field will keep the value <code class="code docutils literal"><span class="pre">&quot;fieldItemVisible&quot;:</span> <span class="pre">false</span></code> and not be displayed in report part.</p>
+<div class="last figure align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/POST_report_properties_not_match.png"><img alt="../_images/POST_report_properties_not_match.png" src="../_images/POST_report_properties_not_match.png" style="width: 594px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 418 </span><span class="caption-text">The properties in the column elements properties and htmlcontent do not match <br clear="right" /></span></p>
+</div>
+</div>
 </div>
 <div class="section" id="post-report-draft">
 <span id="id3"></span><h2>POST report/draft<a class="headerlink" href="#post-report-draft" title="Permalink to this headline">¶</a></h2>
@@ -3517,7 +3526,7 @@ Sample response:</div>
             <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
             <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;lastViewed&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11T04:43:31.5100000+07:00&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Pikachu Pikachu&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
             <span class="nt">&quot;ownerId&quot;</span><span class="p">:</span> <span class="s2">&quot;376545c8-6bfa-4025-9d25-374f3a61be78&quot;</span><span class="p">,</span>
             <span class="nt">&quot;headerContent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="nt">&quot;footerContent&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -3640,8 +3649,8 @@ Sample response:</div>
 boolean</td>
 <td>R</td>
 <td><ul class="first last simple">
-<li>true if there is no change</li>
-<li>false if there is any change</li>
+<li>true if there is any change</li>
+<li>false if there is no change</li>
 </ul>
 </td>
 <td>&#160;</td>

@@ -118,7 +118,8 @@ See also: `POST fusion/validateDataModelExpression`_
       {
          "result": {
             "izendaDataType": "Numeric",
-            "isRunningField": true
+            "isRunningField": false,
+            "isCompositeField": false
          },
          "success": true,
          "messages": [],
@@ -2388,8 +2389,9 @@ See also: `POST fusion/validateExpression`_
 
       {
          "result": {
-            "izendaDataType": null,
-            "isRunningField": true
+            "izendaDataType": "Numeric",
+            "isRunningField": false,
+            "isCompositeField": false
          },
          "success": true,
          "messages": [],

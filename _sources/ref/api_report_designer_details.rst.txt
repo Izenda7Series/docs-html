@@ -1347,6 +1347,20 @@ Saves a report.
          "data": null
       }
 
+.. note::
+
+   In the Izenda UI, for a Form report part payload, the column elements properties in the **reportPart > reportPartContent > columns > elements > properties** has higher precedence than the properties in **htmlcontent** (field-prop). Thus, system will display the field(s) in Izenda UI follow the column elements properties.
+
+   For example: In the image below, the visible property of ShipCountry field is different between the column elements properties and the htmlcontent. Thus, in the Izenda UI, this field will keep the value :code:`"fieldItemVisible": false` and not be displayed in report part.
+
+   .. figure:: /_static/images/API/POST_report_properties_not_match.png
+      :align: center
+      :width: 594px
+
+      The properties in the column elements properties and htmlcontent do not match |br|
+   
+      
+
 .. _POST_report/draft:
 
 POST report/draft
@@ -3247,7 +3261,7 @@ Returns a list of all reports filtered by tenant_id if provided.
                       "description": "",
                       "title": null,
                       "lastViewed": "2017-09-11T04:43:31.5100000+07:00",
-                      "owner": "Pikachu Pikachu",
+                      "owner": "John Doe",
                       "ownerId": "376545c8-6bfa-4025-9d25-374f3a61be78",
                       "headerContent": null,
                       "footerContent": null,
@@ -3361,8 +3375,8 @@ Verifies that all report filter fields are without changes.
       *  -  **hasChanged** |br|
             boolean
          -  R
-         -  * true if there is no change
-            * false if there is any change
+         -  * true if there is any change
+            * false if there is no change
          -
       *  -  **filterFields** |br|
             array of objects

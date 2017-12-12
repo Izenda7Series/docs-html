@@ -117,7 +117,7 @@ QuerySourceField
 
          .. seealso::
 
-            :ref:`Update_settings_in_Performance_Security_Additive_Fields_and_Others_group`
+            :ref:`Update_settings_in_Security_Additive_Fields_group`
       -
    *  -  **functionName** |br|
          string

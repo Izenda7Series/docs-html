@@ -53,7 +53,14 @@ List of APIs
        Deprecated, please use `POST report/loadPartialFilterFieldData`_ to avoid timeouts loading large data.
    * - `GET report/validateFilter/{report_id}`_
      - Validates that all required filters in specified report have filter value.
+   * - `POST report/validateFilterFieldsType`_
+     - Validate if report contains both aggregated and non-aggregated filter fields.
 
+       .. versionadded :: 2.5.0
+   * - `GET report/validateFilterFieldsType/{reportId}`_
+     - Validate if report contains both aggregated and non-aggregated filter fields.
+
+       .. versionadded :: 2.5.0
 .. _GET_report/filter/operators:
 
 GET report/filter/operators
@@ -5759,3 +5766,138 @@ Validates that all required filters in specified report have filter value.
       .. code-block:: json
          
          true
+
+POST report/validateFilterFieldsType
+-------------------------------------
+
+Validate if report contains both aggregated and non-aggregated filter fields.
+
+**Request**
+
+    A :doc:`models/ReportFilterSetting`object
+
+**Response**
+
+     - true if report contains both aggregated and non-aggregated filter fields
+     - false if not
+
+**Sample**
+   .. code-block:: http
+
+      POST report/validateFilterFieldsType HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "filterFields": [
+            {
+                  "connectionName": "Northwind-BA",
+                  "querySourceCategoryName": "dbo",
+                  "sourceFieldName": "ShipCountry",
+                  "sourceFieldVisible": true,
+                  "sourceFieldFilterable": true,
+                  "sourceDataObjectName": "Orders",
+                  "sourceDataObjectFullName": "Northwind-BA.dbo.Orders",
+                  "dataType": "Text",
+                  "isParameter": false,
+                  "isCalculated": false,
+                  "calculatedTree": null,
+                  "compareFieldCalculatedTree": null,
+                  "compareValueCalculatedTree": null,
+                  "compareField": null,
+                  "selected": false,
+                  "dataFormat": null,
+                  "reportId": null,
+                  "useMappedFieldAlias": false,
+                  "uniqueId": "62",
+                  "comparisionValue": null,
+                  "inTimePeriodType": null,
+                  "valueInTimePeriod": null,
+                  "hasModifiedCalculatedTree": false,
+                  "isHiddenFilter": false,
+                  "isInheritableFilter": false,
+                  "operatorName": "Equals (Manual Entry)",
+                  "type": 0,
+                  "isRunningField": false,
+                  "isDrillDown": false,
+                  "filterId": "fb93311f-91bf-4cca-a698-9c8d04e2d6a5",
+                  "reportFieldAlias": null,
+                  "reportPartTitle": null,
+                  "querySourceFieldId": "bfeceef4-e536-4823-8cde-adb8f71d52f5",
+                  "querySourceType": "Table",
+                  "querySourceId": "205c0e5f-fff8-409b-a54a-b6687619486d",
+                  "relationshipId": null,
+                  "alias": "ShipCountry",
+                  "position": 1,
+                  "visible": true,
+                  "required": false,
+                  "cascading": true,
+                  "operatorId": "737307d1-1e5f-407f-889f-1b3c9a66dd6f",
+                  "operatorSetting": null,
+                  "value": null,
+                  "dataFormatId": null,
+                  "sortType": "ASC",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "textColor": "#000",
+                  "backgroundColor": "#fff",
+                  "fontBold": false,
+                  "fontItalic": false,
+                  "fontUnderline": false,
+                  "querySourceUniqueName": null,
+                  "querySourceFieldName": null,
+                  "comparisonFieldUniqueName": null,
+                  "isNegative": false,
+                  "id": "49c652da-5c78-4208-a451-043555af4018",
+                  "state": 3,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": "2017-10-12T03:01:28.5170000+07:00",
+                  "modifiedBy": null
+            }
+         ],
+         "updatedFielterValue": false,
+         "baseFilterLogic": null,
+         "logic": "",
+         "visible": false,
+         "reportId": "655418a5-1036-4b3b-8793-3f60f15c7be3",
+         "id": "fb93311f-91bf-4cca-a698-9c8d04e2d6a5",
+         "state": 0,
+         "deleted": false,
+         "inserted": true,
+         "version": null,
+         "created": null,
+         "createdBy": "System5 Admin5",
+         "modified": null,
+         "modifiedBy": null
+      }
+
+   Sample Response ::
+
+      false
+
+GET report/validateFilterFieldsType/{reportId}
+-------------------------------------------------
+
+Validate if report contains both aggregated and non-aggregated filter fields.
+
+**Request**
+
+    No payload
+
+**Response**
+
+     - true if report contains both aggregated and non-aggregated filter fields
+     - false if not
+
+**Sample**
+   .. code-block:: http
+
+      GET report/validateFilterFieldsType/655418a5-1036-4b3b-8793-3f60f15c7be3 HTTP/1.1
+
+   Sample Response ::
+
+      false

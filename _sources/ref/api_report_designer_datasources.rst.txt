@@ -40,6 +40,11 @@ Summary
        \- Create a new report OR open an existing report |br|
        \- In Data Source tab, choose a data source |br|
        \- OR switch from the others to Data Source tab
+   * - `POST report/loadRelatedQuerySources`_
+     - Returns list of related query source categories.
+
+       .. versionadded:: 2.5.0
+     - 
    * - `POST report/loadJoinQuerySourceByRelationship`_
      - Get join query source by relationship
 
@@ -69,6 +74,11 @@ Summary
    * - `GET report/fieldProperties/{query_source_field_id}`_
      - Returns the properties of query source field specified by query_source_field_id.
      - 
+   * - `POST report/loadDataSourceFields`_
+     - Returns the list fields of selected query source.
+       
+       .. versionadded:: 2.5.0
+     - To be updated
    * - `POST report/calculatedField`_
      - Saves a calculated field after validating name duplication (does not validate the expression).
      - Report Designer > Fields > Add Calculated Field > OK
@@ -84,6 +94,16 @@ Summary
    * - `POST report/deleteReportCalculatedField`_
      - Removes a calculated field from report.
      - Report Designer > Fields > Delete icon on a calculated field
+   * - `POST report/loadDynamicDataSourceCategory`_
+     - Returns list of dynamic report data source category.
+
+       .. versionadded:: 2.5.0
+     - To be updated
+   * - `POST report/loadPartialDataSourceCategory`_
+     - Returns list of report data source category with paging.
+
+       .. versionadded:: 2.5.0
+     - In Report Designer when switching from the others to Data Source tab.
 
 GET report/dataSourceCategory/(tenant_id)
 ------------------------------------------------
@@ -363,6 +383,234 @@ Returns details for a list of query sources and a list of related query sources.
          "skipItems": 0,
          "isLastPage": false
       }
+
+POST report/loadRelatedQuerySources
+-----------------------------------------
+
+Returns list of related query source categories.
+
+
+**Request**
+
+    Payload: a :doc:`models/ReportSelectedPagedRequest` object
+
+**Response**
+
+    The following object:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **data** |br|
+             an array of :doc:`ReportDataSourceCategory`
+          -  The list of report data source category
+          -
+       *  -  **totalItems** |br|
+             integer
+          -  The number of all items
+          -
+       *  -  **numOfChilds** |br|
+             integer
+          -  The number of children
+          -
+       *  -  **numOfCheckedChilds** |br|
+             integer
+          -  The number of selected children
+          -
+       *  -  **indeterminate** |br|
+             boolean
+          -  * true if 0 < numOfCheckedChilds < numOfChilds
+             * false if not
+          -
+       *  -  **isLastPage** |br|
+             boolean
+          -  Whether this is the last page
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadRelatedQuerySources HTTP/1.1
+
+   Sample Request Payload::
+
+      {
+         "querySources": [{
+            "querySourceId": "67a0d2f7-3171-412f-8e44-3ab17c134700",
+            "selected": true,
+            "physicalChange": 0,
+            "state": 2
+         }],
+         "tenantId": "f09289c1-3f43-4da3-85c8-249e474dd074",
+         "criteria": [{
+            "key": "All",
+            "value": "",
+            "operation": 1
+         }],
+         "pageIndex": 1,
+         "pageSize": 10,
+         "sortOrders": [{
+            "key": "Category",
+            "descending": true
+         }]
+      }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response
+
+      .. code-block:: json
+
+         {
+            "data": [
+               {
+                     "id": "63cff017-70de-4e6a-9318-97c42116a29e",
+                     "name": "MSSQL",
+                     "querySource": [
+                        {
+                           "id": "9a014d06-6c3a-46f5-813f-2cbbd0eee7f0",
+                           "name": "Order Details",
+                           "originalName": "Order Details",
+                           "type": "Table",
+                           "selected": true,
+                           "visible": true,
+                           "querySourceCategoryName": "dbo",
+                           "dataSourceCategoryName": "MSSQL",
+                           "dataSourceCategoryId": "63cff017-70de-4e6a-9318-97c42116a29e",
+                           "connectionName": "MSSQL_Northwind",
+                           "isAlias": false,
+                           "isDynamic": false,
+                           "fields": [
+                                 {
+                                    "name": "OrderID",
+                                    "alias": "",
+                                    "dataType": "int",
+                                    "izendaDataType": "Numeric",
+                                    "allowDistinct": false,
+                                    "visible": true,
+                                    "filterable": true,
+                                    "querySourceId": "00000000-0000-0000-0000-000000000000",
+                                    "parentId": null,
+                                    "expressionFields": [],
+                                    "filteredValue": "",
+                                    "type": 0,
+                                    "groupPosition": 0,
+                                    "position": 0,
+                                    "extendedProperties": null,
+                                    "physicalChange": 0,
+                                    "approval": 0,
+                                    "existed": false,
+                                    "matchedTenant": false,
+                                    "functionName": null,
+                                    "expression": null,
+                                    "isRunningField": false,
+                                    "supportDefaultTotal": null,
+                                    "fullName": null,
+                                    "calculatedTree": null,
+                                    "reportId": null,
+                                    "originalName": "OrderID",
+                                    "originalId": "00000000-0000-0000-0000-000000000000",
+                                    "isParameter": false,
+                                    "isCalculated": false,
+                                    "hasAggregatedFunction": false,
+                                    "hasSupportDefaultTotal": true,
+                                    "querySource": null,
+                                    "querySourceName": null,
+                                    "categoryName": null,
+                                    "inaccessible": false,
+                                    "originalAlias": null,
+                                    "allowToSave": false,
+                                    "fullPath": null,
+                                    "isCheck": false,
+                                    "id": "9aa1a6ed-5bc9-4152-8f0d-c7ab6e7d9d1d",
+                                    "state": 0,
+                                    "deleted": false,
+                                    "inserted": true,
+                                    "version": null,
+                                    "created": null,
+                                    "createdBy": "System Admin",
+                                    "modified": "0001-01-01T00:00:00",
+                                    "modifiedBy": null
+                                 },
+                                 {
+                                    "name": "ProductID",
+                                    "alias": "",
+                                    "dataType": "int",
+                                    "izendaDataType": "Numeric",
+                                    "allowDistinct": false,
+                                    "visible": true,
+                                    "filterable": true,
+                                    "querySourceId": "00000000-0000-0000-0000-000000000000",
+                                    "parentId": null,
+                                    "expressionFields": [],
+                                    "filteredValue": "",
+                                    "type": 0,
+                                    "groupPosition": 0,
+                                    "position": 0,
+                                    "extendedProperties": null,
+                                    "physicalChange": 0,
+                                    "approval": 0,
+                                    "existed": false,
+                                    "matchedTenant": false,
+                                    "functionName": null,
+                                    "expression": null,
+                                    "isRunningField": false,
+                                    "supportDefaultTotal": null,
+                                    "fullName": null,
+                                    "calculatedTree": null,
+                                    "reportId": null,
+                                    "originalName": "ProductID",
+                                    "originalId": "00000000-0000-0000-0000-000000000000",
+                                    "isParameter": false,
+                                    "isCalculated": false,
+                                    "hasAggregatedFunction": false,
+                                    "hasSupportDefaultTotal": true,
+                                    "querySource": null,
+                                    "querySourceName": null,
+                                    "categoryName": null,
+                                    "inaccessible": false,
+                                    "originalAlias": null,
+                                    "allowToSave": false,
+                                    "fullPath": null,
+                                    "isCheck": false,
+                                    "id": "316d1a12-9252-41c8-85e3-95c65b3da396",
+                                    "state": 0,
+                                    "deleted": false,
+                                    "inserted": true,
+                                    "version": null,
+                                    "created": null,
+                                    "createdBy": "System Admin",
+                                    "modified": "0001-01-01T00:00:00",
+                                    "modifiedBy": null
+                                 }
+                           ],
+                           "numOfChilds": 2,
+                           "numOfCheckedChilds": 0,
+                           "indeterminate": false,
+                           "fullPath": null,
+                           "computeNameSettings": null,
+                           "isCheck": false
+                        }
+                     ],
+                     "numOfChilds": 1,
+                     "numOfCheckedChilds": 0,
+                     "indeterminate": false,
+                     "fullPath": null,
+                     "computeNameSettings": null,
+                     "isCheck": false
+               }],
+            "totalItems": 0,
+            "numOfChilds": 1,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "isLastPage": true
+         }
 
 POST report/loadJoinQuerySourceByRelationship
 ----------------------------------------------
@@ -1085,6 +1333,25 @@ Returns the properties of query source field specified by query_source_field_id.
          }]
       }
 
+POST report/loadDataSourceFields
+-------------------------------------
+
+Returns the list fields of selected query source.
+
+**Request**
+
+    Payload: a :doc:`models/ReportDataSourceParameter` object
+
+**Response**
+
+    An array of :doc:`models/QuerySourceField` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadDataSourceFields HTTP/1.1
+
 POST report/calculatedField
 ------------------------------------------------
 
@@ -1397,4 +1664,262 @@ Removes a calculated field from report.
             "key": "",
             "messages": ["There is an error while process request. Please contact administrator."]
          }]
+      }
+
+POST report/loadDynamicDataSourceCategory
+-------------------------------------------
+
+Returns list of dynamic report data source category.
+
+**Request**
+
+    Payload: a :doc:`models/ReportDataSourceParameter` object
+
+**Response**
+
+    An array of :doc:`models/ReportDataSourceCategory` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadDynamicDataSourceCategory HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+         "reportKey": {
+            "key": null
+         },
+         "criteria": [{
+            "key": "Name",
+            "value": ""
+         }],
+         "skipItems": 0,
+         "pageSize": 50,
+         "parentIds": []
+      }
+
+   Sample Response ::
+
+      {
+         "data": [],
+         "totalItems": 0,
+         "numOfChilds": 0,
+         "numOfCheckedChilds": 0,
+         "indeterminate": false,
+         "isLastPage": true
+      }
+
+
+
+POST report/loadPartialDataSourceCategory
+---------------------------------------------
+
+Returns list of report data source category with paging.
+
+**Request**
+
+    Payload: a :doc:`models/ReportDataSourceParameter` object
+
+**Response**
+
+    The following object:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **data** |br|
+             an array of :doc:`ReportDataSourceCategory`
+          -  The list of report data source category
+          -
+       *  -  **totalItems** |br|
+             integer
+          -  The number of all items
+          -
+       *  -  **numOfChilds** |br|
+             integer
+          -  The number of children
+          -
+       *  -  **numOfCheckedChilds** |br|
+             integer
+          -  The number of selected children
+          -
+       *  -  **indeterminate** |br|
+             boolean
+          -  * true if 0 < numOfCheckedChilds < numOfChilds
+             * false if not
+          -
+       *  -  **isLastPage** |br|
+             boolean
+          -  Whether this is the last page
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadPartialDataSourceCategory HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+         "reportKey": {
+            "key": null
+         },
+         "criteria": [{
+            "key": "Name",
+            "value": ""
+         }],
+         "skipItems": 0,
+         "pageSize": 50,
+         "parentIds": []
+      }
+
+   Sample Response ::
+
+      {
+         "data": [{
+            "id": "00000000-0000-0000-0000-000000000000",
+            "name": null,
+            "querySource": [{
+               "id": "45a16d82-18be-4871-a530-783e09a6bac6",
+               "name": "actor",
+               "originalName": "actor",
+               "type": "Table",
+               "selected": false,
+               "visible": true,
+               "querySourceCategoryName": "public",
+               "dataSourceCategoryName": null,
+               "dataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+               "connectionName": "PG-DVDRental",
+               "isAlias": false,
+               "isDynamic": false,
+               "fields": [
+               {
+                  "name": "actor_id",
+                  "alias": "",
+                  "dataType": "integer",
+                  "izendaDataType": "Numeric",
+                  "allowDistinct": false,
+                  "visible": true,
+                  "filterable": true,
+                  "querySourceId": "00000000-0000-0000-0000-000000000000",
+                  "parentId": null,
+                  "expressionFields": [],
+                  "filteredValue": "",
+                  "type": 0,
+                  "groupPosition": 0,
+                  "position": 0,
+                  "extendedProperties": "{\"PrimaryKey\":true}",
+                  "physicalChange": 0,
+                  "approval": 0,
+                  "existed": false,
+                  "matchedTenant": false,
+                  "functionName": null,
+                  "expression": null,
+                  "isRunningField": false,
+                  "supportDefaultTotal": null,
+                  "fullName": null,
+                  "calculatedTree": null,
+                  "reportId": null,
+                  "originalName": "actor_id",
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isParameter": false,
+                  "isCalculated": false,
+                  "hasAggregatedFunction": false,
+                  "hasSupportDefaultTotal": true,
+                  "querySource": null,
+                  "querySourceName": null,
+                  "categoryName": null,
+                  "inaccessible": false,
+                  "originalAlias": null,
+                  "allowToSave": false,
+                  "fullPath": null,
+                  "isCheck": false,
+                  "id": "f95febd6-6a9e-4f43-afa9-cffba7435a3e",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": "0001-01-01T00:00:00",
+                  "modifiedBy": null
+               },
+               {
+                  "name": "first_name",
+                  "alias": "",
+                  "dataType": "character varying",
+                  "izendaDataType": "Text",
+                  "allowDistinct": false,
+                  "visible": true,
+                  "filterable": true,
+                  "querySourceId": "00000000-0000-0000-0000-000000000000",
+                  "parentId": null,
+                  "expressionFields": [],
+                  "filteredValue": "",
+                  "type": 0,
+                  "groupPosition": 0,
+                  "position": 0,
+                  "extendedProperties": "",
+                  "physicalChange": 0,
+                  "approval": 0,
+                  "existed": false,
+                  "matchedTenant": false,
+                  "functionName": null,
+                  "expression": null,
+                  "isRunningField": false,
+                  "supportDefaultTotal": null,
+                  "fullName": null,
+                  "calculatedTree": null,
+                  "reportId": null,
+                  "originalName": "first_name",
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isParameter": false,
+                  "isCalculated": false,
+                  "hasAggregatedFunction": false,
+                  "hasSupportDefaultTotal": true,
+                  "querySource": null,
+                  "querySourceName": null,
+                  "categoryName": null,
+                  "inaccessible": false,
+                  "originalAlias": null,
+                  "allowToSave": false,
+                  "fullPath": null,
+                  "isCheck": false,
+                  "id": "b661eedd-f00c-45c8-a117-063ec3bf7ab4",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System5 Admin5",
+                  "modified": "0001-01-01T00:00:00",
+                  "modifiedBy": null
+               },
+               "numOfChilds": 2,
+               "numOfCheckedChilds": 0,
+               "indeterminate": false,
+               "fullPath": null,
+               "computeNameSettings": null,
+               "isCheck": false
+            }],
+            "numOfChilds": 1,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false
+         }],
+         "totalItems": 10,
+         "numOfChilds": 1,
+         "numOfCheckedChilds": 0,
+         "indeterminate": false,
+         "isLastPage": true
       }

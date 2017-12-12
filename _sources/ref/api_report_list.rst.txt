@@ -4821,7 +4821,7 @@ Needs SystemAdmin permission.
                 "subCategoryId": "41a3dff9-d1da-48e5-b4fb-50775324bd3d",
                 "subCategoryName": "Example",
                 "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
-                "tenantName": "Pikachu",
+                "tenantName": "ACME",
                 "description": "",
                 "title": "",
                 "lastViewed": "2017-09-28T07:50:02.533",

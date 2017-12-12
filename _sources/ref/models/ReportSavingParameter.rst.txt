@@ -6,7 +6,7 @@ ReportSavingParameter
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 55 15
 
    *  -  Field
       -  NULL
@@ -64,6 +64,13 @@ ReportSavingParameter
          +  1 = Saved  - Get report from database
          +  2 = Draft  - Get report from draft
       -
+   *  -  **isSavingReport** |br|
+         boolean
+      -
+      -  Whether report is saving or not
+      -  Only validate report data source when saving report (isSavingReport = true)
+
+         .. versionadded:: 2.6.8
 
 Inherited fields:
 

@@ -278,6 +278,20 @@ Deprecated, please use <a class="reference internal" href="#post-report-loadpart
 <tr class="row-odd"><td><a class="reference internal" href="#get-report-validatefilter-report-id">GET report/validateFilter/{report_id}</a></td>
 <td>Validates that all required filters in specified report have filter value.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-report-validatefilterfieldstype">POST report/validateFilterFieldsType</a></td>
+<td><p class="first">Validate if report contains both aggregated and non-aggregated filter fields.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.5.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-report-validatefilterfieldstype-reportid">GET report/validateFilterFieldsType/{reportId}</a></td>
+<td><p class="first">Validate if report contains both aggregated and non-aggregated filter fields.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.5.0.</span></p>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -5342,9 +5356,9 @@ Sample response:</div>
 </div>
 <div class="section" id="post-report-loadfilterfielddataastree">
 <span id="id3"></span><h2>POST report/loadFilterFieldDataAsTree<a class="headerlink" href="#post-report-loadfilterfielddataastree" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-right" id="id4">
+<div class="figure align-right" id="id6">
 <a class="reference internal image-reference" href="../_images/Report_Designer_loadFilterFieldDataAsTree.png"><img alt="../_images/Report_Designer_loadFilterFieldDataAsTree.png" src="../_images/Report_Designer_loadFilterFieldDataAsTree.png" style="width: 219px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">Data returned by loadFilterFieldDataAsTree on UI</span></p>
+<p class="caption"><span class="caption-number">Fig. 419 </span><span class="caption-text">Data returned by loadFilterFieldDataAsTree on UI</span></p>
 </div>
 <p>Returns data of a data source field in a tree-like structure, for the filter operators Equals (Tree) and Not Equal (Tree). <br clear="right" /></p>
 <p><strong>Request</strong></p>
@@ -5908,6 +5922,145 @@ Sample response:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="kc">true</span>
 </pre></div>
 </div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="post-report-validatefilterfieldstype">
+<h2>POST report/validateFilterFieldsType<a class="headerlink" href="#post-report-validatefilterfieldstype" title="Permalink to this headline">¶</a></h2>
+<p>Validate if report contains both aggregated and non-aggregated filter fields.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A :doc:<a href="#id4"><span class="problematic" id="id5">`</span></a>models/ReportFilterSetting`object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if report contains both aggregated and non-aggregated filter fields</li>
+<li>false if not</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Sample</strong></dt>
+<dd><div class="first highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">report/validateFilterFieldsType</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample Request Payload</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;filterFields&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+            <span class="s2">&quot;connectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-BA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sourceFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipCountry&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sourceFieldVisible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;sourceFieldFilterable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;sourceDataObjectName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sourceDataObjectFullName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-BA.dbo.Orders&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;isParameter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;compareFieldCalculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;compareValueCalculatedTree&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;compareField&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;dataFormat&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;reportId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;useMappedFieldAlias&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;uniqueId&quot;</span><span class="p">:</span> <span class="s2">&quot;62&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;comparisionValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;inTimePeriodType&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;valueInTimePeriod&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;hasModifiedCalculatedTree&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;isHiddenFilter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;isInheritableFilter&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;operatorName&quot;</span><span class="p">:</span> <span class="s2">&quot;Equals (Manual Entry)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;isDrillDown&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;filterId&quot;</span><span class="p">:</span> <span class="s2">&quot;fb93311f-91bf-4cca-a698-9c8d04e2d6a5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;reportFieldAlias&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;reportPartTitle&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;bfeceef4-e536-4823-8cde-adb8f71d52f5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;205c0e5f-fff8-409b-a54a-b6687619486d&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;relationshipId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipCountry&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;cascading&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;operatorId&quot;</span><span class="p">:</span> <span class="s2">&quot;737307d1-1e5f-407f-889f-1b3c9a66dd6f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;operatorSetting&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;dataFormatId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;sortType&quot;</span><span class="p">:</span> <span class="s2">&quot;ASC&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fontFamily&quot;</span><span class="p">:</span> <span class="s2">&quot;Roboto&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fontSize&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+            <span class="s2">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#fff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fontBold&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;fontItalic&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;fontUnderline&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceUniqueName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;querySourceFieldName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;comparisonFieldUniqueName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;isNegative&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;49c652da-5c78-4208-a451-043555af4018&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-10-12T03:01:28.5170000+07:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="n">null</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;updatedFielterValue&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;baseFilterLogic&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;logic&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;reportId&quot;</span><span class="p">:</span> <span class="s2">&quot;655418a5-1036-4b3b-8793-3f60f15c7be3&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fb93311f-91bf-4cca-a698-9c8d04e2d6a5&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System5 Admin5&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample Response</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">false</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="get-report-validatefilterfieldstype-reportid">
+<h2>GET report/validateFilterFieldsType/{reportId}<a class="headerlink" href="#get-report-validatefilterfieldstype-reportid" title="Permalink to this headline">¶</a></h2>
+<p>Validate if report contains both aggregated and non-aggregated filter fields.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if report contains both aggregated and non-aggregated filter fields</li>
+<li>false if not</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Sample</strong></dt>
+<dd><div class="first highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">report/validateFilterFieldsType/655418a5-1036-4b3b-8793-3f60f15c7be3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample Response</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">false</span>
+</pre></div>
 </div>
 </dd>
 </dl>

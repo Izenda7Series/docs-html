@@ -128,3 +128,20 @@ Preview pane:
    #. Enter an interval between each refresh (in seconds).
    #. Choose to view all data or enter a number to view that specific
       number of latest records only. |br|
+
+.. note::
+
+   If the **Show Preview section in Configuration Mode** checkbox (In Others tab in Advanced Settings) is unticked then The Preview section will not be displayed for following pop-ups: 
+
+      \- Map Border Settings |br|
+      \- Map Background Color Settings |br|
+      \- Legend Settings |br|
+      \- Zoom Settings
+
+      .. figure:: /_static/images/Report_Map_Border_Settings_No_PreView.png
+         :align: center
+         :width: 464px
+
+         Report Designer - Chart Border Settings without Preview section |br|
+
+   Please see :ref:`Advanced_Settings_Others` for more details.

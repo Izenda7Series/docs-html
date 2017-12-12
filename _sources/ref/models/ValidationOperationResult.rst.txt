@@ -17,7 +17,8 @@ ValidationOperationResult
       -
       -  An object with |br|
          \- a string field **izendaDataType** containing the suggested data type |br|
-         \- a boolean field **isRunningField** whether expression in request payload contains running field
+         \- a boolean field **isRunningField** whether expression in request payload contains running field |br|
+         \- a boolean field **isCompositeField** whether the calculated field is a composite field and will not be able to filter
       -
 
 Inherited fields:
@@ -35,7 +36,8 @@ Inherited fields:
       {
          "result": {
             "izendaDataType": "Numeric",
-            "isRunningField": true
+            "isRunningField": false,
+            "isCompositeField": false
          },
          "success": true,
          "messages": [],
