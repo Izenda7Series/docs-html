@@ -7,8 +7,31 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v.2.6.9 December 12, 2017
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18851  Custom Data formats no longer work when used on multiple fields in the same report part
+-  Defect  18837  Deadlock item resolved when using PostgreSQL as reporting database
+-  Defect  18820  User who has "Full Report and Dashboard Access" can create New report although these permissions are not set in Tenant Setup
+-  Defect  18775  Some settings on report part properties are changed when changing properties setting for a field of a map report part type
+-  Defect  18774  Global dashboards would be visible within the tenant for system administrators if no database mapping was configured. 
+-  Defect  18715  Added default sort to first x axis field in chart when adding multiple x axis fields to avoid sorting issue when drilling down on charts
+-  Defect  18711  Grid columns are not sorted correctly if changing aggregated functions of the column with multiple sorts
+-  Defect  18684  Alternative Text setting is not applied for Datetime field on Gauge Report
+-  Defect  18671  Chart fails to redraw when adding a running field at 1st metric then another field at 2nd metric
+-  Defect  18616  When using a calculated field containing a case statement and another calculated field with a case statement that refers to the first calculated field the system shows an error.
+-  Defect  18615  In Scheduler Button for delete multi items (Trash icon) does not work
+-  Defect  18109  Allow Customers to resolve the URL of exporting/scheduling and emailing. See example `IWebUrlResolver <https://www.izenda.com/docs/dev/ref_iadhocextension.html#iweburlresolver>`_ 
+-  Defect  17729  Date format MM/dd/yyyy HH:mm:ss tt in Izenda exports to excel and shows tt instead of AM/PM format.
+-  Defect  17556  Excel would lose certain DateTime formatting on un-grouped fields.
+-  Defect  17417  The calculated field status is not refreshed in some cases.
+	
+	
 v.2.6.8 December 5, 2017
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 FIXES
 ^^^^^
@@ -1763,12 +1786,6 @@ Known Issues
      - 18619
      - System calculated incorrect Start Date for schedule/subscription when user select 1 item in Yearly
    * - Defect
-     - 18616
-     - When using a calculated field containing a case statement and another calculated field with a case statement that refers to the first calculated field the system shows an error.
-   * - Defect
-     - 18615
-     - In Scheduler Button for delete multi items (Trash icon) does not work
-   * - Defect
      - 18614
      - The "No record found" message is shown after User updates calculated field filter value with Equal Tree operator
    * - Defect
@@ -1798,9 +1815,6 @@ Known Issues
    * - Defect
      - 18579
      - Full Report and Dashboard users cannot have Access Default Sharing Rights.
-   * - Defect
-     - 18576
-     - In Heatmap report part clicking on the link on X axis will pass the value of Y axis when both X and Y have subreport/customURL/Javascript link configured
    * - Defect
      - 18575
      - Fields of dynamic stored procedure remain when changing from stored procedure data source to a table or view in the report designer
@@ -1862,9 +1876,6 @@ Known Issues
      - 18527
      - Error 400/Bad Request when setting SubTotal for calculated field that has () characters
    * - Defect
-     - 18522
-     - Using CTE in custom view fails with error message when saving custom view.
-   * - Defect
      - 18521
      - Report Content Overlaps Header/Footer in Export Preview
    * - Defect
@@ -1883,20 +1894,8 @@ Known Issues
      - 18511
      - Copy Console will duplicate Report name in same category
    * - Defect
-     - 18504
-     - When specifying filter logic and not utilizing all filter values present in the filter panel a warning should be displayed on save to show that the unspecified filters will be ignored.
-   * - Defect
      - 18502
      - Report part is NOT updated after modifying the relationships and pressing "Save" in Data Source tab then navigating to Field tabs
-   * - Defect
-     - 18501
-     - Data Refresh Interval only works once time after setting it
-   * - Defect
-     - 18500
-     - "Remove Header for Export" does not work when exporting report
-   * - Defect
-     - 18499
-     - Day of Week format does not work when the field is not grouped
    * - Defect
      - 18495
      - In schedule/subscription pop up cascaded filter value list is not updated when changing value of the 1st filter from the 2nd change
@@ -1915,12 +1914,6 @@ Known Issues
    * - Defect
      - 18481
      - Cannot save drilldown grid using time data type in groups 
-   * - Defect
-     - 18480
-     - Mapping Field is not updated automatically when user update Field Name Alias on Field Properties for master/sub report
-   * - Defect
-     - 18478
-     - On filter operator Manual Entry No Auto-Complete, no tool tip displays when hovering on the invalid input 
    * - Defect
      - 18477
      - When using MS Edge browser redundant horizontal scrollbar appears on dropdown lists
@@ -2096,17 +2089,11 @@ Known Issues
      - 18276
      - When exporting map report part some properties in "Report part Properties" are not shown in pdf file
    * - Defect
-     - 18274
-     - Map report part is not shown when "Layout" of "Legend settings" is set "Vertical"
-   * - Defect
      - 18272
      - In report part map the "Border" still shows on "Preview" section even though the user unchecked it
    * - Defect
      - 18264
      - When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.
-   * - Defect
-     - 18262
-     - Change query structure for saving role details to improve performance.
    * - Defect
      - 18259
      - System is unable to load report part of report that has name includes "/" as embedded subreport
@@ -2207,9 +2194,6 @@ Known Issues
      - 18122
      - [Integration] Angular Kit shows circle loading forever when hitting refresh a report viewer page
    * - Defect
-     - 18120
-     - Users receive repeated emails in Schedule function for some emails, this is sporadic functionality 
-   * - Defect
      - 18118
      - In Tenant Setup Standalone only List of existing System Roles are displayed on the Access/Schedule section on new Tenant Permission
    * - Defect
@@ -2266,9 +2250,6 @@ Known Issues
    * - Defect
      - 18052
      - System level remains if pasting a tenant level dashboard url  into browser while being at system level
-   * - Defect
-     - 18042
-     - System shows error msg when user creates nested CF with aggregated function
    * - Defect
      - 18041
      - Sort control on report list disappears in responsive mode until screen is refreshed
@@ -2338,9 +2319,6 @@ Known Issues
    * - Defect
      - 17969
      - Scheduled and Subscribed reports can be sent without required filter values 
-   * - Defect
-     - 17967
-     - When changing the filter field from the Filter Property panel to a different field an error is displayed when user tries to navigate back to the data source tab
    * - Defect
      - 17966
      - Incorrect Confirmation message popup displays when User change filter Name from property panel and no other changes are made
@@ -2501,9 +2479,6 @@ Known Issues
      - 17731
      - Opening Global Subreports in the same window would remove Save functions on the underlying Subreport
    * - Defect
-     - 17729
-     - Date format MM/dd/yyyy HH:mm:ss tt in Izenda exports to excel and shows tt instead of AM/PM format.
-   * - Defect
      - 17725
      - Time only fields are not exported with proper formats in excel.
    * - Defect
@@ -2618,9 +2593,6 @@ Known Issues
      - 17564
      - No record found message displayed when checking 'Page Break After Report Part' in Exporting page without saving the report
    * - Defect
-     - 17556
-     - Excel would lose certain DateTime formatting on un-grouped fields.
-   * - Defect
      - 17540
      - Grouping is not working properly for Separators when date is used and format is changed
    * - Defect
@@ -2689,9 +2661,6 @@ Known Issues
    * - Defect
      - 17423
      - Using save As on an archived version of report to create a new active copy, the new report included report part of active version
-   * - Defect
-     - 17417
-     - The calculated field status is not refreshed in some cases.
    * - Defect
      - 17410
      - When setting up a new instance, create new Report/Dashboard options are missing after adding License

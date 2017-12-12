@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IAdHocExtension &mdash; Izenda BI 2.6.8 documentation</title>
+  <title>IAdHocExtension &mdash; Izenda BI 2.6.9 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.6.8 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.6.9 documentation" href="../index.html"/>
         <link rel="up" title="System Customization via Interfaces" href=".system_customization.html"/>
         <link rel="next" title="IAdHocExtension Samples" href="code_iadhocextension_samples.html"/>
         <link rel="prev" title="White Labeling URLs" href="code_white_labeling_urls.html"/> 
@@ -239,6 +239,10 @@
 <tr class="row-even"><td>Load Custom Data Format</td>
 <td><a class="reference internal" href="#loadcustomdataformat">LoadCustomDataFormat</a></td>
 <td>Adds custom data formats for specified data types</td>
+</tr>
+<tr class="row-odd"><td>WebUrlResolver</td>
+<td><a class="reference internal" href="#iweburlresolver">IWebUrlResolver</a></td>
+<td>Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.</td>
 </tr>
 </tbody>
 </table>
@@ -911,6 +915,39 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 </pre></div>
 </div>
 </div>
+<div class="section" id="iweburlresolver">
+<h2>IWebUrlResolver<a class="headerlink" href="#iweburlresolver" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">IWebUrlResolver</span> <span class="pre">WebUrlResolver</span> <span class="pre">=&gt;</span> <span class="pre">new</span> <span class="pre">CustomWebUrlResolver();</span></code></p>
+<p>NOTE: This method is only available in v2.6.9 or higher</p>
+<p>This property will allow you to override the DefaultWebUrlResolver and customize the way the application generates the Front End URL. This can be used when sending report and dashboard links via emails, schedules and subscriptions. Additionally you can now customize the URLS for ViewReport, ViewDashboard, ViewReportPart, etc.</p>
+<p>Step 1: Implement IWebUrlResolver or inherit from DefaultWebUrlResolver</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span>public class CustomWebUrlResolver : DefaultWebUrlResolver
+{
+        private readonly ILog logger;
+
+        public CustomWebUrlResolver()
+        {
+                this.logger = (new LogManager()).GetLogger&lt;CustomWebUrlResolver&gt;();
+        }
+
+        public override string ResolveUrl(string baseUrl, WebUrlActionLink action, Guid? id, Dictionary&lt;string, object&gt; parameters = null)
+        {
+                logger.Info($&quot;Resolving the url of {action} on base url {baseUrl}&quot;);
+                // Put logic to custom the web url here
+                return base.ResolveUrl(baseUrl, action, id, parameters);
+        }
+}
+</pre></div>
+</div>
+<p>Step 2: Override WebUrlResolver property of DefaultAdhocExtension</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">CustomAdhocReport</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
+<span class="p">{</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="n">IWebUrlResolver</span> <span class="n">WebUrlResolver</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">CustomWebUrlResolver</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../ref/models/UserContext.html"><span class="doc">UserContext.Current</span></a> object contains data of the current logged in user, which can be leveraged in filters:</p>
@@ -966,7 +1003,7 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.6.8',
+            VERSION:'2.6.9',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -44,6 +44,9 @@ IAdHocExtension
    * - Load Custom Data Format
      - `LoadCustomDataFormat`_
      - Adds custom data formats for specified data types
+   * - WebUrlResolver
+     - `IWebUrlResolver`_
+     - Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.	 
 
 
 The companion wrapper class **DefaultAdHocExtension** in  Izenda.BI.Framework.CustomConfiguration should be used as the base class for customization.
@@ -770,6 +773,49 @@ You can create custom formats for various datatypes by overriding the LoadCustom
             return result;
 
         }
+		
+
+IWebUrlResolver
+-----------------------------------
+
+``public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();``
+
+NOTE: This method is only available in v2.6.9 or higher
+
+This property will allow you to override the DefaultWebUrlResolver and customize the way the application generates the Front End URL. This can be used when sending report and dashboard links via emails, schedules and subscriptions. Additionally you can now customize the URLS for ViewReport, ViewDashboard, ViewReportPart, etc.
+
+Step 1: Implement IWebUrlResolver or inherit from DefaultWebUrlResolver
+
+
+.. code-block:: csharp
+
+	public class CustomWebUrlResolver : DefaultWebUrlResolver
+	{
+		private readonly ILog logger;
+
+		public CustomWebUrlResolver()
+		{
+			this.logger = (new LogManager()).GetLogger<CustomWebUrlResolver>();
+		}
+
+		public override string ResolveUrl(string baseUrl, WebUrlActionLink action, Guid? id, Dictionary<string, object> parameters = null)
+		{
+			logger.Info($"Resolving the url of {action} on base url {baseUrl}");
+			// Put logic to custom the web url here
+			return base.ResolveUrl(baseUrl, action, id, parameters);
+		}
+	}
+	
+	
+Step 2: Override WebUrlResolver property of DefaultAdhocExtension
+
+.. code-block:: csharp
+
+	[Export(typeof(IAdHocExtension))]
+	public class CustomAdhocReport : DefaultAdHocExtension
+	{
+		public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();
+	}
     
 See Also
 -----------
