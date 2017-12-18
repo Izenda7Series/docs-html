@@ -7,6 +7,36 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.6.10 December 18, 2017
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  18868  Dashboard shared with locked access rights should not allow user to click the background grid to add a tile.
+-  Defect  18855  Setting DateFirst to ensure Sunday is the first day of the week may cause calculation of client database stored proc or function return wrong result, altered the query generation to use a different method
+-  Defect  18854  Alternative Text Settings do not work on 'False' of bit data type
+-  Defect  18821  Exporting PDF for FORM shrinks at horizontal dimension when add long text strings in the Form.
+-  Defect  18709  Return values are empty for all Oracle Functions
+-  Defect  18702  When posting a Form report containing a not-existing embedded drillDown-subReport-reportPartUsed ID, the system does not validate the ID and it is saved to DB correctly.
+-  Defect  18695  When Form report is posed via API and contains not-existing drillDown-subReport-selectedReport ID it is still saved to DB correctly and displayed in Report List.
+-  Defect  18665  When form report part contains not-existing embedded reportPartName it is still saved to DB successfully and displayed in Report List when sending "POST report"
+-  Defect  18660  Form report containing not-existing embedded report ID is still saved to DB successfully and displayed in Report List when sending "POST report"
+-  Defect  18647  Alternative text Settings are not applied for Percentage Range in the report_Grid_Chart
+-  Defect  18646  Form report containing non-existing fieldId in <field-prop key="fieldId"> tag of htmlContent is still saved to DB successfully and displayed in Report List when sending "POST report"
+-  Defect  18642  Report displays data corresponding with the input htmlContent-field-name instead of fieldId when opening the Form report created by sending "POST report" request on MVC GUI
+-  Defect  18621  Filter Values (pvalues) does not work when user opens the link of schedule/subscribe in email
+-  Defect  18614  The "No record found" message is shown after User updates calculated field filter value with Equal Tree operator
+-  Defect  18551  User cannot delete calculated field from report designer once the report is saved even if it is not used in a report part
+-  Defect  18544  Setting - System Configuration - Scheduling - Search fails with 500 Internal Server Error
+-  Defect  18335  Stored procedure Input parameter is not properly respected as tenant field, no value is passed to the input parameter when visible or tenant field is hidden.
+-  Defect  18259  System is unable to load report part of report that has name includes "/" as embedded subreport
+-  Defect  18218  Error is received when using "Function" other than Group  for fields in "Labels (X-axis)" of gauge
+-  Defect  18026  User is unable to delete an invalid report part in dashboard after adding
+-  Defect  17313  Cell Color is set but icon is not checked to show value is set in report designer
+-  Defect  16885  Postgres SQL issue with saving Connection String when input parameters exceed field length.
+
+
 
 v.2.6.9 December 12, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1720,14 +1750,8 @@ Known Issues
      - 18670
      - System does not show error message when user creates stored procedure which has schema that contains duplicate Fields
    * - Defect
-     - 18665
-     - When form report part contains not-existing embedded reportPartName it is still saved to DB successfully and displayed in Report List when sending "POST report"
-   * - Defect
      - 18663
      - Sort function is not properly applied to Date time field when using Month format 
-   * - Defect
-     - 18660
-     - Form report containing not-existing embedded report ID is still saved to DB successfully and displayed in Report List when sending "POST report"
    * - Defect
      - 18651
      - Font sizes set in forms were not respected when exported.
@@ -1741,12 +1765,6 @@ Known Issues
      - 18648
      - Error displayed displays when using case statement in calculated field in a chart report part
    * - Defect
-     - 18647
-     - Alternative text Settings are not applied for Percentage Range in the report_Grid_Chart
-   * - Defect
-     - 18646
-     - Form report containing non-existing fieldId in <field-prop key="fieldId"> tag of htmlContent is still saved to DB successfully and displayed in Report List when sending "POST report"
-   * - Defect
      - 18645
      - Sub-report link is not shown in Chart x-axis when using date field type
    * - Defect
@@ -1758,9 +1776,6 @@ Known Issues
    * - Defect
      - 18643
      - Form report can be still saved to DB when sending "POST report" request containing at least one field has function = "empty" while others has function
-   * - Defect
-     - 18642
-     - Report displays data corresponding with the input htmlContent-field-name instead of fieldId when opening the Form report created by sending "POST report" request on MVC GUI
    * - Defect
      - 18641
      - FunctionId in htmlContent is displayed incorrectly when loading Form report which is created by sending "POST report" request
@@ -1780,14 +1795,8 @@ Known Issues
      - 18623
      - System does not show error msg when user delete CF which was used in Form
    * - Defect
-     - 18621
-     - Filter Values (pvalues) does not work when user opens the link of schedule/subscribe in email
-   * - Defect
      - 18619
      - System calculated incorrect Start Date for schedule/subscription when user select 1 item in Yearly
-   * - Defect
-     - 18614
-     - The "No record found" message is shown after User updates calculated field filter value with Equal Tree operator
    * - Defect
      - 18600
      -  List of filter values shows incorrectly for "Time" field type
@@ -1846,14 +1855,8 @@ Known Issues
      - 18553
      - API report/detectReportChange did not return error message when fields were changed in logical/physical
    * - Defect
-     - 18551
-     - User cannot delete calculated field from report designer once the report is saved even if it is not used in a report part
-   * - Defect
      - 18545
      - The unexpected text is displayed in Visual tab of form and cannot Save Form report when user inputs special characters (&,~,$, etc) data to Alternative Text Setting
-   * - Defect
-     - 18544
-     - Setting - System Configuration - Scheduling - Search fails with 500 Internal Server Error
    * - Defect
      - 18542
      - Report part fails to render and error is shown when user adds Number of Records for the report part to be "2147483648", tool tip should show error over max value
@@ -2041,9 +2044,6 @@ Known Issues
      - 18341
      - No Changes Found shows when Modifying an Existing Report Title & Description When First Opening Report Designer
    * - Defect
-     - 18335
-     - Stored procedure Input paramaeter is not properly respected as tenant field, no value is passed to the input parameter when visible or tenant field is hidden.
-   * - Defect
      - 18329
      - No value is shown in Report Designer when using a Data Model CF that is created without clicking on Preview button
    * - Defect
@@ -2095,9 +2095,6 @@ Known Issues
      - 18264
      - When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.
    * - Defect
-     - 18259
-     - System is unable to load report part of report that has name includes "/" as embedded subreport
-   * - Defect
      - 18258
      - Embedded Subreport in Form is broken in destination when coyping with Copy Console
    * - Defect
@@ -2130,9 +2127,6 @@ Known Issues
    * - Defect
      - 18219
      - "No record found" and drilldown breadcrumb text overlap in gauge report part when there are no records in the gauge
-   * - Defect
-     - 18218
-     - Error is received when using "Function" other than Group  for fields in "Labels (X-axis)" of gauge
    * - Defect
      - 18217
      - No record is found when searching relationships of report designer when using  "Uncategorized" in datasource
@@ -2265,9 +2259,6 @@ Known Issues
    * - Defect
      - 18031
      - One of report parts disappears if embedding 2 same type report parts on form report
-   * - Defect
-     - 18026
-     - User is unable to Unable to delete an invalid report part in dashboard after adding
    * - Defect
      - 18025
      - XY-Plane Settings: Axis's text background color settings does not work
@@ -2692,9 +2683,6 @@ Known Issues
      - 17338
      - Color icon is checked when Color setting is Null value
    * - Defect
-     - 17313
-     - Cell Color is set but icon is not checked to show value is set in report designer
-   * - Defect
      - 17312
      - The Custom URL and Embeded Javascript options should not be shown shown on Bubble Metric Field in Map. 
    * - Defect
@@ -2856,9 +2844,6 @@ Known Issues
    * - Defect
      - 16886
      - Update 1 new CF, system shows the current calculated field  in the list of select Field Names pop up and should not
-   * - Defect
-     - 16885
-     - Postgres SQL issue with saving Connection String when input parameters exceed field length.
    * - Defect
      - 16880
      - System is not properly updating from custom field formats to standard one when changed
