@@ -25,7 +25,7 @@ Software Requirements
 *  Web Server: IIS7 or newer with ASP.NET (see :ref:`Install_ASP.NET_4.5_and_URL_Rewrite_Components`)
 *  .NET Application Pool (CLR): 4.0 Integrated
 *  .NET Framework: .NET 4.0 or higher
-*  Supported Database servers:
+*  Supported Database servers, we recommend using a separate database for your Izenda configuration database as there are updates and changes which must be made during any upgrades for new features and performance:
 
    -  Microsoft SQL Server 2008 or later
    -  Microsoft Azure
