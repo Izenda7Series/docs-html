@@ -217,7 +217,7 @@ In Advanced Settings page, click on Others tab in Middle Panel to view the items
          -  Default Value
       *  -  Sort Colum Name 
          -  When unselected fields in field tab of report designer, join dropdown and input paramters in filters sort alphabecitally. When selected, these fields sort based on position in the databse.
-         -  False
+         -  0
       *  -  Trim Time In Joins 
          -  Tick on this checkbox to trim the time portion form the Date Time field in each join statement in Report Designer - Relationship page. Otherwise, system will use Date Time field in each sort statement
          -  True
