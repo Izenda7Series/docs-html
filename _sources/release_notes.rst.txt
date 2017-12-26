@@ -7,6 +7,27 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.6.11 December 26, 2017
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18897  When in Schedule or Subscribe "null" value does not display in filter drop down list when setting p1Value=null
+-  Defect  18896  In Sparkline chart page freezes when clicking on Border and Background color gear icon
+-  Defect  18891  When using Cross filtering, an error message displays after drilling down to chart/gauge containing aggregated fields
+-  Defect  18874  Added User's Token to User Context in Izenda.BI.Framework.Models.Contexts.UserContext.Current.CurrentUser as CurrentAccessToken
+-  Defect  18873  Disable automatic initialization of Izenda's Bootstrap.js components by default to prevent conflicts with outside Bootstrap components in integrated modes.
+-  Defect  18843  In Dashboard save Global category is available in Save As popup of tenant level
+-  Defect  18834  Tool tips for Font and Background Color are not altered when set in a new language file
+-  Defect  18803  When exporting form report part to excel file is empty when user reformat HTML on form
+-  Defect  18721  When using Oracle Izenda Configuration Database System shows error msg when user assigns a deleted data source from Visible to Available then saves
+-  Defect  18710  User can apply multiple sorts in grid report although option "Allow Multiple Sorts on Grid Header" is not checked in Advanced Settings
+-  Defect  18581  Some Provinces not working/missing (Quebec) in Canada
+-  Defect  18481  Cannot save drilldown grid using time data type in groups 
+-  Defect  18392  In report viewer page freezes if entering invalid value and triggering the filter list twice
+-  Defect  18329  No value is shown in Report Designer when using a Data Model CF that is created without clicking on Preview button
+-  Defect  18137  Count function on field level settings is incorrect when user turns on convert null to blank.
+
 v2.6.10 December 18, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1819,9 +1840,6 @@ Known Issues
      - 18582
      - When Disable is Null in IzendaQuerySource it causes reports to show as invalid and should not be.
    * - Defect
-     - 18581
-     - Some Provinces not working/missing (Quebec) in Canada
-   * - Defect
      - 18579
      - Full Report and Dashboard users cannot have Access Default Sharing Rights.
    * - Defect
@@ -1913,10 +1931,7 @@ Known Issues
      - In Subtotal/ Grand total system is unable to convert text to numeric
    * - Defect
      - 18482
-     - User should not be allowed to enter negative value into field with on field properties
-   * - Defect
-     - 18481
-     - Cannot save drilldown grid using time data type in groups 
+     - User should not be allowed to enter negative value into field with on field properties 
    * - Defect
      - 18477
      - When using MS Edge browser redundant horizontal scrollbar appears on dropdown lists
@@ -1996,9 +2011,6 @@ Known Issues
      - 18396
      - Error message appears when user adds field with user-defined function and RUNNING field into grid
    * - Defect
-     - 18392
-     - In report viewer page freezes if entering invalid value and triggering the filter list twice
-   * - Defect
      - 18391
      - When user changes report part type fields which are not allowed for use in this report part type must be removed.
    * - Defect
@@ -2043,9 +2055,6 @@ Known Issues
    * - Defect
      - 18341
      - No Changes Found shows when Modifying an Existing Report Title & Description When First Opening Report Designer
-   * - Defect
-     - 18329
-     - No value is shown in Report Designer when using a Data Model CF that is created without clicking on Preview button
    * - Defect
      - 18320
      - Error message should be clear when syntax is error is present in Calcualted Field - currently showing general error message
@@ -2169,9 +2178,6 @@ Known Issues
    * - Defect
      - 18138
      - Workspace can be saved with duplicate name when clicking on Save button of Save popup many times
-   * - Defect
-     - 18137
-     - Count function on field level settings is incorrect when user turns on convert null to blank. 
    * - Defect
      - 18136
      - Cursor always comes back the left most of Search Report textbox after entering some text in Copy Management UI
