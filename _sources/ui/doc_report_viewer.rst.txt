@@ -88,4 +88,6 @@ Quick Edit Report
       :align: center
       :width: 1065px
 
+
       Preview section is hidden in a report part backside in Report Review
+

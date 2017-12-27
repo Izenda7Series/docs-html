@@ -31,21 +31,6 @@ User
       -
       -  The last name of the user
       -
-   *  -  **passwordHash** |br|
-         string
-      -
-      -  The password hash
-      -
-   *  -  **passwordSalt** |br|
-         string
-      -
-      -  The password salt
-      -
-   *  -  **currentTokenHash** |br|
-         string
-      -
-      -  The hash of the current token
-      -
    *  -  **tenantId** |br|
          string (GUID)
       -  Y
@@ -57,8 +42,8 @@ User
       -  The user-entered id of the tenant for display
       -
    *  -  **tenantName** |br|
-         string (GUID)
-      -
+         string
+      -  Y
       -  The name of the tenant if available
       -
    *  -  **dataOffset** |br|
@@ -108,7 +93,7 @@ User
       -
    *  -  **cultureName** |br|
          string
-      -
+      -  Y
       -  The culture name
       -
    *  -  **securityQuestionLastChanged** |br|
@@ -143,7 +128,7 @@ User
       -
    *  -  **currentModules** |br|
          array of strings
-      -
+      -  Y
       -  The list of assigned modules
       -
 

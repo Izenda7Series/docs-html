@@ -33,14 +33,14 @@ Search and View Schedule Instances
 Edit Schedule Instance
 ----------------------
 
-#. Click the pencil icon in Action column to edit a schedule.
+#. Click the pencil icon in the Action column to edit a schedule.
 #. The Edit Schedule pop-up is similar to :ref:`Report Designer <Add_a_Schedule>`.
 #. Click the OK button to save the schedule.
 
 Delete Schedule Instances
 -------------------------
 
--  Click the x icon in Action column to delete a schedule.
+-  Click the x icon in the Action column to delete a schedule.
 -  To delete multiple schedules:
 
    #. Tick the check-boxes in front of each one.

@@ -8,7 +8,7 @@ The **User Setup** page allows user to manage users.
 
 .. note::
 
-   When in integrated mode (DeploymnetMode <> 0) adding and removing Users from the UI is not available. This is to ensure the host  applicaton and Izenda stay in sync. API's must be used for these functions in integrated environments. For more information on the API's please review the documentation 
+   When in integrated mode (DeploymentMode <> 0) adding and removing Users from the UI is not available. This is to ensure the host  applicaton and Izenda stay in sync. API's must be used for these functions in integrated environments. For more information on the API's please review the documentation 
    `here <https://www.izenda.com/docs/ref/api_user.html?highlight=user integration saveuser#post-user-integration-saveuser>`_.
 
 List and View Users

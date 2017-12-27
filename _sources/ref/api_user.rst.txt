@@ -1239,6 +1239,17 @@ Saves a user.
 
     A :doc:`models/UserDetail` object
 
+    .. note::
+
+       The mandatory fields required to post are listed as below:
+
+         - userName
+         - tenantId
+         - Ids of the roles
+         - lastName
+         - firstName
+
+
 **Response**
 
      An :doc:`models/OperationResult` object with **success** field true and **data** field containing a :doc:`models/User` object
@@ -1252,105 +1263,111 @@ Saves a user.
    Request payload::
 
       {
-        "id" : null,
-        "userName" : "jdoe",
-        "tenantId" : null,
-        "emailAddress" : "jdoe@acme.com",
-        "roles" : [{
-              "id" : "b992c772-6cb1-4103-b6b1-0da581368862"
-           }
-        ],
-        "state" : null,
-        "inserted" : null,
-        "version" : null,
-        "created" : null,
-        "createdBy" : null,
-        "modified" : null,
-        "modifiedBy" : null,
-        "lastName" : "Doe",
-        "firstName" : "John",
-        "fullName" : null,
-        "active" : false,
-        "password" : null,
-        "passwordHash" : null,
-        "passwordSalt" : null,
-        "currentTokenHash" : null,
-        "deleted" : false,
-        "userSecurityQuestions" : null,
-        "userRoles" : null,
-        "dataOffset" : 0,
-        "timestampOffset" : 0,
-        "initPassword" : false,
-        "status" : null
+         "id": null,
+         "systemAdmin": false,
+         "userName": "nina@retcl.com",
+         "tenantId": "1bd615d4-d3c4-4820-80bb-f34348b85f98",
+         "emailAddress": "nina@retcl.com",
+         "roles": [{
+            "id": "d41378bd-0b22-4085-b90f-f9ccaa85e9e6"
+         }],
+         "state": 1,
+         "inserted": true,
+         "version": 1,
+         "created": "2017-12-20T06:42:44.337",
+         "createdBy": "$RootAdmin$",
+         "modified": "2017-12-20T06:42:44.337",
+         "modifiedBy": "$RootAdmin$",
+         "lastName": "Doe",
+         "firstName": "John",
+         "fullName": "John Doe",
+         "active": true,
+         "password": null,
+         "deleted": false,
+         "userSecurityQuestions": null,
+         "userRoles": null,
+         "dataOffset": null,
+         "timestampOffset": null,
+         "initPassword": false,
+         "status": 1,
+         "cultureName": null,
+         "dateFormat": "MM/DD/YYYY"
       }
 
    Sample response::
 
       {
-        "success" : true,
-        "messages" : null,
-        "data" : {
-           "password" : null,
-           "roles" : [{
-                 "name" : null,
-                 "tenantId" : null,
-                 "active" : false,
-                 "id" : "b992c772-6cb1-4103-b6b1-0da581368862",
-                 "state" : 0,
-                 "deleted" : false,
-                 "inserted" : true,
-                 "version" : null,
-                 "created" : null,
-                 "createdBy" : "e5dabf75-c5b7-4877-86cc-b3afd83eed62",
-                 "modified" : null,
-                 "modifiedBy" : null
-              }
-           ],
-           "userRoles" : [{
-                 "userId" : "6c447061-8f1d-4ff4-803c-b6b15695b8c3",
-                 "roleId" : "b992c772-6cb1-4103-b6b1-0da581368862",
-                 "id" : "b15da0f4-d97d-4c78-bd52-22af0e02aae0",
-                 "state" : 0,
-                 "deleted" : false,
-                 "inserted" : true,
-                 "version" : 1,
-                 "created" : "2016-10-10T07:50:26.2366983",
-                 "createdBy" : "e5dabf75-c5b7-4877-86cc-b3afd83eed62",
-                 "modified" : "2016-10-10T07:50:26.2366983",
-                 "modifiedBy" : "e5dabf75-c5b7-4877-86cc-b3afd83eed62"
-              }
-           ],
-           "userSecurityQuestions" : null,
-           "status" : 3,
-           "issueDate" : "0001-01-01T00:00:00",
-           "autoLogin" : false,
-           "newPassword" : null,
-           "userName" : "jdoe",
-           "emailAddress" : "jdoe@acme.com",
-           "firstName" : "John",
-           "lastName" : "Doe",
-           "tenantId" : null,
-           "tenantDisplayId" : null,
-           "dataOffset" : 0,
-           "timestampOffset" : 0,
-           "initPassword" : false,
-           "active" : false,
-           "retryLoginTime" : null,
-           "lastTimeAccessed" : null,
-           "passwordActiveDate" : null,
-           "locked" : null,
-           "lockedDate" : null,
-           "fullName" : "John Doe",
-           "id" : "6c447061-8f1d-4ff4-803c-b6b15695b8c3",
-           "state" : 0,
-           "deleted" : false,
-           "inserted" : false,
-           "version" : 1,
-           "created" : "2016-10-10T07:50:26.2366983",
-           "createdBy" : "e5dabf75-c5b7-4877-86cc-b3afd83eed62",
-           "modified" : "2016-10-10T07:50:26.2366983",
-           "modifiedBy" : "e5dabf75-c5b7-4877-86cc-b3afd83eed62"
-        }
+         "success": true,
+         "messages": null,
+         "data": {
+            "password": "",
+            "roles": [{
+               "name": null,
+               "tenantId": null,
+               "active": false,
+               "notAllowSharing": false,
+               "id": "d41378bd-0b22-4085-b90f-f9ccaa85e9e6",
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": null,
+               "created": null,
+               "createdBy": "System Admin",
+               "modified": null,
+               "modifiedBy": null
+            }],
+            "userRoles": [{
+               "userId": "4fb95725-1e32-4f09-99f1-aa994de5de82",
+               "roleId": "d41378bd-0b22-4085-b90f-f9ccaa85e9e6",
+               "id": "bca85e44-d508-4538-9c8a-e07c6c593f25",
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": 1,
+               "created": "2017-12-20T06:44:50.445425",
+               "createdBy": "System Admin",
+               "modified": "2017-12-20T06:44:50.445425",
+               "modifiedBy": "System Admin"
+            }],
+            "userSecurityQuestions": null,
+            "status": 1,
+            "issueDate": "0001-01-01T00:00:00",
+            "autoLogin": false,
+            "newPassword": null,
+            "userName": "nina@retcl.com",
+            "emailAddress": "nina@retcl.com",
+            "firstName": "John",
+            "lastName": "Doe",
+            "tenantId": "1bd615d4-d3c4-4820-80bb-f34348b85f98",
+            "tenantDisplayId": null,
+            "tenantName": null,
+            "dataOffset": null,
+            "timestampOffset": null,
+            "initPassword": false,
+            "active": true,
+            "retryLoginTime": null,
+            "lastTimeAccessed": null,
+            "passwordLastChanged": null,
+            "locked": null,
+            "lockedDate": null,
+            "cultureName": null,
+            "securityQuestionLastChanged": null,
+            "dateFormat": "MM/DD/YYYY",
+            "systemAdmin": false,
+            "notAllowSharing": false,
+            "numberOfFailedSecurityQuestion": null,
+            "fullName": "John Doe",
+            "currentModules": null,
+            "id": "4fb95725-1e32-4f09-99f1-aa994de5de82",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": 1,
+            "created": "2017-12-20T06:42:44.337",
+            "createdBy": "$RootAdmin$",
+            "modified": "2017-12-20T06:42:44.337",
+            "modifiedBy": "$RootAdmin$"
+         }
       }
 
 
@@ -2288,6 +2305,16 @@ Adds or updates external user.
 **Request**
 
     A :doc:`models/UserDetail` object
+   
+    .. note::
+
+       The mandatory fields required to post are listed as below:
+
+         - userName
+         - tenantDisplayID
+         - Name of the roles (when adding or updating the external user, system will only save the external roles that their names are existing and ignore the others)
+         - lastName
+         - firstName
 
 **Response**
 
@@ -2309,47 +2336,36 @@ Adds or updates external user.
       .. code-block:: json
 
          {
-            "password": "123",
-            "roles": [],
-            "userRoles": null,
-            "userSecurityQuestions": null,
-            "status": 1,
-            "issueDate": "0001-01-01T00:00:00",
-            "autoLogin": false,
-            "newPassword": null,
-            "userName": "yolo@system.com",
-            "emailAddress": "yolo@system.com",
-            "firstName": "John",
+            "id": null,
+            "systemAdmin": false,
+            "userName": "nina@retcl.com",
+            "tenantId": null,
+            "tenantDisplayId": "RETCL",
+            "emailAddress": "nina@retcl.com",
+            "roles": [{
+                  "name": "Emploee"
+               }],
+            "state": 0,
+            "inserted": true,
+            "version": 0,
+            "created": "2017-12-20T06:42:44.337",
+            "createdBy": "$RootAdmin$",
+            "modified": "2017-12-20T06:44:48.527",
+            "modifiedBy": "$RootAdmin$",
             "lastName": "Doe",
-            "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
-            "tenantDisplayId": null,
-            "tenantName": null,
+            "firstName": "Nina",
+            "fullName": "Nina Doe",
+            "active": true,
+            "password": "",
+            "deleted": false,
+            "userSecurityQuestions": null,
+            "userRoles": null,
             "dataOffset": null,
             "timestampOffset": null,
             "initPassword": false,
-            "active": true,
-            "retryLoginTime": null,
-            "lastTimeAccessed": null,
-            "passwordLastChanged": null,
-            "locked": null,
-            "lockedDate": null,
+            "status": 1,
             "cultureName": null,
-            "securityQuestionLastChanged": null,
-            "dateFormat": "MM/DD/YYYY",
-            "systemAdmin": false,
-            "notAllowSharing": false,
-            "numberOfFailedSecurityQuestion": null,
-            "fullName": "John Doe",
-            "currentModules": null,
-            "id": null,
-            "state": 0,
-            "deleted": false,
-            "inserted": true,
-            "version": 1,
-            "created": null,
-            "createdBy": null,
-            "modified": null,
-            "modifiedBy": null
+            "dateFormat": "MM/DD/YYYY"
          }
 
    Sample Response::

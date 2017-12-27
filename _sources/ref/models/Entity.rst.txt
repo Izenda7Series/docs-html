@@ -3,7 +3,7 @@ Entity
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 45 25
 
    *  -  Field
       -  NULL
@@ -14,7 +14,7 @@ Entity
       -
       -  The id of this object |br|
          Example: ``572bd576-8c92-4901-ab2a-b16e38144813``
-      -
+      -  Allow null incase insert a new entity
    *  -  **state** |br|
          integer
       -

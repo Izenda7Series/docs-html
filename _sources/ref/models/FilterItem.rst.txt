@@ -36,6 +36,11 @@ FilterItem
       -
       -  Whether this instance is cross filter
       -
+   *  -  **isDrilldown** |br|
+         boolean
+      -
+      -  Whether this instance is drilldown
+      -
 
 Inherited fields:
 

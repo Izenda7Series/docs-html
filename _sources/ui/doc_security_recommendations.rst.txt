@@ -15,9 +15,9 @@ Use Custom Error Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Besides being too technical for end-users, error messages may contain
-sensitive information of the system or its users. Therefore, it is best
+sensitive information about the system or its users. Therefore, it is best
 practice to show original error messages to only local clients (opened
-on the server box), and friendly error messages to remote clients
+on the server box), and user-friendly error messages to remote clients
 (end-users).
 
 For example, this erroneous API call

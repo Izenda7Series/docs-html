@@ -1444,7 +1444,21 @@ Sample Response:</div>
 </div>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>A <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object</div></blockquote>
+<div><p>A <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The mandatory fields required to post are listed as below:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>userName</li>
+<li>tenantId</li>
+<li>Ids of the roles</li>
+<li>lastName</li>
+<li>firstName</li>
+</ul>
+</div></blockquote>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true and <strong>data</strong> field containing a <a class="reference internal" href="models/User.html"><span class="doc">User</span></a> object</div></blockquote>
@@ -1455,105 +1469,111 @@ Sample Response:</div>
 </div>
 <p>Request payload:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;userName&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;emailAddress&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe@acme.com&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;roles&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;b992c772-6cb1-4103-b6b1-0da581368862&quot;</span>
-     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;lastName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;firstName&quot;</span> <span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;fullName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;active&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;password&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;passwordHash&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;passwordSalt&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;currentTokenHash&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;userSecurityQuestions&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;userRoles&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;dataOffset&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;timestampOffset&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">&quot;initPassword&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="n">null</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;1bd615d4-d3c4-4820-80bb-f34348b85f98&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;d41378bd-0b22-4085-b90f-f9ccaa85e9e6&quot;</span>
+   <span class="p">}],</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;userRoles&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;initPassword&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;cultureName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="s2">&quot;password&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;roles&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;active&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;b992c772-6cb1-4103-b6b1-0da581368862&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-           <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-           <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="s2">&quot;e5dabf75-c5b7-4877-86cc-b3afd83eed62&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="n">null</span>
-        <span class="p">}</span>
-     <span class="p">],</span>
-     <span class="s2">&quot;userRoles&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-           <span class="s2">&quot;userId&quot;</span> <span class="p">:</span> <span class="s2">&quot;6c447061-8f1d-4ff4-803c-b6b15695b8c3&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;roleId&quot;</span> <span class="p">:</span> <span class="s2">&quot;b992c772-6cb1-4103-b6b1-0da581368862&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;b15da0f4-d97d-4c78-bd52-22af0e02aae0&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-           <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-           <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-           <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-10-10T07:50:26.2366983&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="s2">&quot;e5dabf75-c5b7-4877-86cc-b3afd83eed62&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-10-10T07:50:26.2366983&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="s2">&quot;e5dabf75-c5b7-4877-86cc-b3afd83eed62&quot;</span>
-        <span class="p">}</span>
-     <span class="p">],</span>
-     <span class="s2">&quot;userSecurityQuestions&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-     <span class="s2">&quot;issueDate&quot;</span> <span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;autoLogin&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;newPassword&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;userName&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;emailAddress&quot;</span> <span class="p">:</span> <span class="s2">&quot;jdoe@acme.com&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;firstName&quot;</span> <span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;lastName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;tenantDisplayId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;dataOffset&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;timestampOffset&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;initPassword&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;active&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;retryLoginTime&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;lastTimeAccessed&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;passwordActiveDate&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;locked&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;lockedDate&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;fullName&quot;</span> <span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;6c447061-8f1d-4ff4-803c-b6b15695b8c3&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;inserted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-     <span class="s2">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-10-10T07:50:26.2366983&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="s2">&quot;e5dabf75-c5b7-4877-86cc-b3afd83eed62&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-10-10T07:50:26.2366983&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="s2">&quot;e5dabf75-c5b7-4877-86cc-b3afd83eed62&quot;</span>
-  <span class="p">}</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;d41378bd-0b22-4085-b90f-f9ccaa85e9e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="n">null</span>
+      <span class="p">}],</span>
+      <span class="s2">&quot;userRoles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="s2">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;4fb95725-1e32-4f09-99f1-aa994de5de82&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;roleId&quot;</span><span class="p">:</span> <span class="s2">&quot;d41378bd-0b22-4085-b90f-f9ccaa85e9e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;bca85e44-d508-4538-9c8a-e07c6c593f25&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:44:50.445425&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:44:50.445425&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span>
+      <span class="p">}],</span>
+      <span class="s2">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;issueDate&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;newPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;1bd615d4-d3c4-4820-80bb-f34348b85f98&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;tenantName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;initPassword&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;retryLoginTime&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;lastTimeAccessed&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;passwordLastChanged&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;locked&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;lockedDate&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;cultureName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;securityQuestionLastChanged&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;numberOfFailedSecurityQuestion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;currentModules&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4fb95725-1e32-4f09-99f1-aa994de5de82&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2433,7 +2453,21 @@ Sample Response:</div>
 <p>Adds or updates external user.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>A <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object</div></blockquote>
+<div><p>A <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The mandatory fields required to post are listed as below:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>userName</li>
+<li>tenantDisplayID</li>
+<li>Name of the roles (when adding or updating the external user, system will only save the external roles that their names are existing and ignore the others)</li>
+<li>lastName</li>
+<li>firstName</li>
+</ul>
+</div></blockquote>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -2450,47 +2484,36 @@ Sample Response:</div>
 <div class="header docutils container">
 Request Payload:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[],</span>
-   <span class="nt">&quot;userRoles&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-   <span class="nt">&quot;issueDate&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;newPassword&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;yolo@system.com&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;yolo@system.com&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="s2">&quot;RETCL&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Emploee&quot;</span>
+      <span class="p">}],</span>
+   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:44:48.527&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
    <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;b5b3a5cc-9e55-424c-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina Doe&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;userRoles&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;initPassword&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;retryLoginTime&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;lastTimeAccessed&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;passwordLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;locked&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;lockedDate&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
    <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;securityQuestionLastChanged&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;notAllowSharing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;numberOfFailedSecurityQuestion&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;currentModules&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

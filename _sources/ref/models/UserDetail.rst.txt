@@ -6,7 +6,7 @@ UserDetail
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 45 25
 
    *  -  Field
       -  Null
@@ -14,22 +14,22 @@ UserDetail
       -  Note
    *  -  **password** |br|
          string
-      -
+      -  Y
       -  The password
       -
    *  -  **roles** |br|
          array of objects
-      -
+      - 
       -  An array of :doc:`Role` objects
-      -
+      -  Only allow null when user is a system admin
    *  -  **userRoles** |br|
          array of objects
-      -
+      -  Y
       -  An array of :doc:`UserRole` objects
       -
    *  -  **userSecurityQuestions** |br|
          array of objects
-      -
+      -  Y
       -  An array of :doc:`UserSecurityQuestion` objects
       -
    *  -  **status** |br|
@@ -55,7 +55,7 @@ UserDetail
       -
    *  -  **newPassword** |br|
          string
-      -
+      -  Y
       -  The new password
       -
 
