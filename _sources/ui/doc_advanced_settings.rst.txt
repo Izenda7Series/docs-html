@@ -36,7 +36,7 @@ Update Performance Settings
 
 In Advanced Settings page, click on Performance tab in Middle Panel to view the items. The Performance items are list as below:
 
-   .. figure:: /_static/images/Advanced_Settings_Performance.png
+   .. figure:: /_static/images/Advanced_Settings_Performance.PNG
       :align: center
       :width: 1653px
 
@@ -79,7 +79,7 @@ Update Security Settings
 --------------------------
 In Advanced Settings page, click on Security tab in Middle Panel to view the items. The Security items are listed as below:
 
-   .. figure:: /_static/images/Advanced_Settings_Sercurity.png
+   .. figure:: /_static/images/Advanced_Settings_Sercurity.PNG
       :align: center
       :width: 1657px
 
@@ -202,7 +202,7 @@ Update Others Settings
 
 In Advanced Settings page, click on Others tab in Middle Panel to view the items. The Others items are listed as below:
 
-   .. figure:: /_static/images/Advanced_Settings_Others.png
+   .. figure:: /_static/images/Advanced_Settings_Others.PNG
       :align: center
       :width: 1649px
 
