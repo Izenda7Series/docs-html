@@ -84,7 +84,7 @@ Quick Edit Report
 
    In the review mode, the report part backside is impacted by the "Show Preview section in Configuration Mode" option in Advanced Setting > Others tab like a report part in Report Designer. Please see :ref:`Hide_Preview_Section` for more details.
 
-   .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode_Hide_Preview.png
+   .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode_Hide_Preview.PNG
       :align: center
       :width: 1065px
 
