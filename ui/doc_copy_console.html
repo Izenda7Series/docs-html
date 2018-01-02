@@ -112,7 +112,11 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Izenda Copy Console</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#note">Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-copy-console-for-integrated-modes">Using the Copy Console for Integrated Modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exposing-the-api-user-login-endpoint">Exposing the &#8220;api/user/login&#8221; endpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-appauthurl-setting-v2-6-12-or-greater">The &#8220;appAuthUrl&#8221; setting (v2.6.12 or greater)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -307,8 +311,12 @@ will be run.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="note">
-<h2>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-copy-console-for-integrated-modes">
+<h2>Using the Copy Console for Integrated Modes<a class="headerlink" href="#using-the-copy-console-for-integrated-modes" title="Permalink to this headline">¶</a></h2>
+<p>In order for the copy console to function properly, it must be able to login to the source and destionation sites and retrieve an access token that will be used throught the copy process. By default, the copy console will attempt to authenticate against the &#8220;api/user/login&#8221; endpoint for each site specified in the copy console configuration file.</p>
+<div class="section" id="exposing-the-api-user-login-endpoint">
+<h3>Exposing the &#8220;api/user/login&#8221; endpoint<a class="headerlink" href="#exposing-the-api-user-login-endpoint" title="Permalink to this headline">¶</a></h3>
+<p>For integrated modes, you can expose this route in the host application and add the corresponding Action method to handle the authentication. A simple example, along with a sample config file, can be found below:</p>
 <ul>
 <li><p class="first"><a class="reference download internal" href="../_downloads/CopyConfig.xml" download=""><code class="xref download docutils literal"><span class="pre">A</span> <span class="pre">quick</span> <span class="pre">sample</span> <span class="pre">config</span> <span class="pre">file</span></code></a></p>
 </li>
@@ -325,6 +333,24 @@ will be run.</p>
 <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs">https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs</a> (Line 548)</p>
 </li>
 </ul>
+</div>
+<div class="section" id="the-appauthurl-setting-v2-6-12-or-greater">
+<h3>The &#8220;appAuthUrl&#8221; setting (v2.6.12 or greater)<a class="headerlink" href="#the-appauthurl-setting-v2-6-12-or-greater" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, you can explicitly specify the authentication URL for integrated deployments via the &#8220;appAuthUrl&#8221; setting.</p>
+<blockquote>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span>        <span class="c">&lt;!-- Specify the api credentials --&gt;</span>
+        <span class="nt">&lt;credentials</span>
+                <span class="na">tenant=</span><span class="s">&quot;&quot;</span>
+                <span class="na">userName=</span><span class="s">&quot;myuser&quot;</span>
+                <span class="na">password=</span><span class="s">&quot;mypassword&quot;</span>
+                <span class="na">apiUrl=</span><span class="s">&quot;http://localhost:2277/api/&quot;</span>
+<span class="hll">                <span class="na">appAuthUrl=</span><span class="s">&quot;http://localhost:14777/login.aspx&quot;</span><span class="nt">/&gt;</span>
+</span></pre></div>
+</div>
+</div></blockquote>
+<p>This endpoint should process requests as shown in the example below:
+<a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548">https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548</a></p>
+</div>
 </div>
 </div>
 

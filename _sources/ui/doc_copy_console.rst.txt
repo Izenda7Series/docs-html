@@ -125,8 +125,18 @@ Usage
    
       /d:destinationname     (Optional) Specify the destination name. If this switch is omitted, all destinations will be copied.
       
-Note
-----
+Using the Copy Console for Integrated Modes
+---------------------------------------------------
+
+
+
+In order for the copy console to function properly, it must be able to login to the source and destionation sites and retrieve an access token that will be used throught the copy process. By default, the copy console will attempt to authenticate against the "api/user/login" endpoint for each site specified in the copy console configuration file. 
+
+Exposing the "api/user/login" endpoint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For integrated modes, you can expose this route in the host application and add the corresponding Action method to handle the authentication. A simple example, along with a sample config file, can be found below:
+
 
 *  :download:`A quick sample config file </_static/images/CopyConfig.xml>`
 *  If you are using an MVC Kit that was not downloaded from the GitHub repository, the following code needs to be added to your RoutConfig.cs file. Refer to the following link for an example: https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/App_Start/RouteConfig.cs (Line 23)
@@ -142,3 +152,25 @@ Note
              
    Then implement a custom action to process requests for "api/user/login" as seen in the example:
    https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs (Line 548)
+
+The "appAuthUrl" setting (v2.6.12 or greater)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Alternatively, you can explicitly specify the authentication URL for integrated deployments via the "appAuthUrl" setting.
+	 
+	 
+	 .. code-block:: xml
+			:emphasize-lines: 7
+			
+				<!-- Specify the api credentials -->
+				<credentials 
+					tenant="" 
+					userName="myuser" 
+					password="mypassword" 
+					apiUrl="http://localhost:2277/api/"
+					appAuthUrl="http://localhost:14777/login.aspx"/>
+								 
+	 	 
+This endpoint should process requests as shown in the example below:
+https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548
+	 
