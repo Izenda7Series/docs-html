@@ -7,6 +7,23 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v.2.6.12 January 2, 2018
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18894  Uncategorized report and dashboard category should not show pencil icon as name is reserved and cannot be altered.
+-  Defect  18893  Added a new setting for the copy console configuration to explicitly specify the authentication URL. This setting is only applicable for integrated deployments. For more information, see documentation here `Appauthurl <https://www.izenda.com/docs/ui/doc_copy_console.html?highlight=console#the-appauthurl-setting-v2-6-12-or-greater>`_ 
+-  Defect  18886  Added enhanced error handling when using clob parameters
+-  Defect  18872  System hangs when setting SubTotal for 3 fields in Horizontal grid
+-  Defect  18754  Cross Filtering is not working when drilling into map type report part
+-  Defect  18288  When a report is created from 2 data sources joined and user removes one data source from the model the report is broken and cannot be fixed.
+-  Defect  18165  Resolved routing issues when embedding in single page applications.
+-  Defect  17437  Required filters set to not visible in the report designer cause report to fail copy process.
+-  Defect  17338  Color icon is set and indicates values are present when user adds setting with no values on Cell Color Settings
+-  Defect  17079  User is able to access to New Dashboard although has no dashboard permission on Tenant setup
+
+
 v.2.6.11 December 26, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1927,9 +1944,6 @@ Known Issues
      - 18755
      - System shows error msg when user creates filter using a Text Field with filter operator, Equivalence - Equals (Tree) = Blank
    * - Defect
-     - 18754
-     - Cross Filtering is not working when drilling into map type report part
-   * - Defect
      - 18708
      - renderReportViewPage was not respecting filters set in code. 
    * - Defect
@@ -2211,9 +2225,6 @@ Known Issues
    * - Defect
      - 18293
      - Searching value remains and the search box is blank while going back to datasource from other pages
-   * - Defect
-     - 18288
-     - When a report is created from 2 data sources joined and user removes one data source from the model the report is broken and cannot be fixed.
    * - Defect
      - 18285
      - Data source lazy loading fails to load after resizing the browser window
@@ -2742,9 +2753,6 @@ Known Issues
    * - Defect
      - 17452
      - Multiple spaces appears when user clicks on Sort function on Form which has style and repeater
-   * - Defect
-     - 17437
-     - Required filters set to not visible in the report designer cause report to fail copy process.
    * - Defect
      - 17434
      - System can not detect the schema of calculated field if there are 2 Data sources used in the report which have the same calculated field name when used in a form report part
