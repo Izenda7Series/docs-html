@@ -10,6 +10,12 @@ The **Connection String** page allows user to
 -  select individual items from these connections to be visible in Data
    Model and Reports
 
+.. note:: 
+
+   For the Reporting Databases: |br|
+   \- The connection string user should have permissions to read schema; to select on all tables, views, store procedures and functions that will be used as data sources; to execute those store procedures and functions. |br|
+   \- The user should also have permissions to create temp tables |br|
+
 Add connection and select visible data sources
 ----------------------------------------------
 

@@ -31,6 +31,12 @@ Clean-install Preparations
    sales@izenda.com <mailto:sales@izenda.com?Subject=Izenda%20Trial>`__
    for a trial license.
 
+.. note:: 
+
+   For the System Configuration Database: |br|
+   \- The connection string user should have permissions to create, insert, update, select, delete on all tables in the database; create realationship; create index |br|
+   \- The user should also have permissions to create temp tables 
+
 Install the System Database
 ---------------------------
 
