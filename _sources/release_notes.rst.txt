@@ -6,6 +6,26 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
+	
+v.2.6.13 January 8, 2018
+~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  18926  Error message displays when using function Average Days Old and Convert NULL to EMPTY is checked
+-  Defect  18908  Caching issue in System/Tenant level for data sources, cache is not being updated when saving changes to system level users.
+-  Defect  18892  Report Lifecycle is not hit without printdraft ID so pre and post execute overrides are not hit when altering the report definition, no draft Id should be required.
+-  Defect  18883  Grids with 100 to 200 records per page display with gaps in row data when using Firefox browser
+-  Defect  18871  Embedded Sub Report can not be exported in PDF/Word in Report Viewer only
+-  Defect  18745  Some items that do not belong to the proper grouping still show in tooltip for Line/Area Chart
+-  Defect  18731  Result Data in Relationship is not match with data query from database when user use function convert Null to Empty
+-  Defect  18579  Full Report and Dashboard users cannot have Access Default Sharing Rights.
+-  Defect  18602  Resolved security issue on API
+-  Defect  18306  Resolved security issue on API
+-  Defect  18013  Time and Timestamp data types are not returned from PostgreSql functions when created a stored procedure.
+-  Defect  17998  APIs - advancedSetting - User can access some function of module "advancedSetting" via api
+-  Defect  17993  GUI - Connection String - User can access IzendaDB by using encrypted connection string pasted into the UI Connection String
+-  Defect  17992  APIs - databaseSetup- User can access some function of module "databaseSetup" 
 
 v.2.6.12 January 2, 2018
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1800,9 +1820,6 @@ Known Issues
      - 18909
      - Report displays wrong data when user creates a calculated field in Data Model and report designer with the same name
    * - Defect
-     - 18908
-     - Caching issue in System/Tenant level for data sources, cache is not being updated when saving changes to system level users.
-   * - Defect
      - 18907
      - Field Mappings Break for Role with FullReportAndDashboardAccess when no data sources are added to the role
    * - Defect
@@ -1818,9 +1835,6 @@ Known Issues
      - 18895
      - Combination Chart Y-Axis Labels Are Cut Off when slanted at 45 degrees
    * - Defect
-     - 18892
-     - Report Lifecycle is not hit without printdraft ID so pre and post execute overrides are not hit when altering the report definition, no draft Id should be required.
-   * - Defect
      - 18890
      - Database Mapping Dropdown menu spawns outside the viewport
    * - "Defect
@@ -1832,9 +1846,6 @@ Known Issues
    * - Defect
      - 18884
      - System should show a message to user when trying to add a report which is no longer valid as the connection string was removed
-   * - Defect
-     - 18883
-     - Grids with 100 to 200 records per page display with gaps in row data when using Firefox browser
    * - Defect
      - 18879
      - When using copy console and more than 4 database mappings on same schema doesn't work
@@ -1850,9 +1861,6 @@ Known Issues
    * - Defect
      - 18875
      - Copy process should not verify items in physical data base, only model. 
-   * - Defect
-     - 18871
-     - Embedded Sub Report can not be exported in PDF/Word in Report Viewer only
    * - Defect
      - 18870
      - SubTotal displays incorrectly when Pivot grid has 3 fields in Columns container
@@ -2006,9 +2014,6 @@ Known Issues
    * - Defect
      - 18585
      - Subreport displays data incorrectly when mapping field is aggregated field
-   * - Defect
-     - 18579
-     - Full Report and Dashboard users cannot have Access Default Sharing Rights.
    * - Defect
      - 18575
      - Fields of dynamic stored procedure remain when changing from stored procedure data source to a table or view in the report designer
@@ -2394,26 +2399,14 @@ Known Issues
      - 18025
      - XY-Plane Settings: Axis's text background color settings does not work
    * - Defect
-     - 18013
-     - Time and Timestamp data types are not returned from PostgreSql functions when created a stored procedure.
-   * - Defect
      - 18008
      - After removing a data source from available in the data model, report still runs in viewer. When editing the report the fields are removed, but the viewer should show the report as needing edits to remove the fields no longer available.
    * - Defect
      - 17999
      - User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list. 
    * - Defect
-     - 17998
-     - APIs - advancedSetting - User can access some function of module "advancedSetting" via api
-   * - Defect
      - 17994
      - When user reloads screen using F5 after removing data source the system errors and data source is lost, even though user has not saved report changes.
-   * - Defect
-     - 17993
-     - GUI - Connection String - User can access IzendaDB by using encrypted connection string pasted into the UI Connection String
-   * - Defect
-     - 17992
-     - APIs - databaseSetup- User can access some function of module "databaseSetup" 
    * - Defect
      - 17989
      - APIs - role - User can deactivate role by sending "POST role/deactive/{id}/{tenantId?}" 
