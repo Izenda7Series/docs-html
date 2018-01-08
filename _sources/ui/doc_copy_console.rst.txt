@@ -130,7 +130,7 @@ Using the Copy Console for Integrated Modes
 
 
 
-In order for the copy console to function properly, it must be able to login to the source and destionation sites and retrieve an access token that will be used throught the copy process. By default, the copy console will attempt to authenticate against the "api/user/login" endpoint for each site specified in the copy console configuration file. 
+In order for the copy console to function properly, it must be able to login to the source and destination sites and retrieve an access token that will be used throught the copy process. By default, the copy console will attempt to authenticate against the "api/user/login" endpoint for each site specified in the copy console configuration file. 
 
 Exposing the "api/user/login" endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
