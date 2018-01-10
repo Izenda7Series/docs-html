@@ -218,6 +218,10 @@ Add a calculated field to table or view
       WHEN score >= 9               THEN 'OUTSTANDING'
 
    If defined as a calculated field, the grade can later use another formula without changing any queries.
+   
+   .. note::
+
+          Calculated fields cannot be used in relationships between tables or views.
 
    .. seealso::
 
