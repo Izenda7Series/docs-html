@@ -158,6 +158,13 @@ The "appAuthUrl" setting (v2.6.12 or greater)
 
 Alternatively, you can explicitly specify the authentication URL for integrated deployments via the "appAuthUrl" setting.
 	 
+Adding the appAuthUrl
+"""""""""""""""""""""""
+.. note::
+
+   Be sure to include the trailing slash for the appAuthUrl.
+
+~~~~~~~~~~~~~
 	 
 	 .. code-block:: xml
 			:emphasize-lines: 7
@@ -168,9 +175,81 @@ Alternatively, you can explicitly specify the authentication URL for integrated 
 					userName="myuser" 
 					password="mypassword" 
 					apiUrl="http://localhost:2277/api/"
-					appAuthUrl="http://localhost:14777/login.aspx"/>
+					appAuthUrl="http://localhost:14777/login.aspx/"/>
 								 
-	 	 
-This endpoint should process requests as shown in the example below:
-https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548
+
+
+
+Configuring the appAuthUrl endpoint
+"""""""""""""""""""""""""""""""""""""
+	
+The appAuthUrl endpoint should process requests as shown in the example below:
+
+
+.. note::
+
+   The snippet below is for demonstration purposes and may be subject to change. The most recent example can always be found `here <https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548>`_
+
+
+""""""""""""""""""""""	 
+	 
+.. code-block:: csharp
+				
+	public ActionResult CustomAuth(string username, string password)
+        {
+            OperationResult authResult;
+            var serializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var jsonResult = "";
+
+            //validate login (more complex logic can be added here)
+            #warning CAUTION!! Update this method to use your authentication scheme or remove it entirely if the copy console will not be used.
+            if (username == "IzendaAdmin@system.com" && password == "Izenda@123")
+            {
+                var user = new UserInfo { UserName = username, TenantUniqueName = "System" };
+                var token = IzendaTokenAuthorization.GetToken(user);
+
+                var accessToken = new IzendaFramework.AccessToken
+                {
+                    CultureName = "en-US",
+                    Tenant = null,
+                    IsExpired = false,
+                    NotifyDuringDay = null,
+                    DateFormat = "DD/MM/YYYY",
+                    Token = token
+                };
+
+                authResult = new OperationResult { Success = true, Messages = null, Data = accessToken };
+                jsonResult = JsonConvert.SerializeObject(authResult, serializerSettings);
+                return Content(jsonResult, "application/json");
+            }
+
+            authResult = new OperationResult { Success = false, Messages = null, Data = null };
+            jsonResult = JsonConvert.SerializeObject(authResult, serializerSettings);
+            return Content(jsonResult, "application/json");
+        }
+	 
+	 
+	 
+.. warning::
+
+   Please ensure that the JSON response from your endpoint uses camel casing for the property names as shown below.
+
+
+	 
+.. code-block:: json
+
+		{
+			"success":true,
+			"messages":null,
+			"data":{
+					"token":"Tm90aGluZyB0byBzZWUgaGVyZSwgbW92ZSBhbG9uZy4=",
+					"tenant":null,
+					"cultureName":"en-US",
+					"dateFormat":"DD/MM/YYYY",
+					"systemAdmin":false,
+					"isExpired":false,
+					"notifyDuringDay":null
+			}
+		}
+	 
 	 

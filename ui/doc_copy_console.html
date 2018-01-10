@@ -337,6 +337,13 @@ will be run.</p>
 <div class="section" id="the-appauthurl-setting-v2-6-12-or-greater">
 <h3>The &#8220;appAuthUrl&#8221; setting (v2.6.12 or greater)<a class="headerlink" href="#the-appauthurl-setting-v2-6-12-or-greater" title="Permalink to this headline">¶</a></h3>
 <p>Alternatively, you can explicitly specify the authentication URL for integrated deployments via the &#8220;appAuthUrl&#8221; setting.</p>
+<div class="section" id="adding-the-appauthurl">
+<h4>Adding the appAuthUrl<a class="headerlink" href="#adding-the-appauthurl" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to include the trailing slash for the appAuthUrl.</p>
+</div>
+<hr class="docutils" />
 <blockquote>
 <div><div class="highlight-xml"><div class="highlight"><pre><span></span>        <span class="c">&lt;!-- Specify the api credentials --&gt;</span>
         <span class="nt">&lt;credentials</span>
@@ -344,12 +351,73 @@ will be run.</p>
                 <span class="na">userName=</span><span class="s">&quot;myuser&quot;</span>
                 <span class="na">password=</span><span class="s">&quot;mypassword&quot;</span>
                 <span class="na">apiUrl=</span><span class="s">&quot;http://localhost:2277/api/&quot;</span>
-<span class="hll">                <span class="na">appAuthUrl=</span><span class="s">&quot;http://localhost:14777/login.aspx&quot;</span><span class="nt">/&gt;</span>
+<span class="hll">                <span class="na">appAuthUrl=</span><span class="s">&quot;http://localhost:14777/login.aspx/&quot;</span><span class="nt">/&gt;</span>
 </span></pre></div>
 </div>
 </div></blockquote>
-<p>This endpoint should process requests as shown in the example below:
-<a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548">https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548</a></p>
+</div>
+<div class="section" id="configuring-the-appauthurl-endpoint">
+<h4>Configuring the appAuthUrl endpoint<a class="headerlink" href="#configuring-the-appauthurl-endpoint" title="Permalink to this headline">¶</a></h4>
+<p>The appAuthUrl endpoint should process requests as shown in the example below:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The snippet below is for demonstration purposes and may be subject to change. The most recent example can always be found <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/HomeController.cs#L548">here</a></p>
+</div>
+<hr class="docutils" />
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="n">ActionResult</span> <span class="nf">CustomAuth</span><span class="p">(</span><span class="kt">string</span> <span class="n">username</span><span class="p">,</span> <span class="kt">string</span> <span class="n">password</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">OperationResult</span> <span class="n">authResult</span><span class="p">;</span>
+    <span class="kt">var</span> <span class="n">serializerSettings</span> <span class="p">=</span> <span class="k">new</span> <span class="n">JsonSerializerSettings</span> <span class="p">{</span> <span class="n">ContractResolver</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CamelCasePropertyNamesContractResolver</span><span class="p">()</span> <span class="p">};</span>
+    <span class="kt">var</span> <span class="n">jsonResult</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+
+    <span class="c1">//validate login (more complex logic can be added here)</span>
+    <span class="cp">#warning CAUTION!! Update this method to use your authentication scheme or remove it entirely if the copy console will not be used.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">username</span> <span class="p">==</span> <span class="s">&quot;IzendaAdmin@system.com&quot;</span> <span class="p">&amp;&amp;</span> <span class="n">password</span> <span class="p">==</span> <span class="s">&quot;Izenda@123&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="k">new</span> <span class="n">UserInfo</span> <span class="p">{</span> <span class="n">UserName</span> <span class="p">=</span> <span class="n">username</span><span class="p">,</span> <span class="n">TenantUniqueName</span> <span class="p">=</span> <span class="s">&quot;System&quot;</span> <span class="p">};</span>
+        <span class="kt">var</span> <span class="n">token</span> <span class="p">=</span> <span class="n">IzendaTokenAuthorization</span><span class="p">.</span><span class="n">GetToken</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+
+        <span class="kt">var</span> <span class="n">accessToken</span> <span class="p">=</span> <span class="k">new</span> <span class="n">IzendaFramework</span><span class="p">.</span><span class="n">AccessToken</span>
+        <span class="p">{</span>
+            <span class="n">CultureName</span> <span class="p">=</span> <span class="s">&quot;en-US&quot;</span><span class="p">,</span>
+            <span class="n">Tenant</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+            <span class="n">IsExpired</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+            <span class="n">NotifyDuringDay</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span>
+            <span class="n">DateFormat</span> <span class="p">=</span> <span class="s">&quot;DD/MM/YYYY&quot;</span><span class="p">,</span>
+            <span class="n">Token</span> <span class="p">=</span> <span class="n">token</span>
+        <span class="p">};</span>
+
+        <span class="n">authResult</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OperationResult</span> <span class="p">{</span> <span class="n">Success</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span> <span class="n">Messages</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="n">Data</span> <span class="p">=</span> <span class="n">accessToken</span> <span class="p">};</span>
+        <span class="n">jsonResult</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">authResult</span><span class="p">,</span> <span class="n">serializerSettings</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nf">Content</span><span class="p">(</span><span class="n">jsonResult</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">authResult</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OperationResult</span> <span class="p">{</span> <span class="n">Success</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span> <span class="n">Messages</span> <span class="p">=</span> <span class="k">null</span><span class="p">,</span> <span class="n">Data</span> <span class="p">=</span> <span class="k">null</span> <span class="p">};</span>
+    <span class="n">jsonResult</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">authResult</span><span class="p">,</span> <span class="n">serializerSettings</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">Content</span><span class="p">(</span><span class="n">jsonResult</span><span class="p">,</span> <span class="s">&quot;application/json&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please ensure that the JSON response from your endpoint uses camel casing for the property names as shown below.</p>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;messages&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:{</span>
+                        <span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;Tm90aGluZyB0byBzZWUgaGVyZSwgbW92ZSBhbG9uZy4=&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;tenant&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+                        <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span><span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span><span class="s2">&quot;DD/MM/YYYY&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                        <span class="nt">&quot;isExpired&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                        <span class="nt">&quot;notifyDuringDay&quot;</span><span class="p">:</span><span class="kc">null</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
