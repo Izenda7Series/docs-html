@@ -234,7 +234,7 @@ Render Izenda Report Viewer page only inside hosting web
              - The report Id
            * - **filter** |br|
                A filter object
-             - The values for the filters, in this format ``{ p1: a_value, p2: another_value, .. }``
+             - The values for the filters, in this format ``{ p1value: a_value, p2value: another_value, .. }``
            * - **integrationStyle** |br|
                 
              - The options for toolbar and filter section, in this format ``{ "hideToolbar": true/false, "hideFilter": true/false }``
