@@ -7,6 +7,36 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 	
+v.2.6.14 January 15, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  18967  Invalid "http://(host)/undefined" url request in report viewer. 
+-  Defect  18965  Missing chart image exporting URL log when exporting
+-  Defect  18951  Reconnecting to an Oracle DB fails after new items have been added to the underlying database.
+-  Defect  18945  Dashboard Category Rename cause eternal loading from report list page
+-  Defect  18922  Resolved transaction deadlock in Report Viewer on MSSQL server reporting database with high number of concurrent users.
+-  Defect  18920  When using Filter where value is required and filter is not visible,  popup appears when the filter is required, when setting value equivalence and value set to Null/NotNull/Blank/NotBlank
+-  Defect  18919  Resolved transaction deadlock in Dashboard Viewer on MSSQL server reporting database with high number of concurrent users.
+-  Defect  18918  Email button does not use an XML template for customization of email template - Please note the API changes associated with this item below:
+	-  GET report/emailTemplates/{isSubscription} -> GET report/emailTemplates/{templateType}
+	-  GET dashboard/emailTemplates/{isSubscription} -> GET dashboard/emailTemplates/{templateType}
+	-  Added new valid parameter value 2 for user to get email body template when using Email feature (old valid parameter 0 for schedule, 1 for subscription still work the same)
+	-  More information can be found here `Report List API <https://www.izenda.com/docs/ref/api_report_list.html#report-list-apis>`_
+-  Defect  18912   Export is blank when using Multiple grids with RUNNING(sum/average/count) in calculated field
+-  Defect  18907  Field Mappings Break for Role with FullReportAndDashboardAccess when no data sources are added to the role
+-  Defect  18859  Resolved security issue on API
+-  Defect  18586  Resolved security issue on API
+-  Defect  18548  Error message is shown to user when using SAVE AS then adds a calculated field to the new instance of the report. 
+-  Defect  18526  Resolved security issue on API
+-  Defect  18505  Resolved security issue on API
+-  Defect  18090  Remove Dirty Form validation for report viewer page to avoid notification to user that changes will be lost when they have no ability to save a report.
+-  Defect  17989  Resolved security issue on API 
+-  Defect  17800  Unable to add another report part next to a blank grid
+-  Defect  16512  The filter set on the calculated field is not inherited in subreports even though both reports have the same calculated fields and datasources
+
 v.2.6.13 January 8, 2018
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1802,9 +1832,6 @@ Known Issues
      - Item No
      - Description
    * - Defect
-     - 18918
-     - "Email" button does not use an XML template for customization of email template
-   * - Defect
      - 18916
      - When using Oracle reporting database no record found when drill down in a Chart has Char data type in X-axis column
    * - Defect
@@ -1819,9 +1846,6 @@ Known Issues
    * - Defect
      - 18909
      - Report displays wrong data when user creates a calculated field in Data Model and report designer with the same name
-   * - Defect
-     - 18907
-     - Field Mappings Break for Role with FullReportAndDashboardAccess when no data sources are added to the role
    * - Defect
      - 18906
      - No data shows in chart when applying custom data format on Bubble and Scatter charts
@@ -2040,10 +2064,7 @@ Known Issues
      - Error message is displayed when user changes View option in CustomURL or EmbeddedJS from link to icon 
    * - Defect
      - 18553
-     - API report/detectReportChange did not return error message when fields were changed in logical/physical
-   * - Defect
-     - 18548
-     - Error message is shown to user when using SAVE AS then adds a calculated field to the new instance of the report. 
+     - API report/detectReportChange did not return error message when fields were changed in logical/physical 
    * - Defect
      - 18546
      - Success status is returned as TRUE when sending "POST report/validate" with EMPTY accesses-role-name
@@ -2339,9 +2360,6 @@ Known Issues
      - 18095
      - Using aggregated field as filter with field comparison filter type shows error in report.
    * - Defect
-     - 18090
-     - Remove Dirty Form validation for report viewer page to avoid notification to user that changes will be lost when they have no ability to save a report.
-   * - Defect
      - 18089
      - Syntax error in SCSS file Izenda.Common.scss
    * - Defect
@@ -2406,10 +2424,7 @@ Known Issues
      - User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list. 
    * - Defect
      - 17994
-     - When user reloads screen using F5 after removing data source the system errors and data source is lost, even though user has not saved report changes.
-   * - Defect
-     - 17989
-     - APIs - role - User can deactivate role by sending "POST role/deactive/{id}/{tenantId?}" 
+     - When user reloads screen using F5 after removing data source the system errors and data source is lost, even though user has not saved report changes. 
    * - Defect
      - 17984
      - Data source categories sort incorrectly if all data sources are categorized
@@ -2527,9 +2542,6 @@ Known Issues
    * - Defect
      - 17803
      - Relationship is autmatically dismissed when going back to datasource page and un-checking and re-checking the datasources
-   * - Defect
-     - 17800
-     - Unable to add another report part next to a blank grid
    * - Defect
      - 17799
      - Some charts are cut-off when user prints a report has many report parts
@@ -3037,9 +3049,6 @@ Known Issues
    * - Defect
      - 16517
      - Sub total and Grand total are not exported on CSV on Export
-   * - Defect
-     - 16512
-     - The filter set on the calculated field is not inherited in subreports even though both reports have the same calculated fields and datasources
    * - Defect
      - 16505
      - User can not use scroll bar to pick time in time field dropdowns on key join 
