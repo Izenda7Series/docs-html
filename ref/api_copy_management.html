@@ -282,13 +282,8 @@
 <td>Checks if connections have already had data model.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST copyManagement/workspace/loadDestinationConnections</td>
-<td><p class="first">Returns a list of connections for destination drop-down.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Obsolete, use <a class="reference internal" href="api_connection.html#post-connection-loaddistinctconnections"><span class="std std-ref">POST connection/loadDistinctConnections</span></a> instead</p>
-</div>
-</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-workspace-loaddestinationconnections">POST copyManagement/workspace/loadDestinationConnections</a></td>
+<td>Returns a list of connections for destination drop-down.</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-validate">POST copyManagement/workspace/validate</a></td>
@@ -1881,6 +1876,55 @@ Request payload:</div>
 </div>
 <p>Response in case it already has data model set up:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;861f9379-00c0-47e0-a718-080a4e9792d9&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-workspace-loaddestinationconnections">
+<h2>POST copyManagement/workspace/loadDestinationConnections<a class="headerlink" href="#post-copymanagement-workspace-loaddestinationconnections" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of connections for destination drop-down</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the tenant</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>mappings</strong> <br clear="right" />
+array of objects</td>
+<td>An array of <span class="xref doc">WorkspaceMappingDetail</span> objects</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/copyManagement/workspace/loadDestinationConnections</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">be</span> <span class="n">updated</span>
 </pre></div>
 </div>
 </div></blockquote>

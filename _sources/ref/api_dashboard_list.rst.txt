@@ -54,6 +54,17 @@ Summary
      - Dashboard List > Rename icon > Update change
    * - `GET dashboard/emailTemplates/{isSubscription}`_
      - Returns a list of dashboard email templates.
+
+       .. note::
+
+          Obsolete, use `GET dashboard/emailTemplates/{templateType}`_ instead
+
+     - Not use
+   * - `GET dashboard/emailTemplates/{templateType}`_
+     - Returns a list of dashboard email templates.
+
+       .. versionadded:: 2.6.14
+
      - Dashboard List > Expand a dashboard > Subscribe
    * - `POST dashboard/rename`_
      - Renames a dashboard.
@@ -491,6 +502,61 @@ Returns a list of dashboard email templates.
            "value" : "Dear {currentUserName},\n <br/>\n <br/> \n Please see report in the following link.\n <br/>\n <br/> \n {reportLink}\n <br/>\n <br/> \n Regards,"
         }
       ]
+
+GET dashboard/emailTemplates/{templateType}
+--------------------------------------------------------------
+
+Returns a list of dashboard email templates.
+
+**Request**
+
+    No payload
+    
+    templateType
+    
+      * 0 = Schedule
+      * 1 = Subscription
+      * 2 = Email
+
+**Response**
+
+    An array of following objects
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **key** |br|
+             string
+          -  The type of the template
+          -
+       *  -  **value** |br|
+             string
+          -  The content of the template
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/dashboard/emailTemplates/1 HTTP/1.1
+
+   Sample response::
+      
+      [{
+         "key": "Attachment",
+         "value": "Dear {currentUserName},    \u003cbr/\u003e    \u003cbr/\u003e        Please see dashboard in the attachment.    \u003cbr/\u003e    \u003cbr/\u003e    Regards,"
+      },
+      {
+         "key": "Embedded HTML",
+         "value": "Dear {currentUserName},    \u003cbr/\u003e    \u003cbr/\u003e        Please see the following dashboard.    \u003cbr/\u003e    \u003cbr/\u003e        {embedDashboardHTML}    \u003cbr/\u003e    \u003cbr/\u003e    Regards,"
+      },
+      {
+         "key": "Link",
+         "value": "Dear {currentUserName},    \u003cbr/\u003e    \u003cbr/\u003e        Please see dashboard in the following link.    \u003cbr/\u003e    \u003cbr/\u003e        {dashboardLink}    \u003cbr/\u003e    \u003cbr/\u003e        Regards,"
+      }]
 
 POST dashboard/rename
 --------------------------------------------------------------

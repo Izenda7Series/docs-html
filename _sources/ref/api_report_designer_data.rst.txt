@@ -55,9 +55,8 @@ Summary
        See also: `POST fusion/validateExpression`_
      - Settings > Data Setup > Data Model > Tables > Add Calculated Field > Expression
    * - `POST fusion/previewCalculatedField`_
-     - Loads preview data for a calculated field. |br| |br|
-       Obsolete, use `POST fusion/validateExpression`_ instead
-     - Not used
+     - Loads preview data for a calculated field.
+     - Report Designer - Field > Addd Calculated Field > Preview
    * - `POST fusion/previewSubTotal`_
      - Loads preview data for sub total.
      - In Report Designer > Field Properties > Sub Total > Input all required fields in Sub Total Settings popup > Click on "Preview" button

@@ -57,12 +57,8 @@ List of APIs
    * - `POST copyManagement/connectionsHasDataModel`_
      - Checks if connections have already had data model.
      -
-   * - POST copyManagement/workspace/loadDestinationConnections
+   * - `POST copyManagement/workspace/loadDestinationConnections`_
      - Returns a list of connections for destination drop-down.
-
-       .. note::
-
-          Obsolete, use :ref:`POST_connection/loadDistinctConnections` instead
      -
    * - `POST copyManagement/workspace/validate`_
      - Validates the workspace.
@@ -1678,6 +1674,45 @@ Checks if connections have already had data model.
 
       ["861f9379-00c0-47e0-a718-080a4e9792d9"]
 
+POST copyManagement/workspace/loadDestinationConnections
+----------------------------------------------------------
+
+Returns a list of connections for destination drop-down
+
+**Request**
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **tenantId** |br|
+             string (GUID)
+          -  The id of the tenant
+          -
+       *  -  **mappings** |br|
+             array of objects
+          -  An array of :doc:`WorkspaceMappingDetail` objects	
+          -
+
+**Response**
+
+    An array of :doc:`models/Connection` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/copyManagement/workspace/loadDestinationConnections HTTP/1.1
+
+   Request payload::
+
+      To be updated
+
+   Sample response::
+
+      To be updated
 
 POST copyManagement/workspace/validate
 --------------------------------------------------------------
