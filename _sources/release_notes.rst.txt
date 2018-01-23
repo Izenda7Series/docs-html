@@ -26,7 +26,7 @@ FIXES
 -  Defect  17915  In Form Grand Total/SubTotal Change Function in Sub Total pop up, is not properly changed when user updates, the user must update is again
 -  Defect  17721  When copying a report part type map, fields are not properly copied to new report part in report designer
 -  Defect  17627  Front Side of Form is blank when user adds Join Alias in Relationship of report containing form report part
--  Defect  18970	Additional parameters are appended to the value specified in the appAuthUrl setting for the copy console tool.
+-  Defect  18970  Additional parameters are appended to the value specified in the appAuthUrl setting for the copy console tool.
 
 	
 v.2.6.14 January 15, 2018
@@ -1883,9 +1883,6 @@ Known Issues
    * - Defect
      - 18890
      - Database Mapping Dropdown menu spawns outside the viewport
-   * - "Defect
-     - 18888
-     - Data fails to load when turning to front side of report part tile in full screen mode for the first time	"
    * - Defect
      - 18887
      - In Dashboard Individual filters (on backside of tile) using no auto complete operator fail validation if one of the values is invalid 
@@ -2343,9 +2340,6 @@ Known Issues
      - 18150
      - Tool tip for Query Timeout in Advanced Settings is incorrect.
    * - Defect
-     - 18145
-     - Database IP address is disclosed when calling "/api/connection"
-   * - Defect
      - 18143
      - Dashboard Scrollbars were Difficult to See with Dark Background Colors
    * - Defect
@@ -2505,9 +2499,6 @@ Known Issues
      - 17917
      - Page unresponsive when Preview Records of Heat Map is more 1000 records
    * - Defect
-     - 17915
-     - In Form Grand Total/SubTotal Change Function in Sub Total pop up, is not properly changed when user updates, the user must update is again
-   * - Defect
      - 17908
      - Filter Properties should be updated correctly when the aggregated field is removed from the values container
    * - Defect
@@ -2628,9 +2619,6 @@ Known Issues
      - 17722
      - 'Number of records' field on report part doesn't work in Quick Edit Mode
    * - Defect
-     - 17721
-     - When copying a report part type map, fields are not properly copied to new report part in report designer.
-   * - Defect
      - 17720
      - When adding a new dashboard tile while dashboard is in presentation mode, screen is not properly redrawn.
    * - Defect
@@ -2687,9 +2675,6 @@ Known Issues
    * - Defect
      - 17628
      - System shows not unique Field when user creates a calculated field in the report designer a calculated field created in the Data Model
-   * - Defect
-     - 17627
-     - Front Side of Form is blank when user adds Join Alias in Relationship of report containing form report part
    * - Defect
      - 17624
      - System shows error msg when user creates a  calculated field with Round function
