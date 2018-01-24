@@ -396,6 +396,7 @@ FIXES
 -  Defect  18464  User can not drag Filter Fields to change their position in Filter section without error.
 -  Defect  18454  PostgreSQL Custom Views will fail when using  :: for converting data types
 -  Defect  18445  System shows error msg "No operator type or operator is defined for the filter" when creating a report from 2 Dynamic stored procedures
+-  Defect  18409  Calculated Fields need to allow database data type to be used in the CONVERT function
 -  Defect  18386  Printing dashboad is not properly spacing tiles and results in items missing on page.
 -  Defect  18383  Report part hangs after adding a Calculated Field into container then user clicks on Add a field link (the +) next to the field container.
 -  Defect  18360  The print preview page is blank when User prints a form Report and the form is not printed on printer.
