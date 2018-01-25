@@ -469,18 +469,28 @@
 <h3>FIXES<a class="headerlink" href="#fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Defect  18991  Unable to set Subtotal using expression option as it shows permissions error</li>
+<li>Defect  18973  Violation of PRIMARY KEY constraint &#8216;PK_IzendaTemporaryData&#8217; due to concurrency</li>
+<li>Defect  18970  Additional parameters are appended to the value specified in the appAuthUrl setting for the copy console tool.</li>
 <li>Defect  18948  Ensure when user clicks reconnect, there are no duplicated data sources in the data model</li>
 <li>Defect  18940  Report Part Context Menu Does Not Appear when using Internet Explorer</li>
 <li>Defect  18939  When base URL is set to / the user is allowed access to some components they should not be allowed to enter.</li>
 <li>Defect  18900  Tenant user can access the System DB &amp; License page in some integrated modes.</li>
 <li>Defect  18888  Data fails to load when turning to front side of report part tile in full screen mode for the first time</li>
-<li>Defect  18830  System calculated incorrect data when user creates nested calculated fields: Example Calculated Field 1 = 2 fields and Calculated Field 2 = Calculated Field 1 * 2, the data returned is incorrect</li>
+<li>Defect  18876  Unnecessary scroll bar in dashboard tile with small grid.</li>
+<li>Defect  18830  System calculated incorrect data when user creates nested calculated fields: Example Calculated Field 1 = 2 fields and Calculated Field 2 = Calculated Field 1 * 2, the data returned is incorrect.</li>
 <li>Defect  18815  When user removes the first field of chart&#8217;s x-axis, they are unable tot configure some report part properties.</li>
-<li>Defect  18145  Resolved security issue on API.</li>
+<li>Defect  18780  Subtotal shows wrong value in Pivot Grid when all fields in Columns container are datetime data type</li>
+<li>Defect  18645  Sub-report link is not shown in Chart x-axis when using date field type</li>
+<li>Defect  18565  System shows incorrect data for DateTime Field with Group by Year when it is added 2 times in report container</li>
+<li>Defect  18245  Report part is blank when copying a report part again after deleting it</li>
+<li>Defect  18145  Resolved security issue on API</li>
+<li>Defect  18129  Destination dashboard is empty when copying dashboard without overwrite on second copy</li>
+<li>Defect  18089  Syntax error in SCSS file Izenda.Common.scss</li>
+<li>Defect  17999  User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list.</li>
+<li>Defect  17984  Data source categories sort incorrectly if all data sources are categorized</li>
 <li>Defect  17915  In Form Grand Total/SubTotal Change Function in Sub Total pop up, is not properly changed when user updates, the user must update is again</li>
-<li>Defect  17721  When copying a report part type map, fields are not properly copied to new report part in report designer</li>
+<li>Defect  17721  When copying a report part type map, fields are not properly copied to new report part in report designer.</li>
 <li>Defect  17627  Front Side of Form is blank when user adds Join Alias in Relationship of report containing form report part</li>
-<li>Defect  18970  Additional parameters are appended to the value specified in the appAuthUrl setting for the copy console tool.</li>
 </ul>
 </div>
 </div>
@@ -2533,108 +2543,100 @@ granted access to.</li>
 <td>When using Oracle database receiving error transaction not yet disposed when connecting to large schemas.</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
-<td>18876</td>
-<td>Unnecessary scroll bar in dashboard tile with small grid.</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
 <td>18875</td>
 <td>Copy process should not verify items in physical data base, only model.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18870</td>
 <td>SubTotal displays incorrectly when Pivot grid has 3 fields in Columns container</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18865</td>
 <td>Cell Color setting for Bubble or Shading in Map report part - Validation for values works incorrectly because it treats values as characters</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18864</td>
 <td>In Connection String the Data base type name is retrieved from Data Repository type instead of Data Adapter type</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18862</td>
 <td>Saving report error when removing an unused data source of report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18861</td>
 <td>In Pivot Grid when using Sidetotals error message appears when setting % of Subtotal/Grand Total for aggregated field in Rows container</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18860</td>
 <td>No record found when aggregated field in Rows container of Pivot Grid is used as filter for report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18853</td>
 <td>No error message appears to user when duplicating a schedule in the past then saving it. Error is shown in API but not in the UI</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18852</td>
 <td>Paging does not work in Schedule screen of dashboard / report schedule tab.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18850</td>
 <td>Filter operators in the filter value selection of the scheduler do not update to reflect the new operator used in the report after a change.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18849</td>
 <td>Filter, Alternative Text, Text Color, Cell color setting is not applied for Time field on report part</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18844</td>
 <td>Map labels overlap if configuring Data Labels option to something other than horizontal</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18840</td>
 <td>Days old function should not display when using date field on y-axis of charts</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18836</td>
 <td>Count Distinct function works incorrectly with Drilldown Grid report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18835</td>
 <td>Field alias does not update in Expression in Subtotal/Grand Total popup when changing field alias name and field function in new report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18833</td>
 <td>Heat Map chart does not sort correctly if sorting on both X axis and Y axis</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18828</td>
 <td>Copy management fails to validate when using database mapping type database not schema</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18804</td>
 <td>Report failed to filter by a calculated field which contains a text expression</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18801</td>
 <td>% of Group for field in Rows container calculates incorrectly in Pivot grid</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18800</td>
 <td>When using chart type Heatmap user is unable to open custom url of a datetime field on Y-axis</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18788</td>
 <td>Show value labels for maps shows the label not the value</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18787</td>
 <td>User receives error when updating report parts after deleting fields in database</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18786</td>
 <td>Data Server Type missing in connection string list when implementing custom type</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18785</td>
 <td>Field which has values that include numbers and characters is not sorted on Columns of Pivot Grid</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
-<td>18780</td>
-<td>Subtotal shows wrong value in Pivot Grid when all fields in Columns container are datetime data type</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
 <td>18777</td>
@@ -2693,80 +2695,72 @@ granted access to.</li>
 <td>Report failed when opening the global report containing dynamic stored procedure in tenant level</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
-<td>18645</td>
-<td>Sub-report link is not shown in Chart x-axis when using date field type</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
 <td>18643</td>
 <td>Form report can be still saved to DB when sending &#8220;POST report&#8221; request containning at least one field has function = “empty” while others has function</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18634</td>
 <td>User can drag and drop a Running Sum CF to Filter Area which is not allowed</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18632</td>
 <td>SubTotal and GrandTotal should display 8 decimal number maximum</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18631</td>
 <td>In report designer if user changes filter to new field, Value list in Filter Operator section still displays value of old filter</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18627</td>
 <td>Application errors when changing to data source of another connection string and report body of an existing report contains a calculated field then saves report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18623</td>
 <td>System does not show error msg when user delete CF which was used in Form</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18619</td>
 <td>System calculated incorrect Start Date for schedule/subscription when user select 1 item in Yearly</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18600</td>
 <td>List of filter values shows incorrectly for &#8220;Time&#8221; field type</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18597</td>
 <td>UI shows empty email address in recipient section of schedule when editing existing scheduled item.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18593</td>
 <td>When exporting report some grand totals with the same name do not appear on the same line in the exported document</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18589</td>
 <td>Collapse All button does not work correctly when separator is number value</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18585</td>
 <td>Subreport displays data incorrectly when mapping field is aggregated field</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18575</td>
 <td>Fields of dynamic stored procedure remain when changing from stored procedure data source to a table or view in the report designer</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18573</td>
 <td>Logging for /api/report/isReportValid/ does not include detail message from invalid reports.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18571</td>
 <td>Filter Descriptions (when using Show Filters Under Report Description) shows as undefined when using In Time Period filter</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18568</td>
 <td>User should NOT be allowed to add/edit a duplicate calculated field, error message should be displayed</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18566</td>
 <td>Error message is not displayed When enter special character on Custom URL</td>
-</tr>
-<tr class="row-odd"><td>Defect</td>
-<td>18565</td>
-<td>System shows incorrect data for DateTime Field with Group by Year when it is added 2 times in report container</td>
 </tr>
 <tr class="row-even"><td>Defect</td>
 <td>18562</td>
@@ -3053,92 +3047,84 @@ granted access to.</li>
 <td>In some Angular integrations Datetime filter is auto set to today value although param has value for datetime</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
-<td>18245</td>
-<td>Report part is blank when copying a report part again after deleting it</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
 <td>18241</td>
 <td>When creating a calculated field with physical field, if user attempts to alias this calculated field with the actual field name the system should show duplicate validation message (this should be the same for field or filter alias)</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18240</td>
 <td>The scrollbar should be back to the top of result list after seaching with new keysearch or clear the keysearch</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18236</td>
 <td>In Gauge report part the layout and content of Print preview page, print page are shown incorrect</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18233</td>
 <td>Content section scales after User open &#8220;Subscribe&#8221; page</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18227</td>
 <td>The head and body tag inside form html content is automatically removed when click to save report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18221</td>
 <td>Sorting is lost on field that is not visible on drilldown grid.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18219</td>
 <td>&#8220;No record found&#8221; and drilldown breadcrumb text overlap in gauge report part when there are no records in the gauge</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18217</td>
 <td>No record is found when searching relationships of report designer when using  &#8220;Uncategorized&#8221; in datasource</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18176</td>
 <td>Hamburger for category shows in report/dashboard view mode for mobile screens</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18170</td>
 <td>In Report Designer Data source tab, the drop down list of Join Field/Field is not reset/disabled when data in Data Object/Foreign Data Object is blank</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18168</td>
 <td>Join Alias is still displayed if user adds 1 new relationship and selects the Data Object which is duplicated with Data Object in relationship below</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18167</td>
 <td>The warning &#8220;Share With Everyone&#8221; cannot be used multiple times&#8221; message is displayed when user add Sharing access and click Save button many times</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18159</td>
 <td>User cannot select System Variables in Delivery tab when add/edit a Schedule</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18158</td>
 <td>Validation relationship still passes when there is a change to the data type (on physical data base field) of fields that before were the same data type</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18156</td>
 <td>The &#8220;File Location&#8221; is shown in &#8220;Delivery Type&#8221; drop down for subscription and should not</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18150</td>
 <td>Tool tip for Query Timeout in Advanced Settings is incorrect.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18143</td>
 <td>Dashboard Scrollbars were Difficult to See with Dark Background Colors</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18142</td>
 <td>Dashboard tiles do not properly resize when user resizes browser to responsive mode in screen.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18140</td>
 <td>Field deleted in the physical database is still shown with field name in form, should show as &#8221;...&#8221;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18136</td>
 <td>Cursor always comes back the left most of Search Report textbox after entering some text in Copy Management UI</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
-<td>18129</td>
-<td>Destination dashboard is empty when copying dashboard without overwrite on second copy</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
 <td>18126</td>
@@ -3169,1358 +3155,1346 @@ granted access to.</li>
 <td>Using aggregated field as filter with field comparison filter type shows error in report.</td>
 </tr>
 <tr class="row-even"><td>Defect</td>
-<td>18089</td>
-<td>Syntax error in SCSS file Izenda.Common.scss</td>
-</tr>
-<tr class="row-odd"><td>Defect</td>
 <td>18085</td>
 <td>The Confirm message is not shown when User invisible &#8220;Separator&#8221; container which have value</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18082</td>
 <td>Border icon is shown as checked after user removes the setting in chart/gauge/map/form</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18079</td>
 <td>Changing Items per page expands redundant spaces of the first row of Data Model Page</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18077</td>
 <td>When field width is set to largest number value the report no longer displays correctly</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18068</td>
 <td>Loading bar continues to show after User input character in &#8220;Width&#8221; text box and save Report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18067</td>
 <td>In Role Setup Select All checkbox of total settings does NOT work properly on Permission tab.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18066</td>
 <td>&#8220;Reset to Default value&#8221; icons for Data Offset and Timestamp Offset work incorrectly and missing tooltips</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18065</td>
 <td>Missing default value for Data Offset, Timestamp Offset, Language in new Tenant user</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18064</td>
 <td>List of existing Fields are not displayed fully in Field Selection pop up of Report Designer Calculated Field</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18057</td>
 <td>System shows no record found when user create sub report mapping via calculated field</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18056</td>
 <td>System works incorrect when sub category is duplicated with another category</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18052</td>
 <td>System level remains if pasting a tenant level dashboard url  into browser while being at system level</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18041</td>
 <td>Sort control on report list disappears in responsive mode until screen is refreshed</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18038</td>
 <td>Hover Text positioning is incorrect on chart with separator and only one value.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18035</td>
 <td>Data is not updated in Report Preview and Report View mode after User replace the invalid CF field to a valid field.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18032</td>
 <td>No Error indicator shows when User select style &#8220;Embedded&#8221; without select &#8220;Report Part(s) Used</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18031</td>
 <td>One of report parts disappears if embedding 2 same type report parts on form report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>18025</td>
 <td>XY-Plane Settings: Axis&#8217;s text background color settings does not work</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>18008</td>
 <td>After removing a data source from available in the data model, report still runs in viewer. When editing the report the fields are removed, but the viewer should show the report as needing edits to remove the fields no longer available.</td>
-</tr>
-<tr class="row-even"><td>Defect</td>
-<td>17999</td>
-<td>User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list.</td>
 </tr>
 <tr class="row-odd"><td>Defect</td>
 <td>17994</td>
 <td>When user reloads screen using F5 after removing data source the system errors and data source is lost, even though user has not saved report changes.</td>
 </tr>
 <tr class="row-even"><td>Defect</td>
-<td>17984</td>
-<td>Data source categories sort incorrectly if all data sources are categorized</td>
-</tr>
-<tr class="row-odd"><td>Defect</td>
 <td>17981</td>
 <td>Date Offset works incorrect on Global Report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17978</td>
 <td>The light bulb icon is overlapped with the expression when CF length is too long</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17975</td>
 <td>System shows no NULL data when user create report with 1 tables &amp; 1 Views and Filter with NULL value</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17974</td>
 <td>SubTotal/Grand Total popup is still showing the new updated expression after pressing Cancel when user did not click ok to save</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17973</td>
 <td>New Filters added in quick edit mode do not show in Report Filter Info (show filters under report description) until user saves the report.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17970</td>
 <td>The reports are collapsed when user scrolls down to bottom after clicking expand icon on top right page. Lazy loading is not applying the expanded view when adding additional items to the page.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17969</td>
 <td>Scheduled and Subscribed reports can be sent without required filter values</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17966</td>
 <td>Incorrect Confirmation message popup displays when User change filter Name from property panel and no other changes are made</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17955</td>
 <td>In Chart type Pie, Funel, Donut Pagination section does not appear while the use pagination checkbox is checked</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17953</td>
 <td>Category selected in report list looses focus and highlight after user moves mouse off of category</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17950</td>
 <td>Unable to search report name that contains square bracket or pipe characters</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17942</td>
 <td>In report part form there is unnecessary Spacing With Subreports that don&#8217;t return data</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17941</td>
 <td>Italic font does not work in Filter Formatting tab</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17938</td>
 <td>User has to click Fields tab tow times to navigate to Field tab after inputting filter value for param of dynamic stored procedure</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17931</td>
 <td>Grid Padding when text is right justified is not correct when exporting to word</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17925</td>
 <td>System runs incorrect data for divide function when calculating value in  Memory</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17921</td>
 <td>The list of filter operator type is NOT updated correctly when filter field is Count(DateTime/Text)</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17917</td>
 <td>Page unresponsive when Preview Records of Heat Map is more 1000 records</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17908</td>
 <td>Filter Properties should be updated correctly when the aggregated field is removed from the values container</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17901</td>
 <td>Map fails to redraw if adding field to value container after going back from datasource</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17896</td>
 <td>In report filter popup style if user selects value and clicks cancel the actual selected value remains selected</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17890</td>
 <td>Header/footer {datetime} field does not display time in the report viewer only date</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17886</td>
 <td>User cannot change filters on any report/dashboard where pvalues were set in url or by inheriting the values from the master report. The system should accept the new values the user entered once the report is open.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17878</td>
 <td>When modifying a field Alias Report shows &#8220;This field is invalid&#8221; for field with Grand Total/SubTotal if field alias used more than once in calculation</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17875</td>
 <td>Selected Field of SubTotal/Grand Total is not displayed when user selects a smart tag Subtotal/Grand Total to view it</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17865</td>
 <td>The system highlights the wrong filter field when User doesn&#8217;t select Filter Operator when using 2 stored procs with params when setting value for second filter but omits value for first filter</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17851</td>
 <td>Mapping Field is not updated automatically when user updates Join Alias on both master and subreport</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17849</td>
 <td>Map report part, State/Province field is overlapped in screen resolution 1366x768</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17848</td>
 <td>List of Inherited Filter of Master Local report is not displayed on Report Designer of sub report when user clicks design to edit the sub report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17842</td>
 <td>Lazy Load does not work when user clicks on any category report to open it then closes it to turn back to Report List</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17831</td>
 <td>Colors (Text &amp; Cell) should only apply to the values in a grid and not the sub total and grand totals. Rule Fails in Excel Exports.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17829</td>
 <td>Print always wait for 60 seconds timeout to open Printing dialogue after page rendered</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17821</td>
 <td>&#8216;No record found&#8217; does not display for Form report part that has no value</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17819</td>
 <td>System shows error msg when copying a report using copy management which has an aggregated filter</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17808</td>
 <td>Border color on gird can be changed but is not reflected in the grid.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17807</td>
 <td>The Edit dropdown on the report list would occasionally render off-screen.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17803</td>
 <td>Relationship is autmatically dismissed when going back to datasource page and un-checking and re-checking the datasources</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17799</td>
 <td>Some charts are cut-off when user prints a report has many report parts</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17796</td>
 <td>System should not prevent changing an user&#8217;s role from [non System Admin] to [System Admin]</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17795</td>
 <td>pValue filter in URL does not work for DateTime if this Field is not in a Group</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17793</td>
 <td>In report/dashboard scheduling selected system variables are not added into the email body</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17791</td>
 <td>User is unable to copy local dashboard which contains both local report parts and global report parts</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17790</td>
 <td>Custom URL will not work with partial URL for internal links (example: /report/view/{GUID}</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17786</td>
 <td>&#8220;Case when...then...else...end&#8221; function shows the same syntax when selected as &#8220;Case ...when...Then...else....end&#8221;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17785</td>
 <td>When deleting a relationship in the data model and saving - the system shows &#8220;no changes found&#8221; but should show Details saved.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17782</td>
 <td>The selected report is un-selected after sorting the report list in Report Part Selection</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17763</td>
 <td>Validation of parameters in white listed database functions error on items like precision.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17760</td>
 <td>REST API returns 500 error as host app cannot resolve user info</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17757</td>
 <td>Report body is resized after user subscribes then un-subcribes to the report.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17754</td>
 <td>dataModel/databaseMapping accepts bad data for fromserver value</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17752</td>
 <td>Deserialization error in reportByProperty API, using  report/reportByProperty/{id} to get JSON, and using JSON.NET to parse ReportDefinition, exception is returned</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17747</td>
 <td>When setting Data Setup &gt; Advanced Settings &gt; Show Schema Name at system level, this setting is being used at all tenant levels too.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17734</td>
 <td>When formatting the y axis of stacked column chart the y axis labels show with this new format instead of %.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17732</td>
 <td>Tree Filters would Drop Values on Fixed Length Fields with Trailing Spaces</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17731</td>
 <td>Opening Global Subreports in the same window would remove Save functions on the underlying Subreport</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17725</td>
 <td>Time only fields are not exported with proper formats in excel.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17723</td>
 <td>In User Set up, There is a error &#8220;Uncaught TypeError: Cannot read property &#8216;apply&#8217; of undefined&#8221; in console log. This error does not affect saving user info but should not be displaying in the console.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17722</td>
 <td>&#8216;Number of records&#8217; field on report part doesn&#8217;t work in Quick Edit Mode</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17720</td>
 <td>When adding a new dashboard tile while dashboard is in presentation mode, screen is not properly redrawn.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17718</td>
 <td>Grid - Data shows incorrectly when sorting the column which has subtotal configured</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17712</td>
 <td>Chart is redrawn in preview of XY Settings prior to user clicking ok.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17708</td>
 <td>The /api/repost/list2?includeHashCode=true, reports are always contained in null subcategories, instead of its actual subcategory.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17707</td>
 <td>BREAKING CHANGE - API User/Integration/saveUser should return the newly generated user ID with success response</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17698</td>
 <td>When user sets cascading to true on any stored procedure input param, but does not override this in IAdHoc Extension, subsequent filter values are not displayed when configured in the data model. Cascading should not be set on stored procedure input params unless the IAdHoc Extension is used.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17696</td>
 <td>Redundant css class &#8220;btn-primary&#8221; in Update Result and Add Report Part button</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17694</td>
 <td>In IE/MS Edge browsers Layout: &#8216;Full screen&#8217; icon and &#8216;Show Next Slide After&#8217; textboxes are hidden by report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17689</td>
 <td>Column Alias is lost when executing stored procedure when there is no change to the field in the physical database</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17682</td>
 <td>In Form &#8220;&#8221;The report part [ ] is not found&#8217; mesage is displays when editing then restoring id of embedded-report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17673</td>
 <td>System shows ability for user to create sub total/Grand total with Boolean using AVG, SUM and SUM Distinct, this is not allowed by database and these options should be removed for this data type.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17664</td>
 <td>Cancel button does not work for New Report, data is still in report designer.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17660</td>
 <td>Inconsistent sanitation of text in  chart x/y plane titles</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17652</td>
 <td>Full screen icon is missing from report part on Quick Edit mode of report viewer.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17636</td>
 <td>User cannot update data using results in dashboard prior to saving the dashboard.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17631</td>
 <td>Create hard delete process for the IzendaUserRoll table to remove unneeded records.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17630</td>
 <td>Change alternating background color from inline style to css class</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17629</td>
 <td>TenantIntegrationConfig.AddOrUpdateTenant(izendaTenant) can cuses a race condition basically allowing multiple tenants to be added simultaneously if the request happens fast enough</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17628</td>
 <td>System shows not unique Field when user creates a calculated field in the report designer a calculated field created in the Data Model</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17624</td>
 <td>System shows error msg when user creates a  calculated field with Round function</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17621</td>
 <td>Filter displays normally when user un-checks column is Filterable in Data Model</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17620</td>
 <td>Error displays when naming calcualted field with () and more than 8 characters.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17616</td>
 <td>Selecting option in Data Type dropdown does not work for caluclated fields</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17615</td>
 <td>When using a Bit data type as separator on chart legend shows series 1 not false</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17609</td>
 <td>Security questions are enabled when not selected when you create or reset your password with username which has Backslash</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17596</td>
 <td>Tenant users are still seeing some modules after they have been disabled at the Tenant level.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17583</td>
 <td>MySQL - Column Sorting is not Alphabetically in Designer when selected in advanced settings of data model.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17580</td>
 <td>Chart Exports in Integrated Scenarios Would Cut Off Several Values</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17576</td>
 <td>Gauges are not displaying in print preview of report designer</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17569</td>
 <td>In permission summary page Categories list appears in Scheduling Limits and Access Limits pop-up instead of roles/users list</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17564</td>
 <td>No record found message displayed when checking &#8216;Page Break After Report Part&#8217; in Exporting page without saving the report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17540</td>
 <td>Grouping is not working properly for Separators when date is used and format is changed</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17537</td>
 <td>Available Users and Assigned User list in Users tab are incorrect when accessing Role Setup screen with Data Model Access and Permissions tabs are hidden</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17536</td>
 <td>Archived report with everyone-full access access rights does not show Copy and Save As button</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17527</td>
 <td>User is not redirected to the report from report links after login.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17526</td>
 <td>In Key join system shows incorrect validation msg when Time Field in Key Join has no data</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17524</td>
 <td>When copying a report created from a dynamic stored procedure system shows error message when report is opened.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17520</td>
 <td>System shows error when user creates a calculated field which has the same name as a column in table</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17519</td>
 <td>System shows (GET <a class="reference external" href="http:url/undefined">http:url/undefined</a> 404 (Not Found)) in browser console when using deployment mode 1</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17506</td>
 <td>Text &#8216;Roles/Users allowed to share with&#8217; displays in Scheduling section instead of &#8216;Roles/Users allowed to schedule for&#8217;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17500</td>
 <td>Date Format showing in system does not follow User configured &#8216;Date Format&#8217; in user set up page.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17495</td>
 <td>Caching issue when deleting a report using both &#8220;Delete&#8221; button and version history</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17491</td>
 <td>When role has email access in report designer but no available delivery methods selected the system should not allow role to be saved as user has no options for sending email</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17489</td>
 <td>System shows error msg when user creates Key Join which has Time value in comparison</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17488</td>
 <td>Text &#8216;Can create new reports?&#8217; displays in Dashboards section</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17481</td>
 <td>The Grid automatically collapses when user clicks on &#8216;Expand All&#8217; icon when using drilldown grid as an embedded subreport</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17480</td>
 <td>The print page is cut-off after user prints a dashboard which has grid report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17458</td>
 <td>Save button is still enabled when user has no permission to create a new dashboard, but system will not allow user to save the dashboard. The save button should not be displayed.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17452</td>
 <td>Multiple spaces appears when user clicks on Sort function on Form which has style and repeater</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17434</td>
 <td>System can not detect the schema of calculated field if there are 2 Data sources used in the report which have the same calculated field name when used in a form report part</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17433</td>
 <td>System trims some white space on calculated fields when using concat</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17424</td>
 <td>After making an active copy of an archived report, when emailing the report, the report name in mail is name of active version</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17423</td>
 <td>Using save As on an archived version of report to create a new active copy, the new report included report part of active version</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17410</td>
 <td>When setting up a new instance, create new Report/Dashboard options are missing after adding License</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17408</td>
 <td>Tiles would remain in Configuration Mode when moving to the Report Viewer</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17398</td>
 <td>User can make an infinite loop in Expression when some calculated fields call each other</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17397</td>
 <td>Failed to create-new/save-changes report with &#8216;Data Refresh Interval Settings&#8217; is checked on Angular2 integration environment</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17395</td>
 <td>Delete 1 calculated field which is used in another calculated field, the system does not show error message</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17382</td>
 <td>From emailed dashboard/report sent, email address shows &#8216;SMTP Login&#8217; instead of &#8216;Email From Address&#8217;</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17351</td>
 <td>The export process bar shows process status of report part, not entire report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17349</td>
 <td>Empty dashboard tile still displays after clicking on Save button</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17345</td>
 <td>System show error msg after user confirms Yes on Dirty Form (changes made in current session and not saved) but clicks on Stay in browser&#8217;s confirmation msg</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17312</td>
 <td>The Custom URL and Embeded Javascript options should not be shown shown on Bubble Metric Field in Map.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17311</td>
 <td>System keeps changes made on data source tab on the report after editing  and then navigating to other screen with Leave option</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17309</td>
 <td>The save as option of dashboard keeps version number of the original dashboard in the newly created one</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17308</td>
 <td>Report Part created from relationship still displays although the relationship has been removed.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17305</td>
 <td>In Data Model, the wrong confirm message displays when clicking on delete icon of one customized report relationship if there is any report created from the existing relationship</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17300</td>
 <td>UI of slide show panel on Presentation mode of Dashboard is not aligned on FireFox and IE11</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17298</td>
 <td>The new report part is not focus if added after a long grid report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17292</td>
 <td>Searching of Report History is not trimmed to show only values matching search</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17286</td>
 <td>System does not save draft updated data on Item Name in Format area of report designer.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17283</td>
 <td>Run Copy button and Validate icon are disabled/enabled incorrectly in Copy Management Page</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17266</td>
 <td>Some pages in Angular2 kit are unresponsive when navigating between detail page and Report/Dashboard menu bar</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17262</td>
 <td>System works incorrectly when user add tag &lt;Repeater&gt; instead of &lt;repeater&gt; (case sensitive) in Form report part</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17240</td>
 <td>In Oracle data model Fields of 2 tables with same name all show in one table in data model, while the other table has no field.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17237</td>
 <td>Two copied reports display with the same name and the same category/sub-category when clicking on OK button of Copy Report popup several times</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17232</td>
 <td>In Angular2 Kit when emailing a report and adding Recipient: To/Cc Popup is not responsive.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17224</td>
 <td>When using cross filtering, some reports are sorting based on unseen data</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17214</td>
 <td>Filter Values need blank space between 2 values when input in the user defined filter values for input parameters</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17210</td>
 <td>Text color settings should not be shown on fields of type image</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17203</td>
 <td>&#8216;Can create new reports?&#8217; text displays under Reports &gt; Report Categories/Sub Categories instead of &#8216;Can create new categories?&#8217;</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17202</td>
 <td>Message in Dashboard and message in Report Viewer are inconsistent after deleting a calculated field that is used in report part</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17197</td>
 <td>Not Equal (Checkbox) filter is not appearing as a common filter in dashboard.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17195</td>
 <td>Getdate function returns value incorrectly when combining it with convert function</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17194</td>
 <td>In Dashboard Common filter value is blank after deleting and re-adding the filter into filter block of report.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17190</td>
 <td>Style of Deactivate/Activate hyperlink is inconsistent in Tenant Setup and Role Setup page</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17171</td>
 <td>Missing plus (+) when mouseover on the first tile of dashboard when creating blank dashoard type</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17160</td>
 <td>Tenant Dropdown wasn&#8217;t Responsive on Smaller Mobile Resolutions</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17154</td>
 <td>In Angular2 integration example kit Licence section disappears when switching between Report and Settings pages several times</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17149</td>
 <td>User is not able to remove Join Alias once added in the data source tab of report designer</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17136</td>
 <td>In Tenant Permissions page The section in the header section is not auto highlighted when its name hits the bottom of the header section.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17117</td>
 <td>In schedule and subscription  &#8220;End by&#8221; option is not saved after editing</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17116</td>
 <td>Can export query execution although there is no report part, so export is blank</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17106</td>
 <td>Gear icon is displayed with check icon (have setting icon) for alternative text while there is no setting for this attribute</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17105</td>
 <td>In FF Browser Grid Report is blank when Preview Record = 1000/10000/All &amp; Items per Page = 200</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17102</td>
 <td>Report part map is not changed correctly after selecting with county is USA</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17101</td>
 <td>Country level map is missing resources for Italy, Hoduras, Hungary, Iran, Vanuata, Uganda, Taiwan, Slovakia, Mauritaria, Norway, Peru, Republic of Serbia, United Replic of Tanzania and shows error when attempting to create these maps</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17088</td>
 <td>In Subscription no records are displayed even when they still exist when deleting all records, the delete appears to be per page.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17087</td>
 <td>Output parameter of a Stored Procedure is displayed in data model and should not be shown.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17064</td>
 <td>Available category is not suggested when user is typing in category box on saving</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17062</td>
 <td>[Dashboard][Schedule/Subscribe] Filter Value Selection is not showing selected values</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17039</td>
 <td>In some circumstances, validations for column name and expressions in calculated fields are cleared.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17038</td>
 <td>In Report Viewer, close button is not enabled in Report Subscription page</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17032</td>
 <td>Tool tip is not displayed on the information icon next to provision map data button in Settings page.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17029</td>
 <td>In Settings, Schedule, Created By should be &lt;First Name&gt; &lt;Last Name&gt; instead of userId</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17028</td>
 <td>In Report Designer Access tab  selected users are not checked in All Users popup</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17024</td>
 <td>When Editing Schedule: a redundant empty recipient shows unexpectedly</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17023</td>
 <td>Category navigation on left side of page shows edit icons when collapsed</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>17007</td>
 <td>Icons of Report Part Title in Report Body are not aligned</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>17001</td>
 <td>Gauge report is not sorted properly</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16987</td>
 <td>Null value is formatted in gauge separator causing duplicate value in the report part</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16961</td>
 <td>Popup subreport headers should show Sub report&#8217;s name instead of fixed label &#8216;Subreport&#8217;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16959</td>
 <td>Value that has 2 spaces between 2 words (i.e A  B) displays in the report with only one space (i.e A B), report designer is editing one white space</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16892</td>
 <td>When using custom formats as field mapping values for subreports, the values do not match. System is passing formatted values, instead of the raw data for field mapping.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16891</td>
 <td>The second metric gauge of the first group is not properly spaced from the first one when Item(s) Per Row is not a multiple of number of metrics</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16888</td>
 <td>Dirty Form validation is missing when user changes list Tennant in connection string mapping for global report setup.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16886</td>
 <td>Update 1 new CF, system shows the current calculated field  in the list of select Field Names pop up and should not</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16880</td>
 <td>System is not properly updating from custom field formats to standard one when changed</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16867</td>
 <td>Cross Filter section and Delete icon is displayed when user does not set config for Cross Filtering</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16864</td>
 <td>In copy management UI when user updates workspace&#8217;s name, System shows &#8220;No changes found&#8221;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16856</td>
 <td>Filter Alias displays name incorrectly after changing aggregated function in Configuration section of field from something like Sum(Field) to Count(Field)</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16855</td>
 <td>System can draw the gauge report part with incorrect min &amp; max when Scale To = the min data value returned from database</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16853</td>
 <td>In MVC integration kit user Can&#8217;t Activate User Tenant</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16850</td>
 <td>Min &amp; Max of Gauge report have 14 decimal digits while value has only 2 decimal digits in db</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16848</td>
 <td>In Horizontal Grids Text of columns should be left-justified for consistency</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16843</td>
 <td>After changing the option to show/hide tenant field in the data model 2 or more times the field stops displaying in report designer even when set to show.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16815</td>
 <td>Version should not be displayed for a template</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16801</td>
 <td>Filter values in drop downs are sorted A-&gt;Z when sorting Z-A</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16777</td>
 <td>I report designer info of deleted filter still displays in Filter Properties drop down when un-selecting its associated data source.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16772</td>
 <td>In IE browsers it is difficult to edit Report part name in Config/Preview mode</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16768</td>
 <td>User is getting error message &#8216;The application has encountered an unknown error..&#8217; instead of kicking out to the Login page after the session is expired.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16751</td>
 <td>User is able to edit the email&#8217;s content while system is sending email</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16750</td>
 <td>Cross filtering is not properly applying to dashboard when user is in presentation mode.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16730</td>
 <td>When cross filtering report part fails to drill up after updating result</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16723</td>
 <td>Only popup header displays after clicking Search then clicking Reset button immediately after</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16602</td>
 <td>Tenant Access label is cut off in the Tenant Permission screen in MVC kit</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16597</td>
 <td>In Quick Edit mode filters Inherited from a Parent Report to a Sub Report are not retained after pressing &#8220;Update Result&#8221;</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16579</td>
 <td>Date formats in &#8220;Long Date &amp; Long Hour&#8221; style export incorrectly in XML, JSON and CSV</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16576</td>
 <td>Grand Total columns are out of alignment with the field columns when user changes field width</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16566</td>
 <td>In IE child popup of Add Calculated Field does not appear in the proper position to parent popup</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16564</td>
 <td>User should not be able to navigate to other screens while pop-up is opening by pressing Back or Alt+Left key</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16541</td>
 <td>The &#8220;Configure Password Options&#8221; is disabled when adding new users although user has checked &#8220;Configure Password Options&#8221; permission on role</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16538</td>
 <td>Error displayed when user attempts to sort values for input parameters of stored procedures in report designer.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16534</td>
 <td>When deleting current version of report is history screen deleted report &amp; category are not removed from Report List</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16531</td>
 <td>No message appears in the report when clicking Update Result with required filter has no value</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16517</td>
 <td>Sub total and Grand total are not exported on CSV on Export</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16505</td>
 <td>User can not use scroll bar to pick time in time field dropdowns on key join</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16501</td>
 <td>User can not use mouse to drag the scroll bar of the drop down list of Time picker in schedule/subscription/key join operator for time fields.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16450</td>
 <td>Edit Report button exists when user has been shared report with &#8220;View only&#8221; mode</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16444</td>
 <td>Json node createdBy and modified are incorrect when saving a new category</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16431</td>
 <td>Delete filter and Information filter icons are overlapped in report designer</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16422</td>
 <td>Workspace name in Copy Management is missing cue to click for expanding information showing owner, created and modified dates. Should show carrot to notify user this can be expanded.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16413</td>
 <td>In Data Model Invisible database still displays in Database Name list in Filter Value pop-up</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16411</td>
 <td>Grammar issue in popup message while deactivating role</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16394</td>
 <td>In Copy Management user cannot un-check the &#8220;Show only my workspaces&#8221; checkbox</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16386</td>
 <td>No successful message appears when editing &amp; saving the report linked to an invisible connection in the data model</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16380</td>
 <td>Data model&#8217;s connection string Lost highlight focus after saving a connection string</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16377</td>
 <td>In Report Viewer and Dashboard Warning message does not display when physical table is deleted on database</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16337</td>
 <td>Calculated Fields - System displayed error when creating calculated field using distinct.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16296</td>
 <td>When using a Mac and Chrome browser Hover area is incorrect when using drop down box Setting level</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16293</td>
 <td>Placeholder data shown in form Border Settings</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16291</td>
 <td>Filters created on Numeric Calculated Field Break Cascading</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16278</td>
 <td>Unit label not displayed on Linear Gauge report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16262</td>
 <td>The default date format should be updated when its data formatting is ...</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>16237</td>
 <td>Chart is not show when using a CF created in the data model with an alias when used in chart</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>16040</td>
 <td>The message displays &#8220;The template.....&#8221; wrongly, instead of &#8220;The report....&#8221; when user Copies/Moves a report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15996</td>
 <td>Report Designer &gt; Report Body &gt; &#8216;Reset Zoom&#8217; Dialogue Causes Drilldown</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15970</td>
 <td>Filtered connection list shows sources not used in copy management database name dropdown based on selected report/dashboard</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15966</td>
 <td>In Oracle Error displays when report contains at least 1 calculated field filter and aggregated field in container</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15925</td>
 <td>In Global Report Role list is not sorted by AZ for access rights dropdown</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15912</td>
 <td>In User Setup, When You Input Non Decimals, Timezone Data Offset Breaks Datetime Filters In Reports</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15904</td>
 <td>Destination category/subcategory should be selected with newly moved report in it</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15870</td>
 <td>In Copy Management, data in Content panel is displayed incorrectly in search result</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15861</td>
 <td>When saving Global report system should not show message M23/M24 in save popup without sharing with role/user</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15822</td>
 <td>For System Admins Setting level is still available at FIELDS page when opening an existing report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15818</td>
 <td>On Global Dashboard Missing the tooltip &#8220;Enter to create new category/sub-category&#8221; when set value into category/subcategory dropdown</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15787</td>
 <td>When creating a Form, some added Fields can be deleted when user press backsapce on keyboard</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15763</td>
 <td>Missing progress bar on Report List for Tenant level when user navigates from other page to the Report List</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15754</td>
 <td>For charts Hover Label Checkbox Does Not Remove Hover Labels</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15747</td>
 <td>Database Mapping, Merge duplicate mapping checkbox only displays for All Mapping option</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15743</td>
 <td>In Key join value when user uses Home/End key in text field the value changes to -number</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15708</td>
 <td>Shouldn&#8217;t check license validity when using invalid connection string to setup config database initially</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15700</td>
 <td>Data in drop down list of Field Comparison is displayed incorrectly</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15662</td>
 <td>Modifications to CSS in project do not take effect on exports (tested in standalone)</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15661</td>
 <td>Forms: External Stylesheets Can Be Referenced In Forms, Styles Removed If The Visual Content is Modified.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15652</td>
 <td>System loads the grey content below Reconnect button after user saving a first new connection string</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15645</td>
 <td>[Equals (Tree)] Order in Filter drop down list is incorrect</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15544</td>
 <td>Error message displays incorrectly when add an invalid expression for Calculated Field</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15522</td>
 <td>When altering the browser resolution after initial page load the filter&#8217;s lazy loading feature stops working</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15505</td>
 <td>When editing a calculated field, system shows itself on the list CF drop down list when user edit Expression</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15497</td>
 <td>Pivot Grid Column Field Text Color Does Not Change</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15494</td>
 <td>Some values fail to appear on Chart Legend</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15483</td>
 <td>Collation Issues, Invalid object name &#8216;SYS.FOREIGN_KEY_COLUMNS&#8217;.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15481</td>
 <td>System does not overwrite the custom define function with the system function</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15480</td>
 <td>Calculated Field in Postgres System shows error msg when user use DateDiff function in Expression field of Calculated Field</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15479</td>
 <td>Background color is limited by the initial report part&#8217;s right border</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15472</td>
 <td>Datetime fields Between function, the TO date/time should be restricted to be after the FROM datetime</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15398</td>
 <td>Subtotals on Drill Down Grid Inaccurate When Collapsed</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15396</td>
 <td>Bar Chart X/Y Labels Correspond with Opposite Axis</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15391</td>
 <td>User with Full Report and Dashboard Access is Shown with Simple Data Sources In Role Summary</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15369</td>
 <td>In Oracle After changing operator in relationship, results do not update when navigating to Fields page</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15355</td>
 <td>Field name alias is duplicated if coming out Field Property panel without focusing any field before.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15340</td>
 <td>Copied reports when edited in designer show a small blank error with no details and no log errors</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15335</td>
 <td>The green check-box and red X icon is displayed when user open Subtotal Settings popup then click OK button</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15334</td>
 <td>The green check-box and red X icon appear then disappear when user clicks Preview button in Subtotal Settings pop-up</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15309</td>
 <td>System does not set default Filter Operator for Time data type</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15292</td>
 <td>Field Name alias change is lost in some scenarios</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15285</td>
 <td>The Preview does not reload page when changed setting from Link to Icon or vice versa on custom url/or js</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15271</td>
 <td>Relationships additional Key Join Field&#8217;s Length is too short to show data value</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15244</td>
 <td>Horizontal Grids: column widths settings don&#8217;t work the same way as Vertical Grid column widths</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15242</td>
 <td>System should allow user back to data source tab, instead of display the information message when distinct is not valid</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>15231</td>
 <td>Rule swap 2 DS is not applied when user creates relationship with Key Join</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>15094</td>
 <td>System Parameters used in sp params are not correct when using &#64;UserID the report loads with the initial stored value not the current user id</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14990</td>
 <td>System shows incorrect value for &#8220;Week Number&#8221; format</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14976</td>
 <td>MS Edge browser has slight spacing issues in report designer and Copy Management.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14973</td>
 <td>Save External Tenant API only updates name deletion, active and description only. Should update all items available.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14960</td>
 <td>Incorrect Error message displayed when report is missing fields in data model &#8220;This report is no longer valid...&#8221; &amp; the Design button in reportviewer</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14957</td>
 <td>Error message is displayed incorrectly after calculated field contains a field that is no longer available</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14954</td>
 <td>Incorrect error message displayed  Should be shown error message &#8220;Invalid filter(s): ...&#8221; instead of &#8220;The application has encountered...&#8221;</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14949</td>
 <td>Report Part should be displayed in the report when error is shown that fields are not visible</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14939</td>
 <td>FireFox is showing slow load times for Permissions tab to Data Model Access tab</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14928</td>
 <td>In Subtotal/Grand Total Data Type changes to Money when using Average/Sum/Sum Distinct for numeric field.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14914</td>
 <td>Suggested Data Type is incorrect when user changes the Field in Expression text box for Calculated Field</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14891</td>
 <td>In Edge Browser Data is not displayed when user changes from back side to front side, system shows error msg when creating form</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14806</td>
 <td>Duplicate workspaces display in middle panel after clicking Save button many times</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14797</td>
 <td>In some cases when using separator on Column Chart the columns are overlapping</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14763</td>
 <td>Notification for adding a new table/view/stored procedure is incorrect, states that all data will be overridden in the model</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14694</td>
 <td>Application detects incorrect data type of Aggregated Function so it throws incorrect error msg: &#8220;Value should be valid compared with filter data type&#8221;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14677</td>
 <td>Checkbox and Popup style filters are not inheriting the values of top level report</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14315</td>
 <td>Stored Procedures in MSSQL which contain aggregate fields without as indicator show blank field name in model</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14299</td>
 <td>Grid lines disappear in form table after formatting a field</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14293</td>
 <td>Default sorting function is removed when user returns to visual tab from HTML tab</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14286</td>
 <td>Money field type shows no decimals by default without a format applied</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14225</td>
 <td>The copied report having sharing info is not available for the user in the destination when using copy console</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14223</td>
 <td>Missing some configurations on sorting feature for pivot and drill down grids</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14174</td>
 <td>Query execution is not available for stored procedures in MySQL</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14115</td>
 <td>License Expiration Notification Reports Negative Days</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14110</td>
 <td>SASS styles issue some elements are not pointing to a global variable</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14100</td>
 <td>Responsive Screen Issues</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14090</td>
 <td>System should prevent duplicate threshold values on the same axis</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>14074</td>
 <td>Scroll bar needed in dashboard tile for gauges and charts which contain multiple items as they are too small to see until the tile is made larger.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>14010</td>
 <td>Known issue with Oracle .net driver any repeating decimals will cause an error to resolve in the Application use ROUND(field/field,3) to round the decimal</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13956</td>
 <td>Concurrency updated msg is not displayed when user clicks on Save button on a new workspace without clicking on Validate button first</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13919</td>
 <td>After changing the name of a calculated field sub/grand total show error &#8220;this field is invalid&#8221;</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13912</td>
 <td>When setting a role to Full Report and Dashboard Access defaults for each area are not correct. Example, user should always be able to create a report but if it is not the default for tenant this is not checked and is hidden when using this setting.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13899</td>
 <td>Freeze option not working in Quick Edit mode for filter panel</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13802</td>
 <td>Vertical Scroll bar position is reset to top of the list although user select the last item on left navigation.</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13794</td>
 <td>Performance on MS Edge is slow, nearly frozen</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13782</td>
 <td>When using a report part, render report or render dashboard if item ID is not found system should return message stating item is not found</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13762</td>
 <td>Calculated field fail to load after changing the database name for the connection string</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13761</td>
 <td>When user collapses data model tree in copy management and navigates to advanced copy screen, all trees are expanded again when returning to the main screen</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13736</td>
 <td>Success message displays even after clicking Cancel button on Overwrite popup when copying reports</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13554</td>
 <td>Chart Zoom feature not working properly with Stacked Percentage property</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>13534</td>
 <td>Field name is not unique error displayed when using a calculated field created in data model in the calculated field created in report</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>13510</td>
 <td>Some drop downs are not searchable and all should be combo search and select</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>12999</td>
 <td>CONCAT must be used in instead of + when combining two string values in some databases.</td>
 </tr>
-<tr class="row-odd"><td>Defect</td>
+<tr class="row-even"><td>Defect</td>
 <td>12447</td>
 <td>When reviewing the permissions summary in the role no scroll bar is present and only 12 items can be displayed</td>
 </tr>
-<tr class="row-even"><td>Defect</td>
+<tr class="row-odd"><td>Defect</td>
 <td>9200</td>
 <td>Between values are not validated in filters to ensure beginning value is less than ending value</td>
 </tr>
