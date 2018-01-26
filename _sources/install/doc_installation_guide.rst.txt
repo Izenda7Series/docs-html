@@ -485,6 +485,7 @@ Common Izenda Stand-alone Installation Issues
          Select Data Server Type |br|
 
    -  Make sure you’ve used the proper syntax for your Connection String.
+   -  Certain characters may cause issues when used in Connection Strings. Avoid using characters such as semicolons, single-quotes, or double-quotes
 
       MSSQL, PostgreSQL, Oracle, and MySQL Connection Strings are all formatted a little different, provide different options, and expect different syntaxes. Use resources like `ConnectionStrings.com <https://www.connectionstrings.com/>`__ to make sure you’re including the right details, options, and port numbers:
 
