@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Available Filter Operators &mdash; Izenda BI 2.6.13 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.6.13 documentation" href="../index.html"/>
+        <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
+        <link rel="next" title="Training Walkthroughs" href=".training_walkthroughs.html"/>
+        <link rel="prev" title="Grand Total and Sub Total" href="doc_grand_total_sub_total.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_schedule.html">Report Designer/Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_access.html">Report Designer/Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_grid.html">Report Designer/Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_chart.html">Report Designer/Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_gauge.html">Report Designer/Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_map.html">Report Designer/Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_form.html">Report Designer/Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_designer_report_part_menu.html">Report Designer/Report Part Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_list.html">Report List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_report_viewer.html">Report Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_designer.html">Dashboard Designer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_dashboard_list.html">Dashboard List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_grand_total_sub_total.html">Grand Total and Sub Total</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Available Filter Operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#comparison">Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boolean">Boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-time">Date &amp; Time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equivalence">Equivalence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#field-comparison">Field Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string">String</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
+        
+      <li>Available Filter Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_available_filter_operators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="available-filter-operators">
+<h1>Available Filter Operators<a class="headerlink" href="#available-filter-operators" title="Permalink to this headline">¶</a></h1>
+<p>Filter operators are used to designate a subset of data for analysis and modeling.</p>
+<p>The following is a list of available filter operators for reference. Additional operators may be added in future versions of Izenda.</p>
+<div class="section" id="comparison">
+<h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Is Less Than</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Allow Parameters : FALSE</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Is Greater Than</span></dt>
+<dd><ul class="first last">
+<li>Label : &gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Between</span></dt>
+<dd><ul class="first last">
+<li>Label : Between</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Less Than</span></dt>
+<dd><ul class="first last">
+<li>Label : &gt;=</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Greater Than</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;=</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Between</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Between</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="boolean">
+<h2>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">TRUE</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">FALSE</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="date-time">
+<h2>Date &amp; Time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Between (Date)</span></dt>
+<dd><ul class="first last">
+<li>Label : Between (Date)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Between (Date &amp; Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : Between (Date &amp; Time)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Between (Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : Between (Time)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Between (Date)</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Between (Date)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Between (Date &amp; Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Between (Date &amp; Time)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Between (Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Between (Time)</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Date)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Date &amp; Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Date)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Date &amp; Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Time)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">In Time Period</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Less Than Days Old</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Greater Than Days Old</span></dt>
+<dd><ul class="first last">
+<li>Label : &gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals Days Old</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="equivalence">
+<h2>Equivalence<a class="headerlink" href="#equivalence" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Manual Entry)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Selection)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Popup)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Tree)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Checkbox)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Manual Entry)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Selection)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Popup)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Checkbox)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Tree)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Manual Entry No Auto-Complete)</span></dt>
+<dd><ul class="first last">
+<li>Label : Equals (Manual Entry No Auto-Complete)</li>
+<li>Allow Parameters : TRUE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Null</span></dt>
+<dd><ul class="first last">
+<li>Label : Null</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Null</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Null</li>
+<li>Allow Parameters :  FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="field-comparison">
+<h2>Field Comparison<a class="headerlink" href="#field-comparison" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Is Less Than (Field)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Is Greater Than (Field)</span></dt>
+<dd><ul class="first last">
+<li>Label : &gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Equals (Field)</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Equal (Field)</span></dt>
+<dd><ul class="first last">
+<li>Label : &lt;&gt;</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Blank</span></dt>
+<dd><ul class="first last">
+<li>Label : =</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Like</span></dt>
+<dd><ul class="first last">
+<li>Label : Like</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Begins With</span></dt>
+<dd><ul class="first last">
+<li>Label : Begins With</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Ends With</span></dt>
+<dd><ul class="first last">
+<li>Label : Ends With</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">Not Like</span></dt>
+<dd><ul class="first last">
+<li>Label : Not Like</li>
+<li>Allow Parameters : FALSE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".training_walkthroughs.html" class="btn btn-neutral float-right" title="Training Walkthroughs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_grand_total_sub_total.html" class="btn btn-neutral" title="Grand Total and Sub Total" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.6.13',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
