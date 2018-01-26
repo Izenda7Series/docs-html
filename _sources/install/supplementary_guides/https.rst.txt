@@ -37,5 +37,17 @@ Steps
      - https://example.com/api/validateAccessToken
    * - AuthGetAccessTokenUrl
      - http://example.com/api/getAccessToken
+
+Common Log Errors
+-------------------------
+
+.. note::
+
+	Self-signed & untrusted certificates must be installed on the server hosting the API in order for the Izenda application to "trust" them.
+	
+
+* The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
+* System.Security.Authentication.AuthenticationException: The remote certificate is invalid according to the validation procedure.
+
 	    
 	 
