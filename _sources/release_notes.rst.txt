@@ -8,6 +8,10 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 	
+v2.6.16 to be Released January 30, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+
 v2.6.15 January 22, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
