@@ -8,9 +8,28 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 	
-v2.6.16 to be Released January 30, 2018
+v2.6.16 January 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
+
+FIXES
+^^^^^
+
+-  Defect  19035  In time period filter not responding after changing time period in report viewer.
+-  Defect  19034  Calculated Field as filter created in prior version shows as invalid field after upgrading. 
+-  Defect  19007  Canceling new, unsaved reports in integrated kits would show 'The report ID is invalid' when trying to continue designing a report. 
+-  Defect  19006  Removed redundant confirmation dialogues during SMTP credential configuration through the UI
+-  Defect  19003  Calculated field contains another calculated field is broken, when calculated field A references another calculated field B, A is not functioning properly.
+-  Defect  18998  In Dashboard when saving as a user with full report & dashboard permission, the system is removing any sharing that was added
+-  Defect  18879  When using copy console and more than 4 database mappings on same schema doesn't work
+-  Defect  18822  System shows can not draw chart in XY-Plane popup when user creates a chart with a separator. 
+-  Defect  18571  Filter Descriptions (when using Show Filters Under Report Description) shows as undefined when using In Time Period filter
+-  Defect  18438  Resolved security issue on API
+-  Defect  18298  Report is Missing Save button on the report opened from sub report link
+-  Defect  18118  In Tenant Setup Standalone only List of existing System Roles are displayed on the Access/Schedule section on new Tenant Permission
+-  Defect  17884  Added additional methods to the Role and Tenant for integrated C# API see documentation here `Back-end Integration APIs <https://www.izenda.com/docs/dev/api_backend_integration.html?highlight=addorupdaterole#back-end-integration-apis>`_
+-  Defect  17796  System should not prevent changing a user's role from [non System Admin] to [System Admin]	
+-  Defect  17754  dataModel/databaseMapping accepts bad data for fromserver value
+-  Defect  17707  Introduced a new API for adding new users in integrated mode. POST /api/external/user. This endpoint will return the ID of the newly created user. See documentation here `external/user <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_
 
 v2.6.15 January 22, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1906,9 +1925,6 @@ Known Issues
      - 18884
      - System should show a message to user when trying to add a report which is no longer valid as the connection string was removed
    * - Defect
-     - 18879
-     - When using copy console and more than 4 database mappings on same schema doesn't work
-   * - Defect
      - 18878
      - Gauge/Chart shows data incorrectly when the first field in Labels container is aggregated field and only sort by this field when using MySQL
    * - Defect
@@ -2070,9 +2086,6 @@ Known Issues
    * - Defect
      - 18573
      - Logging for /api/report/isReportValid/ does not include detail message from invalid reports.
-   * - Defect
-     - 18571
-     - Filter Descriptions (when using Show Filters Under Report Description) shows as undefined when using In Time Period filter
    * - Defect
      - 18568
      - User should NOT be allowed to add/edit a duplicate calculated field, error message should be displayed
@@ -2263,9 +2276,6 @@ Known Issues
      - 18299
      - Error message does not appear when draging one key join relationship and drops it in another relationship destination that is not eligible
    * - Defect
-     - 18298
-     - Report is Missing Save button on the report opened from sub report link
-   * - Defect
      - 18297
      - Error message does not appear when "Distinct" checkbox is selected AND the relationship among data objects does not support the distinct request
    * - Defect
@@ -2358,9 +2368,6 @@ Known Issues
    * - Defect
      - 18124
      - Internet Explorer, Right click on report part header does not work
-   * - Defect
-     - 18118
-     - In Tenant Setup Standalone only List of existing System Roles are displayed on the Access/Schedule section on new Tenant Permission
    * - Defect
      - 18115
      - In Data Model "Duplicate" error appears when alias name has a string that includes schema
@@ -2546,10 +2553,7 @@ Known Issues
      - Relationship is autmatically dismissed when going back to datasource page and un-checking and re-checking the datasources
    * - Defect
      - 17799
-     - Some charts are cut-off when user prints a report has many report parts
-   * - Defect
-     - 17796
-     - System should not prevent changing an user's role from [non System Admin] to [System Admin]	
+     - Some charts are cut-off when user prints a report has many report parts	
    * - Defect
      - 17795
      - pValue filter in URL does not work for DateTime if this Field is not in a Group
@@ -2580,9 +2584,6 @@ Known Issues
    * - Defect
      - 17757
      - Report body is resized after user subscribes then un-subcribes to the report.
-   * - Defect
-     - 17754
-     - dataModel/databaseMapping accepts bad data for fromserver value
    * - Defect
      - 17752
      - Deserialization error in reportByProperty API, using  report/reportByProperty/{id} to get JSON, and using JSON.NET to parse ReportDefinition, exception is returned
@@ -2619,9 +2620,6 @@ Known Issues
    * - Defect
      - 17708
      - The /api/repost/list2?includeHashCode=true, reports are always contained in null subcategories, instead of its actual subcategory.
-   * - Defect
-     - 17707
-     - BREAKING CHANGE - API User/Integration/saveUser should return the newly generated user ID with success response
    * - Defect
      - 17698
      - When user sets cascading to true on any stored procedure input param, but does not override this in IAdHoc Extension, subsequent filter values are not displayed when configured in the data model. Cascading should not be set on stored procedure input params unless the IAdHoc Extension is used.

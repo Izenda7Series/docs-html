@@ -27,21 +27,38 @@ List of APIs
    
           `public static User AddOrUpdateUser(UserDetail user)`_
      - Hosting app can add/update user in Izenda
+     
    * - **RoleIntegrationConfig** in Izenda.BI.Logic.CustomConfiguration
      -
    * - .. container:: lpad2
    
           `public static RoleDetail AddOrUpdateRole(RoleDetail role)`_
      - Hosting app can add/update role in Izenda
+
+   * - .. container:: lpad2
+   
+          `public static RoleDetail AddRole(RoleDetail role)`_
+     - Hosting app can add a role in Izenda (v2.6.16 or greater)
+   * - .. container:: lpad2
+   
+          `public static bool HasRole(RoleDetail role)`_
+     - Hosting app can check if the specified role exists. (v2.6.16 or greater)
+     
    * - **TenantIntegrationConfig** in Izenda.BI.Logic.CustomConfiguration
      -
    * - .. container:: lpad2
    
           `public static Tenants AddOrUpdateTenant(Tenants tenant)`_
      - Hosting app can add/update tenant in Izenda
-
-
-
+   * - .. container:: lpad2
+   
+          `public static Tenants AddTenant(Tenants tenant)`_
+     - Hosting app can add tenant in Izenda (v2.6.16 or greater)
+   * - .. container:: lpad2
+   
+          `public static bool HasTenant(Tenants tenant)`_
+     - Hosting app can check if the specified Tenant exists (v2.6.16 or greater)
+     
 public static Func<ValidateTokenArgs, ValidateTokenResult> ValidateToken
 ----------------------------------------------------------------------------------------------
 
@@ -188,6 +205,83 @@ Hosting app can add/update role in Izenda.
        
        RoleIntegrationConfig.AddOrUpdateRole(roleDetail);
 
+public static RoleDetail AddRole(RoleDetail role)
+----------------------------------------------------------------------------------------------
+
+Hosting app add a role in Izenda.
+
+**Declaration**
+
+    ``public static RoleDetail AddRole(RoleDetail role)``
+
+**Parameters**
+
+    :doc:`/ref/models/RoleDetail`
+
+**Return Value**
+
+    :doc:`/ref/models/RoleDetail`
+
+**Samples**
+
+    .. code-block:: csharp
+
+       using Izenda.BI.Logic.CustomConfiguration;
+       using Izenda.BI.Framework.Models.DBStructure;
+       
+       // ..
+       var roleDetail = new RoleDetail()
+       {
+            Name = "Administrator",
+            Active = true,
+            Permission = new Izenda.BI.Framework.Models.Permissions.Permission()
+            {
+                Emailing = new Izenda.BI.Framework.Models.Permissions.Emailing.Emailing()
+                {
+                    DeliveryMethod = new Izenda.BI.Framework.Models.Permissions.Emailing.DeliveryMethod()
+                    {
+                        Attachment = true,
+                        EmbeddedHTML = true,
+                        Link = true
+                    }
+                }
+            }
+       };
+
+        RoleIntegrationConfig.AddRole(roleDetail);
+
+public static bool HasRole(RoleDetail role)
+----------------------------------------------------------------------------------------------
+Hosting app can check if the specified role exists.
+
+**Declaration**
+
+    ``public static bool HasRole(RoleDetail role)``
+
+**Parameters**
+
+    :doc:`/ref/models/RoleDetail`
+
+**Return Value**
+
+    bool
+
+**Samples**
+
+    .. code-block:: csharp
+
+       using Izenda.BI.Logic.CustomConfiguration;
+       using Izenda.BI.Framework.Models.DBStructure;
+       
+       // ..
+       
+       var roleDetail = new RoleDetail()
+        {
+            Name = "Administrator"
+        };
+
+        RoleIntegrationConfig.HasRole(roleDetail);
+
 public static Tenants AddOrUpdateTenant(Tenants tenant)
 ----------------------------------------------------------------------------------------------
 
@@ -221,6 +315,72 @@ Hosting app can add/update tenant in Izenda.
        izendaTenant.TenantID = "ACME";
        
        TenantIntegrationConfig.AddOrUpdateTenant(izendaTenant);
+
+public static Tenants AddTenant(Tenants tenant)
+----------------------------------------------------------------------------------------------
+Hosting app can add tenant in Izenda.
+
+**Declaration**
+
+    ``public static Tenants AddTenant(Tenants tenant)``
+
+**Parameters**
+
+    :doc:`/ref/models/Tenants`
+
+**Return Value**
+
+    :doc:`/ref/models/Tenants`
+
+**Samples**
+
+    .. code-block:: csharp
+
+       using Izenda.BI.Logic.CustomConfiguration;
+       using Izenda.BI.Framework.Models.DBStructure;
+       
+       // ..
+       
+       var izendaTenant = new Izenda.BI.Framework.Models.Tenants();
+       izendaTenant.Active = true;
+       izendaTenant.Deleted = false;
+       izendaTenant.Name = "ACME Corp";
+       izendaTenant.TenantID = "ACME";
+       
+       TenantIntegrationConfig.AddTenant(izendaTenant);
+
+public static bool HasTenant(Tenants tenant)
+----------------------------------------------------------------------------------------------
+Hosting app can check if the specified Tenant exists.
+
+**Declaration**
+
+    ``public static bool HasTenant(Tenants tenant)``
+
+**Parameters**
+
+    :doc:`/ref/models/Tenants`
+
+**Return Value**
+
+    bool
+
+**Samples**
+
+    .. code-block:: csharp
+
+       using Izenda.BI.Logic.CustomConfiguration;
+       using Izenda.BI.Framework.Models.DBStructure;
+       
+       // ..
+       
+       var acmeTenant = new Izenda.BI.Framework.Models.Tenants()
+       {
+          TenantID = "ACME"
+       };
+
+       TenantIntegrationConfig.HasTenant(acmeTenant);
+	   
 
 DLL References
 --------------

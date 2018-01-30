@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Back-end Integration APIs &mdash; Izenda BI 2.6.13 documentation</title>
+  <title>Back-end Integration APIs &mdash; Izenda BI 2.6.16 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.6.13 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.6.16 documentation" href="../index.html"/>
         <link rel="up" title="Full API List" href=".integration_api_documentation.html"/>
         <link rel="next" title="Front-end Integration APIs" href="api_frontend_integration.html"/>
         <link rel="prev" title="Full API List" href=".integration_api_documentation.html"/> 
@@ -237,6 +237,16 @@
 </td>
 <td>Hosting app can add/update role in Izenda</td>
 </tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-roledetail-addrole-roledetail-role">public static RoleDetail AddRole(RoleDetail role)</a></div>
+</td>
+<td>Hosting app can add a role in Izenda (v2.6.16 or greater)</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-bool-hasrole-roledetail-role">public static bool HasRole(RoleDetail role)</a></div>
+</td>
+<td>Hosting app can check if the specified role exists. (v2.6.16 or greater)</td>
+</tr>
 <tr class="row-even"><td><strong>TenantIntegrationConfig</strong> in Izenda.BI.Logic.CustomConfiguration</td>
 <td>&#160;</td>
 </tr>
@@ -244,6 +254,16 @@
 <a class="reference internal" href="#public-static-tenants-addorupdatetenant-tenants-tenant">public static Tenants AddOrUpdateTenant(Tenants tenant)</a></div>
 </td>
 <td>Hosting app can add/update tenant in Izenda</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-tenants-addtenant-tenants-tenant">public static Tenants AddTenant(Tenants tenant)</a></div>
+</td>
+<td>Hosting app can add tenant in Izenda (v2.6.16 or greater)</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#public-static-bool-hastenant-tenants-tenant">public static bool HasTenant(Tenants tenant)</a></div>
+</td>
+<td>Hosting app can check if the specified Tenant exists (v2.6.16 or greater)</td>
 </tr>
 </tbody>
 </table>
@@ -373,6 +393,76 @@ userName/tenantId.</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="public-static-roledetail-addrole-roledetail-role">
+<h2>public static RoleDetail AddRole(RoleDetail role)<a class="headerlink" href="#public-static-roledetail-addrole-roledetail-role" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app add a role in Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">RoleDetail</span> <span class="pre">AddRole(RoleDetail</span> <span class="pre">role)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/RoleDetail.html"><span class="doc">RoleDetail</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/RoleDetail.html"><span class="doc">RoleDetail</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+<span class="kt">var</span> <span class="n">roleDetail</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RoleDetail</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Administrator&quot;</span><span class="p">,</span>
+     <span class="n">Active</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+     <span class="n">Permission</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Permissions</span><span class="p">.</span><span class="n">Permission</span><span class="p">()</span>
+     <span class="p">{</span>
+         <span class="n">Emailing</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Permissions</span><span class="p">.</span><span class="n">Emailing</span><span class="p">.</span><span class="n">Emailing</span><span class="p">()</span>
+         <span class="p">{</span>
+             <span class="n">DeliveryMethod</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Permissions</span><span class="p">.</span><span class="n">Emailing</span><span class="p">.</span><span class="n">DeliveryMethod</span><span class="p">()</span>
+             <span class="p">{</span>
+                 <span class="n">Attachment</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+                 <span class="n">EmbeddedHTML</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+                 <span class="n">Link</span> <span class="p">=</span> <span class="k">true</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+<span class="p">};</span>
+
+ <span class="n">RoleIntegrationConfig</span><span class="p">.</span><span class="n">AddRole</span><span class="p">(</span><span class="n">roleDetail</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="public-static-bool-hasrole-roledetail-role">
+<h2>public static bool HasRole(RoleDetail role)<a class="headerlink" href="#public-static-bool-hasrole-roledetail-role" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can check if the specified role exists.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">bool</span> <span class="pre">HasRole(RoleDetail</span> <span class="pre">role)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/RoleDetail.html"><span class="doc">RoleDetail</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div>bool</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">roleDetail</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RoleDetail</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Administrator&quot;</span>
+ <span class="p">};</span>
+
+ <span class="n">RoleIntegrationConfig</span><span class="p">.</span><span class="n">HasRole</span><span class="p">(</span><span class="n">roleDetail</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="public-static-tenants-addorupdatetenant-tenants-tenant">
 <h2>public static Tenants AddOrUpdateTenant(Tenants tenant)<a class="headerlink" href="#public-static-tenants-addorupdatetenant-tenants-tenant" title="Permalink to this headline">¶</a></h2>
 <p>Hosting app can add/update tenant in Izenda.</p>
@@ -399,6 +489,65 @@ userName/tenantId.</p>
 <span class="n">izendaTenant</span><span class="p">.</span><span class="n">TenantID</span> <span class="p">=</span> <span class="s">&quot;ACME&quot;</span><span class="p">;</span>
 
 <span class="n">TenantIntegrationConfig</span><span class="p">.</span><span class="n">AddOrUpdateTenant</span><span class="p">(</span><span class="n">izendaTenant</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="public-static-tenants-addtenant-tenants-tenant">
+<h2>public static Tenants AddTenant(Tenants tenant)<a class="headerlink" href="#public-static-tenants-addtenant-tenants-tenant" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can add tenant in Izenda.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">Tenants</span> <span class="pre">AddTenant(Tenants</span> <span class="pre">tenant)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/Tenants.html"><span class="doc">Tenants</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/Tenants.html"><span class="doc">Tenants</span></a></div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">izendaTenant</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Tenants</span><span class="p">();</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Active</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Deleted</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;ACME Corp&quot;</span><span class="p">;</span>
+<span class="n">izendaTenant</span><span class="p">.</span><span class="n">TenantID</span> <span class="p">=</span> <span class="s">&quot;ACME&quot;</span><span class="p">;</span>
+
+<span class="n">TenantIntegrationConfig</span><span class="p">.</span><span class="n">AddTenant</span><span class="p">(</span><span class="n">izendaTenant</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="public-static-bool-hastenant-tenants-tenant">
+<h2>public static bool HasTenant(Tenants tenant)<a class="headerlink" href="#public-static-bool-hastenant-tenants-tenant" title="Permalink to this headline">¶</a></h2>
+<p>Hosting app can check if the specified Tenant exists.</p>
+<p><strong>Declaration</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">public</span> <span class="pre">static</span> <span class="pre">bool</span> <span class="pre">HasTenant(Tenants</span> <span class="pre">tenant)</span></code></div></blockquote>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><a class="reference internal" href="../ref/models/Tenants.html"><span class="doc">Tenants</span></a></div></blockquote>
+<p><strong>Return Value</strong></p>
+<blockquote>
+<div>bool</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Izenda.BI.Logic.CustomConfiguration</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Izenda.BI.Framework.Models.DBStructure</span><span class="p">;</span>
+
+<span class="c1">// ..</span>
+
+<span class="kt">var</span> <span class="n">acmeTenant</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Izenda</span><span class="p">.</span><span class="n">BI</span><span class="p">.</span><span class="n">Framework</span><span class="p">.</span><span class="n">Models</span><span class="p">.</span><span class="n">Tenants</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">TenantID</span> <span class="p">=</span> <span class="s">&quot;ACME&quot;</span>
+<span class="p">};</span>
+
+<span class="n">TenantIntegrationConfig</span><span class="p">.</span><span class="n">HasTenant</span><span class="p">(</span><span class="n">acmeTenant</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -456,7 +605,7 @@ userName/tenantId.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.6.13',
+            VERSION:'2.6.16',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
