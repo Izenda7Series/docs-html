@@ -31,6 +31,11 @@ FIXES
 -  Defect  17754  dataModel/databaseMapping accepts bad data for fromserver value
 -  Defect  17707  Introduced a new API for adding new users in integrated mode. POST /api/external/user. This endpoint will return the ID of the newly created user. See documentation here `external/user <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_
 
+.. note::
+
+	This release introduces the external Izenda API. This new API will not be used by the Izenda application, which will ensure no breaking changes as the Izenda application evolves. A simple example can be found `here <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_. 
+	
+
 v2.6.15 January 22, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
