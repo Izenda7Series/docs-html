@@ -351,6 +351,14 @@ Report Designer &gt; Access &gt; Add Sharing &gt; Share With &gt; User &gt; sele
 <td>Checks if the number of not deleted system admins equals 1.</td>
 <td>Settings menu &gt; User Setup &gt; delete a system admin</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-external-user">POST external/user</a></td>
+<td><p class="first">Add or update external user.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.6.16.</span></p>
+</div>
+</td>
+<td>To be updated</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2691,6 +2699,97 @@ Sample Response:</div>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-external-user">
+<h2>POST external/user<a class="headerlink" href="#post-external-user" title="Permalink to this headline">¶</a></h2>
+<p>Add or update external user</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object  <strong>data</strong> field contains an <a class="reference internal" href="models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/external/user</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;14fbf9ac-2d7b-41e9-a272-dd51e161914d&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="s2">&quot;RETCL&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Employee&quot;</span>
+      <span class="p">}],</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:44:48.527&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina Doe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;userRoles&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;initPassword&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;cultureName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample Reponse:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3a3a5cc-123d-1c23-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;14fbf9ac-2d7b-41e9-a272-dd51e161914d&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;tenantDisplayId&quot;</span><span class="p">:</span> <span class="s2">&quot;RETCL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;nina@retcl.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Employee&quot;</span>
+            <span class="p">}],</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:42:44.337&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-20T06:44:48.527&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;$RootAdmin$&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;fullName&quot;</span><span class="p">:</span> <span class="s2">&quot;Nina Doe&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;userRoles&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;dataOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;timestampOffset&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;initPassword&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;cultureName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span>
+      <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

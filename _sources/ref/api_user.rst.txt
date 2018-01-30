@@ -111,6 +111,12 @@ Summary
    * - `GET user/isLastSystemAdmin`_
      - Checks if the number of not deleted system admins equals 1.
      - Settings menu > User Setup > delete a system admin
+   * - `POST external/user`_
+     - Add or update external user.
+
+       .. versionadded:: 2.6.16
+
+     - To be updated
 
 GET user/all/(tenant_id)
 --------------------------------------------------------------
@@ -2552,4 +2558,97 @@ Checks if the number of not deleted system admins equals 1.
          "success": true,
          "messages": null,
          "data": false
+      }
+
+POST external/user
+--------------------------
+Add or update external user
+
+**Request**
+
+    An :doc:`models/UserDetail` object
+
+**Response**
+
+    An :doc:`models/OperationResult` object  **data** field contains an :doc:`models/UserDetail` object.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/external/user HTTP/1.1
+
+   Request Payload::
+
+      {
+         "id": null,
+         "systemAdmin": false,
+         "userName": "nina@retcl.com",
+         "tenantId": "14fbf9ac-2d7b-41e9-a272-dd51e161914d",
+         "tenantDisplayId": "RETCL",
+         "emailAddress": "nina@retcl.com",
+         "roles": [{
+               "name": "Employee"
+            }],
+         "state": 0,
+         "inserted": true,
+         "version": 0,
+         "created": "2017-12-20T06:42:44.337",
+         "createdBy": "$RootAdmin$",
+         "modified": "2017-12-20T06:44:48.527",
+         "modifiedBy": "$RootAdmin$",
+         "lastName": "Doe",
+         "firstName": "Nina",
+         "fullName": "Nina Doe",
+         "active": true,
+         "password": "",
+         "deleted": false,
+         "userSecurityQuestions": null,
+         "userRoles": null,
+         "dataOffset": null,
+         "timestampOffset": null,
+         "initPassword": false,
+         "status": 1,
+         "cultureName": null,
+         "dateFormat": "MM/DD/YYYY"
+      }
+
+   Sample Reponse::
+
+      {
+         "success": true,
+         "messages": null,
+         "data": 
+            {
+               "id": "a3a3a5cc-123d-1c23-ae85-ba92ec3b934e",
+               "systemAdmin": false,
+               "userName": "nina@retcl.com",
+               "tenantId": "14fbf9ac-2d7b-41e9-a272-dd51e161914d",
+               "tenantDisplayId": "RETCL",
+               "emailAddress": "nina@retcl.com",
+               "roles": [{
+                     "name": "Employee"
+                  }],
+               "state": 0,
+               "inserted": true,
+               "version": 0,
+               "created": "2017-12-20T06:42:44.337",
+               "createdBy": "$RootAdmin$",
+               "modified": "2017-12-20T06:44:48.527",
+               "modifiedBy": "$RootAdmin$",
+               "lastName": "Doe",
+               "firstName": "Nina",
+               "fullName": "Nina Doe",
+               "active": true,
+               "password": "",
+               "deleted": false,
+               "userSecurityQuestions": null,
+               "userRoles": null,
+               "dataOffset": null,
+               "timestampOffset": null,
+               "initPassword": false,
+               "status": 1,
+               "cultureName": null,
+               "dateFormat": "MM/DD/YYYY"
+            }
       }
