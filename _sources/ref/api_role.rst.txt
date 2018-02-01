@@ -1597,7 +1597,7 @@ Adds or updates an external role.
 
    .. code-block:: http
 
-      POST api/role HTTP/1.1
+      POST api/role/intergration/saveRole
 
    .. container:: toggle
 
