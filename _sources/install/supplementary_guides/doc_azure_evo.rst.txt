@@ -26,7 +26,7 @@ There are two components needed for the Azure cloud service.
 |
 
 These components as well as the installation guide this document is based on can be downloaded freely at the link below: 
-http://www.evopdf.com/Downloads/Support/Archive/EvoHtmlToPdf-Azure-v6.16.zip (Please be sure to use this version)
+http://www.evopdf.com/support/Archive/EvoHtmlToPdf-Azure-v6.16.zip (Please be sure to use this version)
 
 Installation
 #####################
