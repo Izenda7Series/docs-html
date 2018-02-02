@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modifying Default Email Template &mdash; Izenda BI 2.6.16 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.6.16 documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
+        <link rel="next" title="BI Portal Custom CSS" href="code_bi_portal_custom_css.html"/>
+        <link rel="prev" title="DataSourceAdaptor - DB2 Sample" href="code_idatasourceadaptor_db2.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href=".developer_guide.html#interfacing-with-izenda">Interfacing with Izenda</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href=".system_customization.html">System Customization via Interfaces</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Modifying Default Email Template</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href=".developer_guide.html#styling-izenda">Styling Izenda</a></li>
+<li class="toctree-l3"><a class="reference internal" href=".developer_guide.html#configuring-logging">Configuring Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#redistributing-the-izenda-documentation">Redistributing the Izenda Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+      <li>Modifying Default Email Template</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_default_email_template.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modifying-default-email-template">
+<h1>Modifying Default Email Template<a class="headerlink" href="#modifying-default-email-template" title="Permalink to this headline">¶</a></h1>
+<p>This article contains how to change the default footer in emails for Schedules and Subscriptions. The default templates can be found under API/EmailTemplates. Before modifying the templates, please take note of the below:</p>
+<div class="figure">
+<img alt="../_images/Settings_Schedule_Scope.PNG" src="../_images/Settings_Schedule_Scope.PNG" />
+</div>
+<div class="section" id="change-the-default-footer-in-emails">
+<h2>Change the Default Footer in Emails<a class="headerlink" href="#change-the-default-footer-in-emails" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following steps cover modifying the template for the &#8220;Link&#8221; delivery method for schedules and subscriptions. Modifying the template of other delivery methods can be done by changing its respective file.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In Windows explorer, navigate to API/EmailTemplates/en-US/Report/Schedule/Inside. Modify the &#8220;Link.xml&#8221; file to include the desired text (e.g. Add &#8220;Have a nice day&#8221; to the end of the email body).</p>
+</li>
+<li><p class="first">In Windows explorer, navigate to API/EmailTemplates/en-US/Report/Schedule/Outside. Modify the &#8220;Link.xml&#8221; file to include the desired text.</p>
+</li>
+<li><p class="first">In Windows explorer, navigate to API/EmailTemplates/en-US/Report/Subscription. Modify the &#8220;Link.xml&#8221; file to include the desired text.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sample template for &#8220;Link.xml&#8221;:</li>
+</ul>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;</span>
+<span class="nt">&lt;Body&gt;</span>
+<span class="cp">&lt;![CDATA[</span>
+<span class="cp">    Please find the report link below. Have a nice day.</span>
+<span class="cp">    &lt;br/&gt;</span>
+<span class="cp">    &lt;br/&gt;</span>
+<span class="cp">    {reportLink}</span>
+<span class="cp">    &lt;br/&gt;</span>
+<span class="cp">    &lt;br/&gt;</span>
+<span class="cp">    Regards,</span>
+<span class="cp">    &lt;br/&gt;</span>
+<span class="cp">    {currentUserName}</span>
+
+<span class="cp">]]&gt;</span>
+<span class="nt">&lt;/Body&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Reset IIS and clear your browser cache.</p>
+</li>
+<li><p class="first">Navigate to Izenda and select a report in the Report List</p>
+</li>
+<li><p class="first">Add a scheduled instance (link) to the report and observe the email body. If the &#8220;External User&#8221; permission is unchecked, this reflects our change in step 1. Otherwise, this reflects our change in step 2.</p>
+</li>
+<li><p class="first">Add a subscription (link) to the report and observe the email body. This reflects our change from step 3.</p>
+<blockquote>
+<div><div class="figure" id="id1">
+<a class="reference internal image-reference" href="../_images/Custom_Email_Footer.PNG"><img alt="../_images/Custom_Email_Footer.PNG" src="../_images/Custom_Email_Footer.PNG" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">Test Result of Step 6</span></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral float-right" title="BI Portal Custom CSS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_idatasourceadaptor_db2.html" class="btn btn-neutral" title="DataSourceAdaptor - DB2 Sample" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.6.16',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
