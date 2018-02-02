@@ -288,7 +288,15 @@ Render specific :term:`Report Part` inside hosting web
                A function
              - This function which will be invoked when drilldown
              - Optional
-
+           * - **useQueryParam** |br|
+               A boolean
+             - A flag to use parameters specified in a query string of a URL
+             - Optional, required for exports
+           * - **useHash** |br|
+               A boolean
+             - A flag to use hashing in a URL
+             - Optional, required for exports
+             
 **Samples**
 
     .. code-block:: javascript
@@ -318,6 +326,17 @@ Render specific :term:`Report Part` inside hosting web
     .. figure:: /_static/images/Render_Specific_report_part.png
 
        Izenda Specific Report Part
+       
+    The following example demonstrates the use of useQueryParam and useHash for exports. The sample is derived from our `Sample MVC 5 Application <https://github.com/Izenda7Series/Mvc5StarterKit/blob/9f5133b9eadb713dee85e9cdaed21b1b21e22efd/Mvc5StarterKit/Scripts/izenda.integrate.js#L261>`_
+
+      .. code-block:: javascript
+
+         IzendaSynergy.renderReportPart(document.getElementById('izenda-root'), {
+            id: reportPartId,
+            useQueryParam: true,
+            useHash: false
+         });
+
 
 renderDashboardPage(element)
 ----------------------------------------------------------------------------------------------

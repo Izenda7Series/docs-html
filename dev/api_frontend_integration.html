@@ -491,6 +491,16 @@ A function</td>
 <td>This function which will be invoked when drilldown</td>
 <td>Optional</td>
 </tr>
+<tr class="row-odd"><td><strong>useQueryParam</strong> <br clear="right" />
+A boolean</td>
+<td>A flag to use parameters specified in a query string of a URL</td>
+<td>Optional, required for exports</td>
+</tr>
+<tr class="row-even"><td><strong>useHash</strong> <br clear="right" />
+A boolean</td>
+<td>A flag to use hashing in a URL</td>
+<td>Optional, required for exports</td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
@@ -523,6 +533,16 @@ A function</td>
 <img alt="../_images/Render_Specific_report_part.png" src="../_images/Render_Specific_report_part.png" />
 <p class="caption"><span class="caption-number">Fig. 380 </span><span class="caption-text">Izenda Specific Report Part</span></p>
 </div>
+<p>The following example demonstrates the use of useQueryParam and useHash for exports. The sample is derived from our <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/9f5133b9eadb713dee85e9cdaed21b1b21e22efd/Mvc5StarterKit/Scripts/izenda.integrate.js#L261">Sample MVC 5 Application</a></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">renderReportPart</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;izenda-root&#39;</span><span class="p">),</span> <span class="p">{</span>
+   <span class="nx">id</span><span class="o">:</span> <span class="nx">reportPartId</span><span class="p">,</span>
+   <span class="nx">useQueryParam</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nx">useHash</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="renderdashboardpage-element">
