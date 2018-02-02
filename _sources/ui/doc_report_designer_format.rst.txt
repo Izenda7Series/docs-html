@@ -119,6 +119,11 @@ Header and Footer can be:
 
    Delete an item |br|
 
+.. note::
+   Headers will not repeat on subsequent pages if your Exporting Orientation is set to landscape or your page size is smaller than A4/Letter.
+   
+
+
 Enter Report Title and Description
 ----------------------------------
 
