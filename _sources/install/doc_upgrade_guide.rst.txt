@@ -6,28 +6,14 @@ Upgrade Guide
 
 Izenda provides monthly maintenance releases with bug fixes and performance increases. At least 2 point releases should be expected each year but our goal is to release quarterly (4) point releases annually.
 
-An automatic upgrade process is still in progress. In the mean time, an upgrade includes the following manual steps.
 
 Upgrade Preparations
 --------------------
-
--  Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. These scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ . Each patch release will contain the upgrade scripts from all prior versions within that Major/Minor version. For instance, in the upgrade script for 2.1.0 you will see 2.0.0 - 2.1.0. This will upgrade your database from any version in 2.0.x to 2.1.0. |br|
-
-   *  .. _Upgrade_Izenda_App_folder:
-
-      .. figure:: /_static/images/Izenda_App_folder2.png
-         :align: right
-         :width: 482px
-
-         Front-end package
-
-      Locating the Schema Migration Scripts. |br|
       
-  * Finding You Current Version: There are several ways to check your Izenda version. 
+  * Determine Your Current Version: There are several ways to check your Izenda version. After the upgrade process is complete, be sure that each of your Izenda components are the same version.
     * In the Izenda platform, navigate to the "Settings" panel. The "License Information" section will contain the current Izenda version.
     * In your Izenda Configuration Database, query for the 'Version' field in the IzendaDBVersion Table. This will let you identify your database version.
     * In Windows Explorer, navigate to your API's bin directory (in stand alone versions of the API, this will be located at /API/bin/). Locate a dll prefixed with "Izenda." Right click > properties > details. This will provide you with the current API version of Izenda.
-    
   
 -  Permissions and Tools
 
@@ -45,6 +31,32 @@ Upgrade Preparations
 
    *  Maintenance notice during the upgrade process.
 
+Retrieving Database Upgrade Scripts   
+-------------------------------------
+
+Locating Specific Schema Migration Scripts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. The scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ .
+   *  .. _Upgrade_Izenda_App_folder:
+
+      .. figure:: /_static/images/Izenda_App_folder2.png
+         :align: right
+         :width: 482px
+
+         Front-end package
+
+      Locating the Schema Migration Scripts. |br|
+
+
+The Schema Migration Assistant
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you are upgrading your environment to two or more versions newer than your current version, it is recommended that you utilize the ` Schema Migration Assistant <https://tools.izenda.com/>`__ to compile and download all necessary scripts for your upgrade.
+This tool allows you to specify your Current Version, Target Version, and Database Type. If the "Download as sql script" is checked, your compiled script will automatically be downloaded. If this option is unchecked, your compiled script will be displayed in your browser.
+
+      .. figure:: /_static/images/schema_migration_assistant.png
+         :align: right
+ 
 System Backup
 -------------
 

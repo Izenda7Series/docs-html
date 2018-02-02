@@ -107,6 +107,11 @@
 <li class="toctree-l2"><a class="reference internal" href=".stand_alone_deployment.html">Getting Started: Stand-alone Deployment</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrade Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#upgrade-preparations">Upgrade Preparations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieving-database-upgrade-scripts">Retrieving Database Upgrade Scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#locating-specific-schema-migration-scripts">Locating Specific Schema Migration Scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-schema-migration-assistant">The Schema Migration Assistant</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#system-backup">System Backup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#izenda-system-database-backup">Izenda System Database Backup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#izenda-web-backup">Izenda Web Backup</a></li>
@@ -207,24 +212,11 @@
   <div class="section" id="upgrade-guide">
 <h1>Upgrade Guide<a class="headerlink" href="#upgrade-guide" title="Permalink to this headline">¶</a></h1>
 <p>Izenda provides monthly maintenance releases with bug fixes and performance increases. At least 2 point releases should be expected each year but our goal is to release quarterly (4) point releases annually.</p>
-<p>An automatic upgrade process is still in progress. In the mean time, an upgrade includes the following manual steps.</p>
 <div class="section" id="upgrade-preparations">
 <h2>Upgrade Preparations<a class="headerlink" href="#upgrade-preparations" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. These scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ . Each patch release will contain the upgrade scripts from all prior versions within that Major/Minor version. For instance, in the upgrade script for 2.1.0 you will see 2.0.0 - 2.1.0. This will upgrade your database from any version in 2.0.x to 2.1.0. <br clear="right" /></p>
-<ul>
-<li><div class="figure align-right" id="id1">
-<span id="upgrade-izenda-app-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_App_folder2.png"><img alt="../_images/Izenda_App_folder2.png" src="../_images/Izenda_App_folder2.png" style="width: 482px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Front-end package</span></p>
-</div>
-<p>Locating the Schema Migration Scripts. <br clear="right" /></p>
-</li>
-</ul>
-</li>
-</ul>
 <blockquote>
 <div><ul class="simple">
-<li>Finding You Current Version: There are several ways to check your Izenda version.
+<li>Determine Your Current Version: There are several ways to check your Izenda version. After the upgrade process is complete, be sure that each of your Izenda components are the same version.
 * In the Izenda platform, navigate to the &#8220;Settings&#8221; panel. The &#8220;License Information&#8221; section will contain the current Izenda version.
 * In your Izenda Configuration Database, query for the &#8216;Version&#8217; field in the IzendaDBVersion Table. This will let you identify your database version.
 * In Windows Explorer, navigate to your API&#8217;s bin directory (in stand alone versions of the API, this will be located at /API/bin/). Locate a dll prefixed with &#8220;Izenda.&#8221; Right click &gt; properties &gt; details. This will provide you with the current API version of Izenda.</li>
@@ -247,6 +239,34 @@
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="retrieving-database-upgrade-scripts">
+<h2>Retrieving Database Upgrade Scripts<a class="headerlink" href="#retrieving-database-upgrade-scripts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="locating-specific-schema-migration-scripts">
+<h3>Locating Specific Schema Migration Scripts<a class="headerlink" href="#locating-specific-schema-migration-scripts" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. The scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ .
+*  .. _Upgrade_Izenda_App_folder:</p>
+<blockquote>
+<div><div class="figure align-right" id="id1">
+<a class="reference internal image-reference" href="../_images/Izenda_App_folder2.png"><img alt="../_images/Izenda_App_folder2.png" src="../_images/Izenda_App_folder2.png" style="width: 482px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Front-end package</span></p>
+</div>
+<p>Locating the Schema Migration Scripts. <br clear="right" /></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="the-schema-migration-assistant">
+<h3>The Schema Migration Assistant<a class="headerlink" href="#the-schema-migration-assistant" title="Permalink to this headline">¶</a></h3>
+<p>If you are upgrading your environment to two or more versions newer than your current version, it is recommended that you utilize the ` Schema Migration Assistant &lt;<a class="reference external" href="https://tools.izenda.com/">https://tools.izenda.com/</a>&gt;`__ to compile and download all necessary scripts for your upgrade.
+This tool allows you to specify your Current Version, Target Version, and Database Type. If the &#8220;Download as sql script&#8221; is checked, your compiled script will automatically be downloaded. If this option is unchecked, your compiled script will be displayed in your browser.</p>
+<blockquote>
+<div><div class="figure align-right">
+<img alt="../_images/schema_migration_assistant.png" src="../_images/schema_migration_assistant.png" />
+</div>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="system-backup">
 <h2>System Backup<a class="headerlink" href="#system-backup" title="Permalink to this headline">¶</a></h2>
