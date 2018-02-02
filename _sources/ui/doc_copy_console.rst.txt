@@ -13,7 +13,8 @@ and dashboards from one Izenda Configuration database to another. If you need to
 Usage
 -----
 
-#. Download both the CopyConsoleTool.zip and SampleConfig.xml from the
+#. Download a copy of the CopyConsoleTool.zip that corresponds to your version of Izenda from the Izenda Downloads Site. For instance, if you are running 2.6.15, the correct version of the Copy Console can be found at https://downloads.izenda.com/v2.6.15/ . If you are running the latest version of Izenda, the Copy Console can be found in the `latest <https://downloads.izenda.com/latest>`__ directory.
+#. Download SampleConfig.xml from the
    izenda `utilities <https://downloads.izenda.com/Utilities>`__.
 #. Unzip this application to the location you select.
 #. Edit the SampleConfig.xml using the following as a template:
