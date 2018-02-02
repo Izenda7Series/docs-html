@@ -232,7 +232,7 @@ Render Izenda Report Viewer page only inside hosting web
            * - **report_id** |br|
                String (GUID)
              - The report Id
-           * - **filter** |br|
+           * - **overridingFilterValue** |br|
                A filter object
              - The values for the filters, in this format ``{ p1value: a_value, p2value: another_value, .. }``
            * - **integrationStyle** |br|
@@ -243,7 +243,7 @@ Render Izenda Report Viewer page only inside hosting web
 
     .. code-block:: javascript
 
-       IzendaSynergy.renderReportViewerPage(document.getElementById('izenda-root'), "C2946606-7159-4FB3-82B7-E7D4ED3162A0",null,{ "hideFilter" : true});
+       IzendaSynergy.renderReportViewerPage(document.getElementById('izenda-root'), "C2946606-7159-4FB3-82B7-E7D4ED3162A0",overridingFilterValue: { p1value: "test123" },{ "hideFilter" : true});
 
     .. figure:: /_static/images/Izenda_Report_Viewer.png
 
