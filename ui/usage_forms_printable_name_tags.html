@@ -1,0 +1,588 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Printable Name Tags &mdash; Izenda BI 2.6.16 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.6.16 documentation" href="../index.html"/>
+        <link rel="up" title="Design Tutorials" href=".design_tutorials.html"/>
+        <link rel="next" title="Developer Guide" href="../dev/.developer_guide.html"/>
+        <link rel="prev" title="Referencing A Filtered Report Using A URL" href="usage_referencing_a_filtered_report_using_a_url.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".design_tutorials.html">Design Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage_report_on_multiple_tables.html">Report on Multiple Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage_adding_filters_to_a_report.html">Adding Filters to a Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage_using_templates.html">Using Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage_referencing_a_filtered_report_using_a_url.html">Referencing A Filtered Report Using A URL</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating Printable Name Tags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#building-a-name-tag">Building A Name Tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-styles-to-the-form">Adding Styles to The Form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resulting-sample-html">Resulting Sample HTML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
+        
+          <li><a href=".design_tutorials.html">Design Tutorials</a> &raquo;</li>
+        
+      <li>Creating Printable Name Tags</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/usage_forms_printable_name_tags.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-printable-name-tags">
+<h1>Creating Printable Name Tags<a class="headerlink" href="#creating-printable-name-tags" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we will be creating a sheet of printable nametags from a sample database of employees.</p>
+<div class="section" id="building-a-name-tag">
+<h2>Building A Name Tag<a class="headerlink" href="#building-a-name-tag" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to the report designer. In the “Data Sources” tab, select the “Employees” table from NORTHWIND.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image001.png" src="../_images/image001.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li>Navigate to the “Fields” tab and create a new “Form” report part.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image003.png" src="../_images/image003.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li>The Form designer is split in to two modes—Visual and HTML. Whenever a change is made in the Visual tab, corresponding HTML will be created that can be modified directly from the HTML tab. If desired, you can build your form directly in the HTML editor but, for this tutorial, we will design the basic look and feel in the Visual tab and fine tune it in the HTML tab.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image005.png" src="../_images/image005.png" />
+</div>
+<ol class="arabic simple" start="4">
+<li>To add to a form, click in the body of the Visual tab to place your cursor. Right click and add a 1x3 table to the form. Alternatively, you can add a table from the Report Part Properties Panel.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image007.png" src="../_images/image007.png" />
+</div>
+<ol class="arabic simple" start="5">
+<li>Click and drag on the square in the bottom right-hand corner to expand the table.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image009.png" src="../_images/image009.png" />
+</div>
+<ol class="arabic simple" start="6">
+<li>Click and drag on the horizontal lines of the middle cell to make it larger than the top and bottom cells. To resize a particular cell, click and drag its bottom border.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image011.png" src="../_images/image011.png" />
+</div>
+<ol class="arabic simple" start="7">
+<li>Click inside the middle cell to place the cursor inside it. From our Fields panel, click and drag “Title” onto the form. “Title” contains the job title of each employee at the company.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image013.png" src="../_images/image013.png" />
+</div>
+<ol class="arabic simple" start="8">
+<li>Our Employees table has a field “FirstName” and a field “LastName.” While these fields can be added to the form separately, let’s create a Calculated Field to append the LastName to the FirstName. At the top of the Fields panel, select “Add Calculated Field” and create the following calculated field: [NORTHWND].[dbo].[Employees].[FirstName] + &#8216; &#8216; + [NORTHWND].[dbo].[Employees].[LastName]</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image015.png" src="../_images/image015.png" />
+</div>
+<ol class="arabic simple" start="9">
+<li>Now that our calculated field is created, we can add it to our form. Click in the middle cell to place your cursor behind our “Title” field. You can use the left arrow key to place the cursor in from of our “Title” field. From the fields panel, drag and drop “Full Name” onto our form.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image017.png" src="../_images/image017.png" />
+</div>
+<ol class="arabic simple" start="10">
+<li>Place your cursor in the top cell and type to add text (e.g. “Hi, I call Myself:”).</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image019.png" src="../_images/image019.png" />
+</div>
+<ol class="arabic simple" start="11">
+<li>Place your cursor in the bottom cell. Right click to add an image. Alternatively, you can add an image from the Report Part Properties panel on the right-hand side. Locate an image URL that is available to you and pasted it in the “Source” bar. For this demonstration, we are using Izenda’s website logo.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image020.png" src="../_images/image020.png" />
+</div>
+<ol class="arabic simple" start="12">
+<li>Click on the newly added image. On the Report Part Properties panel, navigate to “Format” and align the image to the right.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image022.png" src="../_images/image022.png" />
+</div>
+<ol class="arabic simple" start="13">
+<li>Return the report part to “Preview” mode and observe the un-stylized name tags. Notice that each nametag in the form is its own HTML table.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image024.png" src="../_images/image024.png" />
+</div>
+</div>
+<div class="section" id="adding-styles-to-the-form">
+<h2>Adding Styles to The Form<a class="headerlink" href="#adding-styles-to-the-form" title="Permalink to this headline">¶</a></h2>
+<p>Several customizations can be added to a form from the Visual tab and countless more can be added through the HTML tab. The following section will demonstrate how to modify font sizes and weights from the Visual tab and Background Colors/Outlines from the HTML tab.</p>
+<ol class="arabic simple">
+<li>Highlight the text found in the top cell. In the Report Part Properties panel, change the font size to 26 and click the “B” to make the font Bold. If desired, change the font color to White.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image026.png" src="../_images/image026.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li>Click on the field “Full Name.” In the Field Properties panel, navigate to Data Formatting and modify the Font Size to 20.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image028.png" src="../_images/image028.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li>In the report preview in the Report Designer, our form will look like the following:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image030.png" src="../_images/image030.png" />
+</div>
+<ol class="arabic simple" start="4">
+<li>Now, we will add styles via CSS. Navigate to the “HTML” tab of our form. At the top of the HTML add:  &lt;style&gt;&lt;/style&gt;</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image031.png" src="../_images/image031.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When switching between the Visual tab and the HTML tab, you may notice that the contents of the style element is commented out using the HTML Comment ornaments “&lt;!—“ and “&#8211;&gt;” . This is simply a denotation for Izenda’s HTML renderer to ensure that the style is maintained when the report is saved.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>To break up each nametag, we will add a color to the top row of each table. Find the first “tr” element in the form and provide a class “nt-header”. In the style element, add the following:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image033.png" src="../_images/image033.png" />
+</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.nt-header{
+      background-color: #1c4e89;
+       height: 85px !important;
+   }
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Create two additional classes for the name tag footer and the nametag body. Add them accordingly to your table elements. To ensure that this styling is respected, remove any inline styles of the td and tr elements.</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.nt-footer{
+   height: 70px !important;
+   }
+
+.nt-body{
+   height: 70px !important;
+   }
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Next, we will further stylize the look of the label. Find the table element and provide a class “label-content.” In the style element, add the following:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image035.png" src="../_images/image035.png" />
+</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.label-Content {
+   border-collapse:separate;
+   border:solid black 1px;
+   border-radius:6px;
+   -moz-border-radius:6px;
+   width: 300px !important;
+   text-align: center;
+   overflow: hidden;
+   }
+</pre></div>
+</div>
+<div class="figure">
+<img alt="../_images/image036.png" src="../_images/image036.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If we were to print/export our label sheet now, there would be zero spacing between each nametag and they would be printed in 1 continuous line down the page.</p>
+</div>
+<ol class="arabic simple" start="8">
+<li>To add spacing between the nametags, we will create a div around our table. This will have the class “label-spacing”. In the style element add the following:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image038.png" src="../_images/image038.png" />
+</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.label-spacing{
+   padding: .125in .3in 0;
+   margin-right: .125in;
+  /* the gutter */
+   float: left;
+   text-align: center;
+   overflow: hidden;
+   }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If we were to print/export our label sheet now, there would be spacing between each nametag but they would be printed in 1 continuous line down the page. We will need to add a bounding box around our labels so that they overflow correctly.</p>
+</div>
+<div class="figure">
+<img alt="../_images/image039.png" src="../_images/image039.png" />
+</div>
+<ol class="arabic simple" start="9">
+<li>Add a repeater element around our label-spacing element to ensure that only this content is repeated. Depending on your use case, you may not need this additional step.</li>
+<li>To ensure that the nametags overflow correctly, we will create a div around our repeater element. This will have the class “label-sheet”. In the style element add the following:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/image041.png" src="../_images/image041.png" />
+</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.label-sheet {
+  width: 8.5in;
+  margin: 0in .1875in;
+  }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the report designer, the labels will display correctly. When printed or exported, however, some labels may be cut off and, thus, will be misaligned on a sticker sheet.</p>
+</div>
+<div class="figure">
+<img alt="../_images/image042.png" src="../_images/image042.png" />
+</div>
+<ol class="arabic simple" start="11">
+<li>Add the following CSS to the style element. This will ensure that there is a page break after every 10th element on the page. When printed or exported, labels will not be cut off and will be perfectly aligned on a sticker sheet.</li>
+</ol>
+<div class="highlight-text"><div class="highlight"><pre><span></span>.label-spacing:nth-child(10n) {
+   page-break-after:always;
+   }
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li>Save your report and test an export.</li>
+</ol>
+</div>
+<div class="section" id="resulting-sample-html">
+<h2>Resulting Sample HTML<a class="headerlink" href="#resulting-sample-html" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&lt;style&gt;
+ &lt;!--
+    .nt-header{
+      background-color: #1c4e89;
+        height: 85px !important;
+    }
+    .nt-footer{
+         height: 70px !important;
+    }
+    .nt-body{
+         height: 70px !important;
+    }
+     .label-content {
+         border-collapse:separate;
+         border:solid black 1px;
+         border-radius:6px;
+         -moz-border-radius:6px;
+         width: 300px !important;
+         text-align: center;
+         overflow: hidden;
+    }
+     .label-spacing{
+         padding: .125in .3in 0;
+         margin-right: .125in;
+        /* the gutter */
+         float: left;
+         text-align: center;
+         overflow: hidden;
+      }
+      .label-spacing:nth-child(10n) {
+         page-break-after:always;
+    }
+       .label-sheet {
+         width: 8.5in;
+         margin: 0in .1875in;
+    }
+    --&gt;
+    &lt;/style&gt;
+    &lt;div class=&quot;label-sheet&quot;&gt;
+    &lt;repeater&gt;
+    &lt;div class=&quot;label-spacing&quot;&gt;
+       &lt;table class=&quot;label-content&quot;&gt;
+          &lt;tbody&gt;
+             &lt;tr class=&quot;nt-header&quot; style=&quot;height: 19px;&quot;&gt;
+                &lt;td style=&quot;width: 560px; height: 19px;&quot;&gt;&lt;span style=&quot;font-size: 26px; color: #ffffff;&quot;&gt;&lt;strong&gt;Hi, I Call Myself:&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr class=&quot;nt-body&quot;&gt;
+                &lt;td&gt;
+                   &lt;div&gt;
+                      &lt;field class=&quot;field-wrapper&quot; field-name=&quot;[Full Name]&quot;&gt;
+                         &lt;field-prop key=&quot;fontSize&quot; value=&quot;20&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;sort&quot; value=&quot;Unsorted&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;subTotalFieldDataType&quot; value=&quot;Text&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;grandTotalFieldDataType&quot; value=&quot;Text&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;subReportMappingFields&quot; value=&quot;[]&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;fieldId&quot; value=&quot;27733e64-4d20-44b5-a7b6-912b842760b6&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;dataFieldType&quot; value=&quot;Text&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;querySourceId&quot; value=&quot;00000000-0000-0000-0000-000000000000&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;isCalculated&quot; value=&quot;true&quot;&gt;&lt;/field-prop&gt;
+                         Full Name&lt;span class=&quot;icon-cancel&quot;&gt;&lt;/span&gt;
+                      &lt;/field&gt;
+                   &lt;/div&gt;
+                   &lt;div&gt;
+                      &lt;field class=&quot;field-wrapper&quot; field-name=&quot;[NORTHWND].[dbo].[Employees].[Title]&quot;&gt;
+                         &lt;field-prop key=&quot;fieldId&quot; value=&quot;aaed4b52-a9ec-4e78-af5a-39862f311a28&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;querySourceId&quot; value=&quot;637f2880-1630-4cd9-b194-217fa6ec674d&quot;&gt;&lt;/field-prop&gt;
+                         &lt;field-prop key=&quot;dataFieldType&quot; value=&quot;Text&quot;&gt;&lt;/field-prop&gt;
+                         Title&lt;span class=&quot;icon-cancel&quot;&gt;&lt;/span&gt;
+                      &lt;/field&gt;
+                   &lt;/div&gt;
+                &lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr class=&quot;nt-footer&quot;&gt;
+                &lt;td&gt;&lt;img src=&quot;https://www.izenda.com/wp-content/uploads/2014/12/IzendaNewLogoBlueTR.png&quot; alt=&quot;&quot; width=&quot;183&quot; height=&quot;50&quot; style=&quot;float: right;&quot; /&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+          &lt;/tbody&gt;
+       &lt;/table&gt;
+    &lt;/div&gt;
+ &lt;/repeater&gt;
+ &lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dev/.developer_guide.html" class="btn btn-neutral float-right" title="Developer Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage_referencing_a_filtered_report_using_a_url.html" class="btn btn-neutral" title="Referencing A Filtered Report Using A URL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.6.16',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
