@@ -13,7 +13,7 @@ v2.6.17 February 5, 2018
 
 FIXES
 ^^^^^
--  Defect  19197  The image and page number do not display properly in report header and footer when printing
+-  Defect  19197  The images in report header and footer are using a background image and should be imgage tag
 -  Defect  19182  Column Groupings set on fields in grid report parts would cause the grid to load infinitely. 
 -  Defect  19179  Forms in Internet Explorer were not rendering successfully. 
 -  Defect  19033  Remove concurrency check from copy process that validates data model changes multiple times to improve performance.
