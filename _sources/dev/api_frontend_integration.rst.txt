@@ -4,6 +4,9 @@ Front-end Integration APIs
 
 This list documents the JavaScript APIs used for Front-end Integration.
 
+.. note::
+      See :ref:`dev_front_end_considerations` for common troubleshooting tips for embedding Izenda's front end.
+
 List of APIs
 ------------
 

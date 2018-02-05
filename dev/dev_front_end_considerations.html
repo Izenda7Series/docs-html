@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>First Steps &mdash; Izenda BI 2.6.16 documentation</title>
+  <title>Front End Rendering Considerations &mdash; Izenda BI 2.6.16 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Izenda BI 2.6.16 documentation" href="../index.html"/>
         <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
-        <link rel="next" title="Starter Kits" href=".starter_kits.html"/>
-        <link rel="prev" title="Sample Properties for a ReportPartElement" href="code_javascript_sample_properties_for_a_reportpartelement.html"/> 
+        <link rel="next" title="System Customization via Interfaces" href=".system_customization.html"/>
+        <link rel="prev" title="Building the MVC Starter Kit" href="howto_mvc5kit.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -109,17 +109,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">First Steps</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#installing-a-standalone-instance-of-izenda">Installing a standalone instance of Izenda</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installing-an-integrated-instance-of-izenda">Installing an integrated instance of Izenda</a></li>
+<li class="toctree-l3"><a class="reference internal" href=".embedding_izenda.html">First Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href=".embedding_izenda.html#embedding-izenda-into-your-application">Embedding Izenda into Your Application</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".developer_guide.html#troubleshooting-front-end-integration">Troubleshooting Front End Integration</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Front End Rendering Considerations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#embedding-izenda-into-your-application">Embedding Izenda into Your Application</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#starting-from-scratch">Starting from Scratch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#embedding-into-a-pre-existing-application">Embedding into a Pre-Existing Application</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href=".developer_guide.html#troubleshooting-front-end-integration">Troubleshooting Front End Integration</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a></li>
@@ -178,13 +173,13 @@
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
-      <li>First Steps</li>
+      <li>Front End Rendering Considerations</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/dev/.embedding_izenda.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/dev/dev_front_end_considerations.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,46 +192,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>We have created several starter kits to demonstrate how to embed Izenda into web applications. Every kit displays many of the same concepts (e.g. embedding the Izenda suite as a single page application) but each may showcase additional features more extensively (e.g. hidden filters and rendering individual reports.). All publically available kits can be found on our <a class="reference external" href="https://github.com/Izenda7Series">GitHub Repository</a> .</p>
-<div class="section" id="first-steps">
-<h1>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installing-a-standalone-instance-of-izenda">
-<h2>Installing a standalone instance of Izenda<a class="headerlink" href="#installing-a-standalone-instance-of-izenda" title="Permalink to this headline">¶</a></h2>
-<p>Before diving into integration, we recommend to install a local instance of our standalone version of Izenda to gain a better understanding of Izenda concepts such as report management, upgrading procedures, and platform access restrictions.  For more information on installing a standalone instance of Izenda, please refer to our ‘install/.stand_alone_deployment’_ guide.</p>
+  <div class="section" id="front-end-rendering-considerations">
+<h1>Front End Rendering Considerations<a class="headerlink" href="#front-end-rendering-considerations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="there-are-no-errors-in-the-api-logs-or-console-but-the-component-doesn-t-render">
+<h2>There are no errors in the API Logs or console but the component doesn&#8217;t render<a class="headerlink" href="#there-are-no-errors-in-the-api-logs-or-console-but-the-component-doesn-t-render" title="Permalink to this headline">¶</a></h2>
+<p>When an Izenda components is rendered, it will scale to fit its container&#8217;s size. The following CSS class definition will scale an HTML element to the size of the window.
+.. code-block:: css</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>.container {</dt>
+<dd>width: 100%;
+height: 100vh;
+min-height: 100vh;
+}</dd>
+</dl>
+</div></blockquote>
 </div>
-<div class="section" id="installing-an-integrated-instance-of-izenda">
-<h2>Installing an integrated instance of Izenda<a class="headerlink" href="#installing-an-integrated-instance-of-izenda" title="Permalink to this headline">¶</a></h2>
-<p>Each starter kit is designed with a specific system architecture in mind and can be distinguished by their deployment mode. The deployment mode refers to how your security model interacts with the Izenda API. For more information on Izenda’s available deployment modes, please refer to our ‘understanding_the_three-tiered_architecture’_ guide. Please note, these kits are for demonstration purposes and should not be used as a fully-integrated solution “as-is.” You can use the kit for reference or a baseline but please ensure that the security and customization necessary meet the standards of your company.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href=".starter_kits.html">Starter Kits</a><ul>
-<li class="toctree-l2"><a class="reference internal" href=".starter_kits.html#deployment-mode-0">Deployment Mode 0</a></li>
-<li class="toctree-l2"><a class="reference internal" href=".starter_kits.html#deployment-mode-1">Deployment Mode 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href=".starter_kits.html#deployment-mode-3">Deployment Mode 3</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section" id="embedding-izenda-into-your-application">
-<h1>Embedding Izenda into Your Application<a class="headerlink" href="#embedding-izenda-into-your-application" title="Permalink to this headline">¶</a></h1>
-<p>After setting up our starter kit, your next goal will be to embed Izenda into your own application. Depending on your project goals, this may require you start from scratch or use a pre-existing application. In either case, the following</p>
-<div class="section" id="starting-from-scratch">
-<h2>Starting from Scratch<a class="headerlink" href="#starting-from-scratch" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href=".walkthroughs.html">Walkthroughs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="howto_mvc5kit.html">Building the MVC Starter Kit</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="embedding-into-a-pre-existing-application">
-<h2>Embedding into a Pre-Existing Application<a class="headerlink" href="#embedding-into-a-pre-existing-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-visual-tab-of-forms-editor-in-the-report-and-the-text-tile-editor-in-dashboards-don-t-render">
+<h2>The &#8220;Visual&#8221; Tab of Forms Editor in the Report and the &#8220;Text&#8221; Tile Editor in Dashboards Don&#8217;t Render<a class="headerlink" href="#the-visual-tab-of-forms-editor-in-the-report-and-the-text-tile-editor-in-dashboards-don-t-render" title="Permalink to this headline">¶</a></h2>
+<p>The plugin used for Forms and Dashboard Text Tiles utilizes the &#8220;RootPath&#8221; value defined in your Configuration JSON declared when the Izenda config function is called (e.g. <em>&#8220;RootPath&#8221;: &#8220;/Scripts/izenda&#8221;</em> ). For more information about Izenda&#8217;s config function, please refer to our list of <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#config-configjson">Front-end Integration APIs</a></p>
 <ul class="simple">
-<li>HTML Kit: Embedding the HTML Kit into an Angular Application</li>
+<li>If you have deployed your front end application into a virtual directory, ensure that your virtual directory name is included in the root path name (e.g. If you have deployed your application to &#8220;FE&#8221;, your Root Path value would be &#8220;/FE/Scripts/izenda&#8221;)</li>
+<li>Ensure that the izenda_vendors.js file exists within your solution</li>
 </ul>
 </div>
 </div>
@@ -251,10 +228,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href=".starter_kits.html" class="btn btn-neutral float-right" title="Starter Kits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href=".system_customization.html" class="btn btn-neutral float-right" title="System Customization via Interfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="code_javascript_sample_properties_for_a_reportpartelement.html" class="btn btn-neutral" title="Sample Properties for a ReportPartElement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="howto_mvc5kit.html" class="btn btn-neutral" title="Building the MVC Starter Kit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
