@@ -1,0 +1,2411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data/Tenant Setup via the API &mdash; Izenda BI 2.6.16 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.6.16 documentation" href="../index.html"/>
+        <link rel="up" title="Intermediate API Client Code Samples" href=".intermediate_api_client_code_samples.html"/>
+        <link rel="next" title="First Steps" href=".embedding_izenda.html"/>
+        <link rel="prev" title="Sample Properties for a ReportPartElement" href="code_javascript_sample_properties_for_a_reportpartelement.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".integration_api_documentation.html">Full API List</a></li>
+<li class="toctree-l3"><a class="reference internal" href=".basic_api_client_code_samples.html">Basic API Client Code Samples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="code_react_manage_datasources_and_datasourcefields.html">ReactJS to manage data sources and data source fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="code_javascript_manage_ui_components_libraries_and_unit_tests.html">JavaScript Manage UI Components, Libraries and Unit Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href=".adding_user.html">Adding User</a></li>
+<li class="toctree-l4"><a class="reference internal" href=".building_report.html">Building Report</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Data/Tenant Setup via the API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#redistributing-the-izenda-documentation">Redistributing the Izenda Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions (Work in progress)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".intermediate_api_client_code_samples.html">Intermediate API Client Code Samples</a> &raquo;</li>
+        
+      <li>Data/Tenant Setup via the API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/code_data_tenant_setup_via_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-tenant-setup-via-the-api">
+<h1>Data/Tenant Setup via the API<a class="headerlink" href="#data-tenant-setup-via-the-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adding-a-connection-string-to-the-system-level">
+<h2>Adding a Connection String to the System Level<a class="headerlink" href="#adding-a-connection-string-to-the-system-level" title="Permalink to this headline">¶</a></h2>
+<p>To add any connection string for reporting data, we will utilize the  <a class="reference external" href="https://www.izenda.com/docs/ref/api_connection.html#post-connection">POST /api/connection</a>   endpoint.
+The below sample request body adds a connection string to the system level:
+This will emulate the same behavior as if you went to the Settings &gt; Data Setup &gt; Connection String page and input a connection string manually. Setting ‘selected’ to true will move the data sources from the Available Data Sources to the Visible Data Sources Column</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;id&quot;:null,
+   &quot;name&quot;:&quot;northwind&quot;,
+   &quot;serverTypeId&quot;:&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;,                       &lt;-- This is the GUID of the database type (See Glossary)
+   &quot;connectionString&quot;:&quot;[YOUR CONNECTION STRING]&quot;,                               &lt;-- This will be the connection string to the reporting database
+   &quot;visible&quot;:true,                                                              &lt;-- This value lets you set a connection as visible/non-visible
+   &quot;dBSource&quot;:{
+          &quot;querySources&quot;:[
+                 {
+                        &quot;id&quot;:null,
+                        &quot;connectionId&quot;:null,
+                        &quot;name&quot;:&quot;dbo&quot;,                                                       &lt;-- This is the name of the schema
+                        &quot;querySources&quot;:[
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Orders&quot;,
+                                  &quot;type&quot;:&quot;Table&quot;,
+                                  &quot;selected&quot;:true,                                              &lt;-- Selected will move the data source from Available to Visible if set to true
+                                  &quot;physicalChange&quot;:0,                                           &lt;-- Sets the physical state of the data source (See Glossary)
+                                  &quot;approval&quot;:0,                                                 &lt;-- Sets the approval value of the data source (See Glossary)
+                                  &quot;categoryId&quot;:null                                             &lt;-- The ID of a Category you have created for organizing data sources
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;GetContact&quot;,
+                                  &quot;type&quot;:&quot;Stored Procedure&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Invoices&quot;,
+                                  &quot;type&quot;:&quot;View&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           }
+                        ]
+                 }
+          ]
+   },
+   &quot;tenantId&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="updating-an-existing-connection-string">
+<h2>Updating an Existing Connection String<a class="headerlink" href="#updating-an-existing-connection-string" title="Permalink to this headline">¶</a></h2>
+<p>Updating an existing connection string is a two-part process. First, you need to make a call to  <a class="reference external" href="https://www.izenda.com/docs/ref/api_connection.html#post-connection-reloadremoteschema">POST api/connection/reloadRemoteSchema</a></p>
+<p>The below sample request body adds a connection string to the system level:</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+          &quot;connectionId&quot; : &quot;E1DDD0AA-3074-41B2-AE5B-9E2262EB71B6&quot;,                      &lt;-- This is the GUID found as under the Id column in the IzendaConnection table
+          &quot;connectionString&quot; : &quot;PV/NvF4lI7zpTJx/U5VBPQqWJ3j3Bm1fHla2LRKUOMSNLDe9nul&quot;,   &lt;-- This will be the encrypted connection string found in the IzendaConnection table
+          &quot;serverTypeId&quot; : &quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;                       &lt;-- This is the GUID of the database type (See Glossary)
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>The response body will contain the information you need in order to push an update to an existing connection. You can then re-use the POST /api/connection endpoint and update which data sources are selected, or which connection strings are set to visible/non-visible.
+The below sample request body shows the update to the existing connection string.</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;id&quot;:null,
+   &quot;name&quot;:&quot;northwind&quot;,
+   &quot;serverTypeId&quot;:&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;,                       &lt;-- This is the GUID of the database type (See Glossary)
+   &quot;connectionString&quot;:&quot;[YOUR CONNECTION STRING]&quot;,                               &lt;-- This will be the connection string to the reporting database
+   &quot;visible&quot;:true,                                                              &lt;-- This value lets you set a connection as visible/non-visible
+   &quot;dBSource&quot;:{
+          &quot;querySources&quot;:[
+                 {
+                        &quot;id&quot;:null,
+                        &quot;connectionId&quot;:null,
+                        &quot;name&quot;:&quot;dbo&quot;,                                                       &lt;-- This is the name of the schema
+                        &quot;querySources&quot;:[
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Orders&quot;,
+                                  &quot;type&quot;:&quot;Table&quot;,
+                                  &quot;selected&quot;:true,                                              &lt;-- Selected will move the data source from Available to Visible if set to true
+                                  &quot;physicalChange&quot;:0,                                           &lt;-- Sets the physical state of the data source (See Glossary)
+                                  &quot;approval&quot;:0,                                                 &lt;-- Sets the approval value of the data source (See Glossary)
+                                  &quot;categoryId&quot;:null                                             &lt;-- The ID of a Category you have created for organizing data sources
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;GetContact&quot;,
+                                  &quot;type&quot;:&quot;Stored Procedure&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Invoices&quot;,
+                                  &quot;type&quot;:&quot;View&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           }
+                        ]
+                 }
+          ]
+   },
+   &quot;tenantId&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="configuring-the-data-model">
+<h2>Configuring the Data Model<a class="headerlink" href="#configuring-the-data-model" title="Permalink to this headline">¶</a></h2>
+<p>To update or modify the data model you will make a call to the <a class="reference external" href="https://www.izenda.com/docs/ref/api_data_model.html#id3">POST api/dataModel</a> endpoint.</p>
+<dl class="docutils">
+<dt>When making these updates, please note that not every field is necessary to make a successful post. For more information on what all of these fields are and what they pertain to you can follow our Object Model documentation below:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.izenda.com/docs/ref/models/QuerySourceCategory.html">QuerySourceCategory</a></li>
+<li><a class="reference external" href="https://www.izenda.com/docs/ref/models/QuerySource.html">QuerySource</a></li>
+<li><a class="reference external" href="https://www.izenda.com/docs/ref/models/QuerySourceField.html">QuerySourceField</a></li>
+</ul>
+</dd>
+</dl>
+<p>The request body for this endpoint is comprised of an array of QuerySource objects and each of those contains an array of QuerySourceField objects. Essentially this translate to a list of data sources and the columns within each one.
+The below sample request body is a simplified version that updates one table without altering it’s underlying fields:</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;tenantId&quot;:null,
+   &quot;querySources&quot;:[
+          {
+                 &quot;realName&quot;:&quot;Orders&quot;,
+                 &quot;id&quot;:&quot;22D8B24C-F840-4779-8F14-53DDCB698D13&quot;,
+                 &quot;name&quot;:&quot;dbo.Orders&quot;,
+                 &quot;type&quot;:&quot;Table&quot;,
+                 &quot;categoryId&quot;:&quot;ED2D2401-8408-44D8-822D-1982F8F0732E&quot;,
+                 &quot;connectionId&quot;:&quot;E1DDD0AA-3074-41B2-AE5B-9E2262EB71B6&quot;,
+                 &quot;dataSourceCategoryName&quot;:null,                                         &lt;-- This is where you can input an organizational category name (It does not have to exist)
+                 &quot;alias&quot;:null,                                                          &lt;-- This is where you can specifiy an alias for the data source
+                 &quot;originalAlias&quot;:null,
+                 &quot;modified&quot;:&quot;2017-07-18T19:40:13&quot;,                                      &lt;-- This value is the timestamp of the change. This will always need to be incremented
+                 &quot;physicalChange&quot;:0,                                                    &lt;-- This will note any chance in the data source (See Glossary)
+                 &quot;numOfCheckedChilds&quot;:0,
+                 &quot;extendedProperties&quot;:&quot;{}&quot;,
+                 &quot;querySourceFields&quot;:[  ]
+          }
+   ]
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>You can input values into the ‘alias’ values to alias these data source to use a more user-friendly name. You can also use the ‘dataSourceCategoryName’ value to assign a category to this data source to organize it along other data sources that may share similar trends or information.</p>
+<p>The below sample is a more detailed request body updates the data model (note: not every field is necessary):</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;tenantId&quot;:null,
+   &quot;querySources&quot;:[
+          {
+                 &quot;realName&quot;:&quot;Orders&quot;,
+                 &quot;id&quot;:&quot;22D8B24C-F840-4779-8F14-53DDCB698D13&quot;,
+                 &quot;name&quot;:&quot;dbo.Orders&quot;,
+                 &quot;type&quot;:&quot;Table&quot;,
+                 &quot;parentQuerySourceId&quot;:null,
+                 &quot;categoryId&quot;:&quot;ED2D2401-8408-44D8-822D-1982F8F0732E&quot;,
+                 &quot;selected&quot;:false,
+                 &quot;deleted&quot;:false,
+                 &quot;connectionId&quot;:&quot;E1DDD0AA-3074-41B2-AE5B-9E2262EB71B6&quot;,
+                 &quot;connectionName&quot;:&quot;northwind&quot;,
+                 &quot;childs&quot;:null,
+                 &quot;dataSourceCategoryId&quot;:null,                                           &lt;-- If an organizational category exists, you can add it by the GUID
+                 &quot;dataSourceCategoryName&quot;:null,                                         &lt;-- This is where you can input an organizational category name (It does not have to exist)
+                 &quot;alias&quot;:null,                                                          &lt;-- This is where you can specifiy an alias for the data source
+                 &quot;originalAlias&quot;:null,
+                 &quot;querySourceCategoryName&quot;:null,
+                 &quot;querySourceCategory&quot;:null,
+                 &quot;modified&quot;:&quot;2017-08-14T14:30:33&quot;,                                      &lt;-- This value is the timestamp of the change. This will always need to be incremented
+                 &quot;physicalChange&quot;:0,                                                    &lt;-- This will note any chance in the data source (See Glossary)
+                 &quot;approval&quot;:0,
+                 &quot;existed&quot;:false,
+                 &quot;checked&quot;:false,
+                 &quot;belongToCopiedReport&quot;:false,
+                 &quot;viewDefinition&quot;:null,
+                 &quot;isCustomQuerySource&quot;:false,
+                 &quot;fullPath&quot;:null,
+                 &quot;indeterminate&quot;:false,
+                 &quot;numOfChilds&quot;:0,
+                 &quot;numOfCheckedChilds&quot;:0,
+                 &quot;isNewCategory&quot;:true,
+                 &quot;extendedProperties&quot;:&quot;{}&quot;,
+                 &quot;querySourceFields&quot;:[                                                  &lt;-- This will be an arry of QuerySourceField objects (you don&#39;t have to provide all fields)
+                        {
+                           &quot;name&quot;:&quot;OrderID&quot;,
+                           &quot;alias&quot;:&quot;&quot;,
+                           &quot;dataType&quot;:&quot;int&quot;,
+                           &quot;izendaDataType&quot;:&quot;Numeric&quot;,
+                           &quot;allowDistinct&quot;:true,
+                           &quot;visible&quot;:true,                                                  &lt;-- This determines if a field will be available when building a report
+                           &quot;filterable&quot;:true,                                               &lt;-- This determines if a user can filter on this field when building a report
+                           &quot;querySourceId&quot;:&quot;22D8B24C-F840-4779-8F14-53DDCB698D13&quot;,
+                           &quot;parentId&quot;:null,
+                           &quot;expressionFields&quot;:[
+
+                           ],
+                           &quot;type&quot;:0,
+                           &quot;groupPosition&quot;:0,
+                           &quot;position&quot;:1,
+                           &quot;extendedProperties&quot;:&quot;{\&quot;PrimaryKey\&quot;:true}&quot;,
+                           &quot;physicalChange&quot;:0,
+                           &quot;approval&quot;:0,
+                           &quot;existed&quot;:false,
+                           &quot;matchedTenant&quot;:false,
+                           &quot;functionName&quot;:null,
+                           &quot;expression&quot;:null,
+                           &quot;fullName&quot;:null,
+                           &quot;calculatedTree&quot;:null,
+                           &quot;reportId&quot;:null,
+                           &quot;originalName&quot;:null,
+                           &quot;originalId&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,
+                           &quot;isParameter&quot;:false,
+                           &quot;isCalculated&quot;:false,
+                           &quot;hasAggregatedFunction&quot;:false,
+                           &quot;querySource&quot;:null,
+                           &quot;querySourceName&quot;:null,
+                           &quot;categoryName&quot;:null,
+                           &quot;inaccessible&quot;:false,
+                           &quot;originalAlias&quot;:null,
+                           &quot;fullPath&quot;:null,
+                           &quot;id&quot;:&quot;593bb917-0c5d-4ebf-b589-894d1a7922f2&quot;,
+                           &quot;state&quot;:0,
+                           &quot;deleted&quot;:false,
+                           &quot;inserted&quot;:true,
+                           &quot;version&quot;:null,
+                           &quot;created&quot;:null,
+                           &quot;createdBy&quot;:&quot;System Admin&quot;,
+                           &quot;modified&quot;:&quot;2017-08-14T14:07:51.653&quot;,
+                           &quot;modifiedBy&quot;:null,
+                           &quot;filteredValue&quot;:&quot;{}&quot;
+                        }
+                 ]
+          }
+   ]
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="adding-calculated-fields-to-the-data-model">
+<h2>Adding Calculated Fields to the Data Model<a class="headerlink" href="#adding-calculated-fields-to-the-data-model" title="Permalink to this headline">¶</a></h2>
+<p>To add a calculated field to the data model you can utilize the <em>POST api/fusion/validateDataModelExpression</em> endpoint. In this you’ll be able to provide the expression you wish to add to a data source.
+The below sample request body shows the initial request:</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;querySourceId&quot;:&quot;91f9da8d-7c2b-4b5d-ae93-a77084295cf9&quot;,                      &lt;-- This is the GUID for the data source where you&#39;re adding the calculation
+   &quot;expression&quot;:&quot;COUNT(DISTINCT([OrderID]))&quot;,                                   &lt;-- This is the expression for your calculated field
+   &quot;izendaDataType&quot;: &quot;null&quot;
+   &quot;querySourceFieldId&quot;:null,
+   &quot;tenantId&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>If the above is successful, you may then use the POST api/fusion/calculatedFieldValue endpoint to push an updated version of the calculated field that contains the data type.
+The below sample request body shows the updated request:</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;querySourceId&quot;:&quot;91f9da8d-7c2b-4b5d-ae93-a77084295cf9&quot;,                      &lt;-- This is the GUID for the data source where you&#39;re adding the calculation
+   &quot;expression&quot;:&quot;COUNT(DISTINCT([OrderID]))&quot;,                                   &lt;-- This is the expression for your calculated field
+   &quot;izendaDataType&quot;: &quot;Numeric&quot;,                                                 &lt;-- This is the data type you want the calculation to return
+   &quot;querySourceFieldId&quot;:null,
+   &quot;tenantId&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>Once you have done the above, you will need to save the data model to commit the addition of the calculated field. You will use the same <em>POST api/dataModel</em> from before, but this time include your calculated field as a QuerySourceField value in the array.
+The below sample request body is just the QuerySourceField value for the calculated field without the rest of the request body. You will need to add this to the prior request body under the appropriate datasource.</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+                 &quot;querySourceFields&quot;:[
+                        {
+                           &quot;alias&quot;:&quot;&quot;,
+                           &quot;visible&quot;:true,
+                           &quot;filterable&quot;:true,
+                           &quot;isCalculated&quot;:true,
+                           &quot;izendaDataType&quot;:&quot;Numeric&quot;,                                      &lt;-- This is the data type you would want for the calculated field
+                           &quot;name&quot;:&quot;Test Calculated Field&quot;,                                  &lt;-- This is the name you want for the calculated field
+                           &quot;expression&quot;:&quot;COUNT(DISTINCT([OrderID]))&quot;,                       &lt;-- This is the expression you wrote for the calculated field
+                           &quot;id&quot;:null,
+                           &quot;tempId&quot;:&quot;32&quot;,
+                           &quot;state&quot;:1,
+                           &quot;position&quot;:17,
+                           &quot;filteredValue&quot;:&quot;{}&quot;
+                        }
+                 ]
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="creating-a-new-tenant">
+<h2>Creating a New Tenant<a class="headerlink" href="#creating-a-new-tenant" title="Permalink to this headline">¶</a></h2>
+<p>To add a new tenant into your environment you will utilize the <a class="reference external" href="https://www.izenda.com/docs/ref/api_tenant.html#id1">POST api/tenant</a> endpoint.</p>
+<p>The below sample request body shows the basic information for tenant creation. Note that this example does not contain values for the ‘permission’ and ‘permissionAccessModel’ arrays.</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;isDirty&quot;:true,
+   &quot;tenantID&quot;:&quot;001&quot;,                                                            &lt;-- This is the Tenant ID value (This is not user-facing)
+   &quot;name&quot;:&quot;First Tenant&quot;,                                                       &lt;-- This is the value users will use when logging in
+   &quot;active&quot;:true,                                                               &lt;-- Sets if a Tenant is in use or not
+   &quot;tenantModules&quot;:[                                                            &lt;-- Enables only the modules present in this array
+          &quot;Alerting&quot;,
+          &quot;Form&quot;,
+          &quot;Dashboard&quot;,
+          &quot;Report Templates&quot;,
+          &quot;Scheduling&quot;,
+          &quot;Exporting&quot;,
+          &quot;Report Designer&quot;,
+          &quot;Charting&quot;,
+          &quot;Maps&quot;
+   ],
+   &quot;isSelected&quot;:false,
+   &quot;permission&quot;:{  },                                                           &lt;-- This will contain the permission object for the tenant
+   &quot;version&quot;:0,
+   &quot;permissionAccessModel&quot;:{  }                                                 &lt;-- This will contains a list of access rights that can be set (See Glossary)
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>To see what is involved in both condensed arrays, please see the Glossary for Permissions and Access Rights.</p>
+</div>
+<div class="section" id="adding-a-connection-string-to-a-tenant">
+<h2>Adding a Connection String to a Tenant<a class="headerlink" href="#adding-a-connection-string-to-a-tenant" title="Permalink to this headline">¶</a></h2>
+<p>To add a connection string to a newly created tenant you will reuse the <em>POST api/connection</em> endpoint.
+The only difference between adding a connection string for a tenant and adding it at the system level is the ‘tenantId’ value in the JSON. Any time this value is set to null it references the system level. To push any request to a tenant, set the ‘tenantId’ value equal to the GUID for that tenant. This value can be found in the IzendaTenant table.
+The below sample request body shows adding the same connection string we provided at the system level, but this time adjusted to be added to the tenant we just created.</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;id&quot;:null,
+   &quot;name&quot;:&quot;northwind&quot;,
+   &quot;serverTypeId&quot;:&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;,                       &lt;-- This is the GUID of the database type (See Glossary)
+   &quot;connectionString&quot;:&quot;[YOUR CONNECTION STRING]&quot;,                               &lt;-- This will be the connection string to the reporting database
+   &quot;visible&quot;:true,                                                              &lt;-- This value lets you set a connection as visible/non-visible
+   &quot;dBSource&quot;:{
+          &quot;querySources&quot;:[
+                 {
+                        &quot;id&quot;:null,
+                        &quot;connectionId&quot;:null,
+                        &quot;name&quot;:&quot;dbo&quot;,                                                       &lt;-- This is the name of the schema
+                        &quot;querySources&quot;:[
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Orders&quot;,
+                                  &quot;type&quot;:&quot;Table&quot;,
+                                  &quot;selected&quot;:true,                                              &lt;-- Selected will move the data source from Available to Visible if set to true
+                                  &quot;physicalChange&quot;:0,                                           &lt;-- Sets the physical state of the data source (See Glossary)
+                                  &quot;approval&quot;:0,                                                 &lt;-- Sets the approval value of the data source (See Glossary)
+                                  &quot;categoryId&quot;:null                                             &lt;-- The ID of a Category you have created for organizing data sources
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;GetContact&quot;,
+                                  &quot;type&quot;:&quot;Stored Procedure&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           },
+                           {
+                                  &quot;id&quot;:null,
+                                  &quot;name&quot;:&quot;Invoices&quot;,
+                                  &quot;type&quot;:&quot;View&quot;,
+                                  &quot;selected&quot;:true,
+                                  &quot;physicalChange&quot;:0,
+                                  &quot;approval&quot;:0,
+                                  &quot;categoryId&quot;:null
+                           }
+                        ]
+                 }
+          ]
+   },
+   &quot;tenantId&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>The Tenant’s GUID value on line 45 will add this connection information for the First Tenant we made with the api/tenant/ endpoint.</p>
+</div>
+<div class="section" id="creating-updating-the-tenants-data-model">
+<h2>Creating/Updating the Tenant’s Data Model<a class="headerlink" href="#creating-updating-the-tenants-data-model" title="Permalink to this headline">¶</a></h2>
+<p>To update and alter the data model at a tenant level, it will follow the same process as the logic as the System level. The only difference, much like adding a connection string at the tenant level, is providing the tenantId value in the request body.
+The Tenant’s GUID value on line 2 will update the data model in the tenant that corresponds with this GUID, which will be the First Tenant that we have previously created</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;isDirty&quot;:true,
+   &quot;tenantID&quot;:&quot;001&quot;,                                                            &lt;-- This is the Tenant ID value (This is not user-facing)
+   &quot;name&quot;:&quot;First Tenant&quot;,                                                       &lt;-- This is the value users will use when logging in
+   &quot;active&quot;:true,                                                               &lt;-- Sets if a Tenant is in use or not
+   &quot;tenantModules&quot;:[                                                            &lt;-- Enables only the modules present in this array
+          &quot;Alerting&quot;,
+          &quot;Form&quot;,
+          &quot;Dashboard&quot;,
+          &quot;Report Templates&quot;,
+          &quot;Scheduling&quot;,
+          &quot;Exporting&quot;,
+          &quot;Report Designer&quot;,
+          &quot;Charting&quot;,
+          &quot;Maps&quot;
+   ],
+   &quot;isSelected&quot;:false,
+   &quot;permission&quot;:{  },                                                           &lt;-- This will contain the permission object for the tenant
+   &quot;version&quot;:0,
+   &quot;permissionAccessModel&quot;:{  }                                                 &lt;-- This will contains a list of access rights that can be set (See Glossary)
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="creating-roles">
+<h2>Creating Roles<a class="headerlink" href="#creating-roles" title="Permalink to this headline">¶</a></h2>
+<p>There are two endpoints that you can use to create a role via the API.
+* For standalone environments, you will use <a class="reference external" href="https://www.izenda.com/docs/ref/api_role.html#id3">POST api/role</a>
+* For integrated environments, you will use  <a class="reference external" href="https://www.izenda.com/docs/ref/api_role.html#post-role-intergration-saverole">POST api/role/intergration/saveRole</a></p>
+<p>Both endpoints will expect a <a class="reference external" href="https://www.izenda.com/docs/ref/models/RoleDetail.html">RoleDetail object</a>  as the request body.</p>
+<p>The below sample request body creates a simple role in a standalone environment:</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;isDirty&quot;:true,
+   &quot;users&quot;:[  ],                                                                &lt;-- This is an array of UserDetail objects
+   &quot;permission&quot;:{  },                                                           &lt;-- This is a permission object (See Glossary)
+   &quot;visibleQuerySources&quot;:[  ],                                                  &lt;-- This is an array of all the QuerySources a role has access to
+   &quot;name&quot;:&quot;First Role&quot;,                                                         &lt;-- This is the name you assign to the role
+   &quot;tenantId&quot;:null,                                                             &lt;-- This will create the role under a Tenant if the GUID is provided
+   &quot;active&quot;:true,
+   &quot;deleted&quot;:false,
+   &quot;state&quot;:0,
+   &quot;inserted&quot;:false,
+   &quot;version&quot;:0,
+   &quot;created&quot;:null,
+   &quot;createdBy&quot;:null,
+   &quot;modified&quot;:null,
+   &quot;modifiedBy&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>Note that this request does not contain the permission object. Please see the Glossary for more information on the permission components of these request bodies.</p>
+</div>
+<div class="section" id="setting-data-source-availability-for-roles">
+<h2>Setting Data Source Availability for Roles<a class="headerlink" href="#setting-data-source-availability-for-roles" title="Permalink to this headline">¶</a></h2>
+<p>To set specific data sources for a role, you can do this as part of the initial role creation, or as an update to an existing role. In either scenario, you will use the same endpoints as before. This means you will use either the <em>POST api/role</em> or <em>POST api/role/integration/saveRole</em> endpoints. This time, you will provide an array of QuerySource objects in the ‘visibleQuerySources’ portion of the request body.
+The below sample request body creates a simple role in a standalone environment but grants access to the Orders table and every field within it. The contents of these are limited to just the GUIDs for each data source and the columns with in and you do not need to provide additional information.
+During this process, you can control the data access a role has on a per-field basis, and you do not have to grant them access to an entire data source. In this example, we are only granting the ‘Second Role’ access to four fields from the Orders table.</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+   &quot;isDirty&quot;:true,
+   &quot;users&quot;:[  ],
+   &quot;permission&quot;:{  },
+   &quot;visibleQuerySources&quot;:[
+          {
+                 &quot;id&quot;:&quot;91f9da8d-7c2b-4b5d-ae93-a77084295cf9&quot;,                           &lt;-- The GUID for the QuerySource
+                 &quot;querySourceFields&quot;:[
+                        {
+                           &quot;id&quot;:&quot;793fcbcb-a22c-4dc5-a00f-cadc894fd569&quot;                      &lt;-- The GUID for the QuerySourceField
+                        },
+                        {
+                           &quot;id&quot;:&quot;593bb917-0c5d-4ebf-b589-894d1a7922f2&quot;
+                        },
+                        {
+                           &quot;id&quot;:&quot;40c1594a-f751-4d0c-8aaf-11ee74d48c57&quot;
+                        },
+                        {
+                           &quot;id&quot;:&quot;c8de82f7-742a-4c13-88aa-5b35ea27f7bb&quot;
+                        }
+                 ]
+          }
+   ],
+   &quot;name&quot;:&quot;Second Role&quot;,
+   &quot;tenantId&quot;:null,
+   &quot;active&quot;:true,
+   &quot;deleted&quot;:false,
+   &quot;state&quot;:0,
+   &quot;inserted&quot;:false,
+   &quot;version&quot;:0,
+   &quot;created&quot;:null,
+   &quot;createdBy&quot;:null,
+   &quot;modified&quot;:null,
+   &quot;modifiedBy&quot;:null
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="glossary-and-reference">
+<h2>Glossary and Reference<a class="headerlink" href="#glossary-and-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><em>ServerTypeID</em> <span class="classifier-delimiter">:</span> <span class="classifier">The serverTypeId value refers to the underlying database type that you are attempting to connect to. This will refer to one of five possible values:</span></dt>
+<dd><ul class="first last simple">
+<li><em>MSSQL</em> : “572bd576-8c92-4901-ab2a-b16e38144813”</li>
+<li><em>MySQL</em> : “3d4916d1-5a41-4b94-874f-5bedacb89656”</li>
+<li><em>Oracle</em> : “f2638ed5-70e5-47da-a052-4da0c1888fcf”</li>
+<li><em>PGSQL</em> : “93942448-c715-4f98-85e2-9292ed7ca4bc”</li>
+<li><em>AzureSQL</em> : “d968e96f-91dc-414d-9fd8-aef2926c9a18”</li>
+</ul>
+</dd>
+<dt><em>PhysicalChange</em> <span class="classifier-delimiter">:</span> <span class="classifier">The physicalChange value in our API requests/responses can contain one of five possible values. These values pertain to the physical states of the values/objects being passed.</span></dt>
+<dd><ul class="first last simple">
+<li>-1: Not Set</li>
+<li>0: None</li>
+<li>1: Added</li>
+<li>2: Modified</li>
+<li>3: Deleted</li>
+</ul>
+</dd>
+<dt><em>Approval</em></dt>
+<dd><ul class="first last simple">
+<li>0: No Pending Changes</li>
+<li>1: Pending Changes to the Object (added field/removed field/etc.)</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="permission-objects">
+<h2>Permission Objects<a class="headerlink" href="#permission-objects" title="Permalink to this headline">¶</a></h2>
+<p><em>Tenant Permissions</em></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>&quot;permission&quot;:{
+         &quot;isClickedSection&quot;:false,
+         &quot;propsCloned&quot;:{
+                &quot;fullReportAndDashboardAccess&quot;:false,
+                &quot;systemConfiguration&quot;:{
+                   &quot;scheduledInstances&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;tenantSetup&quot;:{
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;permissions&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;dataSetup&quot;:{
+                   &quot;dataModel&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;advancedSettings&quot;:{
+                          &quot;category&quot;:false,
+                          &quot;others&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;userSetup&quot;:{
+                   &quot;userRoleAssociation&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;configureSecurityOptions&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;roleSetup&quot;:{
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dataModelAccess&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;permissions&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;reports&quot;:{
+                   &quot;canCreateNewReport&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dataSources&quot;:{
+                          &quot;simpleDataSources&quot;:false,
+                          &quot;advancedDataSources&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;reportPartTypes&quot;:{
+                          &quot;chart&quot;:false,
+                          &quot;form&quot;:false,
+                          &quot;gauge&quot;:false,
+                          &quot;map&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;reportCategoriesSubcategories&quot;:{
+                          &quot;canCreateNewCategory&quot;:{
+                                 &quot;value&quot;:false,
+                                 &quot;tenantAccess&quot;:0
+                          },
+                          &quot;categoryAccessibility&quot;:{
+                                 &quot;categories&quot;:[
+
+                                 ],
+                                 &quot;tenantAccess&quot;:0
+                          }
+                   },
+                   &quot;filterProperties&quot;:{
+                          &quot;filterLogic&quot;:false,
+                          &quot;crossFiltering&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;fieldProperties&quot;:{
+                          &quot;customURL&quot;:false,
+                          &quot;embeddedJavaScript&quot;:false,
+                          &quot;subreport&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;actions&quot;:{
+                          &quot;schedule&quot;:false,
+                          &quot;email&quot;:false,
+                          &quot;viewReportHistory&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;registerForAlerts&quot;:false,
+                          &quot;print&quot;:false,
+                          &quot;unarchiveReportVersions&quot;:false,
+                          &quot;overwriteExistingReport&quot;:false,
+                          &quot;subscribe&quot;:false,
+                          &quot;exporting&quot;:false,
+                          &quot;configureAccessRights&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;dashboards&quot;:{
+                   &quot;canCreateNewDashboard&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dashboardCategoriesSubcategories&quot;:{
+                          &quot;canCreateNewCategory&quot;:{
+                                 &quot;value&quot;:false,
+                                 &quot;tenantAccess&quot;:0
+                          },
+                          &quot;categoryAccessibility&quot;:{
+                                 &quot;categories&quot;:[
+
+                                 ],
+                                 &quot;tenantAccess&quot;:0
+                          }
+                   },
+                   &quot;actions&quot;:{
+                          &quot;schedule&quot;:false,
+                          &quot;email&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;subscribe&quot;:false,
+                          &quot;print&quot;:false,
+                          &quot;overwriteExistingDashboard&quot;:false,
+                          &quot;configureAccessRights&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;access&quot;:{
+                   &quot;accessLimits&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;accessDefaults&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;scheduling&quot;:{
+                   &quot;schedulingLimits&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;schedulingScope&quot;:{
+                          &quot;systemUsers&quot;:false,
+                          &quot;externalUsers&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;emailing&quot;:{
+                   &quot;deliveryMethod&quot;:{
+                          &quot;link&quot;:false,
+                          &quot;embeddedHTML&quot;:false,
+                          &quot;attachment&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;attachmentType&quot;:{
+                          &quot;word&quot;:false,
+                          &quot;excel&quot;:false,
+                          &quot;pdf&quot;:false,
+                          &quot;csv&quot;:false,
+                          &quot;xml&quot;:false,
+                          &quot;json&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;exporting&quot;:{
+                   &quot;exportingFormat&quot;:{
+                          &quot;word&quot;:false,
+                          &quot;excel&quot;:false,
+                          &quot;pdf&quot;:false,
+                          &quot;csv&quot;:false,
+                          &quot;xml&quot;:false,
+                          &quot;json&quot;:false,
+                          &quot;queryExecution&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;systemwide&quot;:{
+                   &quot;canSeeSystemMessages&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;section&quot;:null,
+                &quot;isTenantSetup&quot;:false
+         },
+         &quot;isDirty&quot;:true,
+         &quot;fullReportAndDashboardAccess&quot;:true,
+         &quot;systemConfiguration&quot;:{
+                &quot;scheduledInstances&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;tenantSetup&quot;:{
+                &quot;actions&quot;:{
+                   &quot;create&quot;:false,
+                   &quot;edit&quot;:false,
+                   &quot;del&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;permissions&quot;:{
+                   &quot;value&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;dataSetup&quot;:{
+                &quot;dataModel&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;advancedSettings&quot;:{
+                   &quot;category&quot;:true,
+                   &quot;others&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;userSetup&quot;:{
+                &quot;userRoleAssociation&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;actions&quot;:{
+                   &quot;create&quot;:true,
+                   &quot;edit&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;configureSecurityOptions&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;roleSetup&quot;:{
+                &quot;actions&quot;:{
+                   &quot;create&quot;:true,
+                   &quot;edit&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dataModelAccess&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;permissions&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;reports&quot;:{
+                &quot;canCreateNewReport&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dataSources&quot;:{
+                   &quot;simpleDataSources&quot;:true,
+                   &quot;advancedDataSources&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;reportPartTypes&quot;:{
+                   &quot;chart&quot;:true,
+                   &quot;form&quot;:true,
+                   &quot;gauge&quot;:true,
+                   &quot;map&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;reportCategoriesSubcategories&quot;:{
+                   &quot;canCreateNewCategory&quot;:{
+                          &quot;value&quot;:true,
+                          &quot;tenantAccess&quot;:1
+                   },
+                   &quot;categoryAccessibility&quot;:{
+                          &quot;categories&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:1
+                   }
+                },
+                &quot;filterProperties&quot;:{
+                   &quot;filterLogic&quot;:true,
+                   &quot;crossFiltering&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;fieldProperties&quot;:{
+                   &quot;customURL&quot;:true,
+                   &quot;embeddedJavaScript&quot;:true,
+                   &quot;subreport&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;actions&quot;:{
+                   &quot;schedule&quot;:true,
+                   &quot;email&quot;:true,
+                   &quot;viewReportHistory&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;registerForAlerts&quot;:true,
+                   &quot;print&quot;:true,
+                   &quot;unarchiveReportVersions&quot;:true,
+                   &quot;overwriteExistingReport&quot;:true,
+                   &quot;subscribe&quot;:true,
+                   &quot;exporting&quot;:true,
+                   &quot;configureAccessRights&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;dashboards&quot;:{
+                &quot;canCreateNewDashboard&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dashboardCategoriesSubcategories&quot;:{
+                   &quot;canCreateNewCategory&quot;:{
+                          &quot;value&quot;:true,
+                          &quot;tenantAccess&quot;:1
+                   },
+                   &quot;categoryAccessibility&quot;:{
+                          &quot;categories&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:1
+                   }
+                },
+                &quot;actions&quot;:{
+                   &quot;schedule&quot;:true,
+                   &quot;email&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;subscribe&quot;:true,
+                   &quot;print&quot;:true,
+                   &quot;overwriteExistingDashboard&quot;:true,
+                   &quot;configureAccessRights&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;access&quot;:{
+                &quot;accessLimits&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;accessDefaults&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;scheduling&quot;:{
+                &quot;schedulingLimits&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;schedulingScope&quot;:{
+                   &quot;systemUsers&quot;:true,
+                   &quot;externalUsers&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;emailing&quot;:{
+                &quot;deliveryMethod&quot;:{
+                   &quot;link&quot;:true,
+                   &quot;embeddedHTML&quot;:true,
+                   &quot;attachment&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;attachmentType&quot;:{
+                   &quot;word&quot;:true,
+                   &quot;excel&quot;:true,
+                   &quot;pdf&quot;:true,
+                   &quot;csv&quot;:true,
+                   &quot;xml&quot;:true,
+                   &quot;json&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;exporting&quot;:{
+                &quot;exportingFormat&quot;:{
+                   &quot;word&quot;:true,
+                   &quot;excel&quot;:true,
+                   &quot;pdf&quot;:true,
+                   &quot;csv&quot;:true,
+                   &quot;xml&quot;:true,
+                   &quot;json&quot;:true,
+                   &quot;queryExecution&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;systemwide&quot;:{
+                &quot;canSeeSystemMessages&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;section&quot;:&quot;systemConfiguration&quot;,
+         &quot;isTenantSetup&quot;:false
+  }
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><em>System Role Permissions</em></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>       &quot;isClickedSection&quot;:false,
+       &quot;propsCloned&quot;:{
+              &quot;fullReportAndDashboardAccess&quot;:false,
+              &quot;systemConfiguration&quot;:{
+                     &quot;scheduledInstances&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantSetup&quot;:{
+                     &quot;actions&quot;:{
+                        &quot;create&quot;:false,
+                        &quot;edit&quot;:false,
+                        &quot;del&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;permissions&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;dataSetup&quot;:{
+                     &quot;dataModel&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;advancedSettings&quot;:{
+                        &quot;category&quot;:false,
+                        &quot;others&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;userSetup&quot;:{
+                     &quot;userRoleAssociation&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;actions&quot;:{
+                        &quot;create&quot;:false,
+                        &quot;edit&quot;:false,
+                        &quot;del&quot;:false,
+                        &quot;configureSecurityOptions&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;roleSetup&quot;:{
+                     &quot;actions&quot;:{
+                        &quot;create&quot;:false,
+                        &quot;edit&quot;:false,
+                        &quot;del&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;dataModelAccess&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;permissions&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;reports&quot;:{
+                     &quot;canCreateNewReport&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;dataSources&quot;:{
+                        &quot;simpleDataSources&quot;:false,
+                        &quot;advancedDataSources&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;reportPartTypes&quot;:{
+                        &quot;chart&quot;:false,
+                        &quot;form&quot;:false,
+                        &quot;gauge&quot;:false,
+                        &quot;map&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;reportCategoriesSubcategories&quot;:{
+                        &quot;canCreateNewCategory&quot;:{
+                               &quot;value&quot;:false,
+                               &quot;tenantAccess&quot;:0
+                        },
+                        &quot;categoryAccessibility&quot;:{
+                               &quot;categories&quot;:[
+
+                               ],
+                               &quot;tenantAccess&quot;:0
+                        }
+                     },
+                     &quot;filterProperties&quot;:{
+                        &quot;filterLogic&quot;:false,
+                        &quot;crossFiltering&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;fieldProperties&quot;:{
+                        &quot;customURL&quot;:false,
+                        &quot;embeddedJavaScript&quot;:false,
+                        &quot;subreport&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;actions&quot;:{
+                        &quot;schedule&quot;:false,
+                        &quot;email&quot;:false,
+                        &quot;viewReportHistory&quot;:false,
+                        &quot;del&quot;:false,
+                        &quot;registerForAlerts&quot;:false,
+                        &quot;print&quot;:false,
+                        &quot;unarchiveReportVersions&quot;:false,
+                        &quot;overwriteExistingReport&quot;:false,
+                        &quot;subscribe&quot;:false,
+                        &quot;exporting&quot;:false,
+                        &quot;configureAccessRights&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;dashboards&quot;:{
+                     &quot;canCreateNewDashboard&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;dashboardCategoriesSubcategories&quot;:{
+                        &quot;canCreateNewCategory&quot;:{
+                               &quot;value&quot;:false,
+                               &quot;tenantAccess&quot;:0
+                        },
+                        &quot;categoryAccessibility&quot;:{
+                               &quot;categories&quot;:[
+
+                               ],
+                               &quot;tenantAccess&quot;:0
+                        }
+                     },
+                     &quot;actions&quot;:{
+                        &quot;schedule&quot;:false,
+                        &quot;email&quot;:false,
+                        &quot;del&quot;:false,
+                        &quot;subscribe&quot;:false,
+                        &quot;print&quot;:false,
+                        &quot;overwriteExistingDashboard&quot;:false,
+                        &quot;configureAccessRights&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;access&quot;:{
+                     &quot;accessLimits&quot;:{
+                        &quot;value&quot;:[
+
+                        ],
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;accessDefaults&quot;:{
+                        &quot;value&quot;:[
+
+                        ],
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;scheduling&quot;:{
+                     &quot;schedulingLimits&quot;:{
+                        &quot;value&quot;:[
+
+                        ],
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;schedulingScope&quot;:{
+                        &quot;systemUsers&quot;:false,
+                        &quot;externalUsers&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;emailing&quot;:{
+                     &quot;deliveryMethod&quot;:{
+                        &quot;link&quot;:false,
+                        &quot;embeddedHTML&quot;:false,
+                        &quot;attachment&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;attachmentType&quot;:{
+                        &quot;word&quot;:false,
+                        &quot;excel&quot;:false,
+                        &quot;pdf&quot;:false,
+                        &quot;csv&quot;:false,
+                        &quot;xml&quot;:false,
+                        &quot;json&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;exporting&quot;:{
+                     &quot;exportingFormat&quot;:{
+                        &quot;word&quot;:false,
+                        &quot;excel&quot;:false,
+                        &quot;pdf&quot;:false,
+                        &quot;csv&quot;:false,
+                        &quot;xml&quot;:false,
+                        &quot;json&quot;:false,
+                        &quot;queryExecution&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;systemwide&quot;:{
+                     &quot;canSeeSystemMessages&quot;:{
+                        &quot;value&quot;:false,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;section&quot;:null,
+              &quot;isTenantSetup&quot;:false
+       },
+       &quot;isDirty&quot;:true,
+       &quot;fullReportAndDashboardAccess&quot;:true,
+       &quot;systemConfiguration&quot;:{
+              &quot;scheduledInstances&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;tenantSetup&quot;:{
+              &quot;actions&quot;:{
+                     &quot;create&quot;:true,
+                     &quot;edit&quot;:true,
+                     &quot;del&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;permissions&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;dataSetup&quot;:{
+              &quot;dataModel&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;advancedSettings&quot;:{
+                     &quot;category&quot;:true,
+                     &quot;others&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;userSetup&quot;:{
+              &quot;userRoleAssociation&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;actions&quot;:{
+                     &quot;create&quot;:true,
+                     &quot;edit&quot;:true,
+                     &quot;del&quot;:true,
+                     &quot;configureSecurityOptions&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;roleSetup&quot;:{
+              &quot;actions&quot;:{
+                     &quot;create&quot;:true,
+                     &quot;edit&quot;:true,
+                     &quot;del&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;dataModelAccess&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;permissions&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;reports&quot;:{
+              &quot;canCreateNewReport&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;dataSources&quot;:{
+                     &quot;simpleDataSources&quot;:false,
+                     &quot;advancedDataSources&quot;:false,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;reportPartTypes&quot;:{
+                     &quot;chart&quot;:true,
+                     &quot;form&quot;:true,
+                     &quot;gauge&quot;:true,
+                     &quot;map&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;reportCategoriesSubcategories&quot;:{
+                     &quot;canCreateNewCategory&quot;:{
+                        &quot;value&quot;:true,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;categoryAccessibility&quot;:{
+                        &quot;categories&quot;:[
+
+                        ],
+                        &quot;tenantAccess&quot;:0
+                     }
+              },
+              &quot;filterProperties&quot;:{
+                     &quot;filterLogic&quot;:true,
+                     &quot;crossFiltering&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;fieldProperties&quot;:{
+                     &quot;customURL&quot;:true,
+                     &quot;embeddedJavaScript&quot;:true,
+                     &quot;subreport&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;actions&quot;:{
+                     &quot;schedule&quot;:true,
+                     &quot;email&quot;:true,
+                     &quot;viewReportHistory&quot;:true,
+                     &quot;del&quot;:true,
+                     &quot;registerForAlerts&quot;:true,
+                     &quot;print&quot;:true,
+                     &quot;unarchiveReportVersions&quot;:true,
+                     &quot;overwriteExistingReport&quot;:true,
+                     &quot;subscribe&quot;:true,
+                     &quot;exporting&quot;:true,
+                     &quot;configureAccessRights&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;dashboards&quot;:{
+              &quot;canCreateNewDashboard&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;dashboardCategoriesSubcategories&quot;:{
+                     &quot;canCreateNewCategory&quot;:{
+                        &quot;value&quot;:true,
+                        &quot;tenantAccess&quot;:0
+                     },
+                     &quot;categoryAccessibility&quot;:{
+                        &quot;categories&quot;:[
+
+                        ],
+                        &quot;tenantAccess&quot;:0
+                     }
+              },
+              &quot;actions&quot;:{
+                     &quot;schedule&quot;:true,
+                     &quot;email&quot;:true,
+                     &quot;del&quot;:true,
+                     &quot;subscribe&quot;:true,
+                     &quot;print&quot;:true,
+                     &quot;overwriteExistingDashboard&quot;:true,
+                     &quot;configureAccessRights&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;access&quot;:{
+              &quot;accessLimits&quot;:{
+                     &quot;value&quot;:[
+
+                     ],
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;accessDefaults&quot;:{
+                     &quot;value&quot;:[
+
+                     ],
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;scheduling&quot;:{
+              &quot;schedulingLimits&quot;:{
+                     &quot;value&quot;:[
+
+                     ],
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;schedulingScope&quot;:{
+                     &quot;systemUsers&quot;:true,
+                     &quot;externalUsers&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;emailing&quot;:{
+              &quot;deliveryMethod&quot;:{
+                     &quot;link&quot;:true,
+                     &quot;embeddedHTML&quot;:true,
+                     &quot;attachment&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;attachmentType&quot;:{
+                     &quot;word&quot;:true,
+                     &quot;excel&quot;:true,
+                     &quot;pdf&quot;:true,
+                     &quot;csv&quot;:true,
+                     &quot;xml&quot;:true,
+                     &quot;json&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;exporting&quot;:{
+              &quot;exportingFormat&quot;:{
+                     &quot;word&quot;:true,
+                     &quot;excel&quot;:true,
+                     &quot;pdf&quot;:true,
+                     &quot;csv&quot;:true,
+                     &quot;xml&quot;:true,
+                     &quot;json&quot;:true,
+                     &quot;queryExecution&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;systemwide&quot;:{
+              &quot;canSeeSystemMessages&quot;:{
+                     &quot;value&quot;:true,
+                     &quot;tenantAccess&quot;:0
+              },
+              &quot;tenantAccess&quot;:0
+       },
+       &quot;section&quot;:&quot;systemConfiguration&quot;,
+       &quot;isTenantSetup&quot;:false
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><em>Tenant Role Permissions</em></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>&quot;permission&quot;:{
+         &quot;isClickedSection&quot;:false,
+         &quot;propsCloned&quot;:{
+                &quot;fullReportAndDashboardAccess&quot;:false,
+                &quot;systemConfiguration&quot;:{
+                   &quot;scheduledInstances&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;tenantSetup&quot;:{
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;permissions&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;dataSetup&quot;:{
+                   &quot;dataModel&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;advancedSettings&quot;:{
+                          &quot;category&quot;:false,
+                          &quot;others&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;userSetup&quot;:{
+                   &quot;userRoleAssociation&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;configureSecurityOptions&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;roleSetup&quot;:{
+                   &quot;actions&quot;:{
+                          &quot;create&quot;:false,
+                          &quot;edit&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dataModelAccess&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;permissions&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;reports&quot;:{
+                   &quot;canCreateNewReport&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dataSources&quot;:{
+                          &quot;simpleDataSources&quot;:false,
+                          &quot;advancedDataSources&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;reportPartTypes&quot;:{
+                          &quot;chart&quot;:false,
+                          &quot;form&quot;:false,
+                          &quot;gauge&quot;:false,
+                          &quot;map&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;reportCategoriesSubcategories&quot;:{
+                          &quot;canCreateNewCategory&quot;:{
+                                 &quot;value&quot;:false,
+                                 &quot;tenantAccess&quot;:0
+                          },
+                          &quot;categoryAccessibility&quot;:{
+                                 &quot;categories&quot;:[
+
+                                 ],
+                                 &quot;tenantAccess&quot;:0
+                          }
+                   },
+                   &quot;filterProperties&quot;:{
+                          &quot;filterLogic&quot;:false,
+                          &quot;crossFiltering&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;fieldProperties&quot;:{
+                          &quot;customURL&quot;:false,
+                          &quot;embeddedJavaScript&quot;:false,
+                          &quot;subreport&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;actions&quot;:{
+                          &quot;schedule&quot;:false,
+                          &quot;email&quot;:false,
+                          &quot;viewReportHistory&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;registerForAlerts&quot;:false,
+                          &quot;print&quot;:false,
+                          &quot;unarchiveReportVersions&quot;:false,
+                          &quot;overwriteExistingReport&quot;:false,
+                          &quot;subscribe&quot;:false,
+                          &quot;exporting&quot;:false,
+                          &quot;configureAccessRights&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;dashboards&quot;:{
+                   &quot;canCreateNewDashboard&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;dashboardCategoriesSubcategories&quot;:{
+                          &quot;canCreateNewCategory&quot;:{
+                                 &quot;value&quot;:false,
+                                 &quot;tenantAccess&quot;:0
+                          },
+                          &quot;categoryAccessibility&quot;:{
+                                 &quot;categories&quot;:[
+
+                                 ],
+                                 &quot;tenantAccess&quot;:0
+                          }
+                   },
+                   &quot;actions&quot;:{
+                          &quot;schedule&quot;:false,
+                          &quot;email&quot;:false,
+                          &quot;del&quot;:false,
+                          &quot;subscribe&quot;:false,
+                          &quot;print&quot;:false,
+                          &quot;overwriteExistingDashboard&quot;:false,
+                          &quot;configureAccessRights&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;access&quot;:{
+                   &quot;accessLimits&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;accessDefaults&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;scheduling&quot;:{
+                   &quot;schedulingLimits&quot;:{
+                          &quot;value&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;schedulingScope&quot;:{
+                          &quot;systemUsers&quot;:false,
+                          &quot;externalUsers&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;emailing&quot;:{
+                   &quot;deliveryMethod&quot;:{
+                          &quot;link&quot;:false,
+                          &quot;embeddedHTML&quot;:false,
+                          &quot;attachment&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;attachmentType&quot;:{
+                          &quot;word&quot;:false,
+                          &quot;excel&quot;:false,
+                          &quot;pdf&quot;:false,
+                          &quot;csv&quot;:false,
+                          &quot;xml&quot;:false,
+                          &quot;json&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;exporting&quot;:{
+                   &quot;exportingFormat&quot;:{
+                          &quot;word&quot;:false,
+                          &quot;excel&quot;:false,
+                          &quot;pdf&quot;:false,
+                          &quot;csv&quot;:false,
+                          &quot;xml&quot;:false,
+                          &quot;json&quot;:false,
+                          &quot;queryExecution&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;systemwide&quot;:{
+                   &quot;canSeeSystemMessages&quot;:{
+                          &quot;value&quot;:false,
+                          &quot;tenantAccess&quot;:0
+                   },
+                   &quot;tenantAccess&quot;:0
+                },
+                &quot;section&quot;:null,
+                &quot;isTenantSetup&quot;:false
+         },
+         &quot;isDirty&quot;:true,
+         &quot;fullReportAndDashboardAccess&quot;:true,
+         &quot;systemConfiguration&quot;:{
+                &quot;scheduledInstances&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;tenantSetup&quot;:{
+                &quot;actions&quot;:{
+                   &quot;create&quot;:false,
+                   &quot;edit&quot;:false,
+                   &quot;del&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;permissions&quot;:{
+                   &quot;value&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;dataSetup&quot;:{
+                &quot;dataModel&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;advancedSettings&quot;:{
+                   &quot;category&quot;:true,
+                   &quot;others&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;userSetup&quot;:{
+                &quot;userRoleAssociation&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;actions&quot;:{
+                   &quot;create&quot;:true,
+                   &quot;edit&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;configureSecurityOptions&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;roleSetup&quot;:{
+                &quot;actions&quot;:{
+                   &quot;create&quot;:true,
+                   &quot;edit&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dataModelAccess&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;permissions&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;grantRoleWithFullReportAndDashboardAccess&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;reports&quot;:{
+                &quot;canCreateNewReport&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dataSources&quot;:{
+                   &quot;simpleDataSources&quot;:true,
+                   &quot;advancedDataSources&quot;:false,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;reportPartTypes&quot;:{
+                   &quot;chart&quot;:true,
+                   &quot;form&quot;:true,
+                   &quot;gauge&quot;:true,
+                   &quot;map&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;reportCategoriesSubcategories&quot;:{
+                   &quot;canCreateNewCategory&quot;:{
+                          &quot;value&quot;:true,
+                          &quot;tenantAccess&quot;:1
+                   },
+                   &quot;categoryAccessibility&quot;:{
+                          &quot;categories&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:1
+                   }
+                },
+                &quot;filterProperties&quot;:{
+                   &quot;filterLogic&quot;:true,
+                   &quot;crossFiltering&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;fieldProperties&quot;:{
+                   &quot;customURL&quot;:true,
+                   &quot;embeddedJavaScript&quot;:true,
+                   &quot;subreport&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;actions&quot;:{
+                   &quot;schedule&quot;:true,
+                   &quot;email&quot;:true,
+                   &quot;viewReportHistory&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;registerForAlerts&quot;:true,
+                   &quot;print&quot;:true,
+                   &quot;unarchiveReportVersions&quot;:true,
+                   &quot;overwriteExistingReport&quot;:true,
+                   &quot;subscribe&quot;:true,
+                   &quot;exporting&quot;:true,
+                   &quot;configureAccessRights&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;dashboards&quot;:{
+                &quot;canCreateNewDashboard&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;dashboardCategoriesSubcategories&quot;:{
+                   &quot;canCreateNewCategory&quot;:{
+                          &quot;value&quot;:true,
+                          &quot;tenantAccess&quot;:1
+                   },
+                   &quot;categoryAccessibility&quot;:{
+                          &quot;categories&quot;:[
+
+                          ],
+                          &quot;tenantAccess&quot;:1
+                   }
+                },
+                &quot;actions&quot;:{
+                   &quot;schedule&quot;:true,
+                   &quot;email&quot;:true,
+                   &quot;del&quot;:true,
+                   &quot;subscribe&quot;:true,
+                   &quot;print&quot;:true,
+                   &quot;overwriteExistingDashboard&quot;:true,
+                   &quot;configureAccessRights&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;access&quot;:{
+                &quot;accessLimits&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;accessDefaults&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;scheduling&quot;:{
+                &quot;schedulingLimits&quot;:{
+                   &quot;value&quot;:[
+
+                   ],
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;schedulingScope&quot;:{
+                   &quot;systemUsers&quot;:true,
+                   &quot;externalUsers&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;emailing&quot;:{
+                &quot;deliveryMethod&quot;:{
+                   &quot;link&quot;:true,
+                   &quot;embeddedHTML&quot;:true,
+                   &quot;attachment&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;attachmentType&quot;:{
+                   &quot;word&quot;:true,
+                   &quot;excel&quot;:true,
+                   &quot;pdf&quot;:true,
+                   &quot;csv&quot;:true,
+                   &quot;xml&quot;:true,
+                   &quot;json&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;exporting&quot;:{
+                &quot;exportingFormat&quot;:{
+                   &quot;word&quot;:true,
+                   &quot;excel&quot;:true,
+                   &quot;pdf&quot;:true,
+                   &quot;csv&quot;:true,
+                   &quot;xml&quot;:true,
+                   &quot;json&quot;:true,
+                   &quot;queryExecution&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;systemwide&quot;:{
+                &quot;canSeeSystemMessages&quot;:{
+                   &quot;value&quot;:true,
+                   &quot;tenantAccess&quot;:1
+                },
+                &quot;tenantAccess&quot;:1
+         },
+         &quot;section&quot;:&quot;systemConfiguration&quot;,
+         &quot;isTenantSetup&quot;:false
+  }
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><em>PermissionAccessModel</em></p>
+<p>This section of the tenant creation request body provides information on all of the access rights that can be set within the tenant on the its roles and dashboards. Detailed breakdowns of these values can be found here:
+<a class="reference external" href="https://www.izenda.com/docs/ui/doc_report_designer_access.html">https://www.izenda.com/docs/ui/doc_report_designer_access.html</a></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+          &quot;reportAccessRight&quot;:[
+                 {
+                        &quot;name&quot;:&quot;Full Access&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d010&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;Locked&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d003&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;No Access&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d005&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;Quick Edit&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d001&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;Save As&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d002&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;View Only&quot;,
+                        &quot;type&quot;:0,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d004&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 }
+          ],
+          &quot;dashboardAccessRight&quot;:[
+                 {
+                        &quot;name&quot;:&quot;Full Access&quot;,
+                        &quot;type&quot;:1,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d011&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;Locked&quot;,
+                        &quot;type&quot;:1,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d007&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;No Access&quot;,
+                        &quot;type&quot;:1,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d009&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;Save As&quot;,
+                        &quot;type&quot;:1,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d006&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 },
+                 {
+                        &quot;name&quot;:&quot;View Only&quot;,
+                        &quot;type&quot;:1,
+                        &quot;id&quot;:&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d008&quot;,
+                        &quot;state&quot;:0,
+                        &quot;deleted&quot;:false,
+                        &quot;inserted&quot;:true,
+                        &quot;version&quot;:1,
+                        &quot;created&quot;:null,
+                        &quot;createdBy&quot;:null,
+                        &quot;modified&quot;:null,
+                        &quot;modifiedBy&quot;:null
+                 }
+          ]
+   }
+}
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".embedding_izenda.html" class="btn btn-neutral float-right" title="First Steps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code_javascript_sample_properties_for_a_reportpartelement.html" class="btn btn-neutral" title="Sample Properties for a ReportPartElement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.6.16',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
