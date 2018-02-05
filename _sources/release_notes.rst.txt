@@ -8,6 +8,21 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 	
+v2.6.17 February 5, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  19197  The image and page number do not display properly in report header and footer when printing
+-  Defect  19182  Column Groupings set on fields in grid report parts would cause the grid to load infinitely. 
+-  Defect  19179  Forms in Internet Explorer were not rendering successfully. 
+-  Defect  19033  Remove concurrency check from copy process that validates data model changes multiple times to improve performance.
+-  Defect  19001  Resolved deadlock issue on MSSQL when using dashboard designer with large volume of concurrent users.
+-  Defect  18993  Extended Excel exporting to allow the ability to customize the current excel exporting provider
+-  Defect  18879  When using copy console and more than 4 database mappings on same schema doesn't work
+-  Defect  18348  Resolved security issue on API
+
+
 v2.6.16 January 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
