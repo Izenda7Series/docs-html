@@ -7,7 +7,20 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
-	
+
+v2.6.18 February 12, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  19280  Made property ValueTokenCommandGenerator of ExpressionCommandGeneratorVisitor class overridable for creating custom data adapters
+-  Defect  19274  Tenant user has proper create report permission but system fails to save report in new category
+-  Defect  19251  Hiding Tenant Field in the data model prevents query data from returning
+-  Defect  19235  Dashboard common filter rules do not function as expected, one filter shows when two are expected based on data sources
+-  Defect  19042  Error received when using alias in function when creating a custom view in the data model
+-  Defect  18895  Combination Chart Y-Axis Labels Are Cut Off when slanted at 45 degrees
+
+
 v2.6.17 February 5, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
