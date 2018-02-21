@@ -132,7 +132,7 @@ Part we wish to add. Let’s add Bottom Bar Chart.
 When the Report Part is added to the Dashboard Tile, the Filter
 information is automatically generated and placed in our Filters panel.
 To apply the filters, select your desired values and press the Update
-Results button just as you would in a Report.
+Results button just as you would in a Report. For more information see: :ref:`Dashboard Filters <dashboard_filters>`
 
 .. figure::  /_static/images/CS1_M4_F9.png
 

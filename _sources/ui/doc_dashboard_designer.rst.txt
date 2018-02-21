@@ -332,14 +332,14 @@ Delivery) using the Email button:
 
 Dashboard Filters
 =================
-#. The filter section on the dashboard will only show common filters between all report parts used in the dashboard. 
-#. By default, common filters are defined as the same field from the same table in the same schema of the database. 
-#. Common filter definitions can be altered in Settings > Data Setup > Advanced Settings > Others area of the application. The following options are available:
+#. The filter section on the dashboard will only show common filters between all report parts used in the dashboard.
+#. By default, common filters are defined as the same field from the same table in the same schema of the database utilizing the same filter operator.
+#. Common filter definitions can be altered in Settings > Data Setup > Advanced Settings > Others > Determine common filter for the same field based on. The following options are available:
 
    - Same field of the same data object from the same database schema (Default)
    - Same field name regardless of database schema or connection string
    - Same alias name regardless of database schema or connection string
-   
-#. Stored procedures used in reports cannot follow the same logic as above, they always follow the default logic, for parameters to show as common filters, they must always be from the same stored procedure.
+
+#. Stored procedures used in reports follow the same logic as above.
 #. Any filters which are not common between all report parts are available on the back of the report part tile. The user can flip the tile and update results to change the filters for the specific report part.
-#. Common filters query only one instance of a common filter (the first one in the dashboard), for data driven filters (checkbox, selection, tree, popup style filters where the user is presented data for selection). This means when Field A is common, based on rules set above, only the first instance of the field which is common will be queried to pull results for common filter data.  
+#. Common filters query only one instance of a common filter (the first one in the dashboard), for data driven filters (checkbox, selection, tree, popup style filters where the user is presented data for selection). This means when Field A is common, based on rules set above, only the first instance of the field which is common will be queried to pull results for common filter data.

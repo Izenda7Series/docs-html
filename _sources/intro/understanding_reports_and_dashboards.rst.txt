@@ -54,23 +54,23 @@ Sample Sizes
 Filtering
 ~~~~~~~~~
 
--  Filtering can be applied to limit the data seen in a
-   report/dashboard. For instance, if you had a *Country* field in your
-   data, you could filter the report/dashboard to only display data for
-   the country of Argentina.
--  Filtering is report-wide. You cannot filter per report part or per
-   field.
--  Filtering is generally dashboard-wide.
+Filtering can be applied to limit the data seen in a report/dashboard. For instance, if you had a *Country* field in your data, you could filter the report/dashboard to only display data for the country of Argentina.
 
-   -  If all tiles share the same filters, filters can only be set
-      globally.
-   -  If tiles share some filters but have some unique filters, unique
+-  Report filtering is report-wide.
+
+   - You cannot filter per report part or per field.
+   - For more information on Report Filters, feel free to check out the :doc:`/ui/usage_adding_filters_to_a_report` documentation.
+
+-  Dashboard filtering depends on filters applied to the included report tiles.
+
+   -  If all tiles share the same filters, filters can be set globally.
+   -  If tiles share some of the same filters but have some unique filters, unique
       filters can be set individually by flipping the tile into
-      configuration mode. Common filters are set globally.
-   -  If tiles only have unique filters, all filters can be set
+      configuration mode, while common filters can still be set globally.
+   -  If tiles only have unique filters, unique filters can be set
       individually by flipping the tile into configuration mode.
+   - For more information on Dashboard Filters, feel free to check out the :ref:`Dashboard Filters <dashboard_filters>` documentation.
 
-For more information on Filters, feel free to check out the :doc:`/ui/usage_adding_filters_to_a_report` guide.
 
 Sharing and Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~
