@@ -870,7 +870,7 @@ LoadCustomDataFormat
                     Name = "year",
                     DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
-                    sFormatString ="Year {value:%Y}",
+                    JsFormatString ="Year {value:%Y}",
                     FormatDataType = DataType.DateTime
                 }
 
