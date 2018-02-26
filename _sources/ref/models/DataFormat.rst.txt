@@ -57,10 +57,27 @@ DataFormat
       -
       -  The position in the list of data formats
       -
+   *  -  **allowFilter** |br|
+         boolean
+      -
+      -  Allow showing in filter field data format or not
+      -
+   *  -  **allowFieldProperty** |br|
+         boolean
+      -
+      -  Allow showing in in field data format or not
+      -
    *  -  **customId** |br|
          string
       -
       -  The id of customed data format (using the name value by default)
+      -
+   *  -  **jsFormatString** |br|
+         string
+      -
+      -  The format string support to optimize chart labels
+      
+         .. versionadded:: 2.6.19
       -
 
 Inherited:
@@ -76,19 +93,18 @@ Inherited:
    .. code-block:: json
 
       {
-         "name": "MM/dd/yyyy",
-         "format": "MM/dd/yyyy",
-         "description": "01/01/2016",
-         "category": "Short Date",
-         "subCategory": "",
-         "dataType": "Date & Time",
-         "groupBy": "date",
-         "position": "1",
-         "id": "8074c8aa-55c7-4326-b6cd-0d4b0f7300cb",
-         "state": 0,
-         "version": null,
-         "created": null,
-         "createdBy": null,
-         "modified": null,
-         "modifiedBy": null
+            "id": "104a55b9-70fb-429c-a9d9-78d99cc09f53",
+            "name": "-(0,000.00)",
+            "format": "-(0,000.00)",
+            "description": "Positive: 15,000.25, Negative: -(15,000.25)",
+            "category": "Number",
+            "subCategory": "",
+            "dataType": "Numeric",
+            "groupBy": "",
+            "formatDataType": null,
+            "position": 93,
+            "allowFilter": true,
+            "allowFieldProperty": false,
+            "customId": "104a55b9-70fb-429c-a9d9-78d99cc09f53",
+            "jsFormatString": null
       }

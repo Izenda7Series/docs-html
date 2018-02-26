@@ -646,9 +646,16 @@ LoadCustomDataFormat
 
 ``public override List<DataFormat> LoadCustomDataFormat()``
 
-NOTE: This method is only available in v1.24.0 or higher
+.. note:: 
+   * This method is only available in v1.24.0 or higher
 
-You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.
+   * You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.
+
+   * From v2.6.19, :doc:`../ref/models/DataFormat` object has 1 new field: JsFormatString
+
+     - JsFormatString is used for optimizing chart axes lables
+
+     - If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede.
 
 .. code-block:: csharp
 
@@ -666,7 +673,7 @@ You can create custom formats for various datatypes by overriding the LoadCustom
 
             {
 
-                 new DataFormat
+                new DataFormat
                 {
                     Name = "By Hour",
                     DataType = DataType.DateTime,
@@ -711,62 +718,161 @@ You can create custom formats for various datatypes by overriding the LoadCustom
                     }
                 },
                 new DataFormat
+                {
+                    Name = "£0,000",
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    FormatFunc = (x) =>
                     {
-                        Name = "£0,000",
-                        DataType = DataType.Numeric,
-                        Category = IzendaKey.CustomFormat,
-                        FormatFunc = (x) =>
-                        {
-                            return ((decimal)x).ToString("C0", CultureInfo.CreateSpecificCulture("en-GB"));
-                        }
-                    },
-                    new DataFormat
+                        return ((decimal)x).ToString("C0", CultureInfo.CreateSpecificCulture("en-GB"));
+                    }
+                },
+                new DataFormat
+                {
+                    Name = "¥0,000",
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    FormatFunc = (x) =>
                     {
-                        Name = "¥0,000",
-                        DataType = DataType.Numeric,
-                        Category = IzendaKey.CustomFormat,
-                        FormatFunc = (x) =>
-                        {
-                            return ((decimal)x).ToString("C0", CultureInfo.CreateSpecificCulture("ja-JP"));
-                        }
+                        return ((decimal)x).ToString("C0", CultureInfo.CreateSpecificCulture("ja-JP"));
+                    }
 
-                        },
-                    new DataFormat
+                },
+                new DataFormat
+                {
+                    Name = "0,000",
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    FormatFunc = (x) =>
                     {
-                        Name = "0,000",
-                        DataType = DataType.Numeric,
-                        Category = IzendaKey.CustomFormat,
-                        FormatFunc = (x) =>
-                        {
-                            return String.Format(CultureInfo.InvariantCulture, "{0:0,0}", x);
-                        }
+                        return String.Format(CultureInfo.InvariantCulture, "{0:0,0}", x);
+                    }
 
-                    },
-                        new DataFormat
-                        {
-                            Name = "$0,000",
-                            DataType = DataType.Numeric,
-                            Category = IzendaKey.CustomFormat,
-                            FormatFunc = (x) =>
-                            {
-                                return String.Format(CultureInfo.InvariantCulture, "${0:0,0}", x);
-                            }
-                        },
+                },
+                new DataFormat
+                {
+                    Name = "$0,000",
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    FormatFunc = (x) =>
+                    {
+                        return String.Format(CultureInfo.InvariantCulture, "${0:0,0}", x);
+                     }
+                },
 
-                        new DataFormat
-                        {
-                            Name = "HH:MM:SS",
-                            DataType = DataType.Numeric,
-                            Category = IzendaKey.CustomFormat,
-                            FormatFunc = (x) =>
-                            {
-                                var newValue = Convert.ToDouble(x);
-                                TimeSpan time = TimeSpan.FromSeconds(newValue);
+                new DataFormat
+                {
+                    Name = "HH:MM:SS",
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    FormatFunc = (x) =>
+                    {
+                        var newValue = Convert.ToDouble(x);
+                        TimeSpan time = TimeSpan.FromSeconds(newValue);
 
-                                return time.ToString(@"dd\.hh\:mm\:ss");
-                            }
+                        return time.ToString(@"dd\.hh\:mm\:ss");
+                    }
 
-                        }
+                }
+
+                // Note: new in version 2.6.19
+                // Custom DataFormat use JsFormatString
+
+                new DataFormat
+                {
+                    Name = "2f km", //example: 2.00 km.
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "{value:.2f} km."
+                },
+
+                new DataFormat
+                {
+                    Name = "millisecond",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "{value:%A, %b %e, %H:%M:%S.%L}",
+                        //A: Day of week
+                        //B: Month 
+                        //b: Abbreviations of Month
+                        //e: Day
+                        //H: Hour
+                        //M: Minute
+                        //S: Second
+                        //L: Millisecond
+                    FormatDataType = DataType.DateTime
+                },
+                
+                new DataFormat
+                {
+                    Name = "second",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "{value:%H:%M:%S}",
+                        //H: Hour
+                        //M: Minute
+                        //S: Second
+                    FormatDataType = DataType.DateTime
+                },
+
+                new DataFormat
+                {
+                    Name = "minute",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "{value:%M}",
+                    FormatDataType = DataType.DateTime
+                },
+
+                new DataFormat
+                {
+                    Name = "hour",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "{value:%H:%M}",
+                },
+
+                new DataFormat
+                {
+                    Name = "day",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString ="{value:%A, %B %e, %Y}",
+                        //A: Day of week
+                        //B: Month 
+                        //Y: Year
+                    FormatDataType = DataType.DateTime
+                },
+
+                new DataFormat
+                {
+                    Name = "week",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString ="Week from {value:%A, %B %e, %Y}",
+                        //A: Day of week
+                        //B: Month 
+                        //Y: Year
+                    FormatDataType = DataType.DateTime
+                },
+
+                new DataFormat
+                {
+                    Name = "month",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString ="{value:%B %Y}",
+                    FormatDataType = DataType.DateTime
+                },
+
+                new DataFormat
+                {
+                    Name = "year",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    sFormatString ="Year {value:%Y}",
+                    FormatDataType = DataType.DateTime
+                }
 
             };
 

@@ -306,10 +306,32 @@ string</td>
 <td>The position in the list of data formats</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-odd"><td><strong>allowFilter</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Allow showing in filter field data format or not</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>allowFieldProperty</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Allow showing in in field data format or not</td>
+<td>&#160;</td>
+</tr>
 <tr class="row-odd"><td><strong>customId</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The id of customed data format (using the name value by default)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>jsFormatString</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td><p class="first">The format string support to optimize chart labels</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.6.19.</span></p>
+</div>
+</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -400,21 +422,20 @@ string</td>
 <div class="header docutils container">
 <strong>Sample</strong>:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;01/01/2016&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;Short Date&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;subCategory&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Date &amp; Time&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;groupBy&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8074c8aa-55c7-4326-b6cd-0d4b0f7300cb&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;104a55b9-70fb-429c-a9d9-78d99cc09f53&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;-(0,000.00)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;-(0,000.00)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Positive: 15,000.25, Negative: -(15,000.25)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;Number&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;subCategory&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;groupBy&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;formatDataType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">93</span><span class="p">,</span>
+      <span class="nt">&quot;allowFilter&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;allowFieldProperty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;customId&quot;</span><span class="p">:</span> <span class="s2">&quot;104a55b9-70fb-429c-a9d9-78d99cc09f53&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;jsFormatString&quot;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>

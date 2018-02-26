@@ -789,8 +789,18 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 <div class="section" id="loadcustomdataformat">
 <span id="id3"></span><h2>LoadCustomDataFormat<a class="headerlink" href="#loadcustomdataformat" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;DataFormat&gt;</span> <span class="pre">LoadCustomDataFormat()</span></code></p>
-<p>NOTE: This method is only available in v1.24.0 or higher</p>
-<p>You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>This method is only available in v1.24.0 or higher</li>
+<li>You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.</li>
+<li>From v2.6.19, <a class="reference internal" href="../ref/models/DataFormat.html"><span class="doc">DataFormat</span></a> object has 1 new field: JsFormatString<ul>
+<li>JsFormatString is used for optimizing chart axes lables</li>
+<li>If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede.</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
 <span class="c1">/// Loads the defined custom formats into the Izenda application</span>
 <span class="c1">///</span>
@@ -805,7 +815,7 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 
     <span class="p">{</span>
 
-         <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
         <span class="p">{</span>
             <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;By Hour&quot;</span><span class="p">,</span>
             <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
@@ -850,62 +860,161 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;£0,000&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
             <span class="p">{</span>
-                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;£0,000&quot;</span><span class="p">,</span>
-                <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
-                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
-                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
-                <span class="p">{</span>
-                    <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;en-GB&quot;</span><span class="p">));</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="k">new</span> <span class="n">DataFormat</span>
+                <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;en-GB&quot;</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;¥0,000&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
             <span class="p">{</span>
-                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;¥0,000&quot;</span><span class="p">,</span>
-                <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
-                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
-                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
-                <span class="p">{</span>
-                    <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;ja-JP&quot;</span><span class="p">));</span>
-                <span class="p">}</span>
+                <span class="k">return</span> <span class="p">((</span><span class="kt">decimal</span><span class="p">)</span><span class="n">x</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;C0&quot;</span><span class="p">,</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&quot;ja-JP&quot;</span><span class="p">));</span>
+            <span class="p">}</span>
 
-                <span class="p">},</span>
-            <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;0,000&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
             <span class="p">{</span>
-                <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;0,000&quot;</span><span class="p">,</span>
-                <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
-                <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
-                <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
-                <span class="p">{</span>
-                    <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;{0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
-                <span class="p">}</span>
+                <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;{0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+            <span class="p">}</span>
 
-            <span class="p">},</span>
-                <span class="k">new</span> <span class="n">DataFormat</span>
-                <span class="p">{</span>
-                    <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;$0,000&quot;</span><span class="p">,</span>
-                    <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
-                    <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
-                    <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
-                    <span class="p">{</span>
-                        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;${0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
-                    <span class="p">}</span>
-                <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;$0,000&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">,</span> <span class="s">&quot;${0:0,0}&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+             <span class="p">}</span>
+        <span class="p">},</span>
 
-                <span class="k">new</span> <span class="n">DataFormat</span>
-                <span class="p">{</span>
-                    <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;HH:MM:SS&quot;</span><span class="p">,</span>
-                    <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
-                    <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
-                    <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
-                    <span class="p">{</span>
-                        <span class="kt">var</span> <span class="n">newValue</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-                        <span class="n">TimeSpan</span> <span class="n">time</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="n">newValue</span><span class="p">);</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;HH:MM:SS&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">FormatFunc</span> <span class="p">=</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">newValue</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+                <span class="n">TimeSpan</span> <span class="n">time</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="n">newValue</span><span class="p">);</span>
 
-                        <span class="k">return</span> <span class="n">time</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">@&quot;dd\.hh\:mm\:ss&quot;</span><span class="p">);</span>
-                    <span class="p">}</span>
+                <span class="k">return</span> <span class="n">time</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">@&quot;dd\.hh\:mm\:ss&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
 
-                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Note: new in version 2.6.19</span>
+        <span class="c1">// Custom DataFormat use JsFormatString</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;2f km&quot;</span><span class="p">,</span> <span class="c1">//example: 2.00 km.</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;{value:.2f} km.&quot;</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;millisecond&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;{value:%A, %b %e, %H:%M:%S.%L}&quot;</span><span class="p">,</span>
+                <span class="c1">//A: Day of week</span>
+                <span class="c1">//B: Month</span>
+                <span class="c1">//b: Abbreviations of Month</span>
+                <span class="c1">//e: Day</span>
+                <span class="c1">//H: Hour</span>
+                <span class="c1">//M: Minute</span>
+                <span class="c1">//S: Second</span>
+                <span class="c1">//L: Millisecond</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;second&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;{value:%H:%M:%S}&quot;</span><span class="p">,</span>
+                <span class="c1">//H: Hour</span>
+                <span class="c1">//M: Minute</span>
+                <span class="c1">//S: Second</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;minute&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;{value:%M}&quot;</span><span class="p">,</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;hour&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;{value:%H:%M}&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;day&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span><span class="s">&quot;{value:%A, %B %e, %Y}&quot;</span><span class="p">,</span>
+                <span class="c1">//A: Day of week</span>
+                <span class="c1">//B: Month</span>
+                <span class="c1">//Y: Year</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;week&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span><span class="s">&quot;Week from {value:%A, %B %e, %Y}&quot;</span><span class="p">,</span>
+                <span class="c1">//A: Day of week</span>
+                <span class="c1">//B: Month</span>
+                <span class="c1">//Y: Year</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;month&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span><span class="s">&quot;{value:%B %Y}&quot;</span><span class="p">,</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">},</span>
+
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;year&quot;</span><span class="p">,</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">sFormatString</span> <span class="p">=</span><span class="s">&quot;Year {value:%Y}&quot;</span><span class="p">,</span>
+            <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">}</span>
 
     <span class="p">};</span>
 
