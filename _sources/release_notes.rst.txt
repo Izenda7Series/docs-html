@@ -8,6 +8,19 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.6.19 February 26, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+- Defect  19313  When logged into application as user with simple data source access, the user selects one datasource and all datasources are removed with permissions error returned from API.
+- Defect  19299  Unable to override report part definition via OnPreExecute API when rendering a report part
+- Defect  19292  In some circumstances, adding a new connection string in Oracle may result in a transaction error.
+- Defect  18969  Relationships are changing order and join alias is incrementing when adding several tables to report designer.
+- Defect  18354  LoadCustomDataFormat does not impact charts as charts must use javascript formatters. Added optional javascript formatter to CustomDataFormat in IAdHocExtension. See usage in the documentation for `LoadCustomDataFormat <https://www.izenda.com/docs/dev/ref_iadhocextension.html?highlight=iadhocextension#loadcustomdataformat>`_
+
+
 v2.6.18 February 12, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
