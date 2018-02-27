@@ -544,8 +544,8 @@ Open Field Properties box for data source fields in report
 
       Report Designer - Report Part and Field drop-downs
 
-Configure field properties in Data Source section
-=================================================
+Configure Subreports using field properties in Data Source section
+====================================================================
 
 In this section, user can:
 
