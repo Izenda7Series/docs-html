@@ -544,8 +544,8 @@ Open Field Properties box for data source fields in report
 
       Report Designer - Report Part and Field drop-downs
 
-Configure Subreports using field properties in Data Source section
-====================================================================
+Configure field properties in Data Source section
+=====================================================
 
 In this section, user can:
 
@@ -905,8 +905,8 @@ In this section, user can adjust formatting for the header row:
 -  Set the "grouping key" for specific columns to stand next to each
    other. Screenshot to be updated.
 
-Configure field properties in Drill Down section
-================================================
+Configure Subreports using field properties in Drill Down section
+===================================================================
 
 In this section, user can connect another report as subreport via the
 values in this parent report.
