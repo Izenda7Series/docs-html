@@ -792,13 +792,15 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
-<li>This method is only available in v1.24.0 or higher</li>
-<li>You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.</li>
+<li>This method is only available in v1.24.0 or higher. <br clear="right" /> <br clear="right" /></li>
+<li>You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation. <br clear="right" /> <br clear="right" /></li>
 <li>From v2.6.19, <a class="reference internal" href="../ref/models/DataFormat.html"><span class="doc">DataFormat</span></a> object has 1 new field: JsFormatString<ul>
 <li>JsFormatString is used for optimizing chart axes lables</li>
-<li>If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede.</li>
+<li>If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede. <br clear="right" /> <br clear="right" /></li>
 </ul>
 </li>
+<li>New in v2.6.20, if JsFormatString does not contain braces {} that means the value of jsFormatString is the name of the funtion will be obtained in the FE to apply in the chart. <br clear="right" />
+User must ensure  to register the format function by using <a class="reference internal" href="api_frontend_integration.html#addjsformat"><span class="std std-ref">Front-end integration API: addJsFormat(formatName, formatFunction)</span></a>.</li>
 </ul>
 </div>
 <div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
@@ -1014,6 +1016,15 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
             <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
             <span class="n">JsFormatString</span> <span class="p">=</span><span class="s">&quot;Year {value:%Y}&quot;</span><span class="p">,</span>
             <span class="n">FormatDataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">DateTime</span>
+        <span class="p">}</span>
+
+        <span class="c1">//new in version 2.6.20</span>
+        <span class="k">new</span> <span class="n">DataFormat</span>
+        <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;2f km&quot;</span><span class="p">,</span> <span class="c1">//example: 2.00 km.</span>
+            <span class="n">DataType</span> <span class="p">=</span> <span class="n">DataType</span><span class="p">.</span><span class="n">Numeric</span><span class="p">,</span>
+            <span class="n">Category</span> <span class="p">=</span> <span class="n">IzendaKey</span><span class="p">.</span><span class="n">CustomFormat</span><span class="p">,</span>
+            <span class="n">JsFormatString</span> <span class="p">=</span> <span class="s">&quot;1k&quot;</span> <span class="c1">//The name of the js format function</span>
         <span class="p">}</span>
 
     <span class="p">};</span>

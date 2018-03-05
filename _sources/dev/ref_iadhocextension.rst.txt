@@ -647,15 +647,18 @@ LoadCustomDataFormat
 ``public override List<DataFormat> LoadCustomDataFormat()``
 
 .. note:: 
-   * This method is only available in v1.24.0 or higher
+   * This method is only available in v1.24.0 or higher. |br| |br|
 
-   * You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation.
+   * You can create custom formats for various datatypes by overriding the LoadCustomDataFormat in your DefaultAdHocExtension implementation. |br| |br|
 
    * From v2.6.19, :doc:`../ref/models/DataFormat` object has 1 new field: JsFormatString
 
      - JsFormatString is used for optimizing chart axes lables
 
-     - If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede.
+     - If DataFormat contains both FormatFunc and JsFormatString, the JsFormatString will be more precede. |br| |br|
+
+   * New in v2.6.20, if JsFormatString does not contain braces {} that means the value of jsFormatString is the name of the funtion will be obtained in the FE to apply in the chart. |br|
+     User must ensure  to register the format function by using :ref:`Front-end integration API: addJsFormat(formatName, formatFunction) <addJsFormat>`.
 
 .. code-block:: csharp
 
@@ -872,6 +875,15 @@ LoadCustomDataFormat
                     Category = IzendaKey.CustomFormat,
                     JsFormatString ="Year {value:%Y}",
                     FormatDataType = DataType.DateTime
+                }
+
+                //new in version 2.6.20
+                new DataFormat
+                {
+                    Name = "2f km", //example: 2.00 km.
+                    DataType = DataType.Numeric,
+                    Category = IzendaKey.CustomFormat,
+                    JsFormatString = "1k" //The name of the js format function
                 }
 
             };

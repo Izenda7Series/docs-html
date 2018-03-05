@@ -62,6 +62,12 @@ List of APIs
    
           `renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)`_
      - Render Izenda Dashboard Viewer page
+   * - .. container:: lpad2
+   
+          `addJsFormat(formatName, formatFunction)`_
+     - Register a JsFormatString with format function |br|
+
+       .. versionadded:: 2.6.20
 
 
 
@@ -437,8 +443,52 @@ Render Izenda Dashboard Viewer page
             hideCommonFilter: false
          });
 
+.. _addJsFormat:
+
+addJsFormat(formatName, formatFunction)
+---------------------------------------------
+
+Register a JsFormatString with format function
+
+This function is used in the LoadCustomDataFormat (see more `here <https://www.izenda.com/docs/dev/ref_iadhocextension.html?highlight=iadhocextension#loadcustomdataformat>`_). To register this function, it must be declared in either your izenda.integrate.js (for embedded mode) or the index.html for (standalone mode). See example of both integrated and standalone below:  
+
+.. versionadded:: 2.6.20
 
 
+**Parameters**
+
+   .. list-table::
+      :widths: 20 80
+
+      * - **name**
+        - The JsFormatString name that used in :doc:`../ref/models/DataFormat`
+      * - **formatFunction**
+        - The js format function
+
+**Sample Integrated (izenda.integrate.js)**
+
+   .. code-block:: javascript
+
+      IzendaSynergy.config(configJson);
+      // Put the registration of JS format functions below
+      IzendaSynergy.addJSFormat("1k", function (value)
+         { return "$ " + value/1000 + " k"; }
+      );
+      
+**Sample Standalone (index.html)**
+
+   .. code-block:: javascript
+ <script type="text/javascript" src="/izenda_ui.js?c76cbb3f0591ba2de5a0"></script>
+ <script>
+      // Ensure this script is placed after Izenda UI library (izenda_ui.js as above)
+      if (document.readyState === 'complete') {
+            // The page is fully loaded
+            IzendaSynergy.addJSFormat("1k", function (value)
+                  { return "$ " + value / 1000 + " k"; }
+            );
+      } 
+ </script>
+      
 **Tags**
 
-Embed, Embedding, Fully Embedable. 
+Embed, Embedding, Fully Embeddable. 

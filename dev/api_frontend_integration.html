@@ -273,6 +273,15 @@
 </td>
 <td>Render Izenda Dashboard Viewer page</td>
 </tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<a class="reference internal" href="#addjsformat-formatname-formatfunction">addJsFormat(formatName, formatFunction)</a></div>
+</td>
+<td><p class="first">Register a JsFormatString with format function <br clear="right" /></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.6.20.</span></p>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -642,8 +651,66 @@ access_token</div></blockquote>
 </pre></div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="addjsformat-formatname-formatfunction">
+<span id="addjsformat"></span><h2>addJsFormat(formatName, formatFunction)<a class="headerlink" href="#addjsformat-formatname-formatfunction" title="Permalink to this headline">¶</a></h2>
+<p>Register a JsFormatString with format function</p>
+<p>This function is used in the LoadCustomDataFormat (see more <a class="reference external" href="https://www.izenda.com/docs/dev/ref_iadhocextension.html?highlight=iadhocextension#loadcustomdataformat">here</a>). To register this function, it must be declared in either your izenda.integrate.js (for embedded mode) or the index.html for (standalone mode). See example of both integrated and standalone below:</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.6.20.</span></p>
+</div>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>name</strong></td>
+<td>The JsFormatString name that used in <a class="reference internal" href="../ref/models/DataFormat.html"><span class="doc">DataFormat</span></a></td>
+</tr>
+<tr class="row-even"><td><strong>formatFunction</strong></td>
+<td>The js format function</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Sample Integrated (izenda.integrate.js)</strong></p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="nx">configJson</span><span class="p">);</span>
+<span class="c1">// Put the registration of JS format functions below</span>
+<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">addJSFormat</span><span class="p">(</span><span class="s2">&quot;1k&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+   <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;$ &quot;</span> <span class="o">+</span> <span class="nx">value</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="s2">&quot; k&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Sample Standalone (index.html)</strong></p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>&lt;script type=&#8221;text/javascript&#8221; src=&#8221;/izenda_ui.js?c76cbb3f0591ba2de5a0&#8221;&gt;&lt;/script&gt;
+&lt;script&gt;</p>
+<blockquote>
+<div><p>// Ensure this script is placed after Izenda UI library (izenda_ui.js as above)
+if (document.readyState === &#8216;complete&#8217;) {</p>
+<blockquote>
+<div><p>// The page is fully loaded
+IzendaSynergy.addJSFormat(&#8220;1k&#8221;, function (value)</p>
+<blockquote>
+<div>{ return &#8220;$ &#8221; + value / 1000 + &#8221; k&#8221;; }</div></blockquote>
+<p>);</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>&lt;/script&gt;</p>
+</div></blockquote>
 <p><strong>Tags</strong></p>
-<p>Embed, Embedding, Fully Embedable.</p>
+<p>Embed, Embedding, Fully Embeddable.</p>
 </div>
 </div>
 
