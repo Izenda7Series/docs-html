@@ -470,24 +470,28 @@ This function is used in the LoadCustomDataFormat (see more `here <https://www.i
    .. code-block:: javascript
 
       IzendaSynergy.config(configJson);
-      // Put the registration of JS format functions below
+      // Put the registration of JS format functions below. Please note: the format label is case sensitive.
       IzendaSynergy.addJSFormat("1k", function (value)
          { return "$ " + value/1000 + " k"; }
       );
+
       
 **Sample Standalone (index.html)**
 
-   .. code-block:: javascript
- <script type="text/javascript" src="/izenda_ui.js?c76cbb3f0591ba2de5a0"></script>
- <script>
-      // Ensure this script is placed after Izenda UI library (izenda_ui.js as above)
-      if (document.readyState === 'complete') {
-            // The page is fully loaded
-            IzendaSynergy.addJSFormat("1k", function (value)
-                  { return "$ " + value / 1000 + " k"; }
-            );
-      } 
- </script>
+   .. code-block:: html
+	 
+			<script type="text/javascript" src="/izenda_ui.js?c76cbb3f0591ba2de5a0"></script>
+			<script>
+      
+				// Ensure this script is placed after Izenda UI library (izenda_ui.js as above)
+				(function() {
+				
+					// Please note: the format label is case sensitive.
+					IzendaSynergy.addJsFormat("1k", function (value) {
+					return "$ " + value/1000 + " K"
+						});
+				})();
+			</script>
       
 **Tags**
 

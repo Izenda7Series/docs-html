@@ -679,7 +679,7 @@ access_token</div></blockquote>
 <p><strong>Sample Integrated (izenda.integrate.js)</strong></p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="nx">configJson</span><span class="p">);</span>
-<span class="c1">// Put the registration of JS format functions below</span>
+<span class="c1">// Put the registration of JS format functions below. Please note: the format label is case sensitive.</span>
 <span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">addJSFormat</span><span class="p">(</span><span class="s2">&quot;1k&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span>
    <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;$ &quot;</span> <span class="o">+</span> <span class="nx">value</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="s2">&quot; k&quot;</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">);</span>
@@ -688,26 +688,20 @@ access_token</div></blockquote>
 </div></blockquote>
 <p><strong>Sample Standalone (index.html)</strong></p>
 <blockquote>
-<div><blockquote>
-<div><div class="highlight-javascript"><div class="highlight"><pre><span></span>
+<div><div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/izenda_ui.js?c76cbb3f0591ba2de5a0&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+        <span class="c1">// Ensure this script is placed after Izenda UI library (izenda_ui.js as above)</span>
+        <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+                <span class="c1">// Please note: the format label is case sensitive.</span>
+                <span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">addJsFormat</span><span class="p">(</span><span class="s2">&quot;1k&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;$ &quot;</span> <span class="o">+</span> <span class="nx">value</span><span class="o">/</span><span class="mi">1000</span> <span class="o">+</span> <span class="s2">&quot; K&quot;</span>
+                        <span class="p">});</span>
+        <span class="p">})();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p>&lt;script type=&#8221;text/javascript&#8221; src=&#8221;/izenda_ui.js?c76cbb3f0591ba2de5a0&#8221;&gt;&lt;/script&gt;
-&lt;script&gt;</p>
-<blockquote>
-<div><p>// Ensure this script is placed after Izenda UI library (izenda_ui.js as above)
-if (document.readyState === &#8216;complete&#8217;) {</p>
-<blockquote>
-<div><p>// The page is fully loaded
-IzendaSynergy.addJSFormat(&#8220;1k&#8221;, function (value)</p>
-<blockquote>
-<div>{ return &#8220;$ &#8221; + value / 1000 + &#8221; k&#8221;; }</div></blockquote>
-<p>);</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>&lt;/script&gt;</p>
 </div></blockquote>
 <p><strong>Tags</strong></p>
 <p>Embed, Embedding, Fully Embeddable.</p>
