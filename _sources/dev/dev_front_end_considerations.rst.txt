@@ -34,7 +34,7 @@ If you are using one of Izenda's sample kits, the following function can be adde
 
    var RecycleComponent = function (elementID) {
       var component = document.getElementById(elementID);
-      IzendaSynergy.unmountComponent(elementID);
+      IzendaSynergy.unmountComponent(component);
       var baseUrl = window.location.href.split('#')[0]; //removes the anchor from the URL. The anchor contains Izenda's routing
       window.history.pushState({ 'html': document.documentElement.outerHTML }, '', baseUrl); //sets URL to initial state (no Izenda routing)
       component.innerHTML = '';
