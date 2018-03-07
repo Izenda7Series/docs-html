@@ -78,7 +78,7 @@ Exports the dashboard, report or report part specified in request parameters.
        *  -  **filters** |br|
              array of objects
           -  Y
-          -  An array of :doc:`models/FilterItem` objects
+          -  An array of :doc:`models/ReportFilterField` objects
           -
        *  -  **fileSessionKey** |br|
              string
