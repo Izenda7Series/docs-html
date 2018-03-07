@@ -1458,6 +1458,16 @@ Returns report history.
 
     Payload: a :doc:`models/ReportHistoryPagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Version |br|
+       - Status |br|
+       - Modified |br|
+       - ModifiedBy |br|
+       - Keyword
+
 **Response**
 
     A :doc:`models/PagedResult` object, with **result** field containing an array of :doc:`models/ReportHistory` objects
@@ -3759,6 +3769,30 @@ Returns a list of report subscriptions.
 **Request**
 
     Payload: a :doc:`models/SubscriptionPagedRequest` object
+
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Name |br|
+       - Schedule |br|
+       - FilterValueSelection |br|
+       - DeliveryType |br|
+       - DeliveryMethod |br|
+       - Recipients |br|
+       - LastSuccessfulRun |br|
+       - LastSuccessfulRunFrom |br|
+       - LastSuccessfulRunTo |br|
+       - NextScheduledRun |br|
+       - NextScheduledRunFrom |br|
+       - NextScheduledRunTo |br|
+       - Keyword |br|
+       - ReportingType |br|
+       - ReportDashboardName |br|
+       - Type |br|
+       - RecurrenceType |br|
+       - ExportFileType |br|
+       - CreatedBy |br|
 
 **Response**
 

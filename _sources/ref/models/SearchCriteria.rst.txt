@@ -6,7 +6,7 @@ SearchCriteria
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 60 10
 
    *  -  Field
       -  NULL
@@ -24,7 +24,8 @@ SearchCriteria
 
          -  0 = Equal
          -  1 = Like
-      -
+         -  2 = Not Equal
+      -  Default value = 1
    *  -  **value** |br|
          string
       -

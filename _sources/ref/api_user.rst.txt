@@ -259,6 +259,15 @@ Returns an array of users by tenant.
 
     A :doc:`models/PagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - UserName |br|
+       - EmailAddress |br|
+       - Role |br|
+       - FullName |br|
+       - All
+
 **Response**
 
     A :doc:`models/PagedResult` object with **result** field containing an array of :doc:`models/UserDetail` objects
@@ -277,7 +286,8 @@ Returns an array of users by tenant.
          "pageSize": 100,
          "criteria": [{
             "key": "FullName",
-            "value": null
+            "value": "John",
+            "operation":1
          }]
       }
 
@@ -294,8 +304,8 @@ Returns an array of users by tenant.
                   "issueDate": "0001-01-01T00:00:00",
                   "autoLogin": false,
                   "newPassword": null,
-                  "userName": "pokemon@system.com",
-                  "emailAddress": "pokemon@system.com",
+                  "userName": "John Doe",
+                  "emailAddress": "johndoe@system.com",
                   "firstName": "John",
                   "lastName": "Doe",
                   "tenantId": "b5b3a5cc-9e55-424c-ae85-ba92ec3b934e",
@@ -344,6 +354,15 @@ Returns an array of users for Report Access or Schedule, with paging.
 **Request**
 
     A :doc:`models/UserPagedRequest` object
+
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - UserName |br|
+       - EmailAddress |br|
+       - Role |br|
+       - FullName |br|
+       - All
 
 **Response**
 

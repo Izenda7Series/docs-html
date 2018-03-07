@@ -346,7 +346,23 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <p>Returns an array of visible query sources, paged and sorted, filtered by type and other search criteria.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/QuerySourcePagedRequest.html"><span class="doc">QuerySourcePagedRequest</span></a> object</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/QuerySourcePagedRequest.html"><span class="doc">QuerySourcePagedRequest</span></a> object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The keys for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> that this API support: <br clear="right" />
+- All <br clear="right" />
+- Category <br clear="right" />
+- DatabaseName <br clear="right" />
+- DataSourceName <br clear="right" />
+- DataSourceAlias <br clear="right" />
+- ColumnName <br clear="right" />
+- DataType <br clear="right" />
+- ColumnAlias <br clear="right" />
+- SchemaName <br clear="right" />
+- DataObject <br clear="right" />
+- DataObjectType</p>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> objects</div></blockquote>
@@ -428,7 +444,23 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 Will load from remote connection if they are not yet populated in system.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/QuerySourceFieldPagedRequest.html"><span class="doc">QuerySourceFieldPagedRequest</span></a> object</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/QuerySourceFieldPagedRequest.html"><span class="doc">QuerySourceFieldPagedRequest</span></a> object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The keys for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> that this API support: <br clear="right" />
+- All <br clear="right" />
+- Category <br clear="right" />
+- DatabaseName <br clear="right" />
+- DataSourceName <br clear="right" />
+- DataSourceAlias <br clear="right" />
+- ColumnName <br clear="right" />
+- DataType <br clear="right" />
+- ColumnAlias <br clear="right" />
+- SchemaName <br clear="right" />
+- DataObject <br clear="right" />
+- DataObjectType</p>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
@@ -566,7 +598,14 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The keys for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> that this API support: <br clear="right" />
+- Id <br clear="right" />
+- Name</p>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Item.html"><span class="doc">Item</span></a> objects whose each <strong>key</strong> is the connectionsId and <strong>value</strong> is the connectionName.</div></blockquote>
@@ -661,7 +700,14 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/QuerySourceCategoryPagedRequest.html"><span class="doc">QuerySourceCategoryPagedRequest</span></a> object.</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/QuerySourceCategoryPagedRequest.html"><span class="doc">QuerySourceCategoryPagedRequest</span></a> object.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The keys for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> that this API support: <br clear="right" />
+- Id <br clear="right" />
+- Name</p>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Item.html"><span class="doc">Item</span></a> objects whose each <strong>key</strong> is the id of the <a class="reference internal" href="models/QuerySourceCategory.html"><span class="doc">QuerySourceCategory</span></a> and <strong>value</strong> is the name of the the <a class="reference internal" href="models/QuerySourceCategory.html"><span class="doc">QuerySourceCategory</span></a>.</div></blockquote>
@@ -1116,7 +1162,14 @@ Will load from remote connection if they are not yet populated in system.</p>
 <p>Returns the schema of stored procedures after using user-supplied parameters to try running them.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/ReloadQuerySourceRequest.html"><span class="doc">ReloadQuerySourceRequest</span></a> object</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/ReloadQuerySourceRequest.html"><span class="doc">ReloadQuerySourceRequest</span></a> object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The keys for <a class="reference internal" href="models/SortOrder.html"><span class="doc">SortOrder</span></a> that this API support: <br clear="right" />
+- ColumnName <br clear="right" />
+- ColumnAlias <br clear="right" /></p>
+</div>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>A <a class="reference internal" href="models/DataResult.html"><span class="doc">DataResult</span></a> object, with <strong>data</strong> field containing a <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object whose <strong>result</strong> field containing a list of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
@@ -2180,7 +2233,9 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 <p>Returns a paged array of database servers and database names.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>A <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a> object</div></blockquote>
+<div><p>A <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a> object</p>
+<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: &#8220;databaseName&#8221;</p>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div><p>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of the following object:</p>
@@ -2277,6 +2332,7 @@ string</td>
 <blockquote>
 <div><p>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of strings.</p>
 <p>If <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a>.``type`` is <code class="docutils literal"><span class="pre">2</span></code> (Database), return connection names, else return schema names.</p>
+<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: &#8220;objectName&#8221;</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>

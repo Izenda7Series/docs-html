@@ -874,6 +874,13 @@ Returns an array of supported email variables.
 
     Payload: a :doc:`models/SystemVariablePagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Name |br|
+       - DataType |br|
+
 **Response**
 
     A :doc:`models/PagedResult` object with **result** field containing an array of :doc:`models/SystemVariable` objects

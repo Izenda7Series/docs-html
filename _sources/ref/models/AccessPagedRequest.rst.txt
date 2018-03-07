@@ -37,6 +37,15 @@ Inherited fields:
 
 .. include:: PagedRequest.rst
 
+.. note::
+
+   The keys for :doc:`SearchCriteria` are listed as below: |br|
+   - All |br|
+   - ShareWith |br|
+   - AccessRight |br|
+   - ReportAccessRights |br|
+   - DashboardAccessRights
+
 .. container:: toggle
 
    .. container:: header

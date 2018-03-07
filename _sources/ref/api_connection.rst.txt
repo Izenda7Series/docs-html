@@ -695,10 +695,15 @@ Returns an array of connection details with paging.
           -  Y
           -  Whether to load data of query source fields
           -
-       *  -  **pagedRequest** |br|
-             object
+       *  -  **pagedIndex** |br|
+             integer
+          -  Y
+          -  The index of the page
           -
-          -  A :doc:`models/PagedRequest` object
+       *  -  **pagedSize** |br|
+             integer
+          -  Y
+          -  The size of the page
           -
 
 **Response**
@@ -731,13 +736,7 @@ Returns an array of connection details with paging.
    Request payload::
 
       {
-        "pagedRequest": {
-          "criteria": [
-            {
-              "key": "name"
-            }
-          ]
-        }
+        "tenantId": "45c747c5-a11a-48f4-b966-14819a07450f"
       }
 
    Sample response::

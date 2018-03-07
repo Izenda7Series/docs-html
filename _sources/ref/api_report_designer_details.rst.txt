@@ -2214,6 +2214,31 @@ Searches for reports with advanced options.
 
     Payload: a :doc:`models/ReportPagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - ReportName |br|
+       - ReportDescription |br|
+       - DashboardName |br|
+       - DashboardDescription |br|
+       - CreatedBy |br|
+       - CreatedDate |br|
+       - LastEditedBy |br|
+       - LastEditedDate |br|
+       - Version |br|
+       - NumberOfView |br|
+       - RenderingTime |br|
+       - ReportOwner |br|
+       - LastViewed |br|
+       - Category |br|
+       - SubCategory |br|
+       - CategoryId |br|
+       - CreatedDateFrom |br|
+       - CreatedDateTo |br|
+       - LastEditedDateFrom |br|
+       - LastEditedDateTo
+
 **Response**
 
     A :doc:`models/PagedResult` object, with **result** field containing an array of :doc:`models/ReportDefinition` objects
@@ -5244,6 +5269,30 @@ Returns a list of all scheduled deliveries.
 **Request**
 
       Payload: an :doc:`models/SubscriptionPagedRequest` object
+
+      .. note::
+       
+         The keys for :doc:`models/SearchCriteria` that this API support: |br|
+         - All |br|
+         - Name |br|
+         - Schedule |br|
+         - FilterValueSelection |br|
+         -  DeliveryType |br|
+         - DeliveryMethod |br|
+         - Recipients |br|
+         - LastSuccessfulRun |br|
+         - LastSuccessfulRunFrom |br|
+         - LastSuccessfulRunTo |br|
+         - NextScheduledRun |br|
+         - NextScheduledRunFrom |br|
+         - NextScheduledRunTo |br|
+         - Keyword |br|
+         - ReportingType |br|
+         - ReportDashboardName |br|
+         - Type |br|
+         - RecurrenceType |br|
+         - ExportFileType |br|
+         - CreatedBy |br|
 
 **Response**
 

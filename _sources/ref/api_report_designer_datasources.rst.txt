@@ -320,6 +320,21 @@ Returns details for a list of query sources and a list of related query sources.
 
     Payload: a :doc:`models/ReportSelectedPagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Category |br|
+       - DatabaseName |br|
+       - DataSourceName |br|
+       - DataSourceAlias |br|
+       - ColumnName |br|
+       - DataType |br|
+       - ColumnAlias |br|
+       - SchemaName |br|
+       - DataObject |br|
+       - DataObjectType
+
 **Response**
 
     A :doc:`models/ReportSelectedQuerySourceResult` object

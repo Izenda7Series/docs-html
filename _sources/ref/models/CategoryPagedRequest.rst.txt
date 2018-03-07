@@ -24,6 +24,10 @@ Inherited fields:
 
 .. include:: PagedRequest.rst
 
+.. note:: 
+
+   The key for :doc:`SearchCriteria`: "Name"
+
 .. container:: toggle
 
    .. container:: header

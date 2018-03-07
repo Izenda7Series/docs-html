@@ -787,6 +787,8 @@ Returns paged data source field data for Equivalence operators in filter.
 
     A :doc:`models/DashboardFilterFieldPagedRequest` object
 
+    **Notes:** Key for :doc:`models/SearchCriteria` support to search: "Filter"
+
 **Response**
 
     A :doc:`models/PagedResult` object, with **result** field containing an array of string values
@@ -1390,6 +1392,30 @@ Returns a list of dashboard subscriptions.
 **Request**
 
     Payload: a :doc:`models/SubscriptionPagedRequest` object
+
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Name |br|
+       - Schedule |br|
+       - FilterValueSelection |br|
+       - DeliveryType |br|
+       - DeliveryMethod |br|
+       - Recipients |br|
+       - LastSuccessfulRun |br|
+       - LastSuccessfulRunFrom |br|
+       - LastSuccessfulRunTo |br|
+       - NextScheduledRun |br|
+       - NextScheduledRunFrom |br|
+       - NextScheduledRunTo |br|
+       - Keyword |br|
+       - ReportingType |br|
+       - ReportDashboardName |br|
+       - Type |br|
+       - RecurrenceType |br|
+       - ExportFileType |br|
+       - CreatedBy |br|
 
 **Response**
 

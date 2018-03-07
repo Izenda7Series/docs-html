@@ -5366,6 +5366,8 @@ Returns paged data source field data for Equivalence operators in filter.
 
     A :doc:`models/ReportFilterFieldPagedRequest` object
 
+    **Notes:** Key for :doc:`models/SearchCriteria` support to search: "Filter"
+
 **Response**
 
     A :doc:`models/PagedResult` object, with **result** field containing an array of string values

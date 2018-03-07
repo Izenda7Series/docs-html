@@ -346,6 +346,30 @@ Searches for schedule instances.
 
     Payload: a :doc:`models/SystemSchedulingPagedRequest` object
 
+    .. note::
+       
+       The keys for :doc:`models/SearchCriteria` that this API support: |br|
+       - All |br|
+       - Name |br|
+       - Schedule |br|
+       - FilterValueSelection |br|
+       - DeliveryType |br|
+       - DeliveryMethod |br|
+       - Recipients |br|
+       - LastSuccessfulRun |br|
+       - LastSuccessfulRunFrom |br|
+       - LastSuccessfulRunTo |br|
+       - NextScheduledRun |br|
+       - NextScheduledRunFrom |br|
+       - NextScheduledRunTo |br|
+       - Keyword |br|
+       - ReportingType |br|
+       - ReportDashboardName |br|
+       - Type |br|
+       - RecurrenceType |br|
+       - ExportFileType |br|
+       - CreatedBy |br|
+
 **Response**
 
     A :doc:`models/PagedResult` object with **result** field containing an array of :doc:`models/SystemSchedulingPagedResult`
