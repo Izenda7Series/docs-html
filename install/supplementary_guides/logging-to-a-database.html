@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Load Balancing &mdash; Izenda BI 2.6.20 documentation</title>
+  <title>Logging to a Database &mdash; Izenda BI 2.6.20 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.6.20 documentation" href="../../index.html"/>
         <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
-        <link rel="next" title="Language Packs" href="language-packs.html"/>
-        <link rel="prev" title="Using SSL/TLS" href="https.html"/> 
+        <link rel="next" title="Administrator Guide" href="../../ui/.administrator_guide.html"/>
+        <link rel="prev" title="Language Packs" href="language-packs.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -112,13 +112,13 @@
 <li class="toctree-l3"><a class="reference internal" href="white-listing-functions-for-calculated-fields.html">White-Listing Functions for Calculated Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="https.html">Using SSL/TLS</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Load Balancing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load_balancing.html">Load Balancing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="language-packs.html">Language Packs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Logging to a Database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#log-contents">Log Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storing-logs-in-a-database">Storing Logs in a Database</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="language-packs.html">Language Packs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging-to-a-database.html">Logging to a Database</a></li>
 </ul>
 </li>
 </ul>
@@ -180,13 +180,13 @@
         
           <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
         
-      <li>Load Balancing</li>
+      <li>Logging to a Database</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/install/supplementary_guides/load_balancing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/install/supplementary_guides/logging-to-a-database.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,31 +199,88 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="load-balancing">
-<h1>Load Balancing<a class="headerlink" href="#load-balancing" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The Izenda application can be load balanced to offer better performance and scalability.
-The most common scenario would be to load balance the API among two or more servers. The diagram below assumes that SSL is terminated by the load balancer. To clarify, traffic to the load balancer is encrypted and the load balancer sends unencrypted traffic to the API server(s) in a trusted network</p>
+  <div class="section" id="logging-to-a-database">
+<h1>Logging to a Database<a class="headerlink" href="#logging-to-a-database" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<div class="section" id="log-contents">
+<h2>Log Contents<a class="headerlink" href="#log-contents" title="Permalink to this headline">¶</a></h2>
+<p>Izenda 7 allows users to configure different levels of logging. By default, the logging level is set to &#8220;INFO&#8221; which can be in the API Web.config file by the line <code class="docutils literal"><span class="pre">&lt;levelMin</span> <span class="pre">value=&quot;INFO&quot;</span> <span class="pre">/&gt;</span></code>.</p>
+<div class="section" id="recorded-logs">
+<h3>Recorded Logs<a class="headerlink" href="#recorded-logs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Who ran a report/dashboard</dt>
+<dd><ul class="first last">
+<li>Our logs for reports/dashboards contain username and tenantname information.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>What report/dashboard was ran</dt>
+<dd><ul class="first last">
+<li>Our logs for reports/dashboards contain GUIDs in the requests whens someone loads a report/dashboard.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>When it was ran</dt>
+<dd><ul class="first last">
+<li>Every API log contains a timestamp.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The parameters/filters and values used to generate a report</dt>
+<dd><ul class="first last">
+<li>The filters are in the executed queries for the above calls.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
 </div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><br /></div>
+<div class="section" id="list-of-logging-levels">
+<h3>List of Logging levels<a class="headerlink" href="#list-of-logging-levels" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>ALL</strong></td>
+</tr>
+<tr class="row-even"><td><strong>DEBUG</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>INFO</strong></td>
+</tr>
+<tr class="row-even"><td><strong>WARN</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>ERROR</strong></td>
+</tr>
+<tr class="row-even"><td><strong>FATAL</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>OFF</strong></td>
+</tr>
+</tbody>
+</table>
 </div>
-<ol class="arabic simple">
-<li>Update the WebApiUrl value in the izenda_config.js file with the IP or host name of the load balancer.</li>
-<li>Update the WebApiUrl in the [IzendaSystemSetting] table with the hostname or IP of the load balancer.</li>
-</ol>
-<div class="figure">
-<img alt="../../_images/load-balancing1.png" src="../../_images/load-balancing1.png" />
+</div>
+<div class="section" id="storing-logs-in-a-database">
+<h2>Storing Logs in a Database<a class="headerlink" href="#storing-logs-in-a-database" title="Permalink to this headline">¶</a></h2>
+<p>In order to write the recorded logs into a database, please see our setup guide <a class="reference external" href="https://www.izenda.com/docs/dev/code_logging_information_to_a_database.html">here</a>.</p>
+<div class="section" id="potential-caveats">
+<h3>Potential Caveats<a class="headerlink" href="#potential-caveats" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Depending on how frequent the logs are writing to the database, there may be some extra overhead when querying the database.</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -238,10 +295,10 @@ The most common scenario would be to load balance the API among two or more serv
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="language-packs.html" class="btn btn-neutral float-right" title="Language Packs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ui/.administrator_guide.html" class="btn btn-neutral float-right" title="Administrator Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="https.html" class="btn btn-neutral" title="Using SSL/TLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="language-packs.html" class="btn btn-neutral" title="Language Packs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
