@@ -2984,6 +2984,11 @@ array of objects</td>
 <td>An array of <a class="reference internal" href="models/WorkspaceMappingDetail.html"><span class="doc">WorkspaceMappingDetail</span></a> objects</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-even"><td><strong>loadWorkspaceTenantConnections</strong> <br clear="right" />
+boolean</td>
+<td>Is response returning connections</td>
+<td>&#160;</td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
@@ -3010,7 +3015,7 @@ boolean</td>
 <tr class="row-odd"><td><strong>workspaceTenant</strong> <br clear="right" />
 object</td>
 <td>The validated <a class="reference internal" href="models/WorkspaceTenantDetail.html"><span class="doc">WorkspaceTenantDetail</span></a> object</td>
-<td>&#160;</td>
+<td>Regardless of the success value, this object <br clear="right" /> will be populated</td>
 </tr>
 </tbody>
 </table>
@@ -3024,167 +3029,160 @@ object</td>
 <div class="header docutils container">
 Request payload:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;workspace&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Workspace&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;ownerId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;copyDataModel&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="nt">&quot;copyRoles&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyRolePermission&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyAdvancedSettings&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyTenantPermissions&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;sourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;sourceHashCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;1123257498&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="nt">&quot;selectAllTenants&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;workspaceTenants&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-           <span class="nt">&quot;isDirty&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;tenantName&quot;</span> <span class="p">:</span> <span class="s2">&quot;01 - Tenant 01&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;tenantUniqueName&quot;</span> <span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;workspaceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;468af427-ebe6-433d-97f3-aacd0c5a8e50&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-           <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:14.6200000-07:00&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:14.6200000-07:00&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;dataMapping&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-           <span class="nt">&quot;databaseSources&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-        <span class="p">}</span>
-     <span class="p">],</span>
-     <span class="nt">&quot;workspaceMappings&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;selectedSources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-           <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                 <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                       <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                       <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                       <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                       <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                    <span class="p">},</span> <span class="p">{</span>
-                       <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f6724b35-4e97-401a-adf7-95651fd57440&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                       <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                       <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                       <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                    <span class="p">},</span> <span class="p">{</span>
-                       <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3b7ba209-339a-48d7-a4ed-bc8ed959d5a6&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Test&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                       <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                       <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                    <span class="p">},</span> <span class="p">{</span>
-                       <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f52184bf-c731-498f-8737-b45ea8e10cf2&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                       <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                       <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                       <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                       <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                       <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                    <span class="p">}</span>
-                 <span class="p">],</span>
-                 <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;connection&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                 <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                 <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                 <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="nt">&quot;sourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;sourceHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;c2de14ae328569881b9d6b97f82&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;selectedSources&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;563816fa-dd36-463f-b6c7-00f1a2f38b49&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;serverTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;connectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;cYsPv5DunlALfCHIHKrAcJY1e4Fkdga+H4Q+AtyS4TzlrYOw06gArlvqvf0E0JxT6CyNQMl/NXnE8i5qSrorlw==&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;relateToConnectionId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;dbSource&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;affd56b1-9bcf-4ab6-b292-ec47006a2e0d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parentCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;563816fa-dd36-463f-b6c7-00f1a2f38b49&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="nt">&quot;realName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;33bcd83a-0928-40a7-9215-aef1f2bf2ed5&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;parentQuerySourceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;affd56b1-9bcf-4ab6-b292-ec47006a2e0d&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;563816fa-dd36-463f-b6c7-00f1a2f38b49&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;connectionName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;childs&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;dataSourceCategoryId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;dataSourceCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;originalAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;querySourceCategory&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-03-06T13:39:25.937&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+                <span class="nt">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;belongToCopiedReport&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;customDefinition&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;isCustomQuerySource&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span>
               <span class="p">}</span>
-           <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-        <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&quot;fullDBName&quot;</span> <span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span>
-     <span class="p">}</span>
-  <span class="p">]</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;childs&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;connection&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+            <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalTableChildNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalTableCheckedNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalStoredProcedureChildNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalStoredProcedureCheckedNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalViewChildNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalViewCheckedNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalFunctionChildNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;totalFunctionCheckedNodes&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;belongToCopiedReport&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;relationships&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+      <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;fullDBName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;databaseTooltip&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL - . - Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;belongToCopiedReport&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;selectedReports&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;selectedTemplates&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;selectedDashboards &quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;workspaceTenant&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doc - Documentation&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Documentation&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doc&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;fccd5db9-2c07-49e9-b758-0871d36791e3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;destinationConnections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;sourceConnections&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;Retail&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;workspaceMappingTenants&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;workspaceMappingId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;fccd5db9-2c07-49e9-b758-0871d36791e3&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;loadWorkspaceTenantConnections&quot;</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -3193,755 +3191,25 @@ Request payload:</div>
 <div class="header docutils container">
 Sample response:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;success&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nt">&quot;workspace&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="nt">&quot;workspaceTenants&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-           <span class="nt">&quot;destinationConnections&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-           <span class="nt">&quot;sourceConnections&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                 <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                 <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                 <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                          <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                                      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Discount&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;real&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                      <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                                      <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details].[Discount]&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;055b34ca-57c0-4c40-b930-78b0856db0fd&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                                   <span class="p">},</span> <span class="p">{</span>
-                                      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                      <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details].[OrderID]&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;a6326e4c-5984-4652-b3fa-a2dd439bebbc&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                                   <span class="p">},</span> <span class="p">{</span>
-                                      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ProductID&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                      <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                                      <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details].[ProductID]&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;ec0bc4d5-bd03-4d14-ad18-ea76dc4e5f10&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                                   <span class="p">},</span> <span class="p">{</span>
-                                      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Quantity&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;smallint&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                      <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-                                      <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details].[Quantity]&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;7f83cacc-dfa3-43f3-b1e4-ad035dcaeb26&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                                   <span class="p">},</span> <span class="p">{</span>
-                                      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UnitPrice&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                      <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-                                      <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                      <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                      <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details].[UnitPrice]&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;c683117c-43d3-4402-948b-27f68c3da948&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                      <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                      <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                      <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                      <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                                   <span class="p">}</span>
-                                <span class="p">],</span>
-                                <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo].[Order Details]&quot;</span>
-                             <span class="p">}</span>
-                          <span class="p">],</span>
-                          <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;connection&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                          <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind].[dbo]&quot;</span>
-                       <span class="p">}</span>
-                    <span class="p">]</span>
-                 <span class="p">},</span>
-                 <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                 <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                 <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                 <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-                 <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;[Northwind]&quot;</span>
-              <span class="p">}</span>
-           <span class="p">],</span>
-           <span class="nt">&quot;tenantName&quot;</span> <span class="p">:</span> <span class="s2">&quot;01 - Tenant 01&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;tenantUniqueName&quot;</span> <span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;workspaceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;468af427-ebe6-433d-97f3-aacd0c5a8e50&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;status&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-           <span class="nt">&quot;destinationHashCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;1184854008&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-           <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:14.62&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:14.62&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-        <span class="p">}</span>
-     <span class="p">],</span>
-     <span class="nt">&quot;workspaceMappings&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-     <span class="nt">&quot;copyOption&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;sourceConnections&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aaa87c39-5730-438e-817e-5f7ffb46daff&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MediumDB3M&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                    <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e7a70258-d781-45ac-a346-7e304f6c2291&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e3dfb160-0814-4d13-b801-29b5b0d97664&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                          <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8817a241-a858-423c-b64e-3bbf99e45318&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Categories&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e7a70258-d781-45ac-a346-7e304f6c2291&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;CategoryID&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;8817a241-a858-423c-b64e-3bbf99e45318&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;549a4a2b-216d-48f7-8e00-eec2277351ac&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-08-22T04:32:32.173&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">}],</span>
-                          <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-08-22T04:32:31.85&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                          <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                          <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                       <span class="p">}</span>
-                    <span class="p">],</span>
-                    <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connection&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                    <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                    <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                    <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                 <span class="p">}</span>
-              <span class="p">]</span>
-           <span class="p">},</span>
-           <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-           <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MediumDB3M&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-        <span class="p">},</span> <span class="p">{</span>
-           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                    <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;380d50fe-36bd-41d7-90fd-7c58236ad1f1&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                          <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e688be58-7234-41fa-a0e9-908a621ebc7c&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Discount&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;real&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;055b34ca-57c0-4c40-b930-78b0856db0fd&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">},</span> <span class="p">{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;a6326e4c-5984-4652-b3fa-a2dd439bebbc&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">},</span> <span class="p">{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;ProductID&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;ec0bc4d5-bd03-4d14-ad18-ea76dc4e5f10&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">},</span> <span class="p">{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Quantity&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;smallint&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;7f83cacc-dfa3-43f3-b1e4-ad035dcaeb26&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">},</span> <span class="p">{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UnitPrice&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Money&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;27d70c2d-ec3d-4fe8-8c22-7722bc4a1a6e&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;c683117c-43d3-4402-948b-27f68c3da948&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:37:55.747&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">}</span>
-                          <span class="p">],</span>
-                          <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-09-12T04:41:35&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                          <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                          <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                       <span class="p">}</span>
-                    <span class="p">],</span>
-                    <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connection&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-                    <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                    <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                    <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                 <span class="p">}</span>
-              <span class="p">]</span>
-           <span class="p">},</span>
-           <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-           <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-        <span class="p">},</span> <span class="p">{</span>
-           <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;7ef514d8-b494-4e07-9865-bff6a0592a9b&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                    <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;e7a70258-d781-45ac-a346-7e304f6c2291&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e3dfb160-0814-4d13-b801-29b5b0d97664&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                          <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8817a241-a858-423c-b64e-3bbf99e45318&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Categories&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e7a70258-d781-45ac-a346-7e304f6c2291&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;selected&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                                <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;CategoryID&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;izendaDataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;allowDistinct&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;filterable&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;8817a241-a858-423c-b64e-3bbf99e45318&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;parentId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expressionFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                                <span class="nt">&quot;filteredValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;groupPosition&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="s2">&quot;{\&quot;PrimaryKey\&quot;:true}&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;matchedTenant&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;functionName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;expression&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;calculatedTree&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;reportId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;originalName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;isCalculated&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;hasAggregatedFunction&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                                <span class="nt">&quot;querySource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;549a4a2b-216d-48f7-8e00-eec2277351ac&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                                <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                                <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-08-22T04:32:32.173&quot;</span><span class="p">,</span>
-                                <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                             <span class="p">}],</span>
-                          <span class="nt">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="s2">&quot;2016-08-22T04:32:31.85&quot;</span><span class="p">,</span>
-                          <span class="nt">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                          <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                          <span class="nt">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                          <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                          <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                          <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                       <span class="p">}</span>
-                    <span class="p">],</span>
-                    <span class="nt">&quot;childs&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;connection&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                    <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                    <span class="nt">&quot;existed&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                    <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                    <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-                 <span class="p">}</span>
-              <span class="p">]</span>
-           <span class="p">},</span>
-           <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-           <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
-           <span class="nt">&quot;checked&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-           <span class="nt">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="kc">null</span>
-        <span class="p">}</span>
-     <span class="p">],</span>
-     <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Workspace&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;ownerId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyRoles&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyRolePermission&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyAdvancedSettings&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;copyDataModel&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="nt">&quot;copyTenantPermissions&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;sourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;selectAllTenants&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;sourceHashCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;1123257498&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="nt">&quot;inserted&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="nt">&quot;version&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;created&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;createdBy&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;modified&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;modifiedBy&quot;</span> <span class="p">:</span> <span class="kc">null</span>
+  <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;workspaceTenant&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;destinationConnections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;sourceConnections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doc - Documentation&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tenantUniqueName&quot;</span><span class="p">:</span> <span class="s2">&quot;Doc&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;workspaceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;fccd5db9-2c07-49e9-b758-0871d36791e3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;destinationHashCode&quot;</span><span class="p">:</span> <span class="s2">&quot;11d4d913ed0e2708f47b96cf1e2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
