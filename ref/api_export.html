@@ -258,9 +258,13 @@ This should be the value in fileSessionKey in <a class="reference internal" href
 <h2>POST export/{format:exportformat}<a class="headerlink" href="#post-export-format-exportformat" title="Permalink to this headline">¶</a></h2>
 <p>Exports the dashboard, report or report part specified in request parameters.</p>
 <p><strong>Request</strong></p>
+<dl class="docutils">
+<dt>This API accepts 2 types of data: <br clear="right" /></dt>
+<dd><ul class="first simple">
+<li>The <strong>application/x-www-form-urlencoded</strong> type with the following keys:</li>
+</ul>
 <blockquote>
-<div><p><strong>Keys</strong>:</p>
-<table border="1" class="docutils">
+<div><table border="1" class="docutils">
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -350,6 +354,11 @@ string</td>
 </tbody>
 </table>
 </div></blockquote>
+<ul class="last simple">
+<li>The <strong>application/json</strong> type with the request payload is an <a class="reference internal" href="models/ExportRequest.html"><span class="doc">ExportRequest</span></a> object.</li>
+</ul>
+</dd>
+</dl>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>The content of the export</div></blockquote>

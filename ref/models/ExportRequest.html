@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AdvancedSetting &mdash; Izenda BI 2.6.20 documentation</title>
+  <title>ExportRequest &mdash; Izenda BI 2.6.20 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.6.20 documentation" href="../../index.html"/>
         <link rel="up" title="Others" href="_others.html"/>
-        <link rel="next" title="Category" href="Category.html"/>
-        <link rel="prev" title="Others" href="_others.html"/> 
+        <link rel="next" title="ExportFormatSetting" href="ExportFormatSetting.html"/>
+        <link rel="prev" title="Entity" href="Entity.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -121,7 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="_security.html">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_request_and_response.html">Request and Response</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="_others.html">Others</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">AdvancedSetting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdvancedSetting.html">AdvancedSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Category.html">Category</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CenterOnPageStyle.html">CenterOnPageStyle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="City.html">City</a></li>
@@ -130,7 +130,7 @@
 <li class="toctree-l4"><a class="reference internal" href="DataFormating.html">DataFormating</a></li>
 <li class="toctree-l4"><a class="reference internal" href="EmailSetting.html">EmailSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Entity.html">Entity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ExportRequest.html">ExportRequest</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ExportRequest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExportFormatSetting.html">ExportFormatSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExportMarginTypeSetting.html">ExportMarginTypeSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Item.html">Item</a></li>
@@ -217,13 +217,13 @@
         
           <li><a href="_others.html">Others</a> &raquo;</li>
         
-      <li>AdvancedSetting</li>
+      <li>ExportRequest</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/ref/models/AdvancedSetting.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/ref/models/ExportRequest.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -236,14 +236,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="advancedsetting">
-<h1>AdvancedSetting<a class="headerlink" href="#advancedsetting" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exportrequest">
+<h1>ExportRequest<a class="headerlink" href="#exportrequest" title="Permalink to this headline">¶</a></h1>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="25%" />
 <col width="5%" />
-<col width="60%" />
-<col width="10%" />
+<col width="65%" />
+<col width="5%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Field</th>
@@ -253,72 +253,92 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><strong>id</strong> <br clear="right" />
-string (GUID)</td>
-<td>&#160;</td>
-<td>The id</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>name</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The name of the setting</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>value</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The value of the setting</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>defaultValue</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The default value of the setting</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>type</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>Either Performance, Security, Others, or null (e.g. Default Header Image)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+<tr class="row-even"><td><strong>dashboardId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
-<td>The id of the tenant if available</td>
+<td>The id of the dashboard if available</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>deleted</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Is this deleted</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>modified</strong> <br clear="right" />
-datetime</td>
+<tr class="row-odd"><td><strong>dashboardPartId</strong> <br clear="right" />
+string (GUID)</td>
 <td>Y</td>
-<td>The date of modification</td>
+<td>The id of the dashboard part if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the report if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>draftID</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the draft if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportPartId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the report part if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>filters</strong> <br clear="right" />
+array of objects</td>
+<td>Y</td>
+<td>An array of <a class="reference internal" href="FilterItem.html"><span class="doc">FilterItem</span></a> objects.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>fileSession</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The key of this specific session.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>reportDefinition</strong> <br clear="right" />
+object</td>
+<td>Y</td>
+<td>The <a class="reference internal" href="ReportDefinition.html"><span class="doc">ReportDefinition</span></a> object if available.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>dashboardDefinition</strong> <br clear="right" />
+object</td>
+<td>Y</td>
+<td>The <a class="reference internal" href="DashboardDefinition.html"><span class="doc">DashboardDefinition</span></a> object if available.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>dashboardPartIndex</strong> <br clear="right" />
+integer</td>
+<td>Y</td>
+<td>The index of the dashboard part if available.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant if available.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>subReportFilters</strong> <br clear="right" />
+object</td>
+<td>Y</td>
+<td>An array of <a class="reference internal" href="FilterItem.html"><span class="doc">FilterItem</span></a> objects if available.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>queryString</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The query string</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>token</strong> <br clear="right" />
+object</td>
+<td>Y</td>
+<td>The authentication token</td>
 <td>&#160;</td>
 </tr>
 </tbody>
 </table>
-<div class="toggle docutils container">
-<div class="header docutils container">
-<strong>Sample</strong>:</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;c8ecf9fd-196d-44a3-90ec-97f393ebfc0c&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DefaultImageUrl&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost/img/default.png&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-12T16:55:11.4900000+07:00&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -331,10 +351,10 @@ datetime</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Category.html" class="btn btn-neutral float-right" title="Category" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ExportFormatSetting.html" class="btn btn-neutral float-right" title="ExportFormatSetting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_others.html" class="btn btn-neutral" title="Others" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Entity.html" class="btn btn-neutral" title="Entity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
