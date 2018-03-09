@@ -252,7 +252,7 @@ Render Izenda Report Viewer page only inside hosting web
 
     .. code-block:: javascript
 
-       IzendaSynergy.renderReportViewerPage(document.getElementById('izenda-root'), "C2946606-7159-4FB3-82B7-E7D4ED3162A0",overridingFilterValue: { p1value: "test123" },{ "hideFilter" : true});
+       IzendaSynergy.renderReportViewerPage(document.getElementById('izenda-root'), "C2946606-7159-4FB3-82B7-E7D4ED3162A0",{overridingFilterValue: { p1value: "test123" }},{ "hideFilter" : true});
 
     .. figure:: /_static/images/Izenda_Report_Viewer.png
 
