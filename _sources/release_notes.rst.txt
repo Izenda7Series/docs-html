@@ -7,6 +7,23 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.6.21 March 12, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  19345  Setting needed to define excluded schemas for supported databases. Please see notes & warnings on using this setting   `here <https://www.izenda.com/docs/install/supplementary_guides/excluding-sql-schemas.html>`_ 
+-  Defect  19311  Issue when using special characters in * Days Old filter operators
+-  Defect  19293  Emailing Global Reports fails when sending attachments or embedded html
+-  Defect  19262  Join Alias behavior changes when changing join field in report designer
+-  Defect  19055  Concurrency issue noted with IzendaTemporaryData table where 2 different users editing the same report are showing errors in the log file. **This release includes schema changes to the IzendaTemporaryData table. As with every upgrade, please ensure that there are no active users in the system.** 
+-  Defect  18997  When making a column of pivot grid not visible, the pivot recalculates losing the grouping of the hidden column.
+-  Defect  18877  When using Oracle database receiving error transaction not yet disposed when connecting to large schemas.
+-  Defect  18875  Copy process should not verify items in physical data base, only model. Please note new API created for this change, detals can be found `here <https://www.izenda.com/docs/ref/api_copy_console.html?highlight=copy%20console#copy-console-apis>`_
+-  Defect  18344  Email will not send with Delivery Method = Attachment/Embedded HTML
+-  Defect  18140  Field deleted in the physical database is still shown with field name in form, should show as "..."
+
 v2.6.20 March 5, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~
 
