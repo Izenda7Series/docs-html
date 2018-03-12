@@ -136,6 +136,10 @@ identified by different values in a "TenantID" field in every table.
        (This setting basically adds a filter condition "TenantID" = <value of the tenant id of the current logged-in user> to
        every query sources used in report)
 
+   .. note::
+
+      Please note that the field must be wrapped in brackets when set. For example: TenantID should be set as [TenantID]
+
    .. _Tenant_Field_advanced_setting:
 
    .. figure:: /_static/images/Tenant_Field_advanced_setting.png
