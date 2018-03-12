@@ -4995,6 +4995,13 @@ Data Dictionary
      - 256
      - FK to IzendaUser
      - User who last modified this data
+   * - .. container:: lpad2
+
+          **UserId**
+     - uniqueidentifier
+     - 
+     - 
+     - User who owns this temporary data
    * - **IzendaTenant** |br|
        Tenant data in multi-tenant mode
      -

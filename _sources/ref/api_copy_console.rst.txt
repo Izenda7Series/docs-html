@@ -22,6 +22,10 @@ List of APIs
      - Returns a distinct list of connections from selected tenant, reports, templates and dashboards.
    * - `POST copyManagement/console/validate/dataconsistent`_
      - Validates for consistency between source and destination, for example database server types, database mappings and data models.
+   * - `POST copyManagement/console/validate/listusingfield`_
+     - Returns a list of all using fields in source.
+
+       .. versionadded:: 2.6.21
    * - `POST copyManagement/console/validate/source`_
      - Validates that ids of source tenant, reports, templates and dashboards are correct.
    * - `POST copyManagement/console/validate/destination`_
@@ -117,6 +121,43 @@ Validates for consistency between source and destination, for example database s
 **Samples**
 
    To be updated
+
+POST copyManagement/console/validate/listusingfield
+-----------------------------------------------------
+
+Returns a list of all using fields in source
+
+.. versionadded:: 2.6.21
+
+**Request**
+
+    Payload: an :doc:`models/InputWorkspace` object with **dataInSource** field populated
+
+**Response**
+
+    An array of strings containing the using fields.
+**Samples**
+
+   Request payload::
+
+      {
+         "reportIds": [
+            "897d01a6-ed6e-46c2-a7c1-d68e1dab5fb9",
+            "34c92a53-fe74-4fb3-b62e-d1ca3204236d"
+         ],
+         "dashboardIds":[
+            "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe"
+         ]
+      }
+
+   Sample response::
+
+      [
+         "[con;#0].[cat;#0].[Employees].[ReportsTo]",
+         "[con;#0].[cat;#0].[Employees].[EmployeeID]",
+         "[con;#0].[cat;#0].[Employees].[FirstName]",
+         "[con;#0].[cat;#0].[Employees].[LastName]"
+      ]
 
 POST copyManagement/console/validate/source
 --------------------------------------------------------------

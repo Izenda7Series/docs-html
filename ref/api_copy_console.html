@@ -234,28 +234,35 @@
 <tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-validate-dataconsistent">POST copyManagement/console/validate/dataconsistent</a></td>
 <td>Validates for consistency between source and destination, for example database server types, database mappings and data models.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-validate-source">POST copyManagement/console/validate/source</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-validate-listusingfield">POST copyManagement/console/validate/listusingfield</a></td>
+<td><p class="first">Returns a list of all using fields in source.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.6.21.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-validate-source">POST copyManagement/console/validate/source</a></td>
 <td>Validates that ids of source tenant, reports, templates and dashboards are correct.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-validate-destination">POST copyManagement/console/validate/destination</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-validate-destination">POST copyManagement/console/validate/destination</a></td>
 <td>Validates that destination tenants, database mappings and role mappings are correct.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-loadreport">POST copyManagement/console/loadreport</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-loadreport">POST copyManagement/console/loadreport</a></td>
 <td>Returns all report/template and related data to be copied to another system.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-copyreport">POST copyManagement/console/copyreport</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-copyreport">POST copyManagement/console/copyreport</a></td>
 <td>Copies report and related data to a system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-updatesubreport">POST copyManagement/console/updatesubreport</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-updatesubreport">POST copyManagement/console/updatesubreport</a></td>
 <td>Updates the content of copied reports to match destination state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-loaddashboard">POST copyManagement/console/loaddashboard</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-loaddashboard">POST copyManagement/console/loaddashboard</a></td>
 <td>Returns all dashboard and related data to be copied to another system.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-copydashboard">POST copyManagement/console/copydashboard</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-copydashboard">POST copyManagement/console/copydashboard</a></td>
 <td>Copies dashboard and related data to a system.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-copymanagement-console-listreport">POST copyManagement/console/listreport</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-console-listreport">POST copyManagement/console/listreport</a></td>
 <td>Returns a list of report definitions.</td>
 </tr>
 </tbody>
@@ -330,6 +337,43 @@
 <p><strong>Samples</strong></p>
 <blockquote>
 <div>To be updated</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-console-validate-listusingfield">
+<h2>POST copyManagement/console/validate/listusingfield<a class="headerlink" href="#post-copymanagement-console-validate-listusingfield" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of all using fields in source</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.6.21.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/InputWorkspace.html"><span class="doc">InputWorkspace</span></a> object with <strong>dataInSource</strong> field populated</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An array of strings containing the using fields.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;reportIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;897d01a6-ed6e-46c2-a7c1-d68e1dab5fb9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;34c92a53-fe74-4fb3-b62e-d1ca3204236d&quot;</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;dashboardIds&quot;</span><span class="p">:[</span>
+      <span class="s2">&quot;9d2f1d51-0e3d-44db-bfc7-da94a7581bfe&quot;</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="s2">&quot;[con;#0].[cat;#0].[Employees].[ReportsTo]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;[con;#0].[cat;#0].[Employees].[EmployeeID]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;[con;#0].[cat;#0].[Employees].[FirstName]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;[con;#0].[cat;#0].[Employees].[LastName]&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="post-copymanagement-console-validate-source">
 <h2>POST copyManagement/console/validate/source<a class="headerlink" href="#post-copymanagement-console-validate-source" title="Permalink to this headline">¶</a></h2>
