@@ -7,6 +7,20 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.6.22 March 19, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  19356  In Chart report part, "Day of Week" and "Week Number" format shows incorrectly on chart
+-  Defect  19330  Changes to PK/FK relationships in the database are not picked up in the data model when using reconnect. 
+-  Defect  19329  When tenant has a large data model (50k+ fields) the report list will not load for user due to query failure
+-  Defect  19298  Copy management would fail if custom views had relationships set up in the data model when copying data model from one tenant or system level to another.
+-  Defect  19296  Certain report permissions for a role log users out when clicking the "Access" tab in the report designer.
+-  Defect  19175  P1 value passed to a dashboard via the URL is not updating the results
+-  Defect  18817  When using Oracle configuration database search Report Part in dashboard does not work when user searches by Save In option
+
 v2.6.21 March 12, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1989,9 +2003,6 @@ Known Issues
      - 18899
      - Error message appears when sending email containing a blank dashboard part
    * - Defect
-     - 18895
-     - Combination Chart Y-Axis Labels Are Cut Off when slanted at 45 degrees
-   * - Defect
      - 18890
      - Database Mapping Dropdown menu spawns outside the viewport
    * - Defect
@@ -2003,12 +2014,6 @@ Known Issues
    * - Defect
      - 18878
      - Gauge/Chart shows data incorrectly when the first field in Labels container is aggregated field and only sort by this field when using MySQL
-   * - Defect
-     - 18877
-     - When using Oracle database receiving error transaction not yet disposed when connecting to large schemas.
-   * - Defect
-     - 18875
-     - Copy process should not verify items in physical data base, only model. 
    * - Defect
      - 18870
      - SubTotal displays incorrectly when Pivot grid has 3 fields in Columns container
@@ -2331,9 +2336,6 @@ Known Issues
      - 18350
      - LoadCustomDataFormat - MoneyType cannot be loaded into data format drop down
    * - Defect
-     - 18344
-     - Email will not send with Delivery Method = Attachment/Embedded HTML
-   * - Defect
      - 18341
      - No Changes Found shows when Modifying an Existing Report Title & Description When First Opening Report Designer
    * - Defect
@@ -2432,9 +2434,6 @@ Known Issues
    * - Defect
      - 18142
      - Dashboard tiles do not properly resize when user resizes browser to responsive mode in screen. 
-   * - Defect
-     - 18140
-     - Field deleted in the physical database is still shown with field name in form, should show as "..."
    * - Defect
      - 18136
      - Cursor always comes back the left most of Search Report textbox after entering some text in Copy Management UI
@@ -3125,9 +3124,6 @@ Known Issues
    * - Defect
      - 16501
      - User can not use mouse to drag the scroll bar of the drop down list of Time picker in schedule/subscription/key join operator for time fields.
-   * - Defect
-     - 16450
-     - Edit Report button exists when user has been shared report with "View only" mode
    * - Defect
      - 16444
      - Json node createdBy and modified are incorrect when saving a new category
