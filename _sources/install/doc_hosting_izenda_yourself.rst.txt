@@ -10,9 +10,13 @@ Hosting Izenda
 Minimum Hardware Requirements
 ------------------------------
 
-*  Processor: 4 Core CPU (3.6Ghz)
-*  RAM: 16 GB
-*  Free Hard Disk Space: 100 MB
+- Processor: 4 Core CPU (3.6Ghz)
+- Free Hard Disk Space: 100 MB
+
+  * SSD drive physical storage recommended for optimal database performance
+
+- RAM: 16 GB
+
 
 .. note::
 
