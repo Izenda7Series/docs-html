@@ -7,6 +7,19 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v2.6.23 March 26, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  19672  Printing a dashboard may not work in some cases when using an Oracle configuration database.
+-  Defect  19312  Users get logged out when editing "My Profile" preferences without User Setup "Edit" permission
+-  Defect  19306  Cannot perform "Save As" on global report in a category at tenant level
+-  Defect  18989  Grouping Set limitation of 32 columns is causing errors when creating subtotals on grid when all fields are grouped for regular grids (this is a hard limit on any drilldown style grids).
+-  Defect  18910  In MySql connection strings, operator '+', '-', '*', '/' cannot be applied to operands of type 'decimal' and 'double'. 
+
 v2.6.22 March 19, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
