@@ -11,9 +11,9 @@ Minimum Hardware Requirements
 ------------------------------
 
 - Processor: 4 Core CPU (3.6Ghz)
-- Free Hard Disk Space: 100 MB
+- Free Hard Disk Space: 1 GB
 
-  * SSD drive physical storage recommended for optimal database performance
+  * SSD drives are recommended for optimal database performance
 
 - RAM: 16 GB
 
