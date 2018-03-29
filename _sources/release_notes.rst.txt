@@ -8,6 +8,15 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.6.24 March 29, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  19685  JsFormatString is used in chart but overrides the grid format using the same custom format. 
+-  Defect  19383  JsFormatString does not impact gauge report part type
+
 v2.6.23 March 26, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
