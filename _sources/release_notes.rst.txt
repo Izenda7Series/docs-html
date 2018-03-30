@@ -15,7 +15,7 @@ FEATURES
 ^^^^^^^^
 
 -  Redshift is now supported as a reporting database (not an Izenda configuration database).
--  System & Tenant option to hide Report Headers in Report Viewer by default. A new button was added to show the header and footer in the Report Designer and Viewer. This button will only appear if a report has a header or footer configured. API change associated `here <https://www.izenda.com/docs/ref/api_advanced_settings.html>`_. 
+-  System & Tenant option to hide Report Headers in Report Viewer by default. A new button was added to show the header and footer in the Report Designer and Viewer. This button will only appear if a report has a header or footer configured. API change associated `here <https://www.izenda.com/docs/ref/api_advanced_settings.html>`_. To configure the setting please see option `here <https://www.izenda.com/docs/ui/doc_advanced_settings.html?highlight=other%20settings#update-others-settings>`_
 -  Added overlays and tool tips to the Report Designer to provide guidance to the user for creating reports. See styling guide for more information on CSS, **new class names associated** `here <https://www.izenda.com/docs/dev/code_bi_portal_custom_css.html#customizing-the-report-designer-tooltips-overlay>`_. 
 -  Changed name of Fields tab to Design in Report Designer to give the end user more context on the functionality. 
 -  Pie chart enhancement, size of pie chart is now larger when labels are enabled. 
