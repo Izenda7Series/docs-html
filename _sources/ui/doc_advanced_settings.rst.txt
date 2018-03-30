@@ -206,7 +206,7 @@ In Advanced Settings page, click on Others tab in Middle Panel to view the items
       :align: center
       :width: 1649px
 
-      Setting values provied in Others group
+      Setting values provided in Others group
 
   .. list-table::
       :widths: 20 65 15
@@ -270,6 +270,9 @@ In Advanced Settings page, click on Others tab in Middle Panel to view the items
       *  -  Show Preview section in Configuration Mode
          -  By selecting this checkbox, both Configuration and Preview sections display in the report part’s backside and setting popups. Otherwise, system only shows Configuration section. This is useful when working with very large datasets as the database is not called until the report part is flipped to the front side.
          -  True
+      *  -  Hide Report Header and Footer by Default
+         -  By selecting this checkbox, Reports which have a header and footer configured will be presented without the header and footer. A button will be displayed to the user allowing them to show the header and footer.
+         -  True         
 
 Cancel the changes
 -------------------
