@@ -374,3 +374,32 @@ Common CSS Customizations
   .. figure::   /_static/images/custom_css/VisibleFilterDescription.png
   
      Filter with visible (default) description
+		 
+		 
+		 
+Customizing the Report Designer Tooltips & Overlay
+------------------------------------------------------
+Izenda version v2.7.0 and greater feature new tooltips and overlays to provide guidance to the user for creating reports. 
+
+
+  .. figure::   /_static/images/270_RD_overlay.png
+	
+	
+These items can be customized using the CSS samples below:
+
+
+  .. code-block:: css
+
+		/* Customize the tooltip */
+		.tooltip .tooltip-inner.info {
+			background-color: #8e8e8f;
+			color: #fff;
+			font-size: 13px;
+			max-width: 250px;
+			padding: 10px;
+		}
+
+		/* Customize the overlay */
+		.izenda .izenda-ReportDesigner .izenda-ReportDesigner-Overlay {
+			background-color: rgba(255,105,180,0.75)
+		}   

@@ -1,14 +1,14 @@
 
 
 ==========================
-Report Designer/Fields
+Report Designer/Design
 ==========================
 
 .. tip::
 
    :ref:`Cross Filtering <Apply_Cross_Filtering_to_Multiple_Report_Parts>` is available from release v2.1.0.
 
-The **Report Designer/Fields** page allows user to
+The **Report Designer/Design** page allows user to
 
 .. hlist::
    :columns: 2
@@ -32,7 +32,7 @@ View data source fields
       Report Designer - Fields
 
    Open an existing report if not already open.
-#. Click Fields in the left menu. (:numref:`Report_Designer_Fields_Location`) |br|
+#. Click Design in the left menu. (:numref:`Report_Designer_Fields_Location`) |br|
 #. .. _Report_Designer_Fields_Middle_Panel:
 
    .. figure:: /_static/images/Report_Designer_Fields_Middle_Panel.png

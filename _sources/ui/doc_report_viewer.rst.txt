@@ -16,6 +16,7 @@ The **Report Viewer** page allows user to
    -  email report as a link or embedded HTML
    -  copy and move reports between categories
    -  view report history
+   -  show and hide report header and footer
 
 View Report
 -----------
@@ -34,6 +35,7 @@ View Report
 
 #. The buttons at the top allow user to:
 
+   -  Show and Hide Header & Footer in any report which contains these options
    -  Add Subscriptions (See in :ref:`Report
       List <Add_Report_Subscriptions_for_Current_User>`)
    -  Print
@@ -55,9 +57,7 @@ View Report
 
    Report Viewer Edit Options
 
-.. note::
 
-   For a report with filters, optionally click the Freeze button to keep the Filters section fixed while scrolling the report body.
 
 Quick Edit Report
 -----------------

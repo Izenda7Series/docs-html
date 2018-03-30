@@ -50,7 +50,7 @@ visible in reports.
 
    .. figure:: /_static/images/Connection_Select_Database_Server_Type.jpg
       :align: right
-      :width: 310px
+      :width: 408px
 
       Select Database Server Type
 

@@ -43,7 +43,10 @@ List of APIs
      - Returns a list of roles allowed to be selected in report/dashboard access.
    * - `POST role/intergration/saveRole`_
      - Adds or updates an external role.
-
+   * - `POST role/accessLimits`_
+     - Lazy load access limit data for each role.
+   * - `POST role/scheduleLimits`_
+     - Lazy load schedule limit data for each role.
 .. _GET_role/all/(tenant_id):
 
 GET role/all/(tenant_id)
@@ -2069,3 +2072,93 @@ Adds or updates an external role.
    Response::
 
       true
+
+POST role/accessLimits
+----------------------------
+
+Lazy load access Limit data for each role.
+
+**Request**
+
+    A :doc:`models/RolePagedRequest` objects
+
+**Response**
+
+    A :doc:`models/RoleVirtualNode` objects
+**Samples**
+
+   .. code-block:: http
+
+      POST api/role/accessLimits HTTP/1.1
+
+   Request payload::
+
+      {
+         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+         "tenantId": null,
+         "skipItems": 1,
+         "pageSize": 6,
+         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "criteria": [ { "key": "name", "value": "Anna" }]
+      }
+
+   Sample response::
+
+      {  
+         "isLastPage":false,
+         "name":null,
+         "childNodes":[  ],
+         "numOfChilds":8,
+         "checked":false,
+         "indeterminate":true,
+         "numOfCheckedChilds":2,
+         "totalItems":223,
+         "level":1,
+         "id":"00000000-0000-0000-0000-000000000000",
+         "parentId":null
+      }
+
+POST role/scheduleLimits
+--------------------------------
+
+Lazy load schedule limit data for each role.
+
+**Request**
+
+    A :doc:`models/RolePagedRequest` objects
+
+**Response**
+
+    A :doc:`models/RoleVirtualNode` objects
+**Samples**
+
+   .. code-block:: http
+
+      POST api/role/scheduleLimits HTTP/1.1
+
+   Request payload::
+
+      {
+         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+         "tenantId": null,
+         "skipItems": 1,
+         "pageSize": 6,
+         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "criteria": [ { "key": "name", "value": "Anna" }]
+      }
+
+   Sample response::
+
+      {  
+         "isLastPage":false,
+         "name":null,
+         "childNodes":[  ],
+         "numOfChilds":8,
+         "checked":false,
+         "indeterminate":true,
+         "numOfCheckedChilds":2,
+         "totalItems":223,
+         "level":1,
+         "id":"00000000-0000-0000-0000-000000000000",
+         "parentId":null
+      }

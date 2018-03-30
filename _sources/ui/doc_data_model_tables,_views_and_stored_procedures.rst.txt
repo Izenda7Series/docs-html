@@ -13,6 +13,9 @@ The **Data Model/Tables**, **Data Model/Views** and **Data Model/Stored Procedur
 -  assign filter values for stored procedure parameters
 -  mark stored procedures as dynamic
 
+**Note:** |br|
+   Stored Procedures are not supported in AWS Redshift databases.
+
 List tables, views or stored procedures
 ---------------------------------------
 

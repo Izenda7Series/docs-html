@@ -54,3 +54,4 @@ Request and Response
    ValidateTokenResult
    ValidateUserRoleAssociationParam
    ValidationOperationResult
+   RolePagedRequest

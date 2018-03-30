@@ -144,7 +144,16 @@ OtherSetting
       -  Y
       -  The last modified datetime
       -
-
+   *  -  **hideReportHeaderAndFooterValue** |br|
+         boolean
+      -  
+      -  Option for hide report header and footer
+      -
+   *  -  **hideReportHeaderAndFooterDefaultValue** |br|
+         boolean
+      -  Y
+      -  The default value for Hide Report Header and Footer
+      -
 .. container:: toggle
 
    .. container:: header

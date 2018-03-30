@@ -58,6 +58,11 @@ ReportPartContent
       -
       -  Whether this report part is formatted
       -
+   *  -  **selectedMetric** |br|
+         string
+      -
+      -  The selected metric value on Chart/Gauge/Map
+      -
 
 .. container:: toggle
 

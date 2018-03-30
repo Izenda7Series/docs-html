@@ -386,6 +386,8 @@ Returns the settings in Others group (filtered by tenant_id if provided).
          "sendToDiskPathDefaultValue": "",
          "tenantId": null,
          "modified": "2017-02-15T07:29:25.3300651"
+         "hideReportHeaderAndFooterValue": true,
+         "hideReportHeaderAndFooterDefaultValue": false
       }
 
 POST advancedSetting/miscSetting
@@ -429,7 +431,8 @@ Updates the settings in Others group.
          "introductionTextDefaultValue": "",
          "sendToDiskPathDefaultValue": "",
          "tenantId": null,
-         "modified": "2017-02-15T07:29:25.3300651"
+         "modified": "2017-02-15T07:29:25.3300651",
+         "hideReportHeaderAndFooterValue":true
       }
 
    Sample response::

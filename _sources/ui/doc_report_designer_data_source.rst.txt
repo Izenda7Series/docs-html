@@ -9,6 +9,8 @@ The **Report Designer/Data Source** page allows user to
 -  view, search and select data sources to be used in a report
 -  set up and validate relationships between data sources in a report
 
+.. figure:: /_static/images/Report_Designer.png
+
 View data sources
 -----------------
 

@@ -12,6 +12,7 @@ Izenda fully supports the following database servers:
       -  Oracle 10.2 or later
       -  MySQL (For optimal performance MySQL 5.7+ is suggested. MySQL 5.7 includes major performance enhancements to derived tables/subqueries which are used throughout Izenda.)
       -  PostgreSQL 9.3+
+      -  AWS Redshift (Izenda supports Redshift as a reporting database only (not system database) **New in version 2.7.0.**
 
 Cubes Support
 ~~~~~~~~~~~~~

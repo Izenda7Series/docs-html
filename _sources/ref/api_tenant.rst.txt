@@ -50,6 +50,10 @@ List of APIs
      - Returns all active tenants with basic info.
    * - `GET tenant/namesOnly`_
      - Returns all active tenants with names only.
+   * - `POST tenant/accessLimits`_
+     - Lazy load access limit for each tenant.
+   * - `POST tenant/scheduleLimits`_
+     - Lazy load schedule limit for each tenant.
 
 GET tenant/allTenants
 --------------------------------------------------------------
@@ -1112,3 +1116,93 @@ Returns only the current tenant with name only if logged in user is a tenant use
             "name": "System"
          }
       ]
+
+POST tenant/accessLimits
+----------------------------
+
+Lazy load access Limit data for each role.
+
+**Request**
+
+    A :doc:`models/RolePagedRequest` objects
+
+**Response**
+
+    A :doc:`models/RoleVirtualNode` objects
+**Samples**
+
+   .. code-block:: http
+
+      POST api/tenant/accessLimits HTTP/1.1
+
+   Request payload::
+
+      {
+         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+         "tenantId": null,
+         "skipItems": 1,
+         "pageSize": 6,
+         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "criteria": [ { "key": "name", "value": "Anna" }]
+      }
+
+   Sample response::
+
+      {  
+         "isLastPage":false,
+         "name":null,
+         "childNodes":[  ],
+         "numOfChilds":8,
+         "checked":false,
+         "indeterminate":true,
+         "numOfCheckedChilds":2,
+         "totalItems":223,
+         "level":1,
+         "id":"00000000-0000-0000-0000-000000000000",
+         "parentId":null
+      }
+
+POST tenant/scheduleLimits
+--------------------------------
+
+Lazy load schedule limit data for each role.
+
+**Request**
+
+    A :doc:`models/RolePagedRequest` objects
+
+**Response**
+
+    A :doc:`models/RoleVirtualNode` objects
+**Samples**
+
+   .. code-block:: http
+
+      POST api/tenant/scheduleLimits HTTP/1.1
+
+   Request payload::
+
+      {
+         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+         "tenantId": null,
+         "skipItems": 1,
+         "pageSize": 6,
+         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "criteria": [ { "key": "name", "value": "Anna" }]
+      }
+
+   Sample response::
+
+      {  
+         "isLastPage":false,
+         "name":null,
+         "childNodes":[  ],
+         "numOfChilds":8,
+         "checked":false,
+         "indeterminate":true,
+         "numOfCheckedChilds":2,
+         "totalItems":223,
+         "level":1,
+         "id":"00000000-0000-0000-0000-000000000000",
+         "parentId":null
+      }
