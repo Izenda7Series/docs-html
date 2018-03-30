@@ -8,6 +8,25 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.7.0 March 30, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^
+
+-  Redshift is now supported as a reporting database (not an Izenda configuration database).
+-  System & Tenant option to hide Report Headers in Report Viewer by default. A new button was added to show the header and footer in the Report Designer and Viewer. This button will only appear if a report has a header or footer configured. API change associated `here <https://www.izenda.com/docs/ref/api_advanced_settings.html>`_. 
+-  Added overlays and tool tips to the Report Designer to provide guidance to the user for creating reports. See styling guide for more information on CSS, **new class names associated** `here <https://www.izenda.com/docs/dev/code_bi_portal_custom_css.html#customizing-the-report-designer-tooltips-overlay>`_. 
+-  Changed name of Fields tab to Design in Report Designer to give the end user more context on the functionality. 
+-  Pie chart enhancement, size of pie chart is now larger when labels are enabled. 
+-  The selected chart metric is now saved in the report definition. When saved and another user opens the report, the selected saved metric will be displayed.
+-  Enhanced horizontal scrolling in wide grids. The horizontal scroll option is always visible. To make this change, the Freeze button has been removed from the Report options for the filter panel. In the Report Designer and Viewer the Report name and filter panel are now always displayed.  
+-  Performance improvement to Role set up screen, Access Limits & Scheduling Limits are now a single tree control selection. The new APIs associated can be found `here <https://www.izenda.com/docs/ref/api_role.html>`_. 
+
+.. note::
+
+	This version introduces the 'Prefer' header in the API/Web.config. This header is used with the new external API. Please ensure your Web.config file is updated to include this in Access-Control-Allow-Headers.
+
 v2.6.24 March 29, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
