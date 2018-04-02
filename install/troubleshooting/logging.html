@@ -112,6 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="ssl-https.html">SSL and HTTPS</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Logging</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#log-files-are-not-being-created">Log files are not being created</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-error-log-messages">Common Error Log Messages</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="general.html">General</a></li>
@@ -206,6 +207,207 @@
 <div class="section" id="log-files-are-not-being-created">
 <h2>Log files are not being created<a class="headerlink" href="#log-files-are-not-being-created" title="Permalink to this headline">¶</a></h2>
 <p>This issue is due to the API site/instance not having enough permissions to create the logs folder and the actual log files. Please ensure that you have given &#8216;WRITE&#8217; permissions to the API. When the API has sufficient permissions, it will create the logs folder, you do not have to do this manually.</p>
+</div>
+<div class="section" id="common-error-log-messages">
+<h2>Common Error Log Messages<a class="headerlink" href="#common-error-log-messages" title="Permalink to this headline">¶</a></h2>
+<p>The following error log messages may have multiple causes, so the solution to each error is not exhaustive. These are the most common causes/solutions we have encountered.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Error Log Message</th>
+<th class="head">Common Cause/Solution</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">The access token is not valid <br clear="right" /></p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample Log (timeout):</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-03-16 13:12:26,317 [30   ][ERROR][IzendaBootstraper                   ] The access token is not valid
+Izenda.BI.Framework.Exceptions.UnAuthorizeException: The access token is not valid
+at Izenda.BI.Logic.Users.StandAloneAuthenticationLogic.(String , Nullable`1  )
+at Izenda.BI.Logic.Users.StandAloneAuthenticationLogic.ValidateAccessToken(String accessToken, Nullable`1 selectedTenantId)
+at Izenda.BI.Logic.Users.UserLogic.ValidateAccessToken(String accessToken, Nullable`1 selectedTenantId)
+at Izenda.BI.API.IzendaModule.GetCurrentUserAccessTokenInfo(String currentAccessToken, String currentAccessTenant)
+at Izenda.BI.API.IzendaModule.SetupContext(Boolean runAsAdministrator, String accessToken, String currentTenant)
+at Izenda.BI.API.IzendaModule.ExecuteInMornitoringContext(Boolean wrapingExceptionIntoOperationResult, Object paramtersToLog, Func`1 function, Boolean runAsAdministrator, String userAction, String accessToken, String currentTenant)
+at Izenda.BI.API.ReportDesigner.ReportModule.&lt;.ctor&gt;b__2_126(Object parameters)
+at Nancy.Routing.Route.&lt;&gt;c__DisplayClass4.&lt;Wrap&gt;b__3(Object parameters, CancellationToken context)
+</pre></div>
+</div>
+</div>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log (wrong credentials):</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-03-16 13:20:20,414 [12   ][ERROR][IzendaBootstraper                   ] Izenda exception:
+Izenda.BI.Framework.Exceptions.IzendaModelException
+at Izenda.BI.Logic.Users.AllStandAloneAuthenticationLogic. (Credential , Func`3  )
+at Izenda.BI.Logic.Users.AllStandAloneAuthenticationLogic.Login(Credential userCredential, Func`3 func)
+at Izenda.BI.Logic.Users.UserLogic.Login(Credential userCredential)
+at Izenda.BI.API.Connection.UserModule.&lt;&gt;c__DisplayClass0_4.&lt;.ctor&gt;b__9()
+at Izenda.BI.API.IzendaModule.ExecuteInMornitoringContext(Boolean wrapingExceptionIntoOperationResult, Object paramtersToLog, Func`1 function, Boolean runAsAdministrator, String userAction, String accessToken, String currentTenant)
+</pre></div>
+</div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Session timeout due to inactivity <br clear="right" /></li>
+<li>Incorrect username or password</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Invalid column name:</p>
+<ul class="simple">
+<li>&#8216;CreatedById&#8217;</li>
+<li>&#8216;CustomDefinition&#8217;</li>
+<li>&#8216;IsRunningField&#8217;</li>
+</ul>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Logs:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>System.Data.SqlClient.SqlException (0x80131904): Invalid column name &#39;CreatedById&#39;.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name &#39;CustomDefinition&#39;.
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name &#39;IsRunningField&#39;.
+</pre></div>
+</div>
+</div>
+</td>
+<td><p class="first">Missing upgrade scripts for config database, please find Schema Migration Assistant <a class="reference external" href="https://tools.izenda.com/">here</a></p>
+<ul class="last simple">
+<li>If invalid column &#8216;CreatedById&#8217;, apply upgrade script v2.0.1 - 2.1.2</li>
+<li>If invalid column &#8216;CustomDefinition&#8217; and &#8216;IsRunningField&#8217;, apply upgrade script v2.4.0 - 2.5.0</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first">Subscription failure</p>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-03-07 16:51:32,081 [DefaultQuartzScheduler_Worker-2][INFO ][SubscriptionJob                     ] Start scheduling 0 subscription jobs
+2018-03-07 16:51:32,097 [30   ][INFO ][PingJob                             ] Ping system status failure: The remote server returned an error: (404) Not Found.
+</pre></div>
+</div>
+</div>
+</td>
+<td>&#8220;WebAPIUrl&#8221; value in the &#8220;IzendaSystemSetting&#8221; table not set or incorrect. <br clear="right" />
+Documentation to set this value can be found <a class="reference external" href="https://www.izenda.com/docs/install/troubleshooting/scheduling.html#scheduled-items-are-not-being-sent-on-time">here</a>.</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Cannot load fields of remote table</p>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-01-11 09:10:28,701 [23  ][ERROR][DataModelLogic                      ] Cannot load fields of remote table
+System.Data.SqlClient.SqlException (0x80131904): The operation could not be performed because OLE DB provider &quot;SQLNCLI10&quot; for linked server &quot;Demo&quot; was unable to begin a distributed transaction.
+at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+at System.Data.SqlClient.SqlDataReader.get_MetaData()
+at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+at System.Data.SqlClient.SqlCommand.ExecuteReader()
+at Izenda.BI.DataAdaptor.RDBMS.SQL.SQLSchemaLoader.
+</pre></div>
+</div>
+</div>
+</td>
+<td><p class="first">Defect <a class="reference external" href="https://www.izenda.com/docs/release_notes.html?highlight=17033#v2-1-5-june-22-2017">#17033</a> in our release notes page.</p>
+<p class="last">Resolved by new setting added as of version 2.1.5. In the &#8220;IzendaSystemSetting&#8221; table of the config DB, set the &#8220;RollbackSPWhenLoadSchema&#8221; value to 0 to avoid distributed transaction errors when system attempts to fetch stored procedure schema data (if using Linked Server and cannot setup DTC).</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first">Export failure</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample Log (value not set):</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-03-20 10:22:30,868 [12   ][ERROR][ExportingLogic                      ] Failed to convert to image: ReportId=8f74023a-4cbd-4f35-92ba-e3c04fa041d9, ReportPartId=29a15ab9-221a-430f-977f-6cf4e125726e
+System.ArgumentNullException: Base web url cannot be null or empty
+Parameter name: baseUrl
+at Izenda.BI.Framework.Contracts.DefaultWebUrlResolver.ResolveUrl(String baseUrl, WebUrlActionLink action, Nullable`1 id, Dictionary`2 parameters)
+at Izenda.BI.Exporting.ExportHelper.ConvertToImage(ExportSetting setting, ExportData data, Int32 width, Int32 height, Object separatorValue)
+...
+2018-03-20 10:22:30,967 [12   ][ERROR][IzendaBootstraper                   ] Izenda exception:
+Izenda.BI.Framework.Exceptions.IzendaModelException ---&gt; System.ArgumentNullException: Base web url cannot be null or empty
+Parameter name: baseUrl
+at Izenda.BI.Framework.Contracts.DefaultWebUrlResolver.ResolveUrl(String baseUrl, WebUrlActionLink action, Nullable`1 id, Dictionary`2 parameters)
+at Izenda.BI.Exporting.Html.Builder.HtmlBuilder.Build(ExportContext context)
+at Izenda.BI.Exporting.Pdf.PdfExportProvider.Export(ExportContext context)
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type)
+--- End of inner exception stack trace ---
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type)
+at Izenda.BI.API.Export.ExportModule.&lt;&gt;c__DisplayClass0_0.&lt;.ctor&gt;b__1()
+at Izenda.BI.API.IzendaModule.ExecuteInMornitoringContext(Boolean wrapingExceptionIntoOperationResult, Object paramtersToLog, Func`1 function, Boolean runAsAdministrator, String userAction, String accessToken, String currentTenant)
+at Izenda.BI.API.Export.ExportModule.&lt;&gt;c__DisplayClass0_1.&lt;.ctor&gt;b__0(Object parameters)
+at Nancy.Routing.Route.&lt;&gt;c__DisplayClass4.&lt;Wrap&gt;b__3(Object parameters, CancellationToken context)
+</pre></div>
+</div>
+</div>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log (incorrect value):</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-03-20 10:44:55,228 [30   ][INFO ][ExportingLogic                      ] Attempt to convert to image by url: &lt;URL to page with rendered report part&gt;
+2018-03-20 10:44:55,464 [30   ][ERROR][ExportingLogic                      ] Failed to convert to image: ReportId=30db0d8b-1b4b-4b43-8366-ccb04b72fcaa, ReportPartId=29a15ab9-221a-430f-977f-6cf4e125726e
+System.Exception: HTML load error. The remote content was not found at the server - HTTP error 404
+at EvoPdf.HtmlToImageConverter.?(String A_0, Boolean A_1, ?&amp; A_2, Boolean A_3, Boolean A_4, Boolean A_5)
+at EvoPdf.HtmlToImageConverter.ConvertUrlToImageObject(String url)
+at EvoPdf.HtmlToImageConverter.ConvertUrl(String url, ImageFormat format)
+at Izenda.BI.Exporting.ExportHelper.ConvertToImage(ExportSetting setting, ExportData data, Int32 width, Int32 height, Object separatorValue)
+</pre></div>
+</div>
+</div>
+</td>
+<td>&#8220;WebUrl&#8221; value in the &#8220;IzendaSystemSetting&#8221; table not set or incorrect. <br clear="right" />
+Documentation to set this value can be found <a class="reference external" href="https://www.izenda.com/docs/install/troubleshooting/exporting.html#charts-and-other-visualizations-are-not-rendered-in-exports">here</a>.</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Send email failed, [object Object]</p>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2018-04-02 14:57:42,679 [55   ][ERROR][IzendaBootstraper                   ] You don&#39;t have permission to perform this action
+Izenda.BI.Framework.Exceptions.IzendaException: You don&#39;t have permission to perform this action
+at Izenda.BI.Logic.Authorization.Validators.TenantAccessAuthorizeHandler.Execute(TenantAccessHandlerContext context)
+at Izenda.BI.Logic.Authorization.AuthorizationService.Authorize[TContext,THanlder](TContext context)
+at Izenda.BI.Logic.Exporting.ExportingLogic.
+(ExportRequest , ExportType )
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type)
+at Izenda.BI.Logic.Exporting.ExportingLogic.ExportSubscription(Subscription subscription)
+at Izenda.BI.API.Export.ExportModule.&lt;&gt;c__DisplayClass0_3.&lt;.ctor&gt;b__4()
+at Izenda.BI.API.IzendaModule.ExecuteInMornitoringContext(Boolean wrapingExceptionIntoOperationResult, Object paramtersToLog, Func`1 function, Boolean runAsAdministrator, String userAction, String accessToken, String currentTenant)
+</pre></div>
+</div>
+</div>
+</td>
+<td><p class="first">Emailing global report as embedded HTML or Attachment at the tenant-level, Defect <a class="reference external" href="https://www.izenda.com/docs/release_notes.html?highlight=17033#v2-6-21-march-12-2018">#19293</a> in our release notes page.</p>
+<p class="last">Resolved as of version 2.6.21, please <a class="reference external" href="https://www.izenda.com/docs/install/doc_upgrade_guide.html">upgrade</a> to that version or greater.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first">Cannot get LicenseSetting</p>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2017-11-27 16:03:40,319 [10   ][ERROR][DatabaseSettingLogic                ] Cannot get LicenseSetting
+System.InvalidOperationException: OracleConnection.ConnectionString is invalid
+at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+at Izenda.BI.Oracle.OracleConnection.OpenConnection(String connectionString)
+at Izenda.BI.SystemRepository.RDBMS.RDBMSSystemRepository.Query[T](String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout)
+at Izenda.BI.SystemRepository.RDBMS.Oracle.OracleSystemRepository.Query[T](String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout)
+at Izenda.BI.SystemRepository.RDBMS.RDBMSSystemRepository.GetLicenseSetting()
+at Izenda.BI.Logic.DatabaseSetup.DatabaseSettingLogic.VerifyConnection(Guid serverType, String connectionString)
+</pre></div>
+</div>
+</div>
+</td>
+<td><p class="first">Issue with Oracle schema in Izenda.</p>
+<p class="last">Resolved as of version 2.6.7, please <a class="reference external" href="https://www.izenda.com/docs/install/doc_upgrade_guide.html">upgrade</a> to that version or greater.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
