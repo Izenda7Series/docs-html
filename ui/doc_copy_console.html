@@ -111,6 +111,14 @@
 <li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Izenda Copy Console</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-the-security-of-the-copy-console">Understanding the Security of the Copy Console</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copy-console-authentication-overview">Copy Console Authentication Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-transfered-via-copy-console">Data Transfered Via Copy Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#report-object-workflow">Report Object Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-console-examples">Copy Console Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-the-copy-console-xml">Understanding The Copy Console XML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-copy-console-for-integrated-modes">Using the Copy Console for Integrated Modes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exposing-the-api-user-login-endpoint">Exposing the &#8220;api/user/login&#8221; endpoint</a></li>
@@ -200,6 +208,214 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The Izenda Copy Console Tool will allow you to copy templates, reports
 and dashboards from one Izenda Configuration database to another. If you need to copy reports within the same configuration database (eg. copying a report from one tenant to another) you can use the Copy Management Tool.</p>
+</div>
+<div class="section" id="understanding-the-security-of-the-copy-console">
+<h2>Understanding the Security of the Copy Console<a class="headerlink" href="#understanding-the-security-of-the-copy-console" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="copy-console-authentication-overview">
+<h3>Copy Console Authentication Overview<a class="headerlink" href="#copy-console-authentication-overview" title="Permalink to this headline">¶</a></h3>
+<p>The Copy Console application must be able to log in to Izenda in order to create a valid access token.</p>
+<ul>
+<li><p class="first">For standalone environments, you will simply need to provide the Izenda API URL along with valid credentials for your source and destinations. The Copy Console will use the standalone authentication endpoints to create a valid access token for the copy process.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/SlideB.PNG" src="../_images/SlideB.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">For integrated environments, the Copy Console must be able to login to <em>host application</em> and, therefore, it will need to utilize your security standards for authenticating users outside of a Web Browser.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/SlideA.PNG" src="../_images/SlideA.PNG" />
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="data-transfered-via-copy-console">
+<h3>Data Transfered Via Copy Console<a class="headerlink" href="#data-transfered-via-copy-console" title="Permalink to this headline">¶</a></h3>
+<p>The following guidelines provide an overview of what the copy console can copy from one environment to another. In the subsequent documentation, dashboards, reports, and templates will be collectively referred to as <em>Report Objects.</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Reporting Data</strong>: No</li>
+<li><strong>Report Structure (report layout, charts, printing defaults)</strong>: Yes</li>
+<li><strong>Dashboard Structure</strong>: Yes</li>
+<li><strong>Access Rights</strong>:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><strong>User Level</strong>: No</li>
+<li><strong>Role Level</strong>: Yes, with role mapping in XML</li>
+<li><strong>Everyone</strong>: Yes</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Schedules/Subscriptions</strong>: No</li>
+<li><strong>Filter Values</strong>: No</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Filter Values will not be copied from source to destination because the stored data may pose a security concern. In the destination, the filter values will need to be reapplied. If a report contains a non-visible required filter and is copied, an error message will be displayed when you navigate to the report. You will simply need to open the report in the designer, specify a value, and save the report.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Calculated Fields</strong>: Yes/No.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>If the calculated field is created in the report, it will be copied. If the calculated field is created within the data model level, it will not be copied.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Tenants, Roles, Users, Permissions</strong>: No</li>
+<li><strong>Report Object GUIDs</strong>: No</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="report-object-workflow">
+<h3>Report Object Workflow<a class="headerlink" href="#report-object-workflow" title="Permalink to this headline">¶</a></h3>
+<p>The following guidelines specify the intended workflow when copying dashboards, reports, and templates from one environment to another.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Report Objects can be copied from Source System to Destination System</li>
+<li>Report Objects can be copied from Source System to Destination Tenant</li>
+<li>Report Objects can be copied from Source Tenant to Destination Tenant</li>
+<li>Report Objects cannot be promoted from a Tenant to a System</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="copy-console-examples">
+<h3>Copy Console Examples<a class="headerlink" href="#copy-console-examples" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>In the following examples, we assume that each reports are found in the same category and sub category.</dt>
+<dd><ul class="first last simple">
+<li>Reports are described using their Report Name, GUID, and Source GUID {Report Name, GUID, Source GUID}</li>
+<li>In live scenarios, GUIDs are not generated sequentially</li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li><p class="first"><strong>Goal:</strong> Copy reports A, B, C, D from Source to Destination</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide2.PNG" src="../_images/Slide2.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Goal:</strong> Report A has been copied from Source to Destination. Modify report A in Source and recopy. <em>Overwrite if exists = yes</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide3.PNG" src="../_images/Slide3.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Goal:</strong> Report A has been copied from Source to Destination. Modify report A in Source and recopy. <em>Overwrite if exists = no</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide4.PNG" src="../_images/Slide4.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Goal:</strong> Report A name exists in destination. Create report A in Source and Copy. <em>Overwrite if exists = no</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide6.PNG" src="../_images/Slide6.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Goal:</strong> Report A name exists in destination. Create report A in Source and Copy. <em>Overwrite if exists = no</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide6.PNG" src="../_images/Slide6.PNG" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Goal:</strong> The destination database is a restored copy of the source database. Reports have been modified in source.</p>
+</li>
+</ul>
+<p>Copy modified reports A, B, C, D from source to destination. <em>Overwrite if exists = no</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide9.PNG" src="../_images/Slide9.PNG" />
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Goal:</strong> The destination database is a restored copy of the source database. Reports have been modified in source.</li>
+</ul>
+<p>Copy modified reports A, B, C, D from source to destination. <em>Overwrite if exists = yes</em></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Slide9.PNG" src="../_images/Slide9.PNG" />
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="understanding-the-copy-console-xml">
+<h2>Understanding The Copy Console XML<a class="headerlink" href="#understanding-the-copy-console-xml" title="Permalink to this headline">¶</a></h2>
+<p>Options for the Copy Console are specified in an XML and provided to the Copy Console at runtime. An example of this XML can be found in the &#8220;Usage&#8221; section below. The following is an overview of the configurable options in your XML.</p>
+<ul>
+<li><p class="first"><strong>Authentication</strong>: The Copy Console must be able to log in to Izenda in order to create a valid access token.</p>
+<blockquote>
+<div><ul class="simple">
+<li>For standalone environments, you will simply need to provide the Izenda API URL along with valid credentials for your source and destinations.</li>
+<li>In integrated modes, the authentication endpoint will be specified in the <em>appAuthUrl</em> of the Authentication object. A sample C# implementation can be found in the <em>Using the Copy Console for Integrated Modes</em> section below.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Specifying a Tenant</strong>:Tenants are specified directly in your CopyConfig.xml by their ID found within the UI. If the Tenant ID value is left blank, it is assumed that you are copying to the System &#8220;tenant&#8221;</p>
+<blockquote>
+<div><div class="figure" id="id1">
+<img alt="../_images/Slide12.PNG" src="../_images/Slide12.PNG" />
+<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">&lt;tenant id=&#8221;My Tenant ID&#8221; overwriteIfAlreadyExist=&#8221;yes&#8221;&gt;</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Specifying the overwriteIfExists Flag</strong>: When a report is copied from one environment to another, a Source ID is cataloged in the destination. This control can be set at the tenant level within your configuraton file.</dt>
+<dd><p class="first"><em>&lt;tenant id=&#8221;My Tenant ID&#8221; overwriteIfAlreadyExist=&#8221;yes&#8221;&gt;</em></p>
+<ul class="last simple">
+<li>If flag is true: If the Source ID in the database matches the Source ID of the prospective copy and the report names match, the existing version of the report is overwritten.</li>
+<li>If flag is false: If the Source ID in the database matches the Source ID of the prospective copy and the report names match, the existing version of the report is not overwritten.</li>
+<li>At this time, there is not a setting to &#8220;make a copy&#8221; but not overwrite if the SourceIDs match and the names match (e.g. If &#8220;Report&#8221; exists,  &#8220;Report(1)&#8221; is created).</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Specifying Database Mappings</strong>: In order to copy reports from one environment to another, a datasource must exist within the Destination that maps. Database mapping can be accomplished by specifying the source and destination&#8217;s database names.</dt>
+<dd><blockquote class="first">
+<div><ul class="simple">
+<li>When specifying your database mapping, you will need to obtain the database name and schema for both the source and destination. Both values can be found directly in the platform.</li>
+<li>Database Objects used within your report must exist in both the source and destination. Database objects are not &#8220;mappable.&#8221; For instance, if a report is built with the &#8220;Orders&#8221; table in the Source, it cannot be mapped to an &#8220;Orders&#8221; view in the Destination. Similarly, if a report is build with the &#8220;Orders&#8221; table in the Source, it cannot be mapped to a &#8220;MyOrdersTable&#8221; in the Destination.</li>
+</ul>
+</div></blockquote>
+<div class="last figure" id="id2">
+<img alt="../_images/Slide10.PNG" src="../_images/Slide10.PNG" />
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">&lt;databaseMapping sourceDatabaseName=&#8221;Northwind&#8221; sourceSchema=&#8221;dbo&#8221; destinationDatabaseName=&#8221;NW&#8221; destinationSchema=&#8221;dbo&#8221;/&gt;</span></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Specifying Reports, Templates and Dashboards</strong>: These elements will be found in their respective XML tags within your CopyConfig.xml.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">To reference a particular Report Object in your XML, you will specify its ID with its corresponding object type</p>
+</li>
+<li><p class="first">Report Object IDs can be found within the URL when navigating to it in your web browser.</p>
+<blockquote>
+<div><div class="figure" id="id3">
+<img alt="../_images/Slide11b.PNG" src="../_images/Slide11b.PNG" />
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">&lt;report id=&#8221;10663c5b-882e-4739-bb66-9fc9d7a8210a&#8221;/&gt;</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Report/template IDs can also be found within the IzendaReport table of your Izenda Configuration Database.</p>
+</li>
+<li><p class="first">Dashboard IDs can also be found within the IzendaDashboard table of your Izenda Configuration Database.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
