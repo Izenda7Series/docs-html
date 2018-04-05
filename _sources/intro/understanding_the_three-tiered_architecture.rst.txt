@@ -10,7 +10,7 @@ Izenda is split into three levels: the Front End (UI), the Back End
 configured to support a fully standalone instance of Izenda as well as seamless,
 fully-integrated instances.
 
-For more informaton about embedding Izenda, please refer to our :doc:`Developer Guide </dev/.developer_guide>`.
+For more informaton about embedding Izenda, please refer to our `Developer Guide </dev/.developer_guide>`_.
 
 *  Izenda offers a number of Integration Options.
 
@@ -22,18 +22,55 @@ For more informaton about embedding Izenda, please refer to our :doc:`Developer 
 
    - 3 : All Integrated |br|
 
-*  The diagram below groups our current kits available according to
-   their deployment method.
+*  After deploying Izenda, ensure that the IzendaSystemSettings table in your Izenda Configuration Database contains the correct deployment mode value. For more about the SystemSetting table, click `here </ref/spec_izendasystemsetting_table>`_.
+
+*  The table below groups our current kits available according to
+   their deployment method. These kits are provided for demonstration purposes and should not be used as production-ready solutions.
 
    .. note::
 
-      Click on the image to zoom or scroll down to see more detailed versions of each diagram
+      Click on an thumbnail or scroll down to see more detailed versions of each diagram
 
-   .. figure:: /_static/images/Overview4.png
-
-      Overview
-
-*  Once Izenda is deployed, the SystemSettings table must be updated with the correct deployment value. For more about the SystemSetting table, click :doc:`here </ref/spec_izendasystemsetting_table>`.
+      
+.. list-table::
+   :header-rows: 1
+   :widths: 100 100 100 100 100
+   
+   *  - Framework
+      -  Deployment Mode 0
+      -  Deployment Mode 1
+      -  Deployment Mode 2
+      -  Deployment Mode 3
+   *  - Standalone Application
+      -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide1.PNG
+            :scale: 20 %
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#bi-platform-implementation
+      -  
+      -  
+      -  
+   *  - MVC
+      -  
+      -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide2.PNG
+            :scale: 20 %
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-besa-implementation
+      -  
+      -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide4.PNG    
+            :scale: 20 %
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-implementation
+   *  - Web Forms
+      -  
+      -  
+      -  
+      -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide5.PNG
+            :scale: 20 %
+            :target:  https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#webforms-implementation
+   *  - Angular 2
+      -  
+      -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide3.PNG
+            :scale: 20 %
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#angular-2-implementation
+      -  
+      -  
 
 Deployment Mode 0: Standalone Deployment
 -----------------------------------------
@@ -62,7 +99,7 @@ BI Platform Implementation
    
 -  For installation steps, see the :doc:`/install/doc_installation_guide` and :doc:`/install/doc_upgrade_guide` for stand alone deployments.
 
-   .. figure::  /_static/images/StandaloneArchDiagram2.png
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Slide1B.PNG
 
       A diagram of implementation
 
@@ -78,7 +115,7 @@ Deployment Mode 1: Back End Standalone, Front End Integrated
    API calls which would include requesting queries from your reporting
    database(s).
 
-MVC 5 Implementation
+MVC 5 BESA Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Requirements:
@@ -86,9 +123,9 @@ MVC 5 Implementation
    - Embedded UI
    - Empty database
 
-- MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
+- MVC Starter Kit Back End Standalone found `here <https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/>`_
 
-   .. figure::  /_static/images/MVC1ArchDiagram.png
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Slide2.PNG
 
       A diagram of implementation
 
@@ -101,9 +138,10 @@ Angular 2 Implementation
    - Empty database
    - Angular 2 Starter Kit found `here <https://github.com/Izenda7Series/Angular2Starterkit/>`_
 
-   .. figure::  /_static/images/Angular1ArchDiagram2.png
 
-      A diagram of implementation
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Slide3.PNG
+   
+   A diagram of implementation
     
     
 Deployment Mode 3: Fully Integrated
@@ -133,10 +171,22 @@ MVC Implementation
    - Empty database
 - MVC Starter Kit found `here <https://github.com/Izenda7Series/Mvc5StarterKit/>`_
 
-   .. figure::  /_static/images/MVC3ArchDiagram.png
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Slide4.PNG
+   
+   A diagram of implementation
 
-      A diagram of implementation
+Webforms Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Requirements:
+  - API
+  - Embedded UI
+  - Empty Database
+- Webforms Starter Kit found `here <https://github.com/Izenda7Series/WebFormsStarterkit>`_ 
 
+
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Slide5.PNG
+   
+   A diagram of implementation
 
 Switching Between Deployment Styles
 -----------------------------------

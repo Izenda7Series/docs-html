@@ -1,6 +1,6 @@
-=====================
-BI Portal Custom CSS
-=====================
+=================================
+Customizing the Application's CSS
+==================================
 
 .. note::
 
@@ -327,11 +327,11 @@ Common CSS Customizations
 	    padding: 5px !important;
     }
   
-  .. figure::   /_static/images/custom_css/DefaultReportGridPadding.png
+  .. figure::   /_static/images/custom_css/DefaultReportGridPadding.PNG
   
      Default grid padding
   
-  .. figure:: /_static/images/custom_css/CustomReportGridPadding.png
+  .. figure:: /_static/images/custom_css/CustomReportGridPadding.PNG
 
     After customizing the grid's padding
 
@@ -352,11 +352,11 @@ Common CSS Customizations
       width: 8.33333% !important;
     }
 
-  .. figure:: /_static/images/custom_css/DefaultReportListWidths.png
+  .. figure:: /_static/images/custom_css/DefaultReportListWidths.PNG
   
      Default report list widths
   
-  .. figure:: /_static/images/custom_css/CustomReportListWidths.png
+  .. figure:: /_static/images/custom_css/CustomReportListWidths.PNG
     
      After customizing the report list widths
 

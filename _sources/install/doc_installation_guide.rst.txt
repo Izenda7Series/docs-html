@@ -16,7 +16,7 @@ The architectural goal, pre-installation preparations, and web server setup are 
 Architectural Goal
 ------------------------
 
-.. figure:: /_static/images/StandaloneArchDiagram2.png
+.. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/Slide1B.PNG
 
    A diagram of implementation
 
