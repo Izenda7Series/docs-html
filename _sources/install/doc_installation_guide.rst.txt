@@ -2,13 +2,16 @@
 Installation Guide
 ==========================
 
-The following outlines the steps to install Izenda's Stand Alone Portal.
+.. contents:: Table of Contents
+      :depth: 2
+
+|br|
 
 Standalone Installation Options
 --------------------------------
 There are two main options when deploying a "vanilla" instnace of our standalone environment.
--  Installing Izenda's front end and back end as two separate sites
--  Installing Izenda's front end and back end as virtual directories/applications under a host site
+      -  Installing Izenda's front end and back end as two separate sites
+      -  Installing Izenda's front end and back end as virtual directories/applications under a host site
 
 The architectural goal, pre-installation preparations, and web server setup are the same for both deployment options.
 
@@ -27,24 +30,24 @@ The setup of Izenda requires a download of the latest version of the stand-alone
 
 -  Izenda installation packages, download them from https://downloads.izenda.com/latest/
 
-   *  .. _Izenda_App_folder:
+   *  .. _Izenda_App_folder: 
+      An Izenda Front-end Package (Default name "App") |br|
 
       .. figure:: /_static/images/Izenda_App_folder.png
-         :align: right
+         :align: center
          :width: 482px
 
          Content of Front-end package
 
-      An Izenda Front-end Package (Default name "App"). |br|
+      
    *  .. _Izenda_API_folder:
+      An Izenda Back-end Package (Default name "API") |br|
 
       .. figure:: /_static/images/Izenda_API_folder.png
-         :align: right
+         :align: center
          :width: 482px
 
          Content of Back-end package
-
-      An Izenda Back-end Package (Default name "API"). |br|
 
 -  Server
 
@@ -74,15 +77,15 @@ Add Web Server Role and .NET Framework
    check-box.
 
    .. note::
+            For Windows Server 2016, also check ASP.NET 4.6 in this step and skip adding "IIS:ASP.NET 4.5" in next step. |br|
 
-      .. figure:: /_static/images/Server_Role_Web_Server_ASP.NET_4.6.png
-         :align: right
-         :width: 524px
+   .. figure:: /_static/images/Server_Role_Web_Server_ASP.NET_4.6.png ..
+      :align: center
+      :width: 524px
 
-         Install Server ASP.NET 4.6
+      Install Server ASP.NET 4.6 
 
-      For Windows Server 2016, also check ASP.NET 4.6 in this step and skip adding "IIS:ASP.NET 4.5" in next step. |br|
-
+      
 #. Accept other default options then click Install.
 
 .. _Install_ASP.NET_4.5_and_URL_Rewrite_Components:
@@ -105,6 +108,7 @@ Install ASP.NET 4.5 and URL Rewrite Components
 
    .. figure:: /_static/images/IIS_ASP.NET_install.png
       :width: 667px
+      :align: center
 
       Install IIS ASP.NET 4.5 |br|
 
@@ -344,296 +348,289 @@ Troubleshooting & Verifying the Installation
 
 
 
-Common Izenda Stand-alone Installation Issues
+Common Izenda Standalone Installation Issues
 -------------------------------------------------------
 
-*  IIS ASP.NET
+.. container:: toggle
 
-   Izenda’s API is a .NET web application compatible with .NET 4.0 and higher.
+      .. container:: header 
 
-   For .NET web applications to run through IIS you need to install IIS ASP.NET through your server’s Add Roles and Feature Wizard, or through the `IIS Web Platform Installer <https://www.microsoft.com/web/downloads/platform.aspx>`__.
+            **IIS Issues**:
 
-   *  `Add Web Server Role and .NET Framework`_
-   *  `Install ASP.NET 4.5 and URL Rewrite Components`_
+      * ASP.NET
+            Izenda’s API is a .NET web application compatible with .NET 4.0 and higher.
 
-   |br|
+            For .NET web applications to run through IIS you need to install IIS ASP.NET through your server’s Add Roles and Feature Wizard, or through the `IIS Web Platform Installer <https://www.microsoft.com/web/downloads/platform.aspx>`__.
 
-   Without these features installed you may encounter errors like the following:
+            *  `Add Web Server Role and .NET Framework`_
+            *  `Install ASP.NET 4.5 and URL Rewrite Components`_
 
-   .. container:: bold red
+            |br|
 
-      HTTP Error 500.xx – Internal Server Error
+            Without these features installed you may encounter errors like the following:
 
-   .. container:: bold
+            .. container:: bold red
 
-      The requested page cannot be accessed because the related configuration data for the page is invalid.
+                  HTTP Error 500.xx – Internal Server Error
 
-   |br|
+            .. container:: bold
 
-*  IIS URL Rewrite Module
+                  The requested page cannot be accessed because the related configuration data for the page is invalid.
 
-   Izenda’s Stand-alone UI web.config makes use of the IIS URL Rewrite Module for routing.
+            |br|
 
-   You’ll install this module through the `IIS Web Platform Installer <https://www.microsoft.com/web/downloads/platform.aspx>`__.
+      * URL Rewrite Module
+            Izenda’s Stand-alone UI web.config makes use of the IIS URL Rewrite Module for routing.
 
-   *  `Install ASP.NET 4.5 and URL Rewrite Components`_
+            You’ll install this module through the `IIS Web Platform Installer <https://www.microsoft.com/web/downloads/platform.aspx>`__.
 
-   |br|
+            *  `Install ASP.NET 4.5 and URL Rewrite Components`_
 
-   Without this feature installed you may encounter errors like the following navigating to the UI.
+            |br|
 
-   .. container:: bold red
+            Without this feature installed you may encounter errors like the following navigating to the UI.
 
-      Configuration Error
+            .. container:: bold red
 
-   .. container:: bold
+                  Configuration Error
 
-      An error occurred during the processing of a configuration file required to service this request.
+            .. container:: bold
 
-   |br|
+                  An error occurred during the processing of a configuration file required to service this request.
 
-*  Microsoft Visual C++ 2010 Redistributable for Izenda’s Oracle Drivers
+            |br|
 
-   Izenda’s Oracle Drivers utilize the Microsoft Visual C++ 2010 Redistributable.
+      * API Permissions
+            If you can get Izenda running and see the UI, but get an error after setting your Izenda Configuration Database Connection String, you may be encountering permission issues at the API level.
 
-   These can be installed by downloading the installer from Microsoft: |br|
-   `Microsoft Visual C++ 2010 Redistributable Package (x64) <https://www.microsoft.com/en-us/download/details.aspx?id=14632>`__
+            Izenda’s API needs proper write permissions to its own directory to create the izendadb.config file and generate log files.
 
-   Without this dependency installed you may encounter errors like the following.
+            Often there are issues using just the default IUSR or NT AUTHORITY\\NETWORKSERVICE roles to provide these permissions.
 
-   .. container:: bold red
+            Try the following to get past the issue:
 
-      Could load file or assembly ‘Oracle.ManagedDataAccess’ or one of its dependencies. An attempt was made to load a program with an incorrect format.
+            *  Give the IIS Application Pool Full Access to the API directory.
 
-   .. container:: bold
+                  You can see the API’s Application Pool name just by looking at the application’s basic settings in IIS.
 
-      An unhandled exception occurred during the execution of the current web request.
+                  .. figure:: /_static/images/install_IIS_basic_settings.png
+                        :width: 395px
 
-   |br|
+                  IIS basic settings |br|
 
-*  Mixing Two Separate Application Installation Steps with Virtual Directory Installation Steps
+                  You can then use that name in setting your folder permissions as you see below. |br| 
+                  ``IIS AppPool\YouApplicationPoolName``
 
-   There are two different ways to install Izenda Stand-alone, as two separate applications with distinct ports or domains, or as one application with a virtual directory. 
+                  .. figure:: /_static/images/install_IIS_AppPool_name.png
+                        :width: 344px
 
-   Concepts from these two separate installation options cannot be mixed together without creating issues. Make sure to follow just one guide or the other:
+                  IIS Select Application Pool name |br|
 
-   *  `Izenda Installation as Two Separate Sites`_
-   *  `Deploying Izenda as a Virtual Directory or Application`_
+                  After giving this IIS Application Pool Full Access rights, you can restart the API, and try using the UI again.
 
-   |br|
+            |br|
 
-   Once you have followed one set of instructions to completion, you can move on to `Troubleshooting & Verifying the Installation`_ guides, and :doc:`Install Izenda System Database and Apply License </ui/doc_system_db_and_license>` guides.
 
-   |br|
 
-*  The izenda_config.js file
+.. container:: toggle
 
-   You’ll need to edit the izenda_config.js file during installation and it’s important to use fully qualified URLs for the WebApiURL.
+      .. container:: header 
+           
+            **Oracle Issues**:
 
-   For example, a fully qualified URL to the API should include ``http://`` at the beginning and ``/api/`` at the end. It should look something like what you see below. For `Izenda Installation as Two Separate Sites`_ this is all you need to edit. |br|
-   ``WebApiUrl:"http://192.168.45.37:8200/api/"``
+      *  Microsoft Visual C++ 2010 Redistributable for Izenda’s Oracle Drivers
 
-   For `Deploying Izenda as a Virtual Directory or Application`_ you need to edit the BaseUrl. This should look like the following, per the instructions with the trailing slash. |br|
-   ``BaseUrl:”/IzendaDirectory/”``
+            Izenda’s Oracle Drivers utilize the Microsoft Visual C++ 2010 Redistributable.
 
-   If you don’t properly configure this file you may be able to see the Izenda login UI, but not get directed to the setup UI, or you may see many console errors in your browser’s dev tools.
+            These can be installed by downloading the installer from Microsoft: |br|
+            `Microsoft Visual C++ 2010 Redistributable Package (x64) <https://www.microsoft.com/en-us/download/details.aspx?id=14632>`__
 
-   |br|
+            Without this dependency installed you may encounter errors like the following.
 
-*  API Directory Permissions
+            .. container:: bold red
 
-   If you can get Izenda running and see the UI, but get an error after setting your Izenda Configuration Database Connection String, you may be encountering permission issues at the API level.
+                  Could load file or assembly ‘Oracle.ManagedDataAccess’ or one of its dependencies. An attempt was made to load a program with an incorrect format.
 
-   Izenda’s API needs proper write permissions to its own directory to create the izendadb.config file and generate log files.
+            .. container:: bold
 
-   Often there are issues using just the default IUSR or NT AUTHORITY\\NETWORKSERVICE roles to provide these permissions.
+                  An unhandled exception occurred during the execution of the current web request.
 
-   Try the following to get past the issue:
+            |br|
 
-   *  Give the IIS Application Pool Full Access to the API directory.
 
-      You can see the API’s Application Pool name just by looking at the application’s basic settings in IIS.
 
-      .. figure:: /_static/images/install_IIS_basic_settings.png
-         :width: 395px
+.. container:: toggle
 
-         IIS basic settings |br|
+      .. container:: header 
+           
+            **Resource Configuration**:
 
-      You can then use that name in setting your folder permissions as you see below. |br| 
-      ``IIS AppPool\YouApplicationPoolName``
+      * Virtual Directory vs Individual Sites
+            There are two different ways to install Izenda Stand-alone, as two separate applications with distinct ports or domains or as one application with a virtual directory. 
 
-      .. figure:: /_static/images/install_IIS_AppPool_name.png
-         :width: 344px
+            Concepts from these two separate installation options cannot be mixed together without creating issues. Make sure to follow just one guide or the other:
 
-         IIS Select Application Pool name |br|
+            *  `Izenda Installation as Two Separate Sites`_
+            *  `Deploying Izenda as a Virtual Directory or Application`_
 
-      After giving this IIS Application Pool Full Access rights, you can restart the API, and try using the UI again.
+            |br|
 
-   *  If that doesn’t work, you can try the ‘nuclear option’ and add **Everyone** with Full Access rights, restart the API, and try using the UI again.
+            Once you have followed one set of instructions to completion, you can move on to `Troubleshooting & Verifying the Installation`_ guides, and :doc:`Install Izenda System Database and Apply License </ui/doc_system_db_and_license>` guides.
 
-   |br|
+            |br|
 
-*  Misconfigured Connection Strings or Difficulty Connecting
+      * The izenda.config.js File
+            You’ll need to edit the izenda_config.js file during installation and it’s important to use fully qualified URLs for the WebApiURL.
 
-   Izenda supports many different database types, and has specific drivers for these specific database types.
+            For example, a fully qualified URL to the API should include ``http://`` at the beginning and ``/api/`` at the end. It should look something like what you see below. For `Izenda Installation as Two Separate Sites`_ this is all you need to edit. |br|
+            ``WebApiUrl:"http://192.168.45.37:8200/api/"``
 
-   -  Make sure you’ve selected the right Data Server Type in the dropdowns near Connection String UIs.
+            For `Deploying Izenda as a Virtual Directory or Application`_ you need to edit the BaseUrl. This should look like the following, per the instructions with the trailing slash. |br|
+            ``BaseUrl:”/IzendaDirectory/”``
 
-      .. figure:: /_static/images/install_select_data_server_type.png
-         :width: 900px
+            If you don’t properly configure this file you may be able to see the Izenda login UI, but not get directed to the setup UI, or you may see many console errors in your browser’s dev tools.
 
-         Select Data Server Type |br|
+            |br|
 
-   -  Make sure you’ve used the proper syntax for your Connection String.
-   -  Certain characters may cause issues when used in Connection Strings. Avoid using characters such as semicolons, single-quotes, or double-quotes
 
-      MSSQL, PostgreSQL, Oracle, and MySQL Connection Strings are all formatted a little different, provide different options, and expect different syntaxes. Use resources like `ConnectionStrings.com <https://www.connectionstrings.com/>`__ to make sure you’re including the right details, options, and port numbers:
+.. container:: toggle
 
-      + MSSQL
-      + PostgreSQL
-      + Oracle
-      + MySQL
+      .. container:: header 
+           
+            **Connection Strings**:
+
+      * Misconfigured Connection Strings and Difficulty Connecting
+            Izenda supports many different database types, and has specific drivers for these specific database types.
+
+            -  Make sure you’ve selected the right Data Server Type in the dropdowns near Connection String UIs.
+
+                  .. figure:: /_static/images/install_select_data_server_type.png
+                        :width: 900px
+
+                  Select Data Server Type |br|
+
+            -  Make sure you’ve used the proper syntax for your Connection String.
+            -  Certain characters may cause issues when used in Connection Strings. Avoid using characters such as semicolons, single-quotes, or double-quotes
+
+                  MSSQL, PostgreSQL, Oracle, and MySQL Connection Strings are all formatted a little different, provide different options, and expect different syntaxes. Use resources like `ConnectionStrings.com <https://www.connectionstrings.com/>`__ to make sure you’re including the right details, options, and port numbers:
+
+                  + MSSQL
+                  + PostgreSQL
+                  + Oracle
+                  + MySQL
+
+                  |br|
+
+            -  Make sure you’ve allowed the connection through your Network Security.
+
+                  If you use custom ports for your database you’ll need to factor that into both the web server running Izenda as well as your Connection String.
+
+                  If you use Azure or AWS you may need to add the web server running Izenda to your Network Security Groups, or whitelist the IP address so that it can connect to your database.
+
+                  |br|
+
+            -  Make sure you’ve given your Connection String user proper permissions.
+
+                  Double check that the connection string user has permissions to the databases and schemas you want to connect to. You’ll need to give read/write permissions to the user for the Izenda Configuration Database. Izenda cannot get around your RDBMS security, as you might expect. 
+
+                  |br|
+
+            -  Try connecting with another tool or application.
+
+                  If you’re continuing to have issues with a Connection String you may want to ensure that it’s an Izenda specific problem before reaching out.
+
+                  Try using your RDBMS management tools to connect to the database with the same user, and preferably from the same server, that you are trying to connect with using Izenda.
+
+            |br|
+
+Additional Reference
+-------------------------------------------------------
+* Understanding Configuration vs. Reporting Connection Strings
+      The Izenda Configuration Database Connection String and Reporting Data Source Connection Strings are set in two different places, it totally separate UIs or underlying APIs.
+
+      -  Izenda Configuration Database Connection String
+
+            The Izenda Configuration Database Connection String will be set in the Settings page under the System DB & License tab. 
+
+            Be very careful when setting and/or changing this connection string!
+
+            This connection string will point Izenda to a database where it can create its schema and store report metadata, dashboard metadata, data model metadata, Tenant, Role, and User metadata, and much more.
+
+            If you set this to an existing database you will end up with Izenda specific tables in your schema, it’s usually best to use a separate empty database for the Izenda Configuration Database unless you’re comfortable with mixing Izenda’s storage schema with your database schema.
+
+            |br|
+
+      -  Reporting Data Source Connection Strings
+
+            Reporting Data Source Connection Strings will be set in the Settings page under the Data Setup/Connection String tab. 
+
+            After connecting Izenda will query the database to establish the available data source listing, so that you can choose specific objects to move into the visible data sources. 
+
+            These selected objects can then be further modeled upon, aliased, secured, and exposed to end-users within report designers.
+
+            Do not delete Connection Strings if you simply need to change connection strings to another database with a similar schema, or if you need to add new objects to the available/visible data source lists, you can change/rebuild Connection Strings or press reconnect and refresh the schema.
+
+            Deleting and recreating Connection Strings will break your reports and dashboards, where just resetting the Connection Strings or reconnecting generally will not.
 
       |br|
 
-   -  Make sure you’ve allowed the connection through your Network Security.
+* Editing Configuration Files
+      Additional features can be set for a customized deployment experience. For live sites, several of the features below are recommended.
 
-      If you use custom ports for your database you’ll need to factor that into both the web server running Izenda as well as your Connection String.
+      -  Change the Back-end passphrase, which is the key to encrypt and decrypt data in Izenda.
 
-      If you use Azure or AWS you may need to add the web server running Izenda to your Network Security Groups, or whitelist the IP address so that it can connect to your database.
+            Enter a 29-character value into the value of this key:
+            ``<appSettings>``, ``<add key="izedapassphrase" value="" />``
 
-      |br|
+      .. warning::
 
-   -  Make sure you’ve given your Connection String user proper permissions.
+            This passphrase cannot be changed afterwards since already encrypted data cannot be decrypted with another passphrase.
 
-      Double check that the connection string user has permissions to the databases and schemas you want to connect to. You’ll need to give read/write permissions to the user for the Izenda Configuration Database. Izenda cannot get around your RDBMS security, as you might expect. 
+      -  Recommended: add :ref:`security configurations <Web_Server_Security_Configurations>`
 
-      |br|
+      -  Optionally change the default Back-end path ``/api/``
 
-   -  Try connecting with another tool or application.
+            e.g. change the path to ``/rest/``
 
-      If you’re continuing to have issues with a Connection String you may want to ensure that it’s an Izenda specific problem before reaching out.
+            #. Edit the file ``API\Web.config``, replace the default value "api"
+                  with the new value at the following places:
 
-      Try using your RDBMS management tools to connect to the database with the same user, and preferably from the same server, that you are trying to connect with using Izenda.
+                  -  ``<appSettings>``, ``<add key="izedaapiprefix" value="api" />``
+                  -  ``<system.web>``, ``<httpHandlers>``, ``<add verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="api/*" />``
+                  -  ``<system.webServer>``, ``<handlers>``, ``<add name="Nancy" verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="api/*" />``
 
-   |br|
+            #. Also edit the file ``App\izenda_config.js``, replace the default
+                  value "api" with the new value at the following places:
 
-*  Understanding the Izenda Configuration Database Connection String
+                  -  ``"WebApiUrl": "http://127.0.0.1:8888/api/",``
 
-   The Izenda Configuration Database Connection String and Reporting Data Source Connection Strings are set in two different places, it totally separate UIs or underlying APIs.
+      -  Optionally change Izenda log file settings
 
-   -  Izenda Configuration Database Connection String
+            -  Change the default log file location in ``<log4net ..>``, ``<appender name="RollingFileAppender" ..>``, ``<file value="logs\izenda-log.log" />``, which resolves to C:\\inetpub\\wwwroot\\Izenda\\API\\logs in a typical installation.
+            -  Change how the log files are archived/rotated/rolled in ``<log4net ..>``, ``<appender name="RollingFileAppender" ..>``.
 
-      The Izenda Configuration Database Connection String will be set in the Settings page under the System DB & License tab. 
+                  The default setting is to keep maximum 1000 last files of 5MB
+                  each every day. See other examples at `log4net
+                  document <https://logging.apache.org/log4net/release/config-examples.html#rollingfileappender>`__.
 
-      Be very careful when setting and/or changing this connection string!
+            -  Enable folder compression: log file content is all text and will compress up to 2% of the original size.
 
-      This connection string will point Izenda to a database where it can create its schema and store report metadata, dashboard metadata, data model metadata, Tenant, Role, and User metadata, and much more.
+                  #. Right-click on the folder (C:\\inetpub\\wwwroot\\Izenda\\API\\logs) and click Properties.
+                  #. Click Advanced button in General tab.
+                  #. Tick Compress contents to save disk space check-box, then click OK twice.
+                  #. Select either option: this folder only, or this folder, subfolders and files then click OK.
+                  #. Confirm the compression status: the folder will have blue name, or have two arrows added at the top right of its icon (from Windows 10).
 
-      If you set this to an existing database you will end up with Izenda specific tables in your schema, it’s usually best to use a separate empty database for the Izenda Configuration Database unless you’re comfortable with mixing Izenda’s storage schema with your database schema.
+      -  Optionally enter settings for `EVO PDF Azure <http://www.evopdf.com/azure-html-to-pdf-converter.aspx>`__ option, or accept the default values to use the local embedded library.
 
-      |br|
+            #. Under ``<configuration>``, find or add the following section:
+                  .. code-block:: mxml
 
-   -  Reporting Data Source Connection Strings
+                        <evoPdfSettings cloudEnable="false">
+                              <azureCloudService server="" port="" servicePassword="" />
+                        </evoPdfSettings>
 
-      Reporting Data Source Connection Strings will be set in the Settings page under the Data Setup/Connection String tab. 
-
-      After connecting Izenda will query the database to establish the available data source listing, so that you can choose specific objects to move into the visible data sources. 
-
-      These selected objects can then be further modeled upon, aliased, secured, and exposed to end-users within report designers.
-
-      Do not delete Connection Strings if you simply need to change connection strings to another database with a similar schema, or if you need to add new objects to the available/visible data source lists, you can change/rebuild Connection Strings or press reconnect and refresh the schema.
-
-      Deleting and recreating Connection Strings will break your reports and dashboards, where just resetting the Connection Strings or reconnecting generally will not.
-
-   |br|
-
-*  In build 1.23.0, an exception may occur after creating an APP and API websites. If you receive  an error akin to the following:
-
-   .. code-block:: text
-   
-      Exception type: ConfigurationErrorsException
-      Exception message: Could not load file or assembly 'Oracle.ManagedDataAccessDTC.DLL' or one of its dependencies. The specified module could not be found.
-
-   Then remove Oracle.ManagedDataAccessDTC.DLL from your API/bin/ folder and place it in a separate location. If the problem persists, place the file back in the API/bin/ folder.
-
-Editing the Configuration Files
---------------------------------
-
-Additional features can be set for a customized deployment experience. For live sites, several of the features below are recommended.
-
--  Change the Back-end passphrase, which is the key to encrypt and
-   decrypt data in Izenda.
-
-       Enter a 29-character value into the value of this key:
-       ``<appSettings>``, ``<add key="izedapassphrase" value="" />``
-
-.. warning::
-
-   This passphrase cannot be changed afterwards since already encrypted data cannot be decrypted with another passphrase.
-
--  Recommended: add :ref:`security
-   configurations <Web_Server_Security_Configurations>`
-
--  Optionally change the default Back-end path ``/api/``
-
-       e.g. change the path to ``/rest/``
-
-   #. Edit the file ``API\Web.config``, replace the default value "api"
-      with the new value at the following places:
-
-      -  ``<appSettings>``, ``<add key="izedaapiprefix" value="api" />``
-      -  ``<system.web>``, ``<httpHandlers>``,
-         ``<add verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="api/*" />``
-      -  ``<system.webServer>``, ``<handlers>``,
-         ``<add name="Nancy" verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="api/*" />``
-
-   #. Also edit the file ``App\izenda_config.js``, replace the default
-      value "api" with the new value at the following places:
-
-      -  ``"WebApiUrl": "http://127.0.0.1:8888/api/",``
-
--  Optionally change Izenda log file settings
-
-   -  Change the default log file location in ``<log4net ..>``,
-      ``<appender name="RollingFileAppender" ..>``,
-      ``<file value="logs\izenda-log.log" />``, which resolves to
-      C:\\inetpub\\wwwroot\\Izenda\\API\\logs in a typical installation.
-   -  Change how the log files are archived/rotated/rolled in
-      ``<log4net ..>``, ``<appender name="RollingFileAppender" ..>``.
-
-          The default setting is to keep maximum 1000 last files of 5MB
-          each every day. See other examples at `log4net
-          document <https://logging.apache.org/log4net/release/config-examples.html#rollingfileappender>`__.
-
-   -  Enable folder compression: log file content is all text and will
-      compress up to 2% of the original size.
-
-      #. Right-click on the folder
-         (C:\\inetpub\\wwwroot\\Izenda\\API\\logs) and click Properties.
-      #. Click Advanced button in General tab.
-      #. Tick Compress contents to save disk space check-box, then click
-         OK twice.
-      #. Select either option: this folder only, or this folder,
-         subfolders and files then click OK.
-      #. Confirm the compression status: the folder will have blue name,
-         or have two arrows added at the top right of its icon (from
-         Windows 10).
-
--  Optionally enter settings for `EVO PDF
-   Azure <http://www.evopdf.com/azure-html-to-pdf-converter.aspx>`__
-   option, or accept the default values to use the local embedded
-   library.
-
-   #. Under ``<configuration>``, find or add the following section:
-      ::
-
-          <evoPdfSettings cloudEnable="false">
-            <azureCloudService server="" port="" servicePassword="" />
-          </evoPdfSettings>
-
-   #. Set ``cloudEnable="true"`` to use the Azure option, then enter the
-      server IP, port and password.
+            #. Set ``cloudEnable="true"`` to use the Azure option, then enter the server IP, port and password.
 
 
 Next: :doc:`Install Izenda System Database and Apply License </ui/doc_system_db_and_license>`

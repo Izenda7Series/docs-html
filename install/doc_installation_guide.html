@@ -114,8 +114,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#izenda-installation-as-two-separate-sites">Izenda Installation As Two Separate Sites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#deploying-izenda-as-a-virtual-directory-or-application">Deploying Izenda as a Virtual Directory or Application</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-verifying-the-installation">Troubleshooting &amp; Verifying the Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#common-izenda-stand-alone-installation-issues">Common Izenda Stand-alone Installation Issues</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#editing-the-configuration-files">Editing the Configuration Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-izenda-standalone-installation-issues">Common Izenda Standalone Installation Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-reference">Additional Reference</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#next-install-izenda-system-database-and-apply-license">Next: <code class="docutils literal"><span class="pre">Install</span> <span class="pre">Izenda</span> <span class="pre">System</span> <span class="pre">Database</span> <span class="pre">and</span> <span class="pre">Apply</span> <span class="pre">License</span></code></a></li>
 </ul>
 </li>
@@ -203,39 +203,62 @@
            <div itemprop="articleBody">
             
   <div class="section" id="installation-guide">
-<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
-<p>The following outlines the steps to install Izenda&#8217;s Stand Alone Portal.</p>
+<h1><a class="toc-backref" href="#id10">Installation Guide</a><a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installation-guide" id="id10">Installation Guide</a><ul>
+<li><a class="reference internal" href="#standalone-installation-options" id="id11">Standalone Installation Options</a></li>
+<li><a class="reference internal" href="#architectural-goal" id="id12">Architectural Goal</a></li>
+<li><a class="reference internal" href="#pre-installation-preparations" id="id13">Pre-installation Preparations</a></li>
+<li><a class="reference internal" href="#web-server-setup" id="id14">Web Server Setup</a></li>
+<li><a class="reference internal" href="#izenda-installation-as-two-separate-sites" id="id15">Izenda Installation As Two Separate Sites</a></li>
+<li><a class="reference internal" href="#deploying-izenda-as-a-virtual-directory-or-application" id="id16">Deploying Izenda as a Virtual Directory or Application</a></li>
+<li><a class="reference internal" href="#troubleshooting-verifying-the-installation" id="id17">Troubleshooting &amp; Verifying the Installation</a></li>
+<li><a class="reference internal" href="#common-izenda-standalone-installation-issues" id="id18">Common Izenda Standalone Installation Issues</a></li>
+<li><a class="reference internal" href="#additional-reference" id="id19">Additional Reference</a></li>
+<li><a class="reference internal" href="#next-install-izenda-system-database-and-apply-license" id="id20">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><br clear="right" /></p>
 <div class="section" id="standalone-installation-options">
-<h2>Standalone Installation Options<a class="headerlink" href="#standalone-installation-options" title="Permalink to this headline">¶</a></h2>
-<p>There are two main options when deploying a &#8220;vanilla&#8221; instnace of our standalone environment.
--  Installing Izenda&#8217;s front end and back end as two separate sites
--  Installing Izenda&#8217;s front end and back end as virtual directories/applications under a host site</p>
+<h2><a class="toc-backref" href="#id11">Standalone Installation Options</a><a class="headerlink" href="#standalone-installation-options" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>There are two main options when deploying a &#8220;vanilla&#8221; instnace of our standalone environment.</dt>
+<dd><ul class="first last simple">
+<li>Installing Izenda&#8217;s front end and back end as two separate sites</li>
+<li>Installing Izenda&#8217;s front end and back end as virtual directories/applications under a host site</li>
+</ul>
+</dd>
+</dl>
 <p>The architectural goal, pre-installation preparations, and web server setup are the same for both deployment options.</p>
 </div>
 <div class="section" id="architectural-goal">
-<h2>Architectural Goal<a class="headerlink" href="#architectural-goal" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Architectural Goal</a><a class="headerlink" href="#architectural-goal" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id2">
 <img alt="../_images/Slide1B.PNG" src="../_images/Slide1B.PNG" />
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">A diagram of implementation</span></p>
 </div>
 </div>
 <div class="section" id="pre-installation-preparations">
-<h2>Pre-installation Preparations<a class="headerlink" href="#pre-installation-preparations" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Pre-installation Preparations</a><a class="headerlink" href="#pre-installation-preparations" title="Permalink to this headline">¶</a></h2>
 <p>The setup of Izenda requires a download of the latest version of the stand-alone front-end and the back-end and a proper web server setup. Izenda can be installed on a local machine on a Windows machine for testing purposes and is a best practice for ensuring permissions and performance can be validated locally prior to moving toward more embedded and integrated examples, but it is not recommended for live deployments.</p>
 <ul>
 <li><p class="first">Izenda installation packages, download them from <a class="reference external" href="https://downloads.izenda.com/latest/">https://downloads.izenda.com/latest/</a></p>
 <ul>
-<li><div class="figure align-right" id="id3">
-<span id="izenda-app-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_App_folder.png"><img alt="../_images/Izenda_App_folder.png" src="../_images/Izenda_App_folder.png" style="width: 482px;" /></a>
+<li><p>An Izenda Front-end Package (Default name &#8220;App&#8221;) <br clear="right" /></p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/Izenda_App_folder.png"><img alt="../_images/Izenda_App_folder.png" src="../_images/Izenda_App_folder.png" style="width: 482px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Content of Front-end package</span></p>
 </div>
-<p>An Izenda Front-end Package (Default name &#8220;App&#8221;). <br clear="right" /></p>
 </li>
-<li><div class="figure align-right" id="id4">
-<span id="izenda-api-folder"></span><a class="reference internal image-reference" href="../_images/Izenda_API_folder.png"><img alt="../_images/Izenda_API_folder.png" src="../_images/Izenda_API_folder.png" style="width: 482px;" /></a>
+<li><p>An Izenda Back-end Package (Default name &#8220;API&#8221;) <br clear="right" /></p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/Izenda_API_folder.png"><img alt="../_images/Izenda_API_folder.png" src="../_images/Izenda_API_folder.png" style="width: 482px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Content of Back-end package</span></p>
 </div>
-<p>An Izenda Back-end Package (Default name &#8220;API&#8221;). <br clear="right" /></p>
 </li>
 </ul>
 </li>
@@ -251,7 +274,7 @@
 </div>
 </div>
 <div class="section" id="web-server-setup">
-<h2>Web Server Setup<a class="headerlink" href="#web-server-setup" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Web Server Setup</a><a class="headerlink" href="#web-server-setup" title="Permalink to this headline">¶</a></h2>
 <p>To ensure that Izenda works properly, your Web Server requires additional components that may not be present on your server by default.</p>
 <div class="section" id="add-web-server-role-and-net-framework">
 <h3>Add Web Server Role and .NET Framework<a class="headerlink" href="#add-web-server-role-and-net-framework" title="Permalink to this headline">¶</a></h3>
@@ -274,11 +297,11 @@ check-box.</p>
 check-box.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<div class="figure align-right" id="id5">
-<a class="reference internal image-reference" href="../_images/Server_Role_Web_Server_ASP.NET_4.6.png"><img alt="../_images/Server_Role_Web_Server_ASP.NET_4.6.png" src="../_images/Server_Role_Web_Server_ASP.NET_4.6.png" style="width: 524px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Install Server ASP.NET 4.6</span></p>
-</div>
 <p class="last">For Windows Server 2016, also check ASP.NET 4.6 in this step and skip adding &#8220;IIS:ASP.NET 4.5&#8221; in next step. <br clear="right" /></p>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_static/images/Server_Role_Web_Server_ASP.NET_4.6.png.."><img alt="_static/images/Server_Role_Web_Server_ASP.NET_4.6.png.." src="_static/images/Server_Role_Web_Server_ASP.NET_4.6.png.." style="width: 524px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Install Server ASP.NET 4.6</span></p>
 </div>
 </li>
 <li><p class="first">Accept other default options then click Install.</p>
@@ -306,7 +329,7 @@ Web Platform Components&#8221; link.</p>
 </li>
 </ol>
 <blockquote id="iis-asp-net-install">
-<div><div class="figure" id="id6">
+<div><div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/IIS_ASP.NET_install.png"><img alt="../_images/IIS_ASP.NET_install.png" src="../_images/IIS_ASP.NET_install.png" style="width: 667px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Install IIS ASP.NET 4.5 <br clear="right" /></span></p>
 </div>
@@ -322,7 +345,7 @@ Web Platform Components&#8221; link.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="izenda-installation-as-two-separate-sites">
-<h2>Izenda Installation As Two Separate Sites<a class="headerlink" href="#izenda-installation-as-two-separate-sites" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Izenda Installation As Two Separate Sites</a><a class="headerlink" href="#izenda-installation-as-two-separate-sites" title="Permalink to this headline">¶</a></h2>
 <p>The most common testing scenario places the front-end and the back-end on two separate sites. Virtual Directories and Virtual Applications deployments are possible with additional configuration and are outlined in another section below.</p>
 <ol class="arabic">
 <li><p class="first">Extract the Izenda Front-end and Back-end packages to 2 separate
@@ -411,7 +434,7 @@ Please refer to the following guides below:
 </div>
 <hr class="docutils" />
 <div class="section" id="deploying-izenda-as-a-virtual-directory-or-application">
-<h2>Deploying Izenda as a Virtual Directory or Application<a class="headerlink" href="#deploying-izenda-as-a-virtual-directory-or-application" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Deploying Izenda as a Virtual Directory or Application</a><a class="headerlink" href="#deploying-izenda-as-a-virtual-directory-or-application" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>Installing Izenda as a virtual directorys will mirror the steps taken required to deploy Izenda using two separate websites but additional modifications are necessary for the front end and back end to interact correctly together.</div></blockquote>
 <div class="section" id="initial-set-up">
@@ -548,7 +571,7 @@ Please refer to the following guides below:
 </div>
 </div>
 <div class="section" id="troubleshooting-verifying-the-installation">
-<h2>Troubleshooting &amp; Verifying the Installation<a class="headerlink" href="#troubleshooting-verifying-the-installation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Troubleshooting &amp; Verifying the Installation</a><a class="headerlink" href="#troubleshooting-verifying-the-installation" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">To ensure that your API site is running correctly, navigate to <a class="reference external" href="http://YOUR_API_URL/api/404">http://YOUR_API_URL/api/404</a> (e.g. <a class="reference external" href="http://localhost:8080/api/404">http://localhost:8080/api/404</a>)</p>
 <p>If your API is installed correctly, you should see the graphic below:</p>
@@ -561,11 +584,15 @@ Please refer to the following guides below:
 </li>
 </ul>
 </div>
-<div class="section" id="common-izenda-stand-alone-installation-issues">
-<h2>Common Izenda Stand-alone Installation Issues<a class="headerlink" href="#common-izenda-stand-alone-installation-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="common-izenda-standalone-installation-issues">
+<h2><a class="toc-backref" href="#id18">Common Izenda Standalone Installation Issues</a><a class="headerlink" href="#common-izenda-standalone-installation-issues" title="Permalink to this headline">¶</a></h2>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>IIS Issues</strong>:</div>
 <ul>
-<li><p class="first">IIS ASP.NET</p>
-<p>Izenda’s API is a .NET web application compatible with .NET 4.0 and higher.</p>
+<li><dl class="first docutils">
+<dt>ASP.NET</dt>
+<dd><p class="first">Izenda’s API is a .NET web application compatible with .NET 4.0 and higher.</p>
 <p>For .NET web applications to run through IIS you need to install IIS ASP.NET through your server’s Add Roles and Feature Wizard, or through the <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">IIS Web Platform Installer</a>.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#add-web-server-role-and-net-framework">Add Web Server Role and .NET Framework</a></li>
@@ -579,10 +606,13 @@ Please refer to the following guides below:
 <div class="bold docutils container">
 <p>The requested page cannot be accessed because the related configuration data for the page is invalid.</p>
 </div>
-<p><br clear="right" /></p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
-<li><p class="first">IIS URL Rewrite Module</p>
-<p>Izenda’s Stand-alone UI web.config makes use of the IIS URL Rewrite Module for routing.</p>
+<li><dl class="first docutils">
+<dt>URL Rewrite Module</dt>
+<dd><p class="first">Izenda’s Stand-alone UI web.config makes use of the IIS URL Rewrite Module for routing.</p>
 <p>You’ll install this module through the <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">IIS Web Platform Installer</a>.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#id1">Install ASP.NET 4.5 and URL Rewrite Components</a></li>
@@ -595,10 +625,47 @@ Please refer to the following guides below:
 <div class="bold docutils container">
 <p>An error occurred during the processing of a configuration file required to service this request.</p>
 </div>
-<p><br clear="right" /></p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
+<li><dl class="first docutils">
+<dt>API Permissions</dt>
+<dd><p class="first">If you can get Izenda running and see the UI, but get an error after setting your Izenda Configuration Database Connection String, you may be encountering permission issues at the API level.</p>
+<p>Izenda’s API needs proper write permissions to its own directory to create the izendadb.config file and generate log files.</p>
+<p>Often there are issues using just the default IUSR or NT AUTHORITY\NETWORKSERVICE roles to provide these permissions.</p>
+<p>Try the following to get past the issue:</p>
+<ul>
+<li><p class="first">Give the IIS Application Pool Full Access to the API directory.</p>
+<blockquote>
+<div><p>You can see the API’s Application Pool name just by looking at the application’s basic settings in IIS.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/install_IIS_basic_settings.png"><img alt="../_images/install_IIS_basic_settings.png" src="../_images/install_IIS_basic_settings.png" style="width: 395px;" /></a>
+</div>
+<p>IIS basic settings <br clear="right" /></p>
+<p>You can then use that name in setting your folder permissions as you see below. <br clear="right" />
+<code class="docutils literal"><span class="pre">IIS</span> <span class="pre">AppPool\YouApplicationPoolName</span></code></p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/install_IIS_AppPool_name.png"><img alt="../_images/install_IIS_AppPool_name.png" src="../_images/install_IIS_AppPool_name.png" style="width: 344px;" /></a>
+</div>
+<p>IIS Select Application Pool name <br clear="right" /></p>
+<p>After giving this IIS Application Pool Full Access rights, you can restart the API, and try using the UI again.</p>
+</div></blockquote>
+</li>
+</ul>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Oracle Issues</strong>:</div>
+<ul>
 <li><p class="first">Microsoft Visual C++ 2010 Redistributable for Izenda’s Oracle Drivers</p>
-<p>Izenda’s Oracle Drivers utilize the Microsoft Visual C++ 2010 Redistributable.</p>
+<blockquote>
+<div><p>Izenda’s Oracle Drivers utilize the Microsoft Visual C++ 2010 Redistributable.</p>
 <p>These can be installed by downloading the installer from Microsoft: <br clear="right" />
 <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=14632">Microsoft Visual C++ 2010 Redistributable Package (x64)</a></p>
 <p>Without this dependency installed you may encounter errors like the following.</p>
@@ -609,9 +676,17 @@ Please refer to the following guides below:
 <p>An unhandled exception occurred during the execution of the current web request.</p>
 </div>
 <p><br clear="right" /></p>
+</div></blockquote>
 </li>
-<li><p class="first">Mixing Two Separate Application Installation Steps with Virtual Directory Installation Steps</p>
-<p>There are two different ways to install Izenda Stand-alone, as two separate applications with distinct ports or domains, or as one application with a virtual directory.</p>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Resource Configuration</strong>:</div>
+<ul>
+<li><dl class="first docutils">
+<dt>Virtual Directory vs Individual Sites</dt>
+<dd><p class="first">There are two different ways to install Izenda Stand-alone, as two separate applications with distinct ports or domains or as one application with a virtual directory.</p>
 <p>Concepts from these two separate installation options cannot be mixed together without creating issues. Make sure to follow just one guide or the other:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#izenda-installation-as-two-separate-sites">Izenda Installation as Two Separate Sites</a></li>
@@ -619,55 +694,45 @@ Please refer to the following guides below:
 </ul>
 <p><br clear="right" /></p>
 <p>Once you have followed one set of instructions to completion, you can move on to <a class="reference internal" href="#troubleshooting-verifying-the-installation">Troubleshooting &amp; Verifying the Installation</a> guides, and <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a> guides.</p>
-<p><br clear="right" /></p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
-<li><p class="first">The izenda_config.js file</p>
-<p>You’ll need to edit the izenda_config.js file during installation and it’s important to use fully qualified URLs for the WebApiURL.</p>
+<li><dl class="first docutils">
+<dt>The izenda.config.js File</dt>
+<dd><p class="first">You’ll need to edit the izenda_config.js file during installation and it’s important to use fully qualified URLs for the WebApiURL.</p>
 <p>For example, a fully qualified URL to the API should include <code class="docutils literal"><span class="pre">http://</span></code> at the beginning and <code class="docutils literal"><span class="pre">/api/</span></code> at the end. It should look something like what you see below. For <a class="reference internal" href="#izenda-installation-as-two-separate-sites">Izenda Installation as Two Separate Sites</a> this is all you need to edit. <br clear="right" />
 <code class="docutils literal"><span class="pre">WebApiUrl:&quot;http://192.168.45.37:8200/api/&quot;</span></code></p>
 <p>For <a class="reference internal" href="#deploying-izenda-as-a-virtual-directory-or-application">Deploying Izenda as a Virtual Directory or Application</a> you need to edit the BaseUrl. This should look like the following, per the instructions with the trailing slash. <br clear="right" />
 <code class="docutils literal"><span class="pre">BaseUrl:”/IzendaDirectory/”</span></code></p>
 <p>If you don’t properly configure this file you may be able to see the Izenda login UI, but not get directed to the setup UI, or you may see many console errors in your browser’s dev tools.</p>
-<p><br clear="right" /></p>
-</li>
-<li><p class="first">API Directory Permissions</p>
-<p>If you can get Izenda running and see the UI, but get an error after setting your Izenda Configuration Database Connection String, you may be encountering permission issues at the API level.</p>
-<p>Izenda’s API needs proper write permissions to its own directory to create the izendadb.config file and generate log files.</p>
-<p>Often there are issues using just the default IUSR or NT AUTHORITY\NETWORKSERVICE roles to provide these permissions.</p>
-<p>Try the following to get past the issue:</p>
-<ul>
-<li><p class="first">Give the IIS Application Pool Full Access to the API directory.</p>
-<p>You can see the API’s Application Pool name just by looking at the application’s basic settings in IIS.</p>
-<div class="figure" id="id10">
-<a class="reference internal image-reference" href="../_images/install_IIS_basic_settings.png"><img alt="../_images/install_IIS_basic_settings.png" src="../_images/install_IIS_basic_settings.png" style="width: 395px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">IIS basic settings <br clear="right" /></span></p>
-</div>
-<p>You can then use that name in setting your folder permissions as you see below. <br clear="right" />
-<code class="docutils literal"><span class="pre">IIS</span> <span class="pre">AppPool\YouApplicationPoolName</span></code></p>
-<div class="figure" id="id11">
-<a class="reference internal image-reference" href="../_images/install_IIS_AppPool_name.png"><img alt="../_images/install_IIS_AppPool_name.png" src="../_images/install_IIS_AppPool_name.png" style="width: 344px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">IIS Select Application Pool name <br clear="right" /></span></p>
-</div>
-<p>After giving this IIS Application Pool Full Access rights, you can restart the API, and try using the UI again.</p>
-</li>
-<li><p class="first">If that doesn’t work, you can try the ‘nuclear option’ and add <strong>Everyone</strong> with Full Access rights, restart the API, and try using the UI again.</p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
 </ul>
-<p><br clear="right" /></p>
-</li>
-<li><p class="first">Misconfigured Connection Strings or Difficulty Connecting</p>
-<p>Izenda supports many different database types, and has specific drivers for these specific database types.</p>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Connection Strings</strong>:</div>
+<ul>
+<li><dl class="first docutils">
+<dt>Misconfigured Connection Strings and Difficulty Connecting</dt>
+<dd><p class="first">Izenda supports many different database types, and has specific drivers for these specific database types.</p>
 <ul>
 <li><p class="first">Make sure you’ve selected the right Data Server Type in the dropdowns near Connection String UIs.</p>
-<div class="figure" id="id12">
+<blockquote>
+<div><div class="figure">
 <a class="reference internal image-reference" href="../_images/install_select_data_server_type.png"><img alt="../_images/install_select_data_server_type.png" src="../_images/install_select_data_server_type.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Select Data Server Type <br clear="right" /></span></p>
 </div>
+<p>Select Data Server Type <br clear="right" /></p>
+</div></blockquote>
 </li>
 <li><p class="first">Make sure you’ve used the proper syntax for your Connection String.</p>
 </li>
 <li><p class="first">Certain characters may cause issues when used in Connection Strings. Avoid using characters such as semicolons, single-quotes, or double-quotes</p>
-<p>MSSQL, PostgreSQL, Oracle, and MySQL Connection Strings are all formatted a little different, provide different options, and expect different syntaxes. Use resources like <a class="reference external" href="https://www.connectionstrings.com/">ConnectionStrings.com</a> to make sure you’re including the right details, options, and port numbers:</p>
+<blockquote>
+<div><p>MSSQL, PostgreSQL, Oracle, and MySQL Connection Strings are all formatted a little different, provide different options, and expect different syntaxes. Use resources like <a class="reference external" href="https://www.connectionstrings.com/">ConnectionStrings.com</a> to make sure you’re including the right details, options, and port numbers:</p>
 <ul class="simple">
 <li>MSSQL</li>
 <li>PostgreSQL</li>
@@ -675,58 +740,70 @@ Please refer to the following guides below:
 <li>MySQL</li>
 </ul>
 <p><br clear="right" /></p>
+</div></blockquote>
 </li>
 <li><p class="first">Make sure you’ve allowed the connection through your Network Security.</p>
-<p>If you use custom ports for your database you’ll need to factor that into both the web server running Izenda as well as your Connection String.</p>
+<blockquote>
+<div><p>If you use custom ports for your database you’ll need to factor that into both the web server running Izenda as well as your Connection String.</p>
 <p>If you use Azure or AWS you may need to add the web server running Izenda to your Network Security Groups, or whitelist the IP address so that it can connect to your database.</p>
 <p><br clear="right" /></p>
+</div></blockquote>
 </li>
 <li><p class="first">Make sure you’ve given your Connection String user proper permissions.</p>
-<p>Double check that the connection string user has permissions to the databases and schemas you want to connect to. You’ll need to give read/write permissions to the user for the Izenda Configuration Database. Izenda cannot get around your RDBMS security, as you might expect.</p>
+<blockquote>
+<div><p>Double check that the connection string user has permissions to the databases and schemas you want to connect to. You’ll need to give read/write permissions to the user for the Izenda Configuration Database. Izenda cannot get around your RDBMS security, as you might expect.</p>
 <p><br clear="right" /></p>
+</div></blockquote>
 </li>
 <li><p class="first">Try connecting with another tool or application.</p>
-<p>If you’re continuing to have issues with a Connection String you may want to ensure that it’s an Izenda specific problem before reaching out.</p>
+<blockquote>
+<div><p>If you’re continuing to have issues with a Connection String you may want to ensure that it’s an Izenda specific problem before reaching out.</p>
 <p>Try using your RDBMS management tools to connect to the database with the same user, and preferably from the same server, that you are trying to connect with using Izenda.</p>
+</div></blockquote>
 </li>
 </ul>
-<p><br clear="right" /></p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
-<li><p class="first">Understanding the Izenda Configuration Database Connection String</p>
-<p>The Izenda Configuration Database Connection String and Reporting Data Source Connection Strings are set in two different places, it totally separate UIs or underlying APIs.</p>
+</ul>
+</div>
+</div>
+<div class="section" id="additional-reference">
+<h2><a class="toc-backref" href="#id19">Additional Reference</a><a class="headerlink" href="#additional-reference" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Understanding Configuration vs. Reporting Connection Strings</dt>
+<dd><p class="first">The Izenda Configuration Database Connection String and Reporting Data Source Connection Strings are set in two different places, it totally separate UIs or underlying APIs.</p>
 <ul>
 <li><p class="first">Izenda Configuration Database Connection String</p>
-<p>The Izenda Configuration Database Connection String will be set in the Settings page under the System DB &amp; License tab.</p>
+<blockquote>
+<div><p>The Izenda Configuration Database Connection String will be set in the Settings page under the System DB &amp; License tab.</p>
 <p>Be very careful when setting and/or changing this connection string!</p>
 <p>This connection string will point Izenda to a database where it can create its schema and store report metadata, dashboard metadata, data model metadata, Tenant, Role, and User metadata, and much more.</p>
 <p>If you set this to an existing database you will end up with Izenda specific tables in your schema, it’s usually best to use a separate empty database for the Izenda Configuration Database unless you’re comfortable with mixing Izenda’s storage schema with your database schema.</p>
 <p><br clear="right" /></p>
+</div></blockquote>
 </li>
 <li><p class="first">Reporting Data Source Connection Strings</p>
-<p>Reporting Data Source Connection Strings will be set in the Settings page under the Data Setup/Connection String tab.</p>
+<blockquote>
+<div><p>Reporting Data Source Connection Strings will be set in the Settings page under the Data Setup/Connection String tab.</p>
 <p>After connecting Izenda will query the database to establish the available data source listing, so that you can choose specific objects to move into the visible data sources.</p>
 <p>These selected objects can then be further modeled upon, aliased, secured, and exposed to end-users within report designers.</p>
 <p>Do not delete Connection Strings if you simply need to change connection strings to another database with a similar schema, or if you need to add new objects to the available/visible data source lists, you can change/rebuild Connection Strings or press reconnect and refresh the schema.</p>
 <p>Deleting and recreating Connection Strings will break your reports and dashboards, where just resetting the Connection Strings or reconnecting generally will not.</p>
+</div></blockquote>
 </li>
 </ul>
-<p><br clear="right" /></p>
+<p class="last"><br clear="right" /></p>
+</dd>
+</dl>
 </li>
-<li><p class="first">In build 1.23.0, an exception may occur after creating an APP and API websites. If you receive  an error akin to the following:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>Exception type: ConfigurationErrorsException
-Exception message: Could not load file or assembly &#39;Oracle.ManagedDataAccessDTC.DLL&#39; or one of its dependencies. The specified module could not be found.
-</pre></div>
-</div>
-<p>Then remove Oracle.ManagedDataAccessDTC.DLL from your API/bin/ folder and place it in a separate location. If the problem persists, place the file back in the API/bin/ folder.</p>
-</li>
-</ul>
-</div>
-<div class="section" id="editing-the-configuration-files">
-<h2>Editing the Configuration Files<a class="headerlink" href="#editing-the-configuration-files" title="Permalink to this headline">¶</a></h2>
-<p>Additional features can be set for a customized deployment experience. For live sites, several of the features below are recommended.</p>
+<li><dl class="first docutils">
+<dt>Editing Configuration Files</dt>
+<dd><p class="first">Additional features can be set for a customized deployment experience. For live sites, several of the features below are recommended.</p>
 <ul>
-<li><p class="first">Change the Back-end passphrase, which is the key to encrypt and
-decrypt data in Izenda.</p>
+<li><p class="first">Change the Back-end passphrase, which is the key to encrypt and decrypt data in Izenda.</p>
 <blockquote>
 <div><p>Enter a 29-character value into the value of this key:
 <code class="docutils literal"><span class="pre">&lt;appSettings&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">key=&quot;izedapassphrase&quot;</span> <span class="pre">value=&quot;&quot;</span> <span class="pre">/&gt;</span></code></p>
@@ -737,84 +814,86 @@ decrypt data in Izenda.</p>
 <p class="first admonition-title">Warning</p>
 <p class="last">This passphrase cannot be changed afterwards since already encrypted data cannot be decrypted with another passphrase.</p>
 </div>
-<ul>
-<li><p class="first">Recommended: add <a class="reference internal" href="../ui/doc_security_recommendations.html#web-server-security-configurations"><span class="std std-ref">security
-configurations</span></a></p>
+<ul class="last">
+<li><p class="first">Recommended: add <a class="reference internal" href="../ui/doc_security_recommendations.html#web-server-security-configurations"><span class="std std-ref">security configurations</span></a></p>
 </li>
 <li><p class="first">Optionally change the default Back-end path <code class="docutils literal"><span class="pre">/api/</span></code></p>
 <blockquote>
 <div><p>e.g. change the path to <code class="docutils literal"><span class="pre">/rest/</span></code></p>
-</div></blockquote>
 <ol class="arabic simple">
-<li>Edit the file <code class="docutils literal"><span class="pre">API\Web.config</span></code>, replace the default value &#8220;api&#8221;
-with the new value at the following places:<ul>
+<li><dl class="first docutils">
+<dt>Edit the file <code class="docutils literal"><span class="pre">API\Web.config</span></code>, replace the default value &#8220;api&#8221;</dt>
+<dd>with the new value at the following places:<ul class="last">
 <li><code class="docutils literal"><span class="pre">&lt;appSettings&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">key=&quot;izedaapiprefix&quot;</span> <span class="pre">value=&quot;api&quot;</span> <span class="pre">/&gt;</span></code></li>
-<li><code class="docutils literal"><span class="pre">&lt;system.web&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;httpHandlers&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">verb=&quot;*&quot;</span> <span class="pre">type=&quot;Nancy.Hosting.Aspnet.NancyHttpRequestHandler&quot;</span> <span class="pre">path=&quot;api/*&quot;</span> <span class="pre">/&gt;</span></code></li>
-<li><code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;handlers&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Nancy&quot;</span> <span class="pre">verb=&quot;*&quot;</span> <span class="pre">type=&quot;Nancy.Hosting.Aspnet.NancyHttpRequestHandler&quot;</span> <span class="pre">path=&quot;api/*&quot;</span> <span class="pre">/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;system.web&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;httpHandlers&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">verb=&quot;*&quot;</span> <span class="pre">type=&quot;Nancy.Hosting.Aspnet.NancyHttpRequestHandler&quot;</span> <span class="pre">path=&quot;api/*&quot;</span> <span class="pre">/&gt;</span></code></li>
+<li><code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;handlers&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Nancy&quot;</span> <span class="pre">verb=&quot;*&quot;</span> <span class="pre">type=&quot;Nancy.Hosting.Aspnet.NancyHttpRequestHandler&quot;</span> <span class="pre">path=&quot;api/*&quot;</span> <span class="pre">/&gt;</span></code></li>
 </ul>
+</dd>
+</dl>
 </li>
-<li>Also edit the file <code class="docutils literal"><span class="pre">App\izenda_config.js</span></code>, replace the default
-value &#8220;api&#8221; with the new value at the following places:<ul>
+<li><dl class="first docutils">
+<dt>Also edit the file <code class="docutils literal"><span class="pre">App\izenda_config.js</span></code>, replace the default</dt>
+<dd>value &#8220;api&#8221; with the new value at the following places:<ul class="last">
 <li><code class="docutils literal"><span class="pre">&quot;WebApiUrl&quot;:</span> <span class="pre">&quot;http://127.0.0.1:8888/api/&quot;,</span></code></li>
 </ul>
+</dd>
+</dl>
 </li>
 </ol>
+</div></blockquote>
 </li>
 <li><p class="first">Optionally change Izenda log file settings</p>
-<ul>
-<li><p class="first">Change the default log file location in <code class="docutils literal"><span class="pre">&lt;log4net</span> <span class="pre">..&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;appender</span> <span class="pre">name=&quot;RollingFileAppender&quot;</span> <span class="pre">..&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">value=&quot;logs\izenda-log.log&quot;</span> <span class="pre">/&gt;</span></code>, which resolves to
-C:\inetpub\wwwroot\Izenda\API\logs in a typical installation.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Change the default log file location in <code class="docutils literal"><span class="pre">&lt;log4net</span> <span class="pre">..&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;appender</span> <span class="pre">name=&quot;RollingFileAppender&quot;</span> <span class="pre">..&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">value=&quot;logs\izenda-log.log&quot;</span> <span class="pre">/&gt;</span></code>, which resolves to C:\inetpub\wwwroot\Izenda\API\logs in a typical installation.</p>
 </li>
-<li><p class="first">Change how the log files are archived/rotated/rolled in
-<code class="docutils literal"><span class="pre">&lt;log4net</span> <span class="pre">..&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;appender</span> <span class="pre">name=&quot;RollingFileAppender&quot;</span> <span class="pre">..&gt;</span></code>.</p>
+<li><p class="first">Change how the log files are archived/rotated/rolled in <code class="docutils literal"><span class="pre">&lt;log4net</span> <span class="pre">..&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;appender</span> <span class="pre">name=&quot;RollingFileAppender&quot;</span> <span class="pre">..&gt;</span></code>.</p>
 <blockquote>
 <div><p>The default setting is to keep maximum 1000 last files of 5MB
 each every day. See other examples at <a class="reference external" href="https://logging.apache.org/log4net/release/config-examples.html#rollingfileappender">log4net
 document</a>.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Enable folder compression: log file content is all text and will
-compress up to 2% of the original size.</p>
-<ol class="arabic simple">
-<li>Right-click on the folder
-(C:\inetpub\wwwroot\Izenda\API\logs) and click Properties.</li>
+<li><p class="first">Enable folder compression: log file content is all text and will compress up to 2% of the original size.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Right-click on the folder (C:\inetpub\wwwroot\Izenda\API\logs) and click Properties.</li>
 <li>Click Advanced button in General tab.</li>
-<li>Tick Compress contents to save disk space check-box, then click
-OK twice.</li>
-<li>Select either option: this folder only, or this folder,
-subfolders and files then click OK.</li>
-<li>Confirm the compression status: the folder will have blue name,
-or have two arrows added at the top right of its icon (from
-Windows 10).</li>
+<li>Tick Compress contents to save disk space check-box, then click OK twice.</li>
+<li>Select either option: this folder only, or this folder, subfolders and files then click OK.</li>
+<li>Confirm the compression status: the folder will have blue name, or have two arrows added at the top right of its icon (from Windows 10).</li>
 </ol>
+</div></blockquote>
 </li>
 </ul>
+</div></blockquote>
 </li>
-<li><p class="first">Optionally enter settings for <a class="reference external" href="http://www.evopdf.com/azure-html-to-pdf-converter.aspx">EVO PDF
-Azure</a>
-option, or accept the default values to use the local embedded
-library.</p>
-<ol class="arabic">
-<li><p class="first">Under <code class="docutils literal"><span class="pre">&lt;configuration&gt;</span></code>, find or add the following section:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">evoPdfSettings</span> <span class="n">cloudEnable</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">azureCloudService</span> <span class="n">server</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="n">servicePassword</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">evoPdfSettings</span><span class="o">&gt;</span>
+<li><p class="first">Optionally enter settings for <a class="reference external" href="http://www.evopdf.com/azure-html-to-pdf-converter.aspx">EVO PDF Azure</a> option, or accept the default values to use the local embedded library.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="first docutils">
+<dt>Under <code class="docutils literal"><span class="pre">&lt;configuration&gt;</span></code>, find or add the following section:</dt>
+<dd><div class="first last highlight-mxml"><div class="highlight"><pre><span></span><span class="nt">&lt;evoPdfSettings</span> <span class="na">cloudEnable=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;azureCloudService</span> <span class="na">server=</span><span class="s">&quot;&quot;</span> <span class="na">port=</span><span class="s">&quot;&quot;</span> <span class="na">servicePassword=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/evoPdfSettings&gt;</span>
 </pre></div>
 </div>
+</dd>
+</dl>
 </li>
-<li><p class="first">Set <code class="docutils literal"><span class="pre">cloudEnable=&quot;true&quot;</span></code> to use the Azure option, then enter the
-server IP, port and password.</p>
+<li><p class="first">Set <code class="docutils literal"><span class="pre">cloudEnable=&quot;true&quot;</span></code> to use the Azure option, then enter the server IP, port and password.</p>
 </li>
 </ol>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
 <div class="section" id="next-install-izenda-system-database-and-apply-license">
-<h2>Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a><a class="headerlink" href="#next-install-izenda-system-database-and-apply-license" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a><a class="headerlink" href="#next-install-izenda-system-database-and-apply-license" title="Permalink to this headline">¶</a></h2>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
