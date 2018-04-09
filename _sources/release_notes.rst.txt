@@ -2303,9 +2303,6 @@ Known Issues
      - 18518
      - System shows query error when drilling down on chart with null value 
    * - Defect
-     - 18517
-     - Report Parts when used in integrated environments should each have their own separate progress bar
-   * - Defect
      - 18502
      - Report part is NOT updated after modifying the relationships and pressing "Save" in Data Source tab then navigating to Field tabs
    * - Defect
@@ -2893,9 +2890,6 @@ Known Issues
    * - Defect
      - 17489
      - System shows error msg when user creates Key Join which has Time value in comparison
-   * - Defect
-     - 17488
-     - Text 'Can create new reports?' displays in Dashboards section
    * - Defect
      - 17481
      - The Grid automatically collapses when user clicks on 'Expand All' icon when using drilldown grid as an embedded subreport
