@@ -8,6 +8,46 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.7.1 April 9, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  19858  P1 value passed to renderDashboardViewerPage function is not updating the results.
+-  Defect  19754  Stored procedure parameter still remains in filter section of report after the stored procedure is unchecked from selected data sources
+-  Defect  19641  Error message displays when user adds a Datetime field into Combination Chart x-axis
+-  Defect  19504  Schedule fails to validate with "Field Comparison" filter and calculated field
+-  Defect  19478  Cell and Text color options are missing calendar picker for date type fields.
+-  Defect  19405  System loads all report histories of a report into memory, then picks one by version to remove history. This function is memory intensive.
+-  Defect  19380  In Data Model Database read Relationships do not check for duplicate relationships.
+-  Defect  19368  After deleting a schema and readding it, system should readd the deleted schema rather than create a new one
+-  Defect  19362  WebAPI - /api/dataModel/LoadQuerySources, LoadQuerySourceFields; api/fusion/loadData always return false for isLastPage parameter.
+-  Defect  19304  Stored procedure parameter still remains on filter section after the stored procedure is unchecked for use in report designer.
+-  Defect  19278  Heat Maps would only show a label on the first value on the x-axis when using date type fields
+-  Defect  19263  In Forms, subtotals are not always calculated when field is non visible. Subtotal formats are not maintained when field is non visible.
+-  Defect  19259  System shows error message when user uses Non-Aggregated filter in Hidden Filter and Aggregated Field in Filter
+-  Defect  19206  User in a role with view-only permission for dashboards gets logged out when trying to open a dashboard.
+-  Defect  19027  System shows error message when user changes Chart Type when the existing chart has XY-Plane settings set
+-  Defect  18517  Report Parts when used in integrated environments should each have their own separate progress bar
+-  Defect  17488  Text 'Can create new reports?' displays in Dashboards section
+-  Defect  19465  Added new setting in Web.config file of API to allow stripping of potentially dangerous characters from the schema loader. 
+
+.. code-block:: xml
+
+	  <appSettings> 
+	  <!-- 
+	  	Any characters specfied in the value fields below will be removed from any queries executed when 
+		adding or reconnecting to a database. Multiple characters should be added without separator or space as 
+		<add key="izenda.mssql.trimcharacters" value="*&^%" />
+	  -->
+	    <add key="izenda.mssql.trimcharacters" value="" />
+	    <add key="izenda.mysql.trimcharacters" value="" />
+	    <add key="izenda.oracle.trimcharacters" value="" />
+	    <add key="izenda.postgre.trimcharacters" value="" />
+	    <add key="izenda.redshift.trimcharacters" value="" />
+	  </appSettings>
+	  
+
 v2.7.0 March 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
