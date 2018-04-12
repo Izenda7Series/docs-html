@@ -43,7 +43,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Izenda BI 2.7.1 documentation" href="../index.html"/>
         <link rel="up" title="First Steps" href=".embedding_izenda.html"/>
-        <link rel="next" title="Walkthroughs" href=".walkthroughs.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="integration_overviews.html"/>
         <link rel="prev" title="First Steps" href=".embedding_izenda.html"/> 
 
   
@@ -191,10 +191,229 @@
 <div class="section" id="deployment-mode-1">
 <h2>Deployment Mode 1<a class="headerlink" href="#deployment-mode-1" title="Permalink to this headline">¶</a></h2>
 <p>Deployment Mode 1 refers to a fully integrated front end and a standalone back end.</p>
+<div class="section" id="mvc-5-starter-kit-back-end-standalone">
+<h3>MVC 5 Starter Kit Back End Standalone<a class="headerlink" href="#mvc-5-starter-kit-back-end-standalone" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone">Kit Download</a></p>
+<div class="section" id="kit-overview">
+<h4>Kit Overview<a class="headerlink" href="#kit-overview" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone">MVC 5 Starter Kit Back End Standalone</a></li>
-<li><a class="reference external" href="https://github.com/Izenda7Series/Angular2Starterkit">Angular 2 Starter Kit</a></li>
+<li>OWIN Authentication with .Net Identities</li>
+<li>Kit runs in Visual Studio from <a class="reference external" href="http://localhost:14809">http://localhost:14809</a> as reflected in the sample values provided in the tables below.</li>
 </ul>
+</div>
+<div class="section" id="authorization-components-for-standard-authentication">
+<h4>Authorization Components For Standard Authentication<a class="headerlink" href="#authorization-components-for-standard-authentication" title="Permalink to this headline">¶</a></h4>
+<p><strong>Back-End Components</strong></p>
+<table border="1" class="colwidths-auto docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">IzendaSystemSettingTable Name</th>
+<th class="head">IzendaSystemSettingTable Value</th>
+<th class="head">Expectation from API</th>
+<th class="head">Location in Kit</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Deployment Mode Setting</td>
+<td>DeploymentMode</td>
+<td>1</td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td>N/A</td>
+<td>Determines Security Model emplyed by API.</td>
+</tr>
+<tr class="row-odd"><td>Token Validation</td>
+<td>AuthValidateAccessTokenUrl</td>
+<td><a class="reference external" href="http://localhost:14809/api/account/validateIzendaAuthToken">http://localhost:14809/api/account/validateIzendaAuthToken</a></td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/ApiControllers/AccountController.cs#L51">Mvc5StarterKit/ApiControllers/AccountController.cs ValidateIzendaAuthToken Route</a></td>
+<td>Accessed Server Side. Route In Host Application to Validate tokens. Returns a valid User Info object.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Front-End Components</strong></p>
+<table border="1" class="colwidths-auto docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Location in Kit</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Embedded UI Resources</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/tree/master/Mvc5StarterKit/Scripts/izenda">Mvc5StarterKit/Scripts/izenda/</a></td>
+<td>Izenda UI Resources used to render the front end application.</td>
+</tr>
+<tr class="row-odd"><td>izenda.integrate.js</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Scripts/izenda.integrate.js">Mvc5StarterKit/Scripts/izenda.integrate.js</a></td>
+<td>Implementation of several Izenda front-end integration API Endpoints. AJAX call to GenerateToken route.</td>
+</tr>
+<tr class="row-even"><td>Izenda Configuration JSON</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Scripts/izenda.integrate.js#L3">Mvc5StarterKit/Scripts/izenda.integrate.js configJson</a></td>
+<td>JSON required by Front End to specify the location of Izenda resources including the Back End API and Front End resources&#8217; relative path.</td>
+</tr>
+<tr class="row-odd"><td>Pages Rendering Izenda</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/tree/master/Mvc5StarterKit/Views">Mvc5StarterKit/Views/</a></td>
+<td>Root directory of <a href="#id1"><span class="problematic" id="id2">*</span></a>.cshtml pages that utilize the render functions created in izenda.integrate.js</td>
+</tr>
+<tr class="row-even"><td>Token Generation</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/ApiControllers/UserController.cs#L11">Mvc5StarterKit/ApiControllers/UserController.cs GenerateToken route</a></td>
+<td>Accessed Client Side. Route In Host Application to Generate tokens. Returns an encrypted access_token that contains the information for a User Info object.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="authorization-components-for-exports-schedules-and-subscriptions">
+<h4>Authorization Components For Exports, Schedules, and Subscriptions<a class="headerlink" href="#authorization-components-for-exports-schedules-and-subscriptions" title="Permalink to this headline">¶</a></h4>
+<p><strong>Back-End Components</strong></p>
+<table border="1" class="colwidths-auto docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">IzendaSystemSettingTable Name</th>
+<th class="head">IzendaSystemSettingTable Value</th>
+<th class="head">Expectation from API</th>
+<th class="head">Location in Kit</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Front End URL</td>
+<td>WebURL</td>
+<td><a class="reference external" href="http://localhost:14809/">http://localhost:14809/</a></td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td>N/A</td>
+<td>Front End URL used as a base URL when generating email links and navigating to our page to render exports.</td>
+</tr>
+<tr class="row-odd"><td>Token Validation</td>
+<td>AuthValidateAccessTokenUrl</td>
+<td><a class="reference external" href="http://localhost:14809/api/account/validateIzendaAuthToken">http://localhost:14809/api/account/validateIzendaAuthToken</a></td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/ApiControllers/AccountController.cs#L51">Mvc5StarterKit/ApiControllers/AccountController.cs ValidateIzendaAuthToken Route</a></td>
+<td>Accessed Server Side. Route In Host Application to Validate tokens. Returns a valid User Info object.</td>
+</tr>
+<tr class="row-even"><td>Token Retrieval</td>
+<td>AuthGetAccessTokenUrl</td>
+<td><a class="reference external" href="http://localhost:14809/api/account/getIzendaAccessToken">http://localhost:14809/api/account/getIzendaAccessToken</a></td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/ApiControllers/AccountController.cs#L59">Mvc5StarterKit/ApiControllers/AccountController.cs GetIzendaAccessToken Route</a></td>
+<td>Accessed Server Side. Route In Host Application to Get Access token for server-side interactions. Route decrypts RSA-encrypted messages from Izenda API and returns a token that can be decrypted using Host Application&#8217;s Token Validation route.</td>
+</tr>
+<tr class="row-odd"><td>Public RSA Key</td>
+<td>AuthRSAPublicKey</td>
+<td>Sepcific to your environment. Paired to Public Key in Kit.</td>
+<td>Retrieved from Database Upon Initialization.</td>
+<td>N/A</td>
+<td>Key used by Izenda API to send encrypted messages to Host Application. Message contains the components for a UserInfo object.</td>
+</tr>
+<tr class="row-even"><td>Private RSA Key</td>
+<td>AuthRSAPublicKey</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Located in <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Web.config#L21">Mvc5StarterKit/Web.Config .</a> Sepcific to your environment. Paired to Public Key in Database.</td>
+<td>Key used in Host Application to decrypt messages sent by Izenda API. Message contains the components for a UserInfo object.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Front-End Components</strong></p>
+<table border="1" class="colwidths-auto docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Location in Kit</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Front End Integration Endpoint For Exports</td>
+<td><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Scripts/izenda.integrate.js#L279">Mvc5StarterKit/Scripts/izenda.integrate.js izendaInitReportPartExportViewer</a></td>
+<td>Function used to export Izenda report parts.</td>
+</tr>
+<tr class="row-odd"><td>Page To Render Charts For Exports.</td>
+<td><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Views/Home/ReportPart.cshtml">Mvc5StarterKit/Views/Home/ReportPart.cshtml</a></li>
+<li><a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Controllers/ReportController.cs">Mvc5StarterKit/Controllers/ReportController.cs</a></li>
+</ul>
+</td>
+<td>View-Controller Pair that utilizes a render function to stage report parts for exports. Implements the route &#8220;/viewer/reportpart/&#8221; Izenda requests during the export process.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="models-directory">
+<h4>Models Directory<a class="headerlink" href="#models-directory" title="Permalink to this headline">¶</a></h4>
+<p>The Models Directory is used to specify the models used throughout the application.</p>
+<ul class="simple">
+<li><strong>UserInfo.cs</strong> : Implementation of User Info object that contains the &#8220;UserName&#8221; and the &#8220;TenantUniqueName&#8221; for an Izenda user profile. Used throughout the classes found in IzendaBoundary.</li>
+</ul>
+</div>
+<div class="section" id="izendaboundary-directory">
+<h4>IzendaBoundary Directory<a class="headerlink" href="#izendaboundary-directory" title="Permalink to this headline">¶</a></h4>
+<p>The IzendaBoundary directory of this kit contains useful models, sample encryption/decryption mechanisms, and sample Izenda API interactions.</p>
+<ul>
+<li><p class="first"><strong>IzendaTokenAuthorization.cs</strong> : Class used in token encryption/decryption.</p>
+<blockquote>
+<div><table border="1" class="colwidths-auto docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GetToken</td>
+<td>Returns an encrypted token given an UserInfo object. Used in GenerateToken route and GetIzendaAuthToken route.</td>
+</tr>
+<tr class="row-odd"><td>GetUserInfo</td>
+<td>Returns a UserInfo object given an encrypted token. Used in ValidateIzendaAuthToken route.</td>
+</tr>
+<tr class="row-even"><td>DecryptIzendaAuthenticationMessage</td>
+<td>Returns a UserInfo object given an RSA Message. Decrypts messages using RSA Public Key from Web.Config. Used in GetIzendaAuthToken route.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>StringCipher.cs</strong> : Class defining low-level encryption/decryption mechanisms.</p>
+</li>
+<li><p class="first"><strong>IzendaUtilities.cs</strong> : Class containing sample implementations of Tenant, Role, and User creation via the API.</p>
+</li>
+<li><p class="first"><strong>Models</strong> : Directory Containing the models used throughout IzendaBoundary. This includes the <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone/blob/master/Mvc5StarterKit/Models/UserInfo.cs">UserInfo</a> sample model designed for the kit.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="angular-2-starter-kit">
+<h3>Angular 2 Starter Kit<a class="headerlink" href="#angular-2-starter-kit" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/Izenda7Series/Angular2Starterkit">Kit Download</a></p>
+</div>
 </div>
 <div class="section" id="deployment-mode-3">
 <h2>Deployment Mode 3<a class="headerlink" href="#deployment-mode-3" title="Permalink to this headline">¶</a></h2>
@@ -224,7 +443,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href=".walkthroughs.html" class="btn btn-neutral float-right" title="Walkthroughs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="integration_overviews.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href=".embedding_izenda.html" class="btn btn-neutral" title="First Steps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

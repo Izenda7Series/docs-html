@@ -20,7 +20,7 @@ For more informaton about embedding Izenda, please refer to our `Developer Guide
 
    - 2 : Back End Integrated, Front End Stand Alone
 
-   - 3 : All Integrated |br|
+   - 3 : Fully Integrated |br|
 
 *  After deploying Izenda, ensure that the IzendaSystemSettings table in your Izenda Configuration Database contains the correct deployment mode value. For more about the SystemSetting table, click `here </ref/spec_izendasystemsetting_table>`_.
 
@@ -52,11 +52,11 @@ For more informaton about embedding Izenda, please refer to our `Developer Guide
       -  
       -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide2.PNG
             :scale: 20 %
-            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-besa-implementation
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-5-besa-implementation
       -  
       -  .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/thumbnails/Slide4.PNG    
             :scale: 20 %
-            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-implementation
+            :target: https://www.izenda.com/docs/intro/understanding_the_three-tiered_architecture.html#mvc-5-implementation
    *  - Web Forms
       -  
       -  
@@ -163,7 +163,7 @@ Deployment Mode 3: Fully Integrated
 
       A diagram of Izenda's fully integrated architecture
 
-MVC Implementation
+MVC 5 Implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Requirements:
    - API

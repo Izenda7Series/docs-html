@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deployment Mode 1: Key Components for Integration &mdash; Izenda BI 2.7.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.7.1 documentation" href="../index.html"/>
+        <link rel="up" title="&lt;no title&gt;" href="integration_overviews.html"/>
+        <link rel="next" title="&lt;no title&gt;" href=".walkthroughs.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="integration_overviews.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href=".embedding_izenda.html">First Steps</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href=".embedding_izenda.html#embedding-izenda-into-your-application">Embedding Izenda into Your Application</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href=".embedding_izenda.html#front-end-development-embedding-into-a-pre-existing-application">Front-End Development: Embedding into a Pre-Existing Application</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href=".embedding_izenda.html#full-stack-development-starting-from-scratch">Full-stack Development: Starting from Scratch</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href=".developer_guide.html#troubleshooting-front-end-integration">Troubleshooting Front End Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#redistributing-the-izenda-documentation">Redistributing the Izenda Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+          <li><a href=".embedding_izenda.html">First Steps</a> &raquo;</li>
+        
+          <li><a href="integration_overviews.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>Deployment Mode 1: Key Components for Integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/dev_dep_1_key_components.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deployment-mode-1-key-components-for-integration">
+<h1>Deployment Mode 1: Key Components for Integration<a class="headerlink" href="#deployment-mode-1-key-components-for-integration" title="Permalink to this headline">¶</a></h1>
+<p>The following diagram illustrates the minimum components necessary for an application in deployment mode 1.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/Deployment1_Workflow.png" src="../_images/Deployment1_Workflow.png" />
+</div>
+</div></blockquote>
+<div class="section" id="izenda-api-izenda-configuration-database-interactions">
+<h2>Izenda API-Izenda Configuration Database Interactions<a class="headerlink" href="#izenda-api-izenda-configuration-database-interactions" title="Permalink to this headline">¶</a></h2>
+<p>The Izenda API interacts with the Izenda Configuration database through the connection string stored in the file izendadb.config.</p>
+<ul>
+<li><p class="first">The izendadb.config file will exist within the root directory of your API and can be created by using the API Endpoint <a class="reference external" href="https://www.izenda.com/docs/ref/api_systemdb_and_license.html#post-databasesetup-databaseinfo">databaseSetup/databaseInfo .</a></p>
+<blockquote>
+<div><ul class="simple">
+<li>If the connection is established via the API, the connection string in izendadb.config will be encrypted.</li>
+<li>If the database specified in the connection string is does not contain the Izenda Configuration tables, the tables will automatically be created.</li>
+<li>To change the Izenda Configuraton Database connection string, the izendadb.config file must be deleted or a valid access_token must be supplied to subsequent requests to the API Endpoint.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="structures-in-host-application">
+<h2>Structures in Host Application<a class="headerlink" href="#structures-in-host-application" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>UserInfo Object</strong> : A user info object refers to an object that contains the necessary information to clearly identify an user within Izenda.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">An Izenda user can only exist in a single tenant but Izenda can be configured to allow the same username to exist in multiple tenants. As a result, the User&#8217;s name &#8220;UserName&#8221; and the Tenant ID &#8220;TenantUniqueName&#8221; pair is used as an identifier for a User.</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>UserName</em> : This value corresponds to a UserName value found within the IzendaUser table of the Izenda Configuration Database.</li>
+<li><em>TenantUniqueName</em> : This value corresponds to a TenantID field in the IzendaTenant table of the Izenda Configuration Database.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Whenever your application returns this information to the Izenda API, it will be interpretted as a JSON similar to {UserName : &#8220;IzendaAdmin&#8221;, TenantUniqueName: &#8220;&#8221;}</p>
+</li>
+<li><p class="first">Additional data can be added to the User Info object but it will not be interpretted by Izenda during the security handshake. The additional data could be used in custom logic such as IAdHocExtension implementations (e.g. hidden filters).</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Token</strong> : A token refers to an encrypted string that the host appication will provide authorization into Izenda. In its unencrypted form, the token will contain the information found in a UserInfo Object.</p>
+</li>
+<li><p class="first"><strong>Message (RSA Message)</strong> : A Message refers to an encrypted message sent to the host application. This message is encrypted by the Izenda API and will be decrypted by the host application.</p>
+<blockquote>
+<div><ul class="simple">
+<li>In its unencrypted form, a message contains the Izenda-centric information of a User Info object, the UserName and the TenantUniqueName.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="client-side-interactions">
+<h2>Client-Side Interactions<a class="headerlink" href="#client-side-interactions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rendering-the-front-end-application">
+<h3>Rendering the Front End Application<a class="headerlink" href="#rendering-the-front-end-application" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="embedded-ui">
+<h4>Embedded UI<a class="headerlink" href="#embedded-ui" title="Permalink to this headline">¶</a></h4>
+<p>The Embedded UI refer to the Izenda Front End resources used to render the front end application.</p>
+</div>
+<div class="section" id="izenda-integrate-js">
+<h4>izenda.integrate.js<a class="headerlink" href="#izenda-integrate-js" title="Permalink to this headline">¶</a></h4>
+<p>Many of our sample applications contain an &#8220;Izenda Integrate&#8221; file that implements several of our Front-End integration API endpoints. A full list of integration endpoints can be found <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html">here.</a></p>
+<p>The following steps can be used to render an Izenda Component in your application.</p>
+<ol class="arabic simple">
+<li><strong>Configuring Izenda</strong> : Use the endpoint <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#config-configjson">IzendaSynergy.config(configJson)</a> to configure Izenda with your application&#8217;s presets. The following are the most frequent customizations to the configuration JSON for this Endpoint.<ul>
+<li><em>WebApiUrl</em> : The URL of your Izenda API (<em>e.g. http://localhost:8085/api/&#8221;</em>)</li>
+<li><em>RootPath</em> : The relative location of your Izenda Resources in your application (<em>e.g. /scripts/izenda</em>). This path is required for Form report parts.</li>
+<li><em>CssFile</em> : The name of your CSS file (<em>e.g. &#8220;izenda-ui.css&#8221;</em>)</li>
+</ul>
+</li>
+<li><strong>Setting the User Context</strong> : Whenever rendering an Izenda component, you must first set the User Context with a token from you application. The User Context will be set using <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#setcurrentusercontext-token-access-token">setCurrentUserContext({“token”:access_token}).</a> The User Context allows the front end to call the Izenda API <em>on behalf of</em> the user in your application.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>The token stored in the User Context will be stored as the object <em>token</em> . Whenever it is sent to the API, it will be sent as the header <em>access_token</em></li>
+<li>In Deployment Mode 1, Izenda Integrate often contains a mechanism to retrieve a token from the host application (e.g. via an AJAX call). This process is described in greater detail in <em>Standard Security Handshake</em> section below.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><strong>Rendering a Component</strong> : Once the User Context is set, you can call any of Izenda&#8217;s render functions. To Render the full platform, use the endpoint <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#render-element">render(element)</a> .</li>
+</ol>
+</div>
+<div class="section" id="page-to-render-platform">
+<h4>Page To Render Platform<a class="headerlink" href="#page-to-render-platform" title="Permalink to this headline">¶</a></h4>
+<p>A page will exist in your application to render Izenda Components. This page will need to include references to the EmbeddedUI resources and must have an HTML Element to render the component within.</p>
+<ul>
+<li><p class="first"><strong>Referencing the EmbeddedUI Resources</strong> : the EmbeddedUI resources can be bundled with the host application&#8217;s resources or referenced directly on the page. The following order ensures that resources are loaded correctly to be referenced in &#8220;izenda.integrate.js&#8221; or a comparable front-end implementation in the host application.</p>
+<blockquote>
+<div><ul class="simple">
+<li>izenda_common.js</li>
+<li>izenda_locales.js</li>
+<li>izenda_vendors.js</li>
+<li>izenda_ui.js</li>
+<li>izenda.integrate.js</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Calling a function in izenda.integrate.js</strong> : After the resources are loaded, the page can call a function in izenda.integrate.js to render an Izenda component.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="standard-security-handshake">
+<h3>Standard Security Handshake<a class="headerlink" href="#standard-security-handshake" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="generating-the-token">
+<h4>Generating the token<a class="headerlink" href="#generating-the-token" title="Permalink to this headline">¶</a></h4>
+<p>Generating the token will be necessary from the front end to allow a user to access Izenda. This corresponds with the &#8220;/generatetoken&#8221; route in the image above.</p>
+<ul class="simple">
+<li>In its unencrypted form, the token should contain the information found within a &#8220;UserInfo&#8221; object.</li>
+<li>There is not a set formula to generate the token— if desired, your Izenda User Info can be wrapped within your own application’s token, stored within a cookie, or even uniquely generated every time a new Izenda page loads. In our sample kits, this is handled by a restful API call to the host application in a file called &#8220;izenda.integrate.js&#8221;</li>
+<li>Before rendering Izenda, you will need to retrieve a token from your application. Once a token is retrieved, you will need to set the Izenda User Context on the client side to use the token. This will be done using the Front End Integration Endpoint <em>setCurrentUserContext</em> .</li>
+</ul>
+</div>
+<div class="section" id="calling-the-izenda-api">
+<h4>Calling the Izenda API<a class="headerlink" href="#calling-the-izenda-api" title="Permalink to this headline">¶</a></h4>
+<p>For the majority of Izenda API endpoints, a header &#8220;access_token&#8221; is required.</p>
+<blockquote>
+<div><ul class="simple">
+<li>When the front end calls the API, the access_token is retrieved from the current Izenda User Context applied.</li>
+<li>If the API is called outside of the platform (e.g. a custom role creation page in your application), the Izenda User Context cannot be accessed and the access_token can be specified by the host application&#8217;s requirements.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="validating-the-token">
+<h4>Validating the token<a class="headerlink" href="#validating-the-token" title="Permalink to this headline">¶</a></h4>
+<p>When the Izenda API recieves a request, it will take the access_token sent with the request and ask the host application to interpret it to ensure that it refers to a valid user.  This corresponds with the &#8220;/validatetoken&#8221; route in the image above.</p>
+<ul class="simple">
+<li>Within the IzendaSystemSetting table of your configuration database, there is an entry for AuthValidateAccessTokenUrl. This will be the fully qualified URL pointing to your token validation route.</li>
+<li>Your token validation function for your application will be an inverse of your token generation function. The goal is to decrypt the token, interpret the data, and return a valid User Info Object to Izenda.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="server-side-interactions">
+<h2>Server-Side Interactions<a class="headerlink" href="#server-side-interactions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="export-security-handshake">
+<h3>Export Security Handshake<a class="headerlink" href="#export-security-handshake" title="Permalink to this headline">¶</a></h3>
+<p>When reports are exported, scheduled instances are established, or emails are sent, the exported result is rendered on the server and sent to the desired recipient.
+Since these interactions occur on the server side, the &#8220;authentication&#8221; mechanism will differ from the Standard Security Handshake.</p>
+<ul class="simple">
+<li>When a report is exported, the Izenda API will need an access_token so that the API calls required for the render will return successfully.</li>
+<li>Since the export process is handled server-side, the access_token must originate from the server-side and, therefore, cannot be passed from a client&#8217;s user context.<ul>
+<li><strong>Problem</strong> : Although the Izenda API has the information to create a User Info object (the UserName and TenantUniqueName are stored in the Izenda Configuration database), it doesn&#8217;t have the ability to create access_tokens that can be validated with the host application.</li>
+<li><strong>Solution</strong> : The Izenda API will send the information it does have to the host application so that the host application can return a valid access_token. To ensure security, the information sent to the host application will be encrypted using a standard mechanism, RSA.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="getting-the-token">
+<h4>Getting The Token<a class="headerlink" href="#getting-the-token" title="Permalink to this headline">¶</a></h4>
+<p>The host application will decrypt RSA-Encrypted messages and return a valid token. This corresponds with the &#8220;/validatetoken&#8221; route in the image above.</p>
+<ul>
+<li><p class="first">Within the IzendaSystemSetting table of your configuration database, there is an entry for AuthGetAccessTokenURL. This will be the fully qualified URL pointing to your route to decrypt RSA-Encrypted messages.</p>
+<ul>
+<li><p class="first">This route differs from our Token Generation method as it does not require authentication with the host application.</p>
+</li>
+<li><p class="first">The message itself will be encrypted by the Izenda API using the RSAPublicKey found in the Izenda Configuration Database. In its unencrypted form, a message contains the Izenda-centric information of a User Info object, the UserName and the TenantUniqueName.</p>
+</li>
+<li><p class="first">The host application will have a corresponding RSA Private Key to decrypt the message. Once the message is decrypted, the host application will create a User Info object using the information from the decrypted message.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If additional data is usually stored in the host application&#8217;s User Info object structure, logic will need to exist to retrieve the necessary information.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Once a User Info object is created, the object can be encrypted as a token. This token must be decryptable by our Token Validation route &#8220;/validatetoken&#8221;</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h4>Validating the token<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Token validation will still be handled by the route referenced in the AuthValidateAccessTokenUrl of your Izenda Configuration Database.</p>
+</div>
+<div class="section" id="rsa-encryption-specifications">
+<h4>RSA Encryption Specifications<a class="headerlink" href="#rsa-encryption-specifications" title="Permalink to this headline">¶</a></h4>
+<p>Keys can be created using Izenda&#8217;s RSA Key Generator Utility.</p>
+<ul class="simple">
+<li>RSA Key Specifications:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Padding: PKCS1v15</li>
+<li>Key Size: 1024</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>AuthRSAPublicKey value in the IzendaSystemSettings table of the Izenda database holds the public RSA public key in XML format (the keysize must be less than 1024 because max-length for this field in database is 256) .</li>
+<li>RSAPrivateKey value can be placed anywhere that the RSA-decryption algorithm can access. This value is your private key and should be in PEM format. In our sample MVC Back End standalone kit, this can be accessed from the Web.config file of the kit.</li>
+<li>Messages sent to your endpoint will be base 64 encoded and may need to be decoded before decryption.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="rendering-exports-and-sending-links">
+<h3>Rendering Exports and Sending Links<a class="headerlink" href="#rendering-exports-and-sending-links" title="Permalink to this headline">¶</a></h3>
+<p>The host applicaiton will need to refer to the Izenda resources to adhere to any customizations made to the front-end.</p>
+<div class="section" id="weburl">
+<h4>WebURL<a class="headerlink" href="#weburl" title="Permalink to this headline">¶</a></h4>
+<p>The WebURL will be the &#8220;Base URL&#8221; for email links and the route used for exports.</p>
+<ul class="simple">
+<li>The WebURL will point to the application that holds your Embedded UI resources.<ul>
+<li>In the MVC Kit Back End Standalone, the EmbeddedUI resources are found within the MVC Kit hosted on 14809. In turn, the WebURL would be <a class="reference external" href="http://localhost:14809/">http://localhost:14809/</a> .</li>
+<li>In our Angular Kit, there are 3 separate applications in play&#8211; the Izenda API hosted on IIS, a .Net Authorization Application running in Visual Studio (this implements the Generate, Validate, and Get token routes and is hosted on port 14809), and an Angular 2 application running in Node (port 3000). In this scenario, the WebURL will point to <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> .</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="page-to-render-exports">
+<h4>Page To Render Exports<a class="headerlink" href="#page-to-render-exports" title="Permalink to this headline">¶</a></h4>
+<p>After the Izenda API obtains a valid access token from the AuthGetAccessTokenURL, it will attempt to access this route to render the report on the server.</p>
+<ul class="simple">
+<li>Since this process occurs on the server, schedules and exports can run successfully without a user being active on the front end. This page will be used to render any chart visualizations.</li>
+<li>Izenda has a definite structure for this route, WebURL + &#8220;/viewer/reportpart/&#8221;. This corresponds to the &#8220;Page to render exports&#8221; in the image above.</li>
+<li>Similar to the Page to Render the platform, this page will need to reference the EmbeddedUI and an HTML Element to render Izenda Components.<ul>
+<li>The token will be sent to this page in a query string as <em>token</em> . The host application will set the user context using this value.</li>
+<li>The Report Part ID will be sent to this page in a query string as <em>id</em> . The host application will use the Front End Integration Endpoint <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#renderreportpart-element-params">renderReportPart(element,params)</a> to render the a chart report part for export.</li>
+<li>The Izenda API will call this page multiple times to render all chart report parts in the selected report.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="copying-reports-from-one-environment-to-another">
+<h3>Copying Reports from One Environment To Another<a class="headerlink" href="#copying-reports-from-one-environment-to-another" title="Permalink to this headline">¶</a></h3>
+<p>Reports can be copied from one Izenda instance to another via the Izenda Copy Console. To use the Copy Console in integrated modes, a route must exist in your application that allows for a user to authenticate with your application and immediately returns an access_token to be used with Izenda API interactions. In the diagram above, this route corresponds to the &#8220;/copyconsoleauth
+&#8221; route.</p>
+<p>A detailed description of the Copy Console and its requirements can be found at <a class="reference external" href="https://www.izenda.com/docs/ui/doc_copy_console.html">here</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".walkthroughs.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="integration_overviews.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>
