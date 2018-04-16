@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Load Balancing &mdash; Izenda BI 2.7.2 documentation</title>
+  <title>Security Configuration &mdash; Izenda BI 2.7.2 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Izenda BI 2.7.2 documentation" href="../../index.html"/>
         <link rel="up" title="Supplementary Guides" href="../.supplementary_installation_guides.html"/>
-        <link rel="next" title="Language Packs" href="language-packs.html"/>
-        <link rel="prev" title="Using SSL/TLS" href="https.html"/> 
+        <link rel="next" title="Administrator Guide" href="../../ui/.administrator_guide.html"/>
+        <link rel="prev" title="Logging to a Database" href="logging-to-a-database.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -112,15 +112,15 @@
 <li class="toctree-l3"><a class="reference internal" href="white-listing-functions-for-calculated-fields.html">White-Listing Functions for Calculated Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="white-labeling-izenda.html">White-Labeling Izenda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="https.html">Using SSL/TLS</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Load Balancing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="load_balancing.html">Load Balancing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="language-packs.html">Language Packs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="excluding-sql-schemas.html">Excluding SQL Schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging-to-a-database.html">Logging to a Database</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Security Configuration</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="language-packs.html">Language Packs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="excluding-sql-schemas.html">Excluding SQL Schemas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="logging-to-a-database.html">Logging to a Database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="security-configuration.html">Security Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -182,13 +182,13 @@
         
           <li><a href="../.supplementary_installation_guides.html">Supplementary Guides</a> &raquo;</li>
         
-      <li>Load Balancing</li>
+      <li>Security Configuration</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/install/supplementary_guides/load_balancing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/install/supplementary_guides/security-configuration.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -201,31 +201,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="load-balancing">
-<h1>Load Balancing<a class="headerlink" href="#load-balancing" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="security-configuration">
+<h1>Security Configuration<a class="headerlink" href="#security-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The Izenda application can be load balanced to offer better performance and scalability.
-The most common scenario would be to load balance the API among two or more servers. The diagram below assumes that SSL is terminated by the load balancer. To clarify, traffic to the load balancer is encrypted and the load balancer sends unencrypted traffic to the API server(s) in a trusted network</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+<p>Izenda v2.7.1 and higher allows application administrators to directly trim out the specified charaters per database server type when loading schemas. This option is applied globally and will affect the system and tenant users.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><br /></div>
+<p>This option is configured by the adding a key/value entry for the desired database and schemas in the API/Web.config file as shown below:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Please be sure that there are no leading or trailing spaces for each entry. --&gt;</span>
+<span class="nt">&lt;appSettings&gt;</span>
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.mssql.trimcharacters&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.mysql.trimcharacters&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.oracle.trimcharacters&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.postgre.trimcharacters&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.redshift.trimcharacters&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/appSettings&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depending on your IIS configuration, changes to the Web.config file may automatically trigger the application to be reloaded.</p>
 </div>
-<ol class="arabic simple">
-<li>Update the WebApiUrl value in the izenda_config.js file with the IP or host name of the load balancer.</li>
-<li>Update the WebApiUrl in the [IzendaSystemSetting] table with the hostname or IP of the load balancer.</li>
-</ol>
-<div class="figure">
-<img alt="../../_images/load-balancing1.png" src="../../_images/load-balancing1.png" />
+<div class="section" id="list-of-supported-keys">
+<h3>List of Supported Keys<a class="headerlink" href="#list-of-supported-keys" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>izenda.mssql.trimcharacters</strong></td>
+</tr>
+<tr class="row-even"><td><strong>izenda.mysql.trimcharacters</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>izenda.oracle.trimcharacters</strong></td>
+</tr>
+<tr class="row-even"><td><strong>izenda.postgre.trimcharacters</strong></td>
+</tr>
+<tr class="row-odd"><td><strong>izenda.redshift.trimcharacters</strong></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -240,10 +267,10 @@ The most common scenario would be to load balance the API among two or more serv
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="language-packs.html" class="btn btn-neutral float-right" title="Language Packs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ui/.administrator_guide.html" class="btn btn-neutral float-right" title="Administrator Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="https.html" class="btn btn-neutral" title="Using SSL/TLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="logging-to-a-database.html" class="btn btn-neutral" title="Logging to a Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
