@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Add Internal User &mdash; Izenda BI 2.7.1 documentation</title>
+  <title>Add External User &mdash; Izenda BI 2.7.1 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Izenda BI 2.7.1 documentation" href="../index.html"/>
         <link rel="up" title="Adding User" href=".adding_user.html"/>
-        <link rel="next" title="Add External User" href="code_javascript_add_external_user.html"/>
-        <link rel="prev" title="Adding User" href=".adding_user.html"/> 
+        <link rel="next" title="First Steps" href=".embedding_izenda.html"/>
+        <link rel="prev" title="Add Internal User" href="code_javascript_add_internal_user.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -181,13 +181,13 @@
         
           <li><a href=".adding_user.html">Adding User</a> &raquo;</li>
         
-      <li>Add Internal User</li>
+      <li>Add External User</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/dev/code_javascript_add_internal_user.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/dev/code_javascript_add_external_user.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -200,8 +200,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="add-internal-user">
-<h1>Add Internal User<a class="headerlink" href="#add-internal-user" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="add-external-user">
+<h1>Add External User<a class="headerlink" href="#add-external-user" title="Permalink to this headline">¶</a></h1>
+<p>Adding an external user in integrated modes follows similar steps as adding an internal user in standalone mode, but the steps to generate a password will not be necessary.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Tenant, Data Model and Role should have been created before this step.</p>
@@ -211,28 +212,6 @@
 <li><a class="reference internal" href="../ref/api_role.html#post-role"><span class="std std-ref">Add Role</span></a></li>
 </ul>
 </div>
-<p>It requires 3 steps to fully create an internal user with password and security questions:</p>
-<ol class="arabic simple">
-<li>Create a user with an associated role.<ol class="arabic">
-<li>Prepare an empty <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
-<li>Populate user details.</li>
-<li>Populate user role.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user"><span class="std std-ref">POST user</span></a> API, and receive back the saved id.</li>
-</ol>
-</li>
-<li>Generate a <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a> for the user.<ol class="arabic">
-<li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API, and receive back the hash value.</li>
-</ol>
-</li>
-<li>Save the password and security questions for user.<ol class="arabic">
-<li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
-<li>Populate the user password.</li>
-<li>Populate the hash value for verification.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.</li>
-</ol>
-</li>
-</ol>
 <div class="section" id="empty-userdetail-object">
 <h2>Empty UserDetail object<a class="headerlink" href="#empty-userdetail-object" title="Permalink to this headline">¶</a></h2>
 <div class="toggle docutils container">
@@ -325,8 +304,9 @@ Sample populated UserDetail object:</div>
 </td></tr></table></div>
 </div>
 </div>
-<div class="section" id="call-post-user-api">
-<h2>Call POST user API<a class="headerlink" href="#call-post-user-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="call-api-endpoint-to-add-or-update-user">
+<h2>Call API endpoint to add or update user<a class="headerlink" href="#call-api-endpoint-to-add-or-update-user" title="Permalink to this headline">¶</a></h2>
+<p>Call either the <a class="reference external" href="https://www.izenda.com/docs/ref/api_user.html#post-user-integration-saveuser">POST user/integration/saveUser</a> or <a class="reference external" href="https://www.izenda.com/docs/ref/api_user.html#post-external-user">POST external/user</a> endpoint using the UserDetail object.</p>
 <ol class="arabic simple">
 <li>Receive back the <a class="reference internal" href="../ref/models/OperationResult.html"><span class="doc">OperationResult</span></a> object</li>
 <li>Check that the <strong>success</strong> field equals true.</li>
@@ -492,139 +472,6 @@ Sample response:</div>
 </td></tr></table></div>
 </div>
 </div>
-<div class="section" id="generate-a-password-link-for-the-user">
-<h2>Generate a <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a> for the user<a class="headerlink" href="#generate-a-password-link-for-the-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Prepare the input <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
-</ol>
-<div class="toggle docutils container">
-<div class="header docutils container">
-UserDetail object</div>
-<p><br clear="right" /></p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">id</span></code> filled with the assigned id</li>
-<li><code class="docutils literal"><span class="pre">userName</span></code>, <code class="docutils literal"><span class="pre">firstName</span></code>, <code class="docutils literal"><span class="pre">lastName</span></code> and <code class="docutils literal"><span class="pre">emailAddress</span></code> must be the same as the values in the saved user <br clear="right" /></li>
-</ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="hll">   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;d4fdd98f-ac63-4836-a011-6567b2641b3a&quot;</span><span class="p">,</span>
-</span>   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API.</li>
-<li>Receive back the <a class="reference internal" href="../ref/models/OperationResult.html"><span class="doc">OperationResult</span></a> object<ol class="arabic">
-<li>Check that the <strong>success</strong> field equals true.</li>
-<li>Remember the hash value in <strong>data</strong>.</li>
-</ol>
-</li>
-</ol>
-<div class="toggle docutils container">
-<div class="header docutils container">
-Sample response</div>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/...==&quot;</span>
-</span><span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
-<div class="section" id="save-the-password-and-security-questions-for-user">
-<h2>Save the password and security questions for user<a class="headerlink" href="#save-the-password-and-security-questions-for-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Prepare the input <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
-</ol>
-<div class="toggle docutils container">
-<div class="header docutils container">
-UserDetail object</div>
-<p><br clear="right" /></p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">verification</span></code> filled with the hash value from last step</li>
-<li><code class="docutils literal"><span class="pre">password</span></code> populated with user-selected password</li>
-<li><code class="docutils literal"><span class="pre">userSecurityQuestions</span></code> populated with the secret answers for security questions</li>
-<li><code class="docutils literal"><span class="pre">autoLogin</span></code> true to login the user after this step to immediately use the system</li>
-</ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;tenantDisplayID&quot;</span><span class="p">:</span> <span class="s2">&quot;stark&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;tenantName&quot;</span><span class="p">:</span> <span class="s2">&quot;Stark Industries&quot;</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
-</span><span class="hll">   <span class="nt">&quot;verification&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/...==&quot;</span><span class="p">,</span>
-</span>   <span class="nt">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;dwebb&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Webb&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;emailAddress&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="hll">   <span class="nt">&quot;userSecurityQuestions&quot;</span><span class="p">:</span> <span class="p">[],</span>
-</span><span class="hll">   <span class="nt">&quot;autoLogin&quot;</span><span class="p">:</span> <span class="kc">true</span>
-</span><span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.<ol class="arabic">
-<li>Check that the <strong>success</strong> field equals true.</li>
-<li>If autoLogin, use the value in <strong>data.token</strong> as <code class="docutils literal"><span class="pre">access_token</span></code> in subsequent REST API calls.</li>
-</ol>
-</li>
-</ol>
-<div class="toggle docutils container">
-<div class="header docutils container">
-Sample response:</div>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="hll">      <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;Abc/Def/.../==&quot;</span><span class="p">,</span>
-</span>      <span class="nt">&quot;tenant&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;cultureName&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;dateFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;MM/DD/YYYY&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;systemAdmin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">&quot;isExpired&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">&quot;notifyDuringDay&quot;</span><span class="p">:</span> <span class="kc">null</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
 </div>
 
 
@@ -637,10 +484,10 @@ Sample response:</div>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="code_javascript_add_external_user.html" class="btn btn-neutral float-right" title="Add External User" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href=".embedding_izenda.html" class="btn btn-neutral float-right" title="First Steps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href=".adding_user.html" class="btn btn-neutral" title="Adding User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="code_javascript_add_internal_user.html" class="btn btn-neutral" title="Add Internal User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
