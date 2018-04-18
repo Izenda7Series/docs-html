@@ -6,6 +6,16 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
+	
+
+v2.7.3 April 18, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  19892  Performance Issue of QuerySource load in report designer with very large data model in role
+
 
 v2.7.2 April 16, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
