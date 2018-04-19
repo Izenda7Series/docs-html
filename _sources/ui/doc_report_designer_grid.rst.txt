@@ -99,15 +99,6 @@ pane:
 -  Choose to alternate column background color for easier reading.
 -  .. _Report_Designer_Rows_Setting:
 
-   .. figure:: /_static/images/Report_Designer_Rows_Setting.png
-      :align: right
-      :width: 222px
-
-      Report Designer - Rows Setting
-
-   Set the row height (in
-   pixels). |br|
-
 -  Choose to alternate row background color for easier reading.
 -  .. _Report_Designer_Headers_Setting:
 

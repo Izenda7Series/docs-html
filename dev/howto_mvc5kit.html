@@ -416,14 +416,14 @@
 <p>Open Visual Studio IDE then select menu New &gt; New Project</p>
 <div class="figure" id="id1">
 <a class="reference internal image-reference" href="../_images/mvc_new_project.png"><img alt="../_images/mvc_new_project.png" src="../_images/mvc_new_project.png" style="width: 509px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 405 </span><span class="caption-text">New ASP.NET Web Application</span></p>
+<p class="caption"><span class="caption-number">Fig. 404 </span><span class="caption-text">New ASP.NET Web Application</span></p>
 </div>
 <p>On New Project dialog, select Templates &gt; Visual C# &gt; Web then select target .NET Framework and ASP.NET Web Application.</p>
 <p>Name your project “Mvc5StarterKit” then click OK. This is important! It will affect reference names throughout the code base.</p>
 <p>In the New ASP.NET Project dialog, click MVC and click Change Authentication then chose Individual User Accounts, click OK buttons to close dialogs.</p>
 <div class="figure" id="id2">
 <a class="reference internal image-reference" href="../_images/mvc_new_project_template.png"><img alt="../_images/mvc_new_project_template.png" src="../_images/mvc_new_project_template.png" style="width: 590px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 406 </span><span class="caption-text">MVC Template</span></p>
+<p class="caption"><span class="caption-number">Fig. 405 </span><span class="caption-text">MVC Template</span></p>
 </div>
 <p>The default template of MVC 5 is created, you will use this template to implement Izenda integrated application from now.</p>
 </div>
@@ -457,7 +457,7 @@
 <li><p class="first">Right click Reference node in Mvc5StarterKit Solution Explorer then select Add Reference…</p>
 <div class="figure" id="id3">
 <a class="reference internal image-reference" href="../_images/mvc_add_reference.png"><img alt="../_images/mvc_add_reference.png" src="../_images/mvc_add_reference.png" style="width: 361px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 407 </span><span class="caption-text">Add reference</span></p>
+<p class="caption"><span class="caption-number">Fig. 406 </span><span class="caption-text">Add reference</span></p>
 </div>
 </li>
 <li><p class="first">On Reference Manager dialog click Browse… button then browse to folder ~\Mvc5StarterKit\IzendaReferences, select all DLL files to reference but ignore below dlls (because those dlls have already been referenced in MVC 5 project template by default):</p>
@@ -493,7 +493,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 </div>
 <div class="figure" id="id4">
 <a class="reference internal image-reference" href="../_images/mvc_post_build_events.png"><img alt="../_images/mvc_post_build_events.png" src="../_images/mvc_post_build_events.png" style="width: 806px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 408 </span><span class="caption-text">Copy Resources on Post build event</span></p>
+<p class="caption"><span class="caption-number">Fig. 407 </span><span class="caption-text">Copy Resources on Post build event</span></p>
 </div>
 </div>
 </div>
@@ -897,7 +897,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>If you encounter an error related to OracleDataAccesssDTC in Visual Studio navigate to Tools -&gt; Options -&gt; Projects and Solutions -&gt; Web Projects -&gt; Turn on Use the 64 bit version of IIS Express for web sites and projects.</p>
 <div class="figure" id="id5">
 <a class="reference internal image-reference" href="../_images/mvc_64bit_iis_express.png"><img alt="../_images/mvc_64bit_iis_express.png" src="../_images/mvc_64bit_iis_express.png" style="width: 560px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 409 </span><span class="caption-text">64-bit IIS Express</span></p>
+<p class="caption"><span class="caption-number">Fig. 408 </span><span class="caption-text">64-bit IIS Express</span></p>
 </div>
 </div>
 <div class="section" id="run-starter-kit">
@@ -905,12 +905,12 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>In Visual Studio you can press F5 to run your starter kit for the first time, the application page will look like the screenshot below:</p>
 <div class="figure" id="id6">
 <a class="reference internal image-reference" href="../_images/mvc_run_starter_kit.png"><img alt="../_images/mvc_run_starter_kit.png" src="../_images/mvc_run_starter_kit.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 410 </span><span class="caption-text">Starter kit screen</span></p>
+<p class="caption"><span class="caption-number">Fig. 409 </span><span class="caption-text">Starter kit screen</span></p>
 </div>
 <p>There is nothing present from the Izenda UI at this time. At this step we are just checking whether Izenda API is able to start up completely or not. On your browser address add /api/ to the end of url (<a class="reference external" href="http://localhost:14809/api/">http://localhost:14809/api/</a>) then press enter, you will see Izenda API is hosted completely:</p>
 <div class="figure" id="id7">
 <a class="reference internal image-reference" href="../_images/mvc_api_url_404.png"><img alt="../_images/mvc_api_url_404.png" src="../_images/mvc_api_url_404.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 411 </span><span class="caption-text">API screen</span></p>
+<p class="caption"><span class="caption-number">Fig. 410 </span><span class="caption-text">API screen</span></p>
 </div>
 <p>In ~\Mvc5StarterKit project folder you will see a logs folder with the log files mvc5kit-log.log (~\Mvc5StarterKit\logs).</p>
 </div>
@@ -975,12 +975,12 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>In Mvc5StarterKit database we add a table named Tenants and add a column named TenantID into AspNetUsers table, this new column is a foreign key reference to the Tenants table which demonstrates a one to many relationship between Tenant and User. Other tables are kept same as ASP.NET MVC 5 template, that helps us modify login logic at little as possible, but allows us to show a simple use case for multi-tenant support.</p>
 <div class="figure" id="id8">
 <a class="reference internal image-reference" href="../_images/mvc_AspNetUsers_Tenants.png"><img alt="../_images/mvc_AspNetUsers_Tenants.png" src="../_images/mvc_AspNetUsers_Tenants.png" style="width: 419px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">Users and Tenants</span></p>
+<p class="caption"><span class="caption-number">Fig. 411 </span><span class="caption-text">Users and Tenants</span></p>
 </div>
 <p>In integrated mode, authentication is handled by the MVC 5 application, not Izenda. In this starter kit, the Izenda backend will get a token via the <code class="docutils literal"><span class="pre">UserIntegrationConfig.GetAccessToken</span></code> method. You must implement your own code logic to provide this token containing the authenticated user’s information. To ensure security, each request to the Izenda API service will call back to MVC application to validate the token it received from the originating request. You must provide this validation logic in your app inside the <code class="docutils literal"><span class="pre">UserIntegrationConfig.ValidateToken</span></code> method. The diagram below illustrates the token retrieval and validation process in fully integrated mode:</p>
 <div class="figure" id="id9">
 <a class="reference internal image-reference" href="../_images/mvc_authentication_sequence_diagram.png"><img alt="../_images/mvc_authentication_sequence_diagram.png" src="../_images/mvc_authentication_sequence_diagram.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">Authentication Sequence Diagram</span></p>
+<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">Authentication Sequence Diagram</span></p>
 </div>
 <p>To customize the authentication logic, we must modify some existing classes in the ASP.NET MVC 5 application template. The table below lists all the modified classes:</p>
 <table border="1" class="colwidths-given docutils">
@@ -1381,7 +1381,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>Then click Login. You will see the home page with the logged in user’s email on top right of the page.</p>
 <div class="figure" id="id10">
 <a class="reference internal image-reference" href="../_images/mvc_current_user_ui.png"><img alt="../_images/mvc_current_user_ui.png" src="../_images/mvc_current_user_ui.png" style="width: 730px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">Current user and Log off button</span></p>
+<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">Current user and Log off button</span></p>
 </div>
 </div>
 <div class="section" id="update-shared-layout">
@@ -1918,13 +1918,13 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>On top menu click Settings link then add your license key</p>
 <div class="figure" id="id11">
 <a class="reference internal image-reference" href="../_images/mvc_license_key.png"><img alt="../_images/mvc_license_key.png" src="../_images/mvc_license_key.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">Settings license key</span></p>
+<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">Settings license key</span></p>
 </div>
 <p>Stop your application and start again (this step ensures Izenda reloads the cache).</p>
 <p>Click Izenda link on top menu to open full Izenda app</p>
 <div class="figure" id="id12">
 <a class="reference internal image-reference" href="../_images/mvc_full_izenda_app.png"><img alt="../_images/mvc_full_izenda_app.png" src="../_images/mvc_full_izenda_app.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">Full Izenda app</span></p>
+<p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">Full Izenda app</span></p>
 </div>
 <p>Now feel free to explore Izenda integrated application.</p>
 </div>
@@ -1933,7 +1933,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>Modify register new user layout in ASP.NET MVC 5</p>
 <div class="figure" id="id13">
 <a class="reference internal image-reference" href="../_images/mvc_new_account.png"><img alt="../_images/mvc_new_account.png" src="../_images/mvc_new_account.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 417 </span><span class="caption-text">New account screen</span></p>
+<p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">New account screen</span></p>
 </div>
 <p>Add new Tenant property into class RegisterViewModel in ~\Models\AccountViewModels.c</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>    <span class="n">public</span> <span class="k">class</span> <span class="nc">RegisterViewModel</span>
