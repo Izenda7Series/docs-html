@@ -6,7 +6,15 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
-	
+
+
+v2.7.4 April 19, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20252  Resolved 500 error from API when attempting to login
 
 v2.7.3 April 18, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
