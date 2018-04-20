@@ -18,16 +18,17 @@ structures placed in
 Separate Database Architecture
 ------------------------------
 
+Each tenant data is
+stored in a separate database with identical structure. |br|
+
 .. _TicketDesk_-_Separate_Database_Architecture:
 
 .. figure:: /_static/images/TicketDesk_-_Separate_Database_Architecture.png
-   :align: right
    :width: 143px
 
    Sample Separate Database Architecture
 
-Each tenant data is
-stored in a separate database with identical structure. |br|
+
 
 #. Add connections to each tenant database at that tenant level.
 
