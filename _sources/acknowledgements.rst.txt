@@ -58,7 +58,7 @@ Acknowledgements
 -  react-draggable: v.2.2.1  https://github.com/mzabriskie/react-draggable License: https://github.com/mzabriskie/react-draggable/blob/master/LICENSE
 -  react-motion: v.0.4.3 https://github.com/chenglou/react-motion  License: https://github.com/chenglou/react-motion/blob/master/LICENSE
 -  react-router: v.2.4.0  https://github.com/ReactTraining/react-router License:https://github.com/ReactTraining/react-router/blob/master/LICENSE.md
--  react-widgets: v.3.3.1  https://github.com/jquense/react-widgets   License:https://github.com/jquense/react-widgets/blob/master/License.txt
+-  react-widgets: v.3.3.1  https://github.com/jquense/react-widgets   License:https://github.com/jquense/react-widgets/blob/master/LICENSE.md
 -  recompose: v.0.20.2 https://github.com/acdlite/recompose License:https://github.com/acdlite/recompose/blob/master/LICENSE.md
 -  react-slick: v.0.14.5 https://github.com/akiran/react-slick License:https://github.com/akiran/react-slick/blob/master/LICENSE
 -  slick-carousel: v.1.6.0  https://github.com/kenwheeler/slick License: https://github.com/kenwheeler/slick/blob/master/LICENSE
