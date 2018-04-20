@@ -147,8 +147,3 @@ identified by different values in a "TenantID" field in every table.
 
       Tenant Field Advanced Setting
 
-Reference
----------
-
--  `Multi-Tenant
-   Architectures <https://msdn.microsoft.com/en-us/library/aa479086.aspx>`__
