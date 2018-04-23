@@ -7,6 +7,17 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.7.5 April 23, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20200  When a new filter is added to a report that is used in a dashboard, this filter is shown in the dashboard as common filter but pvalues are not accepted until the dashboard is re-saved.
+-  Defect  20194  Scheduled alert does not send email when using "In Time Period" filter
+-  Defect  20174  Filters should be added to Preview of calculated fields to ensure proper query performance and results.
+-  Defect  19953  Column headers unaligned on pivot grids
+-  Defect  19893  When copying report with Copy Console, embedded report in form breaks in destination
 
 v2.7.4 April 19, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
