@@ -35,7 +35,7 @@ View data sources
    Visible tables, views, or stored procedures from all connections will
    be displayed in the Middle Panel.
 
-      The categories are collapsed by default, user needs to expand each of them to see the data sources inside. (:numref:`Report_Designer_Data_Source_Middle_Panel`) |br|
+      The categories are expanded by default so the user can see the data sources inside. The user can collapse each category to provide additional screen real estate to uncollapsed categories. (:numref:`Report_Designer_Data_Source_Middle_Panel`) |br|
 
 .. note::
 
