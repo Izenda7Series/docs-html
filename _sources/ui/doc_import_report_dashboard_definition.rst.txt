@@ -48,7 +48,7 @@ Import
 
 After browsing files, application will switch to **Import Page**.
 
-.. figure:: /_static/images/ui/import_definition/DataSetup_Import_ImportPage.PNG
+.. figure:: /_static/images/ui/import_definition/DataSetup_Import_ImportPage.png
    :align: center
 
    Import page
