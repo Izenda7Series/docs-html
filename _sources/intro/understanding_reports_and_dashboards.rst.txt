@@ -93,8 +93,12 @@ Exporting and Scheduling
 
 -  Reports and Dashboards are exportable
 
-   -  Izenda supports exporting to various file formats including: Word,
-      Excel, PDF, XML, CSV, and JSON.
+   -  Izenda supports exporting to various file formats including: Word, Excel, PDF, XML, CSV, JSON, and Definition.
+
+      .. tip::
+
+         \- The Definition format is available from release v2.8.0. |br|
+         \- Reports and Dashboards can be export as Definition formats (.birt for report and .bidb for dashboard) to storage or import to the system. Please read :doc:`Import Report or Dashboard Definition </ui/doc_import_report_dashboard_definition>` for more details.
 
 -  Reports/Dashboards can be scheduled
 

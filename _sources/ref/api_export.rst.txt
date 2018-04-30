@@ -41,7 +41,21 @@ Exports the dashboard, report or report part specified in request parameters.
 
 **Request**
 
+    **Parameters**:
+
+      - Word
+      - Excel
+      - PDF
+      - CSV
+      - XML
+      - JSON 
+      - Query Execution
+      - Definition (New in version 2.8.0)
+
+    **Keys**:
+
 This API accepts 2 types of data: |br|
+
    - The **application/x-www-form-urlencoded** type with the following keys:
 
     .. list-table::

@@ -249,7 +249,7 @@ manually clicked on to detect that.
 
       .. _Connection_Changed_Data_Sources:
 
-      .. figure:: /_static/images/Connection_Changed_Data_Sources.jpg
+      .. figure:: /_static/images/Connection_Changed_2Data_Sources.PNG
          :width: 862px
 
          New and Changed data sources

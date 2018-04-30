@@ -31,7 +31,7 @@ View Workspace List
 
 #. .. _Workspace_List:
 
-   .. figure:: /_static/images/Workspace_List.png
+   .. figure:: /_static/images/Workspace_List.PNG
       :align: right
       :width: 367px
 

@@ -37,6 +37,8 @@ List of APIs
           The same as :ref:`GET_connection/basicInfo/(tenant_id)`
    * - `POST dataModel/basicConnectionsInfo`_
      - Returns an array of connections infor with paging.
+   * - `POST dataModel/connectionsInfo`_
+     - Returns an array of :doc:`models/Connection` objects.
    * - `GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}`_
      - Returns an array of the :term:`query source categories <query source category>` in the specified connection.
      
@@ -411,6 +413,72 @@ Returns an array of connections infor with paging.
          "skipItems": 0,
          "isLastPage": false
       }
+
+POST dataModel/connectionsInfo
+--------------------------------------------------------
+
+Returns an array of :doc:`models/Connection` objects.
+
+.. versionadded:: 2.7.0
+
+**Request**
+
+   Payload: a :doc:`models/PagedRequest` object.
+
+**Response**
+
+   A :doc:`models/PagedResult` object with **result** field containing a list of :doc:`models/Connection` objects.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/dataModel/connectionsInfo HTTP/1.1
+
+   Request payload::
+
+      {
+         "skipItems":-1,
+         "tenantId":null
+      }
+
+   Sample response::
+
+      {  
+         "result":[  
+            {  
+               "id":"fa1c3381-d56a-4648-a280-480c759ef867",
+               "name":"mydb",
+               "originalName":null,
+               "serverTypeId":"572bd576-8c92-4901-ab2a-b16e38144813",
+               "databaseServer":"izenda-vm04",
+               "serverTypeName":"MSSQL",
+               "connectionString":"1YRqPAk9Lqdvvn/yborkLmvZ2CP4cI+xfMq4NZdEfvLVxFoMqDSGYBLPPOYIwpEWLhKw+f1nxXIcqfUZxE4mRA==",
+               "visible":false,
+               "deleted":false,
+               "relateToConnectionId":null,
+               "tenantId":null,
+               "dBSource":{  
+                  "querySources":[]
+               },
+               "relationships":null,
+               "physicalChange":0,
+               "checked":false,
+               "isCheck":false,
+               "databaseName":"mydb",
+               "fullPath":null,
+               "indeterminate":false,
+               "numOfChilds":0,
+               "numOfCheckedChilds":0
+            }
+         ],
+         "pageIndex":0,
+         "pageSize":1000,
+         "total":5,
+         "skipItems":-1,
+         "isLastPage":true
+      }
+
 
 GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}
 --------------------------------------------------------------

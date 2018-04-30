@@ -254,88 +254,91 @@ Will load from remote connection if they are not yet populated in system.</td>
 <tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-basicconnectionsinfo">POST dataModel/basicConnectionsInfo</a></td>
 <td>Returns an array of connections infor with paging.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id">GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-connectionsinfo">POST dataModel/connectionsInfo</a></td>
+<td>Returns an array of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-basicquerysourcecategoriesinfo-connection-id">GET dataModel/basicQuerySourceCategoriesInfo/{connection_id}</a></td>
 <td><p class="first">Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> in the specified connection.</p>
 <div class="last versionadded">
 <p><span class="versionmodified">New in version 2.0.3.</span></p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><a href="#id4"><span class="problematic" id="id5">`POST dataModel/basicQuerySourceCategoriesInfo`_</span></a></td>
+<tr class="row-even"><td><a href="#id4"><span class="problematic" id="id5">`POST dataModel/basicQuerySourceCategoriesInfo`_</span></a></td>
 <td><p class="first">Returns an array of the <a class="reference internal" href=".glossary.html#term-query-source-category"><span class="xref std std-term">query source categories</span></a> with paging in the specified connection.</p>
 <div class="last versionadded">
 <p><span class="versionmodified">New in version 2.4.0.</span></p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcesinfo-connection-id-type">GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-basicquerysourcesinfo-connection-id-type">GET dataModel/basicQuerySourcesInfo/{connection_id}/(type)</a></td>
 <td>Returns an array of id and name of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-querysourcesinfo-connection-id-type">GET dataModel/querySourcesInfo/{connection_id}/(type)</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-querysourcesinfo-connection-id-type">GET dataModel/querySourcesInfo/{connection_id}/(type)</a></td>
 <td>Returns an array of the query sources in the specified connection, filtered by type (Table, View or Stored Procedure).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#delete-datamodel-querysourcefield-query-source-field-id">DELETE dataModel/querySourceField/{query_source_field_id}</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-datamodel-querysourcefield-query-source-field-id">DELETE dataModel/querySourceField/{query_source_field_id}</a></td>
 <td>Removes a query source field from data model.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-basicquerysourcefieldsinfo-query-source-id">GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-basicquerysourcefieldsinfo-query-source-id">GET dataModel/basicQuerySourceFieldsInfo/{query_source_id}</a></td>
 <td>Returns an array of id and name of the query source fields in the query source specified by the {query_source_id} value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#id3">POST dataModel</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#id3">POST dataModel</a></td>
 <td>Saves a list of query sources.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-indicator-tenant-id">GET dataModel/indicator/(tenant_id)</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-indicator-tenant-id">GET dataModel/indicator/(tenant_id)</a></td>
 <td>Returns the number of physical changes in Data Model for each type Table, View, Stored procedure and Function, filtered by tenant_id if provided.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-reloadquerysourcefields">POST dataModel/reloadQuerySourceFields</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-reloadquerysourcefields">POST dataModel/reloadQuerySourceFields</a></td>
 <td>Returns the schema of stored procedures after using user-supplied parameters to try running them.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-validatecalculatedfield">POST dataModel/validateCalculatedField</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-validatecalculatedfield">POST dataModel/validateCalculatedField</a></td>
 <td>Validates a calculated field for duplicated name before saving.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-functionoperators">POST dataModel/functionOperators/</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-functionoperators">POST dataModel/functionOperators/</a></td>
 <td>Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loadrelationships">POST dataModel/loadRelationships</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loadrelationships">POST dataModel/loadRelationships</a></td>
 <td>Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-relationships">POST dataModel/relationships</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-relationships">POST dataModel/relationships</a></td>
 <td>Saves an array of relationships. <br clear="right" /> <br clear="right" />
 After adding a new relationship, <a class="reference internal" href="#post-datamodel-loadrelationships">POST DataModel/loadRelationships</a> should be called to retrieve the new id value.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></td>
 <td>Deletes the relationship specified by the {relationship_id} value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></td>
 <td>Returns an array of query sources and an array of relationships with color properties (filtered by tenant_id if given).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></td>
 <td>Updates the connection color.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></td>
 <td>Returns an array of join types currently supported.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></td>
 <td>Returns an array of database mappings.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></td>
 <td>Saves an array of database mappings.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></td>
 <td>Returns a paged array of database servers and database names.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></td>
 <td>Returns a paged array of connection names or schema names in the specified database.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></td>
 <td>Executes and saves a custom query source.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></td>
 <td>Validates that name of custom query source is unique.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></td>
 <td>Deletes a custom query source.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></td>
 <td>Returns the query source specified by query_source_id.</td>
 </tr>
 </tbody>
@@ -641,6 +644,69 @@ Will load from remote connection if they are not yet populated in system.</p>
    <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
    <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
    <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-connectionsinfo">
+<h2>POST dataModel/connectionsInfo<a class="headerlink" href="#post-datamodel-connectionsinfo" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.7.0.</span></p>
+</div>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/PagedRequest.html"><span class="doc">PagedRequest</span></a> object.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/connectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span><span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;result&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;fa1c3381-d56a-4648-a280-480c759ef867&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;mydb&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;originalName&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span><span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span><span class="s2">&quot;izenda-vm04&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span><span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span><span class="s2">&quot;1YRqPAk9Lqdvvn/yborkLmvZ2CP4cI+xfMq4NZdEfvLVxFoMqDSGYBLPPOYIwpEWLhKw+f1nxXIcqfUZxE4mRA==&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;visible&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;deleted&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;relateToConnectionId&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;dBSource&quot;</span><span class="p">:{</span>
+            <span class="s2">&quot;querySources&quot;</span><span class="p">:[]</span>
+         <span class="p">},</span>
+         <span class="s2">&quot;relationships&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;physicalChange&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;checked&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;isCheck&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span><span class="s2">&quot;mydb&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;fullPath&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;indeterminate&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;numOfChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span>
+   <span class="s2">&quot;total&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+   <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;isLastPage&quot;</span><span class="p">:</span><span class="n">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
