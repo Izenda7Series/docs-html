@@ -7,6 +7,30 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v2.8.0 April 30, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^
+
+-  Import & Export Report and Dashboard Definitions 
+	-  Report and Dashboard definitions can now be exported to a file. These are JSON file types which are compressed and have extension types of report (.birt) and dashboard (.bidb).
+	-  Roles must be assigned the option to allow users to export definition files. See Settings>Role>Emailing and Exporting to enable these options.
+	-  Exported files can be emailed but these file types cannot be scheduled or subscribed.
+	-  Report & Dashboard definitions contain no user information and will only contain sharing information on roles and everyone options.
+	-  Dashboard definitions contain all report definitions which are part of the dashboard
+	-  The files can be imported into the same system or another Izenda instance at any tenant level (system or tenant). This requires the import system to have the same schema based on a database mapping provided at import.
+	-  Imports can be completed by system administrator level users via the UI in Settings>Data Setup area. There are two new tabs for Importing the definition files and viewing the Import History.
+	-  Import and export can also be accomplished via the API. Please see API export options `here <https://www.izenda.com/docs/ref/api_export.html?highlight=export#export-apis>`_  for API information for import `here <https://izenda.com/docs/swagger/import-export.html>`_  
+	-  Please see the full documentation for setup and usage of this new feature  `here <https://www.izenda.com/docs/ui/doc_import_report_dashboard_definition.html>`_
+- Export Dashboard 
+	- Dashboards can now be directly exported from the Dashboard menu to all supported export types
+
+FIXES
+^^^^^
+-  Defect  20236  Subreport loses field mapping filter on export.
+
 v2.7.5 April 23, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
