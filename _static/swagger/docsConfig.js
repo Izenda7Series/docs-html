@@ -1,0 +1,1 @@
+var docsBasePath = "https://downloads.izenda.com/.specs/";
