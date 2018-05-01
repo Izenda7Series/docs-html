@@ -1,1 +1,1 @@
-var docsBasePath = "https://downloads.izenda.com/.specs/";
+var docsBasePath = "https://openapi.izenda.com/";
