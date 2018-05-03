@@ -24,6 +24,10 @@ FEATURES
 	-  Imports can be completed by system administrator level users via the UI in Settings>Data Setup area. There are two new tabs for Importing the definition files and viewing the Import History.
 	-  Import and export can also be accomplished via the API. Please see API export options `here <https://www.izenda.com/docs/ref/api_export.html?highlight=export#export-apis>`_  for API information for import `here <https://izenda.com/docs/swagger/import-export.html>`_  
 	-  Please see the full documentation for setup and usage of this new feature  `here <https://www.izenda.com/docs/ui/doc_import_report_dashboard_definition.html>`_
+	-  There are new DLLs with this release included in the API download
+		-  Izenda.BI.StorageProvider.dll
+		-  Izenda.BI.StorageProvider.FileSystem.dll
+		-  Izenda.BI.Exporting.Definition.dll
 - Export Dashboard 
 	- Dashboards can now be directly exported from the Dashboard menu to all supported export types
 
