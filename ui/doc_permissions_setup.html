@@ -1,0 +1,1704 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Permissions Setup &mdash; Izenda BI 2.8.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 2.8.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="User Setup" href="doc_user_setup.html"/>
+        <link rel="prev" title="Role Setup" href="doc_role_setup.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_connection_string.html">Connection String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Permissions Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-are-permissions">What are Permissions?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permissions-overview">Permissions Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#difference-between-tenant-permissions-and-role-permissions">Difference Between Tenant Permissions and Role Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#difference-between-system-level-roles-and-tenant-level-roles">Difference Between System Level Roles and Tenant Level Roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permission-settings-that-impact-ui-elements">Permission Settings that Impact UI Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_import_report_dashboard_definition.html">Import Report or Dashboard Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Permissions Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_permissions_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="permissions-setup">
+<h1><a class="toc-backref" href="#id5">Permissions Setup</a><a class="headerlink" href="#permissions-setup" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#permissions-setup" id="id5">Permissions Setup</a><ul>
+<li><a class="reference internal" href="#what-are-permissions" id="id6">What are Permissions?</a></li>
+<li><a class="reference internal" href="#permissions-overview" id="id7">Permissions Overview</a></li>
+<li><a class="reference internal" href="#difference-between-tenant-permissions-and-role-permissions" id="id8">Difference Between Tenant Permissions and Role Permissions</a></li>
+<li><a class="reference internal" href="#difference-between-system-level-roles-and-tenant-level-roles" id="id9">Difference Between System Level Roles and Tenant Level Roles</a></li>
+<li><a class="reference internal" href="#permission-settings-that-impact-ui-elements" id="id10">Permission Settings that Impact UI Elements</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><br clear="right" /></p>
+<div class="section" id="what-are-permissions">
+<h2><a class="toc-backref" href="#id6">What are Permissions?</a><a class="headerlink" href="#what-are-permissions" title="Permalink to this headline">¶</a></h2>
+<p>Permissions are how you grant functionality to users in your instance of Izenda. These include several areas like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Controlling what types of report parts they can create</li>
+<li>Setting who they can share their reports with</li>
+<li>Determining if they can access and manipulate their tenant&#8217;s data model</li>
+</ul>
+</div></blockquote>
+<p>In a multi-tenant instance you can set permission at both the tenant and role level. In this scenario, the tenant will act like a ceiling for a role&#8217;s permissions.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If a tenant object does not have access to a particular permission, then no roles within that tenant can have access to that permission</li>
+<li>Tenant permissions will generally be inherited down into the role permissions when you are creating new roles within that tenant</li>
+</ul>
+</div></blockquote>
+<hr class="docutils" />
+</div>
+<div class="section" id="permissions-overview">
+<h2><a class="toc-backref" href="#id7">Permissions Overview</a><a class="headerlink" href="#permissions-overview" title="Permalink to this headline">¶</a></h2>
+<p>A permissions object is comprised of several areas</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>System Configuration</strong></div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Scheduled Instances</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission determines if a tenant/role has access to a master search dialogue to audit all scheduled/subscribed instances</dt>
+<dd><ul class="first last">
+<li>The search dialogue is located in the Settings &gt; System Configuration &gt; Scheduling tab</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Data Setup</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Data Model</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission grants access for the tenant/role to edit and interact with the data model</dt>
+<dd><ul class="first last">
+<li>Note that this permission is all or nothing. There is no way to limit if they can add relationships or not, alias data sources, etc.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Custom Views</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Create</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to create custom views within their data model</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Edit</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to edit any existing custom views within their data model</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to delete any existing custom views within their data model</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Advanced Settings</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Category</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission grants access to the Data Model &gt; Advanced Settings &gt; Category tab for the tenant/role</dt>
+<dd><ul class="first last">
+<li>This tab is used to create, edit, or delete any data source categories used in the data model</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Others</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission grants access to the Data Model &gt; Advanced Settings &gt; Others tab for the tenant/role</dt>
+<dd><ul class="first last">
+<li>This tab is used to set various behavior for the tenant such as sorting column names, determining common filter criteria for dashboards, etc.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>User Setup</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Actions</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Create</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission grants access for the tenant/role to create new users</dt>
+<dd><ul class="first last">
+<li>NOTE: Users cannot be added through the UI in an integrated instance</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Edit</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to edit existing users</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This permission grants access for the tenant/role to delete existing users</dt>
+<dd><ul class="first last">
+<li>NOTE: Users cannot be deleted through the UI in an integrated instance</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configure Password Option</dt>
+<dd><ul class="first last">
+<li>This permission grants acces for the tenant/role to set up/reset passwords for new and existing users</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>User Role Association</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Role Setup</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Actions</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Create</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to create new roles</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Edit</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to edit existing roles</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the tenant/role to delete existing roles</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Model Access</dt>
+<dd><ul class="first last">
+<li>This permission grants the tenant/role the ability to interact with a role&#8217;s data model access on the Role Setup page</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Permissions</dt>
+<dd><ul class="first last">
+<li>This permission grants the tenant/role the ability to interact with a role&#8217;s permission set on the Role Setup page</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Grant Role with Full Report and Dashboard Access</dt>
+<dd><ul class="first last">
+<li>This permission grants the tenant/role the ability to set the &#8216;Full Report and Dashboard Access&#8217; permission in the Permission tab of the Role Setup page</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Reports</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Can create new report?</dt>
+<dd><ul class="first last">
+<li>This permission allows a tenant/role to create new reports</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Sources</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Simple Data Sources</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This setting will prevent a user from seeing and editing joins on the Data Sources tab of the report designer</dt>
+<dd><ul class="first last">
+<li>NOTE: Roles with Simple Data Sources can only choose datasources with relationships between them that are defined in the data model. If a relationship does not exist between these data sources, they cannot choose those to build a report off of.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>This setting will also collapse the right-hand properties panel in the designer tab</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Advanced Data Sources</dt>
+<dd><ul class="first last">
+<li>This setting will allow a user to edit and create joins in the Data Sources tab of the report designer</li>
+<li>This setting will auto-expand the right-hand properties panel in the designer tab</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Report Part Types</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Chart</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to build Chart type report parts in the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Form</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to build Form type report parts in the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Gauge</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to build Gauge type report parts in the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Maps</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to build Map type report parts in the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Report Categories/Subcategories</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Can Create New Category?</dt>
+<dd><ul class="first last">
+<li>This permission will determine if a user is able to type in a new category during the save/copy/move actions on a report</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Filter Properties</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Filter Logic</dt>
+<dd><ul class="first last">
+<li>This permission will determine if a user is able to create their own filter logic in the filter panel of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Cross Filtering</dt>
+<dd><ul class="first last">
+<li>This permission will determine if a user is able to set cross filtering behavior in their report</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Field Properties</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Custom URL</dt>
+<dd><ul class="first last">
+<li>This permission will determine if the Custom URL option is visible in the field properties panel of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Embedded Javascript</dt>
+<dd><ul class="first last">
+<li>This permission will determine if the Embedded Javascript option is visible in the field properties panel of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subreport</dt>
+<dd><ul class="first last">
+<li>This permission will determine if the Subreport option is visible in the field properties panel of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>Actions</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Schedule</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to create scheduled instances in the Schedule tab of of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Register to Alerts</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to create alerted instances against a report</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subscribe</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to create subscribed instances against reports they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configure Access Rights</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to share the report by creating Access Rights in the Access tab of the report designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to email the contents of a report that they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to print the contents of a report that they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to export the contents of a report to any file types they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>View Report History</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to see the version history of a report on their report list</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Unarchive Report Version</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to unarchive older version of reports into their own report objects</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to delete existing reports that they have sufficient access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Overwrite Existing Report</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to overwrite existing reports that they have been given sufficient access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Dashboards</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Can create new dashboard?</dt>
+<dd><ul class="first last">
+<li>This permission allows a tenant/role to create new dashboards</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Dashboard Categories/Subcategories</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Can create new category?</dt>
+<dd><ul class="first last">
+<li>This permission will determine if a user is able to type in a new category during the save/copy/move actions on a dashboard</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt><a href="#id3"><span class="problematic" id="id4">*</span></a>Actions</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Schedule</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to create scheduled instances in the Schedule tab of of the dashboard designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subscribe</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to create subscribed instances against dashboards they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configure Access Rights</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to share the dashboard by creating Access Rights in the Access tab of the dashboard designer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to email the contents of a dashboard that they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to print the contents of a dashboard that they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to export the contents of a dashboard to any file types they have access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to delete existing dashboards that they have sufficient access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Overwrite Existing Report</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to overwrite existing dashboards that they have been given sufficient access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Access</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Access Limits</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Roles/Users allowed to share with</dt>
+<dd><ul class="first last">
+<li>This dialogue will determine the list of roles and their users that a user can grant report level access to</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Access Defaults</dt>
+<dd><ul class="first last">
+<li>This dialogue will allow you to create default access rights that will get set on every report/dashboard members of this role create</li>
+<li><dl class="first docutils">
+<dt>NOTE: These are only default values applied. If that same user has Configure Access Rights set, they can remove these Defaults</dt>
+<dd><ul class="first last">
+<li>These default values are also limited by what roles and users are set in the Access Limits portion above</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Scheduling</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Scheduling Limits</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Roles/Users allowed to share with</dt>
+<dd><ul class="first last">
+<li>This dialogue will determine the list of roles and their users that can be added as valid recipients when e-mailing or scheduling a report/dashboard</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Scheduling Scope</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>System Users</dt>
+<dd><ul class="first last">
+<li>This permission will limit the valid recipients of an e-mail/schedule to only users in the system set in the above Scheduling Limits section</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>External Users</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to manually enter an e-mail address as a valid recipient even if it does not match a user account in the system</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Emailing</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Delivery Method</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Link</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to send a link to a report in the e-mail body</li>
+<li>NOTE: This is a link to the viewer of the report, which means the recipient will have to be authorized by the system in order to access it.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Embedded HTML</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to send the report contents embedded within the e-mail body</li>
+<li>NOTE: The report content is generated from the account of the user sending the e-mail, not the user receiving the content</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Attachment</dt>
+<dd><ul class="first last">
+<li>This permission will allow a user to send the report contents in a file attached to the e-mail</li>
+<li>NOTE: The report content is generated from the account of the user sending the e-mail, not the user receiving the content</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Attachment Type</dt>
+<dd><ul class="first last">
+<li>Word</li>
+<li>Excel</li>
+<li>PDF</li>
+<li>CSV</li>
+<li>XML</li>
+<li>JSON</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Exporting</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Exporting Format</dt>
+<dd><ul class="first last">
+<li>Word</li>
+<li>Excel</li>
+<li>PDF</li>
+<li>CSV</li>
+<li>XML</li>
+<li>JSON</li>
+<li>Query Execution</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>System-wide</strong>:</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Can see system messages?</dt>
+<dd><ul class="first last">
+<li>This permission will determine if a tenant/role can see system wide messages that are otherwise only at the system level</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="difference-between-tenant-permissions-and-role-permissions">
+<h2><a class="toc-backref" href="#id8">Difference Between Tenant Permissions and Role Permissions</a><a class="headerlink" href="#difference-between-tenant-permissions-and-role-permissions" title="Permalink to this headline">¶</a></h2>
+<p>Permissions can be set in two place: at the tenant level and at the role level. While a majority of the permission objects are the same, there are some difference between them.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Tenant Level Differences</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Tenant Access Checkboxes</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This column of checkboxes along the right-hand side of the permissions tab determines if these permission are visible during the Role Setup process</dt>
+<dd><ul class="first last">
+<li>If Tenant Access is not set, then you will not see that permission during role setup, but the role will still inherit what is set behind the scenes</li>
+<li>If Tenant Access is set, then you will see that permission during role seutp and can choose to remove that permission from that particular role</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>If this checkbox is set AND the corresponding permission is set, then you will be able to disable or enable this option on a per-role basis during role setup.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Role Level Differences</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Full Report and Dashboard Access</dt>
+<dd><ul class="first last">
+<li>This permission will make this role a reporting power user. They will be able to access every report and dahsboard regardless of this role&#8217;s data access or Access Rights that are set on a report</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Report Category Accessibility</dt>
+<dd><ul class="first last">
+<li>This dialogue will determine the visiblity/access this role has to the corresponding report category</li>
+<li><dl class="first docutils">
+<dt>It is dividied into three containers:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Available Categories</dt>
+<dd><ul class="first last">
+<li>This container will show all report categories that exist in the tenant</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Visible Categories</dt>
+<dd><ul class="first last">
+<li>This container will show any report categories that users in this role can see reports within</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Categories Allowed for Saving Reports</dt>
+<dd><ul class="first last">
+<li>This container will show any report categories that users in this role can save reports within</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>NOTE: This dialogue is changed automatically by the Access Rights that get set on certain reports</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Dashboard Category Accessibility</dt>
+<dd><ul class="first last">
+<li>This dialogue will determine the visiblity/access this role has to the corresponding report category</li>
+<li><dl class="first docutils">
+<dt>It is dividied into three containers:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Available Categories</dt>
+<dd><ul class="first last">
+<li>This container will show all dashboard categories that exist in the tenant</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Visible Categories</dt>
+<dd><ul class="first last">
+<li>This container will show any report dashboard that users in this role can see reports within</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Categories Allowed for Saving Reports</dt>
+<dd><ul class="first last">
+<li>This container will show any report dashboard that users in this role can save reports within</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>NOTE: This dialogue is changed automatically by the Access Rights that get set on certain reports</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="difference-between-system-level-roles-and-tenant-level-roles">
+<h2><a class="toc-backref" href="#id9">Difference Between System Level Roles and Tenant Level Roles</a><a class="headerlink" href="#difference-between-system-level-roles-and-tenant-level-roles" title="Permalink to this headline">¶</a></h2>
+<p>Roles can exist at both the system level and the tenant level. While a majority of both roles are the same, roles at the system level have a unique Tenant Setup category of their permissions object.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Tenant Setup</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Actions</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Create</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the role to create new tenants</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Edit</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the role to edit existing tenants</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Delete</dt>
+<dd><ul class="first last">
+<li>This permission grants access for the role to delete existing tenants</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Permissions</dt>
+<dd><ul class="first last">
+<li>This permission will determine if this role has access to the Tenant Setup tab of the Settings page</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="permission-settings-that-impact-ui-elements">
+<h2><a class="toc-backref" href="#id10">Permission Settings that Impact UI Elements</a><a class="headerlink" href="#permission-settings-that-impact-ui-elements" title="Permalink to this headline">¶</a></h2>
+<p>Some of the permissions, when not granted to a tenant/role, will cause some of Izenda&#8217;s UI elements to not render on certain pages. Below are a list of the elements, by page, that can be configured by certain permissions</p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Report List</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Report_List_Elements.png"><img alt="../_images/Permissions_Report_List_Elements.png" src="../_images/Permissions_Report_List_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Report Tab +</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Can Create New Report? permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Print permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export Dropdown</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This is controlled by the Report &gt; Actions &gt; Export permission</dt>
+<dd><ul class="first last">
+<li>Note that the dropdown options are controlled in the Exporting section of permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Email permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subscribe Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Subscribe permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Version Dialogue</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; View Report History permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Report Viewer</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Report_Viewer_Elements.png"><img alt="../_images/Permissions_Report_Viewer_Elements.png" src="../_images/Permissions_Report_Viewer_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Subscribe Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Subscribe permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Print permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email Button</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This is controlled by the Report &gt; Actions &gt; Email permission</dt>
+<dd><ul class="first last">
+<li>Note that the email dialogue is controlled in the Emailing section of permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export Button</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This is controlled by the Report &gt; Actions &gt; Export permission</dt>
+<dd><ul class="first last">
+<li>Note that the dropdown options are controlled in the Exporting section of permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Edit Dropdown &gt; View History Dialogue</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; View Report History permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Report Designer</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Report_Designer_Elements.png"><img alt="../_images/Permissions_Report_Designer_Elements.png" src="../_images/Permissions_Report_Designer_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Report Part Selection</dt>
+<dd><ul class="first last">
+<li>The list of report parts a user can build is controlled by the Report &gt; Report Part Types permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Filter Logic</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Reports &gt; Filter Properties &gt; Filter Logic permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Cross Filtering</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Reports &gt; Filter Properties &gt; Cross Filtering permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Custom URL</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Reports &gt; Field Properties &gt; Custom URL permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Embedded Javascript</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Reports &gt; Field Properties &gt; Embedded Javascript permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subreports</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Reports &gt; Field Properties &gt; Subreport permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Scheduling Tab</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Schedule permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Access Tab</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Configure Access Rights permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Dashboard List</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Dashboard_List_Elements.png"><img alt="../_images/Permissions_Dashboard_List_Elements.png" src="../_images/Permissions_Dashboard_List_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Dashboard Tab +</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Can Create New Dashboard? permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Print permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Export permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Email permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subscribe Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Subscribe permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Dashboard Viewer/Designer</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Dashboard_ViewDesign_Elements.png"><img alt="../_images/Permissions_Dashboard_ViewDesign_Elements.png" src="../_images/Permissions_Dashboard_ViewDesign_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Access Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Configure Access Rights permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Schedule Button</dt>
+<dd>This is controlled by the Report &gt; Actions &gt; Schedule permission</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Print Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Report &gt; Actions &gt; Print permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export Button</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This is controlled by the Report &gt; Actions &gt; Export permission</dt>
+<dd><ul class="first last">
+<li>Note that the dropdown options are controlled in the Exporting section of permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Email button</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>This is controlled by the Report &gt; Actions &gt; Email permission</dt>
+<dd><ul class="first last">
+<li>Note that the email dialogue is controlled in the Emailing section of permissions</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Settings Page</strong>:</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Data Setup</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Settings_DataSetup_Elements.png"><img alt="../_images/Permissions_Settings_DataSetup_Elements.png" src="../_images/Permissions_Settings_DataSetup_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Data Model Tab</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Data Setup &gt; Data Model permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Advanced Settings Tab</dt>
+<dd><dl class="first last docutils">
+<dt>2a. Category Tab</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Data Setup &gt; Advanced Settings &gt; Category permission</li>
+</ul>
+</dd>
+<dt>2b. Others Tab</dt>
+<dd><ul class="first last">
+<li>This is controlled by the Data Setup &gt; Advanced Settings &gt; Others permissions</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Role Setup</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Settings_RoleSetup_Elements.png"><img alt="../_images/Permissions_Settings_RoleSetup_Elements.png" src="../_images/Permissions_Settings_RoleSetup_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Data Model Access Tab</dt>
+<dd><ul class="first last simple">
+<li>This is controlled by the Role Setup &gt; Data Model Access permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Permissions Tab</dt>
+<dd><ul class="first simple">
+<li>This is controlled by the Role Setup &gt; Permissions permission</li>
+</ul>
+<dl class="last docutils">
+<dt>2a. Grant Full Report and Dashboard Access Permission</dt>
+<dd><ul class="first last simple">
+<li>This is controlled by the Role Setup &gt; Grant Role with Full Report and Dashboard Access permission</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>User Setup</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Settings_UserSetup_Elements.png"><img alt="../_images/Permissions_Settings_UserSetup_Elements.png" src="../_images/Permissions_Settings_UserSetup_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Configure Password Button</dt>
+<dd><ul class="first last">
+<li>This is controlled by the User Setup &gt; Actions &gt; Configure Password Options permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>User Role Association Dialogue</dt>
+<dd><ul class="first last">
+<li>This is controlled by the User Setup &gt; User Role Association Permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>System Configuration</strong>:</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Permissions_Settings_SystemConfiguration_Elements.png"><img alt="../_images/Permissions_Settings_SystemConfiguration_Elements.png" src="../_images/Permissions_Settings_SystemConfiguration_Elements.png" style="width: 1100px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Scheduling Tab</dt>
+<dd><ul class="first last">
+<li>This is configured by the System Configuration &gt; Scheduled Instances permission</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_user_setup.html" class="btn btn-neutral float-right" title="User Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_role_setup.html" class="btn btn-neutral" title="Role Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.8.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>
