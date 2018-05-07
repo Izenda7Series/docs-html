@@ -8,6 +8,26 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.8.1 May 7, 2018
+~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  20388  Improved memory utilization in the UI
+-  Defect  20358  Change to remove grouping sets for subtotal calculations caused issues with smaller grids and should only be implemented when grids (horizontal and vertical) use more than 32 columns. When 33 columns are used and subtotals are enabled a sort must be enforced on the columns using the subtotal. 
+-  Defect  20256  In Time period filter for previous Calendar Quarter is missing last day in Quarter
+-  Defect  20255  In MYSQL the InTimePeriod filters are incorrect when using TIMESTAMPDIFF
+-  Defect  20236  Exporting a subreport with applied field mappings returns all records instead of subset of data
+-  Defect  20190  Resolved an issue where users and/or roles may not be applied when saving access rights.
+-  Defect  19925  Gauge/Chart jsformatString, system does not properly handle update, delete jsFormatString already saved in report
+-  Defect  19901  Utilizing multiple Subtotals in horizontal grids renders an extra column
+-  Defect  19846  Front end conflict found in integration with underscore.js and lodash.js 
+-  Defect  19668  When using Tenant Field and left/right/full/cross joins the tenant field condition results in inner join
+-  Defect  19328  Change in SELECT column order for stored procedures and functions not detected on reconnect
+-  Defect  19297  Filter Operator autocomplete not returning results
+-  Defect  19239  In Form, Grand Total Format Doesn't Persist in PDF Export
+
+
 v2.8.0 April 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
