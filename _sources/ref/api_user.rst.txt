@@ -1994,6 +1994,7 @@ Saves a user password and security question.
 
       {
         "tenantDisplayID" : null,
+        "tenantName" : null,
         "password" : "secret",
         "verification" : "H8K...swUc=",
         "userName" : "jdoe",
