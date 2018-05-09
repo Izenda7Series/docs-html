@@ -8,6 +8,13 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.8.2 May 9, 2018
+~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  20444  First Page of load filter always shows isLastPage as true after first 100 items are loaded
+
 v2.8.1 May 7, 2018
 ~~~~~~~~~~~~~~~~~~
 
