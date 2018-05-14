@@ -8,6 +8,20 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.8.3 May 14, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  20469  Report definitions created with a custom data adapter cannot be imported via the external API.
+-  Defect  20453  Custom JavaScript referencing field name returns [object Undefined]
+-  Defect  20233  Special characters in field name throws error in report designer
+-  Defect  20195  Endpoint to Create/Modify tenants in integrated modes does not allow for updates to permission and data setup
+-  Defect  20115  Report list is empty after deleting schema at the Tenant level when mapping type is database
+-  Defect  19891  Dashboard fails to load the global embedded subreport at the Tenant level
+-  Defect  16576  Grand Total columns are out of alignment with the field columns when user changes field width
+
+
 v2.8.2 May 9, 2018
 ~~~~~~~~~~~~~~~~~~
 
