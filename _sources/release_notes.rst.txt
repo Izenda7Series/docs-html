@@ -8,6 +8,25 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.8.4 May 21, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20571  Drill-In functionality is not rendering second level of charts when using individual report parts.
+-  Defect  20484  Decimal column width causes PDF export to fail
+-  Defect  20483  Setting menu in Settings page is not refreshed when switching tenant via custom code.
+-  Defect  20406  Report List Performance slows when Tenant Level Report List has over 140+ Global Reports
+-  Defect  20405  Connection string replaced with Saved Password in Chrome version 66.0.3359.139
+-  Defect  20397  Switching the tenant's value in the UserContext shows error 
+-  Defect  20362  Users with multiple roles that do not have Full Report and Dashboard Access could not load their list of data sources in the report designer.
+-  Defect  20215  When user updates a MySQL Store procedure and then updates connection of a MySQL database, the fields visible status will be set to false.
+-  Defect  20191  In some instances user cannot open dashboard which was shared from other user
+-  Defect  19939  Some roles permissions send user back user to Homepage when doing assigned actions
+-  Defect  19714  In Oracle reporting database when report contains separator and preview records are set to more than 100 records, application error displays when setting Average/Sum Distinct for SubTotal of a grouped field.
+-  Defect  19650  When tenant has a large data model the report list will not load for user when using Oracle configuration database.
+
 v2.8.3 May 14, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
