@@ -211,13 +211,14 @@
 <h2>List of Data Types<a class="headerlink" href="#list-of-data-types" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="10%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
+<col width="9%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head stub">Name</th>
@@ -227,6 +228,7 @@
 <th class="head">MySQL</th>
 <th class="head">Oracle</th>
 <th class="head">PostgreSQL</th>
+<th class="head">AWS Redshift</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -237,6 +239,7 @@
 <td>tinyint, smallint, mediumint, int, integer, bigint, decimal, numeric, fixed, float, double, double precision, real</td>
 <td>number, binary_float, binary_double, binary_integer</td>
 <td>smallint, bigint, integer, double precision, real, numeric</td>
+<td>numeric, int, smallint,  integer, real, int2, int4, int8, bigint, float4, float8, double precision, smallserial, serial, bigserial</td>
 </tr>
 <tr class="row-odd"><th class="stub">Text</th>
 <td>Text, maximum 4,000 chars.</td>
@@ -245,6 +248,7 @@
 <td>char, varchar</td>
 <td>char, varchar2, nchar, nvarchar2</td>
 <td>character, char, character varying, varchar, text</td>
+<td>character varying, character, bpchar, varchar, nvarchar, text, uuid, bit, bit varying, cidr, inet, macaddr, interval</td>
 </tr>
 <tr class="row-even"><th class="stub">Datetime</th>
 <td>Date combined with time of day.</td>
@@ -253,6 +257,7 @@
 <td>date, datetime, timestamp</td>
 <td>date, timestamp</td>
 <td>date, timestamp, timestamp without time zone, timestamp with time zone</td>
+<td>timestamp,timestamp with time zone, datetime, date, timestamp without time zone</td>
 </tr>
 <tr class="row-odd"><th class="stub">Money</th>
 <td>Currency amount.</td>
@@ -261,6 +266,7 @@
 <td>N/A</td>
 <td>N/A</td>
 <td>money</td>
+<td>N/A</td>
 </tr>
 <tr class="row-even"><th class="stub">Boolean</th>
 <td>TRUE and FALSE values.</td>
@@ -269,11 +275,13 @@
 <td>bool, boolean, tinyint(1)</td>
 <td>number(1)</td>
 <td>boolean</td>
+<td>boolean</td>
 </tr>
 <tr class="row-odd"><th class="stub">Image</th>
 <td>The binary format of an image.</td>
 <td>N/A</td>
 <td>image</td>
+<td>N/A</td>
 <td>N/A</td>
 <td>N/A</td>
 <td>N/A</td>
@@ -285,6 +293,7 @@
 <td>binary, varbinary, tinyblob, blob, mediumblob, longblob, tinytext, text, mediumtext, longtext</td>
 <td>clob, nlob, long, blob, bfile, raw, long raw</td>
 <td>bytea</td>
+<td>bytea</td>
 </tr>
 <tr class="row-odd"><th class="stub">Time</th>
 <td>Time data only (hour, minute, and second values)</td>
@@ -293,6 +302,7 @@
 <td>Time</td>
 <td>N/A</td>
 <td>time, time without time zone, time with time zone</td>
+<td>time with time zone, time without time zone, time</td>
 </tr>
 <tr class="row-even"><th class="stub">XML</th>
 <td>Extensible Markup Language (XML) data type</td>
@@ -300,6 +310,7 @@
 <td>XML</td>
 <td>N/A</td>
 <td>XMLType</td>
+<td>XML</td>
 <td>XML</td>
 </tr>
 <tr class="row-odd"><th class="stub">JSON</th>
@@ -309,6 +320,7 @@
 <td>JSON</td>
 <td>N/A</td>
 <td>JSON</td>
+<td>JSON</td>
 </tr>
 </tbody>
 </table>
@@ -317,13 +329,14 @@
 <h2>Default Data Type Mapping<a class="headerlink" href="#default-data-type-mapping" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="10%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
+<col width="9%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head stub">Name</th>
@@ -333,6 +346,7 @@
 <th class="head">MySQL</th>
 <th class="head">Oracle</th>
 <th class="head">PostgreSQL</th>
+<th class="head">AWS Redshift</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -343,6 +357,7 @@
 <td>decimal</td>
 <td>number</td>
 <td>numeric</td>
+<td>numeric</td>
 </tr>
 <tr class="row-odd"><th class="stub">Text</th>
 <td>Text, maximum 4,000 chars.</td>
@@ -350,6 +365,7 @@
 <td>nvarchar</td>
 <td>varchar</td>
 <td>nvarchar2</td>
+<td>character varying</td>
 <td>character varying</td>
 </tr>
 <tr class="row-even"><th class="stub">Datetime</th>
@@ -359,6 +375,7 @@
 <td>datetime</td>
 <td>date</td>
 <td>timestamp</td>
+<td>timestamp</td>
 </tr>
 <tr class="row-odd"><th class="stub">Money</th>
 <td>Currency amount.</td>
@@ -367,6 +384,7 @@
 <td>decimal</td>
 <td>number</td>
 <td>money</td>
+<td>numeric</td>
 </tr>
 <tr class="row-even"><th class="stub">Boolean</th>
 <td>TRUE and FALSE values.</td>
@@ -374,6 +392,7 @@
 <td>bit</td>
 <td>tinyint(1)</td>
 <td>number(1)</td>
+<td>boolean</td>
 <td>boolean</td>
 </tr>
 <tr class="row-odd"><th class="stub">Image</th>
@@ -383,6 +402,7 @@
 <td>longblob</td>
 <td>blob</td>
 <td>bytea</td>
+<td>bytea</td>
 </tr>
 <tr class="row-even"><th class="stub">Lob</th>
 <td>Binary data.</td>
@@ -390,6 +410,7 @@
 <td>varbinary</td>
 <td>longblob</td>
 <td>blob</td>
+<td>bytea</td>
 <td>bytea</td>
 </tr>
 <tr class="row-odd"><th class="stub">Time</th>
@@ -399,6 +420,7 @@
 <td>Time</td>
 <td>N/A</td>
 <td>time with time zone</td>
+<td>time with time zone</td>
 </tr>
 <tr class="row-even"><th class="stub">XML</th>
 <td>Extensible Markup Language (XML) data type</td>
@@ -407,6 +429,7 @@
 <td>N/A</td>
 <td>XMLType</td>
 <td>XML</td>
+<td>XML</td>
 </tr>
 <tr class="row-odd"><th class="stub">JSON</th>
 <td>JavaScript Object Notation (JSON) data type</td>
@@ -414,6 +437,7 @@
 <td>nvarchar (JSON functions will be supported)</td>
 <td>JSON</td>
 <td>N/A</td>
+<td>JSON</td>
 <td>JSON</td>
 </tr>
 </tbody>

@@ -17,7 +17,7 @@ List of Data Types
 ------------------
 
 .. list-table::
-   :widths: 10 15 15 15 15 15 15
+   :widths: 9 13 13 13 13 13 13 13
    :header-rows: 1
    :stub-columns: 1
 
@@ -28,6 +28,7 @@ List of Data Types
      - MySQL
      - Oracle
      - PostgreSQL
+     - AWS Redshift
    * - Numeric
      - Numbers, including negative values, integers or real numbers (having decimal points).
      - integer, dec, float, double precision
@@ -35,6 +36,7 @@ List of Data Types
      - tinyint, smallint, mediumint, int, integer, bigint, decimal, numeric, fixed, float, double, double precision, real
      - number, binary_float, binary_double, binary_integer
      - smallint, bigint, integer, double precision, real, numeric
+     - numeric, int, smallint,  integer, real, int2, int4, int8, bigint, float4, float8, double precision, smallserial, serial, bigserial
    * - Text
      - Text, maximum 4,000 chars.
      - character, char varying, character varying, national char, national character, national char varying, nation character varying, nation text
@@ -42,6 +44,7 @@ List of Data Types
      - char, varchar
      - char, varchar2, nchar, nvarchar2
      - character, char, character varying, varchar, text
+     - character varying, character, bpchar, varchar, nvarchar, text, uuid, bit, bit varying, cidr, inet, macaddr, interval
    * - Datetime
      - Date combined with time of day.
      - timestamp, date
@@ -49,6 +52,7 @@ List of Data Types
      - date, datetime, timestamp
      - date, timestamp
      - date, timestamp, timestamp without time zone, timestamp with time zone
+     - timestamp,timestamp with time zone, datetime, date, timestamp without time zone
    * - Money
      - Currency amount.
      - numeric
@@ -56,6 +60,7 @@ List of Data Types
      - N/A
      - N/A
      - money
+     - N/A
    * - Boolean
      - TRUE and FALSE values.
      - boolean
@@ -63,10 +68,12 @@ List of Data Types
      - bool, boolean, tinyint(1)
      - number(1)
      - boolean
+     - boolean
    * - Image
      - The binary format of an image.
      - N/A
      - image
+     - N/A
      - N/A
      - N/A
      - N/A
@@ -77,6 +84,7 @@ List of Data Types
      - binary, varbinary, tinyblob, blob, mediumblob, longblob, tinytext, text, mediumtext, longtext
      - clob, nlob, long, blob, bfile, raw, long raw
      - bytea
+     - bytea
    * - Time
      - Time data only (hour, minute, and second values)
      - Time
@@ -84,12 +92,14 @@ List of Data Types
      - Time
      - N/A
      - time, time without time zone, time with time zone
+     - time with time zone, time without time zone, time
    * - XML
      - Extensible Markup Language (XML) data type
      - N/A
      - XML
      - N/A
      - XMLType
+     - XML
      - XML
    * - JSON
      - JavaScript Object Notation (JSON) data type
@@ -98,12 +108,13 @@ List of Data Types
      - JSON
      - N/A
      - JSON
+     - JSON
 
 Default Data Type Mapping
 ---------------------------
 
 .. list-table::
-   :widths: 10 15 15 15 15 15 15
+   :widths:  9 13 13 13 13 13 13 13
    :header-rows: 1
    :stub-columns: 1
 
@@ -114,12 +125,14 @@ Default Data Type Mapping
      - MySQL
      - Oracle
      - PostgreSQL
+     - AWS Redshift
    * - Numeric
      -  Numbers, including negative values, integers or real numbers (having decimal points).
      - dec
      - decimal
      - decimal
      - number
+     - numeric
      - numeric
    * - Text
      - Text, maximum 4,000 chars.
@@ -128,12 +141,14 @@ Default Data Type Mapping
      - varchar
      - nvarchar2
      - character varying
+     - character varying
    * - Datetime
      - Date combined with time of day.
      - timestamp
      - datetime2
      - datetime
      - date
+     - timestamp
      - timestamp
    * - Money
      - Currency amount.
@@ -142,12 +157,14 @@ Default Data Type Mapping
      - decimal
      - number
      - money
+     - numeric
    * - Boolean
      - TRUE and FALSE values.
      - boolean
      - bit
      - tinyint(1)
      - number(1)
+     - boolean
      - boolean
    * - Image
      - The binary format of an image.
@@ -156,12 +173,14 @@ Default Data Type Mapping
      - longblob
      - blob
      - bytea
+     - bytea
    * - Lob
      - Binary data.
      - binary large object
      - varbinary
      - longblob
      - blob
+     - bytea
      - bytea
    * - Time
      - Time data only (hour, minute, and second values)
@@ -170,6 +189,7 @@ Default Data Type Mapping
      - Time
      - N/A
      - time with time zone
+     - time with time zone
    * - XML
      - Extensible Markup Language (XML) data type
      - N/A
@@ -177,12 +197,14 @@ Default Data Type Mapping
      - N/A
      - XMLType
      - XML
+     - XML
    * - JSON
      - JavaScript Object Notation (JSON) data type
      - N/A
      - nvarchar (JSON functions will be supported)
      - JSON
      - N/A
+     - JSON
      - JSON
 
 Data Type Precedence
