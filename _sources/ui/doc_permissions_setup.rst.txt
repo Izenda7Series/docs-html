@@ -312,8 +312,7 @@ Permissions can be set in two place: at the tenant level and at the role level. 
                     * This container will show any report categories that users in this role can save reports within
             * NOTE: This dialogue is changed automatically by the Access Rights that get set on certain reports
         - Dashboard Category Accessibility
-            * This dialogue will determine the visiblity/access this role has to the corresponding report category
-            * It is dividied into three containers:
+            * This dialogue will determine the visiblity/access this role has to the corresponding report category. It is dividied into three containers:         
                 * Available Categories
                     * This container will show all dashboard categories that exist in the tenant
                 * Visible Categories 
