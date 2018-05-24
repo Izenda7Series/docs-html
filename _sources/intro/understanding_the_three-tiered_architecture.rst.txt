@@ -10,7 +10,7 @@ Izenda is split into three levels: the Front End (UI), the Back End
 configured to support a fully standalone instance of Izenda as well as seamless,
 fully-integrated instances.
 
-.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Architecture.png
+.. figure::  /_static/images/intro/understanding_the_three-tiered_architecture/Architecture.PNG
       :align: center
 
       High-level User & API Interaction
