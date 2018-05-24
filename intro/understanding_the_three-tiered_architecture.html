@@ -204,13 +204,20 @@
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Izenda is split into three levels: the Front End (UI), the Back End
-(API),and the User Store (database layer). These three componenets can be
+(API),and the User Store (database layer). These three components can be
 configured to support a fully standalone instance of Izenda as well as seamless,
 fully-integrated instances.</p>
 <div class="figure align-center" id="id5">
 <img alt="../_images/Architecture.PNG" src="../_images/Architecture.PNG" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">High-level User &amp; API Interaction</span></p>
 </div>
+<p>The high-level interaction between these components is detailed below:</p>
+<ol class="arabic simple">
+<li>The user navigates to the front end site.</li>
+<li>The Izenda UI is downloaded to the user&#8217;s browser.</li>
+<li>The Izenda UI makes requests directly to the API from the user&#8217;s browser. The network requests will originate from that user&#8217;s IP address. The API must be accessible to the user from their network location.</li>
+<li>The Izenda Config DB and reporting database(s) are only accessible to the API site. These databases do not have to be public, they can be on the same internal network as the API server.</li>
+</ol>
 <p>For more informaton about embedding Izenda, please refer to our <a class="reference external" href="/dev/.developer_guide">Developer Guide</a>.</p>
 <ul>
 <li><p class="first">Izenda offers a number of Integration Options.</p>
