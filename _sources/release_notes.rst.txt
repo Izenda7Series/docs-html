@@ -8,6 +8,20 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.8.5 May 29, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20634  Fields used in join when set to not visible/filterable cause join error for simple mode users
+-  Defect  20592  Out of memory exception received on JSON response
+-  Defect  20580  When scheduling a report, the recipients list takes a long time to load with a large number of users in the system.
+-  Defect  20579  IzendaCity table not mapping to all MSSQL datatypes
+-  Defect  20475  Some data types of Oracle stored procedures are not showing in the stored procedure schema when loaded into the data model.
+-  Defect  20247  Starting Point on the y axis has no effect on the chart, this should set the absolute starting point
+-  Defect  20238  Join fields not available to role should be obfuscated in the join and in the field dropdown of the join. The field is obfuscated but present in the field list of the join dropdown. 
+
 v2.8.4 May 21, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
