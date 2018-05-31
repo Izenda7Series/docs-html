@@ -43,6 +43,11 @@ FEATURES
 	-  :ref:`External API Updates importSourceCat <ImportExportExternal>`
 
 
+FIXES
+^^^^^
+
+-  Defect  20636  Dashboard filters change order after navigation.
+
 v2.8.5 May 29, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
