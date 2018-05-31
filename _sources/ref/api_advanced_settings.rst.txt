@@ -9,6 +9,8 @@ The **Advanced Settings** page allows user to
 * manage the list of data source categories
 * update system settings in related groups
 
+.. _Advanced_Settings:
+
 Summary
 ------------
 
@@ -55,6 +57,16 @@ Summary
    * - `GET advancedSetting/defaultImageUrl(?tenantId=tenant_id)`_
      - Returns the default image url setting.
      - Setting Level Tenant is selected
+   * - `GET api/advancedSetting/defaultTheme(?tenantId=tenant_id)`_
+
+       .. versionadded:: 2.9.0
+     - Returns the default theme setting.
+     - Setting Level Tenant is selected
+   * - `POST api/advancedSetting/defaultTheme`_
+
+       .. versionadded:: 2.9.0
+     - Add or update default theme for system or tenant.
+     - Save default theme setting.
 
 .. _POST_advancedSetting/category:
 
@@ -513,4 +525,92 @@ Returns the default image url setting.
          "tenantId": null,
          "deleted": false,
          "modified": "2017-04-12T16:55:11.4900000+07:00"
+      }
+
+GET api/advancedSetting/defaultTheme(?tenantId=tenant_id)
+------------------------------------------------------------
+
+.. versionadded:: 2.9.0
+
+Returns the default theme setting.
+
+**Request**
+
+   No payload
+
+   Optional querystring: ?tenantId=<the id of the tenant>
+
+**Response**
+
+   An :doc:`models/AdvancedSetting` object
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/advancedSetting/defaultTheme HTTP/1.1
+
+   Response::
+
+      {  
+         "id":"04d46221-24e0-4363-b2f6-99370d85ebe6",
+         "name":"DefaultTheme",
+         "value":"Monte Carlo",
+         "defaultValue":null,
+         "type":"Others",
+         "tenantId":null,
+         "deleted":false,
+         "modified":"2018-05-22T06:43:56.0000000+07:00"
+      }
+
+   .. code-block:: http
+
+      GET /api/advancedSetting/defaultTheme/c39a4500-b902-4e5b-ae86-901c09b71516 HTTP/1.1
+
+   Response::
+
+      {
+         "id": "06a83a57-39c0-44d4-841d-aa56e2d15ba7",
+         "name": "DefaultTheme",
+         "value": "Morning Sky",
+         "defaultValue": null,
+         "type": "Others",
+         "tenantId": "c39a4500-b902-4e5b-ae86-901c09b71516",
+         "deleted": false,
+         "modified": "2018-05-22T10:20:07.2700000+07:00"
+      }
+
+POST api/advancedSetting/defaultTheme
+-----------------------------------------
+
+
+.. versionadded:: 2.9.0
+
+Add or update default theme for system or tenant.
+
+**Request**
+
+   Payload: an :doc:`models/AdvancedSetting` object
+
+**Response**
+
+   The saved :doc:`models/AdvancedSetting` object with **name** field value is "DefaultTheme"
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/advancedSetting/defaultTheme HTTP/1.1
+
+   Response::
+
+      {  
+         "id":"04d46221-24e0-4363-b2f6-99370d85ebe6",
+         "name":"DefaultTheme",
+         "value":"Monte Carlo",
+         "defaultValue":null,
+         "type":"Others",
+         "tenantId":null,
+         "deleted":false,
+         "modified":"2018-05-22T10:38:41.5779097Z"
       }

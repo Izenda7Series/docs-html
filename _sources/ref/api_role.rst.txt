@@ -47,6 +47,11 @@ List of APIs
      - Lazy load access limit data for each role.
    * - `POST role/scheduleLimits`_
      - Lazy load schedule limit data for each role.
+   * - `POST role/loadPartialDataModelAccess`_
+
+       .. versionadded:: 2.9.0
+     - Load data model access partially.
+
 .. _GET_role/all/(tenant_id):
 
 GET role/all/(tenant_id)
@@ -76,111 +81,84 @@ Returns an array of roles, filtered by tenant_id if available.
 
       .. code-block:: json
 
-         [{
-            "users" : [],
-            "permission" : null,
-            "visibleQuerySourceFields" : null,
-            "name" : "Actor",
-            "tenantId" : null,
-            "active" : false,
-            "deleted" : false,
-            "permissionData" : "",
-            "querySourceFields" : "",
-            "id" : "0d030b1a-9568-4c98-8b1e-5dcc94dbd284",
-            "state" : 0,
-            "inserted" : true,
-            "version" : 1,
-            "created" : null,
-            "createdBy" : null,
-            "modified" : null,
-            "modifiedBy" : null
-         }, {
-            "users" : [{
-                  "password" : null,
-                  "roles" : null,
-                  "userName" : "User1",
-                  "emailAddress" : "katty@email.com",
-                  "firstName" : "Katty",
-                  "lastName" : "Doe",
-                  "passwordHash" : null,
-                  "passwordSalt" : null,
-                  "currentTokenHash" : null,
-                  "tenantId" : null,
-                  "active" : false,
-                  "deleted" : false,
-                  "dataOffset" : 0,
-                  "timestampOffset" : 0,
-                  "fullName" : "Katty Doe",
-                  "id" : "9f58703e-0dff-4690-9dc6-c595a6fd84e1",
-                  "state" : 0,
-                  "inserted" : true,
-                  "version" : 1,
-                  "created" : null,
-                  "createdBy" : null,
-                  "modified" : null,
-                  "modifiedBy" : null
-               }
-            ],
-            "permission" : null,
-            "visibleQuerySourceFields" : null,
-            "name" : "Analyst",
-            "tenantId" : null,
-            "active" : false,
-            "deleted" : false,
-            "permissionData" : "",
-            "querySourceFields" : "",
-            "id" : "0d030b1a-9568-4c98-8b1e-5dcc94dbd281",
-            "state" : 0,
-            "inserted" : true,
-            "version" : 1,
-            "created" : null,
-            "createdBy" : null,
-            "modified" : null,
-            "modifiedBy" : null
-         }, {
-            "users" : [{
-                  "password" : null,
-                  "roles" : null,
-                  "userName" : "Member1",
-                  "emailAddress" : "justin@thisispopstart.com",
-                  "firstName" : "Justin",
-                  "lastName" : "Timber",
-                  "passwordHash" : null,
-                  "passwordSalt" : null,
-                  "currentTokenHash" : null,
-                  "tenantId" : null,
-                  "active" : false,
-                  "deleted" : false,
-                  "dataOffset" : 0,
-                  "timestampOffset" : 0,
-                  "fullName" : "Justin Timber",
-                  "id" : "9f58703e-0dff-4690-9dc6-c595a6fd84e3",
-                  "state" : 0,
-                  "inserted" : true,
-                  "version" : 1,
-                  "created" : null,
-                  "createdBy" : null,
-                  "modified" : null,
-                  "modifiedBy" : null
-               }
-            ],
-            "permission" : null,
-            "visibleQuerySourceFields" : null,
-            "name" : "Singer",
-            "tenantId" : null,
-            "active" : false,
-            "deleted" : false,
-            "permissionData" : "",
-            "querySourceFields" : "",
-            "id" : "0d030b1a-9568-4c98-8b1e-5dcc94dbd283",
-            "state" : 0,
-            "inserted" : true,
-            "version" : 1,
-            "created" : null,
-            "createdBy" : null,
-            "modified" : null,
-            "modifiedBy" : null
-         }
+         [
+            {
+               "users": [
+                  {
+                     "password": null,
+                     "verification": null,
+                     "isCheck": false,
+                     "name": "John Doe",
+                     "roles": [],
+                     "userRoles": null,
+                     "userSecurityQuestions": null,
+                     "status": 0,
+                     "issueDate": "0001-01-01T00:00:00.0000000+07:00",
+                     "autoLogin": false,
+                     "newPassword": null,
+                     "userName": "acme@system.com",
+                     "emailAddress": "acme@system.com",
+                     "firstName": "John",
+                     "lastName": "Doe",
+                     "passwordHash": null,
+                     "passwordSalt": null,
+                     "currentTokenHash": null,
+                     "tenantId": "a2787f8e-0b04-4d48-a5df-9ad9df32317d",
+                     "tenantDisplayId": null,
+                     "tenantName": null,
+                     "dataOffset": null,
+                     "timestampOffset": null,
+                     "initPassword": false,
+                     "active": true,
+                     "retryLoginTime": null,
+                     "lastTimeAccessed": null,
+                     "passwordLastChanged": null,
+                     "locked": null,
+                     "lockedDate": null,
+                     "cultureName": null,
+                     "securityQuestionLastChanged": null,
+                     "dateFormat": "MM/DD/YYYY",
+                     "systemAdmin": false,
+                     "notAllowSharing": false,
+                     "numberOfFailedSecurityQuestion": null,
+                     "fullName": "John Doe",
+                     "currentModules": null,
+                     "currentAccessToken": null,
+                     "id": "8f05e4b9-aa3d-48ec-869f-e6b2d8ecae14",
+                     "state": 0,
+                     "deleted": false,
+                     "inserted": true,
+                     "version": 2,
+                     "created": "2018-04-13T09:20:17.2900000+07:00",
+                     "createdBy": "$RootAdmin$",
+                     "modified": "2018-04-27T04:05:44.2730000+07:00",
+                     "modifiedBy": "$RootAdmin$"
+                  }
+               ],
+               "tenantUniqueName": null,
+               "isChecked": false,
+               "selected": false,
+               "permission": null,
+               "visibleQuerySources": null,
+               "visibleQuerySourcesTree": [],
+               "name": "Manager",
+               "tenantId": "a2787f8e-0b04-4d48-a5df-9ad9df32317d",
+               "active": true,
+               "showCheckedQuerySource": false,
+               "notAllowSharing": false,
+               "permissionData": null,
+               "querySources": "",
+               "deserializedQuerySources": [],
+               "id": "66159184-52e9-4ede-8951-c6118c7d5766",
+               "state": 0,
+               "deleted": false,
+               "inserted": true,
+               "version": 6,
+               "created": "2018-05-03T07:24:42.9500000+07:00",
+               "createdBy": "System Admin",
+               "modified": "2018-05-09T09:49:52.5870000+07:00",
+               "modifiedBy": "System Admin"
+            }
          ]
 
 POST role/active/{role_id}/(tenant_id)
@@ -1478,6 +1456,7 @@ Returns a list of roles allowed to be selected in report/dashboard access.
          Sample response:
 
       .. code-block:: json
+
          [
          {
             "users": [
@@ -1600,7 +1579,7 @@ Adds or updates an external role.
 
    .. code-block:: http
 
-      POST api/role/intergration/saveRole
+      POST api/role/intergration/saveRole HTTP/1.1
 
    .. container:: toggle
 
@@ -2096,24 +2075,51 @@ Lazy load access Limit data for each role.
       {
          "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
          "tenantId": null,
-         "skipItems": 1,
+         "skipItems": 0,
          "pageSize": 6,
-         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "parentIds": [],
          "criteria": [ { "key": "name", "value": "Anna" }]
       }
 
    Sample response::
 
       {  
-         "isLastPage":false,
+         "isLastPage":true,
          "name":null,
-         "childNodes":[  ],
-         "numOfChilds":8,
-         "checked":false,
-         "indeterminate":true,
-         "numOfCheckedChilds":2,
-         "totalItems":223,
-         "level":1,
+         "childNodes":[  
+            {  
+               "isLastPage":true,
+               "name":"Anna",
+               "childNodes":[  
+                  {  
+                     "isLastPage":true,
+                     "name":"Anna Doe",
+                     "childNodes":[  
+
+                     ],
+                     "numOfChilds":0,
+                     "checked":true,
+                     "indeterminate":false,
+                     "numOfCheckedChilds":0,
+                     "totalItems":1,
+                     "id":"c3085881-b972-42bb-9dcc-0a052aee38f9",
+                     "parentId":"101991da-d576-488b-a0aa-4df03512fbbb"
+                  }
+               ],
+               "numOfChilds":1,
+               "checked":true,
+               "indeterminate":false,
+               "numOfCheckedChilds":1,
+               "totalItems":2,
+               "id":"db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+               "parentId":"00000000-0000-0000-0000-000000000000"
+            }
+         ],
+         "numOfChilds":1,
+         "checked":true,
+         "indeterminate":false,
+         "numOfCheckedChilds":1,
+         "totalItems":3,
          "id":"00000000-0000-0000-0000-000000000000",
          "parentId":null
       }
@@ -2141,24 +2147,290 @@ Lazy load schedule limit data for each role.
       {
          "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
          "tenantId": null,
-         "skipItems": 1,
+         "skipItems": 0,
          "pageSize": 6,
-         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "parentIds": [],
          "criteria": [ { "key": "name", "value": "Anna" }]
       }
 
    Sample response::
 
       {  
-         "isLastPage":false,
+         "isLastPage":true,
          "name":null,
-         "childNodes":[  ],
-         "numOfChilds":8,
-         "checked":false,
-         "indeterminate":true,
-         "numOfCheckedChilds":2,
-         "totalItems":223,
-         "level":1,
+         "childNodes":[  
+            {  
+               "isLastPage":true,
+               "name":"Anna",
+               "childNodes":[  
+                  {  
+                     "isLastPage":true,
+                     "name":"Anna Doe",
+                     "childNodes":[  
+
+                     ],
+                     "numOfChilds":0,
+                     "checked":true,
+                     "indeterminate":false,
+                     "numOfCheckedChilds":0,
+                     "totalItems":1,
+                     "id":"c3085881-b972-42bb-9dcc-0a052aee38f9",
+                     "parentId":"101991da-d576-488b-a0aa-4df03512fbbb"
+                  }
+               ],
+               "numOfChilds":1,
+               "checked":true,
+               "indeterminate":false,
+               "numOfCheckedChilds":1,
+               "totalItems":2,
+               "id":"db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+               "parentId":"00000000-0000-0000-0000-000000000000"
+            }
+         ],
+         "numOfChilds":1,
+         "checked":true,
+         "indeterminate":false,
+         "numOfCheckedChilds":1,
+         "totalItems":3,
          "id":"00000000-0000-0000-0000-000000000000",
          "parentId":null
       }
+
+POST role/loadPartialDataModelAccess
+--------------------------------------
+.. _loadpartialdatamodelaccess:
+
+.. versionadded:: 2.9.0
+
+Load data model access partially.
+
+**Request**
+
+    A :doc:`models/DataModelAccessPagedRequest` objects
+
+**Response**
+
+   The following object:
+
+   .. list-table::
+      :header-rows: 1
+
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **data** |br|
+            array of objects
+         -  An array of :doc:`models/DataSourceItem` objects
+         -
+      *  -  **totalItems** |br|
+            string
+         -  The number of all items
+         -
+      *  -  **numOfChilds** |br|
+            integer
+         -  The number of children
+         -
+      *  -  **numOfCheckedChilds** |br|
+            integer
+         -  The number of selected children
+         -
+      *  -  **indeterminate** |br|
+            boolean
+         -  *  true if 0 < numOfCheckedChilds < numOfChilds
+            *  false if not
+         -
+      *  -  **isLastPage** |br|
+            boolean
+         -  Whether this is the last page
+         -
+
+**Samples**
+
+   .. code-block:: http
+
+      POST api/role/loadPartialDataModelAccess HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Request Payload:
+
+      .. code-block:: json
+
+         {  
+            "tenantId":"c39a4500-b902-4e5b-ae86-901c09b71516",
+            "roleId":"101991da-d576-488b-a0aa-4df03512fbbb",
+            "skipItems":0,
+            "pageSize":100,
+            "parentIds":[],
+            "visibleQuerySourcesTree":[],
+            "criteria":[  
+               {  
+                  "key":"DataSourceName",
+                  "value":""
+               },
+               {  
+                  "key":"ShowCheckedQuerySource",
+                  "value":false
+               }
+            ]
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         {  
+            "data":[  
+               {  
+                  "id":"299efcb5-39f8-4629-95c4-a88b1ca0073f",
+                  "name":"[MSSQL] MSSQL-Northwind",
+                  "childNodes":[  
+                     {  
+                        "id":"839470f3-f992-4d5f-8dff-21dfb4e67faa",
+                        "name":"dbo",
+                        "childNodes":[  
+                           {  
+                              "id":"d258df08-cade-42c7-8461-41fdfc963fd8",
+                              "name":"Table",
+                              "childNodes":[  
+                                 {  
+                                    "id":"bd42be43-9b18-4545-a599-b87becf8fc9a",
+                                    "name":"Customers",
+                                    "childNodes":[  
+                                       {  
+                                          "id":"36ee3aca-4a09-4f4a-8ff7-5b04db8d3809",
+                                          "name":"CustomerID",
+                                          "childNodes":[  
+
+                                          ],
+                                          "parentId":"bd42be43-9b18-4545-a599-b87becf8fc9a",
+                                          "checked":true,
+                                          "isLeafItem":true,
+                                          "expand":true,
+                                          "interacted":false,
+                                          "isCheck":true,
+                                          "indeterminate":false,
+                                          "fullPath":null,
+                                          "numOfChilds":0,
+                                          "numOfCheckedChilds":0,
+                                          "isLastPage":false
+                                       },
+                                       {  
+                                          "id":"78b5efd0-6c45-4cc6-b36b-b65c446b672b",
+                                          "name":"ContactName",
+                                          "childNodes":[  
+
+                                          ],
+                                          "parentId":"bd42be43-9b18-4545-a599-b87becf8fc9a",
+                                          "checked":true,
+                                          "isLeafItem":true,
+                                          "expand":true,
+                                          "interacted":false,
+                                          "isCheck":true,
+                                          "indeterminate":false,
+                                          "fullPath":null,
+                                          "numOfChilds":0,
+                                          "numOfCheckedChilds":0,
+                                          "isLastPage":false
+                                       },
+                                       {  
+                                          "id":"d1d84171-cb96-49d4-95fc-61e70668713b",
+                                          "name":"ContactTitle",
+                                          "childNodes":[  
+
+                                          ],
+                                          "parentId":"bd42be43-9b18-4545-a599-b87becf8fc9a",
+                                          "checked":true,
+                                          "isLeafItem":true,
+                                          "expand":true,
+                                          "interacted":false,
+                                          "isCheck":true,
+                                          "indeterminate":false,
+                                          "fullPath":null,
+                                          "numOfChilds":0,
+                                          "numOfCheckedChilds":0,
+                                          "isLastPage":false
+                                       },
+                                       {  
+                                          "id":"9a17c194-2cae-4019-b406-aae8d76b9a30",
+                                          "name":"Phone",
+                                          "childNodes":[  
+
+                                          ],
+                                          "parentId":"bd42be43-9b18-4545-a599-b87becf8fc9a",
+                                          "checked":true,
+                                          "isLeafItem":true,
+                                          "expand":true,
+                                          "interacted":false,
+                                          "isCheck":true,
+                                          "indeterminate":false,
+                                          "fullPath":null,
+                                          "numOfChilds":0,
+                                          "numOfCheckedChilds":0,
+                                          "isLastPage":false
+                                       }
+                                    ],
+                                    "parentId":"d258df08-cade-42c7-8461-41fdfc963fd8",
+                                    "checked":true,
+                                    "isLeafItem":false,
+                                    "expand":true,
+                                    "interacted":false,
+                                    "isCheck":true,
+                                    "indeterminate":false,
+                                    "fullPath":null,
+                                    "numOfChilds":4,
+                                    "numOfCheckedChilds":4,
+                                    "isLastPage":true
+                                 }
+                           ],
+                              "parentId":"839470f3-f992-4d5f-8dff-21dfb4e67faa",
+                              "checked":true,
+                              "isLeafItem":false,
+                              "expand":true,
+                              "interacted":false,
+                              "isCheck":true,
+                              "indeterminate":false,
+                              "fullPath":null,
+                              "numOfChilds":1,
+                              "numOfCheckedChilds":1,
+                              "isLastPage":false
+                           }
+                        ],
+                        "parentId":"299efcb5-39f8-4629-95c4-a88b1ca0073f",
+                        "checked":false,
+                        "isLeafItem":false,
+                        "expand":true,
+                        "interacted":false,
+                        "isCheck":false,
+                        "indeterminate":true,
+                        "fullPath":null,
+                        "numOfChilds":1,
+                        "numOfCheckedChilds":1,
+                        "isLastPage":false
+                     }
+                  ],
+                  "parentId":"00000000-0000-0000-0000-000000000000",
+                  "checked":false,
+                  "isLeafItem":false,
+                  "expand":true,
+                  "interacted":false,
+                  "isCheck":false,
+                  "indeterminate":true,
+                  "fullPath":null,
+                  "numOfChilds":1,
+                  "numOfCheckedChilds":0,
+                  "isLastPage":false
+               }
+            ],
+            "totalItems":8,
+            "numOfChilds":1,
+            "numOfCheckedChilds":0,
+            "indeterminate":false,
+            "isLastPage":true
+         }

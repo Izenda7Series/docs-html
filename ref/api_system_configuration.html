@@ -277,6 +277,17 @@
 <td>Returns the global category and local category.</td>
 <td>Not used, replaced by <a class="reference internal" href="#get-systemsetting-reportsetting">GET systemSetting/reportSetting</a></td>
 </tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="#id1">GET systemSetting/themes</a></p>
+<blockquote class="last">
+<div><div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+</div></blockquote>
+</td>
+<td>Returns the available color themes for Chart, Gauge, and Map.</td>
+<td>System Configuration &gt; Report &gt; Default Color Theme for Chart, Gauge, and Map &gt; geer icon <br clear="right" />
+OR Report Designer &gt; Design tab</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -936,6 +947,90 @@ boolean</td>
       <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;09f8c4ab-0fe8-4e03-82d1-7949e3738f87&quot;</span><span class="p">,</span>
       <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Local Category&quot;</span><span class="p">,</span>
       <span class="s2">&quot;isGlobal&quot;</span><span class="p">:</span> <span class="n">false</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-themes">
+<span id="id1"></span><h2>GET systemSetting/themes<a class="headerlink" href="#get-systemsetting-themes" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+<p>Returns the available color themes for Chart, Gauge, and Map.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of available the color themes. Each theme has the following structure:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>The name of the theme</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>colors</strong> <br clear="right" />
+an array of string</td>
+<td>An array of HEX color codes</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/themes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Boston Blue&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;#3182bd&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#6baed6&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#9ecae1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#c6dbef&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#e6550d&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#fd8d3c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#fdae6b&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#fdd0a2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#31a354&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#74c476&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#a1d99b&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#c7e9c0&quot;</span>
+      <span class="p">]</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Classic&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;#F9EA15&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#B4D335&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#35B24D&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#128076&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#2C5AA8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#2C3185&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#332A7B&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#981E5B&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#EE1D26&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#F04323&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#F5841E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#FDCC05&quot;</span>
+      <span class="p">]</span>
    <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>

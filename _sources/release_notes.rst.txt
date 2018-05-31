@@ -7,6 +7,41 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.9.0 May 31, 2018
+~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+
+-  Color Themes for charts, gauges, and maps provides color themes that can be selected when creating reports. These themes can also be set as the default for system or tenant levels which sets all existing and new reports containing charts, gauges and maps to this new theme default. New custom themes can be created using a JSON file to declare the theme name and color palette. These theme files are stored in a new folder, Themes, in the API. Please find the documentation links below for setting up, using and creating these themes:
+
+	-  :ref:`Set Default Color Theme <Set_Default_Color_Theme>`
+	-  :ref:`API get And Post Default Themes <Advanced_Settings>`
+	-  :ref:`IAdHoc C# API for Color Themes <IAdHocExtension>`
+	-  :ref:`Selecting Theme In Chart Report Part <Color_Theme_Selection>`
+	-  :ref:`Selecting Theme In Gauge Report Part <Gauge_Color_Theme_Selection>`
+	-  :ref:`Selecting Theme In Map Report Part <Map_Color_Theme_Selection>`
+	-  :ref:`Create Custom Themes <Color_Theme_File>`
+
+-  New Multi-Color Options allows user to select a check box which shows each value in selected charts as a different color from the selected color theme. Bubble, Scatter, Heat Map and Sparkline chart types do not support Multi-Color option. The option is only available for single metric charts because in charts containing multiple metrics, each metric is a unique color. 
+
+	-  :ref:`Set Multi-Color Option for Chart <MultiColor>`
+
+
+-  Report Designer Alternative Background Color for Grid allows user to set both the background color and the alternative background color for grid report parts.
+
+	-  :ref:`Set Alternative Background Color <Report_Designer_Background_Color>`
+
+-  Role Data Model Access is now a single tree to improve performance when loading the role set up. The available and visible options are shown in a single tree with checkbox to show which items are available to the role. There is a new filter option avaialble on the tree to show only selected items. 
+
+	-  :ref:`Role Set up and Details <Role_Setup_List_and_Details>`
+	-  :ref:`New API role loadPartialDataModelAccess <loadpartialdatamodelaccess>`
+
+-  Import/Export Report & Dashboard Definitions keep source Category / Subcategory option allows users to import the same Category / Subcategory the file was exported from in the source system. If the Category or Subcategory does not exist in the destination it will be created.
+
+	-  :ref:`Import Source Category and Subcategory <Import_Definitions>`
+	-  :ref:`External API Updates importSourceCat <ImportExportExternal>`
+
 
 v2.8.5 May 29, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

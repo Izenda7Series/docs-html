@@ -12,6 +12,7 @@ Others
    ConflictReportDashboardItem
    DataFormat
    DataFormating
+   DataSourceItem
    EmailSetting
    Entity
    ExportRequest

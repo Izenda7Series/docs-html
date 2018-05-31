@@ -71,7 +71,7 @@ Quick Edit Report
 
    .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode.png
       :align: center
-      :width: 777px
+      :width: 782px
 
       Quick Edit Mode
 
@@ -86,7 +86,7 @@ Quick Edit Report
 
    .. figure:: /_static/images/Report_Viewer_in_Quick_Edit_mode_Hide_Preview.PNG
       :align: center
-      :width: 1065px
+      :width: 703px
 
 
       Preview section is hidden in a report part backside in Report Review

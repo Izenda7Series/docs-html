@@ -54,6 +54,12 @@ Summary
    * - `GET systemSetting/categorySetting`_
      - Returns the global category and local category.
      - Not used, replaced by `GET systemSetting/reportSetting`_
+   * - `GET systemSetting/themes`_
+
+        .. versionadded:: 2.9.0
+     - Returns the available color themes for Chart, Gauge, and Map.
+     - System Configuration > Report > Default Color Theme for Chart, Gauge, and Map > geer icon |br|
+       OR Report Designer > Design tab
 
 
 
@@ -723,5 +729,82 @@ Returns the global category and local category.
             "id": "09f8c4ab-0fe8-4e03-82d1-7949e3738f87",
             "name": "Local Category",
             "isGlobal": false
+         }
+      ]
+
+.. _GET_systemSetting/themes:
+
+GET systemSetting/themes
+------------------------------
+
+.. versionadded:: 2.9.0
+
+Returns the available color themes for Chart, Gauge, and Map.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of available the color themes. Each theme has the following structure:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **name** |br|
+             string
+          -  The name of the theme
+          -
+       *  -  **colors** |br|
+             an array of string
+          -  An array of HEX color codes
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/systemSetting/themes HTTP/1.1
+
+   Sample response::
+
+      [    
+         {
+            "name": "Boston Blue",
+            "colors": [
+                  "#3182bd",
+                  "#6baed6",
+                  "#9ecae1",
+                  "#c6dbef",
+                  "#e6550d",
+                  "#fd8d3c",
+                  "#fdae6b",
+                  "#fdd0a2",
+                  "#31a354",
+                  "#74c476",
+                  "#a1d99b",
+                  "#c7e9c0"
+            ]
+         },
+         {
+            "name": "Classic",
+            "colors": [
+                  "#F9EA15",
+                  "#B4D335",
+                  "#35B24D",
+                  "#128076",
+                  "#2C5AA8",
+                  "#2C3185",
+                  "#332A7B",
+                  "#981E5B",
+                  "#EE1D26",
+                  "#F04323",
+                  "#F5841E",
+                  "#FDCC05"
+            ]
          }
       ]

@@ -31,6 +31,11 @@ RoleDetail
       -
       -  An array of :doc:`QuerySource` objects
       -
+   *  -  **showCheckedQuerySource** |br|
+         boolean
+      -
+      -  Whether to show checked query sources or not
+      -
 
 Inherited fields:
 

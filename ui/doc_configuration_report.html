@@ -113,6 +113,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#configure-report-version-history">Configure Report Version History</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-default-header-image">Set Default Header Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#customize-the-names-for-global-categories-and-local-categories">Customize the names for &#8220;Global Categories&#8221; and &#8220;Local Categories&#8221;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-default-color-theme-for-chart-gauge-and-map">Set Default Color Theme for Chart, Gauge, and Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-reports-and-default-themes">Global Reports and Default Themes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="doc_configuration_scheduling.html">System Configuration/Scheduling</a></li>
@@ -261,6 +263,110 @@ permission.</li>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/Customize_Global_And_Local_Names.png"><img alt="../_images/Customize_Global_And_Local_Names.png" src="../_images/Customize_Global_And_Local_Names.png" style="width: 792px;" /></a>
 </div>
+</div>
+<div class="section" id="set-default-color-theme-for-chart-gauge-and-map">
+<span id="set-default-color-theme"></span><h2>Set Default Color Theme for Chart, Gauge, and Map<a class="headerlink" href="#set-default-color-theme-for-chart-gauge-and-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/Customize_Color_Pallete_Selection_Popup.PNG"><img alt="../_images/Customize_Color_Pallete_Selection_Popup.PNG" src="../_images/Customize_Color_Pallete_Selection_Popup.PNG" style="width: 604px;" /></a>
+</div>
+<ol class="arabic simple">
+<li>In browser, log in to Izenda as a System Admin.</li>
+<li>Click Settings, then System Configuration then Report on the left
+menu.</li>
+<li>Select the Setting Level: either System or a specific tenant.</li>
+<li>In Default Color Theme for Chart, Gauge, and Map section, click gear icon</li>
+<li>Choose any theme then click OK to close Default Color Theme Selection popup. <br clear="right" /></li>
+<li><strong>Once a default is set all existing reports and dashboards using charts will assume the new default color theme for that setting level. This can be configured at the report level by editing the report and selecting a new theme or no theme.</strong> <br clear="right" /></li>
+<li>When a default is set, all new charts, gauges and maps will use the default for that setting level unless the user selects a different theme or No Theme. <br clear="right" /></li>
+<li>Global reports when set to use the System default, will show in the tenant level using the Tenant&#8217;s default. If no default is set for the tenant the System default will be used at the tenant level. <br clear="right" /></li>
+<li>Report level settings are the highest priority for themes, so any theme other than the default set for a report will be the theme used. <br clear="right" /></li>
+<li>Field level settings for color values will work with color themes, taking higher priority than the default or selected themes. <br clear="right" /></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>The preview limitation for the number of colors in each theme is 12. In case <a class="reference internal" href="../install/supplementary_guides/color-theme.html#color-theme-file"><span class="std std-ref">the color theme file</span></a> exceeds this, system will load and populate the first 12 colors.</li>
+<li>When a theme has invalid color(s), the system will ignore and load the others.</li>
+<li>See Guide here for creating a custom <a class="reference internal" href="../install/supplementary_guides/color-theme.html#color-theme-file"><span class="std std-ref">color theme file</span></a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="global-reports-and-default-themes">
+<h2>Global Reports and Default Themes<a class="headerlink" href="#global-reports-and-default-themes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Please see the grid below to understand how themes work with Global Reports and Dashboards.</li>
+</ul>
+</div></blockquote>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Default Theme in System Level</th>
+<th class="head">Default Theme in Tenant Level</th>
+<th class="head">Theme Used in Global Report</th>
+<th class="head">Theme Seen in Tenant Level</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A</td>
+<td>B</td>
+<td>No Theme</td>
+<td>No Theme</td>
+<td>Theme A is set as system default and B is set as Tenant default but Global report creator <strong>chose No Theme to override defaults</strong></td>
+</tr>
+<tr class="row-odd"><td>A</td>
+<td>B</td>
+<td>A</td>
+<td>B</td>
+<td>Theme A is set as system default and B is as Tenant default and Global report creator <strong>left default theme</strong> so tenant user will see thier default</td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>Theme A is set as system default and B is set as Tenant default but Global report creator <strong>chose theme B to override defaults</strong></td>
+</tr>
+<tr class="row-odd"><td>No Theme</td>
+<td>B</td>
+<td>No Theme</td>
+<td>B</td>
+<td>No Theme is set as system default and B is set as Tenant default and Global report creator <strong>left No Theme default in report</strong> as default so tenant will see their default</td>
+</tr>
+<tr class="row-even"><td>No Theme</td>
+<td>B</td>
+<td>A</td>
+<td>A</td>
+<td>No Theme is set as system default and B is set as Tenant default and Global report creator <strong>chose theme A to override defaults</strong></td>
+</tr>
+<tr class="row-odd"><td>A</td>
+<td>No Theme</td>
+<td>No Theme</td>
+<td>No Theme</td>
+<td>Theme A is set as system default and No Theme is set as Tenant default but Global report creator <strong>chose No Theme to override defaults</strong></td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td>No Theme</td>
+<td>A</td>
+<td>A</td>
+<td>Theme A is set as system default and No Theme is set as Tenant default and Global report creator <strong>left report as default so tenant will see System Default</strong></td>
+</tr>
+<tr class="row-odd"><td>A</td>
+<td>No Theme</td>
+<td>B</td>
+<td>B</td>
+<td>Theme A is set as system default and No Theme is set as Tenant default but Global report creator <strong>chose Theme B to override defaults</strong></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

@@ -80,26 +80,34 @@ pane:
 
    .. figure:: /_static/images/Report_Designer_Background_Color.png
       :align: right
-      :width: 225px
 
       Report Designer - Background Color
 
    Set the background color. |br|
+
+-  .. _Report_Designer_Alternative_Background_Color:
+
+   .. figure:: /_static/images/Report_Designer_Alternative_Background_Color.png
+      :align: right
+
+      Report Designer - Alternative Background Color
+
+   Set the alternative background (New in version 2.9.0) by selecting one of four options:
+
+      - **None**: Do not apply alternative background color. When selecting this option, the Alternative Background Color does not display.
+      - **Rows**: Apply alternative background color for rows.
+      - **Columns**: Apply alternative background color for columns.
+      - **Rows and Columns**: Apply alternative background color for both rows and columns. |br|
+
 -  .. _Report_Designer_Columns_Width_Setting:
 
    .. figure:: /_static/images/Report_Designer_Columns_Width_Setting.png
       :align: right
-      :width: 222px
 
       Report Designer - Columns Setting
 
-   Set the column width in
-   pixels or characters. |br|
+   Set the column width in pixels |br|
 
--  Choose to alternate column background color for easier reading.
--  .. _Report_Designer_Rows_Setting:
-
--  Choose to alternate row background color for easier reading.
 -  .. _Report_Designer_Headers_Setting:
 
    .. figure:: /_static/images/Report_Designer_Headers_Setting.png

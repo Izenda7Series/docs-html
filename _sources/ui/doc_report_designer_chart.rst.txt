@@ -59,8 +59,7 @@ Preview pane:
 
 
 
--  Set the
-   background color.
+-  Set the background color.
 
    #. In Chart group, click the gear icon (⚙) to open Chart Background
       Color Settings pop-up.
@@ -115,6 +114,40 @@ Preview pane:
          :width: 680px
 
          Chart - Grid Lines Settings |br|
+
+
+-  Configure color theme. This option is available from version 2.9.0.
+
+   #. In Chart group, click the gear icon (⚙) next to the Color Theme option to open Color Theme Selection pop-up.
+   #. Select a color theme and click OK to the pop-up.
+
+      **Notes:**
+
+      When the System Admin changes the :ref:`Default Color Setting <Set_Default_Color_Theme>`, all report parts using the default color theme will change to use the new default theme. |br|
+
+      .. _Color_Theme_Selection:
+
+      .. figure:: /_static/images/Color_Theme_Selection.PNG
+         :width: 680px
+
+         Chart - Color Theme Selection |br|
+
+-  Configure multiple colors. This option is available from version 2.9.0.
+
+      .. _MultiColor:
+
+   #. In Chart group, select Multi-Color checkbox.
+   #. Then the chart will receive one color per point.
+
+      **Notes:**
+
+      \- Multi-Color option is only available for single metric charts. When using multiple metrics each metric is a different color.|br|
+      \- Bubble, Scatter, Heat Map and Sparkline chart types do not support Multi-Color option. |br|
+
+   .. figure:: /_static/images/Multi-Color-CountOrder-Country.PNG
+
+      Chart - Multiple Color Column Chart |br|
+
 
 -  Configure the text direction for
    the labels.

@@ -220,7 +220,7 @@
 <li>update system settings in related groups</li>
 </ul>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<span id="advanced-settings"></span><h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="colwidths-given apitable docutils">
 <colgroup>
 <col width="25%" />
@@ -279,6 +279,22 @@
 <tr class="row-even"><td><a class="reference internal" href="#get-advancedsetting-defaultimageurl-tenantid-tenant-id">GET advancedSetting/defaultImageUrl(?tenantId=tenant_id)</a></td>
 <td>Returns the default image url setting.</td>
 <td>Setting Level Tenant is selected</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><a class="reference internal" href="#get-api-advancedsetting-defaulttheme-tenantid-tenant-id">GET api/advancedSetting/defaultTheme(?tenantId=tenant_id)</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+</td>
+<td>Returns the default theme setting.</td>
+<td>Setting Level Tenant is selected</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="#post-api-advancedsetting-defaulttheme">POST api/advancedSetting/defaultTheme</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+</td>
+<td>Add or update default theme for system or tenant.</td>
+<td>Save default theme setting.</td>
 </tr>
 </tbody>
 </table>
@@ -698,6 +714,88 @@
    <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
    <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-04-12T16:55:11.4900000+07:00&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-api-advancedsetting-defaulttheme-tenantid-tenant-id">
+<h2>GET api/advancedSetting/defaultTheme(?tenantId=tenant_id)<a class="headerlink" href="#get-api-advancedsetting-defaulttheme-tenantid-tenant-id" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+<p>Returns the default theme setting.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><p>No payload</p>
+<p>Optional querystring: ?tenantId=&lt;the id of the tenant&gt;</p>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/defaultTheme</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;04d46221-24e0-4363-b2f6-99370d85ebe6&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;DefaultTheme&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Monte Carlo&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Others&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2018-05-22T06:43:56.0000000+07:00&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/advancedSetting/defaultTheme/c39a4500-b902-4e5b-ae86-901c09b71516</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;06a83a57-39c0-44d4-841d-aa56e2d15ba7&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DefaultTheme&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Morning Sky&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Others&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;c39a4500-b902-4e5b-ae86-901c09b71516&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-05-22T10:20:07.2700000+07:00&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-api-advancedsetting-defaulttheme">
+<h2>POST api/advancedSetting/defaultTheme<a class="headerlink" href="#post-api-advancedsetting-defaulttheme" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+<p>Add or update default theme for system or tenant.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: an <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The saved <a class="reference internal" href="models/AdvancedSetting.html"><span class="doc">AdvancedSetting</span></a> object with <strong>name</strong> field value is &#8220;DefaultTheme&#8221;</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/advancedSetting/defaultTheme</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;04d46221-24e0-4363-b2f6-99370d85ebe6&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;DefaultTheme&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Monte Carlo&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Others&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;deleted&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span>
+   <span class="s2">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2018-05-22T10:38:41.5779097Z&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

@@ -4,6 +4,8 @@ IAdHocExtension
 
 **IAdHocExtension** interface in Izenda.BI.Framework.CustomConfiguration defines the extension APIs that allows customization code to hook in the report life cycle.
 
+.. _IAdHocExtension:
+
 .. list-table::
    :widths: 30 20 50
    :header-rows: 1
@@ -46,7 +48,10 @@ IAdHocExtension
      - Adds custom data formats for specified data types
    * - WebUrlResolver
      - `IWebUrlResolver`_
-     - Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.	 
+     - Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.
+   * - Color themes
+     - `GetThemes`_
+     - Get defined color themes for Chart, Gauge, and Map. (v2.9.0 or higher)
 
 
 The companion wrapper class **DefaultAdHocExtension** in  Izenda.BI.Framework.CustomConfiguration should be used as the base class for customization.
@@ -935,6 +940,39 @@ Step 2: Override WebUrlResolver property of DefaultAdhocExtension
 		public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();
 	}
     
+GetThemes
+----------------------
+``public override List<Theme> GetThemes()``
+
+This method customizes the behavior of :ref:`GET_systemSetting/themes` API.
+
+.. code-block:: csharp
+
+   public override List<Theme> GetThemes()
+   {
+      return new List<Theme>
+      {
+         new Theme
+         {
+               Name = "Classic",
+               Colors = new List<string> {
+                     "#F9EA15",
+                     "#F9EA15",
+                     "#B4D335",
+                     "#B4D335",
+                     "#35B24D",
+                     "#128076",
+                     "#2C5AA8",
+                     "#2C3185",
+                     "#332A7B",
+                     "#981E5B",
+                     "#EE1D26",
+                     "#F04323",
+               }
+         }
+      };
+   }
+
 See Also
 -----------
 

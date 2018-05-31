@@ -183,7 +183,7 @@
   <div class="section" id="iadhocextension">
 <h1>IAdHocExtension<a class="headerlink" href="#iadhocextension" title="Permalink to this headline">¶</a></h1>
 <p><strong>IAdHocExtension</strong> interface in Izenda.BI.Framework.CustomConfiguration defines the extension APIs that allows customization code to hook in the report life cycle.</p>
-<table border="1" class="colwidths-given docutils">
+<table border="1" class="colwidths-given docutils" id="id1">
 <colgroup>
 <col width="30%" />
 <col width="20%" />
@@ -244,12 +244,16 @@
 <td><a class="reference internal" href="#iweburlresolver">IWebUrlResolver</a></td>
 <td>Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.</td>
 </tr>
+<tr class="row-even"><td>Color themes</td>
+<td><a class="reference internal" href="#getthemes">GetThemes</a></td>
+<td>Get defined color themes for Chart, Gauge, and Map. (v2.9.0 or higher)</td>
+</tr>
 </tbody>
 </table>
 <p>The companion wrapper class <strong>DefaultAdHocExtension</strong> in  Izenda.BI.Framework.CustomConfiguration should be used as the base class for customization.</p>
-<div class="figure" id="id4">
+<div class="figure" id="id5">
 <img alt="../_images/DefaultAdHocExtension_class.png" src="../_images/DefaultAdHocExtension_class.png" />
-<p class="caption"><span class="caption-number">Fig. 428 </span><span class="caption-text">DefaultAdHocExtension class</span></p>
+<p class="caption"><span class="caption-number">Fig. 433 </span><span class="caption-text">DefaultAdHocExtension class</span></p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -455,9 +459,9 @@
 <li>inspect the query steps</li>
 <li>customize the operations such as adding a limit operator or re-ordering the sequence</li>
 </ul>
-<div class="figure" id="id5">
+<div class="figure" id="id6">
 <img alt="../_images/QueryTree_Sample.png" src="../_images/QueryTree_Sample.png" />
-<p class="caption"><span class="caption-number">Fig. 429 </span><span class="caption-text">QueryTree Sample</span></p>
+<p class="caption"><span class="caption-number">Fig. 434 </span><span class="caption-text">QueryTree Sample</span></p>
 </div>
 <p>Sample code to log all operations without a result limit operator:</p>
 <div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[Export(typeof(IAdHocExtension))]</span>
@@ -512,7 +516,7 @@
 </div>
 </div>
 <div class="section" id="sethiddenfilters">
-<span id="id1"></span><h2>SetHiddenFilters<a class="headerlink" href="#sethiddenfilters" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>SetHiddenFilters<a class="headerlink" href="#sethiddenfilters" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">ReportFilterSetting</span> <span class="pre">SetHiddenFilters(SetHiddenFilterParam</span> <span class="pre">param)</span></code></p>
 <p>This method adds customized filters to every reports while hiding them from UI users.</p>
 <p>For example, it can be used to:</p>
@@ -753,7 +757,7 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 </div>
 </div>
 <div class="section" id="customtimeperiod">
-<span id="id2"></span><h2>CustomTimePeriod<a class="headerlink" href="#customtimeperiod" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>CustomTimePeriod<a class="headerlink" href="#customtimeperiod" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;CustomTimePeriod&gt;</span> <span class="pre">LoadCustomTimePeriod()</span></code></p>
 <p>NOTE: This method is only available in v1.24.0 or higher</p>
 <p>You can create custom time period filters for various datatypes by overriding the LoadCustomTimePeriod in your DefaultAdHocExtension implementation.</p>
@@ -787,7 +791,7 @@ if (String.Compare(currentUserRoles[0], “Administrator”) == 0)
 </div>
 </div>
 <div class="section" id="loadcustomdataformat">
-<span id="id3"></span><h2>LoadCustomDataFormat<a class="headerlink" href="#loadcustomdataformat" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>LoadCustomDataFormat<a class="headerlink" href="#loadcustomdataformat" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;DataFormat&gt;</span> <span class="pre">LoadCustomDataFormat()</span></code></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -1064,6 +1068,37 @@ User must ensure  to register the format function by using <a class="reference i
 <span class="k">public</span> <span class="k">class</span> <span class="nc">CustomAdhocReport</span> <span class="p">:</span> <span class="n">DefaultAdHocExtension</span>
 <span class="p">{</span>
         <span class="k">public</span> <span class="k">override</span> <span class="n">IWebUrlResolver</span> <span class="n">WebUrlResolver</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">CustomWebUrlResolver</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getthemes">
+<h2>GetThemes<a class="headerlink" href="#getthemes" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">public</span> <span class="pre">override</span> <span class="pre">List&lt;Theme&gt;</span> <span class="pre">GetThemes()</span></code></p>
+<p>This method customizes the behavior of <a class="reference internal" href="../ref/api_system_configuration.html#get-systemsetting-themes"><span class="std std-ref">GET systemSetting/themes</span></a> API.</p>
+<div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Theme</span><span class="p">&gt;</span> <span class="n">GetThemes</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Theme</span><span class="p">&gt;</span>
+   <span class="p">{</span>
+      <span class="k">new</span> <span class="n">Theme</span>
+      <span class="p">{</span>
+            <span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;Classic&quot;</span><span class="p">,</span>
+            <span class="n">Colors</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span>
+                  <span class="s">&quot;#F9EA15&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#F9EA15&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#B4D335&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#B4D335&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#35B24D&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#128076&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#2C5AA8&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#2C3185&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#332A7B&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#981E5B&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#EE1D26&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;#F04323&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">};</span>
 <span class="p">}</span>
 </pre></div>
 </div>

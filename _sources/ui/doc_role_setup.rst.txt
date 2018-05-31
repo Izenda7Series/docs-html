@@ -26,9 +26,9 @@ List and View Roles
 .. _Role_Setup_List_and_Details:
 
 .. figure:: /_static/images/Role_Setup_List_and_Details.png
-   :width: 650px
+   :width: 787px
 
-   Role Setup List and Details
+   Role Setup List and Details (in versions prior to v2.9.0 the available and selected data sources are represented in 2 trees)
 
 
 
@@ -56,18 +56,18 @@ Add Role
 #. Enter a unique name for the role.
 #. .. _Role_Data_Model_Access:
 
-   .. figure:: /_static/images/Role_Data_Model_Access.png
+   .. figure:: /_static/images/Role_Data_Model_Access.PNG
       :align: right
       :width: 462px
 
       Data Model Access
 
-   In Data Model Access tab, tick items in Available Data Sources then click the > icon to move to Visible Data
-   Sources.
+   In Data Model Access tab, tick items in Data Sources to select data sources that the role can access.
 
-       It is possible to move only some fields of a table to Visible
-       list. In this case, users of the role will only see visible
-       fields in the table. |br|
+       It is possible to select only some fields of a table. In this case, users of the role will only see selected
+       fields in the table.
+       
+       Tick **Show selected items only** checkbox to manage the list easily. This option is available from version 2.9.0. |br|
 
 #. In Permissions tab, configure permissions for this role similarly to :ref:`Tenant Permissions <Edit_Tenant_Permissions>`.
 
@@ -79,7 +79,7 @@ Add Role
 
       Users tab
 
-   In Users tab, tick users in Available Users then click the > icon to move to Assigned Users.
+   In Users tab, tick users in Assigned Users.
    
       Assigning users is not available when Izenda is integrated inside an existing system. |br|
 #. The Permission Summary tab is a read-only comparison of permissions among all roles of the current tenant.

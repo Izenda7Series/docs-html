@@ -3,6 +3,9 @@
 ========================================
 Import Report or Dashboard Definition
 ========================================
+
+.. _Import_Definitions:
+
 .. note::
 
    Import Report or Dashboard Definition is available from release v2.8.0.
@@ -59,7 +62,7 @@ After browsing files, application will switch to **Import Page**.
 
 #. Type the new name for each report and dashboard.
 
-#. Input the category and sub-category for each report and dashboard.
+#. Tick the **Import the source category/subcategory** check-box to import the source category and sub-category for all reports/dashboards. OR input the destination category and sub-category for each report and dashboard.
 
 #. Choose the destination database name and schema in Database Mapping section. To do mapping easily, click on |informationIcon| icon to view :ref:`Report/Dashboard Information pop-up <Import_Definition_Information>`.
 
@@ -71,6 +74,8 @@ After browsing files, application will switch to **Import Page**.
 
 .. note::
 
+   * The **Import the source category/subcategory** check-box is available from version 2.9.0.
+   
    * A dashboard that belongs to Global Category cannot contain any local report.
 
    * All reports inside dashboard will be always overwritten when overwriting dashboard.
