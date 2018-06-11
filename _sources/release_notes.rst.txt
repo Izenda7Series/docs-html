@@ -8,6 +8,24 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.9.2 June 11, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20836  Casing issue in method causing role data model access page to fail in loading.
+-  Defect  20833  Lazy loading on Report and Dashboard list fail in some systems.
+-  Defect  20814  In Role set up page system failed to load the next items after expanding the table again when "Show selected items only" is enable.
+-  Defect  20806  Console error received and cannot open Configuration Mode of Dashboard Tile when editing filter in dashboard
+-  Defect  20796  Expand drop down on parameter filter value lookup for stored procedure filter values.
+-  Defect  20786  FilteredValue field of IzendaQuerySourceField is referenced when nothing is set
+-  Defect  20754  Fields in joins defined in the model and not available to user should show as ..... but field name is present in some drop down lists
+-  Defect  20623  ANSI_PADDING OFF inhibiting creation of some Izenda configuration database tables.
+-  Defect  20595  In pop up subreport rendering multiple report parts on a page, loading bar persists on screen after clicking to open subreport and closing it
+-  Defect  20562  Exporting a report definition fails when required filters are present and there is no default value for the filter.
+-  Defect  18999  New parameters added to a stored-procedure are not added as filters in the reports.
+
 v2.9.1 June 4, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3462,9 +3480,6 @@ Known Issues
      -  18995
      - When a report that is used in a dashboard becomes incomplete, the URL to the report is not shown in the dashboard tile for ease of finding the report.
    * - Defect
-     -  18999
-     - New parameters added to a stored-procedure are not added as filters in the reports.
-   * - Defect
      -  19005
      - Export and print actions do not work when using the application on a mobile device.
    * - Defect
@@ -3732,9 +3747,6 @@ Known Issues
      -  20477
      - Passed Date Filter Values Displaying Incorrectly In UI Filter Box
    * - Defect
-     -  20562
-     - Exporting a report definition fails when required filters are present and there is no default value for the filter.
-   * - Defect
      -  20563
      - Notifications not being removed from indicator upon acknowledgement. 
    * - Defect
@@ -3750,9 +3762,6 @@ Known Issues
      -  20621
      - Resolved security issue on API
    * - Defect
-     -  20623
-     - ANSI_PADDING OFF inhibiting creation of some Izenda configuration database tables.
-   * - Defect
      -  20640
      - Waterfall chart shows encoded space as %20 instead of space between words on total column label.
    * - Defect
@@ -3767,9 +3776,6 @@ Known Issues
    * - Defect
      -  20787
      - Users could not save copies of reports when given Quick Edit access.
-   * - Defect
-     -  20796
-     - Expand drop down on parameter filter value lookup for stored procedure filter values.
    * - Defect
      -  20797
      - Exporting dashboards to excel would prompt a recovery message when opening the worksheets. 
