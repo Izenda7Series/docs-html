@@ -6,8 +6,10 @@ Izenda abides by a few simple rules to ensure that resources are properly secure
 
 
 .. figure:: /_static/images/resource_mapping_example.PNG
+    :align: center
+    :scale: 75 %
 
-   Resource Mapping Example
+    Resource Mapping Example
 
 --------------------------
 Security at a Role Level
@@ -47,12 +49,16 @@ Hidden Filters
 
 
 .. figure:: /_static/images/intersection_of_role_data_access.png
+    :align: center
+    :scale: 75 %
 
-   Simulating The Intersection of Role Data Access
+    Simulating The Intersection of Role Data Access
    
 .. figure:: /_static/images/sub_role_data_access.png
+    :align: center
+    :scale: 75 %
 
-   Simulating Sub Role Data Access
+    Simulating Sub Role Data Access
 
 --------------------------
 Security at a Report Level

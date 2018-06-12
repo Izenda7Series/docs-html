@@ -10,8 +10,10 @@ process </install/doc_installation_guide>` and can be hosted on various :doc:`ty
 of databases. </intro/supported_database_types>`.
 
 .. figure::  /_static/images/UserStore.jpg
+    :align: center
+    :scale: 75 %
 
-   UserStore
+    UserStore
 
 What The Configuration Database Contains (High Level)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

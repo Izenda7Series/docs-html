@@ -11,8 +11,10 @@ with other users. Izenda utilizes these relationships to define access
 rights of features, data, reports, and dashboards. 
 
 .. figure:: /_static/images/tru_single_tenant.PNG
+      :align: center
+      :scale: 75 %
 
-   Tenant-Role-User Relationship
+      Tenant-Role-User Relationship
 
 Users
 -----
@@ -65,8 +67,10 @@ Single Tenant
 Single tenant allows you to set up Izenda for a single client scenario.
 
 .. figure:: /_static/images/tru_single_tenant.PNG
+      :align: center
+      :scale: 75 %
 
-   Single Tenant Mode
+      Single Tenant Mode
 
 
 Multi-Tenant
@@ -78,8 +82,10 @@ Multi-Tenant provides an easy management of multiple clients on the same instanc
 -  Users can mirror each other in each tenant but users, other than a System Administrator, cannot exist between tenants.
 
 .. figure:: /_static/images/tru_multi_tenant.PNG
+      :align: center
+      :scale: 75 %
 
-   Multi-Tenant Mode
+      Multi-Tenant Mode
 
 
 For more on Multi-Tenant Setup, please see the :doc:`/ui/doc_tenant_setup`.
