@@ -15,7 +15,7 @@ The system will use the settings below (IzendaSystemSetting table) to ping our A
 ========================   ============
 Name                 		    Value
 ========================   ============
-WebAPIUrl        				     http://localhost/
+WebAPIUrl        				     http://localhost/api/
 SubscriptionJobInterval      5 (default)
 ========================   ============
 
