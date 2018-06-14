@@ -8,6 +8,14 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.9.3 June 14, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  20914  Common Filter order does not adjust after changes to underlying report's filters
+-  Defect  20845  Data Model Aliases impact Report Visibility for Role-based Users.
+
 v2.9.2 June 11, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
