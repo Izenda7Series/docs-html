@@ -7,6 +7,18 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.9.4 June 18, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  20962  When setting conditional color value for chart on datetime field formatted to month, using value range 1 - 12, month 12 does not show the proper color
+-  Defect  20917  Failed to import report which has subreport when Izenda DB Config is Oracle and using External API to import report definitions.
+-  Defect  20808  Using Oracle and conditional statements in a Calculated Field throws and error and returns no records
+-  Defect  20455  Cross Filtering Not Applying to Multi-level Drill Downs
+-  Defect  19631  In chart, field's custom color format Doesn't Apply When Filtered Report Returns only 1 Result
+-  Defect  19252  Timestamp offset not changing time in report header/footer or email body
+-  Defect  18389  Resolved security issue on API
 
 v2.9.3 June 14, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3185,9 +3197,6 @@ Known Issues
      -  18388
      - Error displays for circular relationship when the keyjoin is not at the end of the list
    * - Defect
-     -  18389
-     - Resolved security issue on API
-   * - Defect
      -  18391
      - When user changes report part type fields which are not allowed for use in this report part type must be removed.
    * - Defect
@@ -3536,9 +3545,6 @@ Known Issues
      -  19249
      - In Oracle Data model  "No record found." message displays when user searches valid keyword at Search field in Data Model tab
    * - Defect
-     -  19252
-     - Timestamp offset not changing time in report header/footer or email body
-   * - Defect
      -  19258
      - Preview screen is blank when selecting 1 value metric to view in gauge then removing it from container and adding new value
    * - Defect
@@ -3644,9 +3650,6 @@ Known Issues
      -  19630
      - Access and Schedule does not update role name after editing role name
    * - Defect
-     -  19631
-     - In chart, field's custom color format Doesn't Apply When Filtered Report Returns only 1 Result
-   * - Defect
      -  19646
      - Stored Procedure filter value returned to NULL upon clicking Update Result if Visible box is unchecked. 
    * - Defect
@@ -3749,9 +3752,6 @@ Known Issues
      -  20442
      - Filter Descriptions were not updated when exporting from the report list if OnPreExecute was used to change filter values. 
    * - Defect
-     -  20455
-     - Cross Filtering Not Applying to Multi-level Drill Downs
-   * - Defect
      -  20477
      - Passed Date Filter Values Displaying Incorrectly In UI Filter Box
    * - Defect
@@ -3790,9 +3790,6 @@ Known Issues
    * - Defect
      -  20800
      - Calculated fields take longer to render in some circumstances.
-   * - Defect
-     -  20808
-     - Using Oracle and conditional statements in a Calculated Field throws and error and returns no records
    * - Defect
      -  9200
      - Between values are not validated in filters to ensure beginning value is less than ending value
