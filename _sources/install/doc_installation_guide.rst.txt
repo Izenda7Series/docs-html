@@ -79,7 +79,7 @@ Add Web Server Role and .NET Framework
    .. note::
             For Windows Server 2016, also check ASP.NET 4.6 in this step and skip adding "IIS:ASP.NET 4.5" in next step. |br|
 
-   .. figure:: /_static/images/Server_Role_Web_Server_ASP.NET_4.6.png ..
+   .. figure:: /_static/images/Server_Role_Web_Server_ASP.NET_4.6.png
       :align: center
       :width: 524px
 
