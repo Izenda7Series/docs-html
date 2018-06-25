@@ -10,7 +10,7 @@ Report Access Rights
 
 * The first thing to check is that the report has physically been shared with a particular role or user. On the left-hand blue column in the report designer the last icon is labeled 'Access'. This is where you can set rules for how this report is shared with different users and roles. The report will need some rule that grants access to the user you want to share with before they can see it.
   
-  * For more information on access rights, please see our `Report Designer Access Page  <https://www.izenda.com/docs/ui/doc_report_designer_access.html/>`_
+  * For more information on access rights, please see our `Report Designer Access Page  <https://www.izenda.com/docs/ui/doc_report_designer_access.html>`_
   
   
 .. figure:: /_static/images/faq/dev/permissions/image001.png

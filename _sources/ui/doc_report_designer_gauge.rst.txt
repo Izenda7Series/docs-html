@@ -12,7 +12,7 @@ Define a Linear Gauge
 
 .. _Gauge_Properties:
 
-.. figure:: /_static/images/Gauge_Properties.PNG
+.. figure:: /_static/images/Gauge_Properties.png
    :align: right
    :width: 251px
 
@@ -58,7 +58,7 @@ Preview pane:
 
       The Preview section will not be shown if the **Show Preview section in Configuration Mode** checkbox is unticked in Others tab in Advanced Settings.
 
-         .. figure:: /_static/images/Gauge_Border_Settings_No_Preview.png
+         .. figure:: /_static/images/Gauge_Border_Settings_No_Preview.PNG
             :width: 458px
 
          Report Designer - Gauge Border Settings without Preview section

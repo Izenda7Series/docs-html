@@ -55,7 +55,7 @@ Using the render functions
 
 Once the EmbeddedUI front-end resources are in place, and we’ve configured the configuration, authentication, and render functions. The last thing to do is use these bundled JavaScript functions within our application’s front-end to render specific Izenda containers/pages.
 
-This is done in the `Embedded Front-end <Embedding Front-end Izenda (Izenda UI)>`_ section of the guide below.
+This is done in the `Embedded Front-end <https://www.izenda.com/docs/dev/howto_mvc5kit.html#embedding-front-end-izenda-izenda-ui>`_ section of the guide below.
 
 Security Handshake
 ===========================================
@@ -341,7 +341,7 @@ Create Izenda DB
 
 On your SQL Server create an empty database named IzendaMvc. This database stores Izenda data (report definitions, dashboards, etc.) and the configuration necessary to run Izenda.
 
-Download `IzendaMvc.sql <https://raw.githubusercontent.com/Izenda7Series/Mvc5StarterKit/master/SQLScript/MSSQL/IzendaMvc.sql>`__ then execute on IzendaMvc database to generate the schema and default data.
+Download `IzendaMvc.sql <https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/SQLScript/MSSQL/Mvc5StarterKit.sql>`__ then execute on IzendaMvc database to generate the schema and default data.
 
 Updating the Izenda DB
 -------------------------------------------
@@ -350,12 +350,7 @@ The IzendaMvc.sql script will generate a configuration database for Izenda 1.24.
 
 If you use an EmbeddedUI and API for a later version of Izenda you will need to run update scripts against your IzendaMvc database.
 
-For example, if you deploy the 2.1.3 API and Embedded UI you’ll need to run the following update scripts:
-
-#. 1.24.0 -1.25.0 - https://downloads.izenda.com/v1.25.0/SchemaMigrationScripts/ 
-#.	1.25.0-2.0.0 - https://downloads.izenda.com/v2.0.0/SchemaMigrationScripts/ 
-#.	2.0.0-2.1.0 - https://downloads.izenda.com/v2.1.0/SchemaMigrationScripts/ 
-#.	2.1.0-2.2.0 - https://downloads.izenda.com/v2.1.3/SchemaMigrationScripts/
+Upgrade scripts can be compiled and downloaded using the `Schema Migration Assistant <https://tools.izenda.com/>`_ . Here, you will specify your current version (1.24.4) and your target version for upgrade and download the resulting SQL script.
 
 Create Authentication DB
 -------------------------------------------

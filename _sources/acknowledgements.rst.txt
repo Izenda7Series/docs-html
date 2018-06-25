@@ -12,7 +12,7 @@ Acknowledgements
 -  HtmlAgilityPack v.1.4.9.5 http://htmlagilitypack.codeplex.com/ License:http://htmlagilitypack.codeplex.com/license
 -  HtmlTags v.3.0.0.1866  http://htmltags.fubu-project.org/ Licesne: https://raw.githubusercontent.com/HtmlTags/htmltags/master/license.txt
 -  log4net  v.2.0.5 http://logging.apache.org/log4net/ License: http://logging.apache.org/log4net/license.html
--  Microsoft.AspNet.WebApi.Client v.5.2.3 https://www.asp.net/web-api License: https://www.microsoft.com/web/webpi/eula/mvc_4_eula_enu.htm
+-  Microsoft.AspNet.WebApi.Client v.5.2.3 https://www.asp.net/web-api License: https://www.microsoft.com/web/webpi/eula/net_library_eula_ENU.htm
 -  Microsoft.Net.Http v.2.2.29 http://go.microsoft.com/fwlink/?LinkID=280055 License: https://www.microsoft.com/net/dotnet_library_license.htm
 -  Microsoft.Web.Infrastructure v.1.0.0 https://www.asp.net/ License: https://www.microsoft.com/web/webpi/eula/aspnetmvc3update-eula.htm
 -  Moq v.4.2.1510.2205 http://www.moqthis.com/ License: http://www.opensource.org/licenses/bsd-license.php
@@ -41,7 +41,7 @@ Acknowledgements
 -  highcharts: v.4.2.7 http://shop.highsoft.com/highcharts/highcharts-single-developer-support.html  License: The software is available under a commercial or non-commercial license http://shop.highsoft.com/highcharts.html
 -  hoist-non-react-statics: v.1.2.0 https://github.com/mridgway/hoist-non-react-statics License:https://github.com/mridgway/hoist-non-react-statics/blob/master/LICENSE.md
 -  jquery: v.2.2.4 https://github.com/jquery License: https://jquery.org/license/
--  js-cookie: v.2.1.3 https://github.com/js-cookie/js-cookie License: https://github.com/js-cookie/js-cookie/blob/master/MIT-LICENSE.txt
+-  js-cookie: v.2.1.3 https://github.com/js-cookie/js-cookie License: https://github.com/js-cookie/js-cookie/blob/master/LICENSE
 -  lodash: v.4.12.0  https://github.com/lodash/lodash License: https://github.com/lodash/lodash/blob/master/LICENSE
 -  mobx: v.2.4.2 https://github.com/mobxjs/mobx License: https://github.com/mobxjs/mobx/blob/master/LICENSE
 -  mobx-react: v.3.5.4 https://github.com/mobxjs/mobx-react License: https://github.com/mobxjs/mobx-react/blob/master/LICENSE
@@ -52,7 +52,7 @@ Acknowledgements
 -  proj4: v.2.3.15   https://github.com/OSGeo/proj.4 License: https://github.com/OSGeo/proj.4/blob/master/COPYING
 -  query-string: v.4.3.1  https://github.com/sindresorhus/query-string  License: https://github.com/sindresorhus/query-string#license
 -  raf: v.3.2.0  https://www.npmjs.com/package/raf License: https://www.npmjs.com/package/raf
--  raphael: v.2.2.0 http://dmitrybaranovskiy.github.io/raphael/ License: http://dmitrybaranovskiy.github.io/license.html
+-  raphael: v.2.2.0 http://dmitrybaranovskiy.github.io/raphael/ License: https://github.com/DmitryBaranovskiy/raphael/blob/master/license.txt
 -  react-dnd: v.2.1.4 https://github.com/react-dnd/react-dnd License: http://react-dnd.github.io/react-dnd/
 -  react-dnd-html5-backend: v.2.1.2 https://github.com/react-dnd/react-dnd-html5-backend  License: https://github.com/react-dnd/react-dnd-html5-backend/blob/master/LICENSE
 -  react-draggable: v.2.2.1  https://github.com/mzabriskie/react-draggable License: https://github.com/mzabriskie/react-draggable/blob/master/LICENSE

@@ -18,20 +18,20 @@ Creating A Drill Down
 
 - To utilize the drill down, click on a column, such as USA. Doing so will render the next level partitioned data of ShipCity by the selected ShipCountry.
 
-.. figure:: /_static/images/drilldown/top_level.png
+.. figure:: /_static/images/drilldown/top_level.PNG
 
       Top Level Drill Down
 
 - For the next data level down, all Cities inside the USA are rendered on the x-axis of our report. The y-axis values scales down corresponding to the smaller Freight values present at each City.
 - To contiune drilling down, click a column, such as Boise.
 
-.. figure:: /_static/images/drilldown/second_level.png
+.. figure:: /_static/images/drilldown/second_level.PNG
 
       Second Level Drill Down
 
 - Upon clicking the Boise field, the final level of the drill down is displayed. All available Addresses for Boise are rendered on the x-axis of our report.
 
-.. figure:: /_static/images/drilldown/third_level.png
+.. figure:: /_static/images/drilldown/third_level.PNG
 
       Third Level Drill Down
 

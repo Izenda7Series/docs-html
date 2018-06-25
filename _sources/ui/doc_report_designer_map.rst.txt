@@ -155,7 +155,7 @@ Preview pane:
       \- Legend Settings |br|
       \- Zoom Settings
 
-      .. figure:: /_static/images/Report_Map_Border_Settings_No_PreView.png
+      .. figure:: /_static/images/Report_Map_Border_Settings_No_Preview.PNG
          :align: center
          :width: 464px
 

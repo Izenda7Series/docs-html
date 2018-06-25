@@ -303,7 +303,7 @@ Preview pane:
       \- Legend Settings |br|
       \- Thresholds Settings
 
-      .. figure:: /_static/images/NW_Orders_Chart_Border_Settings_No_Preview.png
+      .. figure:: /_static/images/NW_Orders_Chart_Border_Settings_No_Preview.PNG
          :align: center
          :width: 464px
 

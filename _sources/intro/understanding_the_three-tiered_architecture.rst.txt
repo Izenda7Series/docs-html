@@ -101,7 +101,6 @@ Deployment Mode 0: Standalone Deployment
    -  CSS Stylesheets and basic logo replacement available.
 
 .. figure::  /_static/images/Standalone.jpg
-    :align: center
 
    A diagram of Izenda's standalone architecture.
 

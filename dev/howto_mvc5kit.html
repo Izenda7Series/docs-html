@@ -320,7 +320,7 @@
 <div class="section" id="using-the-render-functions">
 <h3><a class="toc-backref" href="#id19">Using the render functions</a><a class="headerlink" href="#using-the-render-functions" title="Permalink to this headline">¶</a></h3>
 <p>Once the EmbeddedUI front-end resources are in place, and we’ve configured the configuration, authentication, and render functions. The last thing to do is use these bundled JavaScript functions within our application’s front-end to render specific Izenda containers/pages.</p>
-<p>This is done in the <a class="reference external" href="EmbeddingFront-endIzenda(IzendaUI)">Embedded Front-end</a> section of the guide below.</p>
+<p>This is done in the <a class="reference external" href="https://www.izenda.com/docs/dev/howto_mvc5kit.html#embedding-front-end-izenda-izenda-ui">Embedded Front-end</a> section of the guide below.</p>
 </div>
 </div>
 <div class="section" id="security-handshake">
@@ -628,19 +628,13 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <div class="section" id="create-izenda-db">
 <h3><a class="toc-backref" href="#id38">Create Izenda DB</a><a class="headerlink" href="#create-izenda-db" title="Permalink to this headline">¶</a></h3>
 <p>On your SQL Server create an empty database named IzendaMvc. This database stores Izenda data (report definitions, dashboards, etc.) and the configuration necessary to run Izenda.</p>
-<p>Download <a class="reference external" href="https://raw.githubusercontent.com/Izenda7Series/Mvc5StarterKit/master/SQLScript/MSSQL/IzendaMvc.sql">IzendaMvc.sql</a> then execute on IzendaMvc database to generate the schema and default data.</p>
+<p>Download <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/SQLScript/MSSQL/Mvc5StarterKit.sql">IzendaMvc.sql</a> then execute on IzendaMvc database to generate the schema and default data.</p>
 </div>
 <div class="section" id="updating-the-izenda-db">
 <h3><a class="toc-backref" href="#id39">Updating the Izenda DB</a><a class="headerlink" href="#updating-the-izenda-db" title="Permalink to this headline">¶</a></h3>
 <p>The IzendaMvc.sql script will generate a configuration database for Izenda 1.24.4.</p>
 <p>If you use an EmbeddedUI and API for a later version of Izenda you will need to run update scripts against your IzendaMvc database.</p>
-<p>For example, if you deploy the 2.1.3 API and Embedded UI you’ll need to run the following update scripts:</p>
-<ol class="arabic simple">
-<li>1.24.0 -1.25.0 - <a class="reference external" href="https://downloads.izenda.com/v1.25.0/SchemaMigrationScripts/">https://downloads.izenda.com/v1.25.0/SchemaMigrationScripts/</a></li>
-<li>1.25.0-2.0.0 - <a class="reference external" href="https://downloads.izenda.com/v2.0.0/SchemaMigrationScripts/">https://downloads.izenda.com/v2.0.0/SchemaMigrationScripts/</a></li>
-<li>2.0.0-2.1.0 - <a class="reference external" href="https://downloads.izenda.com/v2.1.0/SchemaMigrationScripts/">https://downloads.izenda.com/v2.1.0/SchemaMigrationScripts/</a></li>
-<li>2.1.0-2.2.0 - <a class="reference external" href="https://downloads.izenda.com/v2.1.3/SchemaMigrationScripts/">https://downloads.izenda.com/v2.1.3/SchemaMigrationScripts/</a></li>
-</ol>
+<p>Upgrade scripts can be compiled and downloaded using the <a class="reference external" href="https://tools.izenda.com/">Schema Migration Assistant</a> . Here, you will specify your current version (1.24.4) and your target version for upgrade and download the resulting SQL script.</p>
 </div>
 <div class="section" id="create-authentication-db">
 <h3><a class="toc-backref" href="#id40">Create Authentication DB</a><a class="headerlink" href="#create-authentication-db" title="Permalink to this headline">¶</a></h3>

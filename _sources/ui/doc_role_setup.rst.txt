@@ -56,7 +56,7 @@ Add Role
 #. Enter a unique name for the role.
 #. .. _Role_Data_Model_Access:
 
-   .. figure:: /_static/images/Role_Data_Model_Access.PNG
+   .. figure:: /_static/images/Role_Data_Model_Access.png
       :align: right
       :width: 462px
 
