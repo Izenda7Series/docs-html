@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>User Setup &mdash; Izenda BI 2.9.4 documentation</title>
+  <title>User Setup &mdash; Izenda BI 2.9.5 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.9.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.9.5 documentation" href="../index.html"/>
         <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
         <link rel="next" title="System Configuration Guide" href=".system_configuration_guide.html"/>
         <link rel="prev" title="Permissions Setup" href="doc_permissions_setup.html"/> 
@@ -275,22 +275,22 @@ retrieval and report subscriptions.</p>
 boxes.</p>
 <ul>
 <li><p class="first">Data Offset: the time shift to be applied to datetime data from
-client database connections to match user&#8217;s local time zone.</p>
+client database connections to match user&#8217;s local time zone.
+<strong>As of v2.9.5 offset will accept partial hours as .25, .5, .75</strong></p>
 <blockquote>
 <div><p>For example, the data from client database connections are in
 Estern Time &#8220;UTC-05:00&#8221; and the user being created is in
-Central Time &#8220;UTC-06:00&#8221;, then the value &#8220;-1.0&#8221; hour should be
+Central Time &#8220;UTC-06:00&#8221;, then the value &#8220;-1&#8221; hour should be
 entered into Data Offset. (It is easiest to use an online time
 zone converter to find out this value)</p>
 </div></blockquote>
 </li>
 <li><p class="first">Timestamp Offset: the time shift to be applied to timestamp data
-(created date time, last updated date time) from Izenda system
-database to match user&#8217;s local time zone.</p>
+(created date time, last updated date time) from UTC to match user&#8217;s local time zone.
+<strong>As of v2.9.5 offset will accept partial hours as .25, .5, .75</strong></p>
 <blockquote>
-<div><p>For example, the Izenda system database is in Pacific time
-&#8220;UTC-08:00&#8221; and the user being created is in Central Time
-&#8220;UTC-06:00&#8221;, then the value &#8220;+2.0&#8221; hours should be entered
+<div><p>For example, current UTC time is &#8220;02:00&#8221; the user being created is in Central Time
+&#8220;UTC-05:00&#8221;, then the value &#8220;-5&#8221; hours should be entered
 into Timestamp Offset. (It is easiest to use an online time
 zone converter to find out this value)</p>
 </div></blockquote>
@@ -437,7 +437,7 @@ changed from within Izenda system.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.9.4',
+            VERSION:'2.9.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

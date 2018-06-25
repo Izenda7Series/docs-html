@@ -7,6 +7,24 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v2.9.5 June 25, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  20968  Tenant level users may encounter errors when attempting to change their password.
+-  Defect  20915  Country Name "United States of America" works for World and Continent Map but does not work for Country maps.
+-  Defect  20832  Visible checkbox in stored procedure parameter is auto checked after saving report although it is unchecked before
+-  Defect  20823  Access Limits permission inconsistent when adding new user to role
+-  Defect  20809  Performance improvement in the save report process
+-  Defect  20775  Resolved inconsistency error for /api/user/all/ : ""UserName"", ""EmailAddress"", ""Role"", ""All"" Search Criteria return list of all users instead of filtered results.
+-  Defect  20768  Map performance improvements
+-  Defect  20441  Data Offset fields do not allow decimal values.
+-  Defect  20193  Added caching for the license status endpoint to improve client-side performance.
+-  Defect  19932  Grid Grand Total Table Not Summarizing Upon Printing or Exporting
+
 v2.9.4 June 18, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3680,9 +3698,6 @@ Known Issues
      -  19931
      - Application error message appears when pivot contains calculated field which is an aggregate in the Columns container
    * - Defect
-     -  19932
-     - Grid Grand Total Table Not Summarizing Upon Printing or Exporting
-   * - Defect
      -  19935
      - Filters with the same fields but different values in schedule/subscribe are displaying the duplicate filter values
    * - Defect
@@ -3716,9 +3731,6 @@ Known Issues
      -  20181
      - System does not validate the dashboard name with special characters and allows invalid characters to be saved
    * - Defect
-     -  20193
-     - Added caching for the license status endpoint to improve client-side performance.
-   * - Defect
      -  20248
      - Report viewer is not scrollable in landscape mode of mobile phone
    * - Defect
@@ -3746,9 +3758,6 @@ Known Issues
      -  20383
      - Report with multiple report parts gets re-positioned when rendering report
    * - Defect
-     -  20441
-     - Data Offset field of the user profile does not allow decimal values.
-   * - Defect
      -  20442
      - Filter Descriptions were not updated when exporting from the report list if OnPreExecute was used to change filter values. 
    * - Defect
@@ -3773,14 +3782,8 @@ Known Issues
      -  20640
      - Waterfall chart shows encoded space as %20 instead of space between words on total column label.
    * - Defect
-     -  20768
-     - Map Performance Slow At Country Level
-   * - Defect
      -  20774
      - When changing from Normal Bar/Column/Area to range Field alias is not updated and still shows prior aggregate function.
-   * - Defect
-     -  20775
-     - /api/user/all/ : "UserName", "EmailAddress", "Role", "All" Search Criteria return list of all users instead of filtered results.
    * - Defect
      -  20787
      - Users could not save copies of reports when given Quick Edit access.

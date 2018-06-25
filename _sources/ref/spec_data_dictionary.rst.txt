@@ -5296,17 +5296,17 @@ Data Dictionary
    * - .. container:: lpad2
 
           **DataOffset**
-     - int
+     - numeric(10,2)
      - 
-     - 
-     - 
+     - s
+     - For versions 2.9.4 and prior, the data type was *int*
    * - .. container:: lpad2
 
           **TimestampOffset**
-     - int
+     - numeric(10,2)
      - 
      - 
-     - 
+     -  For versions 2.9.4 and prior, the data type was *int*
    * - .. container:: lpad2
 
           **InitPassword**

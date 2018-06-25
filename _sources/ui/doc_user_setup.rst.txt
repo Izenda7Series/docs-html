@@ -79,20 +79,20 @@ Add User
 
    -  Data Offset: the time shift to be applied to datetime data from
       client database connections to match user's local time zone.
+      **As of v2.9.5 offset will accept partial hours as .25, .5, .75**
 
           For example, the data from client database connections are in
           Estern Time "UTC-05:00" and the user being created is in
-          Central Time "UTC-06:00", then the value "-1.0" hour should be
+          Central Time "UTC-06:00", then the value "-1" hour should be
           entered into Data Offset. (It is easiest to use an online time
           zone converter to find out this value)
 
    -  Timestamp Offset: the time shift to be applied to timestamp data
-      (created date time, last updated date time) from Izenda system
-      database to match user's local time zone.
+      (created date time, last updated date time) from UTC to match user's local time zone.
+      **As of v2.9.5 offset will accept partial hours as .25, .5, .75**
 
-          For example, the Izenda system database is in Pacific time
-          "UTC-08:00" and the user being created is in Central Time
-          "UTC-06:00", then the value "+2.0" hours should be entered
+          For example, current UTC time is "02:00" the user being created is in Central Time
+          "UTC-05:00", then the value "-5" hours should be entered
           into Timestamp Offset. (It is easiest to use an online time
           zone converter to find out this value)
 

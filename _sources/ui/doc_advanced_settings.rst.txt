@@ -222,14 +222,14 @@ In Advanced Settings page, click on Others tab in Middle Panel to view the items
          -  Tick on this checkbox to trim the time portion form the Date Time field in each join statement in Report Designer - Relationship page. Otherwise, system will use Date Time field in each sort statement
          -  True
       *  -  Timezone for Data Offset 
-         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to displayed data value of Datetime/Time fields in the report part. |br|
+         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to displayed data value of Datetime/Time fields in the report part. **As of v2.9.5 offset will accept partial hours as .25, .5 or .75** |br|
             For example: |br|
-            In database the data value is 11:00. If user sets “+5” in the textbox of this section then the data value will be shown as 16:00 in the report part.
+            In database the data value is 11:00. If user sets “5” in the textbox of this section then the data value will be shown as 16:00 in the report part.
          -  0
       *  -  Timezone for Timestamp Offset
-         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to all Datetime/Time field in system. |br|
+         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to all Datetime/Time field in system. **As of v2.9.5 offset will accept partial hours as .25, .5 or .75**|br|
             For example: |br|
-            The created date of report is 11:00. If user sets “+5” in the textbox of this section then the created date will be shown as 16:00 in the system.
+            The created date of report is 11:00. If user sets “5” in the textbox of this section then the created date will be shown as 16:00 in the system. 
          -  0
       *  -  Convert Null to Empty String
          -  Tick on this checkbox to convert all null values to blank (empty) in reports or dashboards. Otherwise, null values keep the orginal values.
