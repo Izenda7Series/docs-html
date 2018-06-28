@@ -13,6 +13,10 @@ Location of CSS
 -  izenda-ui.css : Main location for CSS Stylings.
 
 
+CSS Conflicts
+--------------
+CSS conflicts may arise if the host application utilizes similar or same the CSS libraries as Izenda that are utlize different release versions or customizations. For instance, Bootstrap 2 may cause conflicts with the Bootstrap resources found with the Izenda application. For an updated list of Izenda dependencies, please refer to our `Acknowledgements Page <https://www.izenda.com/docs/acknowledgements.html>`_ .
+
 
 Customization (Simple)
 ----------------------
