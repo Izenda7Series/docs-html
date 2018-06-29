@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Front-end Integration APIs &mdash; Izenda BI 2.9.5 documentation</title>
+  <title>Front-end Integration APIs &mdash; Izenda BI 2.10.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.9.5 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.10.0 documentation" href="../index.html"/>
         <link rel="up" title="Full API List" href=".integration_api_documentation.html"/>
         <link rel="next" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
         <link rel="prev" title="Back-end Integration APIs" href="api_backend_integration.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                2.9
+                2.10
               </div>
             
           
@@ -346,6 +346,40 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </pre></div>
 </div>
 </div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.10.0.</span></p>
+</div>
+<blockquote id="set-webapiurl">
+<div><p><br clear="right" /> For version 2.10.0 and later, Izenda provides option to configure dynamic WebApiUrl. <br clear="right" />
+<strong>Samples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">configJson</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">&quot;WebApiUrl&quot;</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">currentHour</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getHours</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nx">currentHour</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="o">||</span> <span class="nx">currentHour</span> <span class="o">&gt;=</span> <span class="mi">22</span> <span class="o">?</span> <span class="s1">&#39;http://localhost:14809/api/&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://localhost:65469/api&#39;</span><span class="p">;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;BaseUrl&quot;</span><span class="o">:</span> <span class="s2">&quot;/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;RootPath&quot;</span><span class="o">:</span> <span class="s2">&quot;/Scripts/izenda&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;CssFile&quot;</span><span class="o">:</span> <span class="s2">&quot;izenda-ui.css&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Routes&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s2">&quot;Settings&quot;</span><span class="o">:</span> <span class="s2">&quot;settings&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;New&quot;</span><span class="o">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Dashboard&quot;</span><span class="o">:</span> <span class="s2">&quot;dashboard&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Report&quot;</span><span class="o">:</span> <span class="s2">&quot;report&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ReportViewer&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewer&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;ReportViewerPopup&quot;</span><span class="o">:</span> <span class="s2">&quot;reportviewerpopup&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;Viewer&quot;</span><span class="o">:</span> <span class="s2">&quot;viewer&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;TimeOut&quot;</span><span class="o">:</span> <span class="mi">3600</span><span class="p">,</span>
+   <span class="s2">&quot;UIPreferences&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;ReportFilterSectionExpanded&quot;</span><span class="o">:</span> <span class="kc">true</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;NeedToEncodeUrl&quot;</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="nx">configJson</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="render-element">
 <h2>render(element)<a class="headerlink" href="#render-element" title="Permalink to this headline">¶</a></h2>
@@ -360,7 +394,7 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </div>
 <div class="figure" id="id1">
 <img alt="../_images/All_Izenda_Inside.png" src="../_images/All_Izenda_Inside.png" />
-<p class="caption"><span class="caption-number">Fig. 407 </span><span class="caption-text">Izenda Inside</span></p>
+<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">Izenda Inside</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -377,7 +411,7 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </div>
 <div class="figure" id="id2">
 <img alt="../_images/Izenda_Settings.png" src="../_images/Izenda_Settings.png" />
-<p class="caption"><span class="caption-number">Fig. 408 </span><span class="caption-text">Izenda Settings</span></p>
+<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">Izenda Settings</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -394,7 +428,7 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </div>
 <div class="figure" id="id3">
 <img alt="../_images/Izenda_Report_only.png" src="../_images/Izenda_Report_only.png" />
-<p class="caption"><span class="caption-number">Fig. 409 </span><span class="caption-text">Izenda Report only</span></p>
+<p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">Izenda Report only</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -411,7 +445,7 @@ Set it to <code class="docutils literal"><span class="pre">false</span></code> i
 </div>
 <div class="figure" id="id4">
 <img alt="../_images/Izenda_Report_Designer_only.png" src="../_images/Izenda_Report_Designer_only.png" />
-<p class="caption"><span class="caption-number">Fig. 410 </span><span class="caption-text">Izenda Report Designer only</span></p>
+<p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">Izenda Report Designer only</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -456,7 +490,7 @@ A filter object</td>
 </div>
 <div class="figure" id="id5">
 <img alt="../_images/Izenda_Report_Viewer.png" src="../_images/Izenda_Report_Viewer.png" />
-<p class="caption"><span class="caption-number">Fig. 411 </span><span class="caption-text">Izenda Report Viewer Only</span></p>
+<p class="caption"><span class="caption-number">Fig. 417 </span><span class="caption-text">Izenda Report Viewer Only</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -544,7 +578,7 @@ A boolean</td>
 </div>
 <div class="figure" id="id6">
 <img alt="../_images/Render_Specific_report_part.png" src="../_images/Render_Specific_report_part.png" />
-<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">Izenda Specific Report Part</span></p>
+<p class="caption"><span class="caption-number">Fig. 418 </span><span class="caption-text">Izenda Specific Report Part</span></p>
 </div>
 <p>The following example demonstrates the use of useQueryParam and useHash for exports. The sample is derived from our <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/9f5133b9eadb713dee85e9cdaed21b1b21e22efd/Mvc5StarterKit/Scripts/izenda.integrate.js#L261">Sample MVC 5 Application</a></p>
 <blockquote>
@@ -571,7 +605,7 @@ A boolean</td>
 </div>
 <div class="figure" id="id7">
 <img alt="../_images/Izenda_Dashboard.png" src="../_images/Izenda_Dashboard.png" />
-<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">Izenda Dashboard Only</span></p>
+<p class="caption"><span class="caption-number">Fig. 419 </span><span class="caption-text">Izenda Dashboard Only</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -588,7 +622,7 @@ A boolean</td>
 </div>
 <div class="figure" id="id8">
 <img alt="../_images/Izenda_New_Dashboard.png" src="../_images/Izenda_New_Dashboard.png" />
-<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">Izenda Dashboard Designer Only</span></p>
+<p class="caption"><span class="caption-number">Fig. 420 </span><span class="caption-text">Izenda Dashboard Designer Only</span></p>
 </div>
 </div></blockquote>
 </div>
@@ -752,7 +786,7 @@ access_token</div></blockquote>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.9.5',
+            VERSION:'2.10.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

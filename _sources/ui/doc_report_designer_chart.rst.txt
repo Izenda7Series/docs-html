@@ -141,8 +141,9 @@ Preview pane:
 
       **Notes:**
 
-      \- Multi-Color option is only available for single metric charts. When using multiple metrics each metric is a different color.|br|
-      \- Bubble, Scatter, Heat Map and Sparkline chart types do not support Multi-Color option. |br|
+      \- Multi-Color option is only available for single metric charts. When using multiple metrics each metric is a different color. |br|
+      \- Sparkline chart type does not support Multi-Color option. |br|
+      \- Multi-Color option is available for Bubble and Scatter from version 2.10.0. |br|
 
    .. figure:: /_static/images/Multi-Color-CountOrder-Country.PNG
 
@@ -837,3 +838,33 @@ To be updated: screenshot of sparkline chart embedded inside a grid.
 
 .. |Report Chart Pie Bottom X Before.png| image::  /_static/images/Report_Chart_Pie_Bottom_X_Before.png
 .. |Report Chart Pie Bottom X After.png| image::  /_static/images/Report_Chart_Pie_Bottom_X_After.png
+
+
+Others
+------------
+
+.. _Report_Chart_Grid_View:
+
+-  Grid view popup option. This option is available from version 2.10.0.
+
+   Click |gridViewIcon| icon to see the grid view of the chart data associated with the current drilldown level and metric.
+
+   .. figure:: /_static/images/Chart_Grid_View_Popup.png
+      :align: right
+      :width: 653px
+
+      Grid View Popup Showing Total Freight grouped by ShipCity in USA |br|
+
+   .. |gridViewIcon| image:: /_static/images/icons/Grid_View_Icon.png
+
+|br|
+-  Metric dropdown.
+
+      .. figure:: /_static/images/Chart_Metric_Dropdown.png
+         :align: right
+         :width: 308px
+
+         Chart Metric dropdown |br|
+
+|br|
+

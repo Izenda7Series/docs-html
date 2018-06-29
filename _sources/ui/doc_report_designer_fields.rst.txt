@@ -708,6 +708,7 @@ In this section, user can:
 
 
 -  Choose a display format for the field.
+.. _Report_Designer_Field_Format:
 
        The list of available formats depends on the data type of
        the field.
@@ -729,7 +730,9 @@ In this section, user can:
 
 -  Choose text effects bold, italic and underlined.
 
--  Choose text alignment left, center, right or justify.
+-  Choose text alignment left, center, right or justify and top, middle or bottom. Vertical alignment is available for grid from version 2.10.0.
+
+- Turn on or off word wrap option. (This option available from v2.10.0).
 
 -  Choose data sorting order unsorted, ascending or descending by
    repeatedly clicking the icon.
@@ -897,7 +900,7 @@ In this section, user can adjust formatting for the header row:
 -  Set column width.
 -  Choose a font face and font size.
 -  Choose text effects bold, italic and underlined.
--  Choose text alignment left, center, right or justify.
+-  Choose text alignment left, center, right or justify and top, middle or bottom. Vertical alignment is available for grid from version 2.10.0.
 -  Choose text color and cell color (see `Configure field properties in
    Data Formatting
    section`_).

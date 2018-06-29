@@ -137,6 +137,40 @@ Configure Izenda
        
        IzendaSynergy.config(configJson);
 
+.. versionadded:: 2.10.0
+.. _Set_WebApiUrl:
+
+   |br| For version 2.10.0 and later, Izenda provides option to configure dynamic WebApiUrl. |br|
+   **Samples**
+
+   .. code-block:: javascript
+
+      var configJson = {
+         "WebApiUrl": () => {
+            const currentHour = new Date().getHours();
+            return currentHour < 6 || currentHour >= 22 ? 'http://localhost:14809/api/' : 'http://localhost:65469/api';
+         },
+         "BaseUrl": "/izenda",
+         "RootPath": "/Scripts/izenda",
+         "CssFile": "izenda-ui.css",
+         "Routes": {
+         "Settings": "settings",
+         "New": "new",
+         "Dashboard": "dashboard",
+         "Report": "report",
+         "ReportViewer": "reportviewer",
+         "ReportViewerPopup": "reportviewerpopup",
+         "Viewer": "viewer"
+         },
+         "TimeOut": 3600,
+         "UIPreferences": { 
+               "ReportFilterSectionExpanded": true 
+         },
+         "NeedToEncodeUrl" : true
+      };
+
+      IzendaSynergy.config(configJson);
+
 
 
 render(element)

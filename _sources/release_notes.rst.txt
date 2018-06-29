@@ -6,6 +6,59 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
+	
+v2.10.0 June 29, 2018
+~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+
+-  Freeze Headers for Grid report part types
+
+	- Vertical and Drilldown grids support Vertical header freeze
+	- Horizontal grids support Horizontal header freeze
+	- Pivot grids support Vertical or Horizontal header freeze
+	- The freeze option can be selected in the report designer or Quick Edit on the report part property panel
+	-  :ref:`Set Freeze Headers <Freeze_Headers1>`
+
+-  Word wrap on field data in grid report part types
+
+	- User can select to word wrap individual fields at the field level or all fields at the report part level using the report part properties menu
+	
+	-  :ref:`Set Field Format <Report_Designer_Field_Format>`
+	
+-  Vertical Alignment for data in grid report part types
+
+	- This new option is available on the grid report part property panel for all fields or at the field level on the field property panel
+	- This can be set for both headers and grid data
+	-  :ref:`Set Field Format <Report_Designer_Field_Format>`
+	-  :ref:`Set Grid Format <Report_Designer_Columns_Width_Setting>`
+		
+-  Bubble and Scatter charts now support the mulit-color option
+
+	-  :ref:`Map Grid View <MultiColor>`
+
+-  Pop up grid view for chart, gauge and map
+
+	- This new option will show on all charts, gauges and maps allowing the user to open a popup window to see a grid view of the data from the visualization
+	-  :ref:`Chart Grid View <Report_Chart_Grid_View>`	
+	-  :ref:`Gauge Grid View <Report_Gauge_Grid_View>`
+	-  :ref:`Map Grid View <Report_Map_Grid_View>`
+
+-  New JavaScript API to resolve the WebApiUrl from custom logic
+
+	-  :ref:`Set WebApiUrl <Set_WebApiUrl>`
+
+FIXES
+^^^^^^^^^
+
+-  Defect  18952  When using Oracle/Postgres/MySQL reporting databases data is not properly filtered when using pperator DateTime - Equals Days Old
+-  Defect  20160  In some cases when printing dashboards containing forms, the tiles overlap
+-  Defect  20787  Users could not save copies of reports when given Quick Edit access
+-  Defect  20970  For dashboard when scheduling / subscribing using links, the p values are showing p1value not p1 and not properly filtering the dashboard
+-  Defect  21004  Resolved security issue in API
+-  Defect  21063  Modifying or deleting a user using an Oracle config DB throws an error
+
 
 
 v2.9.5 June 25, 2018

@@ -176,3 +176,33 @@ An example solid gauge with separator and threshold:
    Sample Simple Gauge
 
 Sample Simple Gauge. |br|
+
+
+Others
+------------
+
+.. _Report_Gauge_Grid_View:
+
+-  Grid view popup option. This option is available from version 2.10.0.
+
+   Click |gridViewIcon| icon to see the grid view of the gauge data associated with the current metric.
+
+   .. figure:: /_static/images/Gauge_Grid_View_Popup.png
+      :align: right
+      :width: 653px
+
+      Grid View Popup Showing Total Freight  |br|
+      
+   .. |gridViewIcon| image:: /_static/images/icons/Grid_View_Icon.png
+
+|br|
+-  Metric dropdown.
+
+      .. figure:: /_static/images/Gauge_Metric_Dropdown.png
+         :align: right
+         :width: 308px
+
+         Gauge Metric dropdown |br|
+
+|br|
+
