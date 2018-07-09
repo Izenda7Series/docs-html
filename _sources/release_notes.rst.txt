@@ -7,6 +7,18 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 	
+
+v2.10.1 July 9, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  18176  Hamburger for category shows in report/dashboard view mode for mobile screens
+-  Defect  20797  Exporting dashboards to excel would prompt a recovery message when opening the worksheets when tile name is duplicated
+-  Defect  21119  Sort Column Name setting is not applied to Query Source Fields in Design tab of Report Designer
+
+
 v2.10.0 June 29, 2018
 ~~~~~~~~~~~~~~~~~~~~~
 
