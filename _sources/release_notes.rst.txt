@@ -3202,9 +3202,6 @@ Known Issues
      -  18170
      - In Report Designer Data source tab, the drop down list of Join Field/Field is not reset/disabled when data in Data Object/Foreign Data Object is blank
    * - Defect
-     -  18176
-     - Hamburger for category shows in report/dashboard view mode for mobile screens
-   * - Defect
      -  18219
      - "No record found" and drilldown breadcrumb text overlap in gauge report part when there are no records in the gauge
    * - Defect
@@ -3852,9 +3849,6 @@ Known Issues
    * - Defect
      -  20787
      - Users could not save copies of reports when given Quick Edit access.
-   * - Defect
-     -  20797
-     - Exporting dashboards to excel would prompt a recovery message when opening the worksheets. 
    * - Defect
      -  20800
      - Calculated fields take longer to render in some circumstances.
