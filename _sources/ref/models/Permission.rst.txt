@@ -1183,6 +1183,26 @@ Permission
       -
       -  Permission for Tenant
       -
+   *  -  .. container:: lpad2
+   
+            **accessLimitsTree** |br|
+            an array of objects
+
+            .. versionadded:: 2.9.0
+      -
+      -  An array of :doc:`RoleVirtualNode` objects |br|
+         This option is used to add/update access limits.
+      -
+   *  -  .. container:: lpad2
+   
+            **schedulingLimitsTree** |br|
+            an array of objects
+
+            .. versionadded:: 2.9.0
+      -
+      -  An array of :doc:`RoleVirtualNode` objects |br|
+         This option is used to add/update scheduling limits.
+      -  
 
 .. container:: toggle
 

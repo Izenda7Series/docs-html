@@ -953,324 +953,553 @@ object</td>
 <div class="header docutils container">
 Request payload to add new role with permission and visible data sources:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;users&quot;</span><span class="p">:</span> <span class="p">[],</span>
-   <span class="nt">&quot;permission&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;fullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">&quot;systemConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;scheduledInstances&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="nt">&quot;users&quot;</span><span class="p">:[</span>
+
+   <span class="p">],</span>
+   <span class="nt">&quot;permission&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;schedulingLimitsTree&quot;</span><span class="p">:[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c9952522-370e-4138-9185-2061b3fd5639&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Administrator&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isVirtual&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;childNodes&quot;</span><span class="p">:[]</span>
          <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;tenantSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;0805d023-2801-463f-a93f-0f19245fc4f6&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isVirtual&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;childNodes&quot;</span><span class="p">:[]</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;accessLimitsTree&quot;</span><span class="p">:[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;0805d023-2801-463f-a93f-0f19245fc4f6&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Manager&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isVirtual&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;childNodes&quot;</span><span class="p">:[]</span>
          <span class="p">},</span>
-         <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;dataSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;dataModel&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;others&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;userSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;userRoleAssociation&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;configureSecurityOptions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;roleSetup&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;edit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;dataModelAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;grantRoleWithFullReportAndDashboardAccess&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;reports&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;canCreateNewReport&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;dataSources&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;simpleDataSources&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;advancedDataSources&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;reportPartTypes&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;chart&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;gauge&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;reportCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
-               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c9952522-370e-4138-9185-2061b3fd5639&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Administrator&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;isVirtual&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;childNodes&quot;</span><span class="p">:[]</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;isClickedSection&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;propsCloned&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;fullReportAndDashboardAccess&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;systemConfiguration&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;scheduledInstances&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
             <span class="p">},</span>
-            <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
-               <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                  <span class="p">{</span>
-                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2a83e3ce-f91b-4f14-910d-76cadf42d0fe&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Global Categories&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                        <span class="p">{</span>
-                           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                           <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Uncategorized&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[]</span>
-                        <span class="p">}</span>
-                     <span class="p">]</span>
-                  <span class="p">},</span>
-                  <span class="p">{</span>
-                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;09f8c4ab-0fe8-4e03-82d1-7949e3738f87&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Local Categories&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                        <span class="p">{</span>
-                           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                           <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Uncategorized&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[]</span>
-                        <span class="p">}</span>
-                     <span class="p">]</span>
-                  <span class="p">}</span>
-               <span class="p">],</span>
-               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-            <span class="p">}</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
          <span class="p">},</span>
-         <span class="nt">&quot;filterProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;filterLogic&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;fieldProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;customURL&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;embeddedJavaScript&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;subreport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;viewReportHistory&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;registerForAlerts&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;unarchiveReportVersions&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;overwriteExistingReport&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;dashboards&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;canCreateNewDashboard&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;dashboardCategoriesSubcategories&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:</span> <span class="p">{</span>
-               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="nt">&quot;tenantSetup&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
             <span class="p">},</span>
-            <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:</span> <span class="p">{</span>
-               <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                  <span class="p">{</span>
-                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2a83e3ce-f91b-4f14-910d-76cadf42d0fe&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Global Categories&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                        <span class="p">{</span>
-                           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                           <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Uncategorized&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[]</span>
-                        <span class="p">}</span>
-                     <span class="p">]</span>
-                  <span class="p">},</span>
-                  <span class="p">{</span>
-                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;09f8c4ab-0fe8-4e03-82d1-7949e3738f87&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                     <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Local Categories&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-                        <span class="p">{</span>
-                           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nt">&quot;savable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                           <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Uncategorized&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;subCategories&quot;</span><span class="p">:</span> <span class="p">[]</span>
-                        <span class="p">}</span>
-                     <span class="p">]</span>
-                  <span class="p">}</span>
-               <span class="p">],</span>
-               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-            <span class="p">}</span>
+            <span class="nt">&quot;permissions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
          <span class="p">},</span>
-         <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;del&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;print&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;overwriteExistingDashboard&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;access&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;accessLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;accessDefaults&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span>
-               <span class="p">{</span>
-                  <span class="nt">&quot;assignedType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                  <span class="nt">&quot;accessors&quot;</span><span class="p">:</span> <span class="p">[],</span>
-                  <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                  <span class="nt">&quot;reportAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d004&quot;</span><span class="p">,</span>
-                  <span class="nt">&quot;dashboardAccessRightId&quot;</span><span class="p">:</span> <span class="s2">&quot;13698ebf-3e8e-43e1-9e2b-ad3f17d7d008&quot;</span>
+         <span class="nt">&quot;dataSetup&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;dataModel&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;customView&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;delete&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
                <span class="p">}</span>
-            <span class="p">],</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;scheduling&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;schedulingLimits&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;schedulingScope&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;systemUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;externalUsers&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;emailing&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;deliveryMethod&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;embeddedHTML&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;attachment&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;attachmentType&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;exporting&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;exportingFormat&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;excel&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;pdf&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;csv&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;xml&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;json&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;queryExecution&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;systemwide&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;canSeeSystemMessages&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;visibleQuerySources&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;3f4ed154-4b0e-47e6-a873-4dc807a216c0&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;querySourceFields&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2d9bc2e8-4c8f-4791-a093-6e222da5d5ed&quot;</span>
             <span class="p">},</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;52b366e6-81c4-44e6-8104-c8ae61220fea&quot;</span>
+            <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;others&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;userSetup&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;userRoleAssociation&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;configureSecurityOptions&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;roleSetup&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;dataModelAccess&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;permissions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;grantRoleWithFullReportAndDashboardAccess&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;reports&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;canCreateNewReport&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;dataSources&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;simpleDataSources&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;advancedDataSources&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;reportPartTypes&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;chart&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;form&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;gauge&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;map&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;reportCategoriesSubcategories&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;categories&quot;</span><span class="p">:{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:[]</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;filterProperties&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;filterLogic&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;crossFiltering&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;fieldProperties&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;customURL&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;embeddedJavaScript&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;subreport&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;viewReportHistory&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;registerForAlerts&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;print&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;unarchiveReportVersions&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;overwriteExistingReport&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;exporting&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;dashboards&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;canCreateNewDashboard&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;dashboardCategoriesSubcategories&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                  <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;categories&quot;</span><span class="p">:{</span>
+                     <span class="nt">&quot;value&quot;</span><span class="p">:[]</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;print&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;overwriteExistingDashboard&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;exporting&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;access&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;accessLimits&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:[]</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;accessDefaults&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:[]</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;scheduling&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;schedulingLimits&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:{</span>
+                  <span class="nt">&quot;value&quot;</span><span class="p">:[]</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;schedulingScope&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;systemUsers&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;externalUsers&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;emailing&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;deliveryMethod&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;embeddedHTML&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;attachmentType&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;excel&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;pdf&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;xml&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;json&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;exporting&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;exportingFormat&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;excel&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;pdf&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;xml&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;json&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;queryExecution&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;systemwide&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;canSeeSystemMessages&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;section&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isTenantSetup&quot;</span><span class="p">:</span><span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;fullReportAndDashboardAccess&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;systemConfiguration&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;scheduledInstances&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;tenantSetup&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;permissions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dataSetup&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;dataModel&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;customView&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;delete&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
             <span class="p">}</span>
-         <span class="p">]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;advancedSettings&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;others&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
       <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;22940912-9016-4c18-942b-bf7b4de5f4cd&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;querySourceFields&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a56c409d-6f96-41e9-ad6d-882176cfcc92&quot;</span>
+      <span class="nt">&quot;userSetup&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;userRoleAssociation&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;configureSecurityOptions&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;roleSetup&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;create&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;edit&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;dataModelAccess&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;permissions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;grantRoleWithFullReportAndDashboardAccess&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;reports&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;canCreateNewReport&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;dataSources&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;simpleDataSources&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;advancedDataSources&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;reportPartTypes&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;chart&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;form&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;gauge&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;map&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;reportCategoriesSubcategories&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
             <span class="p">},</span>
+            <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;categories&quot;</span><span class="p">:[],</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;filterProperties&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;filterLogic&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;crossFiltering&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;fieldProperties&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;customURL&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;embeddedJavaScript&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;subreport&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;viewReportHistory&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;registerForAlerts&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;print&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;unarchiveReportVersions&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;overwriteExistingReport&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;exporting&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;dashboards&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;canCreateNewDashboard&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;dashboardCategoriesSubcategories&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;canCreateNewCategory&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;categoryAccessibility&quot;</span><span class="p">:{</span>
+               <span class="nt">&quot;categories&quot;</span><span class="p">:[],</span>
+               <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+            <span class="p">}</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;actions&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;del&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;print&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;overwriteExistingDashboard&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;configureAccessRights&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;exporting&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;access&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;accessLimits&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:[],</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;accessDefaults&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:[],</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;scheduling&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;schedulingLimits&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:[],</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;schedulingScope&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;systemUsers&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;externalUsers&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;emailing&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;deliveryMethod&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;embeddedHTML&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;attachmentType&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;excel&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;pdf&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;xml&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;json&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;exporting&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;exportingFormat&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;excel&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;pdf&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;csv&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;xml&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;json&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;queryExecution&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;definition&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;systemwide&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;canSeeSystemMessages&quot;</span><span class="p">:{</span>
+            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span><span class="mi">0</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;section&quot;</span><span class="p">:</span><span class="s2">&quot;systemConfiguration&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isTenantSetup&quot;</span><span class="p">:</span><span class="kc">false</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Employee&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;isDirty&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;visibleQuerySourcesTree&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;8c148f1f-97a3-4f85-bdaf-e6e38c2e1962&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;[REDSH] Northwind&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;interacted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;childNodes&quot;</span><span class="p">:[</span>
             <span class="p">{</span>
-               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;942640af-9743-463f-a2dd-55fe4244a6ce&quot;</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;83371234-4fa1-48d1-855d-efb8434c6b2e&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;public&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;interacted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+               <span class="nt">&quot;childNodes&quot;</span><span class="p">:[</span>
+                  <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;d258df08-cade-42c7-8461-41fdfc963fd8&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;interacted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;childNodes&quot;</span><span class="p">:[</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;0e901d90-c66d-498b-b9e8-c9752853fb7c&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;customers&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;checked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                           <span class="nt">&quot;interacted&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+                           <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                           <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                           <span class="nt">&quot;childNodes&quot;</span><span class="p">:[]</span>
+                        <span class="p">}</span>
+                     <span class="p">]</span>
+                  <span class="p">}</span>
+               <span class="p">]</span>
             <span class="p">}</span>
          <span class="p">]</span>
       <span class="p">}</span>
    <span class="p">],</span>
-   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Report Designer&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;d34515f6-cd6f-4e40-bb65-c930ef61f528&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="nt">&quot;showCheckedQuerySource&quot;</span><span class="p">:</span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
