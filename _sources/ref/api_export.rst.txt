@@ -48,6 +48,7 @@ Exports the dashboard, report or report part specified in request parameters.
       - PDF
       - CSV
       - XML
+      - HTML
       - JSON 
       - Query Execution
       - Definition (New in version 2.8.0)
