@@ -7,7 +7,17 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 	
-	
+
+v2.10.3 July 19, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect 21224 When using Custom In Time Period filter values, Schedules and Subscriptions fail to save
+-  Defect 21142 Angled labels on charts will not render when using an Azure Web Service.
+-  Defect 21074 Performance issues found for some joining options using rtrim in text fields, removing this option and using in memory option for join.
+
 v2.10.2 July 16, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
