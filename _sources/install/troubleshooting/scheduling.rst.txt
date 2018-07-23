@@ -42,7 +42,7 @@ You can use the script below to add the WebAPIUrl:
 Duplicate scheduled items are being sent 
 -----------------------------------------------------------------
 
-The Izenda Scheduler will store scheduling information in RAM of the server by default. If you are using any type of a distributed enviroment where there is more than one instance of the Izenda API (webfarms, etc.) you will need to use a database (ADO.NET job store) for storage of the scheduling information. Please follow the instructions below for setting up the scheduler to run in a distributed environment:
+The Izenda Scheduler will store scheduling information in RAM of the server by default. If you are using any type of a distributed environment where there is more than one instance of the Izenda API (webfarms, etc.) you will need to use a database (ADO.NET job store) for storage of the scheduling information. Please follow the instructions below for setting up the scheduler to run in a distributed environment:
 
 1. Download the creation script for your database type: |br|
 Download quartz database script ~\database\tables\tables\sqlServer.sql inside Quartz.NET-2.3.3.zip. Use that script to create database quartzNET233 on your DB server. https://github.com/quartznet/quartznet/releases/tag/v2.3.3 |br|
