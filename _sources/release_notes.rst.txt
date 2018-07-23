@@ -6,7 +6,18 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
-	
+
+v2.10.4 July 23, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect 20383 Report with multiple report parts shows report parts re-positioned when rendering report
+-  Defect 21005 Reports containing a form with a table may produce a corrupted file when exported to WORD
+-  Defect 21182 When using Save As or Copy from Report List, the new report should not contain the sourceid of the original report
+-  Defect 17038 In Report Viewer, close button is not enabled in Report Subscription page
+
 
 v2.10.3 July 19, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -15,7 +26,7 @@ FIXES
 ^^^^^
 
 -  Defect 21224 When using Custom In Time Period filter values, Schedules and Subscriptions fail to save
--  Defect 21142 Angled labels on charts will not render when using an Azure Web Service.
+-  Defect 21142 Angled labels on charts will not render when using an Azure Web Service
 -  Defect 21074 Performance issues found for some joining options using rtrim in text fields, removing this option and using in memory option for join.
 
 v2.10.2 July 16, 2018
@@ -1517,7 +1528,7 @@ FIXES
 -  Defect 17129  In MVC kit GUI is cut-off when user selects Presentation Mode icon after opening dashboard on some smaller screens
 -  Defect 17110  Query execution export is blank if report part uses calculated fields
 -  Defect 17099  Forms lose style settings in the HTML tab if fields are added/removed in the Visual Tab
--  Defect 17083  Subreport shows incorrect data when using group by year of date field in top level report and navigating to subreport
+
 -  Defect 17079  User is able to access to New Dashboard although has no dashboard permission on Tenant setup
 -  Defect 17068  Grand total only shows on the first page in UI of paginated report
 -  Defect 17066  Freeze function does not work in Quick edit mode of report viewer
@@ -2750,9 +2761,6 @@ Known Issues
      -  17032
      - Tool tip is not displayed on the information icon next to provision map data button in Settings page.
    * - Defect
-     -  17038
-     - In Report Viewer, close button is not enabled in Report Subscription page
-   * - Defect
      -  17039
      - In some circumstances, validations for column name and expressions in calculated fields are cleared.
    * - Defect
@@ -3835,9 +3843,6 @@ Known Issues
    * - Defect
      -  20382
      - Save As dialog box still present after utilizing Save As option from Report Viewer when a subreport enabled field is made non-visible.
-   * - Defect
-     -  20383
-     - Report with multiple report parts gets re-positioned when rendering report
    * - Defect
      -  20442
      - Filter Descriptions were not updated when exporting from the report list if OnPreExecute was used to change filter values. 
