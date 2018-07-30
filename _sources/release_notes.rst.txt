@@ -7,6 +7,18 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.10.5 July 30, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+-  Defect  21180  Removed cast on datetime fields when no offset is used for system or user
+-  Defect  21011  Filter Value Displays "No Results Found" While Loading Data
+-  Defect  20839  Deleted relationships cause copy management validation to fail
+-  Defect  19967  Having a period in database name causes errors when using forms
+-  Defect  19502  In Single Tenant Mode Copy Management should not be shown in settings
+-  Defect  18423  Subreport link in grid on datetime field to chart is failing with system error
+
 v2.10.4 July 23, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
