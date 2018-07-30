@@ -3334,9 +3334,6 @@ Known Issues
      -  18412
      - Border settings are not kept on "Configuration" section of report part grid.
    * - Defect
-     -  18423
-     - Subreport link in grid on datetime field to chart is failing with system error
-   * - Defect
      -  18426
      - Number of rows is not updated after cross filtering in report part on pagination control
    * - Defect
@@ -3754,9 +3751,6 @@ Known Issues
      -  19480
      - Header and Footer formatting not reflected in excel exports
    * - Defect
-     -  19502
-     - In Single Tenant Mode Copy Management should not be shown in settings.
-   * - Defect
      -  19505
      - MySQL configuration database fails to save very large physical database schema.
    * - Defect
@@ -3816,9 +3810,6 @@ Known Issues
    * - Defect
      -  19964
      - When using filer field comparison with two tables which have the same name, both sets of fields are listed in the same dropdown
-   * - Defect
-     -  19967
-     - Having a period in database name causes errors when using forms
    * - Defect
      -  20159
      - Columns do not sort when choosing recipient from list for emailing
