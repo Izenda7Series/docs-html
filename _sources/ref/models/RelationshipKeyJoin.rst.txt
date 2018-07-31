@@ -86,6 +86,11 @@ RelationshipKeyJoin
       -
       -  ``<foreignQuerySourceId>_[<foreignSourceAlias>|<foreignQuerySourceName>]``
       -
+   *  -  **convertedFromRelationshipId** |br|
+         string(GUID)
+      -  Y
+      -  The id of the relationship that converted to key join
+      -
 
 Inherited fields:
 

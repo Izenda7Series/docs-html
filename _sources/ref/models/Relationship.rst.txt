@@ -141,6 +141,13 @@ Relationship
       -
       -  ``<foreignQuerySourceId>_[<foreignAlias>|<foreignQuerySourceName>]``
       -
+   *  -  **hasBeenModified** |br|
+         boolean
+
+         .. versionadded:: 2.11.0
+      -
+      -  Whether the relationship has been modified or not
+      -
 
 Inherited fields:
 

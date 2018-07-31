@@ -33,3 +33,17 @@ RelationshipOrder
       -
       -  The ordinal position of this relationship inside a list of relationships
       -
+   *  -  **convertedKeyJoinIds** |br|
+         an array of string(GUID)
+
+         .. versionadded:: 2.11.0
+      -
+      -  The relationship ids that converted to key join
+      -
+   *  -  **hasBeenModified** |br|
+         boolean
+
+         .. versionadded:: 2.11.0
+      -
+      -  Whether the relationship has been modified or not
+      -

@@ -211,25 +211,23 @@ Preview pane:
       Chart - Show Value Labels |br|
 
 
--  Add threshold lines to the
-   chart. For example, to add a threshold to highlight any Month with
-   Total Freight higher than 6000:
+-  Add threshold lines to the chart.
 
-   #. In Data group, click the gear icon (⚙) to open Thresholds Settings
-      pop-up.
+   #. In Data group, click the gear icon (⚙) to open Thresholds Settings pop-up.
    #. In Y-axis, click Add Setting.
-   #. Enter "Over 6k" for the Label.
-   #. Enter "6000" for the Value.
-   #. Remember to tick the Visible check-box.
-   #. A horizontal line will be displayed at the 6000th unit on Y-axis.
-   #. The text format for the threshold's label can be further
-      customized by clicking the gear icon (⚙).
-   #. Click OK to close the Thresholds Settings pop-up.
+   #. Specify the threshold type: Static or Dynamic. Dynamic thresholds option is available from version 2.11.0.
+   #. Specify the Field that the threshold belongs to.
+   #. Input Label for the threshold. The text format for the static threshold’s label can be customized by clicking the gear icon (⚙)
+   #. Input a value for static threshold or add a field then choose a function for 
+   #. For Static threshold, input a number in Value textbox. For Dynamic threshold click "Add a field" then choose a field with its function and specify the format to draw threshold line.
+   #. Configure Dashstyle, Color and Thickness.
+   #. Remember to tick the Visible textbox.
+   #. Click OK to close the Thersholds Settings pop-up.
 
    .. _NW_Orders_Chart_Data_Thresholds_Settings:
 
    .. figure:: /_static/images/NW_Orders_Chart_Data_Thresholds_Settings.png
-      :width: 680px
+      :width: 845px
 
       Chart - Data Thresholds |br|
 
