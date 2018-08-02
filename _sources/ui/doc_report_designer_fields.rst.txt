@@ -108,7 +108,21 @@ Sample expressions:
 
 .. seealso::
 
-   -  :doc:`doc_available_calculated_field_expressions`
+   -  :doc:`doc_available_calculated_field_expressions`   
+  
+   
+.. warning::
+
+      Calculated fields have a limitation for nesting up to 6 levels. Please see the example below: |br|
+	  
+      Calculated Field [One] = [Retail].[dbo].[Orders].[OrderID] * 2 |br|
+      Calculated Field [Two] = [One] * 2 |br|
+      Calculated Field [Three] = [Two] * 2 |br|
+      Calculated Field [Four] = [Three] * 2 |br|
+      Calculated Field [Five] = [Four] * 2 |br|
+      Calculated Field [Six] = [Five] * 2 |br|
+	  
+      If the user tries to create Calculated Field [Seven] as [Six] * 2 the system will show an error that the nesting is too deep.
 
 Add a report filter
 ===================

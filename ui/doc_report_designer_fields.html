@@ -324,6 +324,17 @@ box. (<a class="reference internal" href="#report-designer-fields-field-properti
 <li><a class="reference internal" href="doc_available_calculated_field_expressions.html"><span class="doc">Available Calculated Field Expressions</span></a></li>
 </ul>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Calculated fields have a limitation for nesting up to 6 levels. Please see the example below: <br clear="right" /></p>
+<p>Calculated Field [One] = [Retail].[dbo].[Orders].[OrderID] * 2 <br clear="right" />
+Calculated Field [Two] = [One] * 2 <br clear="right" />
+Calculated Field [Three] = [Two] * 2 <br clear="right" />
+Calculated Field [Four] = [Three] * 2 <br clear="right" />
+Calculated Field [Five] = [Four] * 2 <br clear="right" />
+Calculated Field [Six] = [Five] * 2 <br clear="right" /></p>
+<p class="last">If the user tries to create Calculated Field [Seven] as [Six] * 2 the system will show an error that the nesting is too deep.</p>
+</div>
 </div>
 <div class="section" id="add-a-report-filter">
 <h2>Add a report filter<a class="headerlink" href="#add-a-report-filter" title="Permalink to this headline">¶</a></h2>
