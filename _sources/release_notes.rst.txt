@@ -17,7 +17,7 @@ FEATURES
 -  Custom Visualization Framework  
 	- New JavaScript APIs allow for the extension and customization of Izenda's current visualizations and the ability to use other charting and map libraries as well.
 	- :ref:`Front-end Integration APIs <Frontend_Integration_API>`
-	- Code examples can be found `here <https://github.com/Izenda7Series/IzendaCustomVisualizations>`_ on our GitHub repository
+	- Code examples can be found on our `GitHub repository <https://github.com/Izenda7Series/IzendaCustomVisualizations>`_ 
 
 -  Dynamic threshold options for charts 
 	- Threshold lines can now be set using a field to show a dynamic line for chart thresholds
