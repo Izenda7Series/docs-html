@@ -8,6 +8,19 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.11.1 August 6, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21326  When using RUNNING functions, conditional statements are not supported (IF, CASE, etc), when using division if the RUNNING field is 0 error will be shown to user. System should handle divide by 0 and return 0.
+-  Defect  21322  Stored procedure parameter defaults to filter position 1 after saving
+-  Defect  21253  Threshold Popup Settings keeps expanding to the right at certain zoom levels
+-  Defect  21222  When creating grid with separator and changing sort on grid columns, some times a null row appears and the subtotals are then incorrect.
+-  Defect  21221  UI becomes unresponsive when editing some form report parts
+-  Defect  18532  Settings of SubTotal is lost in form report part after setting it the first time
+
 v2.11.0 July 31, 2018
 ~~~~~~~~~~~~~~~~~~~~~
 
