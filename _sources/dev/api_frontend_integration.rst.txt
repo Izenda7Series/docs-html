@@ -72,7 +72,7 @@ List of APIs
        .. versionadded:: 2.6.20
    * - .. container:: lpad2
    
-          `getComponent(name)`_
+          `getClass(name)`_
      - Get the class by name |br|
 
        .. versionadded:: 2.11.0
@@ -617,7 +617,7 @@ This function is used in the LoadCustomDataFormat (see more `here <https://www.i
          })();
       </script>
       
-getComponent(name)
+getClass(name)
 ----------------------------------
 
 Get the class by name. Following is the list of supported classes that can be retrieved via this API:
@@ -703,7 +703,7 @@ Get the class by name. Following is the list of supported classes that can be re
 
    .. code-block:: javascript
 
-      getComponent('VizEngine');
+      getClass('VizEngine');
 
 
 registerVisualizationEngine(name, vizEngineClazz)
