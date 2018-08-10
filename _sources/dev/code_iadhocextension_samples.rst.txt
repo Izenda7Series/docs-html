@@ -165,81 +165,49 @@ Sample Method Implementations
       
                   Func<ReportFilterSetting, int, QuerySource, QuerySourceField, Guid, Relationship, int> addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =>
                   {
-                      var logic = "";
-      
-                      if (HttpContext.Current.User.IsInRole("Manager"))
+                      var firstFilter = new ReportFilterField
                       {
-                          var firstFilter = new ReportFilterField
-                          {
-                              Alias = $"ShipRegion{filterPosition}",
-                              QuerySourceId = querySource.Id,
-                              SourceDataObjectName = querySource.Name,
-                              QuerySourceType = querySource.Type,
-                              QuerySourceFieldId = field.Id,
-                              SourceFieldName = field.Name,
-                              DataType = field.DataType,
-                              Position = ++filterPosition,
-                              OperatorId = equalOperator,
-                              Value = "WA",
-                              RelationshipId = rel?.Id,
-                              IsParameter = false,
-                              ReportFieldAlias = null
-                          };
-      
-                          var secondFilter = new ReportFilterField
-                          {
-                              Alias = $"ShipRegion{filterPosition}",
-                              QuerySourceId = querySource.Id,
-                              SourceDataObjectName = querySource.Name,
-                              QuerySourceType = querySource.Type,
-                              QuerySourceFieldId = field.Id,
-                              SourceFieldName = field.Name,
-                              DataType = field.DataType,
-                              Position = ++filterPosition,
-                              OperatorId = equalOperator,
-                              Value = "[Blank]",
-                              RelationshipId = rel?.Id,
-                              IsParameter = false,
-                              ReportFieldAlias = null
-                          };
-                          result.FilterFields.Add(firstFilter);
-                          result.FilterFields.Add(secondFilter);
-      
-                          logic = $"({filterPosition - 1} OR {filterPosition})";
-                      }
-      
-                      if (HttpContext.Current.User.IsInRole("Employee"))
+                            Alias = $"ShipRegion{filterPosition}",
+                            QuerySourceId = querySource.Id,
+                            SourceDataObjectName = querySource.Name,
+                            QuerySourceType = querySource.Type,
+                            QuerySourceFieldId = field.Id,
+                            SourceFieldName = field.Name,
+                            DataType = field.DataType,
+                            Position = ++filterPosition,
+                            OperatorId = equalOperator,
+                            Value = "WA",
+                            RelationshipId = rel?.Id,
+                            IsParameter = false,
+                            ReportFieldAlias = null
+                      };
+
+                      var secondFilter = new ReportFilterField
                       {
-                          var thirdFilter = new ReportFilterField
-                          {
-                              Alias = $"ShipRegion{filterPosition}",
-                              QuerySourceId = querySource.Id,
-                              SourceDataObjectName = querySource.Name,
-                              QuerySourceType = querySource.Type,
-                              QuerySourceFieldId = field.Id,
-                              SourceFieldName = field.Name,
-                              DataType = field.DataType,
-                              Position = ++filterPosition,
-                              OperatorId = equalOperator,
-                              Value = "Europe",
-                              RelationshipId = rel?.Id,
-                              IsParameter = false,
-                              ReportFieldAlias = null
-                          };
-                          result.FilterFields.Add(thirdFilter);
-      
-                          logic = $"({filterPosition - 1})";
-                      }
-      
+                            Alias = $"ShipRegion{filterPosition}",
+                            QuerySourceId = querySource.Id,
+                            SourceDataObjectName = querySource.Name,
+                            QuerySourceType = querySource.Type,
+                            QuerySourceFieldId = field.Id,
+                            SourceFieldName = field.Name,
+                            DataType = field.DataType,
+                            Position = ++filterPosition,
+                            OperatorId = equalOperator,
+                            Value = "[Blank]",
+                            RelationshipId = rel?.Id,
+                            IsParameter = false,
+                            ReportFieldAlias = null
+                      };
+                      result.FilterFields.Add(firstFilter);
+                      result.FilterFields.Add(secondFilter);
+
+                      var logic = $"({filterPosition - 1} OR {filterPosition})";
+
                       if (string.IsNullOrEmpty(result.Logic))
                       {
-                          result.Logic = logic;
+                            result.Logic = logic;
                       }
-                      else
-                      {
-                          result.Logic += $" AND {logic}";
-                      }
-      
+
                       return filterPosition;
                   };
       

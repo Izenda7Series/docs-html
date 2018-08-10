@@ -420,10 +420,6 @@ Sample code to add hidden filter ShipRegion = "WA" or "[Blank]" for all:
                 {
                     result.Logic = logic;
                 }
-                else
-                {
-                    result.Logic += $" AND {logic}";
-                }
 
                 return filterPosition;
             };
