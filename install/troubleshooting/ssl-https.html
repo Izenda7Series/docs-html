@@ -111,6 +111,7 @@
 <li class="toctree-l3"><a class="reference internal" href="http.html">HTTP</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">SSL and HTTPS</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#application-throws-errors-when-ssl-is-used">Application throws errors when SSL is used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#when-using-tls-v1-2-certificates">When using TLS v1.2 Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -211,6 +212,23 @@
 <li>The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.</li>
 <li>System.Security.Authentication.AuthenticationException: The remote certificate is invalid according to the validation procedure.</li>
 </ul>
+</div>
+<div class="section" id="when-using-tls-v1-2-certificates">
+<h2>When using TLS v1.2 Certificates<a class="headerlink" href="#when-using-tls-v1-2-certificates" title="Permalink to this headline">¶</a></h2>
+<p>The following error may appear in your Izenda log file</p>
+<ul class="simple">
+<li>System.Net.Http.HttpRequestException: An error occurred while sending the request. &#8212;&gt; System.Net.WebException: The request was aborted: Could not create SSL/TLS secure channel.</li>
+</ul>
+<p>Please change the API Web.Config file to use the 4.6 httpRuntime element as below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;system.web&gt;</span>
+  <span class="nt">&lt;compilation</span> <span class="na">debug=</span><span class="s">&quot;true&quot;</span> <span class="na">targetFramework=</span><span class="s">&quot;4.6&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;httpRuntime</span> <span class="na">maxRequestLength=</span><span class="s">&quot;1048576&quot;</span> <span class="na">targetFramework=</span><span class="s">&quot;4.6&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;httpHandlers&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">verb=</span><span class="s">&quot;*&quot;</span> <span class="na">type=</span><span class="s">&quot;Nancy.Hosting.Aspnet.NancyHttpRequestHandler&quot;</span> <span class="na">path=</span><span class="s">&quot;api/*&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/httpHandlers&gt;</span>
+<span class="nt">&lt;/system.web&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
