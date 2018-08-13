@@ -7,6 +7,18 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.11.2 August 13, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  18938  Relative positioning of grids is not respected when the user changes the number of records or adds filters, causing unnecessary gaps between grids in the report 
+-  Defect  21242  Subreport returns 'No Results' with "Convert NULL to Empty String" and NULL as Field Mapped value
+-  Defect  21327  Izenda UI fails to render second time on Aurelia js framework
+-  Defect  21340  Sort Column Name setting is inverted/reversed
+-  Defect  21406  Custom Report Part Framework: registerVisualizationEngine, cannot register new frameworks
+-  Defect  19061  Report actions disabled at the tenant level may still be visible under Role Setup in some scenarios
 
 v2.11.1 August 6, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -3616,9 +3628,7 @@ Known Issues
    * - Defect
      -  18916
      - When using Oracle reporting database no record found when drill down in a Chart has Char data type in X-axis column
-   * - Defect
-     -  18938
-     - Relative positioning of grids is not respected when user changes number of records or adds filter causing unnecessary gaps between grids in the report
+between grids in the report
    * - Defect
      -  18944
      - Users without User Role Association could assign roles to other users via the Role Setup pages.
