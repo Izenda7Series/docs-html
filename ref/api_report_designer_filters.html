@@ -1192,7 +1192,7 @@ Sample response:</div>
 <div class="section" id="get-report-filter-timeperiods">
 <h2>GET report/filter/timePeriods<a class="headerlink" href="#get-report-filter-timeperiods" title="Permalink to this headline">¶</a></h2>
 <p>Returns pre-defined time periods (last week, next year, etc).</p>
-<p>This API also returns custom time periods if available (see <span class="xref std std-ref">POST_report/timePeriod</span> and IAdHocExtension&#8217;s <a class="reference internal" href="../dev/ref_iadhocextension.html#customtimeperiod"><span class="std std-ref">CustomTimePeriod</span></a>).</p>
+<p>This API also returns custom time periods if available (see IAdHocExtension&#8217;s <a class="reference internal" href="../dev/ref_iadhocextension.html#customtimeperiod"><span class="std std-ref">CustomTimePeriod</span></a>).</p>
 <p><strong>Request</strong></p>
 <blockquote>
 <div>No payload</div></blockquote>
@@ -5292,7 +5292,7 @@ Sample response:</div>
 <p>Returns data of a data source field for the Equivalence filter operators.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/ReportFilterSetting.html"><span class="doc">ReportFilterSetting</span></a> object</div></blockquote>
+<div>Payload: a <a class="reference internal" href="models/ReportSavingParameter.html"><span class="doc">ReportSavingParameter</span></a> object</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>An array of string values</div></blockquote>
@@ -5303,54 +5303,25 @@ Sample response:</div>
 </div>
 <p>Request payload:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;logic&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;filterFields&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-        <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;querySourceCategoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sourceFieldName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ShipCountry&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sourceFieldVisible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;sourceFieldFilterable&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;sourceDataObjectName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;dataType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;filterId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;querySourceFieldId&quot;</span> <span class="p">:</span> <span class="s2">&quot;b703f89d-745d-4f14-baf4-325078c6fa56&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;querySourceType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9ef435d9-0864-403e-b74e-69e86115e8ce&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;relationshipId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;ShipCountry&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;position&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;required&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;cascading&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;operatorId&quot;</span> <span class="p">:</span> <span class="s2">&quot;003c0e13-cc3c-412f-8fee-1cf21aa51e31&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;operatorSetting&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sortType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Unsorted&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;fontFamily&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;fontSize&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;textColor&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;backgroundColor&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;fontBold&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;fontItalic&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;fontUnderline&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s2">&quot;dateTimeNow&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;isParameter&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-        <span class="s2">&quot;sourceDataObjectFullName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind.dbo.Orders&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;dataFormatId&quot;</span> <span class="p">:</span> <span class="n">null</span>
-     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3b6f20f2-09f3-42a9-9e1e-c9db71b4ea7a&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;reportId&quot;</span> <span class="p">:</span> <span class="s2">&quot;59aaae21-d3f7-43aa-bda0-590f3106dbb9&quot;</span>
+  <span class="s2">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;393e1e18-12b2-4af4-9306-324bea56e4a4&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;report&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;reportDataSource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;3aa98631-1c04-453e-a005-cc194d69c9f4&quot;</span>
+    <span class="p">}],</span>
+    <span class="s2">&quot;reportFilter&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;filterFields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+          <span class="s2">&quot;querySourceFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;3c0a5acd-3489-4a1e-86cf-061a10f68173&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}]</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Finland&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;Brazil&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico&quot;</span><span class="p">,</span> <span class="s2">&quot;Sweden&quot;</span><span class="p">,</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;Poland&quot;</span><span class="p">,</span> <span class="s2">&quot;BrazilRT&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Ireland&quot;</span><span class="p">,</span> <span class="s2">&quot;Norway&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Belgium&quot;</span><span class="p">,</span> <span class="s2">&quot;Spain&quot;</span><span class="p">,</span> <span class="s2">&quot;Venezuela&quot;</span><span class="p">,</span> <span class="s2">&quot;Denmark&quot;</span><span class="p">,</span> <span class="s2">&quot;Portugal&quot;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Argentina&quot;</span><span class="p">,</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span><span class="s2">&quot;Belgium&quot;</span><span class="p">,</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span><span class="s2">&quot;Denmark&quot;</span><span class="p">,</span><span class="s2">&quot;Finland&quot;</span><span class="p">,</span><span class="s2">&quot;France&quot;</span><span class="p">,</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span><span class="s2">&quot;Ireland&quot;</span><span class="p">,</span><span class="s2">&quot;Italy&quot;</span><span class="p">,</span><span class="s2">&quot;Mexico&quot;</span><span class="p">,</span><span class="s2">&quot;Norway&quot;</span><span class="p">,</span><span class="s2">&quot;Poland&quot;</span><span class="p">,</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span><span class="s2">&quot;Spain&quot;</span><span class="p">,</span><span class="s2">&quot;Sweden&quot;</span><span class="p">,</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span><span class="s2">&quot;UK&quot;</span><span class="p">,</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span><span class="s2">&quot;Venezuela&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div></blockquote>

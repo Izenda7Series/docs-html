@@ -984,7 +984,7 @@ GET report/filter/timePeriods
 
 Returns pre-defined time periods (last week, next year, etc).
 
-This API also returns custom time periods if available (see :ref:`POST_report/timePeriod` and IAdHocExtension's :ref:`CustomTimePeriod`).
+This API also returns custom time periods if available (see IAdHocExtension's :ref:`CustomTimePeriod`).
 
 **Request**
 
@@ -5116,7 +5116,7 @@ Returns data of a data source field for the Equivalence filter operators.
 
 **Request**
 
-    Payload: a :doc:`models/ReportFilterSetting` object
+    Payload: a :doc:`models/ReportSavingParameter` object
 
 **Response**
 
@@ -5131,54 +5131,25 @@ Returns data of a data source field for the Equivalence filter operators.
    Request payload::
 
       {
-        "logic" : "",
-        "visible" : false,
-        "filterFields" : [{
-              "connectionName" : "Northwind",
-              "querySourceCategoryName" : "dbo",
-              "sourceFieldName" : "ShipCountry",
-              "sourceFieldVisible" : true,
-              "sourceFieldFilterable" : true,
-              "sourceDataObjectName" : "Orders",
-              "dataType" : "Text",
-              "filterId" : "00000000-0000-0000-0000-000000000000",
-              "querySourceFieldId" : "b703f89d-745d-4f14-baf4-325078c6fa56",
-              "querySourceType" : "Table",
-              "querySourceId" : "9ef435d9-0864-403e-b74e-69e86115e8ce",
-              "relationshipId" : null,
-              "alias" : "ShipCountry",
-              "position" : 1,
-              "visible" : false,
-              "required" : false,
-              "cascading" : true,
-              "operatorId" : "003c0e13-cc3c-412f-8fee-1cf21aa51e31",
-              "operatorSetting" : null,
-              "value" : "",
-              "sortType" : "Unsorted",
-              "fontFamily" : null,
-              "fontSize" : 0,
-              "textColor" : null,
-              "backgroundColor" : null,
-              "fontBold" : false,
-              "fontItalic" : false,
-              "fontUnderline" : false,
-              "id" : "00000000-0000-0000-0000-000000000000",
-              "state" : 0,
-              "modified" : null,
-              "dateTimeNow" : "",
-              "isParameter" : false,
-              "sourceDataObjectFullName" : "Northwind.dbo.Orders",
-              "selected" : true,
-              "dataFormatId" : null
-           }
-        ],
-        "id" : "3b6f20f2-09f3-42a9-9e1e-c9db71b4ea7a",
-        "reportId" : "59aaae21-d3f7-43aa-bda0-590f3106dbb9"
+        "reportKey": {
+          "key": "393e1e18-12b2-4af4-9306-324bea56e4a4",
+        },
+        "report": {
+          "reportDataSource": [{
+              "querySourceId": "3aa98631-1c04-453e-a005-cc194d69c9f4"
+          }],
+          "reportFilter": {
+            "filterFields": [{
+                "querySourceFieldId": "3c0a5acd-3489-4a1e-86cf-061a10f68173",
+                "selected": true
+            }]
+          },
+        },
       }
 
    Response::
 
-      ["Finland", "USA", "Italy", "Brazil", "Germany", "Switzerland", "Mexico", "Sweden", "Argentina", "Austria", "UK", "Poland", "BrazilRT", "Canada", "Ireland", "Norway", "France", "Belgium", "Spain", "Venezuela", "Denmark", "Portugal"]
+      ["Argentina","Austria","Belgium","Brazil","Canada","Denmark","Finland","France","Germany","Ireland","Italy","Mexico","Norway","Poland","Portugal","Spain","Sweden","Switzerland","UK","USA","Venezuela"]
 
 .. _POST_report/loadFilterFieldDataAsTree:
 
