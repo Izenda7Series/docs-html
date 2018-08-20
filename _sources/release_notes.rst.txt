@@ -7,6 +7,15 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.11.3 August 13, 2018
+~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  18947  Typing text on any select box on IE11, the first character of tying text is lost.
+-  Defect  21416  When using Forms in Dashboard some content that exists outside of Viewport still seen in export.  
+
 v2.11.2 August 13, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3437,9 +3446,6 @@ Known Issues
      -  18529
      - When user selects 2 data sources and creates a join, then adds filters which use filter logic to the report and deselects the data source containing the filter fields on the data source tab, they cannot proceed to the fields tab again.
    * - Defect
-     -  18532
-     - Settings of SubTotal is lost in form report part after setting it the first time
-   * - Defect
      -  18534
      - Grid Type Report Part always display top 10 records when rendering it by integration API, it is not respecting the saved records per page limit in the report part
    * - Defect
@@ -3632,9 +3638,6 @@ between grids in the report
    * - Defect
      -  18944
      - Users without User Role Association could assign roles to other users via the Role Setup pages.
-   * - Defect
-     -  18947
-     - When saving a report and entering the subcategory, the first character of the subcategory text is briefly removed with each keystroke.
    * - Defect
      -  18960
      - System allows user to update a category name to blank when clicking on Cancel button
