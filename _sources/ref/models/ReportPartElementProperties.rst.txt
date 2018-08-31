@@ -318,6 +318,15 @@ ReportPartElementProperties
             string
       -
       -  The cached preview result
+   *  -  .. container:: lpad4
+
+            **levels** |br|
+            string
+      -
+      -  The level of subtotal |br|
+         For Form report part only 
+
+         .. versionadded:: 2.12.0
    *  -  .. container:: lpad2
 
             **grandTotal** |br|

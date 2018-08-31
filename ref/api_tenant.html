@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tenant APIs &mdash; Izenda BI 2.11.4 documentation</title>
+  <title>Tenant APIs &mdash; Izenda BI 2.12.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.11.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.12.0 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Role APIs" href="api_role.html"/>
         <link rel="prev" title="Data Model APIs" href="api_data_model.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                2.11
+                2.12
               </div>
             
           
@@ -652,10 +652,16 @@ Sample Response :</div>
 </div>
 <div class="section" id="post-tenant">
 <span id="id1"></span><h2>POST tenant<a class="headerlink" href="#post-tenant" title="Permalink to this headline">¶</a></h2>
-<p>Saves a tenant.</p>
+<p>Creates or updates a tenant.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</p>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li>The <em>permission</em> property can be null when creating a new tenant, but when updating this property is required <br clear="right" /></li>
+<li>The <em>version</em> number must increment when updating a tenant</li>
+</ul>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -925,7 +931,7 @@ Request payload with full permission (see <a class="reference internal" href="mo
       <span class="nt">&quot;tenantAccess&quot;</span><span class="p">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">},</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">2</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1132,7 +1138,13 @@ Request payload with full permission (see <a class="reference internal" href="mo
 <p>Adds or updates external tenant.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</div></blockquote>
+<div><p>Payload: a <a class="reference internal" href="models/Tenants.html"><span class="doc">Tenants</span></a> object</p>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li>The <em>permission</em> property can be null when creating a new tenant, but when updating this property is required <br clear="right" /></li>
+<li>The <em>version</em> number must increment when updating a tenant</li>
+</ul>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>Should be true</div></blockquote>
@@ -1467,7 +1479,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.11.4',
+            VERSION:'2.12.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

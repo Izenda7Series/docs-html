@@ -436,28 +436,33 @@ Returns the tenant specified by tenant_id.
 POST tenant
 --------------------------------------------------------------
 
-Saves a tenant.
+Creates or updates a tenant.
 
 **Request**
 
-    Payload: a :doc:`models/Tenants` object
+   Payload: a :doc:`models/Tenants` object
+
+   **Notes:**
+   
+   -  The *permission* property can be null when creating a new tenant, but when updating this property is required |br|
+   -  The *version* number must increment when updating a tenant
 
 **Response**
 
-    .. list-table::
-       :header-rows: 1
+   .. list-table::
+      :header-rows: 1
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **success** |br|
-             boolean
-          -  Should be true
-          -
-       *  -  **tenant** |br|
-             object
-          -  The saved :doc:`models/Tenants` object
-          -
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **success** |br|
+            boolean
+         -  Should be true
+         -
+      *  -  **tenant** |br|
+            object
+         -  The saved :doc:`models/Tenants` object
+         -
 
 **Samples**
 
@@ -706,7 +711,7 @@ Saves a tenant.
                "tenantAccess": 1
              }
            },
-           "version": 0
+           "version": 2
          }
 
 POST tenant/active/{tenant_id}
@@ -932,7 +937,12 @@ Adds or updates external tenant.
 
 **Request**
 
-    Payload: a :doc:`models/Tenants` object
+   Payload: a :doc:`models/Tenants` object
+    
+   **Notes:**
+   
+   -  The *permission* property can be null when creating a new tenant, but when updating this property is required |br|
+   -  The *version* number must increment when updating a tenant
 
 **Response**
 

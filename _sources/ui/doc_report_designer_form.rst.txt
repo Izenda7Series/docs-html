@@ -374,3 +374,19 @@ Steps for this specific sample:
 
 
 .. |Form Link Display.png| image::  /_static/images/Form_Link_Display.png
+
+.. _Form_Subtotal_Inside_Repeater:
+
+From version 2.12.0, Izenda supports the form report part containing subtotal inside repeater(s). |br|
+
+For example:
+
+   .. figure:: /_static/images/Report_Form/Form_Subtotal_Inside_Repeater_Designer.png
+
+      Form - Subtotal inside repeaters - Configuration |br|
+
+   .. figure:: /_static/images/Report_Form/Form_Subtotal_Inside_Repeater_View.png
+      
+      Form - Subtotal inside repeaters - Preview |br|
+
+**Notes:** Subtotals are not supported for parallel repeaters, only nested repeater structures.

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Report Designer/Design &mdash; Izenda BI 2.11.4 documentation</title>
+  <title>Report Designer/Design &mdash; Izenda BI 2.12.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.11.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.12.0 documentation" href="../index.html"/>
         <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
         <link rel="next" title="Report Designer/Format" href="doc_report_designer_format.html"/>
         <link rel="prev" title="Report Designer/Data Source" href="doc_report_designer_data_source.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                2.11
+                2.12
               </div>
             
           
@@ -419,16 +419,23 @@ The alias can contain any characters except for &#8220;[&#8221; and &#8220;]&#82
 &#8220;Atlanta&#8221;) should be hidden at runtime.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Select the filter to be required or not.</p>
-<blockquote>
-<div><p>A required filter will force end-user to enter filter values in
+<li><dl class="first docutils">
+<dt>Select the filter to be required or not.</dt>
+<dd><blockquote class="first">
+<div></div></blockquote>
+<p id="report-designer-required-filter">A required filter will force end-user to enter filter values in
 order to run it.
 Contrary to a fixed condition, the example report above could be
 more flexible if the &#8220;City&#8221;-equals-&#8220;Atlanta&#8221; filter is visible
 and not required. Then the report still shows customers in
 Atlanta by default, but end-user can select another city or even
 empty the value to show all customers. Screenshot to be updated.</p>
-</div></blockquote>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For a stored procedure&#8217;s parameter, if the Required checkbox is not selected and the filter value is empty, the stored procedure will be executed with &#8216;null&#8217; value. If your stored procedures do not return all results when null is passed, leaving this value as null will always return no results. This is a new behavior from version 2.12.0.</p>
+</div>
+</dd>
+</dl>
 </li>
 <li><p class="first">Select the filter to be cascading or not.</p>
 <blockquote>
@@ -1227,7 +1234,7 @@ as parent report.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.11.4',
+            VERSION:'2.12.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

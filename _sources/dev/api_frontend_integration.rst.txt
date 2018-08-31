@@ -132,6 +132,12 @@ List of APIs
        .. versionadded:: 2.11.0
    * - .. container:: lpad2
    
+          `createFieldContainerSchema`_
+     - Create a label and a field input box which allows to add/remove or drag/drop a field into. |br|
+
+       .. versionadded:: 2.11.0
+   * - .. container:: lpad2
+   
           `createStaticLabelFieldContainerSchema`_
      - Create a static label only without input box. |br|
 
@@ -1041,7 +1047,7 @@ Create a color palette editor schema in Properties editor panel. It appears as a
 
 registerFieldContainer
 -----------------------------------------------------
-Register field container with its factory function in order to create a custom field container in Report Designer's report part configuration. Most of the time, using createFieldContainerSchema function to create labeled box of fields fits in the same way with current Values, Labels... field containers.|br|
+Register field container with its factory function in order to create a custom field container in Report Designer's report part configuration. Most of the time, using `createFieldContainerSchema`_ function to create labeled box of fields fits in the same way with current Values, Labels... field containers.|br|
 
 .. versionadded:: 2.11.0
 
@@ -1071,6 +1077,40 @@ Register field container with its factory function in order to create a custom f
       });
 
    Returns *void*
+
+createFieldContainerSchema
+-------------------------------------------------------
+
+Create a label and a field input box which allows to add/remove or drag/drop a field into.
+
+.. versionadded:: 2.11.0
+
+**Parameters**
+
+   .. list-table::
+      :widths: 20 80
+
+      * - **containerKey**
+        - An unique container key to identify the container
+      * - **label**
+        - The label text value or a function returning a text
+      * - **dataKey**
+        - Data key to access container information of report part content's property
+      * - **height**
+        - Pixel height of container. Leave it null or undefined to use default height
+      * - **maximumField**
+        - Maximum number of fields in the container. Leave it null or undefined to unlimit the number of fields
+      * - **isHorizontal**
+        - Whether horizontal alignment between label and input box or not |br|
+          (It is optional with the default value is false)
+
+**Sample**
+
+*Create Z-Axis Values field container with dataKey is ZValues, having default height and 1 field maximum*
+
+   .. code-block:: javascript
+
+      createFieldContainerSchema('ZValues', 'Z-Axis Values', 'ZValues', null, 1);
 
 createStaticLabelFieldContainerSchema
 -------------------------------------------------------

@@ -83,6 +83,8 @@ A page will exist in your application to render Izenda Components. This page wil
 
 * **Referencing the EmbeddedUI Resources** : the EmbeddedUI resources can be bundled with the host application's resources or referenced directly on the page. The following order ensures that resources are loaded correctly to be referenced in "izenda.integrate.js" or a comparable front-end implementation in the host application.
 
+    * izenda-ui.css
+    
     * izenda_common.js
     
     * izenda_locales.js
