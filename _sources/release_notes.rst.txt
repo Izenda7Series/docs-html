@@ -19,7 +19,7 @@ FEATURES
 	- Single Y Axis Option on combination chart property panel allows users to display multiple metrics on a single axis. See documentation on :ref:`Single Y Axis <Report_Designer_Single_Yaxis>`
 	- The combination chart now supports the area chart style for metrics. See documentation on :ref:`Combination Chart <NW_Order_Details_Combination_Sales_and_DiscountSales>`
 
--  Reqression Lines for Charts 
+-  Regression Lines for Charts 
 	- Regression lines are now available for chart types Line, Column, Bar, Area, Combination, Scatter, and Bubble.
 	- The regression types supported are Linear, Polynomial, Logarithmic, or Exponential
 	- See documentation on :ref:`Regression Lines <Chart_Regression_Line>`
