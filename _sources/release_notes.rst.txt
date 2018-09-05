@@ -8,6 +8,18 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.12.1 September 5, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21607  Subtotal is not calculated properly for Pivot/Dripdown Grids.
+-  Defect  21411  Clicking 'Update Results' in the data sources tab of the designer would remove foreign fields from aliased joins. 
+-  Defect  21366  When 'Snap to Grid' is disabled, some reports would be re-positioned when rendering the report. 
+-  Defect  21251  Pivot Grid Subreport Not Restricting Row Count Based on Field Mappings.
+-  Defect  21223  Altered PDF and Print process to use SVG for chart, gauge, map render to improve quality of image. This process cannot be used for Excel, Word, or HTML Email as these export types cannot accept SVG.
+
 
 v2.12.0 August 31, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
