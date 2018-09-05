@@ -17,12 +17,12 @@ FEATURES
 
 -  Combination Chart Enhancements  
 	- Single Y Axis Option on combination chart property panel allows users to display multiple metrics on a single axis. See documentation on :ref:`Single Y Axis <Report_Designer_Single_Yaxis>`
-	- The combination chart now supports the area chart style for metrics. See documenation on :ref:`Combination Chart <NW_Order_Details_Combination_Sales_and_DiscountSales>`
+	- The combination chart now supports the area chart style for metrics. See documentation on :ref:`Combination Chart <NW_Order_Details_Combination_Sales_and_DiscountSales>`
 
 -  Reqression Lines for Charts 
 	- Regression lines are now available for chart types Line, Column, Bar, Area, Combination, Scatter, and Bubble.
 	- The regression types supported are Linear, Polynomial, Logarithmic, or Exponential
-	- See documenation on :ref:`Regression Lines <Chart_Regression_Line>`
+	- See documentation on :ref:`Regression Lines <Chart_Regression_Line>`
 
 -  Required Values for Stored Procedures
 	- Prior to 2.12.0 values for all stored procedure input parameters were required. With the 2.12.0 release, by default the values will be required with the "Required" flag set in the filter's property panel. If the user deselects the required option, the value is not required and NULL will be passed to the stored procedure. See documentation on :ref:`Required Filters <Report_Designer_Required_Filter>`
