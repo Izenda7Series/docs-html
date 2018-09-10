@@ -7,6 +7,21 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.12.2 September 10, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21415  Valid calculated fields fail to add to the field list in the report designer.
+-  Defect  21489  When exporting charts from the MVC starter kit, the x-axis is cut off.
+-  Defect  21611  Removal of a filter in the report designer persists if the report isn't saved but opened in new tab. 
+-  Defect  18984  Izenda configuration tables fail to create when using a case sensitive database on MSSQL.
+-  Defect  20837  Titles and/or descriptions in text dashboard tiles are being duplicated in exports.
+
+.. note::
+	Defect 21489 has been resolved via CSS in the MVC5 Starterkit on our GitHub repository.
+
 
 v2.12.1 September 5, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
