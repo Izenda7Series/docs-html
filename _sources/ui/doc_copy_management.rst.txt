@@ -147,6 +147,7 @@ schema name in destination is different from logical data model).
 
 Rules:
 
+-  Roles, Role Permissons, and Tenant Permissions can only be copied between tenants. They cannot be copied from system to tenant. This is due to the nature of system level permissions.
 -  Tenants without a Database mapping will be copied to the same
    database connection.
 -  Each schema without mapping will be copied to a schema with the same
