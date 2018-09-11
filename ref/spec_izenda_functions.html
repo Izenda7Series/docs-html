@@ -221,42 +221,42 @@
 Numeric, Money</td>
 <td>Returns the average of the values in a group. Null values are ignored.</td>
 <td>Numeric, Money</td>
-<td>&#160;</td>
+<td><code class="docutils literal"><span class="pre">AVG([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>COUNT</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">COUNT(expression)</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns the number of items in a group.</td>
 <td>Numeric.</td>
-<td>&#160;</td>
+<td><code class="docutils literal"><span class="pre">COUNT([Retail].[dbo].[Orders].[OrderID])</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>MAX</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">MAX(expression)</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns the maximum value in a group.</td>
 <td>The same data type as expression.</td>
-<td>&#160;</td>
+<td><code class="docutils literal"><span class="pre">MAX([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>MIN</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">MIN(expression)</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns the minimum value in a group.</td>
 <td>The same data type as expression.</td>
-<td>&#160;</td>
+<td>MIN([Retail].[dbo].[Orders].[Freight])</td>
 </tr>
 <tr class="row-even"><td><strong>SUM</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">SUM(expression)</span></code> <br clear="right" /> <br clear="right" />
 Numeric, Money.</td>
 <td>Returns the sum of all the values in a group. Null values are ignored.</td>
 <td>The same data type as expression.</td>
-<td>&#160;</td>
+<td>SUM([Retail].[dbo].[Orders].[Freight])</td>
 </tr>
 <tr class="row-odd"><td><strong>LEN</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">LEN(expression)</span></code> <br clear="right" /> <br clear="right" />
 Text.</td>
 <td>Returns the number of characters of the given text expression, excluding trailing blanks.</td>
 <td>Numeric.</td>
-<td>&#160;</td>
+<td>LEN([Retail].[dbo].[Orders].[ShipAddress])</td>
 </tr>
 <tr class="row-even"><td><strong>ROUND</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">ROUND(expression)</span></code> <br clear="right" /> <br clear="right" />
@@ -277,7 +277,7 @@ Text.</td>
 N/A.</td>
 <td>Returns the current system date and time.</td>
 <td>Datetime.</td>
-<td>&#160;</td>
+<td>GETDATE()</td>
 </tr>
 <tr class="row-odd"><td><strong>DATEADD</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">DATEADD(datepart,</span> <span class="pre">number,</span> <span class="pre">date)</span></code> <br clear="right" /> <br clear="right" />
@@ -302,7 +302,7 @@ N/A.</td>
 <strong>date</strong>: an expression that returns a datetime value.</td>
 <td>Returns a number representing the specified datepart of the specified date.</td>
 <td>Numeric.</td>
-<td>&#160;</td>
+<td>DATEPART(DAY,[Retail].[dbo].[Orders].[OrderDate])</td>
 </tr>
 <tr class="row-even"><td><strong>CONVERT</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CONVERT(data_type,</span> <span class="pre">expression)</span></code> <br clear="right" /> <br clear="right" />
@@ -310,7 +310,7 @@ N/A.</td>
 <strong>expression</strong>: any expression.</td>
 <td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CAST..AS</span></code>.</td>
 <td>The same data type as data_type.</td>
-<td>&#160;</td>
+<td>CONVERT(TEXT,[Retail].[dbo].[Orders].[OrderDate])</td>
 </tr>
 <tr class="row-odd"><td><strong>CAST..AS</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CAST(expression</span> <span class="pre">AS</span> <span class="pre">data_type)</span></code> <br clear="right" /> <br clear="right" />
@@ -318,14 +318,14 @@ N/A.</td>
 <strong>expression</strong>: any expression.</td>
 <td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CONVERT</span></code>.</td>
 <td>The same data type as data_type.</td>
-<td>&#160;</td>
+<td>CAST([Retail].[dbo].[Orders].[OrderID] AS TEXT)</td>
 </tr>
 <tr class="row-even"><td><strong>ISNULL</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">ISNULL(check_expression,</span> <span class="pre">replacement_expression)</span></code> <br clear="right" /> <br clear="right" />
 <strong>check_expression</strong> and <strong>replacement_expression</strong>: any data type.</td>
 <td>Returns the value of check_expression if it is not NULL; otherwise, returns the value of replacement_expression.</td>
 <td>The same data type as expression.</td>
-<td>&#160;</td>
+<td>ISNULL([Retail].[dbo].[Orders].[ShipRegion] , &#8216;No Region&#8217;)</td>
 </tr>
 <tr class="row-odd"><td><strong>BETWEEN..AND</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">test_expression</span> <span class="pre">[NOT]</span> <span class="pre">BETWEEN</span> <span class="pre">begin_expression</span> <span class="pre">AND</span> <span class="pre">end_expression</span></code> <br clear="right" /> <br clear="right" />

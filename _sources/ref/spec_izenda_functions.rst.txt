@@ -18,37 +18,37 @@ List of Built-in Functions
        Numeric, Money
      - Returns the average of the values in a group. Null values are ignored.
      - Numeric, Money
-     -
+     - ``AVG([Retail].[dbo].[Orders].[Freight])``
    * - **COUNT** |br| |br|
        ``COUNT(expression)`` |br| |br|
        Any data type except Image and Lob.
      - Returns the number of items in a group.
      - Numeric.
-     -
+     - ``COUNT([Retail].[dbo].[Orders].[OrderID])``
    * - **MAX** |br| |br|
        ``MAX(expression)`` |br| |br|
        Any data type except Image and Lob.
      - Returns the maximum value in a group.
      - The same data type as expression.
-     -
+     - ``MAX([Retail].[dbo].[Orders].[Freight])``
    * - **MIN** |br| |br|
        ``MIN(expression)`` |br| |br|
        Any data type except Image and Lob.
      - Returns the minimum value in a group.
      - The same data type as expression.
-     -
+     - MIN([Retail].[dbo].[Orders].[Freight])
    * - **SUM** |br| |br|
        ``SUM(expression)`` |br| |br|
        Numeric, Money.
      - Returns the sum of all the values in a group. Null values are ignored.
      - The same data type as expression.
-     -
+     - SUM([Retail].[dbo].[Orders].[Freight])
    * - **LEN** |br| |br|
        ``LEN(expression)`` |br| |br|
        Text.
      - Returns the number of characters of the given text expression, excluding trailing blanks.
      - Numeric.
-     -
+     - LEN([Retail].[dbo].[Orders].[ShipAddress])
    * - **ROUND** |br| |br|
        ``ROUND(expression)`` |br| |br|
        Numeric, Money.
@@ -66,7 +66,7 @@ List of Built-in Functions
        N/A.
      - Returns the current system date and time.
      - Datetime.
-     -
+     - GETDATE()
    * - **DATEADD** |br| |br|
        ``DATEADD(datepart, number, date)`` |br| |br|
        **datepart**: the part of the date. (See table `List of Dateparts and Abbreviations`_) |br| |br|
@@ -88,27 +88,27 @@ List of Built-in Functions
        **date**: an expression that returns a datetime value.
      - Returns a number representing the specified datepart of the specified date.
      - Numeric.
-     -
+     - DATEPART(DAY,[Retail].[dbo].[Orders].[OrderDate])
    * - **CONVERT** |br| |br|
        ``CONVERT(data_type, expression)`` |br| |br|
        **data_type**: any data type. |br| |br|
        **expression**: any expression.
      - Explicitly converts an expression of one data type to another, similar to ``CAST..AS``.
      - The same data type as data_type.
-     -
+     - CONVERT(TEXT,[Retail].[dbo].[Orders].[OrderDate])
    * - **CAST..AS** |br| |br|
        ``CAST(expression AS data_type)`` |br| |br|
        **data_type**: any data type. |br| |br|
        **expression**: any expression.
      - Explicitly converts an expression of one data type to another, similar to ``CONVERT``.
      - The same data type as data_type.
-     -
+     - CAST([Retail].[dbo].[Orders].[OrderID] AS TEXT)
    * - **ISNULL** |br| |br|
        ``ISNULL(check_expression, replacement_expression)`` |br| |br|
        **check_expression** and **replacement_expression**: any data type.
      - Returns the value of check_expression if it is not NULL; otherwise, returns the value of replacement_expression.
      - The same data type as expression.
-     -
+     - ISNULL([Retail].[dbo].[Orders].[ShipRegion] , 'No Region')
    * - **BETWEEN..AND** |br| |br|
        ``test_expression [NOT] BETWEEN begin_expression AND end_expression`` |br| |br|
        Any data type except Image and Lob.
