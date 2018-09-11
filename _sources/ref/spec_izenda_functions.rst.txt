@@ -54,7 +54,7 @@ List of Built-in Functions
        Numeric, Money.
      - Returns the expression rounded to the specified length or precision.
      - The same data type as expression.
-     -
+     - ``ROUND([Retail].[dbo].[Orders].[Freight],0)``
    * - **CONCAT** |br| |br|
        ``CONCAT(expression, expression [, ...])`` |br| |br|
        Text.
@@ -132,7 +132,7 @@ List of Built-in Functions
        Any data type except Image and Lob.
      - Returns unique values.
      - The same data type as expression.
-     -
+     - ``COUNT(DISTINCT([Northwind].[dbo].[Orders].[ShipCity]))``
    * - **IFF** |br| |br|
        ``IFF (boolean_expression, true_expression[, false_expression])`` |br| |br|
        **boolean_expression**: Boolean. |br| |br|
@@ -158,19 +158,19 @@ List of Built-in Functions
        Numeric, Money.
      - Returns the sum of all the values of expression from the first row up to the current row.
      - The same data type as expression.
-     -
+     - ``RUNNINGSUM([Retail].[dbo].[Orders].[Freight])``
    * - **RUNNINGAVG** |br| |br|
        ``RUNNINGAVG(expression)`` |br| |br|
        Numeric, Money.
      - Returns the average of all the values of expression from the first row up to the current row.
      - The same data type as expression.
-     -
+     - ``RUNNINGAVG([Retail].[dbo].[Orders].[Freight])``
    * - **RUNNINGCOUNT** |br| |br|
        ``RUNNINGCOUNT(expression)`` |br| |br|
        Any data type except Image and Lob.
      - Returns the number of unique values of expression from the first row up to the current row.
      - Numeric.
-     -
+     - ``RUNNINGCOUNT([Retail].[dbo].[Orders].[OrderID])``
 
 List of Dateparts and Abbreviations
 -----------------------------------
