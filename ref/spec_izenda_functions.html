@@ -242,21 +242,21 @@ Any data type except Image and Lob.</td>
 Any data type except Image and Lob.</td>
 <td>Returns the minimum value in a group.</td>
 <td>The same data type as expression.</td>
-<td>MIN([Retail].[dbo].[Orders].[Freight])</td>
+<td><code class="docutils literal"><span class="pre">MIN([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>SUM</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">SUM(expression)</span></code> <br clear="right" /> <br clear="right" />
 Numeric, Money.</td>
 <td>Returns the sum of all the values in a group. Null values are ignored.</td>
 <td>The same data type as expression.</td>
-<td>SUM([Retail].[dbo].[Orders].[Freight])</td>
+<td><code class="docutils literal"><span class="pre">SUM([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>LEN</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">LEN(expression)</span></code> <br clear="right" /> <br clear="right" />
 Text.</td>
 <td>Returns the number of characters of the given text expression, excluding trailing blanks.</td>
 <td>Numeric.</td>
-<td>LEN([Retail].[dbo].[Orders].[ShipAddress])</td>
+<td><code class="docutils literal"><span class="pre">LEN([Retail].[dbo].[Orders].[ShipAddress])</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>ROUND</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">ROUND(expression)</span></code> <br clear="right" /> <br clear="right" />
@@ -277,7 +277,7 @@ Text.</td>
 N/A.</td>
 <td>Returns the current system date and time.</td>
 <td>Datetime.</td>
-<td>GETDATE()</td>
+<td><code class="docutils literal"><span class="pre">GETDATE()</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>DATEADD</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">DATEADD(datepart,</span> <span class="pre">number,</span> <span class="pre">date)</span></code> <br clear="right" /> <br clear="right" />
@@ -302,7 +302,7 @@ N/A.</td>
 <strong>date</strong>: an expression that returns a datetime value.</td>
 <td>Returns a number representing the specified datepart of the specified date.</td>
 <td>Numeric.</td>
-<td>DATEPART(DAY,[Retail].[dbo].[Orders].[OrderDate])</td>
+<td><code class="docutils literal"><span class="pre">DATEPART(DAY,[Retail].[dbo].[Orders].[OrderDate])</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>CONVERT</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CONVERT(data_type,</span> <span class="pre">expression)</span></code> <br clear="right" /> <br clear="right" />
@@ -310,7 +310,7 @@ N/A.</td>
 <strong>expression</strong>: any expression.</td>
 <td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CAST..AS</span></code>.</td>
 <td>The same data type as data_type.</td>
-<td>CONVERT(TEXT,[Retail].[dbo].[Orders].[OrderDate])</td>
+<td><code class="docutils literal"><span class="pre">CONVERT(TEXT,[Retail].[dbo].[Orders].[OrderDate])</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>CAST..AS</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CAST(expression</span> <span class="pre">AS</span> <span class="pre">data_type)</span></code> <br clear="right" /> <br clear="right" />
@@ -318,14 +318,14 @@ N/A.</td>
 <strong>expression</strong>: any expression.</td>
 <td>Explicitly converts an expression of one data type to another, similar to <code class="docutils literal"><span class="pre">CONVERT</span></code>.</td>
 <td>The same data type as data_type.</td>
-<td>CAST([Retail].[dbo].[Orders].[OrderID] AS TEXT)</td>
+<td><code class="docutils literal"><span class="pre">CAST([Retail].[dbo].[Orders].[OrderID]</span> <span class="pre">AS</span> <span class="pre">TEXT)</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>ISNULL</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">ISNULL(check_expression,</span> <span class="pre">replacement_expression)</span></code> <br clear="right" /> <br clear="right" />
 <strong>check_expression</strong> and <strong>replacement_expression</strong>: any data type.</td>
 <td>Returns the value of check_expression if it is not NULL; otherwise, returns the value of replacement_expression.</td>
 <td>The same data type as expression.</td>
-<td>ISNULL([Retail].[dbo].[Orders].[ShipRegion] , &#8216;No Region&#8217;)</td>
+<td><code class="docutils literal"><span class="pre">ISNULL([Retail].[dbo].[Orders].[ShipRegion]</span> <span class="pre">,</span> <span class="pre">'No</span> <span class="pre">Region')</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>BETWEEN..AND</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">test_expression</span> <span class="pre">[NOT]</span> <span class="pre">BETWEEN</span> <span class="pre">begin_expression</span> <span class="pre">AND</span> <span class="pre">end_expression</span></code> <br clear="right" /> <br clear="right" />
@@ -369,7 +369,7 @@ Any data type except Image and Lob.</td>
 <strong>true_expression</strong>, <strong>false_expression</strong>: any data type except Image and Lob.</td>
 <td>Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.</td>
 <td>The highest precedence data type from data types of true_expression and false_expression.</td>
-<td>&#160;</td>
+<td><code class="docutils literal"><span class="pre">IF</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">&lt;</span> <span class="pre">3)</span> <span class="pre">then</span> <span class="pre">'Less'</span> <span class="pre">else</span> <span class="pre">(</span> <span class="pre">IF</span> <span class="pre">(BETWEEN</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">6))</span> <span class="pre">then</span>&#160; <span class="pre">'More'</span> <span class="pre">else</span> <span class="pre">'Most'</span> <span class="pre">END)</span> <span class="pre">END</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>CASE..WHEN..THEN..ELSE..END</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CASE</span> <span class="pre">(input_expression)</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
