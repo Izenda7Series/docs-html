@@ -147,7 +147,7 @@ List of Built-in Functions
      - Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.
      - The highest precedence data type from data types of true_expression and false_expression.
      - ``IF ([northwind].[dbo].[Orders].[EmployeeID] < 3) then 'Less' else ( IF (BETWEEN ([northwind].[dbo].[Orders].[EmployeeID] , 3, 6)) then  'More' else 'Most' END) END``
-   * - **CASE WHEN...THEN...ELSE...END |br| |br|
+   * - **CASE WHEN...THEN...ELSE...END** |br| |br|
        ``CASE WHEN (when_expression) THEN (result_expression) […n] [ELSE (else_result_expression)] END`` |br| |br|
        Any data type except Image and Lob.
      - Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.
