@@ -328,11 +328,11 @@ N/A.</td>
 <td><code class="docutils literal"><span class="pre">ISNULL([Retail].[dbo].[Orders].[ShipRegion]</span> <span class="pre">,</span> <span class="pre">'No</span> <span class="pre">Region')</span></code></td>
 </tr>
 <tr class="row-odd"><td><strong>BETWEEN..AND</strong> <br clear="right" /> <br clear="right" />
-<code class="docutils literal"><span class="pre">test_expression</span> <span class="pre">[NOT]</span> <span class="pre">BETWEEN</span> <span class="pre">begin_expression</span> <span class="pre">AND</span> <span class="pre">end_expression</span></code> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">BETWEEN(expression,</span> <span class="pre">begin_expression,</span> <span class="pre">end_expression)</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns TRUE if the value of test_expression is greater than or equal to the value of begin_expression and less than or equal to the value of end_expression, otherwise returns FALSE.</td>
 <td>Boolean.</td>
-<td>&#160;</td>
+<td><code class="docutils literal"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">(BETWEEN</span> <span class="pre">([Retail].[dbo].[Orders].[EmployeeID],1</span> <span class="pre">,</span> <span class="pre">3))</span> <span class="pre">THEN</span> <span class="pre">1000</span> <span class="pre">else</span> <span class="pre">[Retail].[dbo].[Orders].[EmployeeID]</span> <span class="pre">END</span></code></td>
 </tr>
 <tr class="row-even"><td><strong>AND</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">boolean_expression</span> <span class="pre">AND</span> <span class="pre">boolean_expression</span></code> <br clear="right" /> <br clear="right" />
@@ -371,35 +371,42 @@ Any data type except Image and Lob.</td>
 <td>The highest precedence data type from data types of true_expression and false_expression.</td>
 <td><code class="docutils literal"><span class="pre">IF</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">&lt;</span> <span class="pre">3)</span> <span class="pre">then</span> <span class="pre">'Less'</span> <span class="pre">else</span> <span class="pre">(</span> <span class="pre">IF</span> <span class="pre">(BETWEEN</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">,</span> <span class="pre">3,</span> <span class="pre">6))</span> <span class="pre">then</span>&#160; <span class="pre">'More'</span> <span class="pre">else</span> <span class="pre">'Most'</span> <span class="pre">END)</span> <span class="pre">END</span></code></td>
 </tr>
-<tr class="row-odd"><td><strong>CASE..WHEN..THEN..ELSE..END</strong> <br clear="right" /> <br clear="right" />
-<code class="docutils literal"><span class="pre">CASE</span> <span class="pre">(input_expression)</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
-Any data type except Image and Lob.</td>
-<td>Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.</td>
-<td>The highest precedence data type from data types of all <code class="docutils literal"><span class="pre">result_expression</span></code> s and else_result_expression.</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><a href="#id1"><span class="problematic" id="id2">**</span></a>CASE WHEN...THEN...ELSE...END <br clear="right" /> <br clear="right" />
+<tr class="row-odd"><td><a href="#id1"><span class="problematic" id="id2">**</span></a>CASE WHEN...THEN...ELSE...END <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.</td>
 <td>The highest precedence data type from data types of all <code class="docutils literal"><span class="pre">result_expression</span></code> s and else_result_expression.</td>
 <td><code class="docutils literal"><span class="pre">Case</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">1)</span> <span class="pre">then</span> <span class="pre">'less'</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">)</span> <span class="pre">then</span> <span class="pre">'mid'</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">4)</span>&#160; <span class="pre">then</span> <span class="pre">'high'</span> <span class="pre">else</span> <span class="pre">'not</span> <span class="pre">evaluated'</span> <span class="pre">end</span></code></td>
 </tr>
-<tr class="row-odd"><td><strong>RUNNINGSUM</strong> <br clear="right" /> <br clear="right" />
+<tr class="row-even"><td><strong>CASE..WHEN..THEN..ELSE..END</strong> <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CASE</span> <span class="pre">(input_expression)</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.</td>
+<td>The highest precedence data type from data types of all <code class="docutils literal"><span class="pre">result_expression</span></code> s and else_result_expression.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a href="#id3"><span class="problematic" id="id4">**</span></a>CASE WHEN...THEN...ELSE...END <br clear="right" /> <br clear="right" />
+<code class="docutils literal"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">(when_expression)</span> <span class="pre">THEN</span> <span class="pre">(result_expression)</span> <span class="pre">[…n]</span> <span class="pre">[ELSE</span> <span class="pre">(else_result_expression)]</span> <span class="pre">END</span></code> <br clear="right" /> <br clear="right" />
+Any data type except Image and Lob.</td>
+<td>Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.</td>
+<td>The highest precedence data type from data types of all <code class="docutils literal"><span class="pre">result_expression</span></code> s and else_result_expression.</td>
+<td><code class="docutils literal"><span class="pre">Case</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">1)</span> <span class="pre">then</span> <span class="pre">'less'</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">)</span> <span class="pre">then</span> <span class="pre">'mid'</span> <span class="pre">when</span> <span class="pre">([northwind].[dbo].[Orders].[EmployeeID]</span> <span class="pre">=</span> <span class="pre">4)</span>&#160; <span class="pre">then</span> <span class="pre">'high'</span> <span class="pre">else</span> <span class="pre">'not</span> <span class="pre">evaluated'</span> <span class="pre">end</span></code></td>
+</tr>
+<tr class="row-even"><td><strong>RUNNINGSUM</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">RUNNINGSUM(expression)</span></code> <br clear="right" /> <br clear="right" />
 Numeric, Money.</td>
 <td>Returns the sum of all the values of expression from the first row up to the current row.</td>
 <td>The same data type as expression.</td>
 <td><code class="docutils literal"><span class="pre">RUNNINGSUM([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
-<tr class="row-even"><td><strong>RUNNINGAVG</strong> <br clear="right" /> <br clear="right" />
+<tr class="row-odd"><td><strong>RUNNINGAVG</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">RUNNINGAVG(expression)</span></code> <br clear="right" /> <br clear="right" />
 Numeric, Money.</td>
 <td>Returns the average of all the values of expression from the first row up to the current row.</td>
 <td>The same data type as expression.</td>
 <td><code class="docutils literal"><span class="pre">RUNNINGAVG([Retail].[dbo].[Orders].[Freight])</span></code></td>
 </tr>
-<tr class="row-odd"><td><strong>RUNNINGCOUNT</strong> <br clear="right" /> <br clear="right" />
+<tr class="row-even"><td><strong>RUNNINGCOUNT</strong> <br clear="right" /> <br clear="right" />
 <code class="docutils literal"><span class="pre">RUNNINGCOUNT(expression)</span></code> <br clear="right" /> <br clear="right" />
 Any data type except Image and Lob.</td>
 <td>Returns the number of unique values of expression from the first row up to the current row.</td>

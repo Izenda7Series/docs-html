@@ -110,11 +110,11 @@ List of Built-in Functions
      - The same data type as expression.
      - ``ISNULL([Retail].[dbo].[Orders].[ShipRegion] , 'No Region')``
    * - **BETWEEN..AND** |br| |br|
-       ``test_expression [NOT] BETWEEN begin_expression AND end_expression`` |br| |br|
+       ``BETWEEN(expression, begin_expression, end_expression)`` |br| |br|
        Any data type except Image and Lob.
      - Returns TRUE if the value of test_expression is greater than or equal to the value of begin_expression and less than or equal to the value of end_expression, otherwise returns FALSE.
      - Boolean.
-     -
+     - ``CASE WHEN (BETWEEN ([Retail].[dbo].[Orders].[EmployeeID],1 , 3)) THEN 1000 else [Retail].[dbo].[Orders].[EmployeeID] END``
    * - **AND** |br| |br|
        ``boolean_expression AND boolean_expression`` |br| |br|
        Boolean.
@@ -147,6 +147,12 @@ List of Built-in Functions
      - Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.
      - The highest precedence data type from data types of true_expression and false_expression.
      - ``IF ([northwind].[dbo].[Orders].[EmployeeID] < 3) then 'Less' else ( IF (BETWEEN ([northwind].[dbo].[Orders].[EmployeeID] , 3, 6)) then  'More' else 'Most' END) END``
+   * - **CASE WHEN...THEN...ELSE...END |br| |br|
+       ``CASE WHEN (when_expression) THEN (result_expression) […n] [ELSE (else_result_expression)] END`` |br| |br|
+       Any data type except Image and Lob.
+     - Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.
+     - The highest precedence data type from data types of all ``result_expression`` s and else_result_expression.
+     - ``Case when ([northwind].[dbo].[Orders].[EmployeeID] = 1) then 'less' when ([northwind].[dbo].[Orders].[EmployeeID] = 3 ) then 'mid' when ([northwind].[dbo].[Orders].[EmployeeID] = 4)  then 'high' else 'not evaluated' end``
    * - **CASE..WHEN..THEN..ELSE..END** |br| |br|
        ``CASE (input_expression) WHEN (when_expression) THEN (result_expression) […n] [ELSE (else_result_expression)] END`` |br| |br|
        Any data type except Image and Lob.
