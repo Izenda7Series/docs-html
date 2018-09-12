@@ -108,7 +108,7 @@ Sample expressions:
 
 .. seealso::
 
-   -  :doc:`doc_available_calculated_field_expressions`   
+   -  :doc:`/ref/spec_izenda_functions`   
   
    
 .. warning::
