@@ -158,7 +158,7 @@ List of Built-in Functions
        Any data type except Image and Lob.
      - Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.
      - The highest precedence data type from data types of all ``result_expression`` s and else_result_expression.
-     -
+     - ``CASE 'USA' WHEN  [Retail].[dbo].[Orders].[ShipCountry] THEN 1 else [Retail].[dbo].[Orders].[OrderID] END``
    * - **CASE WHEN...THEN...ELSE...END |br| |br|
        ``CASE WHEN (when_expression) THEN (result_expression) […n] [ELSE (else_result_expression)] END`` |br| |br|
        Any data type except Image and Lob.
