@@ -120,13 +120,13 @@ List of Built-in Functions
        Boolean.
      - Returns TRUE when both expressions are TRUE, otherwise returns FALSE.
      - Boolean.
-     -
+     - ``CASE WHEN ([Retail].[dbo].[Orders].[EmployeeID] = 1 AND [Retail].[dbo].[Orders].[CustomerID] = 'DELDG') THEN 1000 else [Retail].[dbo].[Orders].[EmployeeID] end``
    * - **OR** |br| |br|
        ``boolean_expression AND boolean_expression`` |br| |br|
        Boolean.
      - Returns TRUE when either expression is TRUE, otherwise returns FALSE.
      - Boolean.
-     -
+     - ``CASE WHEN ([Retail].[dbo].[Orders].[EmployeeID] = 1 OR [Retail].[dbo].[Orders].[EmployeeID] = 2) THEN 1000 else [Retail].[dbo].[Orders].[EmployeeID] end``
    * - **DISTINCT** |br| |br|
        ``DISTINCT (expression)`` or ``DISTINCT expression`` |br| |br|
        Any data type except Image and Lob.
@@ -139,7 +139,7 @@ List of Built-in Functions
        **true_expression**, **false_expression**: any data type except Image and Lob.
      - Returns the value of true_expression when boolean_expression is TRUE, otherwise returns the value of false_expression.
      - The highest precedence data type from data types of true_expression and false_expression.
-     -
+     - ``IIF([Retail].[dbo].[Orders].[EmployeeID] = 2, 200, [Retail].[dbo].[Orders].[EmployeeID])``
    * - **IF..THEN..ELSE..END** |br| |br|
        ``IF (boolean_expression) THEN (true_expression) [ELSE (false_expression)] END`` |br| |br|
        **boolean_expression**: Boolean. |br| |br|
@@ -153,6 +153,12 @@ List of Built-in Functions
      - Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.
      - The highest precedence data type from data types of all ``result_expression`` s and else_result_expression.
      -
+   * - **CASE WHEN...THEN...ELSE...END |br| |br|
+       ``CASE WHEN (when_expression) THEN (result_expression) […n] [ELSE (else_result_expression)] END`` |br| |br|
+       Any data type except Image and Lob.
+     - Returns the value of result_expression matching the first when_expression with the value equal to input_expression, otherwise return the value of else_result_expression.
+     - The highest precedence data type from data types of all ``result_expression`` s and else_result_expression.
+     - ``Case when ([northwind].[dbo].[Orders].[EmployeeID] = 1) then 'less' when ([northwind].[dbo].[Orders].[EmployeeID] = 3 ) then 'mid' when ([northwind].[dbo].[Orders].[EmployeeID] = 4)  then 'high' else 'not evaluated' end``
    * - **RUNNINGSUM** |br| |br|
        ``RUNNINGSUM(expression)`` |br| |br|
        Numeric, Money.
