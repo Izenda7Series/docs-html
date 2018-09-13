@@ -7,6 +7,17 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+
+v2.12.3 September 13, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21617  Tenant field is not properly applied to lookup value to select key for stored procedure input parameters.
+-  Defect  21612  Some charts may randomly fail to export.
+-  Defect  21564  Performance of load report slows when report contains several subreports linked.
+
 v2.12.2 September 10, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
