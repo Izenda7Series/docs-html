@@ -8,6 +8,15 @@ Release Notes
 	- Major Release - Larger Features, Major release 1.x.x
 
 
+v2.12.4 September 17, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21259  In some cases, exporting to Excel will cause high memory consumption.
+-  Defect  21648  When extending a default Map or Gauge configuration, all Map Type/Gauge Style specific field containers are shown. The default Map/Gauge configuration level should only have Title and Description.
+
 v2.12.3 September 13, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2645,9 +2654,6 @@ Known Issues
      - 21490
      - Data offset affecting date data type.
    * - Defect
-     - 21489
-     - Exporting Chart from MVC Starter Kit cuts off the X-Axis
-   * - Defect
      - 21488
      - Forms were not consistently loading subreport content when updating filter values. 
    * - Defect
@@ -2688,13 +2694,7 @@ Known Issues
      - Regression lines were not displayed on charts when the Multi-Color was enabled. 
    * - Defect
      - 21418
-     - Setting 'Range Only' in the report designer would break charts when multiple x-axis fields were used. 
-   * - Defect
-     - 21415
-     - Valid calculated fields would fail to add to the field list in the report designer.
-   * - Defect
-     - 21411
-     - Clicking 'Update Results' in the data sources tab of the designer would remove foreign fields from aliased joins. 
+     - Setting 'Range Only' in the report designer would break charts when multiple x-axis fields were used.  
    * - Defect
      - 21400
      - Default body tag styling of Izenda CSS clears out the outer space of hosting page Izenda's default body tag styling would clear outer spacing of the host page.
@@ -2704,9 +2704,6 @@ Known Issues
    * - Defect
      - 21396
      - Field Functions were not disabled from aggregated fields when building forms in the HTML tab.
-   * - Defect
-     - 21366
-     - When 'Snap to Grid' is disabled, some reports would be re-positioned when rendering the report. 
    * - Defect
      - 21361
      - Cannot remove cross filtering from report parts.
@@ -2744,17 +2741,11 @@ Known Issues
      - 21263
      - Maps would not shade some countries if every region within that country had points of data.
    * - Defect
-     - 21259
-     - In some cases, exporting to Excel will cause high memory consumption.
-   * - Defect
      - 21256
      - Performance would slow for one concurrent user when 200K rows were utilized.
    * - Defect
      - 21255
      - Normal filter values are duplicated in query execution when an aggregated filter is present
-   * - Defect
-     - 21251
-     - Pivot Grid Subreport Not Restricting Row Count Based on Field Mappings
    * - Defect
      - 21244
      - System shows incorrect value on legend for Bubble/Scatter with color theme
@@ -2767,9 +2758,6 @@ Known Issues
    * - Defect
      - 21232
      - PDF exports would shrink report content when compared to the size of the report content when printing.
-   * - Defect
-     - 21223
-     - Altered PDF and Print process to use SVG for chart, gauge, map render to improve quality of image. This process cannot be used for Excel, Word, or HTML Email as these export types cannot accept SVG.
    * - Defect
      - 21214
      - Full joins that also had a key join associated with it would see a performance decrease against a reporting database with 200k rows. 
@@ -2953,9 +2941,6 @@ Known Issues
    * - Defect
      - 20840
      - Stored procedure filter value selection allows selecting database connection with no visible datasources for lookup key/value
-   * - Defect
-     - 20837
-     - Titles and/or descriptions in text dashboard tiles are being duplicated in exports
    * - Defect
      - 20831
      - User cannot uncheck any report part in Report Part Selection dialog on an existing Cross Filtering setup
@@ -3538,9 +3523,6 @@ Known Issues
    * - Defect
      - 18985
      - API shows error when user changes selected item in X-axis drop down list on the pop up in x/y plane settings but no error is shown in the UI and data is still returned.
-   * - Defect
-     - 18984
-     - Izenda configuration database fails to create when using a case sensitive database on MSSQL.
    * - Defect
      - 18983
      - Fixed grammatical issues in error messages.
