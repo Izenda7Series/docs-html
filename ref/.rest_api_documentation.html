@@ -117,6 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="api_data_model.html">Data Model APIs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api_tenant.html">Tenant APIs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api_role.html">Role APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_user.html">User APIs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api_report_designer_datasources.html">Report Designer Data Sources APIs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api_report_designer_filters.html">Report Designer Filters APIs</a></li>
@@ -226,8 +227,8 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">access_token</span></code> <br clear="right" /> <br clear="right" />
-<strong>Required</strong>, except for <span class="xref std std-ref">POST_user/login</span> API</td>
-<td>The access token, which should be requested firstly using <span class="xref std std-ref">POST_user/login</span> API</td>
+<strong>Required</strong>, except for <a class="reference internal" href="api_user.html#post-user-login"><span class="std std-ref">POST user/login</span></a> API</td>
+<td>The access token, which should be requested firstly using <a class="reference internal" href="api_user.html#post-user-login"><span class="std std-ref">POST user/login</span></a> API</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">current_tenant</span></code> <br clear="right" /> <br clear="right" />
 <strong>Required</strong> if logged in user is a tenant user</td>
@@ -356,6 +357,36 @@
 <li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-accesslimits">POST role/accessLimits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-schedulelimits">POST role/scheduleLimits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_role.html#post-role-loadpartialdatamodelaccess">POST role/loadPartialDataModelAccess</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_user.html">User APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-all-tenant-id">GET user/all/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-all">POST user/all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-load">POST user/load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-login">POST user/login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-logout">POST user/logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user">POST user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-userprofile">POST user/userProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-passwordprofile">POST user/passwordProfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-securityquesitions">POST user/securityQuesitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-password">POST user/password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-active">POST user/active</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-deactive">POST user/deactive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#delete-user-user-id">DELETE user/{user_id}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-passwordandsecurityquestion">POST user/passwordAndSecurityQuestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-securityquestion-user-name-tenant-display-id">GET user/securityQuestion/{user_name}/(tenant_display_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-generatepasswordlink">POST user/generatePasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validatepasswordlink">POST user/validatePasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validatesecurityquestion">POST user/validateSecurityQuestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateuserinfo">POST user/validateUserInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateexpirationpasswordlink">POST user/validateExpirationPasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-sendpasswordlink">POST user/sendPasswordLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-integration-saveuser">POST user/integration/saveUser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-validateuserroleassociation">POST user/validateUserRoleAssociation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-user-allowedsharingusers-tenant-id">POST user/allowedSharingUsers/(tenant_id)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#get-user-islastsystemadmin">GET user/isLastSystemAdmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_user.html#post-external-user">POST external/user</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api_report_designer_details.html">Report Designer Details APIs</a><ul>
