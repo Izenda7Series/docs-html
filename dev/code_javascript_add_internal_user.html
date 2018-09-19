@@ -217,19 +217,19 @@
 <li>Prepare an empty <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object.</li>
 <li>Populate user details.</li>
 <li>Populate user role.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user"><span class="std std-ref">POST user</span></a> API, and receive back the saved id.</li>
+<li>Call <span class="xref std std-ref">POST_user</span> API, and receive back the saved id.</li>
 </ol>
 </li>
 <li>Generate a <a class="reference internal" href="../ref/.glossary.html#term-password-link"><span class="xref std std-term">password link</span></a> for the user.<ol class="arabic">
 <li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API, and receive back the hash value.</li>
+<li>Call <span class="xref std std-ref">POST_user/generatePasswordLink</span> API, and receive back the hash value.</li>
 </ol>
 </li>
 <li>Save the password and security questions for user.<ol class="arabic">
 <li>Prepares a <a class="reference internal" href="../ref/models/UserDetail.html"><span class="doc">UserDetail</span></a> object as API input.</li>
 <li>Populate the user password.</li>
 <li>Populate the hash value for verification.</li>
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.</li>
+<li>Call <span class="xref std std-ref">POST_user/passwordAndSecurityQuestion</span> API.</li>
 </ol>
 </li>
 </ol>
@@ -522,7 +522,7 @@ UserDetail object</div>
 </td></tr></table></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-generatepasswordlink"><span class="std std-ref">POST user/generatePasswordLink</span></a> API.</li>
+<li>Call <span class="xref std std-ref">POST_user/generatePasswordLink</span> API.</li>
 <li>Receive back the <a class="reference internal" href="../ref/models/OperationResult.html"><span class="doc">OperationResult</span></a> object<ol class="arabic">
 <li>Check that the <strong>success</strong> field equals true.</li>
 <li>Remember the hash value in <strong>data</strong>.</li>
@@ -587,7 +587,7 @@ UserDetail object</div>
 </td></tr></table></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Call <a class="reference internal" href="../ref/api_user.html#post-user-passwordandsecurityquestion"><span class="std std-ref">POST user/passwordAndSecurityQuestion</span></a> API.<ol class="arabic">
+<li>Call <span class="xref std std-ref">POST_user/passwordAndSecurityQuestion</span> API.<ol class="arabic">
 <li>Check that the <strong>success</strong> field equals true.</li>
 <li>If autoLogin, use the value in <strong>data.token</strong> as <code class="docutils literal"><span class="pre">access_token</span></code> in subsequent REST API calls.</li>
 </ol>
