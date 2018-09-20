@@ -103,7 +103,7 @@ FIXES
 -  Defect  18865  Cell Color setting for Bubble or Shading in Map report part, validation for values works incorrectly because it treats values as characters.
 
 
-v2.11.3 August 13, 2018
+v2.11.3 August 20, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
 FIXES
