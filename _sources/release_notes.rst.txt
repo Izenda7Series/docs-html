@@ -7,6 +7,15 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.12.5 September 24, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21720  External Import API does not allow to import dashboard using different schemas from the same connection.
+-  Defect  21730  After saving a custom chart, fields in z-axis containers may disappear in some cases.
+-  Defect  19236  Search keys and values not respected for the (POST) user/load endpoint.
 
 v2.12.4 September 17, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
