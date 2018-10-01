@@ -31,6 +31,19 @@ DashboardParameter
          * 2 = Access
          * 3 = Subscription
       -
+   *  -  **action** |br|
+         integer
+      -     Y
+      - Specify the action from client site
+      
+         * null, undefined, 1 = view report
+         * 2 = cancel change on report
+      -
+   *  -  **page** |br|
+         string(GUID)
+      -     Y
+      - Id of the current web page
+      -
 
 .. container:: toggle
 

@@ -38,7 +38,7 @@ Acknowledgements
 -  element-resize-detector: v.1.1.9  https://github.com/wnr/element-resize-detector License: https://github.com/wnr/element-resize-detector/blob/master/LICENSE
 -  eve: v.0.5.0 https://github.com/adobe-webplatform/eve License: https://github.com/adobe-webplatform/eve/blob/master/LICENSE
 -  fastdom: 1.0.5 https://github.com/wilsonpage/fastdom License:https://github.com/wilsonpage/fastdom#license
--  highcharts: v.4.2.7 http://shop.highsoft.com/highcharts/highcharts-single-developer-support.html  License: The software is available under a commercial or non-commercial license http://shop.highsoft.com/highcharts.html
+-  highcharts: v.6.1.0  http://shop.highsoft.com/highcharts/highcharts-single-developer-support.html  License: The software is available under a commercial or non-commercial license https://shop.highsoft.com/highcharts
 -  hoist-non-react-statics: v.1.2.0 https://github.com/mridgway/hoist-non-react-statics License:https://github.com/mridgway/hoist-non-react-statics/blob/master/LICENSE.md
 -  jquery: v.2.2.4 https://github.com/jquery License: https://jquery.org/license/
 -  js-cookie: v.2.1.3 https://github.com/js-cookie/js-cookie License: https://github.com/js-cookie/js-cookie/blob/master/LICENSE

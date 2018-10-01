@@ -2176,7 +2176,25 @@ Returns a specific version of a report.
 
 **Request**
 
-    No payload
+   Optional payload.
+
+   .. list-table::
+      :header-rows: 1
+
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **action** |br|
+            integer
+         -  Specify the action from client site |br|
+            \- null, undefined or 1: view the report |br|
+            \- 2: cancel the report
+         -  Optional
+      *  -  **page** |br|
+            string(GUID)
+         -  Id of the current web page
+         -  Optional
+
 
 **Response**
 

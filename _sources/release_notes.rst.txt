@@ -7,6 +7,28 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.13.0 September 28, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  Highchart Version Update 
+	- Upgraded Highcharts from v4.2.7 to v6.1.0
+	- Customers leveraging custom charts now have the ability to implement custom charts up through v6.1.0
+ 	- Please reference https://github.com/Izenda7Series/IzendaCustomVisualizations for documentation on implementation of custom charts	
+
+FIXES
+^^^^^
+
+-  Defect  21341  Izenda's UI would error when running inside of a MaterializeCSS application.
+-  Defect  21497  Grid preview data would not render values in a 3D Column Chart.
+-  Defect  21498  Regression lines would not render on 3D Column Charts.
+-  Defect  21616  Scheduled/Subscribed reports would still run after the base report was deleted.
+-  Defect  21749  Opening the print dialogue would redirect to an empty page in IE11.
+-  Defect  21750  Gauge images would be cut off in the print dialogues.
+
+
 v2.12.5 September 24, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
