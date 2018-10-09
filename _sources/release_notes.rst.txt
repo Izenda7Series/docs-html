@@ -7,6 +7,21 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.13.1 October 8, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+
+-  Defect  21649  Scheduled reports would send with inconsistent timing for each delivery.
+-  Defect  21656  Sorting numeric fields with subtotals would cause other values to sort incorrectly. 
+-  Defect  21760  Custom 3D charts would not print or export consistently. 
+-  Defect  21765  Adding filters to a report based on a stored procedure would return no results.
+-  Defect  21771  Global reports that leveraged calculated fields would export/print no records at the tenant level in Deployment Mode 1.
+-  Defect  21838  The cursor position resets after leaving the Form HTML editor.
+-  Defect  21839  Resolved a security issue within the dashboard APIs.
+-  Defect  21840  Forms with both a style and table tag would fail to export/print.
+
 v2.13.0 September 28, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -27,7 +42,6 @@ FIXES
 -  Defect  21616  Scheduled/Subscribed reports would still run after the base report was deleted.
 -  Defect  21749  Opening the print dialogue would redirect to an empty page in IE11.
 -  Defect  21750  Gauge images would be cut off in the print dialogues.
-
 
 v2.12.5 September 24, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

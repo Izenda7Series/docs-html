@@ -624,6 +624,7 @@ Additional Reference
       -  Optionally enter settings for `EVO PDF Azure <http://www.evopdf.com/azure-html-to-pdf-converter.aspx>`__ option, or accept the default values to use the local embedded library.
 
             #. Under ``<configuration>``, find or add the following section:
+            
                   .. code-block:: mxml
 
                         <evoPdfSettings cloudEnable="false">
@@ -632,6 +633,16 @@ Additional Reference
 
             #. Set ``cloudEnable="true"`` to use the Azure option, then enter the server IP, port and password.
 
+      -  Optionally change the default maximum thread count settings. This option is available from version 2.13.1.
+
+            #. Under ``<appSettings>``, find or add the following section:
+
+                  .. code-block:: mxml
+
+                        <add key="izenda.quartz.threadPool.threadCount" value="" />
+            
+
+            #. Specify the value by an interger
 
 Next: :doc:`Install Izenda System Database and Apply License </ui/doc_system_db_and_license>`
 ------------------------------------------------------------------------------------------------------------
