@@ -633,16 +633,25 @@ Additional Reference
 
             #. Set ``cloudEnable="true"`` to use the Azure option, then enter the server IP, port and password.
 
-      -  Optionally change the default maximum thread count settings. This option is available from version 2.13.1.
+      -  Optionally change the default quartz thread count settings. This option is available from version 2.13.1.
 
-            #. Under ``<appSettings>``, find or add the following section:
+            #. In ``<configSections>`` element, add quartz configure section to create the quartz configuration. For example:
 
                   .. code-block:: mxml
 
-                        <add key="izenda.quartz.threadPool.threadCount" value="" />
-            
+                        <configSections>
+                              <section name="quartz" type="System.Configuration.NameValueSectionHandler, System, Version=1.0.5000.0,Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+                        </configSections>
 
-            #. Specify the value by an interger
+            #. In ``<configuration>`` element, specify the maximum thread count by an integer. For example:
+
+                  .. code-block:: mxml
+
+                        <configuration>
+                              <quartz>
+                                    <add key="quartz.threadPool.threadCount" value="20" />
+                              </quartz>
+                        </configuration>
 
 Next: :doc:`Install Izenda System Database and Apply License </ui/doc_system_db_and_license>`
 ------------------------------------------------------------------------------------------------------------

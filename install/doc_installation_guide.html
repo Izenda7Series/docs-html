@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation Guide &mdash; Izenda BI 2.12.5 documentation</title>
+  <title>Installation Guide &mdash; Izenda BI 2.13.2 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.12.5 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 2.13.2 documentation" href="../index.html"/>
         <link rel="up" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/>
         <link rel="next" title="Upgrade Guide" href="doc_upgrade_guide.html"/>
         <link rel="prev" title="Hosting Izenda" href="doc_hosting_izenda_yourself.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                2.12
+                2.13
               </div>
             
           
@@ -885,17 +885,28 @@ document</a>.</p>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">Optionally change the default maximum thread count settings. This option is available from version 2.13.1.</p>
+<li><p class="first">Optionally change the default quartz thread count settings. This option is available from version 2.13.1.</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first">Under <code class="docutils literal"><span class="pre">&lt;appSettings&gt;</span></code>, find or add the following section:</p>
+<li><p class="first">In <code class="docutils literal"><span class="pre">&lt;configSections&gt;</span></code> element, add quartz configure section to create the quartz configuration. For example:</p>
 <blockquote>
-<div><div class="highlight-mxml"><div class="highlight"><pre><span></span><span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;izenda.quartz.threadPool.threadCount&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<div><div class="highlight-mxml"><div class="highlight"><pre><span></span><span class="nt">&lt;configSections&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;quartz&quot;</span> <span class="na">type=</span><span class="s">&quot;System.Configuration.NameValueSectionHandler, System, Version=1.0.5000.0,Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/configSections&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Specify the value by an interger</p>
+<li><p class="first">In <code class="docutils literal"><span class="pre">&lt;configuration&gt;</span></code> element, specify the maximum thread count by an integer. For example:</p>
+<blockquote>
+<div><div class="highlight-mxml"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration&gt;</span>
+      <span class="nt">&lt;quartz&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.threadPool.threadCount&quot;</span> <span class="na">value=</span><span class="s">&quot;20&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/quartz&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </div></blockquote>
@@ -966,7 +977,7 @@ IIS</a></li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.12.5',
+            VERSION:'2.13.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
