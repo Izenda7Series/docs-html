@@ -601,7 +601,7 @@ This function is used in the LoadCustomDataFormat (see more `here <https://www.i
 
       IzendaSynergy.config(configJson);
       // Put the registration of JS format functions below. Please note: the format label is case sensitive.
-      IzendaSynergy.addJSFormat("1k", function (value)
+      IzendaSynergy.addJsFormat("1k", function (value)
          { return "$ " + value/1000 + " k"; }
       );
 

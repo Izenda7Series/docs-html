@@ -633,7 +633,7 @@ Additional Reference
 
             #. Set ``cloudEnable="true"`` to use the Azure option, then enter the server IP, port and password.
 
-      -  Optionally change the default quartz thread count settings. This option is available from version 2.13.1.
+      -  Optionally change the default quartz thread count settings.
 
             #. In ``<configSections>`` element, add quartz configure section to create the quartz configuration. For example:
 
