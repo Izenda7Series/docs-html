@@ -7,6 +7,19 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.13.4 October 29, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+	
+-  Defect  17942  Unnecessary spacing for subreports in Forms that don't return data.
+-  Defect  21488  Forms were not consistently loading subreport contennt when updating filter values.
+-  Defect  21939  Forms with embedded subreports would export slowly and with a blank visualization.
+-  Defect  21940  Drilldown performance was slow accross chart types.
+-  Defect  22029  Improved reliability in exports.
+
+
 v2.13.3 October 22, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2649,9 +2662,6 @@ Known Issues
      - 21565
      - Unable to display the added image with Base64 format on the Form
    * - Defect
-     - 21564
-     - Performance when loading reports
-   * - Defect
      - 21563
      - Conditional formatting would fail if a custom data format was in use.
    * - Defect
@@ -2703,12 +2713,6 @@ Known Issues
      - 21499
      - [Dashboard] Text Type: Export to CSV, XML, and JSON have empty data
    * - Defect
-     - 21498
-     - Regression line not rendering on 3D column charts
-   * - Defect
-     - 21497
-     - Grid preview of data not rendering values in 3D Column Chart type
-   * - Defect
      - 21496
      - Wrong format when exporting/printing Date Time Smart Tag
    * - Defect
@@ -2717,9 +2721,6 @@ Known Issues
    * - Defect
      - 21490
      - Data offset affecting date data type.
-   * - Defect
-     - 21488
-     - Forms were not consistently loading subreport content when updating filter values. 
    * - Defect
      - 21484
      - Redundant "pan>" text on the field which has embedded Javascript and is on a Repeater
@@ -2777,9 +2778,6 @@ Known Issues
    * - Defect
      - 21342
      - Removed redundant entries in the web.config file of the API.
-   * - Defect
-     - 21341
-     - Izenda's UI would error when integrated with an application that utilizes MaterializeCSS
    * - Defect
      - 21333
      - Report header content positioned at the bottom gets cut off in exports
@@ -3477,9 +3475,6 @@ Known Issues
      - 19237
      - Running 200 concurrent users produces error
    * - Defect
-     - 19236
-     - Search keys and values not respected for the (POST) user/load endpoint
-   * - Defect
      - 19234
      - Error when using Calculated Field containing user defined function cross databases
    * - Defect
@@ -3629,9 +3624,6 @@ Known Issues
    * - Defect
      - 18946
      - Bad request returned when using draftId to export reports at a tenant level.
-   * - Defect
-     - 18944
-     - Users without User Role Association could assign roles to other users via the Role Setup pages.
    * - Defect
      - 18942
      - Map not fully rendering when report contains numerous report tiles
@@ -4193,9 +4185,6 @@ Known Issues
    * - Defect
      - 17950
      - Unable to search report name that contains Left Brace or Pipe characters
-   * - Defect
-     - 17942
-     - In report part form there is unnecessary Spacing With Subreports that don't return data
    * - Defect
      - 17939
      - The Equivalence/Checkbox operator does display in drop down after Updating Result/Saving Report
