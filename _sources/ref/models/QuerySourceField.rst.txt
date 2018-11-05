@@ -215,7 +215,28 @@ QuerySourceField
       -  *  true if 0 < numOfCheckedChilds < numOfChilds
          *  false if not
       -
+   *  -  **hasFilterLookup** |br|
+         boolean
+         .. versionadded:: 2.14.0
+      -
+      -  Whether this field has filter lookup setting or not
+      -
+   *  -  **filterStatus** |br|
+         integer
+         .. versionadded:: 2.14.0
+      -
+      -  The status of filter lookup key-value
 
+            *  0: valid lookup (default state)
+            *  1: invalid query source
+            *  2: invalid database connection
+            *  4: lookup key is a Tenant Field
+            *  8: lookup key is invisible
+            *  16: display value is a Tenant Field
+            *  32: display value is invisible
+         
+         **Note:** If multiple errors occur at the same time, system will return the sum of error code.
+      -  
 
 Inherited fields:
 

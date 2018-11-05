@@ -205,6 +205,51 @@ report.
 
           User must save the changes before moving to another page or another group in the Middle Panel.
 
+Update Filter Value for a table/view field or a stored procedure parameter
+------------------------------------------------------------------------------
+
+This feature are only available for tables/views' fields from version 2.14.0
+
+#. Click the icon in Filter Value box.
+
+       *Note:* For Store Procedures, Filter Value icon only appears for parameters.
+
+#. Select either Filter Lookup Key - Value or User Defined Filter Value
+
+   -  Example to set
+      parameter @OrderID to look up from NorthwindA.dbo.Orders.OrderID,
+      displaying column ShipName to end-user. (:numref:`Data_Model_SP_Filter_Lookup_Key_-_Value`)
+
+      .. _Data_Model_SP_Filter_Lookup_Key_-_Value:
+
+      .. figure:: /_static/images/Data_Model_SP_Filter_Lookup_Key_-_Value.png
+         :width: 458px
+
+         Data Model - Filter Lookup Key - Value |br|
+
+   -  Example to set
+      parameter @OrderID to look up from a list of 3 values: the value
+      of Tenant ID and 2 fixed values NewValueA and NewValueB. (:numref:`Data_Model_SP_User_Defined_Filter_Value`)
+
+      .. _Data_Model_SP_User_Defined_Filter_Value:
+
+      .. figure:: /_static/images/Data_Model_SP_User_Defined_Filter_Value.png
+         :width: 458px
+
+         Data Model - User Defined Filter Value |br|
+
+#. .. _Data_Model_SP_View_User_Defined_Filter_Value:
+
+   .. figure:: /_static/images/Data_Model_SP_View_User_Defined_Filter_Value.png
+      :align: right
+      :width: 245px
+
+      Data Model - Selected User Defined Filter Value
+
+   The  selected filter value will appear in the Filter Value box. (:numref:`Data_Model_SP_View_User_Defined_Filter_Value`) |br|
+#. Click Save button at the top, then click OK in the confirmation
+   pop-up.
+
 Add a calculated field to table or view
 ---------------------------------------
 
@@ -366,46 +411,3 @@ The action will fail if one of the parameters requires not null and
 Filter Value has not been defined.
 
 In this case, please update the Filter Value section.
-
-Update Filter Value for a stored procedure parameter
-----------------------------------------------------
-
-#. Click the icon in Filter Value box.
-
-       Filter Value icon only appears for parameters.
-
-#. Select either Filter Lookup Key - Value or User Defined Filter Value
-
-   -  Example to set
-      parameter @OrderID to look up from NorthwindA.dbo.Orders.OrderID,
-      displaying column ShipName to end-user. (:numref:`Data_Model_SP_Filter_Lookup_Key_-_Value`)
-
-      .. _Data_Model_SP_Filter_Lookup_Key_-_Value:
-
-      .. figure:: /_static/images/Data_Model_SP_Filter_Lookup_Key_-_Value.png
-         :width: 458px
-
-         Data Model - Filter Lookup Key - Value |br|
-
-   -  Example to set
-      parameter @OrderID to look up from a list of 3 values: the value
-      of Tenant ID and 2 fixed values NewValueA and NewValueB. (:numref:`Data_Model_SP_User_Defined_Filter_Value`)
-
-      .. _Data_Model_SP_User_Defined_Filter_Value:
-
-      .. figure:: /_static/images/Data_Model_SP_User_Defined_Filter_Value.png
-         :width: 458px
-
-         Data Model - User Defined Filter Value |br|
-
-#. .. _Data_Model_SP_View_User_Defined_Filter_Value:
-
-   .. figure:: /_static/images/Data_Model_SP_View_User_Defined_Filter_Value.png
-      :align: right
-      :width: 245px
-
-      Data Model - Selected User Defined Filter Value
-
-   The  selected filter value will appear in the Filter Value box. (:numref:`Data_Model_SP_View_User_Defined_Filter_Value`) |br|
-#. Click Save button at the top, then click OK in the confirmation
-   pop-up.

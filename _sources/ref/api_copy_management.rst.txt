@@ -1415,7 +1415,7 @@ Run the copy operation based on settings in a workspace.
               "id" : null,
               "name" : "Workspace",
               "description" : "",
-              "tenantId" : null,
+              "tenantId" : "d2aa11ac-ab67-40c7-bacf-1a9414b26720",
               "ownerId" : null,
               "created" : null,
               "createdBy" : null,
@@ -1443,7 +1443,7 @@ Run the copy operation based on settings in a workspace.
                     "createdBy" : null,
                     "modified" : "2016-09-12T04:37:14.62",
                     "modifiedBy" : null,
-                    "destinationHashCode" : "1184854008",
+                    "destinationHashCode" : "a06b8f0e84161547d51bb354b7c",
                     "dataMapping" : [],
                     "databaseSources" : []
                  }
@@ -1459,7 +1459,7 @@ Run the copy operation based on settings in a workspace.
                  "visible" : true,
                  "deleted" : false,
                  "relateToConnectionId" : null,
-                 "tenantId" : null,
+                 "tenantId" : "d2aa11ac-ab67-40c7-bacf-1a9414b26720",
                  "dbSource" : {
                     "querySources" : [{
                           "id" : "e0ad1a32-43e0-43ff-b9c0-a9f74802223d",
@@ -1595,7 +1595,12 @@ Run the copy operation based on settings in a workspace.
 
       {
         "success" : true,
-        "messages" : null
+        "messages" : null,
+        "data" : 
+         {
+            "destinationHashCodes":{"d2aa11ac-ab67-40c7-bacf-1a9414b26720":"a06b8f0e84161547d51bb354b7c"},
+            "hadCopiedFilterLookup": false
+         }
       }
 
 
