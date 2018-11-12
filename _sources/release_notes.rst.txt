@@ -7,6 +7,18 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.14.2 November 12, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+	
+-  Defect  17829  Print always wait for 60 seconds timeout to open Printing dialogue after page rendered. 
+-  Defect  20159  Columns do not sort when choosing recipient from list for emailing.
+-  Defect  21898  ReportFilterField.SourceFieldName returns field alias.
+
+
+
 v2.14.1 November 5, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3223,9 +3235,6 @@ Known Issues
      - 20173
      - Clickable labels are lost on Pie Charts when changing the Pie Chart type.
    * - Defect
-     - 20159
-     - Columns do not sort when choosing recipient from list for emailing
-   * - Defect
      - 20150
      - Embedded Gauge not displaying correctly when utilizing an embedded subreport in a Form 
    * - Defect
@@ -4272,9 +4281,6 @@ Known Issues
    * - Defect
      - 17831
      - Colors (Text & Cell) should only apply to the values in a grid and not the sub total and grand totals. Rule Fails in Excel Exports.
-   * - Defect
-     - 17829
-     - Print always wait for 60 seconds timeout to open Printing dialogue after page rendered
    * - Defect
      - 17821
      - 'No record found' does not display for Form report part that has no value
