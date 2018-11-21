@@ -313,7 +313,7 @@ The connection string will be validated before saving.
       {
         "id" : null,
         "name" : "db01",
-        "serverType" : "572bd576-8c92-4901-ab2a-b16e38144813",
+        "serverTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
         "connectionString" : "server=izenda01\\DB_INSTANCE;database=db01;User Id=user01;Password=secret;",
         "visible" : true,
         "dBSource" : {
