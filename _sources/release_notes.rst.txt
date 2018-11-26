@@ -7,6 +7,25 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.14.3 November 26, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+	
+-  Defect  18246  When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.   
+-  Defect  20173  Clickable labels are lost on Pie Charts when changing the Pie Chart type.
+-  Defect  21232  PDF exports would shrink report content when compared to the size of the report content when printing.
+-  Defect  21502  Subreports display Today's date in "Between Date" filters when set to inherit filters from main report.
+-  Defect  21563  Conditional formatting would fail if a custom data format was in use.
+-  Defect  21609  Some users may experience browser console errors when clicking the 'Cancel' button under 'My Profile'.
+-  Defect  22195  Charts intermittently failed to export in standalone.
+-  Defect  22198  Using the browser's back button would not load the last page in Izenda.
+-  Defect  22217  Subreport only available when first filter value is present in separator.
+-  Defect  22260  Report List would load when no initial License Key was set.
+-  Defect  22278  Embedded chart reloads in form report part when scrolling.
+
+
 v2.14.2 November 12, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2704,9 +2723,6 @@ Known Issues
      - 21565
      - Unable to display the added image with Base64 format on the Form
    * - Defect
-     - 21563
-     - Conditional formatting would fail if a custom data format was in use.
-   * - Defect
      - 21545
      - Chart - Sparkline: The value on the hover tooltip is not displayed with formatted data
    * - Defect
@@ -2742,9 +2758,6 @@ Known Issues
    * - Defect
      - 21504
      - 3D Scatter Chart not rendering when the Multi-Color feature is enabled
-   * - Defect
-     - 21502
-     - Subreports display Today's date in "Between Date" filters when set to inherit filters from main report.
    * - Defect
      - 21501
      - [Form] Missing border, background color and Inserted items in exported files
@@ -2859,9 +2872,6 @@ Known Issues
    * - Defect
      - 21236
      - Legend settings is not displayed when Printing or Exporting to PDF, Word, Excel file for all charts
-   * - Defect
-     - 21232
-     - PDF exports would shrink report content when compared to the size of the report content when printing.
    * - Defect
      - 21214
      - Full joins that also had a key join associated with it would see a performance decrease against a reporting database with 200k rows. 
@@ -3231,9 +3241,6 @@ Known Issues
    * - Defect
      - 20181
      - System does not validate the dashboard name with special characters and allows invalid characters to be saved
-   * - Defect
-     - 20173
-     - Clickable labels are lost on Pie Charts when changing the Pie Chart type.
    * - Defect
      - 20150
      - Embedded Gauge not displaying correctly when utilizing an embedded subreport in a Form 
