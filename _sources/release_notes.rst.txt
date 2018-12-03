@@ -7,6 +7,23 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.15.0 December 3, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  "Use Lookup" Checkbox Added for Filters
+    - If you have lookups set on a field (utilizing the v2.14 lookup functionality) there will be a "Use Lookup" option on those filter fields.
+    - This option is a checkbox that determines if you want to leverage the lookup for the filter dropdown or have filter use the historic functionality.
+    - This option will be visible in the Ftiler Properties Panel only if a lookup is set on that particular field in the data model.
+
+FIXES
+^^^^^
+
+-  Defect  21200  Pivot grid side total shows incorrectly when a Row field has a null value.
+
+
 v2.14.3 November 26, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2875,9 +2892,6 @@ Known Issues
    * - Defect
      - 21214
      - Full joins that also had a key join associated with it would see a performance decrease against a reporting database with 200k rows. 
-   * - Defect
-     - 21200
-     - Pivot grid side total shows incorrectly when a Row field has a null value
    * - Defect
      - 21199
      - When 'Convert Null to Empty String' is enabled against an Oracle connection string, drilling down in a chart will show no results at the lower level.
