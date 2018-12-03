@@ -2334,6 +2334,19 @@ Data Dictionary
      - 
    * - .. container:: lpad2
 
+          **DeploymentMode** 
+
+          .. versionadded:: 2.15.0
+     - int
+     - 
+     - 
+     -
+       * 0 = All Standalone
+       * 1 = BE Standalone - FE Integrated
+       * 2 = BE Integrated - FE Standalone
+       * 3 = All Integrated
+   * - .. container:: lpad2
+
           **NumberOfCreateReportUser**
      - bigint
      - 

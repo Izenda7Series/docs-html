@@ -340,6 +340,8 @@ Dashboard Filters
    - Same field name regardless of database schema or connection string
    - Same alias name regardless of database schema or connection string
 
+   **Notes:** From version 2.15.0, the Use Lookup checkbox states are also considered when determining dashboard common filter.
+
 #. Stored procedures used in reports follow the same logic as above.
 #. Any filters which are not common between all report parts are available on the back of the report part tile. The user can flip the tile and update results to change the filters for the specific report part.
 #. Common filters query only one instance of a common filter (the first one in the dashboard), for data driven filters (checkbox, selection, tree, popup style filters where the user is presented data for selection). This means when Field A is common, based on rules set above, only the first instance of the field which is common will be queried to pull results for common filter data.
