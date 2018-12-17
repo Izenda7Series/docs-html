@@ -7,6 +7,25 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.15.1 December 17, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+	
+-  Defect  16597  In Quick Edit mode filters Inherited from a Parent Report to a Sub Report are not retained after pressing "Update Result".   
+-  Defect  17609  Security questions are enabled when not selected when you create or reset your password with username which has Backslash.
+-  Defect  17615  When using a Bit data type as separator on chart legend shows series 1 not false.
+-  Defect  18142  Dashboard tiles do not properly resize when user resizes browser to responsive mode in screen.
+-  Defect  18534  Grid Type Report Part always display top 10 records when rendering it by integration API, it is not respecting the saved records per page limit in the report part.
+-  Defect  18995  When a report that is used in a dashboard becomes incomplete, the URL to the report is not shown in the dashboard tile for ease of finding the report.
+-  Defect  20916  Subtotal and Grandtotal not equal in drilldown grid when All is collapsed.
+-  Defect  21181  Exporting a form to Word/PDF with a field returning no records exports the field alias name.
+-  Defect  22039  Required Report Filter Behavior Not Translating to Dashboard Common Filter Behavior.
+-  Defect  22340  Pivot grid side total shows incorrectly when a Row field has a null value.
+-  Defect  22350  Improvements to Dashboard Performance.
+
+
 v2.15.0 December 3, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2905,9 +2924,6 @@ Known Issues
      - 21187
      - Drilldown on date field with Cross Filtering and alias in Data Model throws an error
    * - Defect
-     - 21181
-     - Exporting a form to Word/PDF with a field returning no records exports the field alias name
-   * - Defect
      - 21176
      - If a date value used in a Pivot grid was also used as a filter, the report will load indefinitely if a Grand Total is configured. 
    * - Defect
@@ -3054,9 +3070,6 @@ Known Issues
    * - Defect
      - 20922
      - Join alias incorrectly appears when adding manual relationship after aliasing a previous automatic relationship
-   * - Defect
-     - 20916
-     - Subtotal and Grandtotal not equal in drilldown grid when All is collapsed
    * - Defect
      - 20900
      - Percent of Group format on a separator field is calculating incorrectly
@@ -3637,9 +3650,6 @@ Known Issues
      - 19000
      - Error when simultaneously adding normal and aggregated Calculated Fields via Field Selection popup
    * - Defect
-     - 18995
-     - When a report that is used in a dashboard becomes incomplete, the URL to the report is not shown in the dashboard tile for ease of finding the report.
-   * - Defect
      - 18985
      - API shows error when user changes selected item in X-axis drop down list on the pop up in x/y plane settings but no error is shown in the UI and data is still returned.
    * - Defect
@@ -4009,9 +4019,6 @@ Known Issues
      - 18535
      - System should not display Subtotal/Grand total icon in Field Properties when user adds Image/LOB datatype
    * - Defect
-     - 18534
-     - Grid Type Report Part always display top 10 records when rendering it by integration API, it is not respecting the saved records per page limit in the report part
-   * - Defect
      - 18529
      - When user selects 2 data sources and creates a join, then adds filters which use filter logic to the report and deselects the data source containing the filter fields on the data source tab, they cannot proceed to the fields tab again.
    * - Defect
@@ -4170,9 +4177,6 @@ Known Issues
    * - Defect
      - 18156
      - The "File Location" is shown in "Delivery Type" drop down for subscription and should not
-   * - Defect
-     - 18142
-     - Dashboard tiles do not properly resize when user resizes browser to responsive mode in screen. 
    * - Defect
      - 18136
      - Cursor always comes back the left most of Search Report textbox after entering some text in Copy Management UI
@@ -4416,12 +4420,6 @@ Known Issues
    * - Defect
      - 17616
      - Selecting option in Data Type dropdown does not work for caluclated fields 
-   * - Defect
-     - 17615
-     - When using a Bit data type as separator on chart legend shows series 1 not false
-   * - Defect
-     - 17609
-     - Security questions are enabled when not selected when you create or reset your password with username which has Backslash
    * - Defect
      - 17596
      - Tenant users are still seeing some modules after they have been disabled at the Tenant level.
@@ -4743,9 +4741,6 @@ Known Issues
    * - Defect
      - 16602
      - Tenant Access label is cut off in the Tenant Permission screen in MVC kit
-   * - Defect
-     - 16597
-     - In Quick Edit mode filters Inherited from a Parent Report to a Sub Report are not retained after pressing "Update Result"
    * - Defect
      - 16538
      - Error displayed when user attempts to sort values for input parameters of stored procedures in report designer.
