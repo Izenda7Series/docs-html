@@ -279,42 +279,34 @@
 </tr>
 <tr class="row-even"><td>GET systemSetting/securityQuestions</td>
 <td><p class="first">Returns an array of security questions.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Removed</p>
-</div>
+<p class="last">Obsolete</p>
 </td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>POST systemSetting/securityQuestions</td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-systemsetting-securityquestions">POST systemSetting/securityQuestions</a></td>
 <td><p class="first">Saves a new security question.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Removed</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.15.1.</span></p>
 </div>
 </td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>PUT systemSetting/securityQuestions</td>
 <td><p class="first">Updates an existing security question.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Removed</p>
-</div>
+<p class="last">Obsolete</p>
 </td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>DELETE systemSetting/securityQuestions/{security_question_id}</td>
 <td><p class="first">Deletes a security question.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Removed</p>
-</div>
+<p class="last">Obsolete</p>
 </td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-systemsetting-securityquestions-user-name-tenant-display-id">GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)</a></td>
-<td>Returns security question for a user and tenant display id.</td>
+<tr class="row-even"><td>GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)</td>
+<td><p class="first">Returns security question for a user and tenant display id.</p>
+<p class="last">Obsolete from version 2.15.1. Replace by the <a class="reference internal" href="#post-systemsetting-securityquestions">POST systemSetting/securityQuestions</a></p>
+</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#get-systemsetting-email-tenant-id">GET systemSetting/email/(tenant_id)</a></td>
@@ -1145,18 +1137,52 @@ Sample response:</div>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="get-systemsetting-securityquestions-user-name-tenant-display-id">
-<h2>GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)<a class="headerlink" href="#get-systemsetting-securityquestions-user-name-tenant-display-id" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-systemsetting-securityquestions">
+<h2>POST systemSetting/securityQuestions<a class="headerlink" href="#post-systemsetting-securityquestions" title="Permalink to this headline">¶</a></h2>
 <p>Returns security question for a user and tenant display id.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>No payload</div></blockquote>
+<div><blockquote>
+<div>The object with the following properties:</div></blockquote>
+<table border="1" class="colwidths-given apitable docutils">
+<colgroup>
+<col width="25%" />
+<col width="40%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>userName</strong> <br clear="right" />
+string</td>
+<td>The username of the user requesting security questions</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantDisplayID</strong> <br clear="right" />
+string</td>
+<td>The tenant display id which user belongs to</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
 <div>An array of <a class="reference internal" href="models/SecurityQuestion.html"><span class="doc">SecurityQuestion</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/securityQuestions/jdoe/acme</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/systemSetting/securityQuestions</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;userName&quot;</span><span class="p">:</span> <span class="s2">&quot;employee@deldg.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;tenantDisplayID&quot;</span><span class="p">:</span> <span class="s2">&quot;DELDG&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="toggle docutils container">

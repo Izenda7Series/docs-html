@@ -160,6 +160,13 @@ ReportFilterField
       -
       -  Whether this field has filter lookup setting or not
       -
+   *  -  **isOveridingInheritedFilter** |br|
+         boolean
+
+         .. versionadded:: 2.15.1
+      -
+      -  Whether the master filter value overrides the sub filter value
+      -
 
 Inherited fields:
 

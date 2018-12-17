@@ -55,34 +55,27 @@ Summary
    * - GET systemSetting/securityQuestions
      - Returns an array of security questions.
 
-       .. note::
-
-          Removed
-
+       Obsolete
      -
-   * - POST systemSetting/securityQuestions
+   * - `POST systemSetting/securityQuestions`_
      - Saves a new security question.
 
-       .. note::
-
-          Removed
+       .. versionadded:: 2.15.1
      -
    * - PUT systemSetting/securityQuestions
      - Updates an existing security question.
 
-       .. note::
-
-          Removed
+       Obsolete
      -
    * - DELETE systemSetting/securityQuestions/{security_question_id}
      - Deletes a security question.
 
-       .. note::
-
-          Removed
+       Obsolete
      -
-   * - `GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)`_
+   * - GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)
      - Returns security question for a user and tenant display id.
+
+       Obsolete from version 2.15.1. Replace by the `POST systemSetting/securityQuestions`_
      -
    * - `GET systemSetting/email/(tenant_id)`_
      - Returns email setting.
@@ -959,14 +952,31 @@ Returns an array of supported email variables.
 
 
 
-GET systemSetting/securityQuestions/{user_name}/(tenant_display_id)
+POST systemSetting/securityQuestions
 ---------------------------------------------------------------------------
 
 Returns security question for a user and tenant display id.
 
 **Request**
 
-    No payload
+    The object with the following properties:
+
+   .. list-table::
+      :class: apitable
+      :widths: 25 40 35
+      :header-rows: 1
+
+      * - Field
+        - Description
+        - Notes
+      * - **userName** |br|
+          string
+        - The username of the user requesting security questions
+        - 
+      * - **tenantDisplayID** |br|
+          string
+        - The tenant display id which user belongs to
+        - 
 
 **Response**
 
@@ -976,7 +986,14 @@ Returns security question for a user and tenant display id.
 
    .. code-block:: http
 
-      GET /api/systemSetting/securityQuestions/jdoe/acme HTTP/1.1
+      POST /api/systemSetting/securityQuestions HTTP/1.1
+
+   Request payload::
+
+      { 
+         "userName": "employee@deldg.com",
+         "tenantDisplayID": "DELDG"
+      }
 
    .. container:: toggle
 

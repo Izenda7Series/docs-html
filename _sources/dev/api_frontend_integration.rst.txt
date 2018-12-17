@@ -435,6 +435,12 @@ Render specific :term:`Report Part` inside hosting web
                A boolean
              - A flag to use hashing in a URL
              - Optional, required for exports
+           * - **previewRecords** |br|
+               Integer
+
+               .. versionadded:: 2.15.1
+             - The number of preview records
+             - Optional (The default value is the value saved in the report definition)
              
 **Samples**
 
