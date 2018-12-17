@@ -5,7 +5,7 @@ User
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 45 25
 
    *  -  Field
       -  NULL
@@ -47,15 +47,15 @@ User
       -  The name of the tenant if available
       -
    *  -  **dataOffset** |br|
-         integer
+         decimal
       -  Y
       -  The time shift to be applied to datetime data from client database connections to match user's local time
-      -
+      -  As of v2.9.5, offset will accept partial hours as .25, .5 or .75
    *  -  **timestampOffset** |br|
-         integer
+         decimal
       -  Y
       -  The time shift to be applied to timestamp data (created date time, last updated date time) from Izenda system database to match user's local time zone
-      -
+      -  As of v2.9.5, offset will accept partial hours as .25, .5 or .75
    *  -  **initPassword** |br|
          boolean
       -
