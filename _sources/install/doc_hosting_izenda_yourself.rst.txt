@@ -4,8 +4,8 @@ Hosting Izenda
 
 .. note::
 
-   It is recommended to install Izenda Front-end and Back-end on two separate boxes to achieve maximum scalability. |br|
-   For small data sources, however, a single box can be used.
+   It is recommended to install Izenda Front-end and Back-end on two separate servers to achieve maximum scalability. |br|
+   For small data sources, however, a single server can be used.
 
 Minimum Hardware Requirements
 ------------------------------
