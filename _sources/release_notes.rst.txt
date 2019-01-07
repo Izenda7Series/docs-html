@@ -7,6 +7,32 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.16.0 January 7, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  "PositionID" is added to the Relationships page of the Data Model.
+    - This is an additional column that accepts numerical values to represent the priority of each join when being loaded into a report.
+    - When these relationships are loaded into a report, they are from top to bottom from the lowest number to highest.
+    - If any data sources have multiple relationships that must be loaded, the relationship with the earliest position is loaded first and all other relationships become subkey joins.     
+    - The settings of PositionID can be copied out using Copy Management to allow all tenants to leverage the same join priorities. 
+
+FIXES
+^^^^^
+	
+-  Defect  19640  Dashboard save dialog displaying Local Categories with Global Categories box checked.   
+-  Defect  21419  Regression lines were not displayed on charts when the Multi-Color was enabled.
+-  Defect  21455  Exporting report from report list with empty filter values results in incorrectly filtered export.
+-  Defect  22332  Color and Alternative Text are not properly applied when using custom data formats.
+-  Defect  22333  Tenant Field plus Filter Lookup causes report to not filter correctly.
+-  Defect  22346  The Chart can't draw when apply Custom Format function for the Thresholds.
+-  Defect  22359  [Chart/Gauge] The Color setting for Separators works incorrectly when having 0 or false value.
+-  Defect  22370  Tenant Field setting does not work at the system level.
+-  Defect  22397  Changing grid pagination after drilldowns would result in 'No record found'.
+
+
 v2.15.1 December 17, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -35,7 +61,7 @@ FEATURES
 -  "Use Lookup" Checkbox Added for Filters
     - If you have lookups set on a field (utilizing the v2.14 lookup functionality) there will be a "Use Lookup" option on those filter fields.
     - This option is a checkbox that determines if you want to leverage the lookup for the filter dropdown or have filter use the historic functionality.
-    - This option will be visible in the Ftiler Properties Panel only if a lookup is set on that particular field in the data model.
+    - This option will be visible in the Filter Properties Panel only if a lookup is set on that particular field in the data model.
 
 FIXES
 ^^^^^
@@ -2825,9 +2851,6 @@ Known Issues
      - 21456
      - The "All changes will be lost" prompt doesn't show when creating new report and navigating away
    * - Defect
-     - 21455
-     - Exporting report from report list with empty filter values results in incorrectly filtered export
-   * - Defect
      - 21454
      - Subtotals of sidetotals not appearing on pivot grids
    * - Defect
@@ -2845,9 +2868,6 @@ Known Issues
    * - Defect
      - 21421
      - Color Value Range Not Highlight Locations in Map Report Part
-   * - Defect
-     - 21419
-     - Regression lines were not displayed on charts when the Multi-Color was enabled. 
    * - Defect
      - 21418
      - Setting 'Range Only' in the report designer would break charts when multiple x-axis fields were used.  
@@ -3388,9 +3408,6 @@ Known Issues
    * - Defect
      - 19644
      - Browser crashes when changing "Day of week" to "Week number" datetime type in Bubble Chart
-   * - Defect
-     - 19640
-     - Dashboard save dialog displaying Local Categories with Global Categories box checked
    * - Defect
      - 19638
      - Filter UI displaying when in Subscribe section
