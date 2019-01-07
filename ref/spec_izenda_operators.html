@@ -112,7 +112,6 @@
 <li class="toctree-l3"><a class="reference internal" href="spec_izenda_data_types.html">Izenda Data Types</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Izenda Operators</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#list-of-operators">List of Operators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#attention-with-possibly-null-fields">Attention with Possibly NULL Fields</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="spec_izenda_functions.html">Izenda Functions</a></li>
@@ -314,19 +313,6 @@ The expression of the lower precedence data type is converted to the higher prec
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="attention-with-possibly-null-fields">
-<h2>Attention with Possibly NULL Fields<a class="headerlink" href="#attention-with-possibly-null-fields" title="Permalink to this headline">¶</a></h2>
-<p>Special attention when checking if a field has value: the equal operator
-cannot used with <code class="docutils literal"><span class="pre">NULL</span></code>, <code class="docutils literal"><span class="pre">IS</span> <span class="pre">NULL</span></code> and <code class="docutils literal"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code> should be
-used instead.</p>
-<p>To check if there is a photo for an employee in Northwind database:
-<code class="docutils literal"><span class="pre">[Photo]</span> <span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code></p>
-<p>Similarly, when using other comparison operators (e.g. &#8220;Greater Than &gt;&#8221;)
-on a field that possibly has <code class="docutils literal"><span class="pre">NULL</span></code> value: the <code class="docutils literal"><span class="pre">NULL</span></code> case must be
-tested separately.</p>
-<p>To check if for employees with hire date later than 2010, including
-unknown hire date: <code class="docutils literal"><span class="pre">[HireDate]</span> <span class="pre">IS</span> <span class="pre">NULL</span> <span class="pre">OR</span> <span class="pre">[HireDate]</span> <span class="pre">&gt;</span> <span class="pre">'01-01-2010'</span></code></p>
 </div>
 </div>
 
