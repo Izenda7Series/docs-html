@@ -67,6 +67,10 @@ List of APIs
      - Returns an array of functions/operators that support calculated fields, filtered by tenant_id if provided.
    * - `POST dataModel/loadRelationships`_
      - Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.
+   * - `POST dataModel/loadInvalidRelationships`_
+
+       .. versionadded:: 2.16.0
+     - Returns an array of invalid/modified relationships of visible data sources, paged and sorted, filtered by search criteria.
    * - `POST dataModel/relationships`_
      - Saves an array of relationships. |br| |br|
        After adding a new relationship, `POST DataModel/loadRelationships`_ should be called to retrieve the new id value.
@@ -94,6 +98,10 @@ List of APIs
      - Deletes a custom query source.
    * - `GET dataModel/querySource/{query_source_id}`_
      - Returns the query source specified by query_source_id.
+   * - `POST dataModel/validateRelationships`_
+
+       .. versionadded:: 2.16.0
+     - Validate the newly added or modified relationship(s).
 
 .. _POST_dataModel/loadQuerySources:
 
@@ -1775,6 +1783,294 @@ Returns an array of relationships of visible data sources, paged and sorted, fil
          "isLastPage": false
       }
 
+POST dataModel/loadInvalidRelationships
+--------------------------------------------------------------
+
+Returns an array of invalid/modified relationships of visible data sources, paged and sorted, filtered by search criteria.
+
+**Request**
+
+    Payload: a :doc:`models/RelationshipPagedRequest` object
+
+**Response**
+
+    A :doc:`models/PagedResult` object with **result** field containing an array of :doc:`models/Relationship` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/dataModel/loadInvalidRelationships HTTP/1.1
+
+   Request payload::
+
+      {
+         "querySourceId": null,
+         "tenantId": null,
+         "criteria": [
+            {
+               "key": "All",
+               "value": "",
+               "operation": 1
+            }
+         ],
+         "pageIndex": 1,
+         "pageSize": 10,
+         "modifiedRelationships": [
+            {
+               "id": null,
+               "joinConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "foreignConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "joinQuerySourceId": "5fba843d-9c64-4079-b727-c110bce2ee3f",
+               "foreignQuerySourceId": "21c34241-c070-47c4-9cc4-86c9893daa5a",
+               "joinFieldId": "f3fd1ac9-254e-4527-a66c-304e05f369bc",
+               "foreignFieldId": "9d927e1a-1abe-4656-b2a6-bd662c49efe3",
+               "alias": "",
+               "systemRelationship": false,
+               "joinType": "Inner",
+               "position": "61"
+            },
+            {
+               "id": null,
+               "joinConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "foreignConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "joinQuerySourceId": "de6cc7be-98bb-4222-94ff-14f1ec6c5042",
+               "foreignQuerySourceId": "5fba843d-9c64-4079-b727-c110bce2ee3f",
+               "joinFieldId": "3f2e55c6-7796-4daf-b8d2-0b95e7ecdcf7",
+               "foreignFieldId": "f3fd1ac9-254e-4527-a66c-304e05f369bc",
+               "alias": "",
+               "systemRelationship": false,
+               "joinType": "Inner",
+               "position": "60"
+            }
+         ],
+         "sortOrders": [
+            {
+               "key": "DatabaseName",
+               "descending": true
+            }
+         ]
+      }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample response:
+
+      .. code-block:: json
+
+         {
+            "result": [
+               {
+                  "invalid": true,
+                  "errors": [
+                     {
+                        "key": "Relationships",
+                        "messages": [
+                           "Relationship cannot be created from the selected fields. Please check the data type of the joined fields."
+                        ]
+                     },
+                     {
+                        "key": "Relationships[1]positionId",
+                        "messages": [
+                           "This positionID is duplicated."
+                        ]
+                     }
+                  ],
+                  "joinConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "foreignConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "joinQuerySourceAlias": null,
+                  "foreignQuerySourceAlias": null,
+                  "joinFieldAlias": null,
+                  "specifictJoinFieldAlias": null,
+                  "foreignFieldAlias": null,
+                  "specifictForeignFieldAlias": null,
+                  "alias": "",
+                  "systemRelationship": false,
+                  "joinType": "Inner",
+                  "parentRelationshipId": null,
+                  "position": "1",
+                  "relationshipPosition": 0,
+                  "hasBeenModified": false,
+                  "relationshipKeyJoins": [],
+                  "reportId": null,
+                  "foreignAlias": null,
+                  "joinQuerySourceUniqueName": null,
+                  "joinFieldUniqueName": null,
+                  "forgeinQuerySourceUniqueName": null,
+                  "forgeinFieldUniqueName": null,
+                  "tempId": null,
+                  "aliasTempId": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isForeignDataObjectAlias": false,
+                  "positionId": 1,
+                  "selectedForeignAlias": "8c65d897-e945-40a8-916f-bfbdc082e83a_G",
+                  "joinQuerySourceName": "D",
+                  "joinQuerySourceId": "00766ac5-08ea-4306-aac9-6bf2aee58d77",
+                  "joinFieldId": "d151cb50-a159-4673-90a9-5887232c9ca7",
+                  "joinFieldType": null,
+                  "foreignQuerySourceName": "G",
+                  "foreignQuerySourceId": "8c65d897-e945-40a8-916f-bfbdc082e83a",
+                  "foreignFieldId": "a93ac69e-9bf7-4a3c-8507-466eff16cb79",
+                  "foreignFieldType": null,
+                  "joinFieldName": null,
+                  "foreignFieldName": null,
+                  "joinDataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+                  "joinDataSourceCategoryName": null,
+                  "foreignDataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+                  "foreignDataSourceCategoryName": null,
+                  "comparisonOperator": null,
+                  "id": null,
+                  "state": 1,
+                  "deleted": false,
+                  "inserted": false,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "An Truong",
+                  "modified": null,
+                  "modifiedBy": null
+               },
+               {
+                  "invalid": true,
+                  "errors": [
+                     {
+                        "key": "Relationships",
+                        "messages": [
+                           "This relationship is duplicated."
+                        ]
+                     },
+                     {
+                        "key": "Relationships[3]positionId",
+                        "messages": [
+                           "This positionID is duplicated."
+                        ]
+                     }
+                  ],
+                  "joinConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "foreignConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "joinQuerySourceAlias": null,
+                  "foreignQuerySourceAlias": null,
+                  "joinFieldAlias": "",
+                  "specifictJoinFieldAlias": null,
+                  "foreignFieldAlias": "",
+                  "specifictForeignFieldAlias": null,
+                  "alias": "",
+                  "systemRelationship": false,
+                  "joinType": "Right",
+                  "parentRelationshipId": null,
+                  "position": "3",
+                  "relationshipPosition": 0,
+                  "hasBeenModified": false,
+                  "relationshipKeyJoins": [],
+                  "reportId": null,
+                  "foreignAlias": null,
+                  "joinQuerySourceUniqueName": null,
+                  "joinFieldUniqueName": null,
+                  "forgeinQuerySourceUniqueName": null,
+                  "forgeinFieldUniqueName": null,
+                  "tempId": null,
+                  "aliasTempId": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isForeignDataObjectAlias": false,
+                  "positionId": 1,
+                  "selectedForeignAlias": "9326420d-8217-4b08-922d-926678b1c0bb_C",
+                  "joinQuerySourceName": "B",
+                  "joinQuerySourceId": "c2896b5b-8895-4a54-a402-25728b17d6dd",
+                  "joinFieldId": "3e580a0b-5d11-4441-adc3-fa94d93fec9b",
+                  "joinFieldType": null,
+                  "foreignQuerySourceName": "C",
+                  "foreignQuerySourceId": "9326420d-8217-4b08-922d-926678b1c0bb",
+                  "foreignFieldId": "8a1bbdf7-320a-49d6-b256-3cbef5b55920",
+                  "foreignFieldType": null,
+                  "joinFieldName": "Id",
+                  "foreignFieldName": "Id",
+                  "joinDataSourceCategoryId": "1cf932d6-8cea-4aa1-a5c0-23ddcb71be72",
+                  "joinDataSourceCategoryName": "CycleRelationship",
+                  "foreignDataSourceCategoryId": "1cf932d6-8cea-4aa1-a5c0-23ddcb71be72",
+                  "foreignDataSourceCategoryName": "CycleRelationship",
+                  "comparisonOperator": null,
+                  "id": "eec27f1b-dc25-48be-9f5c-a5eda552e521",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "An Truong",
+                  "modified": "2018-12-05T10:53:29",
+                  "modifiedBy": null
+               },
+               {
+                  "invalid": true,
+                  "errors": [
+                     {
+                        "key": "Relationships",
+                        "messages": [
+                           "This relationship is duplicated."
+                        ]
+                     }
+                  ],
+                  "joinConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "foreignConnectionId": "a5f9033a-1ddf-4cfe-a152-b0e062b98dc4",
+                  "joinQuerySourceAlias": null,
+                  "foreignQuerySourceAlias": null,
+                  "joinFieldAlias": null,
+                  "specifictJoinFieldAlias": null,
+                  "foreignFieldAlias": null,
+                  "specifictForeignFieldAlias": null,
+                  "alias": "",
+                  "systemRelationship": false,
+                  "joinType": "Right",
+                  "parentRelationshipId": null,
+                  "position": "2",
+                  "relationshipPosition": 0,
+                  "hasBeenModified": false,
+                  "relationshipKeyJoins": [],
+                  "reportId": null,
+                  "foreignAlias": null,
+                  "joinQuerySourceUniqueName": null,
+                  "joinFieldUniqueName": null,
+                  "forgeinQuerySourceUniqueName": null,
+                  "forgeinFieldUniqueName": null,
+                  "tempId": null,
+                  "aliasTempId": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isForeignDataObjectAlias": false,
+                  "positionId": null,
+                  "selectedForeignAlias": "9326420d-8217-4b08-922d-926678b1c0bb_C",
+                  "joinQuerySourceName": "B",
+                  "joinQuerySourceId": "c2896b5b-8895-4a54-a402-25728b17d6dd",
+                  "joinFieldId": "3e580a0b-5d11-4441-adc3-fa94d93fec9b",
+                  "joinFieldType": null,
+                  "foreignQuerySourceName": "C",
+                  "foreignQuerySourceId": "9326420d-8217-4b08-922d-926678b1c0bb",
+                  "foreignFieldId": "8a1bbdf7-320a-49d6-b256-3cbef5b55920",
+                  "foreignFieldType": null,
+                  "joinFieldName": null,
+                  "foreignFieldName": null,
+                  "joinDataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+                  "joinDataSourceCategoryName": null,
+                  "foreignDataSourceCategoryId": "00000000-0000-0000-0000-000000000000",
+                  "foreignDataSourceCategoryName": null,
+                  "comparisonOperator": null,
+                  "id": null,
+                  "state": 1,
+                  "deleted": false,
+                  "inserted": false,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "An Truong",
+                  "modified": null,
+                  "modifiedBy": null
+               }
+            ],
+            "pageIndex": 1,
+            "pageSize": 3,
+            "total": 3,
+            "skipItems": 0,
+            "isLastPage": true
+         }
+
 
 POST dataModel/relationships
 --------------------------------------------------------------
@@ -2515,4 +2811,83 @@ Returns the query source specified by query_source_id.
          "indeterminate": false,
          "numOfChilds": 0,
          "numOfCheckedChilds": 0
+      }
+
+POST dataModel/validateRelationships
+-----------------------------------------------------
+
+Validate the newly added or modified relationship(s).
+
+**Request**
+
+    An array of  :doc:`models/Relationship` object.
+
+**Response**
+
+   An object with the following properties:
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 25 5 40 30
+
+      *  -  Field
+         -  NULL
+         -  Description
+         -  Note
+      *  -  **success** |br|
+            boolean
+         -  
+         -  **true** if there is no invalid relationship (duplicate relationship, duplicate positionId, inconsistent datatype) |br|
+            **false** if there is at least one invalid relationship
+         -  
+      *  -  **hasPositionId** |br|
+            boolean
+         -  N
+         -  Indicate whether there is any relationship has positionId
+         -  
+
+**Samples**
+
+   .. code-block:: http
+
+      POST api/dataModel/validateRelationships HTTP/1.1
+
+   Request Payload::
+
+      {
+         "relationships": [
+            {
+               "id": null,
+               "joinConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "foreignConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "joinQuerySourceId": "5fba843d-9c64-4079-b727-c110bce2ee3f",
+               "foreignQuerySourceId": "21c34241-c070-47c4-9cc4-86c9893daa5a",
+               "joinFieldId": "f3fd1ac9-254e-4527-a66c-304e05f369bc",
+               "foreignFieldId": "9d927e1a-1abe-4656-b2a6-bd662c49efe3",
+               "alias": "",
+               "systemRelationship": false,
+               "joinType": "Inner",
+               "position": "61"
+            },
+            {
+               "id": null,
+               "joinConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "foreignConnectionId": "a202de0e-649d-4c7b-b282-ccdae94585e6",
+               "joinQuerySourceId": "de6cc7be-98bb-4222-94ff-14f1ec6c5042",
+               "foreignQuerySourceId": "5fba843d-9c64-4079-b727-c110bce2ee3f",
+               "joinFieldId": "3f2e55c6-7796-4daf-b8d2-0b95e7ecdcf7",
+               "foreignFieldId": "f3fd1ac9-254e-4527-a66c-304e05f369bc",
+               "alias": "",
+               "systemRelationship": false,
+               "joinType": "Inner",
+               "position": "60"
+            }
+         ]
+      }
+
+   Sample Response::
+
+      {
+         "success" : true,
+         "hasPositionId" : false
       }

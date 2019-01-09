@@ -38,6 +38,13 @@ RelationshipPagedRequest
       -
       -  Whether selected data source has changed
       -
+   *  -  **modifiedRelationships** |br|
+         string (GUID)
+
+         .. versionadded:: 2.16.0
+      -  Y
+      -  The newly added or modified relationships
+      -  Use for retrieve the newly added/modified relationships in Datta Model > Relationships
 
 Inherited fields:
 

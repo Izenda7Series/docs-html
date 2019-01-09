@@ -87,7 +87,13 @@ Workspace
       -
       -  Hashcode for source
       -
+   *  -  **copyPositionID** |br|
+         boolean
 
+         .. versionadded:: 2.16.0
+      -
+      -  Whether system admin select to copy positionID or not
+      -
 
 
 Inherited fields:

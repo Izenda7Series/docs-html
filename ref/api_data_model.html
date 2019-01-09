@@ -302,45 +302,59 @@ Will load from remote connection if they are not yet populated in system.</td>
 <tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loadrelationships">POST dataModel/loadRelationships</a></td>
 <td>Returns an array of relationships of visible data sources, paged and sorted, filtered by search criteria.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-relationships">POST dataModel/relationships</a></td>
+<tr class="row-odd"><td><p class="first"><a class="reference internal" href="#post-datamodel-loadinvalidrelationships">POST dataModel/loadInvalidRelationships</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.16.0.</span></p>
+</div>
+</td>
+<td>Returns an array of invalid/modified relationships of visible data sources, paged and sorted, filtered by search criteria.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-relationships">POST dataModel/relationships</a></td>
 <td>Saves an array of relationships. <br clear="right" /> <br clear="right" />
 After adding a new relationship, <a class="reference internal" href="#post-datamodel-loadrelationships">POST DataModel/loadRelationships</a> should be called to retrieve the new id value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#delete-datamodel-relationship-relationship-id">DELETE dataModel/relationship/{relationship_id}</a></td>
 <td>Deletes the relationship specified by the {relationship_id} value.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-schema-tenant-id">GET dataModel/schema/(tenant_id)</a></td>
 <td>Returns an array of query sources and an array of relationships with color properties (filtered by tenant_id if given).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-schema-updateconnectioncolor">POST dataModel/schema/updateConnectionColor</a></td>
 <td>Updates the connection color.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-relationship-jointypes">GET dataModel/relationship/joinTypes</a></td>
 <td>Returns an array of join types currently supported.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-databasemapping">GET dataModel/databaseMapping</a></td>
 <td>Returns an array of database mappings.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-databasemapping">POST dataModel/databaseMapping</a></td>
 <td>Saves an array of database mappings.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loaddatabasenames">POST dataModel/loadDatabaseNames</a></td>
 <td>Returns a paged array of database servers and database names.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-loaddatabaseobjects">POST dataModel/loadDatabaseObjects</a></td>
 <td>Returns a paged array of connection names or schema names in the specified database.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-customquerysource">POST dataModel/customQuerySource</a></td>
 <td>Executes and saves a custom query source.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-validatecustomquerysource">POST dataModel/validateCustomQuerySource</a></td>
 <td>Validates that name of custom query source is unique.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-datamodel-deletecustomquerysource">POST dataModel/deleteCustomQuerySource</a></td>
 <td>Deletes a custom query source.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-datamodel-querysource-query-source-id">GET dataModel/querySource/{query_source_id}</a></td>
 <td>Returns the query source specified by query_source_id.</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><a class="reference internal" href="#post-datamodel-validaterelationships">POST dataModel/validateRelationships</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.16.0.</span></p>
+</div>
+</td>
+<td>Validate the newly added or modified relationship(s).</td>
 </tr>
 </tbody>
 </table>
@@ -1973,6 +1987,288 @@ Sample response:</div>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="post-datamodel-loadinvalidrelationships">
+<h2>POST dataModel/loadInvalidRelationships<a class="headerlink" href="#post-datamodel-loadinvalidrelationships" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of invalid/modified relationships of visible data sources, paged and sorted, filtered by search criteria.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/RelationshipPagedRequest.html"><span class="doc">RelationshipPagedRequest</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing an array of <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> objects</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadInvalidRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+   <span class="s2">&quot;modifiedRelationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;5fba843d-9c64-4079-b727-c110bce2ee3f&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;21c34241-c070-47c4-9cc4-86c9893daa5a&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;f3fd1ac9-254e-4527-a66c-304e05f369bc&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d927e1a-1abe-4656-b2a6-bd662c49efe3&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;61&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;de6cc7be-98bb-4222-94ff-14f1ec6c5042&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;5fba843d-9c64-4079-b727-c110bce2ee3f&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;3f2e55c6-7796-4daf-b8d2-0b95e7ecdcf7&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;f3fd1ac9-254e-4527-a66c-304e05f369bc&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;60&quot;</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;sortOrders&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;DatabaseName&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;descending&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;invalid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Relationships&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;Relationship cannot be created from the selected fields. Please check the data type of the joined fields.&quot;</span>
+               <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Relationships[1]positionId&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;This positionID is duplicated.&quot;</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;specifictJoinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;specifictForeignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;parentRelationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;hasBeenModified&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipKeyJoins&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;aliasTempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;isForeignDataObjectAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;positionId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;selectedForeignAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;8c65d897-e945-40a8-916f-bfbdc082e83a_G&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;00766ac5-08ea-4306-aac9-6bf2aee58d77&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;d151cb50-a159-4673-90a9-5887232c9ca7&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;8c65d897-e945-40a8-916f-bfbdc082e83a&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;a93ac69e-9bf7-4a3c-8507-466eff16cb79&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;comparisonOperator&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;An Truong&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;invalid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Relationships&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;This relationship is duplicated.&quot;</span>
+               <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Relationships[3]positionId&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;This positionID is duplicated.&quot;</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;specifictJoinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;specifictForeignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;parentRelationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;hasBeenModified&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipKeyJoins&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;aliasTempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;isForeignDataObjectAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;positionId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;selectedForeignAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;9326420d-8217-4b08-922d-926678b1c0bb_C&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c2896b5b-8895-4a54-a402-25728b17d6dd&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;3e580a0b-5d11-4441-adc3-fa94d93fec9b&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;9326420d-8217-4b08-922d-926678b1c0bb&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;8a1bbdf7-320a-49d6-b256-3cbef5b55920&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;Id&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;Id&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;1cf932d6-8cea-4aa1-a5c0-23ddcb71be72&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;CycleRelationship&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;1cf932d6-8cea-4aa1-a5c0-23ddcb71be72&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;CycleRelationship&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;comparisonOperator&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;eec27f1b-dc25-48be-9f5c-a5eda552e521&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;An Truong&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-12-05T10:53:29&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;invalid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;Relationships&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;This relationship is duplicated.&quot;</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a5f9033a-1ddf-4cfe-a152-b0e062b98dc4&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;specifictJoinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;specifictForeignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;parentRelationshipId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;hasBeenModified&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;relationshipKeyJoins&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;forgeinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;aliasTempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;isForeignDataObjectAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;positionId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;selectedForeignAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;9326420d-8217-4b08-922d-926678b1c0bb_C&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;c2896b5b-8895-4a54-a402-25728b17d6dd&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;3e580a0b-5d11-4441-adc3-fa94d93fec9b&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;9326420d-8217-4b08-922d-926678b1c0bb&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;8a1bbdf7-320a-49d6-b256-3cbef5b55920&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinFieldName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignFieldName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;joinDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;foreignDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;comparisonOperator&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;An Truong&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+   <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+   <span class="nt">&quot;skipItems&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;isLastPage&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="post-datamodel-relationships">
 <h2>POST dataModel/relationships<a class="headerlink" href="#post-datamodel-relationships" title="Permalink to this headline">¶</a></h2>
 <p>Saves an array of relationships. <br clear="right" /> <br clear="right" />
@@ -2676,6 +2972,93 @@ Sample response:</div>
    <span class="s2">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
    <span class="s2">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
    <span class="s2">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-datamodel-validaterelationships">
+<h2>POST dataModel/validateRelationships<a class="headerlink" href="#post-datamodel-validaterelationships" title="Permalink to this headline">¶</a></h2>
+<p>Validate the newly added or modified relationship(s).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An array of  <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> object.</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An object with the following properties:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="40%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>success</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td><strong>true</strong> if there is no invalid relationship (duplicate relationship, duplicate positionId, inconsistent datatype) <br clear="right" />
+<strong>false</strong> if there is at least one invalid relationship</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>hasPositionId</strong> <br clear="right" />
+boolean</td>
+<td>N</td>
+<td>Indicate whether there is any relationship has positionId</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/validateRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;5fba843d-9c64-4079-b727-c110bce2ee3f&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;21c34241-c070-47c4-9cc4-86c9893daa5a&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;f3fd1ac9-254e-4527-a66c-304e05f369bc&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;9d927e1a-1abe-4656-b2a6-bd662c49efe3&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;61&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+         <span class="s2">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;a202de0e-649d-4c7b-b282-ccdae94585e6&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;de6cc7be-98bb-4222-94ff-14f1ec6c5042&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;5fba843d-9c64-4079-b727-c110bce2ee3f&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;3f2e55c6-7796-4daf-b8d2-0b95e7ecdcf7&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;f3fd1ac9-254e-4527-a66c-304e05f369bc&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+         <span class="s2">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;60&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;hasPositionId&quot;</span> <span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>

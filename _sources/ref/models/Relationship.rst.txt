@@ -5,7 +5,7 @@ Relationship
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 40 30
 
    *  -  Field
       -  NULL
@@ -148,6 +148,28 @@ Relationship
       -
       -  Whether the relationship has been modified or not
       -
+   *  -  **positionId** |br|
+         int
+
+         .. versionadded:: 2.16.0
+      -
+      -  The order of relationships when executing the query
+      -
+   *  -  **invalid** |br|
+         boolean
+
+         .. versionadded:: 2.16.0
+      -  Y
+      -  Whether the relationship is valid or not
+      -  Use when validating invalid relationship(s) in Data Model > Relationships
+   *  -  **errors** |br|
+         array of :doc:`models/ModelError`
+
+         .. versionadded:: 2.16.0
+      -  Y
+      -  The list of all the relationship errors
+      -  Use when validating invalid relationship(s) in Data Model > Relationships
+
 
 Inherited fields:
 
