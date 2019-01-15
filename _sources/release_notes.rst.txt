@@ -19,6 +19,10 @@ FEATURES
     - If any data sources have multiple relationships that must be loaded, the relationship with the earliest position is loaded first and all other relationships become subkey joins.     
     - The settings of PositionID can be copied out using Copy Management to allow all tenants to leverage the same join priorities. 
 
+-  Multi-Level Functionality for Tree Maps
+    - Tree Maps now have a new Report Part Property 'Multi-Level'
+    - If checked, drilldowns will be disabled and all x-axis groups are displayed on the same level.
+     
 FIXES
 ^^^^^
 	
