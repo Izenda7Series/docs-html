@@ -228,6 +228,10 @@ Deletes a role.
 
     An :doc:`models/OperationResult` object with **success** field true if the update is successful
 
+.. note::
+
+   The `selected_tenant <https://www.izenda.com/docs/ref/.rest_api_documentation.html>`_ request header is required if you need to use the DELETE /role endpoint to delete a role from the Tenant level.	
+	
 **Samples**
 
    .. code-block:: http

@@ -213,7 +213,7 @@ After the Izenda API obtains a valid access token from the AuthGetAccessTokenURL
 
 * Similar to the Page to Render the platform, this page will need to reference the EmbeddedUI and an HTML Element to render Izenda Components.
   
-  * The token will be sent to this page in a query string as *token* . The host application will set the user context using this value.
+  * The token will be sent to this page in the export request as an HTTP header.
   
   * The Report Part ID will be sent to this page in a query string as *id* . The host application will use the Front End Integration Endpoint `renderReportPart(element,params) <https://www.izenda.com/docs/dev/api_frontend_integration.html#renderreportpart-element-params>`_ to render the a chart report part for export.
   
@@ -222,7 +222,4 @@ After the Izenda API obtains a valid access token from the AuthGetAccessTokenURL
 Copying Reports from One Environment To Another
 -----------------------------------------------
 
-Reports can be copied from one Izenda instance to another via the Izenda Copy Console. To use the Copy Console in integrated modes, a route must exist in your application that allows for a user to authenticate with your application and immediately returns an access_token to be used with Izenda API interactions. In the diagram above, this route corresponds to the "/copyconsoleauth
-" route.
-
-A detailed description of the Copy Console and its requirements can be found at `here <https://www.izenda.com/docs/ui/doc_copy_console.html>`_
+Reports can be copied from one Izenda instance to another via an import/export process. First you would need to export the report (.birt file) and/or dashboard (.bidb file), and then you would need to import it into another environment. The process of exporting reports from one environment and importing it into another can be done through the `UI <https://www.izenda.com/docs/ui/doc_import_report_dashboard_definition.html>`_ or the `API <https://www.izenda.com/docs/swagger/import-export.html>`_.

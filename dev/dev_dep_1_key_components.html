@@ -416,7 +416,7 @@ Since these interactions occur on the server side, the &#8220;authentication&#82
 <li>Since this process occurs on the server, schedules and exports can run successfully without a user being active on the front end. This page will be used to render any chart visualizations.</li>
 <li>Izenda has a definite structure for this route, WebURL + &#8220;/viewer/reportpart/&#8221;. This corresponds to the &#8220;Page to render exports&#8221; in the image above.</li>
 <li>Similar to the Page to Render the platform, this page will need to reference the EmbeddedUI and an HTML Element to render Izenda Components.<ul>
-<li>The token will be sent to this page in a query string as <em>token</em> . The host application will set the user context using this value.</li>
+<li>The token will be sent to this page in the export request as an HTTP header.</li>
 <li>The Report Part ID will be sent to this page in a query string as <em>id</em> . The host application will use the Front End Integration Endpoint <a class="reference external" href="https://www.izenda.com/docs/dev/api_frontend_integration.html#renderreportpart-element-params">renderReportPart(element,params)</a> to render the a chart report part for export.</li>
 <li>The Izenda API will call this page multiple times to render all chart report parts in the selected report.</li>
 </ul>
@@ -426,9 +426,7 @@ Since these interactions occur on the server side, the &#8220;authentication&#82
 </div>
 <div class="section" id="copying-reports-from-one-environment-to-another">
 <h3>Copying Reports from One Environment To Another<a class="headerlink" href="#copying-reports-from-one-environment-to-another" title="Permalink to this headline">¶</a></h3>
-<p>Reports can be copied from one Izenda instance to another via the Izenda Copy Console. To use the Copy Console in integrated modes, a route must exist in your application that allows for a user to authenticate with your application and immediately returns an access_token to be used with Izenda API interactions. In the diagram above, this route corresponds to the &#8220;/copyconsoleauth
-&#8221; route.</p>
-<p>A detailed description of the Copy Console and its requirements can be found at <a class="reference external" href="https://www.izenda.com/docs/ui/doc_copy_console.html">here</a></p>
+<p>Reports can be copied from one Izenda instance to another via an import/export process. First you would need to export the report (.birt file) and/or dashboard (.bidb file), and then you would need to import it into another environment. The process of exporting reports from one environment and importing it into another can be done through the <a class="reference external" href="https://www.izenda.com/docs/ui/doc_import_report_dashboard_definition.html">UI</a> or the <a class="reference external" href="https://www.izenda.com/docs/swagger/import-export.html">API</a>.</p>
 </div>
 </div>
 </div>
