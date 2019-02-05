@@ -7,6 +7,42 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.17.0 February 4, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  Improved Error Messaging
+    - Dashboard tiles will show error messages from their underlying reports.
+    - System logs will provide more information on failed login attempts.
+    - The report viewer will list any data sources and fields that are causing an error.
+    - Email actions will throw more descriptive errors if an email server is not set up at the system level or for a tenant.
+    - Errors on the data sources page of the report designer are reworked for more clarity. 
+
+FIXES
+^^^^^
+-  Defect  16040  The message displays "The template....." Instead of "The report...." When a user Copies/Moves a report.   
+-  Defect  17029  In Settings, Schedule, Created By should be <First Name> <Last Name> instead of userId.   
+-  Defect  18351  When creating a role, the Permissions page shows 'Configure Password Options' under the User Setup > Actions area. In the Permission Summary page it shows that same area as 'Configure Security Options'.   
+-  Defect  20351  In Time Period Fiscal Year filter operator includes both edge-case dates.   
+-  Defect  20621  Resolved subscription-based security issue on API.   
+-  Defect  21762  Report Category and Name change are not reflected in the dashboard report part link.   
+-  Defect  21916  Alternative Text Not Applying to Subtotal NULL Value in Drill Down Grid.   
+-  Defect  21917  Alternative Text Not Updating Chart Drill Down Labels for NULL Values.   
+-  Defect  21995  Subtotal Creates Additional Border Cell in Pivot Grids.   
+-  Defect  22167  Boolean Filter pValue Not Dynamically Updating.   
+-  Defect  22209  Global subreports were not correctly filtered by field mappings.   
+-  Defect  22277  Simple Gauge with Separator Not Exporting Values.   
+-  Defect  22395  Side Totals were displayed if the % of Side Total function was used without enabling side totals.   
+-  Defect  22522  Update Results button would be overlapped and unavailable in smaller resolutions.   
+-  Defect  22541  Bar Chart axis were inverted.   
+-  Defect  22591  Fields with a dot in the name could not be used in custom views.   
+-  Defect  22592  Field dropdown in the Relationships page of the data model does not display non-visible fields.   
+-  Defect  22649  Fixed JavaScript issues revealed in Karma testing.        
+
+
+
 v2.16.0 January 7, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3260,9 +3296,6 @@ Known Issues
      - 20356
      - Dynamic stored procedure check box is not checked in the Data Model after updating and reconnecting to the reporting database
    * - Defect
-     - 20351
-     - In Time Period Fiscal Year filter operator includes both edge-case dates
-   * - Defect
      - 20348
      - Copy Management validation failing when substantial number of reports exist in tenant
    * - Defect
@@ -4136,9 +4169,6 @@ Known Issues
      - 18359
      - When using Oracle the Wrong Data Type in calculated field causes application error when using calculated field as a filter
    * - Defect
-     - 18351
-     - When creating a role, the Permissions page shows 'Configure Password Options' under the User Setup > Actions area. In the Permission Summary page it shows that same area as 'Configure Security Options'
-   * - Defect
      - 18341
      - No Changes Found shows when Modifying an Existing Report Title & Description When First Opening Report Designer
    * - Defect
@@ -4661,9 +4691,6 @@ Known Issues
      - 17032
      - Tool tip is not displayed on the information icon next to provision map data button in Settings page.
    * - Defect
-     - 17029
-     - In Settings, Schedule, Created By should be <First Name> <Last Name> instead of userId
-   * - Defect
      - 17028
      - In Report Designer Access tab  selected users are not checked in All Users popup
    * - Defect
@@ -4807,9 +4834,6 @@ Known Issues
    * - Defect
      - 16237
      - Chart is not show when using a CF created in the data model with an alias when used in chart
-   * - Defect
-     - 16040
-     - The message displays "The template....." wrongly, instead of "The report...." when user Copies/Moves a report
    * - Defect
      - 15996
      - Report Designer > Report Body > 'Reset Zoom' Dialogue Causes Drilldown
