@@ -7,6 +7,21 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v2.17.1 February 19, 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+	
+-  Defect  21997  Mulit-level drilldowns with hidden fields breaks beyond two levels of depth.   
+-  Defect  22194  Unable to Save Fields with Altered Capitalization in the Data Model.
+-  Defect  22205  [Chart - Waterfall] The format for Threshold on Y-Axis is not applied as defined.
+-  Defect  22334  Date field being used as a Comparison Filter provides text box instead of date picker.
+-  Defect  22523  Simple Gauges would not render in the report designer.
+-  Defect  22634  Subreports set on Map report parts will drilldown instead of opening the new report.
+-  Defect  22739  Editing reports using IE and Edge caused a slowdown in performance on Form report parts.
+
+
 v2.17.0 February 4, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
