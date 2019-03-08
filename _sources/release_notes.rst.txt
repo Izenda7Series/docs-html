@@ -32,6 +32,7 @@ FIXES
 ^^^^^
 -  Defect  18966  Relationships Grid should expand to take up entire panel in Settings> Data Setup> Data Model > Relationship.   
 -  Defect  19196  CASE statement help text had incorrect text in the Expression Builder.   
+-  Defect  21456  The "All changes will be lost" prompt doesn't show when creating new report and navigating away.
 -  Defect  21458  Updating the PageSetting  value in the IzendaSystemSetting table (for formats like A4, A3, etc.) would not update the system to export in the newly selected format.   
 -  Defect  21639  Map Color Value Range would not sorting in the chart legend.   
 -  Defect  22204  Alternative Text values would incorrectly apply conditional formatting.   
