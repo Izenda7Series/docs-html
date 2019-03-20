@@ -7,7 +7,30 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
-v2.18.0March 6, 2019
+v2.18.1 March 19, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  Right-click Menu Options
+    - Users can now right click on the following elements to open in a new tab or window: Reports/Report Menu, Report Categories, Dashboards/Dashboard Menu, Settings 
+
+FIXES
+^^^^^
+-  Defect  22645  Calculated Fields were not properly sorted if other fields had sorting applied.   
+-  Defect  22764  Query Generation would not accurately support LEFT/RIGHT joins in Star Schemas.   
+-  Defect  22777  Users would receive a connection error when connecting to an Oracle configuration database.   
+-  Defect  23012  Oracle migration scripts would not properly execute.   
+
+.. warning::
+
+   If you are currently leveraging LEFT or RIGHT joins in your reports, you should ensure that the changes in IZ-22764 have not impacted your reporting data. 
+
+
+
+
+v2.18.0 March 6, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
