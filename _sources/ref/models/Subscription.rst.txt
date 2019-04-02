@@ -207,13 +207,15 @@ Subscription
       -
    *  -  **subscriptionFilterFields** |br|
          array of objects
-      -
-      -  An array of :doc:`SubscriptionFilterField` objects
+      -  Y
+      -  An array of :doc:`SubscriptionFilterField` objects. |br| |br|
+         *When emailing a report with selected filter(s).*
       -
    *  -  **subscriptionCommonFilterFields** |br|
          array of objects
-      -
-      -  An array of :doc:`SubscriptionCommonFilterField` objects
+      -  Y
+      -  An array of :doc:`SubscriptionCommonFilterField` objects. |br| |br|
+         *When emailing a dashboard with selected common filter(s).*
       -
    *  -  **tempId** |br|
          string (GUID)

@@ -1380,8 +1380,21 @@ Returns email setting status.
 
 **Response**
 
-    * true if email setting exists
-    * false if not
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **success** |br|
+             boolean
+          -  Whether the email settings exist
+          -
+       *  -  **message** |br|
+             string
+          -  The error message if **success** is false
+          -
+
 
 **Samples**
 

@@ -6,7 +6,7 @@ ReportPartPreviewParameter
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 60 10
 
    *  -  Field
       -  NULL
@@ -46,6 +46,21 @@ ReportPartPreviewParameter
          boolean
       -
       - Whether to load all rows for printing
+      -
+   *  -  **overridingFilterValue** |br|
+         object
+         
+         .. versionadded:: 3.0
+      -
+      - A dynamic object to store filter values to override |br| |br|
+        For example:
+
+        .. code-block:: json
+
+            overridingFilterValue: {
+               p1value: "Brazil",
+               p2value: "6"
+            },
       -
 
 

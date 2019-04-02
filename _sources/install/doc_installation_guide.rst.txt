@@ -3,12 +3,12 @@ Installation Guide
 ==========================
 
 .. contents:: Table of Contents
-      :depth: 2
+      :depth: 3
 
 |br|
 
 Standalone Installation Options
---------------------------------
+=================================
 There are two main options when deploying a "vanilla" instnace of our standalone environment.
       -  Installing Izenda's front end and back end as two separate sites
       -  Installing Izenda's front end and back end as virtual directories/applications under a host site
@@ -17,11 +17,14 @@ The architectural goal, pre-installation preparations, and web server setup are 
 
 
 Architectural Goal
-------------------------
+=======================
 
 .. figure:: /_static/images/intro/understanding_the_three-tiered_architecture/Slide1B.PNG
 
    A diagram of implementation
+
+Install Izenda Standalone on Window OS
+========================================
 
 Pre-installation Preparations
 ------------------------------
@@ -142,7 +145,7 @@ The most common testing scenario places the front-end and the back-end on two se
          (C:\\inetpub\\wwwroot\\Izenda\\App).
       #. Skip the Connect as... and Test Settings... buttons for now,
          since permissions have not been set for Izenda package folders.
-      #. The Port for Front-end is best kept at the default value of 80.
+      #. Keep the port as 80 by default or change to any available port.
       #. Optionally enter the website address into host name box, but
          you will have to bind that address with the correct ip in
          "C:\\WINDOWS\\System32\\drivers\\etc\\hosts" file.
@@ -161,7 +164,10 @@ The most common testing scenario places the front-end and the back-end on two se
 
          New Website |br|
 
-#. Install Izenda Back-end package similarly with a different port.
+#. Add new website for Back-end package:
+
+   *  .NET infrastructure: Similarly to Front-end site set-up but with different port
+   *  .NET Core infrastructure: Please prefer to the .NET Core Back-end Standalone set-up guide :ref:`Deploy_NET_Core_BE`
 
 #. .. _IIS_Folder_Permissions:
 
@@ -185,7 +191,9 @@ The most common testing scenario places the front-end and the back-end on two se
       IUSR.
    #. Click OK to close all dialogs. |br|
    #. Set similar permissions for the other package.
-   #. Update the Back-end API url in Front-end package: |br|
+
+#. Update the Back-end API url in Front-end package: 
+
       Edit the file ``App\izenda_config.js``, replace the default value "WebApiUrl" with the correct ip and port:
       ``"WebApiUrl": "http://127.0.0.1:8888/api/",``
       
@@ -194,6 +202,63 @@ The most common testing scenario places the front-end and the back-end on two se
  - Troubleshooting & Verifying the Installation
  - Common Izenda Stand-alone Installation Issues
  - Editing the Configuration Files
+
+.. _Deploy_NET_Core_BE:
+
+Deploy .NET Core Back-end standalone via IIS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Pre-installation preparations**
+
+`.NET Core 2.2 Runtime & Hosting Bundle for Windows <https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer>`_ 
+
+**Publish Izenda.Synergy.WebAPI**
+
+#. Extract Izenda Back-end package into a folder
+#. Build Izenda.Synergy solution (from Izenda Back-end package) via Visual Studio, then select project Izenda.Synergy.WebAPI
+#. On the Visual Studio’s top menu, select Build then Publish Izenda.Synergy.WebAPI
+
+   .. figure:: /_static/images/install/Publish_NET_Core_BE.png
+      :width: 552px
+
+      Publich .NET Core Back-end package |br|
+
+#. In the Publish pop-up, choose Configure… to adjust publish settings
+
+   #. In Connection tab, choose the target location, preferable at C:\\www\\IzendaStandAlone
+
+      .. figure:: /_static/images/install/Publish_NET_Core_BE_Connection.png
+         :width: 571px
+
+   #. In Settings tab
+
+      \- Choose netcoreapp2.2 for Target Framework |br|
+      \- Choose Framework-Dependent for Deployment Mode |br|
+      \- Choose Portable for Target Runtime |br|
+      \- Then Save the settings |br|
+
+      .. figure:: /_static/images/install/Publish_NET_Core_BE_Settings.png
+         :width: 571px
+   
+   #. Click Publish to start publishing progress
+
+**Deploy Izenda using Internet Information Services (IIS) Manager**
+
+#. Add new website for .NET Core Back-end package similarly to set-up Front-end site but with another site name (preferably IzendaStandAlone) and port (preferably 9898)
+
+   .. figure:: /_static/images/install/Publish_NET_Core_BE_Hots_Site.png
+      :width: 446px
+
+#. Configure the IzendaStandAlone pool
+
+   #. Click Application Pools in the left panel to open the Application Pool management tab
+   #. Choose IzendaStandAlone then Basic Settings to open Edit Application Pool pop-up
+   #. Change the .NET CLR version to No Managed Code
+   #. Click OK to save the setting
+
+      .. figure:: /_static/images/install/Publish_NET_Core_BE_Pool_Settings.png
+         :width: 546px
+
 
 
 ----------------------------------------------------------------
@@ -543,8 +608,189 @@ Common Izenda Standalone Installation Issues
 
             |br|
 
+Install Izenda Standalone on Ubuntu OS
+=======================================
+
+Pre-install preparations
+----------------------------
+
+#. Create instance of Ubuntu 18.04
+#. Login using ``ssh`` as default user
+#. Download ans install .NET core 2.2 sdk and run time env. `Download here <https://dotnet.microsoft.com/download/linux-package-manager/rhel/runtime-2.2.3>`_
+
+   * If you recieve any error, please follow the below steps
+
+      .. code-block:: console
+
+         wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+         sudo dpkg -i packages-microsoft-prod.deb	
+         sudo add-apt-repository universe
+         sudo apt-get install apt-transport-https
+         sudo apt-get update
+         sudo apt-get install aspnetcore-runtime-2.2
+         sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
+         sudo apt-get update
+         sudo apt-get install aspnetcore-runtime-2.2
+
+   * If the issues were not resolved, please follow the below steps to re-install
+
+      .. code-block:: console
+
+         sudo apt-get install -y gpg
+         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
+         sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
+         wget -q https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+         sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+         sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+         sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+         sudo apt-get install -y apt-transport-https
+         sudo apt-get update
+         sudo apt-get install aspnetcore-runtime-2.2
+
+#. Use ``dotnet --info`` to check the installation of .NET Core. You suppose to recieve the following result if .NET Core 2.2 was successfully installed
+
+   .. figure:: /_static/images/install/Ubuntu_Standalone_NET_Core.png
+      :width: 847px
+
+#. Install Appache2 as reverse proxy
+
+   #. Update Ubuntu packages to the latest stable version: ``sudo apt-get update``
+   #. Install vim: ``sudo apt-get install vim -y``
+   #. Install the Apache web server on Ubuntu: ``sudo apt-get install apache2 -y``
+   #. Enable the Apache required modules
+
+      .. code-block:: console
+
+         sudo a2enmod rewrite
+         sudo a2enmod proxy
+         sudo a2enmod proxy_http
+         sudo a2enmod headers
+         sudo a2enmod ssl –- if you want to configure as SSL
+         sudo service apache2 restart
+
+   #. Verify Apache installation by running localhost.
+
+      .. figure:: /_static/images/install/Ubuntu_Stadnalone_Apache.png
+         :width: 689px
+
+#. Download Izenda Font-end and Back-end packages
+
+   * Download the lasted Izenda packages from `<https://downloads.izenda.com/latest/>`_
+
+      .. code-block:: console
+
+         sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/StandaloneUI.zip
+         sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/API_AspnetCore.zip
+
+
+   * Unzip the Izenda Font-end and Back-end packages
+
+      .. code-block:: console
+
+         sudo apt-get install zip unzip // Download the zip tool
+         sudo unzip 'StandaloneUI.zip' -d /var/www/izenda-ui // Unzip the Izenda Front-end package
+         sudo unzip 'Aspnetcore-API.zip' -d /var/www/izenda-api // Unzip the Izenda Back-end package
+
+#. Configure Apache reverse proxy
+
+   #. Enter domain name in to **apache2.conf** file
+
+      .. code-block:: console
+
+         sudo vim /etc/apache2/apache2.conf
+         ServerName localhost
+
+
+Install Izenda as two separate sites
+-----------------------------------------
+
+#. Create **izenda-ui.conf** under /etc/apache2/sites-available: ``sudo vim /etc/apache2/sites-available/izenda-ui.conf``
+
+   .. code-block:: xml
+
+      Listen 8080
+      <VirtualHost *:8080>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/izenda-ui/StandaloneUI
+            ErrorLog /var/log/apache2/izenda-ui-error.log
+            CustomLog /var/log/apache2/Izenda-ui-access.log common
+            <Directory "/var/www/izenda-ui/StandaloneUI">
+                     RewriteEngine on
+                     # Don't rewrite files or directories
+                     RewriteCond %{REQUEST_FILENAME} -f [OR]
+                     RewriteCond %{REQUEST_FILENAME} -d
+                     RewriteRule ^ - [L]
+                     # Rewrite everything else to index.html to allow html5 state links
+                     RewriteRule ^ index.html [L]
+            </Directory>
+      </VirtualHost>
+
+#. Create **izenda-api.conf** under //etc/apache2//sites-available: ``sudo vim /etc/apache2/sites-available/izenda-api.conf``
+
+   .. code-block:: xml
+
+      Listen 8081
+      <VirtualHost *:8081> 
+         ProxyPreserveHost On
+         ProxyRequests Off
+         ProxyPass / http://127.0.0.1:5000/
+         ProxyPassReverse / http://127.0.0.1:5000/
+         ServerName localhost
+         ErrorLog /var/log/apache2/izenda-api-error.log
+         CustomLog /var/log/apache2/Izenda-api-access.log common
+      </VirtualHost>
+
+#. Active the Front-end and Back-end sites.
+
+   .. code-block:: console
+
+      sudo a2ensite izenda-api.conf
+      sudo a2ensite izenda-ui.conf
+
+#. Verify the configuration: ``sudo apachectl configtest``. If the configuration is correct, the result will be ``Syntax Ok``. If not, there is an issue in the configuration.
+
+#. Update WebURL in **Izenda_Config.js** file with the proper prt (8081). ``WebApiUrl:"http://localhost:8087/api/``
+#. Provide write permission to current user
+
+   .. code-block:: console
+
+      sudo gpasswd -a "$USER" www-data
+      sudo chown -R "$USER":www-data /var/www
+      find /var/www -type f -exec chmod 0660 {} \;
+      sudo find /var/www -type d -exec chmod 2770 {} \;
+
+#. Restart the website: ``sudo service apache2 restart``
+#. Start your dotnet application: ``sudo dotnet Izenda.BI.API.AspNetCore.dll``. If the installation is success, you can browse you website via localhost with the 8080 port
+
+Create monitor service
+--------------------------
+
+#. Install Supervisor, a monitor service app: ``sudo apt-get install supervisor``
+#. Create supervisor config file: ``sudo vim /etc/supervisor/conf.d/izenda-api.conf``
+#. Add the following content to the above file
+
+   .. code-block:: console
+
+      [program:dotnettest]
+      command=/usr/bin/dotnet /var/www/izenda-api/API_AspnetCore/Izenda.BI.API.AspNetCore.dll  --urls "http://*:5000"
+      directory=/var/www/izenda-api/API_AspnetCore
+      autostart=true
+      autorestart=true
+      stderr_logfile=/var/log/izenda-api.err.log
+      stdout_logfile=/var/log/izenda-api.out.log
+      environment=ASPNETCORE_ENVIRONMENT=Production
+      user=www-data
+      stopsignal=INT
+
+#. Command to start/stop the service
+
+   * Start Supervisor: ``sudo service supervisor start``
+   * Stop Supervisor: ``sudo service supervisor stop``
+
+#. Verifying the service running progress ``sudo tail -f /var/log/izenda-api.out.log``
+
 Additional Reference
--------------------------------------------------------
+========================
 * Understanding Configuration vs. Reporting Connection Strings
       The Izenda Configuration Database Connection String and Reporting Data Source Connection Strings are set in two different places, it totally separate UIs or underlying APIs.
 
