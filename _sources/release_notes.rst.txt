@@ -7,6 +7,55 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+v3.0.0 April 2, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^	
+
+-  UI Re-skin 
+    -  The v3.0.0 release features a new themed application that is easier to whitelabel.
+-  .NET Core Compliance
+    -  Our libraries have been updated to support .NET Core
+    -  Izenda can now be deployed in Linux environments
+-  Export Provider Change
+    -  We have changed our export provider from EvoPDF to Syncfusion
+-  Default API Route
+    -  Navigating to http://[YourIP]/api/ will now provide a default Izenda landing page. 
+    -  If you make an application/json request to this endpoint it will return 'The system is online' upon a successful response. 
+-  Improved Import/Export Error Messaging
+    -  While importing report/dashboard definitions, the pop-up will now contain file names, field names, and data types of all conflicting objects.
+    -  The content of this pop-up is now copyable so it can be viewed outside of the application.
+-  Improved Export Error Messaging
+    -  Log messages will show if the system ran out of memory while exports, or if a navigation timeout occurred. 
+    -  If a navigation timeout caused the export to fail, it will mention the values for export configuration currently set in the IzendaSystemSetting table.
+-  Improved Emailed Report URLs
+    -  When emailing the report URL, the filter values are now included so the opened report is filtered appropriately.
+-  Improved Install Error Messages
+    -  An error message is thrown during installation if the IIS users don't have sufficient permissions to the application files. 
+
+.. warning::
+
+   If you currently have additional Azure resources configured for an EvoPDF exporting provider, this is no longer necessary. Syncfusion works in Azure environments without the need of a specific service. You will need to adjust your exporting configurations accordingly.
+
+FIXES
+^^^^^
+-  Defect  21853  Month In Time Period filters do not return the expected results using Oracle reporting database.   
+-  Defect  21862  Sorting the x-axis did not work when a separator was in use. 
+-  Defect  22258  Map drilldowns would break when using the % of Group format.  
+-  Defect  22284  Using lookups with special characters would return all data.
+-  Defect  22339  Labels on a static threshold would not display.
+-  Defect  22687  Using AngularJS front end causes infinite URL redirecting.
+-  Defect  22816  Unable to edit Report Name on Report Viewer in Multi-Tenant mode.
+-  Defect  22821  Embedded subreports would not show data when field mappings were used.
+-  Defect  22832  Top y-axis label on Heat Maps would be null without enough height.
+-  Defect  22851  Some dropdowns did not have triange animation.
+-  Defect  22859  Maps would not render when using the City field.
+-  Defect  22918  Filter values would not updated when scheduling a Dashboard.
+-  Defect  23919  Filter values would not update when scheduling a chart, gauge, or map.
+-  Defect  23920  Filter values in report schedules would not display properly if one or more filters were not marked as visible.
+
+
 v2.18.1 March 19, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
