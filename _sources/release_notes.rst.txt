@@ -52,8 +52,8 @@ FIXES
 -  Defect  22851  Some dropdowns did not have triange animation.
 -  Defect  22859  Maps would not render when using the City field.
 -  Defect  22918  Filter values would not updated when scheduling a Dashboard.
--  Defect  23919  Filter values would not update when scheduling a chart, gauge, or map.
--  Defect  23920  Filter values in report schedules would not display properly if one or more filters were not marked as visible.
+-  Defect  22919  Filter values would not update when scheduling a chart, gauge, or map.
+-  Defect  22920  Filter values in report schedules would not display properly if one or more filters were not marked as visible.
 
 
 v2.18.1 March 19, 2019
