@@ -680,7 +680,7 @@ Pre-install preparations
       .. code-block:: console
 
          sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/StandaloneUI.zip
-         sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/API_AspnetCore.zip
+         sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/API_AspNetCore.zip
 
 
    * Unzip the Izenda Font-end and Back-end packages
@@ -689,7 +689,7 @@ Pre-install preparations
 
          sudo apt-get install zip unzip // Download the zip tool
          sudo unzip 'StandaloneUI.zip' -d /var/www/izenda-ui // Unzip the Izenda Front-end package
-         sudo unzip 'Aspnetcore-API.zip' -d /var/www/izenda-api // Unzip the Izenda Back-end package
+         sudo unzip 'API_AspNetCore.zip' -d /var/www/izenda-api // Unzip the Izenda Back-end package
 
 #. Configure Apache reverse proxy
 
@@ -772,8 +772,8 @@ Create monitor service
    .. code-block:: console
 
       [program:dotnettest]
-      command=/usr/bin/dotnet /var/www/izenda-api/API_AspnetCore/Izenda.BI.API.AspNetCore.dll  --urls "http://*:5000"
-      directory=/var/www/izenda-api/API_AspnetCore
+      command=/usr/bin/dotnet /var/www/izenda-api/API_AspNetCore/Izenda.BI.API.AspNetCore.dll  --urls "http://*:5000"
+      directory=/var/www/izenda-api/API_AspNetCore
       autostart=true
       autorestart=true
       stderr_logfile=/var/log/izenda-api.err.log

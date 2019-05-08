@@ -443,6 +443,9 @@ report parts of the same or different types can be added by:
 
       Report Designer - Add Report Part
 
+.. note::
+
+	  When the "Snap To Grid" checkbox is selected, each report part that is added aligns itself right beside or below the last report part that was added. If you have already put the report parts right beside or below the last report part you created manually, you will not see any difference.
 -  clicking the copy icon in the configuration header.
 
    .. _Report_Designer_Copy_Report_Part:

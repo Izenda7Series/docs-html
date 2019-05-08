@@ -35,7 +35,7 @@ Reference Izenda libraries in a New Project
 #. Expand the nodes to Izenda.BI.Framework.CustomConfiguration and
    select DefaultAdHocExtension class to see the methods to override.
 #. Similarly reference the library Izenda.BI.Core.dll and the third-party Newtonsoft.Json.dll.
-#. Also reference System.ComponentModel.Composition and System.Web (in Assemblies >
+#. Also reference System.Composition.AttributedModel.dll (https://www.nuget.org/packages/System.Composition.AttributedModel version 1.0.31) and System.Web (in Assemblies >
    Framework).
 
 .. figure:: /_static/images/DefaultAdHocExtension_class.png
@@ -68,7 +68,7 @@ Sample Method Implementations
       using System.Collections.Generic;
       using System.Linq;
       using System.Web;
-      using System.ComponentModel.Composition;
+      using System.Composition.AttributedModel.dll;
       using Izenda.BI.Framework.Components.QueryExpressionTree.Operator;
       using Operator = Izenda.BI.Framework.Enums.DateTimeOperator;
       

@@ -1,3 +1,4 @@
+
 ==============
 Release Notes
 ==============
@@ -6,6 +7,73 @@ Release Notes
 	- Weekly Release - Defect Fixes, Patch release x.x.1
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
+
+v3.1.0 April 9, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+    For more information on our features and this release, please see :ref:`Release_Details`
+ 
+FEATURES
+^^^^^^^^^
+
+-  MongoDB Available as a Reporting Datasource
+-  Key Joins Support Multiple Values
+    -  = and <> operators now support multiple input values
+-  Pie Charts Support Drilldown Aactions on the 'Other's slice
+    - If you are using the 'Bottom X%' funciton on pie charts, you can drill down on the 'Others' slice.
+    - When drilling down, a pop-up will let you select which underlying value you wish to drill down to.
+-  New Datetime Picker
+    - Implemented Blueprint.js to leverage a new DateTime picker for filters
+    - Further enhancements for this will be released alongside v3.2.0
+-  Update Results Button Relocated
+    - The Update Results button is now located alongside the filter panel
+-  Filter Panel - Space Consolidation
+    - To prepare for further updates in v3.2.0, the filter box has been adjusted to save space in the report designer. 
+-  Close Button in Viewer Methods is Removed
+-  Bottom Row of Dashboard Tiles is Situationally Removed 
+    - When viewing a dashboard that a user cannot edit, the bottom row of empty dashboard tiles will be removed. 
+-  Additional IntegrationStyle Flags for Front-End Render Functions
+    - renderReportViewerPage allows you to hide the report name and the preview records dropdown.
+    - renderDashboardViewerPage allows you to hide the dashboard name and global dashboard checkbox.
+-  New Dashboard Tile Header Permission
+    - Added a new dashboard permission titled 'Display tile header in uneditable dashboard'
+    - When unselected, the blue dropdown tile header will not be presented in dashboards. Please note this is intended for roles that only view, and not design, dashboard. 
+
+FIXES
+^^^^^
+- Defect 22210 Cannot use Equals-No Auto Complete on Stored Procedures if the lookup field's data type is different than the parameter.
+- Defect 22211 Invalid datatype fields should not be shown in the dropdown lists for setting lookups.
+- Defect 22285 System displays an error message when a user uses the "Between Date & Time" filter on Oracle datasources.
+- Defect 22488 QuerySourceId payload is missing when the field is added to report for the first time after the designer page loads.
+- Defect 22543 Link Location Being Adjusted Upon Altering Form Contents.
+- Defect 22650 Tenant Users are unable to view Global Gauge Reports when there is a Dynamic Threshold.
+- Defect 22732 Potential erroneous hashing increases chance of collision.
+- Defect 22767 User-defined aggregate functions could not be grouped at the field level.
+- Defect 22835 Number of Records does not work for charts and gauges when exporting from dashboards.
+- Defect 22838 Username field in header is inconsistent between report viewer and exports.
+- Defect 22841 Category values are not filled automatically when trying to use Save As.
+- Defect 22843 Focus on Report Name when saving a report.
+- Defect 22844 Focus on Report Name input in Subreport Settings when selecting reports.
+- Defect 22850 Filter values were re-requested each time the dropdown was expanded.
+- Defect 22937 Executing SPs in the Data Model resets field properties.
+- Defect 22947 Using [BLANK] for stored procedure parameter value passes NULL instead of empty string.
+- Defect 22962 Gauge Metrics could not be deleted in IE.
+- Defect 22969 'No. of Columns Per Exported Page' setting is not impacting Excel exports. 
+- Defect 22979 Report Part Name could not be easily set when using IE.
+- Defect 23094 Column widths would reset in the Data Model after making changes. 
+- Defect 23188 Gauge previews are not impacted by removing metrics from the gauge. 
+- Defect 23205 Dashboards Initially Load a Blank Dashboard with 'Example Dashboard Name'.
+- Defect 23248 Pagination of embedded subreports is not scaled properly when extending the Grid's width.
+- Defect 23249 Cannot create report from Oracle data sources if a Date field is used as a key join.
+- Defect 23281 Failed to load Default landing page in a .Net 4.6.1 site.
+- Defect 23283 Quality Issue for Exporting Chart/Gauge/Map using Syncfusion on Framework 4.6.1
+- Defect 23301 Timestamp without time zone date/time type in PostgreSQL shows incorrect time with data offset setting
+- Defect 23314 Invisible UTF symbols removed from class/variable names. 
+- Defect 23443 Updated unit tests for current dev branch.
+- Defect 23476 Unable to Provision Map Data on 3.0.0.
+- Defect 23477 User API duplicates database call to get the user's roles.
+- Defect 23478 Tenant users cannot export dashboard tiles made from grids/forms.
+- Defect 23516 IAdHocExtension Methods Not Hit in 3.0.0.
 
 v3.0.0 April 2, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

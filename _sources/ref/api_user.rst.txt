@@ -2296,6 +2296,12 @@ Sends :term:`password link` via email to user.
     * true if the action was successful
     * false if not
 
+    .. note::
+
+      While the UI takes care of URL encoding when clicking the generate password button, the API call will return the non-encoded hash.
+
+      Make sure to check that the hash in the URL is encoded so that the link is valid.
+
 **Samples**
 
    .. code-block:: http

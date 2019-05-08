@@ -17,7 +17,11 @@ Upgrade Preparations
     * In your Izenda Configuration Database, query for the 'Version' field in the IzendaDBVersion Table. This will let you identify your database version.
     
     * In Windows Explorer, navigate to your API's bin directory (in stand alone versions of the API, this will be located at /API/bin/). Locate a dll prefixed with "Izenda." Right click > properties > details. This will provide you with the current API version of Izenda.
-  
+
+	.. note::
+	
+		If you are using a custom dll in your application, you will need to verify the dll is the same version as your host application. In other words, when you upgrade your version of Izenda, you will need to verify that you rebuild your dll using that same version.
+	
 -  Permissions and Tools
 
    *  Database client GUI to connect to Izenda System Database.

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation Guide &mdash; Izenda BI 2.13.2 documentation</title>
+  <title>Installation Guide &mdash; Izenda BI 3.1.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 2.13.2 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.1.0 documentation" href="../index.html"/>
         <link rel="up" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/>
         <link rel="next" title="Upgrade Guide" href="doc_upgrade_guide.html"/>
         <link rel="prev" title="Hosting Izenda" href="doc_hosting_izenda_yourself.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                2.13
+                3.1
               </div>
             
           
@@ -924,7 +924,7 @@ Please refer to the following guides below:
 <li><p class="first">Download the lasted Izenda packages from <a class="reference external" href="https://downloads.izenda.com/latest/">https://downloads.izenda.com/latest/</a></p>
 <blockquote>
 <div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/StandaloneUI.zip</span>
-<span class="go">sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/API_AspnetCore.zip</span>
+<span class="go">sudo wget  -P /home/ubuntu/ https://downloads.izenda.com/latest/API_AspNetCore.zip</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -933,7 +933,7 @@ Please refer to the following guides below:
 <blockquote>
 <div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-get install zip unzip // Download the zip tool</span>
 <span class="go">sudo unzip &#39;StandaloneUI.zip&#39; -d /var/www/izenda-ui // Unzip the Izenda Front-end package</span>
-<span class="go">sudo unzip &#39;Aspnetcore-API.zip&#39; -d /var/www/izenda-api // Unzip the Izenda Back-end package</span>
+<span class="go">sudo unzip &#39;API_AspNetCore.zip&#39; -d /var/www/izenda-api // Unzip the Izenda Back-end package</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1022,8 +1022,8 @@ Please refer to the following guides below:
 </li>
 <li><p class="first">Add the following content to the above file</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[program:dotnettest]</span>
-<span class="go">command=/usr/bin/dotnet /var/www/izenda-api/API_AspnetCore/Izenda.BI.API.AspNetCore.dll  --urls &quot;http://*:5000&quot;</span>
-<span class="go">directory=/var/www/izenda-api/API_AspnetCore</span>
+<span class="go">command=/usr/bin/dotnet /var/www/izenda-api/API_AspNetCore/Izenda.BI.API.AspNetCore.dll  --urls &quot;http://*:5000&quot;</span>
+<span class="go">directory=/var/www/izenda-api/API_AspNetCore</span>
 <span class="go">autostart=true</span>
 <span class="go">autorestart=true</span>
 <span class="go">stderr_logfile=/var/log/izenda-api.err.log</span>
@@ -1253,7 +1253,7 @@ IIS</a></li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'2.13.2',
+            VERSION:'3.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
