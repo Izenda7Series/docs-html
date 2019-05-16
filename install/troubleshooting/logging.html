@@ -406,6 +406,27 @@ at Izenda.BI.Logic.DatabaseSetup.DatabaseSettingLogic.VerifyConnection(Guid serv
 <p class="last">Resolved as of version 2.6.7, please <a class="reference external" href="https://www.izenda.com/docs/install/doc_upgrade_guide.html">upgrade</a> to that version or greater.</p>
 </td>
 </tr>
+<tr class="row-odd"><td><p class="first">Html conversion failed</p>
+<div class="toggle last docutils container">
+<div class="header docutils container">
+Sample Log:</div>
+<div class="highlight-text"><div class="highlight"><pre><span></span>2019-04-17 03:00:50,561 [17   ][ERROR][IzendaBootstraper                   ] Izenda exception:
+Izenda.BI.Framework.Exceptions.IzendaModelException ---&gt; Syncfusion.Pdf.PdfException: Html conversion failed
+at Syncfusion.HtmlConverter.HtmlConverter.CheckConversionDone(String tempFilePath)
+at Syncfusion.HtmlConverter.HtmlConverter.ConvertHtmlToPdf(String url, Int32 width, Int32 height)
+at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String url)
+at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String html, String baseurl)
+at Izenda.BI.Exporting.HtmlConverterTool.ConvertHtmlToPdf(ExportSetting setting, HtmlDocument htmlDocument)
+at Izenda.BI.Exporting.Pdf.PdfExportProvider.Export(ExportContext context)
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type, Boolean enableWriteStat)
+</pre></div>
+</div>
+</div>
+</td>
+<td><p class="first">Missing assemblies on the server where API is hosted.</p>
+<p class="last">Download and install the Microsoft Visual C++ 2010 Redistributable Package on the server. For this, please refer to the steps <a class="reference external" href="https://www.izenda.com/docs/install/troubleshooting/exporting.html#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0">here</a>.</p>
+</td>
+</tr>
 </tbody>
 </table>
 </div>

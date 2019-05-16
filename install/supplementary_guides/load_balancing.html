@@ -237,14 +237,21 @@ The most common scenario would be to load balance the API among two or more serv
 </div>
 <p>The Izenda Scheduler will store scheduling information in RAM of the server by default. If you are using any type of a distributed enviroment where there is more than one instance of the Izenda API (webfarms, etc.) you will need to use a database (ADO.NET job store) for storage of the scheduling information. Please follow the instructions below for setting up the scheduler to run in a distributed environment:</p>
 <p>1. Download the creation script for your database type: <br clear="right" />
-Download quartz database script ~databasetablestables_sqlServer.sql inside Quartz.NET-2.6.2.zip. Use that script to create the database on your DB server. <a class="reference external" href="https://github.com/quartznet/quartznet/releases/tag/v2.6.2">https://github.com/quartznet/quartznet/releases/tag/v2.6.2</a> <br clear="right" /></p>
+Download quartz database script ~databasetablestables_sqlServer.sql inside Quartz.NET-3.0.7.zip. Use that script to create the database on your DB server. <a class="reference external" href="https://github.com/quartznet/quartznet/releases/tag/v3.0.7">https://github.com/quartznet/quartznet/releases/tag/v3.0.7</a> <br clear="right" /></p>
 <ol class="arabic simple" start="2">
 <li>Create the database (by default the table prefix &#8220;<a href="#id1"><span class="problematic" id="id2">QRTZ_</span></a>&#8221; but this can be set in the config) <br clear="right" /></li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>If using the .NET Core API resources, the Quartz configuration in steps 3 and 4 will instead be in a separate <em>quartz.config</em> file which can be downloaded <a class="reference external" href="https://downloads.izenda.com/Utilities/quartz.config">here</a>.</li>
+<li>The <em>quartz.config</em> file should be placed in the root of the Izenda API directory.</li>
+</ul>
+</div>
 <p>3. Add quartz config section into Web.config <br clear="right" />
 &lt;section name=&#8221;quartz&#8221; type=&#8221;System.Configuration.NameValueSectionHandler&#8221; /&gt; <br clear="right" /></p>
 <ol class="arabic simple" start="4">
-<li>Add quartz section content into Web.config (under the  &lt;/system.webServer&gt; tag) and replace the value of config quartz.dataSource.QuartzNET_DS.connectionString by your server name (Server), user (User Id) and password (Password) to access quartzNET233 database. <br clear="right" /></li>
+<li>Add quartz section content into Web.config (under the  &lt;/system.webServer&gt; tag) and replace the value of config quartz.dataSource.QuartzNET_DS.connectionString by your server name (Server), user (User Id) and password (Password) to access quartzNET307 database. <br clear="right" /></li>
 </ol>
 <div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -273,8 +280,7 @@ Download quartz database script ~databasetablestables_sqlServer.sql inside Quart
 25
 26
 27
-28
-29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nt">&lt;quartz&gt;</span>
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nt">&lt;quartz&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.scheduler.instanceName&quot;</span> <span class="na">value=</span><span class="s">&quot;Izenda_Quartz&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.scheduler.instanceId&quot;</span> <span class="na">value=</span><span class="s">&quot;Izenda_API&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.threadPool.threadCount&quot;</span> <span class="na">value=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
@@ -288,27 +294,26 @@ Download quartz database script ~databasetablestables_sqlServer.sql inside Quart
 
         <span class="c">&lt;!-- If you are using a database other than SQL Server, be sure to use the appropriate provider for your database</span>
 
-<span class="c">                SqlServer-20 - SQL Server driver for .NET Framework 2.0</span>
-<span class="c">                OracleODP-20 - Oracleâ€™s Oracle Driver</span>
-<span class="c">                OracleODPManaged-1123-40 Oracleâ€™s managed driver for Oracle 11</span>
-<span class="c">                OracleODPManaged-1211-40 Oracleâ€™s managed driver for Oracle 12</span>
-<span class="c">                MySql-50 - MySQL Connector/.NET v. 5.0 (.NET 2.0)</span>
-<span class="c">                MySql-51 - MySQL Connector/:NET v. 5.1 (.NET 2.0)</span>
-<span class="c">                Npgsql-20 - PostgreSQL Npgsql</span>
+<span class="c">                SqlServer - SQL Server driver for .NET Framework 2.0</span>
+<span class="c">                OracleODP - Oracle’s Oracle Driver</span>
+<span class="c">                OracleODPManaged - Oracle’s managed driver for Oracle 11</span>
+<span class="c">                MySql - MySQL Connector/.NET</span>
+<span class="c">                Npgsql - PostgreSQL Npgsql</span>
 
 <span class="c">                For more information, please consult the Quartz documentation:</span>
-<span class="c">                https://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/job-stores.html --&gt;</span>
-        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.dataSource.QuartzNET_DS.provider&quot;</span> <span class="na">value=</span><span class="s">&quot;SqlServer-20&quot;</span><span class="nt">/&gt;</span>
+<span class="c">                https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/job-stores.html --&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.dataSource.QuartzNET_DS.provider&quot;</span> <span class="na">value=</span><span class="s">&quot;SqlServer&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.jobStore.useProperties&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.jobStore.misfireThreshold&quot;</span> <span class="na">value=</span><span class="s">&quot;60000&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.jobStore.clustered&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;quartz.serializer.type&quot;</span> <span class="na">value=</span><span class="s">&quot;json&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/quartz&gt;</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li>Each instance in the cluster node should use the same copy of the quartz properties above except each node in the cluster MUST have a unique instanceId (quartz.scheduler.instanceId) <br clear="right" /></li>
 <li>The datasource name is QuartzNET_DS, you can define whatever name you want, just note that it always come with config quartz.dataSource.QuartzNET_DS.xyz <br clear="right" /></li>
-<li>Above are setting for MS SQL Server, if you want to use other DBMS you have to use correct database script for that DB type and must set correct quartz properties which are related to DB connection, that are quartz.jobStore.driverDelegateType, quartz.dataSource.QuartzNET_DS.connectionString, and quartz.dataSource.QuartzNET_DS.provider. Prefer JobStores tutorial chapter here <a class="reference external" href="https://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/job-stores.html">https://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/job-stores.html</a>). <br clear="right" /></li>
+<li>Above are setting for MS SQL Server, if you want to use other DBMS you have to use correct database script for that DB type and must set correct quartz properties which are related to DB connection, that are quartz.jobStore.driverDelegateType, quartz.dataSource.QuartzNET_DS.connectionString, and quartz.dataSource.QuartzNET_DS.provider. Prefer JobStores tutorial chapter here <a class="reference external" href="https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/job-stores.html">https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/job-stores.html</a>). <br clear="right" /></li>
 <li>To verify the config is correct or not on Izenda API, check the log file of all cluster nodes and make sure that there is only one node logs out the line contains &#8220;[Izenda_Quartz_Worker-###][INFO ][SubscriptionJob                     ] Start scheduling {#number} subscription jobs&#8221; <br clear="right" /></li>
 </ul>
 <ol class="arabic simple" start="5">

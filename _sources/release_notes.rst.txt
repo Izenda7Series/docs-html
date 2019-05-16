@@ -8,10 +8,21 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
+For more information and details on our releases, please see our :ref:`Release_Details`.
+
+v3.1.1 May 16, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+FIXES
+^^^^^
+- Defect 23378 Right clicking on report sends user to incorrect route in integrated applications.
+- Defect 23654 Quartz ADOJobStore required additional configuration for schedules to run.
+- Defect 23680 Unable to export forms to Excel in 3.1.0.
+
 v3.1.0 May 9, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-    For more information on our features and this release, please see :ref:`Release_Details`
  
 FEATURES
 ^^^^^^^^^
@@ -19,7 +30,7 @@ FEATURES
 -  MongoDB Available as a Reporting Datasource
 -  Key Joins Support Multiple Values
     -  = and <> operators now support multiple input values
--  Pie Charts Support Drilldown Actions on the 'Other's slice
+-  Pie Charts Support Drilldown Actions on the 'Others' slice
     - If you are using the 'Bottom X%' function on pie charts, you can drill down on the 'Others' slice.
     - When drilling down, a pop-up will let you select which underlying value you wish to drill down to.
 -  New DateTime Picker

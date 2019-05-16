@@ -222,3 +222,27 @@ The following error log messages may have multiple causes, so the solution to ea
       - Issue with Oracle schema in Izenda.
 
         Resolved as of version 2.6.7, please `upgrade <https://www.izenda.com/docs/install/doc_upgrade_guide.html>`_ to that version or greater.
+
+    * - Html conversion failed
+
+        .. container:: toggle
+        
+            .. container:: header
+
+                Sample Log:
+
+            .. code-block:: text
+
+                2019-04-17 03:00:50,561 [17   ][ERROR][IzendaBootstraper                   ] Izenda exception:  
+                Izenda.BI.Framework.Exceptions.IzendaModelException ---> Syncfusion.Pdf.PdfException: Html conversion failed
+                at Syncfusion.HtmlConverter.HtmlConverter.CheckConversionDone(String tempFilePath)
+                at Syncfusion.HtmlConverter.HtmlConverter.ConvertHtmlToPdf(String url, Int32 width, Int32 height)
+                at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String url)
+                at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String html, String baseurl)
+                at Izenda.BI.Exporting.HtmlConverterTool.ConvertHtmlToPdf(ExportSetting setting, HtmlDocument htmlDocument)
+                at Izenda.BI.Exporting.Pdf.PdfExportProvider.Export(ExportContext context)
+                at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type, Boolean enableWriteStat)
+
+      - Missing assemblies on the server where API is hosted.
+
+        Download and install the Microsoft Visual C++ 2010 Redistributable Package on the server. For this, please refer to the steps `here <https://www.izenda.com/docs/install/troubleshooting/exporting.html#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0>`_.

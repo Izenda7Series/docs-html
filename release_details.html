@@ -175,16 +175,29 @@
             
   <div class="section" id="release-details">
 <span id="id1"></span><h1>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="section" id="v3-1-1-may-16-2019">
+<h2>v3.1.1 May 16, 2019<a class="headerlink" href="#v3-1-1-may-16-2019" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <ul class="last simple">
-<li>In version v3.0.0 the IAdHocExtension implementation would only be picked up if the assembly name began with Izenda. This was resolved in the v3.1.0 release.</li>
-<li>In addition, due to changes in our internal reference, please make the following changes to your references/implementation found <a class="reference external" href="https://github.com/Izenda7Series/IAdHocExtensionSamples/commit/da47fd3780f3c07e00b0593f0dfbd268f400515a">here</a>.</li>
-<li>A user in a load-balnced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
+<li>(5/16) If you are using the ADOJobStore, you will need to explicity state if you are using binary or json serialization.</li>
+<li>(5/16) For an existing ADOJobStore setup please use the binary serializer type, but please note that this is not supported when targeting .NET Core.</li>
+<li>(5/16) For new configurations and .NET Core instances, the serializer type should be set to json.</li>
+<li>(5/16) For Quartz, ADO.NET provider names have been simplified and are without version. e.g. SqlServer-20 =&gt; SqlServer</li>
+<li>(5/16) For these Quartz migration changes please see their migration guide <a class="reference external" href="https://www.quartz-scheduler.net/documentation/quartz-3.x/migration-guide.html">here</a>.</li>
 </ul>
+</div>
 </div>
 <div class="section" id="v3-1-0-may-9-2019">
 <h2>v3.1.0 May 9, 2019<a class="headerlink" href="#v3-1-0-may-9-2019" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>(5/9) In version v3.0.0 the IAdHocExtension implementation would only be picked up if the assembly name began with Izenda. This was resolved in the v3.1.0 release.</li>
+<li>(5/9) In addition, due to changes in our internal reference, please make the following changes to your references/implementation found <a class="reference external" href="https://github.com/Izenda7Series/IAdHocExtensionSamples/commit/da47fd3780f3c07e00b0593f0dfbd268f400515a">here</a>.</li>
+<li>(5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
+</ul>
+</div>
 <div class="section" id="features">
 <h3>FEATURES<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -206,7 +219,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Pie Charts Support Drilldown Actions on the &#8216;Other&#8217;s slice</dt>
+<dt>Pie Charts Support Drilldown Actions on the &#8216;Others&#8217; slice</dt>
 <dd><ul class="first last">
 <li>While designing a Pie Chart, you normally have the ability to set a value for &#8216;Bottom X% Grouped to Other&#8217;. When enabled, a slice on your pie chart will be labeled &#8216;Others&#8217; and it is the combined value of items that fall within your setting. Previously, if a drill down was set up on your chart, you could not see any underlying data for that slice. Now, if drilldowns are set for your pie chart, you will see a pop-up when clicking on the Others slice. This will let you choose any value within the Others slice to drill down on so you can see the lower level of data for that particular value.</li>
 </ul>

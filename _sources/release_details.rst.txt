@@ -4,13 +4,24 @@
 Release Details
 ==============
 
-.. note::
-    - In version v3.0.0 the IAdHocExtension implementation would only be picked up if the assembly name began with Izenda. This was resolved in the v3.1.0 release.
-    - In addition, due to changes in our internal reference, please make the following changes to your references/implementation found `here <https://github.com/Izenda7Series/IAdHocExtensionSamples/commit/da47fd3780f3c07e00b0593f0dfbd268f400515a>`_.
-    - A user in a load-balnced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible. 
+v3.1.1 May 16, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+    - (5/16) If you are using the ADOJobStore, you will need to explicity state if you are using binary or json serialization.  
+    - (5/16) For an existing ADOJobStore setup please use the binary serializer type, but please note that this is not supported when targeting .NET Core.
+    - (5/16) For new configurations and .NET Core instances, the serializer type should be set to json. 
+    - (5/16) For Quartz, ADO.NET provider names have been simplified and are without version. e.g. SqlServer-20 => SqlServer
+    - (5/16) For these Quartz migration changes please see their migration guide `here <https://www.quartz-scheduler.net/documentation/quartz-3.x/migration-guide.html>`_.
+
 
 v3.1.0 May 9, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+    - (5/9) In version v3.0.0 the IAdHocExtension implementation would only be picked up if the assembly name began with Izenda. This was resolved in the v3.1.0 release.
+    - (5/9) In addition, due to changes in our internal reference, please make the following changes to your references/implementation found `here <https://github.com/Izenda7Series/IAdHocExtensionSamples/commit/da47fd3780f3c07e00b0593f0dfbd268f400515a>`_.
+    - (5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible. 
 
 FEATURES
 ^^^^^^^^^
@@ -22,7 +33,7 @@ FEATURES
 -  Key Joins Support Multiple Values
     - When creating key joins in the Data Sources page of the report designer, previously you were limited to only a singular value. This meant that for every unique value you wanted to join against, you would have to create an additional key join. Now you can hit enter once you've chosen or entered your value, and then continue to add them for the = and <> operators. 
    
--  Pie Charts Support Drilldown Actions on the 'Other's slice
+-  Pie Charts Support Drilldown Actions on the 'Others' slice
     - While designing a Pie Chart, you normally have the ability to set a value for 'Bottom X% Grouped to Other'. When enabled, a slice on your pie chart will be labeled 'Others' and it is the combined value of items that fall within your setting. Previously, if a drill down was set up on your chart, you could not see any underlying data for that slice. Now, if drilldowns are set for your pie chart, you will see a pop-up when clicking on the Others slice. This will let you choose any value within the Others slice to drill down on so you can see the lower level of data for that particular value.  
     
 -  New Datetime Picker

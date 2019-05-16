@@ -52,5 +52,36 @@ Exporting not working in Azure environments
 If you are using an Azure website, or similar service the default exporting provider for Izenda will not work properly due to 
 restrictions imposed by Azure App Services environment. Please consult our guide to configure `Pdf Exports in Azure Websites <https://www.izenda.com/docs/install/supplementary_guides/doc_azure_evo.html>`__.
 
+|
 
+Exporting to PDF not working on server hosting Izenda API v3.0
+----------------------------------------------------
+
+This issue can occur if the Microsoft Visual C++ 2010 Redistributable Package is not installed on the server where the Izenda API is hosted for versions 3.0 or greater. You may receive an error in the Izenda log similar to the example below as a result:
+
+.. code-block:: python
+   :emphasize-lines: 2
+   
+	2019-04-17 03:00:50,561 [17   ][ERROR][IzendaBootstraper                   ] Izenda exception:  
+	Izenda.BI.Framework.Exceptions.IzendaModelException ---> Syncfusion.Pdf.PdfException: Html conversion failed
+	at Syncfusion.HtmlConverter.HtmlConverter.CheckConversionDone(String tempFilePath)
+	at Syncfusion.HtmlConverter.HtmlConverter.ConvertHtmlToPdf(String url, Int32 width, Int32 height)
+	at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String url)
+	at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String html, String baseurl)
+	at Izenda.BI.Exporting.HtmlConverterTool.ConvertHtmlToPdf(ExportSetting setting, HtmlDocument htmlDocument)
+	at Izenda.BI.Exporting.Pdf.PdfExportProvider.Export(ExportContext context)
+	at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type, Boolean enableWriteStat)
+
+In these versions, the exporting provider has shifted from using EvoPdf to SyncFusion which relies on the VC++ Redistributable Package for exporting to PDF.
+To check if the VC++ Redistributable assemblies are available on the server, you can navigate to the following locations to find if the msvcp100.dll and msvcr100.dll files are present:
+
+	* x86 machine: C:\\Windows\\System32
+	* x64 machine: C:\\Windows\\SysWOW64
+
+If missing, the assemblies can be downloaded `here <http://www.syncfusion.com/downloads/support/directtrac/132947/ze/VCPP_Assemblies-1196049546>`_ and added into the locations listed above.
+
+Or alternatively, the Visual C++ Redistributable installer can be downloaded and run using the links below:
+
+	* x86 machine: https://www.microsoft.com/en-in/download/details.aspx?id=5555
+	* x64 machine: https://www.microsoft.com/en-in/download/details.aspx?id=14632
 

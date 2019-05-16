@@ -110,6 +110,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Exporting</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#charts-and-other-visualizations-are-not-rendered-in-exports">Charts and other visualizations are not rendered in exports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-not-working-in-azure-environments">Exporting not working in Azure environments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0">Exporting to PDF not working on server hosting Izenda API v3.0</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="http.html">HTTP</a></li>
@@ -253,6 +254,40 @@
 <h2>Exporting not working in Azure environments<a class="headerlink" href="#exporting-not-working-in-azure-environments" title="Permalink to this headline">¶</a></h2>
 <p>If you are using an Azure website, or similar service the default exporting provider for Izenda will not work properly due to
 restrictions imposed by Azure App Services environment. Please consult our guide to configure <a class="reference external" href="https://www.izenda.com/docs/install/supplementary_guides/doc_azure_evo.html">Pdf Exports in Azure Websites</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0">
+<h2>Exporting to PDF not working on server hosting Izenda API v3.0<a class="headerlink" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0" title="Permalink to this headline">¶</a></h2>
+<p>This issue can occur if the Microsoft Visual C++ 2010 Redistributable Package is not installed on the server where the Izenda API is hosted for versions 3.0 or greater. You may receive an error in the Izenda log similar to the example below as a result:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>     <span class="mi">2019</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">17</span> <span class="mo">03</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">561</span> <span class="p">[</span><span class="mi">17</span>   <span class="p">][</span><span class="n">ERROR</span><span class="p">][</span><span class="n">IzendaBootstraper</span>                   <span class="p">]</span> <span class="n">Izenda</span> <span class="n">exception</span><span class="p">:</span>
+<span class="hll">     <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Framework</span><span class="o">.</span><span class="n">Exceptions</span><span class="o">.</span><span class="n">IzendaModelException</span> <span class="o">---&gt;</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">Pdf</span><span class="o">.</span><span class="n">PdfException</span><span class="p">:</span> <span class="n">Html</span> <span class="n">conversion</span> <span class="n">failed</span>
+</span>     <span class="n">at</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">CheckConversionDone</span><span class="p">(</span><span class="n">String</span> <span class="n">tempFilePath</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">ConvertHtmlToPdf</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">,</span> <span class="n">Int32</span> <span class="n">width</span><span class="p">,</span> <span class="n">Int32</span> <span class="n">height</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">HtmlToPdfConverter</span><span class="o">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">HtmlToPdfConverter</span><span class="o">.</span><span class="n">Convert</span><span class="p">(</span><span class="n">String</span> <span class="n">html</span><span class="p">,</span> <span class="n">String</span> <span class="n">baseurl</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Exporting</span><span class="o">.</span><span class="n">HtmlConverterTool</span><span class="o">.</span><span class="n">ConvertHtmlToPdf</span><span class="p">(</span><span class="n">ExportSetting</span> <span class="n">setting</span><span class="p">,</span> <span class="n">HtmlDocument</span> <span class="n">htmlDocument</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Exporting</span><span class="o">.</span><span class="n">Pdf</span><span class="o">.</span><span class="n">PdfExportProvider</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">ExportContext</span> <span class="n">context</span><span class="p">)</span>
+     <span class="n">at</span> <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Logic</span><span class="o">.</span><span class="n">Exporting</span><span class="o">.</span><span class="n">ExportingLogic</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">ExportRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">ExportType</span> <span class="nb">type</span><span class="p">,</span> <span class="n">Boolean</span> <span class="n">enableWriteStat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In these versions, the exporting provider has shifted from using EvoPdf to SyncFusion which relies on the VC++ Redistributable Package for exporting to PDF.
+To check if the VC++ Redistributable assemblies are available on the server, you can navigate to the following locations to find if the msvcp100.dll and msvcr100.dll files are present:</p>
+<blockquote>
+<div><ul class="simple">
+<li>x86 machine: C:\Windows\System32</li>
+<li>x64 machine: C:\Windows\SysWOW64</li>
+</ul>
+</div></blockquote>
+<p>If missing, the assemblies can be downloaded <a class="reference external" href="http://www.syncfusion.com/downloads/support/directtrac/132947/ze/VCPP_Assemblies-1196049546">here</a> and added into the locations listed above.</p>
+<p>Or alternatively, the Visual C++ Redistributable installer can be downloaded and run using the links below:</p>
+<blockquote>
+<div><ul class="simple">
+<li>x86 machine: <a class="reference external" href="https://www.microsoft.com/en-in/download/details.aspx?id=5555">https://www.microsoft.com/en-in/download/details.aspx?id=5555</a></li>
+<li>x64 machine: <a class="reference external" href="https://www.microsoft.com/en-in/download/details.aspx?id=14632">https://www.microsoft.com/en-in/download/details.aspx?id=14632</a></li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 
