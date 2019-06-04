@@ -4,6 +4,27 @@
 Release Details
 ==============
 
+v3.2.0 June 4, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+
+- Report Headers Scale to Reduce Whitespace
+    - Any unused rows in the report header will be removed, decreasing the overall whitespace seen in the report viewer and exports. 
+    - Adding new objects into the report header will allow you to add new rows of content, up to the original height, if required. 
+- New Filter Properties Interactions
+    - The Filter Properties Panel now resides within a pop-up dialogue. 
+    - Clicking on a filter object will open a pop-up that lets you select the operator and the value(s).
+    - Right-clicking on a filter object and selecting 'Edit', or clicking on the gear icon will open the Filter Properties pop-up that used to be among the right-hand panels. 
+- New Filter Interactions
+    - The 'Between' operators are reworked to consume less space.
+    - The 'Between Date' operator is more streamlined and will allow both dates to be selected from a singular dialogue.
+- GetAccessToken is expanded for Grid and Form Exports
+    - For integrated scenarios, grid and form exports will now set the user context in the same manner as chart exports, allowing for the same approach to security and token management.
+- Subreports Allow Users to Pass Field Values into Input Parameters of a Report 
+    - When setting up field mappings for subreports, you can now pass field values into the input parameters of stored procedures. 
+
 v3.1.1 May 16, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

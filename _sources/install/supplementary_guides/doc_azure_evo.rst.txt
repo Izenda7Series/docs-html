@@ -4,6 +4,10 @@ Pdf Exports in Azure Websites
 |
 |
 
+.. Warning::
+
+	This is no longer applicable in Izenda versions after 3.0 as the exporting provider has changed from EvoPDF to Syncfusion. Please see the changes in the release notes `here <https://www.izenda.com/docs/release_notes.html#v3-0-0-april-2-2019>`_.
+
 Introduction
 ------------------------------------------
 

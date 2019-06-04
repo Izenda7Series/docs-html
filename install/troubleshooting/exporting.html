@@ -110,7 +110,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Exporting</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#charts-and-other-visualizations-are-not-rendered-in-exports">Charts and other visualizations are not rendered in exports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-not-working-in-azure-environments">Exporting not working in Azure environments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0">Exporting to PDF not working on server hosting Izenda API v3.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-x">Exporting to PDF not working on server hosting Izenda API v3.x</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="http.html">HTTP</a></li>
@@ -252,15 +252,22 @@
 </div>
 <div class="section" id="exporting-not-working-in-azure-environments">
 <h2>Exporting not working in Azure environments<a class="headerlink" href="#exporting-not-working-in-azure-environments" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is no longer applicable in Izenda versions after 3.0. Please see the changes in the release notes <a class="reference external" href="https://www.izenda.com/docs/release_notes.html#v3-0-0-april-2-2019">here</a>.</p>
+</div>
 <p>If you are using an Azure website, or similar service the default exporting provider for Izenda will not work properly due to
 restrictions imposed by Azure App Services environment. Please consult our guide to configure <a class="reference external" href="https://www.izenda.com/docs/install/supplementary_guides/doc_azure_evo.html">Pdf Exports in Azure Websites</a>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
-<div class="section" id="exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0">
-<h2>Exporting to PDF not working on server hosting Izenda API v3.0<a class="headerlink" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-0" title="Permalink to this headline">¶</a></h2>
-<p>This issue can occur if the Microsoft Visual C++ 2010 Redistributable Package is not installed on the server where the Izenda API is hosted for versions 3.0 or greater. You may receive an error in the Izenda log similar to the example below as a result:</p>
+<div class="section" id="exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-x">
+<h2>Exporting to PDF not working on server hosting Izenda API v3.x<a class="headerlink" href="#exporting-to-pdf-not-working-on-server-hosting-izenda-api-v3-x" title="Permalink to this headline">¶</a></h2>
+<p>In Izenda versions 3.0 and greater, the exporting provider has shifted from using EvoPdf to SyncFusion, where you may see one of the common issues listed below.</p>
+<div class="section" id="missing-assemblies">
+<h3>Missing assemblies<a class="headerlink" href="#missing-assemblies" title="Permalink to this headline">¶</a></h3>
+<p>This issue can occur if the Microsoft Visual C++ 2010 Redistributable Package is not installed on the server where the Izenda API is hosted. You may receive an error in the Izenda log similar to the example below as a result:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>     <span class="mi">2019</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">17</span> <span class="mo">03</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">561</span> <span class="p">[</span><span class="mi">17</span>   <span class="p">][</span><span class="n">ERROR</span><span class="p">][</span><span class="n">IzendaBootstraper</span>                   <span class="p">]</span> <span class="n">Izenda</span> <span class="n">exception</span><span class="p">:</span>
 <span class="hll">     <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Framework</span><span class="o">.</span><span class="n">Exceptions</span><span class="o">.</span><span class="n">IzendaModelException</span> <span class="o">---&gt;</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">Pdf</span><span class="o">.</span><span class="n">PdfException</span><span class="p">:</span> <span class="n">Html</span> <span class="n">conversion</span> <span class="n">failed</span>
 </span>     <span class="n">at</span> <span class="n">Syncfusion</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">HtmlConverter</span><span class="o">.</span><span class="n">CheckConversionDone</span><span class="p">(</span><span class="n">String</span> <span class="n">tempFilePath</span><span class="p">)</span>
@@ -272,7 +279,7 @@ restrictions imposed by Azure App Services environment. Please consult our guide
      <span class="n">at</span> <span class="n">Izenda</span><span class="o">.</span><span class="n">BI</span><span class="o">.</span><span class="n">Logic</span><span class="o">.</span><span class="n">Exporting</span><span class="o">.</span><span class="n">ExportingLogic</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">ExportRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">ExportType</span> <span class="nb">type</span><span class="p">,</span> <span class="n">Boolean</span> <span class="n">enableWriteStat</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In these versions, the exporting provider has shifted from using EvoPdf to SyncFusion which relies on the VC++ Redistributable Package for exporting to PDF.
+<p>The SyncFusion exporting provider relies on the VC++ Redistributable Package for exporting to PDF.
 To check if the VC++ Redistributable assemblies are available on the server, you can navigate to the following locations to find if the msvcp100.dll and msvcr100.dll files are present:</p>
 <blockquote>
 <div><ul class="simple">
@@ -288,6 +295,79 @@ To check if the VC++ Redistributable assemblies are available on the server, you
 <li>x64 machine: <a class="reference external" href="https://www.microsoft.com/en-in/download/details.aspx?id=14632">https://www.microsoft.com/en-in/download/details.aspx?id=14632</a></li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="blocked-assemblies">
+<h3>Blocked assemblies<a class="headerlink" href="#blocked-assemblies" title="Permalink to this headline">¶</a></h3>
+<p>This issue can occur if the Syncfusion assembly files are blocked by security on the server where the Izenda API is hosted. You may receive an error in the Izenda log similar to one of the examples below as a result:</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Failed to convert the webpage:</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span>2019-05-10 11:17:19,282 [37   ][ERROR][IzendaBootstraper                   ] Izenda exception:
+<span class="hll">Izenda.BI.Framework.Exceptions.IzendaModelException ---&gt; Syncfusion.Pdf.PdfException: Failed to convert the webpage
+</span>at Syncfusion.Pdf.HtmlToPdf.HtmlToPdfResult.RenderWebKit(PdfPageBase page, PdfLayoutFormat format)
+at Syncfusion.Pdf.HtmlToPdf.HtmlToPdfResult.Render(PdfPageBase page, PdfLayoutFormat format)
+at Syncfusion.HtmlConverter.HtmlToPdfConverter.Convert(String htmlString, String baseUrl)
+at Izenda.BI.Exporting.HtmlConverterTool.ConvertHtmlToPdf(ExportSetting setting, HtmlDocument htmlDocument)
+at Izenda.BI.Exporting.Pdf.PdfExportProvider.Export(ExportContext context)
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type, Boolean enableWriteStat)
+--- End of inner exception stack trace ---
+at Izenda.BI.Logic.Exporting.ExportingLogic.Export(ExportRequest request, ExportType type, Boolean enableWriteStat)
+at XxMmyyBTVvjl.a(Object , ExportRequest , ExportType , Boolean )
+at Izenda.BI.API.Export.ExportModule.&lt;&gt;c__DisplayClass0_1.&lt;.ctor&gt;b__4()
+at Izenda.BI.API.IzendaModule.ExecuteInMornitoringContext(Boolean wrapingExceptionIntoOperationResult, Object paramtersToLog, Func`1 function, Boolean runAsAdministrator, String userAction, String accessToken, String currentTenant)
+at Izenda.BI.API.Export.ExportModule.&lt;&gt;c__DisplayClass0_0.&lt;.ctor&gt;b__0(Object parameters)
+at Nancy.NancyModule.&lt;&gt;c__DisplayClass38_0`1.&lt;Post&gt;b__0(Object args)
+at Nancy.NancyModule.&lt;&gt;c__DisplayClass40_0`1.&lt;Post&gt;b__0(Object args, CancellationToken ct)
+at Nancy.Routing.Route`1.Invoke(DynamicDictionary parameters, CancellationToken cancellationToken)
+at Nancy.Routing.DefaultRouteInvoker.&lt;Invoke&gt;d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+at Nancy.Routing.DefaultRequestDispatcher.&lt;Dispatch&gt;d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+at Nancy.NancyEngine.&lt;InvokeRequestLifeCycle&gt;d__22.MoveNext()
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+C:\WINDOWS\TEMP folder not found:</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span>2019-06-04 11:25:35,035 [45   ][ERROR][ExportingLogic                      ] Failed to convert to image: ReportId=73d6589d-29c5-4656-bd79-f7e700eea65b, ReportPartId=ca4a2578-d411-4907-b7a2-06b727b709dc
+<span class="hll">System.AggregateException: One or more errors occurred. ---&gt; System.IO.FileNotFoundException: C:\WINDOWS\TEMP\23525565-9d84-41ac-b613-0fd62a6bb9f3.jpg
+</span>at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+at Syncfusion.HtmlConverter.WebKitConverter.ConvertToImage(String url)
+at Syncfusion.HtmlConverter.HtmlToPdfConverter.ConvertToImage(String url)
+at Izenda.BI.Exporting.HtmlConverterTool.ConvertToImage(HtmlToPdfConverter htmlToPdfConverter, String url, Boolean useSvgFormat)
+at Izenda.BI.Exporting.HtmlConverterTool.HandleSyncfusionOutOfMemory[T](ExportSetting setting, Func`1 func, T defaultResult)
+at System.Threading.Tasks.Task`1.InnerInvoke()
+at System.Threading.Tasks.Task.Execute()
+--- End of inner exception stack trace ---
+at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+at (Object , Int32 )
+at Izenda.BI.Exporting.HtmlConverterTool.ConvertToImage(ExportSetting setting, Int32 width, Int32 height, String url, Boolean useSvgFormat)
+at Izenda.BI.Exporting.ExportHelper.ConvertToImage(ExportSetting setting, ExportData data, Int32 width, Int32 height, Object separatorValue, Boolean useSvgFormat)
+---&gt; (Inner Exception #0) System.IO.FileNotFoundException: C:\WINDOWS\TEMP\23525565-9d84-41ac-b613-0fd62a6bb9f3.jpg
+at System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+at Syncfusion.HtmlConverter.WebKitConverter.ConvertToImage(String url)
+at Syncfusion.HtmlConverter.HtmlToPdfConverter.ConvertToImage(String url)
+at Izenda.BI.Exporting.HtmlConverterTool.ConvertToImage(HtmlToPdfConverter htmlToPdfConverter, String url, Boolean useSvgFormat)
+at Izenda.BI.Exporting.HtmlConverterTool.HandleSyncfusionOutOfMemory[T](ExportSetting setting, Func`1 func, T defaultResult)
+at System.Threading.Tasks.Task`1.InnerInvoke()
+at System.Threading.Tasks.Task.Execute()&lt;---
+</pre></div>
+</div>
+</div>
+<p>In this case, the Syncfusion assembly files may be blocked by Windows security and would need to be unblocked.
+To check this, you can navigate to the bin folder of the Izenda API resources and inspect the properties of each of the Syncfusion .dll files. If the assembly is blocked, the properties will show similar to the below:</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../../_images/Export_Troubleshooting_Blocked_Assemblies.png" src="../../_images/Export_Troubleshooting_Blocked_Assemblies.png" />
+</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 

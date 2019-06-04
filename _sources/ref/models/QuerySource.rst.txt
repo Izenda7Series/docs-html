@@ -124,9 +124,13 @@ QuerySource
          -  3 = Deleted
       -
    *  -  **approval** |br|
-         boolean
+         integer
       -
-      -  Is the change approved
+      -  Whether the changes in data source have been approved by user or not
+      
+         -  0 = The change is still pending for approval
+         -  1 = The change is at **Query Source** level
+         -  2 = The change is at **Query Source Field** level
       -
    *  -  **existed** |br|
          boolean

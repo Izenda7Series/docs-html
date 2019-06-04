@@ -10,6 +10,32 @@ Release Notes
 
 For more information and details on our releases, please see our :ref:`Release_Details`.
 
+v3.2.0 June 4, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Report Headers Scale to Reduce Whitespace
+- New Filter Interactions
+    - Filters properties are now managed through a pop-up
+    - 'Between' filter operators have a new interface
+- GetAccessToken is expanded for Grid and Form Exports
+- Subreports Allow Users to Pass Field Values into Input Parameters of a Report 
+
+FIXES
+^^^^^
+- Defect 22976 The 'To' value of a Between Date operator is not committed when saving a dashboard.
+- Defect 23239 OnPostLoadFilterData is no longer called for stored procedure parameters.
+- Defect 23578 API-STRONGNAME resources were not available for v3.0.0
+- Defect 23637 Connecting to an existing Postgres configuration database through the Standalone UI throws a duplicate key error.
+- Defect 23685 Filters would fail to load their values after saving a report. 
+- Defect 23689 Report visibility is cached when creating a report within a new category.
+- Defect 23701 Visible data sources are moved back to available after updating the data model tab. 
+- Defect 23713 The same aggregate field in a separate report part would not be displayed within the 'Add new filter' popup. 
+- Defect 23735 RenderReportViewerPage function with AngularJS 1.x front-end causes infinite URL reloading.
+- Defect 23847 Report body grid lines would not display after adding a new report part.  
+
+
 v3.1.1 May 16, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

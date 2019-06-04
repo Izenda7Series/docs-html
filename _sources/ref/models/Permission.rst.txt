@@ -744,6 +744,7 @@ Permission
             object
 
              .. versionadded:: 3.1.0
+      -
       -  An object with the following fields |br|
           *Only support for Role permission*
       -
@@ -756,15 +757,13 @@ Permission
       -
    *  -  .. container:: lpad4
 
-             **tenantAccess** |br|
+            **tenantAccess** |br|
             integer
       -
       -  Permission for Tenant
       -
    *  -  .. container:: lpad2
-
-
-
+   
             **dashboardCategoriesSubcategories** |br|
             object
       -
