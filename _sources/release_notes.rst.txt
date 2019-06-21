@@ -10,6 +10,14 @@ Release Notes
 
 For more information and details on our releases, please see our :ref:`Release_Details`.
 
+v3.2.1 June 21, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+- Defect 21677 Subtotals resulting in 0 were displayed as null in Horizontal Grids.
+- Defect 23691 Values on Map Legends would not Display.
+
 v3.2.0 June 4, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

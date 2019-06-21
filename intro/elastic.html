@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Elasticsearch &mdash; Izenda BI 3.2.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.2.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href=".intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Elasticsearch</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/intro/elastic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="elasticsearch">
+<span id="id1"></span><h1>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-elasticsearch">
+<h2>What is Elasticsearch?<a class="headerlink" href="#what-is-elasticsearch" title="Permalink to this headline">¶</a></h2>
+<p>Elasticsearch is a distributed, RESTful, full-text search engine that
+operates against document-oriented or semi-structured data. Much like a
+database, it is intended to store, index, retrieve, and manage your
+data. Users can send JSON documents via an API or ingestion
+tools, after which Elasticsearch will automatically store the document
+and create indexed reference values. Once uploaded, users are then able
+to search and retrieve documents using the Elasticsearch API.</p>
+</div>
+<div class="section" id="what-does-izenda-support">
+<h2>What does Izenda Support?<a class="headerlink" href="#what-does-izenda-support" title="Permalink to this headline">¶</a></h2>
+<p>Our implementation of the Elacsticsearch Driver (available in v2.18.0 or
+later) is powered by CDATA and supports all of the following:</p>
+<ul class="simple">
+<li>Elasticsearch v2.2 and above</li>
+<li>Both SQL and REST endpoint</li>
+<li>Querying multiple indices at one time</li>
+</ul>
+</div>
+<div class="section" id="best-practices-for-setting-up-and-using-your-elastic-instance">
+<h2>Best Practices for Setting up and Using your Elastic Instance:<a class="headerlink" href="#best-practices-for-setting-up-and-using-your-elastic-instance" title="Permalink to this headline">¶</a></h2>
+<p>For hosting and leveraging an Amazon Elasticsearch Service, there are
+several best practices recommended by Amazon found
+<a class="reference external" href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/aes-bp.html">here</a>.</p>
+<p>For general use case best practices, there are two recommendations from
+the <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/general-recommendations.html">Elasticsearch
+documentation</a>
+that still hold true for Izenda:</p>
+<ul>
+<li><p class="first">Don’t return large result sets</p>
+<blockquote>
+<div><ul class="simple">
+<li>Elasticsearch is great at getting the top matches for queries, but isn’t designed for database-specific scenarios like returning all documents that match a particular query.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Avoid large documents</p>
+<blockquote>
+<div><ul class="simple">
+<li>By default, Elasticsearch will not index any document larger than 100MB.</li>
+<li>By manually changing this, you are still limited to a maximum document size of 2GB</li>
+<li>Excessive large documents will put a strain on your network, memory, and disk usage.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="how-do-you-set-up-your-elastic-connection-in-izenda">
+<h2>How do you set up your Elastic connection in Izenda?<a class="headerlink" href="#how-do-you-set-up-your-elastic-connection-in-izenda" title="Permalink to this headline">¶</a></h2>
+<p>Establishing a connection to an Elasticsearch instance is done the same
+way as setting up any connection to a relational database within Izenda.</p>
+<ol class="arabic simple">
+<li>Go to the Settings &gt; Data Setup &gt; Connection Strings page of your
+Izenda instance and hit ‘Add Connection’ along the top</li>
+<li>From the Data Server Type dropdown select [ES] Elasticsearch</li>
+<li>Insert your connection string to your Elasticsearch instance, which may look like the following: server=https://yourelasticinstanceurl;Port=9243;User=izenda;Password=xxxxx;FlattenArrays=7;</li>
+<li>Hit ‘Test’ to see if your credentials are valid. If they are
+incorrect, please adjust your connection string and try again.</li>
+<li>Once the test is successful, hit ‘Connect’ to let Izenda connect to
+your instance and gather metadata for our data model.</li>
+<li>Once connected you will be able to select which objects from your
+the instance you wish to use within Izenda by moving them into the
+‘Visible Data Sources’ column and hitting save.</li>
+</ol>
+</div>
+<div class="section" id="configuring-your-data-model-in-izenda">
+<h2>Configuring your Data Model in Izenda:<a class="headerlink" href="#configuring-your-data-model-in-izenda" title="Permalink to this headline">¶</a></h2>
+<p>Now that your connection is saved and you’ve set your Visible Data
+Sources, you can now move to the Settings &gt; Data Setup &gt; Data Model page
+to begin making any customizations like aliasing or categorizing these
+objects. More information on this area and its features can be
+found <a class="reference external" href="https://www.izenda.com/docs/ui/doc_data_model_tables,_views_and_stored_procedures.html">here</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

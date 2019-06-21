@@ -131,7 +131,7 @@ Some configurable system settings are stored in IzendaSystemSetting table. These
      - Place-holder
      -
    * - **ExportNavigationTimeout**
-     - Navigation timeout for third-party EvoPDF, in seconds
+     - Navigation timeout for the exporting process, in seconds
      - 300
    * - **LayoutSize**
      - The number of report tiles per screen width, used for calculating export size
