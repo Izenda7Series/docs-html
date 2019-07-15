@@ -62,6 +62,13 @@ ReportPartPreviewParameter
                p2value: "6"
             },
       -
+   *  -  **ignoreCache** |br|
+         boolean
+         
+         .. versionadded:: 3.3.0
+      -  Y
+      -  Whether to load data from cache or retrieve directly from DB
+      -
 
 
 Inherited fields:

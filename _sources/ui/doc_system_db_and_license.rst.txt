@@ -104,6 +104,9 @@ information.
    
    - PostgreSQL:
       - Server=mydomainname;Port=5432;Database=izendaconfig;User ID=user;Password=password
+      .. note:: 
+            - If using Izenda v3.0.0 or greater and a PostgreSQL connection string with "SslMode=Require", the "Trust Server Certificate=true;" parameter will also need to be added.
+            - Server=mydomainname;Port=5432;Database=izendaconfig;User ID=user;Password=password;SslMode=Require;Trust Server Certificate=true;
 
 #. Click the Connect button to test database connection and all
    necessary permissions for Izenda to work.

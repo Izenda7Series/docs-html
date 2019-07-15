@@ -10,6 +10,7 @@ Others
    CenterOnPageStyle
    City
    ConflictReportDashboardItem
+   DataCacheSetting
    DataFormat
    DataFormating
    DataSourceItem
@@ -34,6 +35,7 @@ Others
    SecuritySetting
    SortOrder
    SortParam
+   SystemCacheSetting
    SystemVariable
    TenantField
    Tenants

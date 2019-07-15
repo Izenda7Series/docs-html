@@ -175,3 +175,24 @@ Some configurable system settings are stored in IzendaSystemSetting table. These
        * UNC path.
 
      - IzendaImport
+   * - **IsEnableDataCache**
+     - Whether data cache is enable or not
+     - true
+   * - **DataCacheTTL**
+     - Limit the lifespan in second for data caches
+     - 600
+   * - **DataCacheEvictionInterval**
+     - Define the inteval to clear expired data caches
+     - 600
+   * - **DataCacgeRefreshInterval**
+     - Define the interval to load new data for data caches
+     - 200
+   * - **DataCacheRefreshDuration**
+     - Limit the time to run refresh data cache job
+     - 100
+   * - **SystemCacheTTL**
+     - Limit the lifespan in second for system caches
+     - 3600
+   * - **SystemCacheEvictionInterval**
+     - Define the inteval to clear expired system caches
+     - 3600

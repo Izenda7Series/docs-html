@@ -97,6 +97,13 @@ FusionDataRequest
       -
       -  Whether to load default data for dashboard part
       -
+   *  -  **ignoreCache** |br|
+         boolean
+
+         .. versionadded:: 3.3.0
+      -  Y
+      -  Whether to load data from cache or retrieve directly from DB
+      -
 
 .. container:: toggle
 

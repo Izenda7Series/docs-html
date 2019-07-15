@@ -60,7 +60,21 @@ Summary
      - Returns the available color themes for Chart, Gauge, and Map.
      - System Configuration > Report > Default Color Theme for Chart, Gauge, and Map > geer icon |br|
        OR Report Designer > Design tab
+   * - `GET systemSetting/cacheConfiguration`_
 
+        .. versionadded:: 3.3.0
+     - Returns cache configurations
+     - System Configuration > Cache
+   * - `POST systemSetting/cacheConfiguration`_
+
+        .. versionadded:: 3.3.0
+     - Save cache configurations
+     - System Configuration > Cache
+   * - `POST systemSetting/clearCache`_
+
+        .. versionadded:: 3.3.0
+     - Clear out all cache
+     - 
 
 
 POST systemSetting/reportSetting
@@ -808,3 +822,235 @@ Returns the available color themes for Chart, Gauge, and Map.
             ]
          }
       ]
+
+GET systemSetting/cacheConfiguration
+--------------------------------------
+
+.. versionadded:: 3.3.0
+
+Returns the cache configurations.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An object with the following structure:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **dataCacheSetting** |br|
+             object
+          -  A :doc:`models/DataCacheSetting` object
+          -
+       *  -  **systemCacheSetting** |br|
+             object
+          -  A :doc:`models/SystemCacheSetting` object
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/systemSetting/cacheConfiguration HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         **Sample response**:
+
+      .. code-block:: json
+
+         {
+            "dataCacheSetting": {
+               "isEnableDataCache": true,
+               "timeToLive": 600,
+               "evictionInterval": 600,
+               "refreshInterval": 200,
+               "refreshDuration": 100,
+               "defaultIsEnableDataCache": true,
+               "defaultEvictionInterval": 600,
+               "defaultTimeToLive": 600,
+               "defaultRefreshInterval": 200,
+               "defaultRefreshDuration": 100
+            },
+            "systemCacheSetting": {
+               "timeToLive": 60,
+               "evictionInterval": 3600,
+               "defaultEvictionInterval": 3600,
+               "defaultTimeToLive": 60
+            }
+         }
+
+POST systemSetting/cacheConfiguration
+--------------------------------------
+
+.. versionadded:: 3.3.0
+
+Updates the cache configurations.
+
+**Request**
+
+    An object with the following structure:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **dataCacheSetting** |br|
+             object
+          -  A :doc:`models/DataCacheSetting` object
+          -
+       *  -  **systemCacheSetting** |br|
+             object
+          -  A :doc:`models/SystemCacheSetting` object
+          -
+
+**Response**
+
+    A :doc:`models/OperationResult` object with **data** field containing saved data or error details.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/systemSetting/cacheConfiguration HTTP/1.1
+
+   .. container:: toggle
+
+      .. container:: header
+
+         **Sample request**:
+
+      .. code-block:: json
+
+         {
+            "dataCacheSetting": {
+               "isEnableDataCache": true,
+               "timeToLive": 650,
+               "evictionInterval": 600,
+               "refreshInterval": 200,
+               "refreshDuration": 100
+            },
+            "systemCacheSetting": {
+                  "timeToLive": 60,
+               "evictionInterval": 3600
+            }
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         **Success response**:
+
+      .. code-block:: json
+
+         {
+            "success": true,
+            "messages": null,
+            "data": {
+               "dataCacheSetting": {
+                     "isEnableDataCache": true,
+                     "timeToLive": 650,
+                     "evictionInterval": 600,
+                     "refreshInterval": 200,
+                     "refreshDuration": 100,
+                     "defaultIsEnableDataCache": true,
+                     "defaultEvictionInterval": 600,
+                     "defaultTimeToLive": 600,
+                     "defaultRefreshInterval": 200,
+                     "defaultRefreshDuration": 100
+               },
+               "systemCacheSetting": {
+                     "timeToLive": 60,
+                     "evictionInterval": 3600,
+                     "defaultEvictionInterval": 3600,
+                     "defaultTimeToLive": 60
+               }
+            }
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         **Failure response**:
+
+      .. code-block:: json
+
+         {
+            "success": false,
+            "messages": [
+               {
+                     "key": "DataCacheSetting.TimeToLive",
+                     "detail": null,
+                     "messages": [
+                        "Please input a positive integer equal to or greater than 600."
+                     ]
+               }
+            ],
+            "data": null
+         }
+
+
+POST systemSetting/clearCache
+----------------------------------------
+
+.. versionadded:: 3.3.0
+
+Clear out all cache.
+
+**Request**
+
+   An object with the following structure:
+
+   .. list-table::
+      :header-rows: 1
+
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **clearCachetype** |br|
+            integer
+         -  Define which cache area should be cleared
+
+            +  0: Data cache
+            +  1: System cache
+            +  2: All cache
+         -
+
+
+**Response**
+
+    A :doc:`models/OperationResult` object.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/systemSetting/clearCache HTTP/1.1
+
+
+
+   Sample request::
+
+      {
+         "ClearCacheType": 1
+      }
+
+   Sample response::
+
+      {
+         "success": true,
+         "messages": null,
+         "data": null
+      }

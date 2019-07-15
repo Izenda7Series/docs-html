@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Configuration/Cache &mdash; Izenda BI 3.3.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.3.0 documentation" href="../index.html"/>
+        <link rel="up" title="System Configuration Guide" href=".system_configuration_guide.html"/>
+        <link rel="next" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
+        <link rel="prev" title="System Configuration/Scheduling" href="doc_configuration_scheduling.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_configuration_security_policies.html">System Configuration/Security Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_configuration_email.html">System Configuration/Email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_configuration_report.html">System Configuration/Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_configuration_scheduling.html">System Configuration/Scheduling</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">System Configuration/Cache</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-offered">What is offered</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-it-is-configured">How it is configured</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-disk-cache">Configuring the Disk Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#switching-between-memory-and-disk-cache">Switching Between Memory and Disk Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refreshing-the-cache">Refreshing the Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clearing-the-cache">Clearing the Cache</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_import_report_dashboard_definition.html">Import Report or Dashboard Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_configuration_guide.html">System Configuration Guide</a> &raquo;</li>
+        
+      <li>System Configuration/Cache</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_caching_overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-configuration-cache">
+<span id="caching-overview"></span><h1>System Configuration/Cache<a class="headerlink" href="#system-configuration-cache" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>The System Cache portion of this behavior will be released in a future version of Izenda.</li>
+</ul>
+</div>
+<p>The <strong>System Configuration &gt; Cache</strong> page allows an administrator to manage users.</p>
+<div class="section" id="what-is-offered">
+<h2>What is offered<a class="headerlink" href="#what-is-offered" title="Permalink to this headline">¶</a></h2>
+<p>Izenda offers two distinct caching solutions out of the box, a disk cache and a memory cache.&nbsp;By default, the disk cache is enabled for the application. These caching options are part of Izenda&#8217;s default resources, so you do not need to download or implement any additional items for these to be present.</p>
+<p>Outside of the disk and memory caching options, there are two areas of Izenda that are cached: data and our system configuration. Both of these caches can be disabled or enabled at will, but are enabled by default.</p>
+</div>
+<div class="section" id="how-it-is-configured">
+<h2>How it is configured<a class="headerlink" href="#how-it-is-configured" title="Permalink to this headline">¶</a></h2>
+<p>The configuration options for your caches are location on the Settings &gt; System Configuration &gt; Cache page.  On this page you will be able to determine the following options for both the data and system caches:</p>
+<blockquote>
+<div><blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/System_Configuration_Cache.png"><img alt="../_images/System_Configuration_Cache.png" src="../_images/System_Configuration_Cache.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Is the cached enabled?</dt>
+<dd><ul class="first last">
+<li>This determines if you are using a cache for this area of the platform.</li>
+<li>If the cache was enabled and you deselect this option, all cached values will be invalidated and removed.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Time to Live</dt>
+<dd><ul class="first last">
+<li>This is a time, in seconds, that dictates how long a particular cache is valid.</li>
+<li>If this time passes, that cache is considered invalid and data will be pulled from the database and re-cached the next time that information is accessed.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Eviction Interval</dt>
+<dd><ul class="first last">
+<li>This is a time, in seconds, that dictates how often Izenda will go and clean out the invalid or expired cache items.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Refresh Interval</dt>
+<dd><ul class="first last">
+<li>This is a time, in seconds, that determines how frequently Izenda will go an automatically update any items in the cache.</li>
+<li>Please note that this process can mean data is re-cached from your database, so there may be some workload considerations when setting this value.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Refresh Duration</dt>
+<dd><ul class="first last">
+<li>This is a time, in seconds, that dictates how long Izenda will let the automated refresh process operate.</li>
+<li>If the time limit is met, Izenda stops updating the caches and they will remain invalid until a user manually updates them or the next automated refresh occurs.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>A set of additional options within the configuration files, please see our <a class="reference internal" href="../install/supplementary_guides/cache.html#cache-config"><span class="std std-ref">Cache</span></a> page.</p>
+</div>
+<div class="section" id="configuring-the-disk-cache">
+<h2>Configuring the Disk Cache<a class="headerlink" href="#configuring-the-disk-cache" title="Permalink to this headline">¶</a></h2>
+<p>When utilizing the disk cache solution, Izenda will store it&#8217;s information into two directories in the location you specify: SystemCache and DataCache.  These directories can be modified in our configuration files to support the following directory types:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Absolute Paths</dt>
+<dd><ul class="first last">
+<li>D:\[YourFolderName]</li>
+<li>If the folder doesn&#8217;t exist, the system will create a new one based on this path.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Relative Path</dt>
+<dd><ul class="first last">
+<li>[YourFolderName]</li>
+<li>If the folder doesn&#8217;t exist, the system will create on in the application&#8217;s directory</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>UNC Paths</dt>
+<dd><ul class="first last">
+<li>\\123456.78.910\[YourFolderName]</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>Where you configure these paths and settings varies depending on if you are utilizing Izenda&#8217;s .NET or .NET Core resources.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>.NET Environment</dt>
+<dd><ul class="first last">
+<li>These values will exist inside of the web.config file</li>
+<li>The data cache path is set for the value: izenda.cache.diskcache.datacachedirectory</li>
+<li>The system cache path is set for the value:  izenda.cache.diskcache.systemcachedirectory</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>.NET Core Environment</dt>
+<dd><ul class="first last">
+<li>These vales will exist inside of the appsettings.json file</li>
+<li>The data cache path is set for the value: izenda.cache.diskcache.datacachedirectory</li>
+<li>The system cache path is set for the value:  izenda.cache.diskcache.systemcachedirectory</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="switching-between-memory-and-disk-cache">
+<h2>Switching Between Memory and Disk Cache<a class="headerlink" href="#switching-between-memory-and-disk-cache" title="Permalink to this headline">¶</a></h2>
+<p>To determine which caching solution you would like to use, simple comment out the appropriate lines in either your web.config file or your appsettings.json file. For example, if we wanted to leverage the disk cache over the mem cache, we would comment out the following:</p>
+<blockquote>
+<div><div class="highlight-json"><div class="highlight"><pre><span></span>//&quot;izenda.cache.data.cachestore&quot;: &quot;MemoryCacheStore&quot;,
+//&quot;izenda.cache.system.cachestore&quot;: &quot;MemoryCacheStore&quot;
+&quot;izenda.cache.data.cachestore&quot;: &quot;ExternalStorageCacheStore&quot;,
+&quot;izenda.cache.system.cachestore&quot;: &quot;ExternalStorageCacheStore&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="refreshing-the-cache">
+<h2>Refreshing the Cache<a class="headerlink" href="#refreshing-the-cache" title="Permalink to this headline">¶</a></h2>
+<p>Aside from the automated refresh that you can set, the data in the cache can be manually updated on certain pages of the application where you see a &#8216;Refresh&#8217; button along the top. When selected, the system will re-query the database, refresh the cache, and present the updated results to the user.</p>
+<p>The old &#8216;Update Results&#8217; button has been renamed &#8216;Apply Filters&#8217;. When selected, this will prioritize pulling data from the cache. In the event the cache is invalid, Izenda will re-query the database and then update the cache accordingly.</p>
+</div>
+<div class="section" id="clearing-the-cache">
+<h2>Clearing the Cache<a class="headerlink" href="#clearing-the-cache" title="Permalink to this headline">¶</a></h2>
+<p>In order to manually clear the cache we have created the following endpoint:</p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span>POST /api/SystemSetting/ClearCache
+</pre></div>
+</div>
+<p>Sample Payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;ClearCacheType&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Sample Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt>The possible values for ClearCacheType are as follows:</dt>
+<dd><ul class="first last simple">
+<li>&#8220;0&#8221; means System Cache</li>
+<li>&#8220;1&#8221; means Data Cache</li>
+<li>&#8220;2&#8221; means Both System and Data Cache</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".multi-tenant_setup_guide.html" class="btn btn-neutral float-right" title="Multi-tenant Setup Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_configuration_scheduling.html" class="btn btn-neutral" title="System Configuration/Scheduling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

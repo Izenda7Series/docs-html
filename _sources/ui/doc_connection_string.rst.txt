@@ -66,11 +66,12 @@ visible in reports.
    Click the Connection Builder icon (⚡) to help build the connection string easily. (:numref:`Connection_Connection_Builder`) |br|
 
       This step can be bypassed when user already knows the connection string. In this case, it can be copied and pasted straight into the Connection String box.
+      For examples of connection strings, please see the `Connection String Examples <https://www.izenda.com/docs/ui/doc_connection_string.html#connection-string-examples>`_ section below.
 #. Click the Test button to verify the connection string.
 
    .. note::
 
-      Unless the Connection String has been verified successfully, user will not be able to move next.
+      - Unless the Connection String has been verified successfully, user will not be able to move next.
 
 #. .. _Connection_Connection_String_Test:
 
@@ -285,3 +286,30 @@ To cancel any changes without saving:
 
 #. Click the Cancel button at the top.
 #. Click OK in the confirmation pop-up. (:numref:`Connection_Cancel_Confirmation`) |br|
+
+Connection String Examples
+--------------------------
+
+- Oracle:
+      - Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=user;Password=password;
+      - Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SID=xe)));User Id=user;Password=password;
+
+- Microsoft SQL Server:
+      - Server=192.168.45.37,1433;Database=testdatabase;User ID=user;Password=password
+      - Server=HOST-PC;Database=testdatabase;User ID=user;Password=password
+
+- MySQL:
+      - Server=MY-PC;Port=3306;Database=testdatabase;User ID=user;Password=password
+
+- PostgreSQL:
+      - Server=mydomainname;Port=5432;Database=testdatabase;User ID=user;Password=password
+      - Server=mydomainname;Port=5432;Database=testdatabase;User ID=user;Password=password;SslMode=Require;Trust Server Certificate=true;
+      .. note:: 
+            - If using Izenda v3.0.0 or greater and a PostgreSQL connection string with "SslMode=Require", the "Trust Server Certificate=true;" parameter will also need to be added.
+
+- `Elasticsearch <https://www.izenda.com/docs/intro/elastic.html>`_:
+      - server=https://xxxxxxxx.us-east-1.aws.found.io;Port=9243;User=user;Password=password;
+
+- `MongoDB <https://www.izenda.com/docs/intro/mongo.html>`_:
+      - Server=localhost;Port=27017;Database=admin;User=user;Password=password;
+      - User=user;Password=password;Server=atlas-host1;Port=27017;Database=testdatabase;AuthDatabase=admin;AuthMechanism=SCRAM-SHA-1;ReplicaSet=cluster0-shard-00-01-u49p2.mongodb.net:27017,cluster0-shard-00-02-u49p2.mongodb.net:27017;UseSSL=true;SlaveOK=true;
