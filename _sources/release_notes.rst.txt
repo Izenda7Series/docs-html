@@ -16,7 +16,7 @@ v3.3.0 July 15th, 2019
 FEATURES
 ^^^^^^^^^
 - Data Caching Beta is now Implemented
-    - Caching can be leveraged through a Disk Cache of a Memory Cache.
+    - Caching can be leveraged through a Disk Cache or a Memory Cache.
     - Data for Reports and Dashboards will be cached after the initial load.
     - A new UI button, 'Refresh' will be present which will allow users to update the cache.
     - 'Update Results' has been renamed 'Apply Filters' and will always prioritize pulling from the cached data.  
@@ -25,7 +25,7 @@ FEATURES
 FIXES
 ^^^^^
 - Defect 17160 System/Tenant Dropdown on Mobile Resolutions Isn't Responsive
-- Defect 19005 Export and print actions do not work on mobile devices.
+- Defect 19005 Export and print actions do not work on mobile devices
 - Defect 19040 Dashboard Background Color Picker Is Cut Off in a Portrait Layout on Mobile Devices
 - Defect 20253 Mobile Dashboard Map Point Options Selector Not Scaling
 - Defect 20254 Mobile Dashboard Map Navigation for Drilldowns Covered
@@ -33,10 +33,10 @@ FIXES
 - Defect 22368 Non-visible fields are being displayed in exports.
 - Defect 22683 Days Old function in chart values
 - Defect 22811 Filter error when using tinyint(1) data type with mysql database
-- Defect 22866 Scatter chart Y-axis labels overlapping on small chart sizes.
+- Defect 22866 Scatter chart Y-axis labels overlapping on small chart sizes
 - Defect 22916 Word Wrap Not Being Carried Over to Excel Export
 - Defect 23124 Join relationship using aliased join gets reordered when not listed at the bottom
-- Defect 23241 When a user creates a Chart type report using Range only Option from Report Part properties Error is displayed.
+- Defect 23241 When a user creates a Chart type report using Range only Option from Report Part properties Error is displayed
 - Defect 23272 Issue Rendering Embedded Report Part when trying to drill-down into a report
 - Defect 23315 Add field button doesn't respond
 - Defect 23398 Alternative Text Value Displays as Blank When Using Separators
@@ -46,15 +46,15 @@ FIXES
 - Defect 23556 Tenant User with Full Report and Dashboard Access gets logged out when saving a dashboard
 - Defect 23717 When moving an existing report to a new category, the category is put under Available Categories
 - Defect 23730 Value displayed incorrectly for forms in Microsoft Edge and Internet Explorer
-- Defect 23731 Access rights drop-down does not populate and locks the report designer.
+- Defect 23731 Access rights drop-down does not populate and locks the report designer
 - Defect 23739 Wrong colors in maps when using dynamic High and Low values
 - Defect 23777 Incorrect tooltip is displayed when using pivots and Custom URL
 - Defect 23801 Unexpected behaviors when using the OnPreLoadFilterDataTree IAdHocExtension method
 - Defect 23833 Cannot view a Gauge report in Dashboard on Mobile
 - Defect 23924 Fields with null values in forms displays incorrectly
+- Defect 24076 Scheduling limit not being set by default
 - Defect 24251 Map background is cut off in report designer
 - Defect 24298 Can not navigate to report when setup Email link in Dashboard/Report
-- Defect 24325 Error when copying report/dashboard to multiple tenants
 
 v3.2.1 June 21, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
