@@ -21,6 +21,7 @@ FEATURES
 
 FIXES
 ^^^^^
+- Defect 23242 Preview Dashboard Triggered Query when Required Filters were Set
 - Defect 23975 Unhandled Exception in Pivot Grids with Non-sum Aggregations in Rows
 - Defect 24077 Report Imports Fail with a Postgres Configuration Database
 - Defect 24326 Passing Multiple Date Filter Values to renderDashboardViewerPage caused Front-end Error with Date Pickers
