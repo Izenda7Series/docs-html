@@ -4,6 +4,25 @@
 Release Details
 ==============
 
+
+v3.3.1 July 15, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+
+- InTimePeriod filters reflect more accurate timezones
+    - When opened in the application, these filters will be offset by a user's Data Offset value instead of using the API server's UTC time.
+    - When sending an embedded or attached report, senders will be able to leverage the Time Zone setting for the schedule/subscription for InTimePeriod filters. 
+
+- Multiple Selection filters now support delimited lists.
+    - You can provided Comma and New Line delimited lists as valid inputs
+    - Select 'None' in the delimiter selection dialogue if you want to leverage historical behavior.
+
+- Izenda can load on pages with pre-existing Highcarts references. 
+    - Izenda will make a backup of the customer Highcharts reference, reset the Highcharts global variable, and then load our resources. 
+    - After Izenda's Highchart resources are loaded, we will restore the customer resources.  
+
 v3.3.0 July 15, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,6 +30,9 @@ v3.3.0 July 15, 2019
 	- The System Cache portion of this behavior will be released in a future version of Izenda.
 
 The **System Configuration > Cache** page allows an administrator to manage users.
+
+FEATURES
+^^^^^^^^^
 
 - Data Caching Beta is now Implemented
     - A detailed description of caching setup and configuration can be found on our :ref:`Caching_Overview` page.

@@ -10,7 +10,24 @@ Release Notes
 
 For more information and details on our releases, please see our :ref:`Release_Details`.
 
-v3.3.0 July 15th, 2019
+v3.3.1 July 23, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- InTimePeriod filters reflect more accurate timezones
+- Multiple Selection filters now support delimited lists.
+- Izenda can load on pages with pre-existing Highcarts references. 
+
+FIXES
+^^^^^
+- Defect 23975 Unhandled Exception in Pivot Grids with Non-sum Aggregations in Rows
+- Defect 24077 Report Imports Fail with a Postgres Configuration Database
+- Defect 24326 Passing Multiple Date Filter Values to renderDashboardViewerPage caused Front-end Error with Date Pickers
+- Defect 23842 General Info Values Failed to Populate for Logo Images
+- Defect 24427 System Job Implementation Polled System Inefficiently
+
+v3.3.0 July 15, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
