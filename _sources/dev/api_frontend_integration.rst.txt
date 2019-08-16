@@ -354,6 +354,8 @@ renderReportViewerPage(element,report_id, filter,integrationStyle)
 
 Render Izenda Report Viewer page only inside hosting web
 
+.. note::
+  The integrationStyle parameters hideReportName and hidePreviewRecords were made available in v3.1.0.
 
 **Parameters**
 
@@ -375,7 +377,7 @@ Render Izenda Report Viewer page only inside hosting web
                A filter object
              - The values for the filters, in this format ``{ p1value: a_value, p2value: another_value, .. }``
            * - **integrationStyle** |br|
-                
+
              - The options for toolbar and filter section, in this format ``{ "hideToolbar": true/false, "hideFilter": true/false, "hideReportName": true/false, "hidePreviewRecords": true/false }``
 
 **Samples**
@@ -549,6 +551,8 @@ renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)
 
 Render Izenda Dashboard Viewer page
 
+.. note::
+  The integrationStyle parameter hideDashboardName was made available in v3.1.0.
 
 **Parameters**
 

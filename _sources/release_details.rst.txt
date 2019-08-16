@@ -4,8 +4,35 @@
 Release Details
 ==============
 
+v3.4.0 August 16, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-v3.3.1 July 15, 2019
+FEATURES
+^^^^^^^^^
+- Machine Learning Infrastructure Addition
+    - The Prediction, Classification, and Forecasting model infrastructures are included. 
+- System Cache Beta Implementation
+    - A detailed description of caching setup and configuration can be found on our :ref:`Caching_Overview` page.
+    - No caching will be enabled by default, so you must set this up via the configuration page in the application.
+- Drilldown Grids can be Exported at the Current Expansion Level
+    - When using drilldown grids, you will receive a new pop-up when choosing to export your report if you have modified the grid. 
+    - This pop-up will let you designate if we're exporting all records in your drilldown grid, or the records as you've configured them (expanded vs collapsed)
+    - Users will be able to leverage this functionality to create more fidelity between drilldown grids in the platform and in their exports.
+- Join Logic can be Toggled Between Behavior before 2.18.1 and after 2.18.1
+    - Defect 22764 was resolved in v2.18.1 of Izenda which required adjustments to our query engine. 
+    - Reports that leverage order-specific join structures or LEFT/RIGHT joins may have seen their data change.
+    - To toggle this you will need to edit a value in the web.config (.NET) or appsettings.json (.NET Core)
+        - This is the following value: <add key="izendaJoinStructure" value="true" />
+        - This is a boolean value, which should be set to true/false and is true by default. 
+        - To leverage the older join logic you should set this value to false.
+    - Note that this is an APPLICATION-WIDE setting, meaning that it is not configured per-tenant. 
+
+DEFECTS
+^^^^^
+- For Defect 22502, there is an additional behavior where conditional formatting isn't applied when Custom Formats and Repeaters are in use (Defect 24687)
+- For Defect 23976, there is an additional behavior where no alert is provided when a user naviagtes to the Report Viewer from the Report Designer after editing the report if they have not saved. 
+
+v3.3.1 July 23, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -16,7 +43,7 @@ FEATURES
     - When sending an embedded or attached report, senders will be able to leverage the Time Zone setting for the schedule/subscription for InTimePeriod filters. 
 
 - Multiple Selection filters now support delimited lists.
-    - You can provided Comma and New Line delimited lists as valid inputs
+    - You can provide Comma and New Line delimited lists as valid inputs
     - Select 'None' in the delimiter selection dialogue if you want to leverage historical behavior.
 
 - Izenda can load on pages with pre-existing Highcarts references. 

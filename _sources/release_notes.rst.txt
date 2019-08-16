@@ -8,7 +8,61 @@ Release Notes
 	- Monthly Release - Enhancements and Defect Fixes, Minor release x.1.x
 	- Major Release - Larger Features, Major release 1.x.x
 
-For more information and details on our releases, please see our :ref:`Release_Details`.
+
+ For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
+
+
+v3.4.0 August 16, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Machine Learning Infrastructure 
+- System Cache Beta Implementation
+    - Caching can be leveraged through a Disk Cache or a Memory Cache
+    - This cache manages objects for system validation (roles, report list, data model access, etc.)
+- Drilldown Grids can be Exported at the Current Expansion Level
+- Join Logic can be Toggled Between Behavior before 2.18.1 and after 2.18.1
+
+FIXES
+^^^^^
+- Defect 19260 In responsive modes of dashboards, grid headers overlaps dashboard tile names. 
+- Defect 20248 Report viewer is not scrollable in landscape mode for mobile phones.
+- Defect 21501 Forms would lack the border, background color, and inserted items when exported.
+- Defect 22502 Conditional formatting in forms would break when repeaters were used. 
+- Defect 22846 Dashboard viewer would display an additional, 13th tile when users would move a tile.
+- Defect 23189 Front-end warnings would be logged in the browser after updating the UI.
+- Defect 23206 Chart Static Threshold labels were partially visible if Filter Dialogue was collapsed. 
+- Defect 23243 Loading Schedules list in UI would return a 500 error when using SQL Server 2008.
+- Defect 23644 Setting level dropdown is partially visible in mobile layouts.
+- Defect 23817 Reports would fail when using both an aliased join and a composite key in the relationships.
+- Defect 23839 GUID was displayed in chart tooltip instead of the threshold name.
+- Defect 23840 Metric formats would not apply to the Y-axis.
+- Defect 23929 Standalone users would not save and activate properly.
+- Defect 23936 Pivot grid export would fail when more than 5000 records were used.
+- Defect 23976 Filter values were saved without notification when selected in the Viewer and navigating to the designer.
+- Defect 24078 Drilldowns would not work as expected when using the renderReportPart function with a chart.
+- Defect 24107 Setting Level and Tenant dropdown are not rendered in Ipad/Ipad Pro layouts. 
+- Defect 24128 Metric Dropdown does not appear on embedded reports in v3.x
+- Defect 24175 Calculated fields throw an error when using Tenant Field configuration and Report Filters.
+- Defect 24215 Required filter indicator (*) would not appear for required filters in dashboards. 
+- Defect 24221 Drill-down grid exports would not mirror the data in the designer. 
+- Defect 24261 Report headers and footers would not render appropriately on mobile layouts. 
+- Defect 24266 Point option dropdown on Maps is misaligned on mobile layouts.
+- Defect 24283 MySQL Connections would error when stored procedures were present in the database.
+- Defect 24286 MongoDB adapter returns 101 records when grouping.
+- Defect 24325 Copy Management would fail when copying to multiple tenants.
+- Defect 24385 Encryption algorithm for disk cache objects was updated.
+- Defect 24445 Filters made against calculated fields would error out.
+- Defect 24450 Unsigned Int Fields would not display from a MySQL database.
+- Defect 24456 Null objects in the internal cache caused performance degradation. 
+- Defect 24589 MySQL/PostgreSQL/Oracle update scripts were incorrect.
+- Defect 24592 Changes in the Relationships page would not be saved.
+- Defect 24597 When sorting on a custom format the system would throw an error.
+- Defect 24608 No record was found in exported files when exporting Charts/Gauges/Maps with delimiters in the filters.
+- Defect 24616 Report Owner would occasionally be set to NULL.
+- Defect 24663 Custom Formats would not be applied to negative numeric values.
+
 
 v3.3.1 July 23, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,7 +71,7 @@ FEATURES
 ^^^^^^^^^
 - InTimePeriod filters reflect more accurate timezones
 - Multiple Selection filters now support delimited lists.
-- Izenda can load on pages with pre-existing Highcarts references. 
+- Izenda can load on pages with pre-existing Highcharts references. 
 
 FIXES
 ^^^^^

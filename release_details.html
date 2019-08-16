@@ -175,10 +175,72 @@
             
   <div class="section" id="release-details">
 <span id="id1"></span><h1>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v3-3-1-july-15-2019">
-<h2>v3.3.1 July 15, 2019<a class="headerlink" href="#v3-3-1-july-15-2019" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v3-4-0-august-16-2019">
+<h2>v3.4.0 August 16, 2019<a class="headerlink" href="#v3-4-0-august-16-2019" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="features">
 <h3>FEATURES<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Machine Learning Infrastructure Addition</dt>
+<dd><ul class="first last">
+<li>The Prediction, Classification, and Forecasting model infrastructures are included.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>System Cache Beta Implementation</dt>
+<dd><ul class="first last">
+<li>A detailed description of caching setup and configuration can be found on our <a class="reference internal" href="ui/doc_caching_overview.html#caching-overview"><span class="std std-ref">System Configuration/Cache</span></a> page.</li>
+<li>No caching will be enabled by default, so you must set this up via the configuration page in the application.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Drilldown Grids can be Exported at the Current Expansion Level</dt>
+<dd><ul class="first last">
+<li>When using drilldown grids, you will receive a new pop-up when choosing to export your report if you have modified the grid.</li>
+<li>This pop-up will let you designate if we&#8217;re exporting all records in your drilldown grid, or the records as you&#8217;ve configured them (expanded vs collapsed)</li>
+<li>Users will be able to leverage this functionality to create more fidelity between drilldown grids in the platform and in their exports.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Join Logic can be Toggled Between Behavior before 2.18.1 and after 2.18.1</dt>
+<dd><ul class="first last">
+<li>Defect 22764 was resolved in v2.18.1 of Izenda which required adjustments to our query engine.</li>
+<li>Reports that leverage order-specific join structures or LEFT/RIGHT joins may have seen their data change.</li>
+<li><dl class="first docutils">
+<dt>To toggle this you will need to edit a value in the web.config (.NET) or appsettings.json (.NET Core)</dt>
+<dd><ul class="first last">
+<li>This is the following value: &lt;add key=&#8221;izendaJoinStructure&#8221; value=&#8221;true&#8221; /&gt;</li>
+<li>This is a boolean value, which should be set to true/false and is true by default.</li>
+<li>To leverage the older join logic you should set this value to false.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Note that this is an APPLICATION-WIDE setting, meaning that it is not configured per-tenant.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="defects">
+<h3>DEFECTS<a class="headerlink" href="#defects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>For Defect 22502, there is an additional behavior where conditional formatting isn&#8217;t applied when Custom Formats and Repeaters are in use (Defect 24687)</li>
+<li>For Defect 23976, there is an additional behavior where no alert is provided when a user naviagtes to the Report Viewer from the Report Designer after editing the report if they have not saved.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v3-3-1-july-23-2019">
+<h2>v3.3.1 July 23, 2019<a class="headerlink" href="#v3-3-1-july-23-2019" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>InTimePeriod filters reflect more accurate timezones</dt>
@@ -192,7 +254,7 @@
 <li><dl class="first docutils">
 <dt>Multiple Selection filters now support delimited lists.</dt>
 <dd><ul class="first last">
-<li>You can provided Comma and New Line delimited lists as valid inputs</li>
+<li>You can provide Comma and New Line delimited lists as valid inputs</li>
 <li>Select &#8216;None&#8217; in the delimiter selection dialogue if you want to leverage historical behavior.</li>
 </ul>
 </dd>
@@ -219,8 +281,8 @@
 </ul>
 </div>
 <p>The <strong>System Configuration &gt; Cache</strong> page allows an administrator to manage users.</p>
-<div class="section" id="id2">
-<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Caching Beta is now Implemented</dt>
@@ -237,8 +299,8 @@
 </div>
 <div class="section" id="v3-2-0-june-4-2019">
 <h2>v3.2.0 June 4, 2019<a class="headerlink" href="#v3-2-0-june-4-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Report Headers Scale to Reduce Whitespace</dt>
@@ -310,8 +372,8 @@
 <li>(5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>MongoDB Available as a Reporting Datasource</dt>

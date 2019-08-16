@@ -1023,8 +1023,8 @@ Clear out all cache.
             integer
          -  Define which cache area should be cleared
 
-            +  0: Data cache
-            +  1: System cache
+            +  0: System cache
+            +  1: Data cache
             +  2: All cache
          -
 
