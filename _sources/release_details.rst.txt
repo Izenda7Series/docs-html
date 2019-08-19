@@ -13,7 +13,8 @@ FEATURES
     - The Prediction, Classification, and Forecasting model infrastructures are included. 
 - System Cache Beta Implementation
     - A detailed description of caching setup and configuration can be found on our :ref:`Caching_Overview` page.
-    - No caching will be enabled by default, so you must set this up via the configuration page in the application.
+    - The system cache is enabled by default.
+    - There is no ability to disable the system cache with this release. 
 - Drilldown Grids can be Exported at the Current Expansion Level
     - When using drilldown grids, you will receive a new pop-up when choosing to export your report if you have modified the grid. 
     - This pop-up will let you designate if we're exporting all records in your drilldown grid, or the records as you've configured them (expanded vs collapsed)
