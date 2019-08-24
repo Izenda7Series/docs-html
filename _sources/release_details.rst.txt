@@ -4,6 +4,33 @@
 Release Details
 ==============
 
+v3.4.1 August 23, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Introduced CORS Policy Configuration for the .NET Core API resources for Izenda
+    - Added the izenda.cors.removepolicy setting
+        - This can be set to true or false and is set to false by default.
+        - True: Izenda does not set any CORS policies on the sites
+        - False: Izenda will use the subsequent three CORS settings for the sites
+
+    - Added the izenda.cors.alloworigins setting
+        - Supports the same values as our .NET Framework Web.config settings
+        - Defaults to the '*' wildcard character to allow any origin
+        - Lists of values should be comma-separated with no space: ex. "http://www.yoursite.com/example"
+
+    - Added the izenda.cors.allowheaders setting
+        - Supports the same values as our .NET Framework Web.config settings
+        - Defaults to the '*' wildcard character to allow any header
+        - Lists of values should be comma-separated with no space: ex. "Accept,Origin,Content-Type"
+
+    - Added the izenda.cors.allowmethods setting
+        - Supports the same values as our .NET Framework Web.config settings
+        - Defaults to the '*' wildcard character to allow any method
+        - Lists of values should be comma-separated with no space: ex. "GET,PUT,POST,DELETE,OPTIONS"
+
+
 v3.4.0 August 16, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -12,6 +12,14 @@ Release Notes
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
 
+v3.4.1 August 23, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Introduced CORS Policy Configuration for the .NET Core API resources for Izenda
+
+
 v3.4.0 August 16, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
