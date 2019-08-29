@@ -11,6 +11,25 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.4.2 August 29, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Conditional Formatting on Grids can be Applied Regardless of Value   
+    - When setting conditional formatting, instead of specifying a Value, Value Range, or Percentage Range grids can apply this setting to all values for that field. 
+
+FIXES
+^^^^^
+- Defect 22598 ElasitcSearch timezone offsets would occasionally be applied twice. 
+- Defect 22742 Alternative Text was not applied to X/Y Axis labels in charts.
+- Defect 23240 Users with Full Report and Dashboard Access could not edit category names.
+- Defect 23834 Fullscreen Mode would not be applied in Dashboards.
+- Defect 24174 Dialogue Boxes would not render the delete option.
+- Defect 24609 HTML was not converted to plain text when exporting to non-PDF formats.
+- Defect 24666 Embedded subreports using the Between (Date) filter would show different results when exporting.
+- Defect 24678 Dashboards leveraging filters with multiple filter values separated by delimiters would fail to filter data.
+
 
 v3.4.1 August 23, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
