@@ -4,6 +4,45 @@
 Release Details
 ==============
 
+v3.5.0 September 10, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- (Beta) Excel data sources can now be added as reporting data sources.
+    - The Connection Strings page is renamed 'Data Connectors'
+    - The 'Add Connection' option is renamed 'Add Connector'
+    - The layout for this page is slightly adjusted to make better use of the space.
+    - The sheets, once added, cannot be updated by re-uploading a sheet to the same connection.
+    - Under the Advanced Settings > Others you can name the folder where Izenda will store these uploaded files
+        - This supports local directories or UNC paths
+
+.. figure:: /_static/images/Connector_Page_Update.jpg
+    :align: center
+    :width: 653px
+
+.. figure:: /_static/images/Excel_Path_Screen.jpg
+    :align: center
+    :width: 653px
+
+- Google Maps can now be selected when creating a map report part. 
+    - Google can now be chosen from the Map Type dropdown 
+    - This requires that a valid Google API key is set in the System Configuration > Google Maps page
+        - There is an additional option 'Google Address' that lets users leverage address information and Google will obtain the Lat/Lon coordinates
+    - Note that this behavior requires a premium API key and must be enabled.
+    - This will have a corresponding permission that enables whether or not users can leverage this feature.
+
+.. figure:: /_static/images/Google_Maps_Example.jpg
+    :align: center
+    :width: 653px
+
+.. figure:: /_static/images/Google_Maps_Settings.jpg
+    :align: center
+    :width: 653px
+
+- Ability to hide grid headers from the report viewer.
+    - There is an added Report Part Property that, when selected, will remove the headers row or column from the grid.
+
 v3.4.1 August 23, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

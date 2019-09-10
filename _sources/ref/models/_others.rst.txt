@@ -43,3 +43,8 @@ Others
    ValidateExpiration
    ValueTreeNode
    RoleVirtualNode
+   GoogleAPISetting
+   VizState
+   StateCode
+   CountyCode
+   AddressCode

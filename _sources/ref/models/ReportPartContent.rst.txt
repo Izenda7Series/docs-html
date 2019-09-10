@@ -63,6 +63,13 @@ ReportPartContent
       -
       -  The selected metric value on Chart/Gauge/Map
       -
+   *  -  **vizState** |br|
+         object
+
+         .. versionadded:: 3.5.0
+      -
+      -  A :doc:`VizState` object
+      -
 
 .. container:: toggle
 

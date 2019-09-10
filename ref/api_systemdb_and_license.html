@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>System DB and License APIs &mdash; Izenda BI 3.4.2 documentation</title>
+  <title>System DB and License APIs &mdash; Izenda BI 3.5.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.4.2 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.5.0 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Connection APIs" href="api_connection.html"/>
         <link rel="prev" title="REST API Documentation" href=".rest_api_documentation.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.4
+                3.5
               </div>
             
           
@@ -652,12 +652,64 @@ string</td>
 <td>The name of the continent</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-even"><td><p class="first"><strong>coordinates</strong> <br clear="right" />
+array of objects</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>The array of coordinates to define the boundary of country</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><strong>longitude</strong> <br clear="right" />
+real number</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>The longitude</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>latitude</strong> <br clear="right" />
+real number</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>The latitude</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><strong>alternateNames</strong> <br clear="right" />
+string</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>The country&#8217;s alternative names</td>
+<td>&#160;</td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div>To be updated</div></blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">databaseSetup/staticData/countryCodes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Andorra&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;code2&quot;</span><span class="p">:</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;code3&quot;</span><span class="p">:</span> <span class="s2">&quot;AND&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;continent&quot;</span><span class="p">:</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;[[{</span><span class="se">\&quot;</span><span class="s2">lng</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.4166</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">lat</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">42.5617</span><span class="se">\&quot;</span><span class="s2">},{</span><span class="se">\&quot;</span><span class="s2">lng</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.7220</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">lat</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">42.5617</span><span class="se">\&quot;</span><span class="s2">},{</span><span class="se">\&quot;</span><span class="s2">lng</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.7220</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">lat</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">42.4489</span><span class="se">\&quot;</span><span class="s2">},{</span><span class="se">\&quot;</span><span class="s2">lng</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.5184</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">lat</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">42.3925</span><span class="se">\&quot;</span><span class="s2">},{</span><span class="se">\&quot;</span><span class="s2">lng</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.4166</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">lat</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">42.5617</span><span class="se">\&quot;</span><span class="s2">}]]&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="s2">&quot;1.6016&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="s2">&quot;42.5462&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;alternateNames&quot;</span><span class="p">:</span> <span class="s2">&quot;And.,Andorra&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="get-systemsetting-systemmode">
 <h2>GET systemSetting/systemMode<a class="headerlink" href="#get-systemsetting-systemmode" title="Permalink to this headline">¶</a></h2>
@@ -1126,7 +1178,7 @@ integer</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.4.2',
+            VERSION:'3.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

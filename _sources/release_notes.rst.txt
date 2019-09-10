@@ -11,6 +11,40 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.5.0 September 10, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- (Beta) Excel data sources can now be added as reporting data sources.
+- Google Maps can now be selected when creating a map report part. 
+- Ability to hide grid headers from the report viewer.
+
+FIXES
+^^^^^    
+- Defect 22644 IsReportValid API Call is cached to help improve performance.        
+- Defect 23229 Info icon near the provision map data button is not working.        
+- Defect 23302 Adding fields to a report in an Angular environment would show console errors.        
+- Defect 23558 Copy Management workspace against a new tenant shows "Another user has recently modified this data".        
+- Defect 23626 $0,000 custom format displays $0,000$ when used in a report.        
+- Defect 23776 State indicators for buttons were not displayed.        
+- Defect 23928 Map legends would create inaccurate ranges when displaying.        
+- Defect 23978 No license expiration message displays in 3.x versions.        
+- Defect 24285 Email Report using Embedded HTML option would download a 0KB HTML file.         
+- Defect 24428 Imported report with a filter against an aggregated field crashes when viewing.        
+- Defect 24611 MySQL schema migration scripts would cause errors when running.        
+- Defect 24664 GetToken should not be called for exports using an access_token is already set.        
+- Defect 24694 Tables in form report parts show white space differently between the viewer and exporting.    
+- Defect 24695 Full column drilldown functionality was disabled.     
+- Defect 24882 Loading the dashboard list by a category fails against a PostgreSQL config database.        
+- Defect 24893 Chart/Gauge/Map exports would fail when exporting to PDF/Word format.         
+- Defect 24918 Navigating to a subreport for global reports at the tenant level returns a blank report.        
+- Defect 24933 Point options and metrics dropdown are hidden by the report part header in report designer in responsive layouts.        
+- Defect 25067 Tenant Field would not be applied consistently.     
+- Defect 25087 The browser page would crash when changing a report's property and then changing the chart type.        
+
+
+
 v3.4.2 August 29, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

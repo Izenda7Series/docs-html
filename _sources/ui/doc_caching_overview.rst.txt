@@ -4,9 +4,6 @@
 System Configuration/Cache
 ===============================
 
-.. note::
-	- The System Cache portion of this behavior will be released in a future version of Izenda. 
-
 The **System Configuration > Cache** page allows an administrator to manage users.
 
 

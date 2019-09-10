@@ -416,10 +416,49 @@ Returns provision country code data.
              string
           -  The name of the continent
           -
+       *  -  **coordinates** |br|
+             array of objects
+
+             .. versionadded:: 3.5.0
+          -  The array of coordinates to define the boundary of country
+          -
+       *  -  **longitude** |br|
+             real number
+
+             .. versionadded:: 3.5.0
+          -  The longitude
+          -
+       *  -  **latitude** |br|
+             real number
+
+             .. versionadded:: 3.5.0
+          -  The latitude
+          -
+       *  -  **alternateNames** |br|
+             string
+
+             .. versionadded:: 3.5.0
+          -  The country's alternative names
+          -
 
 **Samples**
 
-   To be updated
+   .. code-block:: http
+
+      GET databaseSetup/staticData/countryCodes HTTP/1.1
+
+   Sample response::
+
+      [{
+         "name": "Andorra",
+         "code2": "AD",
+         "code3": "AND",
+         "continent": "Europe",
+         "coordinates": "[[{\"lng\":\"1.4166\",\"lat\":\"42.5617\"},{\"lng\":\"1.7220\",\"lat\":\"42.5617\"},{\"lng\":\"1.7220\",\"lat\":\"42.4489\"},{\"lng\":\"1.5184\",\"lat\":\"42.3925\"},{\"lng\":\"1.4166\",\"lat\":\"42.5617\"}]]",
+         "longitude": "1.6016",
+         "latitude": "42.5462",
+         "alternateNames": "And.,Andorra"
+      }]
 
 GET systemSetting/systemMode
 --------------------------------------------------------------

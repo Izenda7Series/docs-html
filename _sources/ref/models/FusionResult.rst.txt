@@ -63,6 +63,27 @@ FusionResult
       -
       -  An array of :doc:`PostCode` objects
       -
+   *  -  **stateCodes** |br|
+         array of objects
+
+         .. versionadded:: 3.5.0
+      -
+      -  An array of :doc:`StateCode` objects
+      -
+   *  -  **countyCodes** |br|
+         array of objects
+
+         .. versionadded:: 3.5.0
+      -
+      -  An array of :doc:`CountyCode` objects
+      -
+   *  -  **addressCodes** |br|
+         array of objects
+
+         .. versionadded:: 3.5.0
+      -
+      -  An array of :doc:`AddressCode` objects
+      -
 
 .. container:: toggle
 

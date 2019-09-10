@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Misc System Settings APIs &mdash; Izenda BI 3.4.2 documentation</title>
+  <title>Misc System Settings APIs &mdash; Izenda BI 3.5.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.4.2 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.5.0 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Export APIs" href="api_export.html"/>
         <link rel="prev" title="System Configuration APIs" href="api_system_configuration.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.4
+                3.5
               </div>
             
           
@@ -327,6 +327,22 @@
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#get-systemsetting-dateformat">GET systemSetting/dateFormat</a></td>
 <td>Returns all supported date formats.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="#get-systemsetting-googleapikey-tenantid">GET systemSetting/googleAPIKey/(tenantId)</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>Returns the Google Map API Key for specific tenant.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><a class="reference internal" href="#post-systemsetting-googleapikey">POST systemSetting/googleAPIKey</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.5.0.</span></p>
+</div>
+</td>
+<td>Save Google Map settings.</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -1688,6 +1704,110 @@ string</td>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="get-systemsetting-googleapikey-tenantid">
+<h2>GET systemSetting/googleAPIKey/(tenantId)<a class="headerlink" href="#get-systemsetting-googleapikey-tenantid" title="Permalink to this headline">¶</a></h2>
+<p>Returns the Google Map API Key for specific tenant (return System&#8217;s key if <cite>tenantID</cite> is null.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/GoogleAPISetting.html"><span class="doc">GoogleAPISetting</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/googleAPIKey</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;useSystemConfiguration&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<span class="s2">&quot;googleAPIKey&quot;</span><span class="p">:</span> <span class="s2">&quot;The google api key&quot;</span><span class="p">,</span>
+<span class="s2">&quot;useGEOCodingService&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;e7798b61-3192-42dc-b0cd-7f7726cbfa69&quot;</span><span class="p">,</span>
+<span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-03T07:45:33.0134920+07:00&quot;</span><span class="p">,</span>
+<span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+<span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-03T07:45:33.0134920+07:00&quot;</span><span class="p">,</span>
+<span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-systemsetting-googleapikey">
+<h2>POST systemSetting/googleAPIKey<a class="headerlink" href="#post-systemsetting-googleapikey" title="Permalink to this headline">¶</a></h2>
+<p>Save Google Map settings.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/GoogleAPISetting.html"><span class="doc">GoogleAPISetting</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>success</strong> <br clear="right" />
+boolean</td>
+<td>Should be true</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>emailSetting</strong> <br clear="right" />
+string</td>
+<td>The saved <a class="reference internal" href="models/GoogleAPISetting.html"><span class="doc">GoogleAPISetting</span></a> object</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/systemSetting/googleAPIKey</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;useSystemConfiguration&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="s2">&quot;googleAPIKey&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+<span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;e2b50a50-8f5a-4e55-bbac-72e9e0334be9&quot;</span><span class="p">,</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;googleAPIKeySetting&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;useSystemConfiguration&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;googleAPIKey&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;e2b50a50-8f5a-4e55-bbac-72e9e0334be9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;f060e458-e3f6-462d-a199-838f407b9193&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;inserted&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-08T14:31:13.704129&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -1734,7 +1854,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.4.2',
+            VERSION:'3.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
