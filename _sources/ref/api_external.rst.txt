@@ -12,3 +12,4 @@ The external API is not used by the Izenda application, it is created solely for
    :maxdepth: 2
 
    ../swagger/import-export
+   ../swagger/external-user

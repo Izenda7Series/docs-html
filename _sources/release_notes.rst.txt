@@ -11,6 +11,81 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.6.0 October 10, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- New User Load API
+    - We are introducing a new external user endpoint: GET api/external/user/loadUser
+    - This endpoint is meant to return user information for a single user at a time, as opposed to a bulk load.
+- Additive Field Auto Visible/Auto Filterable
+    - The security settings Set Additive Field Auto Visible and Set Additive Field Auto Filterable are now set to True by default.
+- Excel Export DateTime Formatting
+    - Previously, date columns were being exported as Text in Excel exports. 
+    - These have been adjusted to be exported as a custom data type to enable date filtering options in the Excel sheet.
+- New Separator Option for Pivot Grids
+    - We have introduced a new separator type, Logical, for pivot grids. 
+    - This separator will block out data within the pivot without creating a new grid instance, keeping all of the data in-line.
+- Visibility Toggle for User ID and User Profile
+    - Two new options exist under System Configuration > Security Policies
+    - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible. 
+- Logging Improvement for TenantID and ReportID values
+    - Two new parameters are present in our logs for both of these items to separate them from the larger message content. 
+    - This will make it easier to search logs for tenant-specific or report-specific entires. 
+- Excel Adapter Improvements and Release
+    - The Excel adapter now handles updating and replacing sheets for connections more reliably. 
+    - The UI updates for non-database connectors have been finished. 
+
+FIXES
+^^^^^  
+- Defect 19030 System would show "This Field name alias already exists in [xxx] report part" despite only having one field.
+- Defect 21124 Grouping datetime field in Bubble/Scatter chart throws an error.
+- Defect 23232 The "Others" value was not displayed on legends for Pie Charts.
+- Defect 23614 API call report/tenants/(tenant_id)/categories/(category_id)/reports returns all reports regardless of the user token provided.
+- Defect 23838 TreeMap would fail to render when negative values were present.
+- Defect 23905 API call user/active and user/deactive returns User object regardless of success or failure.
+- Defect 24069 Data source change warning icons would not clear even when changes are saved.
+- Defect 24079 Header & Footer were still displayed when they were set to be hidden by default.
+- Defect 24105 Filters would error when searching for a data source in the report designer.
+- Defect 24116 Reports exported to Word were not scaling correctly.
+- Defect 24171 Convert null to empty string option causes invalid column name when using an aggregate function
+- Defect 24270 No warning message is getting displayed when navigating to the report viewer.
+- Defect 24274 No confirmation message is displayed when closing a modified dashboard.
+- Defect 24327 Freeze button is still shown in the dashboard viewer.
+- Defect 24381 Users would be unable to save reports into a new category despite having permissions for it.
+- Defect 24426 Cannot use stored procedures with a '-' in the name.
+- Defect 24436 Heatmap shades incorrect color for some countries.
+- Defect 24439 Subtotals were not properly formatted for drilldown grids.
+- Defect 24463 PDF export fails when a report has a footer and no header.
+- Defect 24561 Refresh button displayed when data caching layer is not enabled.
+- Defect 24623 System throws an error message when filtering on a calculated field. 
+- Defect 24683 Drilldowns do not work when passing in a Guid that uses all uppercase letters to renderReportPart.
+- Defect 24687 Color settings are not applied when a Form contains repeaters and a custom data format.
+- Defect 24688 `Add Schedule` button in the report designer creates a console error with the .NET Core API.
+- Defect 24691 Pivot headers would be misaligned when one or more headers were marked as non-visible.
+- Defect 24708 Filters are applied incorrectly after saving a dashboard if a report contains subreports.
+- Defect 24752 Field values are not encoded when using Custom URL in the Report Designer.
+- Defect 24783 Field names and values are not encoded in Forms.
+- Defect 24850 Extra space in field names in forms could be used to enter information, breaking the form. 
+- Defect 24867 Adding repeater tag to Form report doesn't trigger a change notification when saving the report.
+- Defect 24889 Current Tenant Header in role/all/(tenantID) would allow users to see information for other tenants.
+- Defect 24920 "data:image/jpeg;base64," was being appended to Lob fields.
+- Defect 24925 UI and behavior adjustments of Excel adapter in Connector tab.
+- Defect 24938 IsSubscriptionTimeZoneUsed field added in v3.3.1 incorrectly alters IzendaConnection table in PGSQL scripts.
+- Defect 24972 Inconsistent behavior would arise when uploading files with the Excel Connector.
+- Defect 25082 Grids would only export the Preview Records set, not all records.
+- Defect 25162 Exporting does not work if running .NET Core API on Linux OS due to QtBinaries.
+- Defect 25174 Bubble Chart cannot be built after adding multiple columns at once to value field.
+- Defect 25261 Subreports would not inherit filters from the parent report in DeploymentMode 1 environments.
+- Defect 25281 All local categories are loaded when a user selects Global Categories when saving a report.
+- Defect 25288 No data is returned when you alias a join between two data sources from two different database types.
+- Defect 25289 System caching would make it impossible to open any report if the current user isn't a system admin.
+- Defect 25290 The prefix of a temp file isn't deleted when a connector name is generated.
+- Defect 25296 Excel exports would fail when a grid report contained separators.
+- Defect 25320 Datetime fields would export in unexpected formats when exporting to PDF/Word.
+- Defect 25321 Datetime fields were not set as datetimes in Excel when functions and formats were applied.
+
 v3.5.0 September 10, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -4,6 +4,23 @@
 Release Details
 ==============
 
+v3.6.0 October 10, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- New User Load API
+    - We are introducing a new external user endpoint: GET api/external/user/loadUser
+    - This endpoint is meant to return user information for a single user at a time, as opposed to a bulk load.
+- New Separator Option for Pivot Grids
+    - We have introduced a new separator type, Logical, for pivot grids. 
+    - This separator will block out data within the pivot without creating a new grid instance, keeping all of the data in-line.
+    - If subtotals are enabled, these will be rendered in-line with the grid, creating total rows below each logical separator grouping.
+
+.. figure:: /_static/images/Logical_Separator_Example.jpg
+    :align: center
+    :width: 653px
+
 v3.5.0 September 10, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
