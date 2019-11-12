@@ -645,8 +645,7 @@ Pre-install preparations
 
          sudo vim /etc/apache2/apache2.conf
          ServerName localhost
-
-
+ 
 Install Izenda as two separate sites
 -----------------------------------------
 
@@ -734,6 +733,27 @@ Create monitor service
    * Stop Supervisor: ``sudo service supervisor stop``
 
 #. Verifying the service running progress ``sudo tail -f /var/log/izenda-api.out.log``
+
+
+Configuring Exporting
+--------------------------
+
+#. Configuring Exporting
+
+   * To convert HTML to PDF in Linux using the WebKit rendering engine, the following packages should be installed in the Linux machine where the conversion takes place:
+
+      .. code-block:: console
+
+         $ sudo apt-get update
+         $ sudo apt-get install xvfb
+         $ sudo apt-get install libssl-dev
+         $ sudo apt-get install libx11-dev libx11-xcb-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-shm0-dev libxcb-util0-dev libxcb-xfixes0-dev libxcb-xkb-dev libxcb1-dev libxfixes-dev libxrandr-dev libxrender-dev
+   
+   * Give permission to run the Syncfusion WebKit
+
+      .. code-block:: console  
+
+         sudo chmod 755 /var/www/izenda-api/API_AspNetCore/Export/QtBinariesLinux/Syncfusion.WebKitWrapper
 
 Additional Reference
 ========================

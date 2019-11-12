@@ -1,3 +1,4 @@
+.. _External_User:
 
 ============================
 External User

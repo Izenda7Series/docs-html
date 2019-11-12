@@ -11,6 +11,70 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.7.0 November 13th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Salesforce Connector Preview 
+- Continued Grid Enhancements 
+    - Blank rows can be added to pivot grid expanders for better visual spacing. 
+    - Conditional formatting options were added to support bold, italics, and underline formatting for grids.
+    - A new conditional formatting option exists for Horizontal and Vertical Grids 
+        - This allows for conditional formatting to impact entire columns or entire rows 
+        - This will be expanded to impact pivot and drilldown grids at a later date.
+- Calculated Fields support New Line character
+- Expanded API response behavior for error handling 
+
+FIXES
+^^^^^ 
+- Defect 15497 Pivot grid field text color does not change.
+- Defect 19052 Unexpected empty space beneathe collapsed Pivot headers.
+- Defect 19288 System users cannot copy global reports to local categories.
+- Defect 19470 Changing the chart type to Waterfall after adding a separator corrupts data.
+- Defect 20815 Field comparison filter values are not copied if built against a calculated field.
+- Defect 22467 Form fields positioned outside of a repeater would appear as links if CustomURLs were set in the repeater. 
+- Defect 22658 CustomURLs inconsistently encode characters in integrated modes on some browsers.
+- Defect 22847 Calculated fields that return aggregates would not display filter values. 
+- Defect 23686 Postgres Bytea data type would not display as an image. 
+- Defect 23737 Tenant users without scheduling permissions see a failed loadSchedules request when saving a report.
+- Defect 24195 Creating tenant with fullReportAndDashboardAccess = true in Permission object removes some permissions from the object.
+- Defect 24281 Convert Null To Empty causes an error when the report contains a calculated field using user defined function.
+- Defect 24333 Dashboard buttons flicker momentarily when loading.
+- Defect 24473 Value labels on maps do not display when Show Map Labels and Show Value Labels are enabled when a shading metric is not configured.
+- Defect 24711 Global maps would error when dynamic shading was set while multiple point options were present.
+- Defect 24750 PostgreSQL procedures would not display fields in the data model.  
+- Defect 24871 Filter values were rounding automatically in the value dropdown.
+- Defect 24939 Exporting to Excel would fail when special ASCII characters were present.
+- Defect 24973 Emailing would fail when a tenant email server was set up using a custom configuration. 
+- Defect 25069 Filters based on a calculated field would display no values if that field was built from a user defined function.
+- Defect 25091 Emailed Chart/Gauge/Map data was not filtered appropriately based on the user's value selection.
+- Defect 25100 Cannot save dashboard into a category when the category name resembles a GUID.
+- Defect 25154 Error message would display when the HH:mm:ss format is applied to a date time field if data cache is enabled.
+- Defect 25161 Arrow navigation did not work when dashboards were in presentation mode.
+- Defect 25185 Using calculated fields and PostgreSQL reporting DB caused a query syntax error in some cases.
+- Defect 25262 Printing does not render charts in Deployment Mode 1 because the access token is missing.
+- Defect 25284 Calculated fields are shown as invalid filters when they are built from other calculated fields.
+- Defect 25308 Common Filters were not accurately determined when Single/Multiple selections existed for the same field.
+- Defect 25311 Missing dashboard background color and background image in exports/prints.
+- Defect 25393 Embedded HTML grids do not keep styling when emailed.
+- Defect 25420 Email Body default text is missing when adding a new subscription/schedule in v3.6.0.
+- Defect 25445 Schedules use default filter values from the report definition instead of the values set in the schedule designer.
+- Defect 25483 When exporting, only rows that were visible in the viewer would be collapsed. 
+- Defect 25501 PDF and Word exporting/printing would fail for pivot grids. 
+- Defect 25505 Forms were not consistently rendered in the UI.
+- Defect 25517 Maps failed to render when applying a color formatting. 
+- Defect 25532 The popup grid for charts would load forever in Internet Explorer.
+- Defect 25577 Blank spaces were added between records in PDF Exporting.
+- Defect 25615 Users could not search for report parts in the dashboard designer when using Firefox.
+- Defect 25636 Column groups would not be applied in Pivot grids.
+- Defect 25667 Grid/Form loads forever after adding any field in Internet Explorer.
+- Defect 25672 Report parts would load indefinitely when adding a subtotal in Internet Explorer.
+
+
+
+
+
 v3.6.0 October 10, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,7 +96,7 @@ FEATURES
     - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible. 
 - Logging Improvement for TenantID and ReportID values
     - Two new parameters are present in our logs for both of these items to separate them from the larger message content. 
-    - This will make it easier to search logs for tenant-specific or report-specific entires. 
+    - This will make it easier to search logs for tenant-specific or report-specific entires.
 - Excel Adapter Improvements and Release
     - The Excel adapter now handles updating and replacing sheets for connections more reliably. 
     - The UI updates for non-database connectors have been finished. 

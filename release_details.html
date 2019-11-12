@@ -175,16 +175,79 @@
             
   <div class="section" id="release-details">
 <span id="id1"></span><h1>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v3-6-0-october-10-2019">
-<h2>v3.6.0 October 10, 2019<a class="headerlink" href="#v3-6-0-october-10-2019" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v3-7-0-november-13th-2019">
+<h2>v3.7.0 November 13th, 2019<a class="headerlink" href="#v3-7-0-november-13th-2019" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="features">
 <h3>FEATURES<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Salesforce Connector Preview</dt>
+<dd><ul class="first last">
+<li>A connection string can be added to your Salesforce data for reporting.</li>
+<li><dl class="first docutils">
+<dt>This requires three pieces of information: Email, Password, and Security Token</dt>
+<dd><ul class="first last">
+<li>Ex. <a class="reference external" href="mailto:User=myUserName&#37;&#52;&#48;test&#46;com">User=myUserName<span>&#64;</span>test<span>&#46;</span>com</a>;Password=pa$sw0rd;Security Token=Al9q7nmDJW3ib0NBiLEnYz;Verbosity=3;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Continued Grid Enhancements</dt>
+<dd><ul class="first last">
+<li>Blank rows can be added to pivot grid expanders for better visual spacing.</li>
+<li><dl class="first docutils">
+<dt>A new conditional formatting option exists for Horizontal and Vertical Grids</dt>
+<dd><ul class="first last">
+<li>This allows for conditional formatting to impact entire columns or entire rows</li>
+<li>This will be expanded to impact pivot and drilldown grids at a later date, as well as having a more comprehensive UI.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Conditional formatting options were added to support bold, italics, and underline formatting for grids.</li>
+<li>Pivot grids can have all expander items collapsed/expanded by default</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Conditional_Formatting_Popup.jpg"><img alt="_images/Conditional_Formatting_Popup.jpg" src="_images/Conditional_Formatting_Popup.jpg" style="width: 653px;" /></a>
+</div>
+<ul class="simple">
+<li>Calculated Fields support New Line character</li>
+<li><dl class="first docutils">
+<dt>Expanded API response behavior for error handling</dt>
+<dd><ul class="first last">
+<li>Added a new elemenent to the configJson element, ErrorHandler.</li>
+<li>You can specify a function that is assigned to this element that will can handle certain error responses from the API.</li>
+<li>This allows you to provide more detailed feedback or handle failed request made against the API.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/API_Response_Handler.jpg"><img alt="_images/API_Response_Handler.jpg" src="_images/API_Response_Handler.jpg" style="width: 653px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="v3-6-0-october-10-2019">
+<h2>v3.6.0 October 10, 2019<a class="headerlink" href="#v3-6-0-october-10-2019" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>New User Load API</dt>
 <dd><ul class="first last">
 <li>We are introducing a new external user endpoint: GET api/external/user/loadUser</li>
 <li>This endpoint is meant to return user information for a single user at a time, as opposed to a bulk load.</li>
+<li>For our documentation on this endpoint please see our <a class="reference internal" href="swagger/external-user.html#external-user"><span class="std std-ref">External User</span></a> API page.</li>
 </ul>
 </dd>
 </dl>
@@ -203,12 +266,26 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/Logical_Separator_Example.jpg"><img alt="_images/Logical_Separator_Example.jpg" src="_images/Logical_Separator_Example.jpg" style="width: 653px;" /></a>
 </div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Visibility Toggle for User ID and User Profile</dt>
+<dd><ul class="first last">
+<li>Two new options exist under System Configuration &gt; Security Policies</li>
+<li>These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/New_Log_Parameters_Example.jpg"><img alt="_images/New_Log_Parameters_Example.jpg" src="_images/New_Log_Parameters_Example.jpg" style="width: 653px;" /></a>
+</div>
 </div>
 </div>
 <div class="section" id="v3-5-0-september-10-2019">
 <h2>v3.5.0 September 10, 2019<a class="headerlink" href="#v3-5-0-september-10-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>(Beta) Excel data sources can now be added as reporting data sources.</dt>
@@ -276,8 +353,8 @@
 </div>
 <div class="section" id="v3-4-1-august-23-2019">
 <h2>v3.4.1 August 23, 2019<a class="headerlink" href="#v3-4-1-august-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Introduced CORS Policy Configuration for the .NET Core API resources for Izenda</dt>
@@ -331,8 +408,8 @@
 </div>
 <div class="section" id="v3-4-0-august-16-2019">
 <h2>v3.4.0 August 16, 2019<a class="headerlink" href="#v3-4-0-august-16-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Machine Learning Infrastructure Addition</dt>
@@ -394,8 +471,8 @@
 </div>
 <div class="section" id="v3-3-1-july-23-2019">
 <h2>v3.3.1 July 23, 2019<a class="headerlink" href="#v3-3-1-july-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>InTimePeriod filters reflect more accurate timezones</dt>
@@ -436,8 +513,8 @@
 </ul>
 </div>
 <p>The <strong>System Configuration &gt; Cache</strong> page allows an administrator to manage users.</p>
-<div class="section" id="id6">
-<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Caching Beta is now Implemented</dt>
@@ -454,8 +531,8 @@
 </div>
 <div class="section" id="v3-2-0-june-4-2019">
 <h2>v3.2.0 June 4, 2019<a class="headerlink" href="#v3-2-0-june-4-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>FEATURES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Report Headers Scale to Reduce Whitespace</dt>
@@ -527,8 +604,8 @@
 <li>(5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>FEATURES<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>FEATURES<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>MongoDB Available as a Reporting Datasource</dt>
