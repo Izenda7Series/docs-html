@@ -4,6 +4,58 @@
 Release Details
 ==============
 
+v3.7.1 November 26th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- D3 Library Implemented
+    - The first D3 chart in the platform is the Tree Map. 
+        - This contains a unique Banner functionality when enabling Multi-Level when more than one X-axis field is present.
+    - You can select which library to use under the General Info section of the Report Part Properties.
+
+.. figure:: /_static/images/Ajax_Configurable_Example.jpg
+    :align: center
+    :width: 653px
+
+- Configurable Front-end AJAX Settings 
+    - A new parameter is added to our configJson element that allows for AJAX requests to be customized to suit a developer's needs.  
+    - This allows for developers to expand our request functionality to provide flexible integrations with Izenda.
+        - This new parameter expects a standard AJAX settings format.
+
+   .. code-block:: json
+      :emphasize-lines: 0
+
+        var DoIzendaConfig = function () {
+            var hostApi = "http://localhost:31999/api/";
+            var configJson = {
+                "WebApiUrl": hostApi,
+                "BaseUrl": "/izenda",
+                "RootPath": "/Scripts/izenda",
+                "CssFile": "izenda-ui.css",
+                "Routes": {
+                    "Settings": "settings",
+                    "New": "new",
+                    "Dashboard": "dashboard",
+                    "Report": "report",
+                    "ReportViewer": "reportviewer",
+                    "ReportViewerPopup": "reportviewerpopup",
+                    "Viewer": "viewer"
+                },
+                "Timeout": 3600,
+                "AjaxSettings": {
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    headers: {
+                        customheader: "customvalue"
+                    }
+                }
+            }
+            IzendaSynergy.config(configJson);
+        };
+
+
 v3.7.0 November 13th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

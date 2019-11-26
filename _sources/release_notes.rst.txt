@@ -11,6 +11,24 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.7.1 November 26th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- D3 Library Implemented
+    - The D3 charting library is now implemented into the platform by default.
+    - A new Tree Map visualization is now available for all Chart report parts. 
+- Configurable Front-end AJAX Settings 
+    - A new parameter is added to our configJson element that allows for AJAX requests to be customized 
+
+FIXES
+^^^^^ 
+- Defect 23789 Cascading filters were not applied for Equals Tree/Checkbox filters
+- Defect 25253 TreeMap would fail to render with duplicated label values
+- Defect 25259 Field Color settings were not properly applied with Percentage Ranges when enabling Multi-Level display. 
+- Defect 25499 Alternative Text settings were not properly applied with Percentage Ranges in Pie/Funnel/Donut/TreeMaps.
+
 v3.7.0 November 13th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -42,6 +60,7 @@ FIXES
 - Defect 24281 Convert Null To Empty causes an error when the report contains a calculated field using user defined function.
 - Defect 24333 Dashboard buttons flicker momentarily when loading.
 - Defect 24473 Value labels on maps do not display when Show Map Labels and Show Value Labels are enabled when a shading metric is not configured.
+- Defect 24682 Reports could not be renamed or moved when using an Oracle configuration database. 
 - Defect 24711 Global maps would error when dynamic shading was set while multiple point options were present.
 - Defect 24750 PostgreSQL procedures would not display fields in the data model.  
 - Defect 24871 Filter values were rounding automatically in the value dropdown.
