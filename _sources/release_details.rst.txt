@@ -4,6 +4,19 @@
 Release Details
 ==============
 
+v3.7.2 December 4th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Conditional Formatting Dialogue Expanded to Pivot and Drilldown Grids
+    - The conditional formatting improvements from v3.7.0 can now be used within pivot and drilldown grids
+    - These are accessed under the Report Part Properties tab in the report designer
+- HTML Rendering for Report Viewers and Exporting
+    - New settings are added to render HTML elements within data for Grid and Form report parts
+        - These are found under Settings > Data Setup > Advanced Settings > Security 
+    - The Report Viewer and Exporting services can enable/disable this functionality independently
+
 v3.7.1 November 26th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -11,6 +11,30 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.7.2 December 4th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   Enabling the settings to render HTML content can create a security risk for your application. Please talk with your development and security resources before toggling this setting.
+
+
+FEATURES
+^^^^^^^^^
+- Conditional Formatting Dialogue Expanded to Pivot and Drilldown Grids
+    - The conditional formatting improvements from v3.7.0 can now be used within pivot and drilldown grids
+- HTML Rendering for Report Viewers and Exporting
+    - New settings are added to render HTML elements within data for Grid and Form report parts
+
+FIXES
+^^^^^ 
+- Defect 25421 Grids would export for incorrect aggregate values when rows were collapsed
+- Defect 25665 Collapsed Pivot grid rows would be blank when exported
+- Defect 25788 Conditional Formatting would be incorrectly applied when rows were collapsed
+- Defect 25780 Text Format options would not properly apply in pivot grids
+- Defect 25865 Browsers consoles would display a warning when configuring report emails
+- Defect 25900 Running the migration script for MSSQL databases would produce an error 
+
 v3.7.1 November 26th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
