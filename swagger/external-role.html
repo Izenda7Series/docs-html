@@ -1,0 +1,982 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>External Role &mdash; Izenda BI 3.8.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.8.0 documentation" href="../index.html"/>
+        <link rel="up" title="External APIs" href="../ref/api_external.html"/>
+        <link rel="next" title="Frequently Asked Questions" href="../faq/.faq.html"/>
+        <link rel="prev" title="External User" href="external-user.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ref/.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ref/.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ref/models/.rest_api_object_models.html">REST API Object Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ref/.database_documentation.html">Database Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ref/api_external.html">External APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="import-export.html">Import &amp; Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external-user.html">External User</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">External Role</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#permission-and-string-value-mapping">Permission and string value mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../ref/.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href="../ref/api_external.html">External APIs</a> &raquo;</li>
+        
+      <li>External Role</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/swagger/external-role.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="external-role">
+<span id="id1"></span><h1>External Role<a class="headerlink" href="#external-role" title="Permalink to this headline">¶</a></h1>
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../_static/swagger/swagger-ui.css" >
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <style>
+      html
+      {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after
+      {
+        box-sizing: inherit;
+      }
+
+      body
+      {
+        margin:0;
+        background: #fafafa;
+      }
+    </style>
+	<script src="../_static/swagger/docsConfig.js"></script>
+  </head>
+
+  <body>
+    <div id="swagger-ui"></div>
+
+    <script src="../_static/swagger/swagger-ui-bundle.js"> </script>
+    <script src="../_static/swagger/swagger-ui-standalone-preset.js"> </script>
+    <script>
+    window.onload = function() {
+
+      // Build a system
+      const ui = SwaggerUIBundle({
+		url: docsBasePath + "Role_External_APIs.yaml",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+      })
+
+      window.ui = ui
+    }
+  </script>
+  </body>
+</html>
+<div class="section" id="permission-and-string-value-mapping">
+<h2>Permission and string value mapping<a class="headerlink" href="#permission-and-string-value-mapping" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="40%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission</th>
+<th class="head">String Value</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Full Report And Dashboard Access</strong></td>
+<td>FullReportAndDashboardAccess</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>System Configuration</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Scheduled Instances</strong></div>
+</td>
+<td>systemConfig.schedule</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Tenant Setup</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Actions</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Create</strong></div>
+</td>
+<td>tenantSetup.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Edit</strong></div>
+</td>
+<td>tenantSetup.edit</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>tenantSetup.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Permissions</strong></div>
+</td>
+<td>tenantSetup.permissions</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Data Setup</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Data Connectors</strong></div>
+</td>
+<td>dataSetup.dataConnectors</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Data Model</strong></div>
+</td>
+<td>dataSetup.dataModel</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>customView</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Create</strong></div>
+</td>
+<td>dataSetup.dataModel.customView.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Edit</strong></div>
+</td>
+<td>dataSetup.dataModel.customView.edit</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>dataSetup.dataModel.customView.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Advanced Settings</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Category</strong></div>
+</td>
+<td>dataSetup.advancedSettings.category</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Others</strong></div>
+</td>
+<td>dataSetup.advancedSettings.others</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>User Setup</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>User Role Association</strong></div>
+</td>
+<td>userSetup.userRoleAssociation</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Actions</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Create</strong></div>
+</td>
+<td>userSetup.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Edit</strong></div>
+</td>
+<td>userSetup.edit</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>userSetup.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Configure Password Option</strong></div>
+</td>
+<td>userSetup.configSercurity</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Role Setup</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Actions</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Create</strong></div>
+</td>
+<td>roleSetup.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Edit</strong></div>
+</td>
+<td>roleSetup.edit</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>roleSetup.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Data Model Access</strong></div>
+</td>
+<td>roleSetup.dataModelAccess</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Permissions</strong></div>
+</td>
+<td>roleSetup.Permissions</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Grant Role with Full Report and Dashboard Access</strong></div>
+</td>
+<td>roleSetup.grantRoleWithFullReportAndDashboardAccess</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Reports</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Can create new report?</strong></div>
+</td>
+<td>reports.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Data Sources</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Simple Data Sourcess</strong></div>
+</td>
+<td>reports.dataSources.simple</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Advanced Data Sourcess</strong></div>
+</td>
+<td>reports.dataSources.advanced</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Report Part Types</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Chart</strong></div>
+</td>
+<td>reports.partTypes.chart</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Form</strong></div>
+</td>
+<td>reports.partTypes.form</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Gauge</strong></div>
+</td>
+<td>reports.partTypes.gauge</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Map</strong></div>
+</td>
+<td>reports.partTypes.map</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Report Categories/Subcategories</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Can create new category?</strong></div>
+</td>
+<td>reports.categories.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Category Accessibility</strong></div>
+</td>
+<td>reports.categoryAccess.visible.global[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" />
+reports.categoryAccess.visible.local[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" />
+reports.categoryAccess.savable.local[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" /></td>
+<td>If Category name contains special charater (<code class="docutils literal"><span class="pre">&quot;\&quot;</span> <span class="pre">,</span> <span class="pre">&quot;[&quot;</span> <span class="pre">,</span> <span class="pre">&quot;]&quot;</span></code>), it must be follow after a <code class="docutils literal"><span class="pre">&quot;\&quot;</span></code> character</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Filter Properties</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Filter Logic</strong></div>
+</td>
+<td>reports.filter.logic</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Cross Filtering</strong></div>
+</td>
+<td>reports.filter.crossFiltering</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Field Properties</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Custom URL</strong></div>
+</td>
+<td>reports.field.customURL</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Embedded Javascript</strong></div>
+</td>
+<td>reports.field.embeddedJS</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Subreport</strong></div>
+</td>
+<td>reports.field.subReport</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Actions</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Schedule</strong></div>
+</td>
+<td>reports.schedule</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Email</strong></div>
+</td>
+<td>reports.email</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>View Report History</strong></div>
+</td>
+<td>reports.viewHistory</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>reports.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Register to alerts</strong></div>
+</td>
+<td>reports.alert</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Print</strong></div>
+</td>
+<td>reports.print</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Unarchive Report Versions</strong></div>
+</td>
+<td>reports.unarchiveReportVersion</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Overwrite Existing Report</strong></div>
+</td>
+<td>reports.overwrite</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Subscribe</strong></div>
+</td>
+<td>reports.subscribe</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Export</strong></div>
+</td>
+<td>reports.exporting</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Configure Access Rights</strong></div>
+</td>
+<td>reports.accessRights</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>Dashboard</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Can create new dashboard?</strong></div>
+</td>
+<td>dashboards.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Display tile header in uneditable dashboard</strong></div>
+</td>
+<td>dashboards.displayTileHeader</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Dashboard Categories/Subcategories</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Can create new category?</strong></div>
+</td>
+<td>dashboards.categories.create</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Category Accessibility</strong></div>
+</td>
+<td>dashboards.categoryAccess.visible.global[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" />
+dashboards.categoryAccess.visible.local[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" />
+dashboards.categoryAccess.savable.local[&lt;Category Name 1&gt;][&lt;SubCate1&gt;] <br clear="right" /></td>
+<td>If Category name contains special charater (<code class="docutils literal"><span class="pre">&quot;\&quot;</span> <span class="pre">,</span> <span class="pre">&quot;[&quot;</span> <span class="pre">,</span> <span class="pre">&quot;]&quot;</span></code>), it must be follow after a <code class="docutils literal"><span class="pre">&quot;\&quot;</span></code> character</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Actions</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Schedule</strong></div>
+</td>
+<td>dashboards.schedule</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Email</strong></div>
+</td>
+<td>dashboards.email</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Delete</strong></div>
+</td>
+<td>dashboards.delete</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Subscribe</strong></div>
+</td>
+<td>dashboards.subscribe</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Print</strong></div>
+</td>
+<td>dashboards.print</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Overwrite Existing Dashboard</strong></div>
+</td>
+<td>dashboards.overwrite</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad6 first last docutils container">
+<strong>Configure Access Rights</strong></div>
+</td>
+<td>dashboards.accessRights</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad6 first last docutils container">
+<strong>Export</strong></div>
+</td>
+<td>dashboards.exporting</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Access</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Access Limits</strong></div>
+</td>
+<td>accessLimits[&lt;roleName&gt;][&lt;userName&gt;]</td>
+<td>If roleName/Username contains special charater (<code class="docutils literal"><span class="pre">&quot;\&quot;</span> <span class="pre">,</span> <span class="pre">&quot;[&quot;</span> <span class="pre">,</span> <span class="pre">&quot;]&quot;</span></code>), it must be follow after a <code class="docutils literal"><span class="pre">&quot;\&quot;</span></code> character</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Access Defaults</strong></div>
+</td>
+<td>accessDefaults.everyone.report.&lt;accessRight&gt;
+accessDefaults.&lt;shareWith&gt;.[&lt;Rolename/userName&gt;].report.&lt;accessRight&gt;
+accessDefaults.everyone.dashboard.&lt;accessRight&gt;
+accessDefaults.&lt;shareWith&gt;.[&lt;Rolename/userName&gt;].dashboard.&lt;accessRight&gt;</td>
+<td>If roleName/Username contains special charater (<code class="docutils literal"><span class="pre">&quot;\&quot;</span> <span class="pre">,</span> <span class="pre">&quot;[&quot;</span> <span class="pre">,</span> <span class="pre">&quot;]&quot;</span></code>), it must be follow after a <code class="docutils literal"><span class="pre">&quot;\&quot;</span></code> character</td>
+</tr>
+<tr class="row-even"><td><strong>Scheduling</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Scheduling Limits</strong></div>
+</td>
+<td>schedulingLimits[&lt;roleName&gt;][&lt;userName&gt;]</td>
+<td>If roleName/Username contains special charater (<code class="docutils literal"><span class="pre">&quot;\&quot;</span> <span class="pre">,</span> <span class="pre">&quot;[&quot;</span> <span class="pre">,</span> <span class="pre">&quot;]&quot;</span></code>), it must be follow after a <code class="docutils literal"><span class="pre">&quot;\&quot;</span></code> character</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>External Users</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>System Users</strong></div>
+</td>
+<td>schedulingScope.systemUsers</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>External Users</strong></div>
+</td>
+<td>schedulingScope.externalUsers</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>Emailing</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Delivery Method</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Link</strong></div>
+</td>
+<td>email.deliveryMethod.link</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Embedded HTML</strong></div>
+</td>
+<td>email.deliveryMethod.embedded</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Attachment</strong></div>
+</td>
+<td>email.deliveryMethod.attachment</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad2 first last docutils container">
+<strong>Attachment Type</strong></div>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Word</strong></div>
+</td>
+<td>email.attachmentType.word</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>Excel</strong></div>
+</td>
+<td>email.attachmentType.excel</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>PDF</strong></div>
+</td>
+<td>email.attachmentType.pdf</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>CSV</strong></div>
+</td>
+<td>email.attachmentType.csv</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>XML</strong></div>
+</td>
+<td>email.attachmentType.xml</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><div class="lpad4 first last docutils container">
+<strong>JSON</strong></div>
+</td>
+<td>email.attachmentType.json</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad4 first last docutils container">
+<strong>Definition</strong></div>
+</td>
+<td>email.attachmentType.definition</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>System-wide</strong></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><div class="lpad2 first last docutils container">
+<strong>Can see system messages?</strong></div>
+</td>
+<td>canSeeSystemMessages</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/.faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="external-user.html" class="btn btn-neutral" title="External User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.8.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

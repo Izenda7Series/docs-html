@@ -4,6 +4,46 @@
 Release Details
 ==============
 
+v3.8.0 January 15th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+
+- Reports can be Exported as Iframes from the Report Viewer
+    .. figure:: /_static/images/Iframe_Export_Option.jpg
+        :align: center
+        :width: 653px
+    .. figure:: /_static/images/Iframe_Export_Popup.jpg
+        :align: center
+        :width: 653px
+
+- Gauge Scale Inputs Accept Aggregated Fields
+    - The scale setting for gauges now accepts both text and fields.
+    - Feilds will be aggregated to create a consistent maximum or minimum scale value for all gauges 
+    .. figure:: /_static/images/Gauge_Threshold_Sample.jpg
+        :align: center
+        :width: 653px
+
+- Filters can Influence Subkey Conditions in Joins
+    - When defining subkey conditions for report joins, distinct filter objects can be created.
+    - These filter objects, when values are set, pass this value into the join condition of the report
+    .. figure:: /_static/images/Subkey_Join_Setup.jpg
+        :align: center
+        :width: 653px
+    .. figure:: /_static/images/Subkey_Filter_Example.jpg
+        :align: center
+        :width: 653px
+
+- New Role API 
+    - We have added POST api/external/role and PUT api/external/role/<Role GUID> to our API
+    - These APIs allow for a new Permission format to be supplied for creating/updating roles in the platform.
+    - This API allows for a new method of permission management where permissions are supplied as an array of values instead of a JSON object
+    - More information on these endpoints can be found on our :ref:`External_Role` page.
+
+- Drillown Grid supports Grouping on Value Fields
+
+
 v3.7.2 December 4th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
