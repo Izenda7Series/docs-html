@@ -9,7 +9,8 @@ The external API is not used by the Izenda application, it is created solely for
 	- The base path for the external API is '/api/external'
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    ../swagger/import-export
    ../swagger/external-user
+   ../swagger/external-role
