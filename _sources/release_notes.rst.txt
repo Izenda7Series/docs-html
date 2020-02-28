@@ -11,6 +11,14 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.8.3 February 28th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- System Cache can be disabled under Settings > System Configuration > Cache > System Cache Configuration
+    - This toggle behaves the same as the Data Cache toggle, and is enabled by default. 
+
 v3.8.2 February 27th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
