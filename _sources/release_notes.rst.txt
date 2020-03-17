@@ -11,6 +11,15 @@ Release Notes
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.8.4 March 17th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Postgres Driver Supports Materialized Views
+    - Any materialized views inside of Postgres databases are now displayed as Views for that data connector.
+    - These are managed and edited alongside any standard database views.
+
 v3.8.3 February 28th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
