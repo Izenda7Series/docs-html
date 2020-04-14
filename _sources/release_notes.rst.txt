@@ -5,13 +5,88 @@ Release Notes
 
 .. note::
 	- Preview Release - x.x.1 - Early access to new features in isolation
-	- Stable Release - x.1.x - Quarterly stable release with preview releases and hotfixes combined
+	- Core Release - x.1.x - Quarterly stable release with preview releases and hotfixes combined
 	- Major Release - 1.x.x - Larger Features, potential breaking changes
 
 
  For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
-v3.8.4 March 17th, 2020 
+v3.9.0 Core Release -- April 14th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Users can now add/delete subscriptions from the Report Viewer without Edit access to the report
+- A New Button, 'Clear Filter' is added to the Filter container of the Report Designer/Viewer 
+    - When clicked, this will remove all currently selected values for the filters on that report.
+- Images in the Report Header/Footer will scale down/up to fit the container
+
+FIXES
+^^^^^ 
+- Defect 19700 Schedule times were not updating after Daylight Savings Time
+- Defect 22057 Aliased data sources would display their default name in the report designer
+- Defect 23081 Importing Global Report and source access rights fails
+- Defect 23110 Next and Previous icons in pagination are not the same.
+- Defect 23719 Run Copy and Validate buttons for Copy Management would not work in Internet Explorer
+- Defect 24497 Report Designer exporting tab would inconsistently render report content
+- Defect 24538 Large chart legend causes overlap with legend text and pagination text
+- Defect 25309 Axis Label not reflecting correct information/duplicated labels for column and bar charts
+- Defect 25621 Tenant field would still display on reports when Hide Tenant Field was set to true.
+- Defect 25638 Pivot grid sorting would not carry over into exports.
+- Defect 25652 Pivot grid side total would not export when aggregated functions were used within the rows.
+- Defect 25678 Calls to /api/report/list2 shows inconsistent responses on subsequent requests.
+- Defect 25696 PDF exports would fail when applying Page Break After Separator on Chart/Gauge
+- Defect 25782 Dashboards mobile responsiveness breaks for tenant users without full report/dashboard access
+- Defect 25800 Date Format not recognized of the file while exporting to Excel  
+- Defect 25818 "Register for Alerts" permission is not automatically removed when the "Schedule" permission is also removed
+- Defect 25830 Opening a subreport would cause a filter logic notification to display for users
+- Defect 25903 "Full Report And Dashboard Access" permission is still checked when Grant Role with "Full Report and Dashboard Access" is removed from the tenant
+- Defect 25911 Creating a custom view with a leading space in the alias name throws query error
+- Defect 25963 Querying data on an aliased join that also contains a subkey join would throw an error.
+- Defect 26074 Scheduling: Changing the filter value for multi-select changes the filter to single select
+- Defect 26083 NOT NULL filter operator was being applied as a NULL operator with required filters
+- Defect 26106 Calls to loadDashboard were being redundantly made when opening a dashboard with many filtered tiles.
+- Defect 26131 Report part title and description fields are being shown as altered after the default application font is changed.
+- Defect 26159 Exporting/Printing fails on Oracle Retail DB 
+- Defect 26167 During the email process, the existing access_token would not be used
+- Defect 26180 Gauges would fail to render values when dragging an in-use field between containers.
+- Defect 26185 Fields used for dynamic scale values in Gauges would incorrectly use the same alias values.
+- Defect 26187 Dashboards containing map report parts could not be saved.
+- Defect 26233 Report Category Visibility cannot be moved even when report owner is changed
+- Defect 26234 Page break on a separated grid can be inserted between header and content of the separated object
+- Defect 26236 Formatting does not apply on Y-axis
+- Defect 26242 Export definition file fails when the name contains pipe character
+- Defect 26249 Report designer print preview grows infinitely for grid report parts.
+- Defect 26254 PageSize setting in IzendaSystemSetting table was not being respected for exports.
+- Defect 26263 Equivalence filters would randomly default to an empty Equals(tree) filler
+- Defect 26281 Filter Data is requested twice in Report Designer
+- Defect 26311 Filter components are not rendering correctly on mobile devices.
+- Defect 26313 Highchart map value field color options do not apply.
+- Defect 26314 County Option for Highcharts maps would throw an error during a drilldown event.
+- Defect 26329 Filter value dropdown (report/loadPartialFilterFieldData) does not paginate at data source level
+- Defect 26358 "Save Template" would still be shown for users that did not have access to Templates
+- Defect 26359 Printing with WebUrl pointing to remote domain fails
+- Defect 26364 Aggregate function on date fields throws an error when Convert Null to Empty String setting is on
+- Defect 26365 Reports built before 3.8 would have font changes to Times New Roman
+- Defect 26366 Editing a form would throw an error after reloading a report.
+- Defect 26369 Importing template definition results in an invalid template
+- Defect 26370 Access Rights randomly disappear in the UI
+- Defect 26392 Emailing section in Permissions cannot be collapsed
+- Defect 26411 Subtotals would be incorrectly calculated on PostgreSQL data when filters and aggregate functions were used.
+- Defect 26430 Aggregate functions in a calculated field don't show in drilldown grids
+- Defect 26438 Join alias breaks exporting citing invalid column name when join order is changed to include aliased join
+- Defect 26446 Save changes popup shows when no changes are made
+- Defect 26458 Minor improvements in paging control
+- Defect 26496 Report fails to save when cross-filtering is applied and drilldown report part is deleted
+- Defect 26536 Exporting chart that takes some time to retrieve data renders an image with an error message
+- Defect 26559 SMTP fails when using Amazon SES in Linux hosted API 
+- Defect 26630 Cannot create a custom gauge using IzendaCustomVisualizations 
+- Defect 26654 Performance impact from CONVERT_IMPLICIT on bigint field in the generated query plan for MSSQL
+- Defect 26801 Cannot use custom containers in custom visualizations
+- Defect 26803 UI - Search bar is not aligned on Report and Dashboard list and Data Source Selection page
+- Defect 26825 Unable to create a report using Excel Data Source
+
+v3.8.4 Preview Release -- March 17th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -20,7 +95,7 @@ FEATURES
     - Any materialized views inside of Postgres databases are now displayed as Views for that data connector.
     - These are managed and edited alongside any standard database views.
 
-v3.8.3 February 28th, 2020 
+v3.8.3 Preview Release -- February 28th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -28,7 +103,7 @@ FEATURES
 - System Cache can be disabled under Settings > System Configuration > Cache > System Cache Configuration
     - This toggle behaves the same as the Data Cache toggle, and is enabled by default. 
 
-v3.8.2 February 27th, 2020 
+v3.8.2 Preview Release -- February 27th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -36,7 +111,7 @@ FEATURES
 - Google API Key Allows HTTP Referrer Application Restriction
 
 
-v3.8.1 February 10th, 2020
+v3.8.1 Preview Release -- February 10th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -48,7 +123,7 @@ FIXES
 ^^^^^ 
 - Data Model creation would fail for Postgres systems in a Linux environment.
 
-v3.8.0 January 15th, 2020
+v3.8.0 Core Release -- January 15th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
