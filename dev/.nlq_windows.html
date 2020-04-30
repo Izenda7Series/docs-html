@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Requirements &mdash; Izenda BI 3.9.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.9.1 documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
+        <link rel="next" title="Requirements" href=".nlq_ubuntu.html"/>
+        <link rel="prev" title="Front End Rendering Considerations" href="dev_front_end_considerations.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#configuring-natural-language-query">Configuring Natural Language Query</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href=".developer_guide.html#windows-deployments">Windows Deployments</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-docker-software-installation">Windows Docker Software Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-nlq-installation">Izenda NLQ Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#port-management">Port Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-application-nlq-configuration">Izenda Application NLQ Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference-files">Reference Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href=".developer_guide.html#ubuntu-deployments">Ubuntu Deployments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#redistributing-the-izenda-documentation">Redistributing the Izenda Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+      <li>Requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/.nlq_windows.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="software-requirements">
+<h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Operating System: Windows 10, Windows Server 2016</li>
+</ul>
+</div>
+<div class="section" id="hardware-requirements">
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Processor: 4 Core CPU</li>
+<li>Memory: 16 GB RAM</li>
+<li>Storage: 1 GB Free Drive Space</li>
+</ul>
+</div>
+</div>
+<div class="section" id="windows-docker-software-installation">
+<h1>Windows Docker Software Installation<a class="headerlink" href="#windows-docker-software-installation" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Download and install the latest version of Docker from <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-windows/">here</a></dt>
+<dd><div class="first last figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_rename_windows.GIF"><img alt="../_images/nlq_rename_windows.GIF" src="../_images/nlq_rename_windows.GIF" style="width: 653px;" /></a>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Right click on Docker Desktop and Switch to Linux Containers (for Windows only)</dt>
+<dd></dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="izenda-nlq-installation">
+<h1>Izenda NLQ Installation<a class="headerlink" href="#izenda-nlq-installation" title="Permalink to this headline">¶</a></h1>
+<p>Pull and run the docker container from Izenda&#8217;s docker hub <a class="reference external" href="https://hub.docker.com/r/izendainc/izenda-ml-app">repository</a></p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Create docker-compose.yml file (Found at the bottom of the page)</dt>
+<dd><div class="first last figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_createcompose.GIF"><img alt="../_images/nlq_createcompose.GIF" src="../_images/nlq_createcompose.GIF" style="width: 653px;" /></a>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Start a new instance of the command prompt. Navigate to the directory where the docker-compose file is present. Run the following commands and verify docker login credentials.</dt>
+<dd><blockquote class="first">
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>docker login --username=izendaeng
+Password: &lt;Password&gt;
+docker-compose up -d
+</pre></div>
+</div>
+</div></blockquote>
+<div class="last figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_powershell.GIF"><img alt="../_images/nlq_powershell.GIF" src="../_images/nlq_powershell.GIF" style="width: 653px;" /></a>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="port-management">
+<h1>Port Management<a class="headerlink" href="#port-management" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>Open port 8000 to allow TCP access from outside sources. The NLQ application will be posted on port 8000. Izenda&#8217;s BI application will use port 8000 by default to connect to the NLQ application.</li>
+<li>Additionally, open port 5432 and 8983 in Windows Defender Firewall</li>
+<li>On the machine where SQL Server is installed, create an inbound rule for 1433 and white-list the machine IP where the NLQ docker was installed.</li>
+<li>On the same machine, open port 1433 in Windows Defender Firewall</li>
+<li>For SQL Server, Enable TCP/IP connections in SQL Server Configuration Manager</li>
+</ol>
+</div>
+<div class="section" id="izenda-application-nlq-configuration">
+<h1>Izenda Application NLQ Configuration<a class="headerlink" href="#izenda-application-nlq-configuration" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Navigate to the NLQ Settings page in the Izenda BI application.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Enter the IP address of the machine where the NLQ application is running, specifying port 8000. (ie. 12.345.678.90:8000)</dt>
+<dd><ul class="first last simple">
+<li>Test connection and click &#8216;Save&#8217;.</li>
+<li>Select the specific data connector you want to run the NLQ application against.</li>
+<li>Click &#8216;Configure&#8217;. This step may take a few minutes to finish running.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">When the configuration is done, a notification should appear under the bell icon at the top right.</p>
+</li>
+<li><p class="first">Navigate to the Explore tab and start creating visualizations.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_configure.GIF"><img alt="../_images/nlq_configure.GIF" src="../_images/nlq_configure.GIF" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="reference-files">
+<h1>Reference Files<a class="headerlink" href="#reference-files" title="Permalink to this headline">¶</a></h1>
+<p>docker-compose.yml</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span>version: &#39;3.1&#39;
+
+services:
+    ml_app:
+        container_name: ml_app
+        restart: always
+        # build: .
+        image: izendainc/izenda-ml-app:1.0.0
+        # image: ml_app
+        depends_on:
+        - db
+        - nlp_solr
+        ports:
+        - &quot;8000:8000&quot;
+        volumes:
+        - appdata:/usr/src/ml_services/app
+        - solrdata2:/usr/src/ml_services/app/xml
+    db:
+        container_name: pg_sql
+        restart: always
+        image: postgres:10.1
+        environment:
+        POSTGRES_USER: admin
+        POSTGRES_PASSWORD: telegram@678
+        POSTGRES_DB: configdb
+        ports:
+        - 5432:5432
+        volumes:
+        - pgdata:/var/lib/postgresql/data
+    nlp_solr:
+        container_name: nlp_solr
+        image: izendainc/nlp_solr:1.0.0
+        # image: nlp_solr
+        # build : solr_docker
+        command: bin/solr start -f
+        ports:
+        - &quot;8983:8983&quot;
+        volumes:
+        - solrdata1:/opt/solr
+        - solrdata2:/var/solr/data
+        # tty: false
+        # stdin_open: false
+volumes:
+    solrdata1:
+    solrdata2:
+    pgdata:
+    appdata:
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".nlq_ubuntu.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dev_front_end_considerations.html" class="btn btn-neutral" title="Front End Rendering Considerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.9.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

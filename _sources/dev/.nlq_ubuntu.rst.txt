@@ -1,0 +1,129 @@
+Requirements
+--------------
+
+Software Requirements
+````````````````````````````````````````````
+- Operating System: Ubuntu
+
+Hardware Requirements
+````````````````````````````````````````````
+- Processor: 4 Core CPU
+- Memory: 16 GB RAM
+- Storage: 1 GB Free Drive Space
+
+Ubuntu Docker Software Installation
+--------------
+#. Install Docker using the following command
+        .. code-block:: code
+
+         snap install docker
+
+    .. figure:: /_static/images/nlq_gifs/nlq_ubuntu1.GIF
+        :align: center
+        :width: 653px
+
+Izenda NLQ Installation
+--------------
+#. Create the docker-compose.yml file using the following commands:
+        .. code-block:: code
+
+         touch docker-compose.yml
+         nano docker-compose.yml
+
+#. Copy/Paste the docker-compose.yml content and press CTRL+O to save the file. To check the status of the file, run the following commands:
+        .. code-block:: code
+
+         ls
+         cat docker-compose.yml
+
+    .. figure:: /_static/images/nlq_gifs/nlq_ubuntu2.GIF
+        :align: center
+        :width: 653px
+
+#. Navigate to the directory where the docker-compose.yml file is located. Run the following commands and verify the docker login credentials:
+        .. code-block:: code
+
+         sudo docker login
+         username: izendaeng
+         Password: <Password>
+         sudo docker-compose up -d
+
+    .. figure:: /_static/images/nlq_gifs/nlq_ubuntu3.GIF
+        :align: center
+        :width: 653px
+
+Port Management
+--------------
+#. Open port 8000 to allow TCP access from outside sources. The NLQ application will be posted on port 8000. Izenda's BI application will use port 8000 by default to connect to the NLQ application.
+#. On the machine where SQL server is installed, create an inbound rule for 1433 and white-list the machine IP where the NLQ docker was installed.
+#. On the same machine, open port 1433 in Windows Defender Firewall 
+#. For SQL Server, Enable TCP/IP connections in SQL Server Configuration Manager
+
+
+Izenda Application NLQ Configuration
+--------------
+#. Navigate to the NLQ Settings page in the Izenda BI application.
+#. Enter the IP address of the machine where the NLQ application is running, specifying port 8000. (ie. 12.345.678.90:8000)
+    - Test connection and click 'Save'.
+    - Select the specific data connector you want to run the NLQ application against. 
+    - Click 'Configure'. This step may take a few minutes to finish running. 
+#. When the configuration is done, a notification should appear under the bell icon at the top right.
+#. Navigate to the Explore tab and start creating visualizations.
+
+    .. figure:: /_static/images/nlq_gifs/nlq_configure.GIF
+        :align: center
+        :width: 653px
+
+Reference Files
+--------------
+docker-compose.yml
+
+.. code-block:: c
+
+    version: '3.1'
+
+    services:
+        ml_app:
+            container_name: ml_app
+            restart: always
+            # build: .
+            image: izendainc/izenda-ml-app:1.0.0
+            # image: ml_app
+            depends_on:
+            - db
+            - nlp_solr
+            ports:
+            - "8000:8000"
+            volumes:
+            - appdata:/usr/src/ml_services/app
+            - solrdata2:/usr/src/ml_services/app/xml
+        db:
+            container_name: pg_sql
+            restart: always
+            image: postgres:10.1
+            environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: telegram@678
+            POSTGRES_DB: configdb
+            ports:
+            - 5432:5432
+            volumes:
+            - pgdata:/var/lib/postgresql/data
+        nlp_solr:
+            container_name: nlp_solr
+            image: izendainc/nlp_solr:1.0.0
+            # image: nlp_solr 
+            # build : solr_docker
+            command: bin/solr start -f
+            ports:
+            - "8983:8983"
+            volumes:
+            - solrdata1:/opt/solr
+            - solrdata2:/var/solr/data
+            # tty: false
+            # stdin_open: false
+    volumes:
+        solrdata1:
+        solrdata2:
+        pgdata:
+        appdata:

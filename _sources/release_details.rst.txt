@@ -4,15 +4,35 @@
 Release Details
 ==============
 
-v3.9.0 Core Release -- April 14th, 2020 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-v3.8.1 February 10th, 2020
+v3.9.1 Preview Release -- April 30th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
+- Natural Language Query Functionality Introduced  
+    - User will be able to see a new default landing page labeled the 'Explore' tab
+    - This functionality can be enabled/disabled through tenant modules and permissions
+    - NLQ can only be currently leveraged against a single MSSQL data source. 
+    - Information on configuring the NLQ functionality can be found on the :ref:`Developer_Guide` pages.
+    .. figure:: /_static/images/Explore_Page.png
+        :align: center
+        :width: 653px
+
+- Grid Style Changes
+    - Izenda's grids have been updated with a new modern styling 
+    .. figure:: /_static/images/NewGrid.png
+        :align: center
+        :width: 653px
+
+- Improved Datasource Selection
+    - When choosing data sources in the report designer, they are displayed in a list to quickly identify any selected items
+    .. figure:: /_static/images/NewDatasource_Selection.png
+        :align: center
+        :width: 653px
+
+v3.8.1 February 10th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 FEATURES
 ^^^^^^^^^
 - New IzendaSystemSetting Values for Chrome 80 Cookie Changes
