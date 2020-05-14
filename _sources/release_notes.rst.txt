@@ -9,7 +9,17 @@ Release Notes
 	- Major Release - 1.x.x - Larger Features, potential breaking changes
 
 
- For more information and details on our releases, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
+ For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
+
+v3.9.2 Preview Release -- May 14th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Added improvements for Form to Excel exporting
+    - We have improved how forms with and without tables export to Excel
+    - Table structures should be respected within the resulting Excel file
+- Added new web.config value, izendaNewFormExportFeature
+    - This value is set to true by default
+    - If this value is set to false, forms will export to Excel as they did prior to this release
+
 
 v3.9.1 Preview Release -- April 30th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
