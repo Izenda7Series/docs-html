@@ -1,30 +1,28 @@
-
+.. _Copy_Management:
+.. role:: red
 
 ==========================
 Copy Management
 ==========================
 
+The **Copy Management** feature can be used to copy data among system and tenants, including:
+
+- Data Connectors
+- Data Model
+- Advanced Data Settings
+- Dashboards
+- Reports
+- Tenant Permissions
+- Roles (with Permissions)
+- System Configuration settings
+
+In addition, the scheduler can be configured to start copy tasks automatically at the right time.
+
 .. tip::
 
-   Copy Dashboard is available from release v0.22.14.
+   Scheduler and copying of Data Connectors and System Configuration settings are available from release 3.9.3.
 
-The **Copy Management** page allows user to:
-
--  define rules to copy data among system and tenants, including:
-
-   .. hlist::
-      :columns: 2
-
-      -  logical data model
-      -  advanced data settings
-      -  dashboards
-      -  reports
-      -  tenant permissions
-      -  role names
-      -  roles and their permissions
-
--  validate data model consistency between two locations
--  save mapping rules into workspaces
+Workspace in terms of Izenda is a configured task to copy selected settings among tenants.
 
 View Workspace List
 -------------------
@@ -33,14 +31,13 @@ View Workspace List
 
    .. figure:: /_static/images/Workspace_List.png
       :align: right
-      :width: 367px
+      :width: 450px
 
       Workspace List
 
    In browser, log in to Izenda as a user with Copy Management permission.
-#. Click Settings, then Data Setup then Copy Management in the left menu.
-#. Select the Setting Level: either System or a specific tenant.
-#. The list of workspaces are displayed under Middle Panel.
+#. Click Settings, then Copy Management in the left menu.
+#. The list of workspaces is displayed in Middle Panel.
 #. Tick the Show only my workspace check-box to filter the list by workspaces owned by current user.
 #. Type a partial name into the Search box to further filter the list by similar name.
 
@@ -51,175 +48,243 @@ Edit a Workspace
 ----------------
 
 Clicking on a workspace in Middle Panel will open it. Each workspace
-contains 5 sections:
+contains 4 sections:
 
--  Workspace Name and created date
+-  Workspace Name and Created date
 
        allows user to view workspace name and created date, and to
        rename the workspace.
 
--  Items to Copy Options
+-  Source Tenant
 
-       allows user to quickly specify groups of settings then run copy.
-
--  Source Data Model Copy List
-
-       allows user to pick specific data model items to copy instead of
-       all visible items.
+       allows user to pick specific tenant to copy from.
 
 -  Destination Tenant List
 
-       contains the tenants to copy to.
+       contains tenants to copy to.
 
--  Mappings List
+-  Items to Copy
 
-       contains mapping from Source to Destination physical location.
+       allows user to quickly specify groups of settings to copy.
+
+.. _Workspace_Edit:
+
+.. figure:: /_static/images/Workspace_Edit.png
+   :width: 900px
+
+   Edit a Workspace |br|
 
 Rename a Workspace
 ~~~~~~~~~~~~~~~~~~
 
-#. .. _Workspace_Rename_Duplication:
-
-   .. figure:: /_static/images/Workspace_Rename_Duplication.png
-      :align: right
-      :width: 211px
-
-      Rename a Workspace
-
-   Click the pencil icon to rename the workspace.
+#. Click the pencil icon to rename the workspace.
 #. Enter a new name for the workspace.
 #. Click the check icon to confirm the new name.
 #. The name will be checked for duplication. |br|
 
-Items to Copy Options
-~~~~~~~~~~~~~~~~~~~~~
+Configure Source Tenant
+~~~~~~~~~~~~~~~~~~~~~~~
 
-This section lists selectable items to copy:
-
--  Data Model
--  Advanced Data Settings
--  Tenant Permissions
--  Roles
--  Role Permissions
-
-Configure Source Data Model Copy List
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Source panel on the left shows visible database connections, schemas
-together with visible inner data model items.
-
-   Tick the checkbox next to each item to include it in the Data Model copy operation.
-
-Destination panel on the right is the list of selected tenants to copy
-to, together with validation and authentication status.
+#. Click the down arrow in Source box to see the list of tenants.
+#. Click specific tenant to use it as Source. |br|
 
 Configure Destination Tenant List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Click the down arrow in Destination box to see the list of tenants.
-#. Click each tenant to add it to the box.
+#. Click tenant to add it to the box (several tenants can be selected as Destination).
 #. Click the down arrow again to close the list.
 
 .. note::
 
-   To copy to all tenants, simply select "All Tenants" option. It will replace all currently selected tenants when selected.
+   To copy to all tenants, simply select "All Tenants" option. It will replace all currently selected tenants when selected. |br|
+
+Items to Copy
+~~~~~~~~~~~~~
+
+Each item to copy can have its own settings, which are displayed under Main Panel in a Workspace.
+
+This section lists selectable items to copy:
+
+-  Only Settings :red:`*`
+
+       allows user to pick specific tenant to copy from.
+
+       This special item was introduced to emulate the template mode for tenants. A distinctive feature of this item is that user does not need to select specific connectors, roles, etc. and all setting from Source tenant will be copied, even new ones that were created after creating the workspace.
+
+       If this item is selected, all other checkboxes in Item to Copy section will be unavailable. Dashboards and Reports are not copied in this mode.
+
+.. warning::
+
+   Copying all settings may take a long time.
+
+-  Data Connectors :red:`*`
+
+       allows user to copy specific connectors from Source tenant to Destination tenants.
+
+       If user selects this item, an additional panel will be displayed in the workspace for selecting specific connectors.
+
+-  Data Model
+
+       allows user to copy data model configuration.
+
+       If user selects this item, an additional panel will be displayed in the workspace for selecting specific data model items to copy.
+
+       .. _Workspace_Data_Model:
+
+       .. figure:: /_static/images/Workspace_Data_Model.png
+          :width: 900px
+
+          Workspace Data Model
+
+-  Advanced Data Settings
+
+       allows user to copy Advanced Settings like Performance, Security, Category, Others specific for each tenant.
+
+-  Dashboards
+
+       allows user to copy dashboards.
+
+       If user selects this item, an additional panel will be displayed in the workspace where user can select specific dashboards.
+
+-  Reports
+
+       allows user to copy reports.
+
+       If user selects this item, an additional panel will be displayed in the workspace where user can select specific reports.
+
+-  Tenant Permissions
+
+       allows user to copy tenant permissions.
+
+       Tenant Permissions cannot be copied from System level to tenant. This is due to the nature of system level permissions.
+
+-  Roles (with Permissions)
+
+       allows user to copy existing roles and role permissions.
+
+       Roles cannot be copied from System level to tenant. This is due to the nature of system level permissions.
+
+       If user selects this item, the Roles Copy Settings panel will be displayed in the workspace for selecting specific roles.
+
+       Tick the Copy Role Permissions check-box to copy selected roles with permissions.
+
+       .. _Workspace_Roles:
+
+       .. figure:: /_static/images/Workspace_Roles.png
+          :width: 900px
+
+          Workspace Roles
+
+-  System Configuration settings :red:`*`
+
+       allows user to copy system configuration settings like Email (SMTP Configuration), Report (Default Header Image and Default Color Theme), Google Map (Google API Configuration).
+
+       If user selects this item, the System Configuration Copy Settings panel will be displayed in the workspace to select settings for copying.
+
+       .. _Workspace_System_Configuration:
+
+       .. figure:: /_static/images/Workspace_System_Configuration.png
+          :width: 900px
+
+          Workspace_System_Configuration
+
+Items marked with an asterisk (:red:`*`) are available starting from version 3.9.3. |br|
 
 Edit mappings
 ~~~~~~~~~~~~~
 
-A mapping specifies the physical destination for each database
-connection or schema of tenant (in case the database connection or
-schema name in destination is different from logical data model).
+A mapping specifies the physical destination for each database connection or schema of tenant (in case the database connection or schema name in destination is different from logical data model).
 
 #. Select a database connection in Source.
 #. Choose the mapping type: Database or Schema.
 #. -  Select a schema from the Object list if using Schema mapping.
-   -  For Database mapping, the Object list is already populated with
-      the database name.
+   -  For Database mapping, the Object list is already populated with the database name.
 #. Select the target database connection.
-#. -  Enter the schema name (expression) into Object list if using
-      Schema mapping.
-   -  For Database mapping, the Object list is already populated with
-      the database name.
+#. -  Enter the schema name into the Object list if using Schema mapping.
+   -  Or enter the database name into the Object list if using Database mapping.
 #. Select the tenants to apply this mapping to.
-#. Continue to add mappings to cover all selected database connections,
-   schemas and tenants.
+#. Continue to add mappings to cover all selected database connections, schemas and tenants.
 
-Rules:
+- Tenants without a Database mapping will be copied to the same database connection.
+- Each schema without mapping will be copied to a schema with the same name (in the database connection specified in mapping).
 
--  Roles, Role Permissons, and Tenant Permissions can only be copied between tenants. They cannot be copied from system to tenant. This is due to the nature of system level permissions.
--  Tenants without a Database mapping will be copied to the same
-   database connection.
--  Each schema without mapping will be copied to a schema with the same
-   name (in the database connection specified in mapping).
+For example, user needs to copy data model for schema dbo to three tenants Target01, Target02 and Target03.
 
-For example, user needs to copy data model for schema Sales to Tenant01, Tenant02 and Tenant03.
-
-    The schemas are named Sales0x with x = 1, 2 or 3 for each tenant
-    respectively.
-
-    Tenant02 and Tenant03 share the same physical database TenantDB
-    while Tenant03 uses ACMEDB database on a separate server.
+Target01 and Target02 share the same physical database Northwind while Target03 uses ACMEDB database on a separate server.
 
 Following is how to configure the workspace:
 
-#. Tick Data Model check-box in Items to Copy section.
-#. .. _Copy_Management_Sample_Sales_schema:
+#. Tick the Data Model check-box in Items to Copy section.
+#. Tick dbo schema to include in the copy task.
+#. Select Target01, Target02 and Target03 as Destinations.
+#. Add mappings as follows
 
-   .. figure:: /_static/images/Copy_Management_Sample_Sales_schema.png
-      :align: right
-      :width: 664px
+   .. _Workspace_Edit_Mappings:
 
-      Copy Sales schema
-
-   Tick the Sales schema to include it in the copy. |br|
-#. Select Tenant01, Tenant02 and Tenant03 as Destinations.
-#. Add Connection to TenantDB for Tenant02 and Tenant03, and add connection to ACMEDB for Tenant03.
-#. Add the mappings.
-
-   .. _Copy_Management_Sample_Mapping:
-
-   .. figure:: /_static/images/Copy_Management_Sample_Mapping.png
+   .. figure:: /_static/images/Workspace_Edit_Mappings.png
       :width: 900px
 
-      Map database connections and schemas |br|
+      Edit Mappings |br|
 
 Validate Consistency between Source and Destinations
 ----------------------------------------------------
 
-#. Click the Validate button at the top to validate for tenants with
-   status "Need validated":
+#. Click Validate button at the top to validate for tenants with status "Need validated":
 
        Each tenant will be checked for a valid mapping for each schema.
 
-#. Click the gear icon (⚙) next to
-   each tenant to open Advanced Settings page for that tenant.
-#. Click Validate button at the top to validate consistency in data
-   model between source and the selected tenant.
+#. Click the gear icon (⚙) next to each tenant to open Advanced Settings page for that tenant.
+#. Click Validate button at the top to validate consistency in data model between source and the selected tenant.
 
-       Selected objects in source will be checked for existence in data
-       model for selected tenant by name.
+       Selected objects in source will be checked for existence in data model for selected tenant by name.
 
 #. Click OK to close the page.
 
-   .. _Copy_Management_Data_Model_Comparison:
+   .. _Workspace_Validation:
 
-   .. figure:: /_static/images/Copy_Management_Data_Model_Comparison.png
-      :width: 637px
+   .. figure:: /_static/images/Workspace_Validation.png
+      :width: 900px
 
-      Data Model Comparison |br|
+      Workspace Validation |br|
 
 Run Copy
 --------
 
-#. Click Run Copy button to perform the copy of selected items for
-   tenants with status "Ready To Copy".
-#. .. _Copy_Management_Overwritten_Confirmation:
+#. Click Run Copy button to perform the copy of selected items for tenants with status "Ready To Copy".
+#. Click OK to confirm to overwrite existing Data Model if needed.
 
-   .. figure:: /_static/images/Copy_Management_Overwritten_Confirmation.png
+   .. _Workspace_Overwrite_Confirmation:
+
+   .. figure:: /_static/images/Workspace_Overwrite_Confirmation.png
+      :width: 450px
+
+      Confirm to Overwrite existing Reports |br|
+
+Refresh a Workspace
+-------------------
+
+User can refresh a workspace to see the changes that appeared in Source tenant after the current workspace was created.
+
+#. Click Refresh button to refresh the current workspace.
+#. Check exsiting ones and select new items to copy if needed.
+#. Click Save to save the workspace. |br|
+
+Scheduler Configuration
+-----------------------
+
+#. .. _Workspace_Scheduler_Configuration:
+
+   .. figure:: /_static/images/Workspace_Scheduler_Configuration.png
       :align: right
-      :width: 452px
+      :width: 450px
 
-      Confirm to Overwrite existing Data Model
+      Workspace Scheduler Configuration
 
-   Click OK to confirm to overwrite existing Data Model if needed. |br|
+   Click Schedule button at the top to open the schedule properties.
+#. Configure schedule properties to run copy on a monthly, weekly, daily or hourly basis.
+#. Click OK to close the dialog.
+
+All changes in Data Model will be automatically overwritten when the workspace is started by the scheduler.
+
+Using the Scheduler, user can distribute changes made in one Source tenant to Destination tenants by schedule. In this way, a model of tenant templates is implemented, in which one of the tenants acts as a template for other tenants. |br|

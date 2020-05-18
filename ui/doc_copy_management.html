@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Copy Management &mdash; Izenda BI 3.9.2 documentation</title>
+  <title>Copy Management &mdash; Izenda BI 3.9.3 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.9.2 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.9.3 documentation" href="../index.html"/>
         <link rel="up" title="Multi-tenant Setup Guide" href=".multi-tenant_setup_guide.html"/>
         <link rel="next" title="Security Recommendations" href="doc_security_recommendations.html"/>
         <link rel="prev" title="Global Report Setup Guide" href="doc_global_report_setup.html"/> 
@@ -116,6 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#edit-a-workspace">Edit a Workspace</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#validate-consistency-between-source-and-destinations">Validate Consistency between Source and Destinations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-copy">Run Copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refresh-a-workspace">Refresh a Workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scheduler-configuration">Scheduler Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -201,46 +203,36 @@
            <div itemprop="articleBody">
             
   <div class="section" id="copy-management">
-<h1>Copy Management<a class="headerlink" href="#copy-management" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Copy Management<a class="headerlink" href="#copy-management" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Copy Management</strong> feature can be used to copy data among system and tenants, including:</p>
+<ul class="simple">
+<li>Data Connectors</li>
+<li>Data Model</li>
+<li>Advanced Data Settings</li>
+<li>Dashboards</li>
+<li>Reports</li>
+<li>Tenant Permissions</li>
+<li>Roles (with Permissions)</li>
+<li>System Configuration settings</li>
+</ul>
+<p>In addition, the scheduler can be configured to start copy tasks automatically at the right time.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Copy Dashboard is available from release v0.22.14.</p>
+<p class="last">Scheduler and copying of Data Connectors and System Configuration settings are available from release 3.9.3.</p>
 </div>
-<p>The <strong>Copy Management</strong> page allows user to:</p>
-<ul>
-<li><p class="first">define rules to copy data among system and tenants, including:</p>
-<table class="hlist"><tr><td><ul class="simple">
-<li>logical data model</li>
-<li>advanced data settings</li>
-<li>dashboards</li>
-<li>reports</li>
-</ul>
-</td><td><ul class="simple">
-<li>tenant permissions</li>
-<li>role names</li>
-<li>roles and their permissions</li>
-</ul>
-</td></tr></table>
-</li>
-<li><p class="first">validate data model consistency between two locations</p>
-</li>
-<li><p class="first">save mapping rules into workspaces</p>
-</li>
-</ul>
+<p>Workspace in terms of Izenda is a configured task to copy selected settings among tenants.</p>
 <div class="section" id="view-workspace-list">
 <h2>View Workspace List<a class="headerlink" href="#view-workspace-list" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><div class="figure align-right" id="id1">
-<span id="workspace-list"></span><a class="reference internal image-reference" href="../_images/Workspace_List.png"><img alt="../_images/Workspace_List.png" src="../_images/Workspace_List.png" style="width: 367px;" /></a>
+<li><div class="figure align-right" id="id2">
+<span id="workspace-list"></span><a class="reference internal image-reference" href="../_images/Workspace_List.png"><img alt="../_images/Workspace_List.png" src="../_images/Workspace_List.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">Workspace List</span></p>
 </div>
 <p>In browser, log in to Izenda as a user with Copy Management permission.</p>
 </li>
-<li><p class="first">Click Settings, then Data Setup then Copy Management in the left menu.</p>
+<li><p class="first">Click Settings, then Copy Management in the left menu.</p>
 </li>
-<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
-</li>
-<li><p class="first">The list of workspaces are displayed under Middle Panel.</p>
+<li><p class="first">The list of workspaces is displayed in Middle Panel.</p>
 </li>
 <li><p class="first">Tick the Show only my workspace check-box to filter the list by workspaces owned by current user.</p>
 </li>
@@ -255,144 +247,182 @@
 <div class="section" id="edit-a-workspace">
 <h2>Edit a Workspace<a class="headerlink" href="#edit-a-workspace" title="Permalink to this headline">¶</a></h2>
 <p>Clicking on a workspace in Middle Panel will open it. Each workspace
-contains 5 sections:</p>
+contains 4 sections:</p>
 <ul>
-<li><p class="first">Workspace Name and created date</p>
+<li><p class="first">Workspace Name and Created date</p>
 <blockquote>
 <div><p>allows user to view workspace name and created date, and to
 rename the workspace.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Items to Copy Options</p>
+<li><p class="first">Source Tenant</p>
 <blockquote>
-<div><p>allows user to quickly specify groups of settings then run copy.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Source Data Model Copy List</p>
-<blockquote>
-<div><p>allows user to pick specific data model items to copy instead of
-all visible items.</p>
+<div><p>allows user to pick specific tenant to copy from.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Destination Tenant List</p>
 <blockquote>
-<div><p>contains the tenants to copy to.</p>
+<div><p>contains tenants to copy to.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Mappings List</p>
+<li><p class="first">Items to Copy</p>
 <blockquote>
-<div><p>contains mapping from Source to Destination physical location.</p>
+<div><p>allows user to quickly specify groups of settings to copy.</p>
 </div></blockquote>
 </li>
 </ul>
+<div class="figure" id="id3">
+<span id="workspace-edit"></span><a class="reference internal image-reference" href="../_images/Workspace_Edit.png"><img alt="../_images/Workspace_Edit.png" src="../_images/Workspace_Edit.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">Edit a Workspace <br clear="right" /></span></p>
+</div>
 <div class="section" id="rename-a-workspace">
 <h3>Rename a Workspace<a class="headerlink" href="#rename-a-workspace" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><div class="figure align-right" id="id2">
-<span id="workspace-rename-duplication"></span><a class="reference internal image-reference" href="../_images/Workspace_Rename_Duplication.png"><img alt="../_images/Workspace_Rename_Duplication.png" src="../_images/Workspace_Rename_Duplication.png" style="width: 211px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">Rename a Workspace</span></p>
-</div>
-<p>Click the pencil icon to rename the workspace.</p>
-</li>
-<li><p class="first">Enter a new name for the workspace.</p>
-</li>
-<li><p class="first">Click the check icon to confirm the new name.</p>
-</li>
-<li><p class="first">The name will be checked for duplication. <br clear="right" /></p>
-</li>
+<ol class="arabic simple">
+<li>Click the pencil icon to rename the workspace.</li>
+<li>Enter a new name for the workspace.</li>
+<li>Click the check icon to confirm the new name.</li>
+<li>The name will be checked for duplication. <br clear="right" /></li>
 </ol>
 </div>
-<div class="section" id="items-to-copy-options">
-<h3>Items to Copy Options<a class="headerlink" href="#items-to-copy-options" title="Permalink to this headline">¶</a></h3>
-<p>This section lists selectable items to copy:</p>
-<ul class="simple">
-<li>Data Model</li>
-<li>Advanced Data Settings</li>
-<li>Tenant Permissions</li>
-<li>Roles</li>
-<li>Role Permissions</li>
-</ul>
-</div>
-<div class="section" id="configure-source-data-model-copy-list">
-<h3>Configure Source Data Model Copy List<a class="headerlink" href="#configure-source-data-model-copy-list" title="Permalink to this headline">¶</a></h3>
-<p>Source panel on the left shows visible database connections, schemas
-together with visible inner data model items.</p>
-<blockquote>
-<div>Tick the checkbox next to each item to include it in the Data Model copy operation.</div></blockquote>
-<p>Destination panel on the right is the list of selected tenants to copy
-to, together with validation and authentication status.</p>
+<div class="section" id="configure-source-tenant">
+<h3>Configure Source Tenant<a class="headerlink" href="#configure-source-tenant" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click the down arrow in Source box to see the list of tenants.</li>
+<li>Click specific tenant to use it as Source. <br clear="right" /></li>
+</ol>
 </div>
 <div class="section" id="configure-destination-tenant-list">
 <h3>Configure Destination Tenant List<a class="headerlink" href="#configure-destination-tenant-list" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Click the down arrow in Destination box to see the list of tenants.</li>
-<li>Click each tenant to add it to the box.</li>
+<li>Click tenant to add it to the box (several tenants can be selected as Destination).</li>
 <li>Click the down arrow again to close the list.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To copy to all tenants, simply select &#8220;All Tenants&#8221; option. It will replace all currently selected tenants when selected.</p>
+<p class="last">To copy to all tenants, simply select &#8220;All Tenants&#8221; option. It will replace all currently selected tenants when selected. <br clear="right" /></p>
 </div>
+</div>
+<div class="section" id="items-to-copy">
+<h3>Items to Copy<a class="headerlink" href="#items-to-copy" title="Permalink to this headline">¶</a></h3>
+<p>Each item to copy can have its own settings, which are displayed under Main Panel in a Workspace.</p>
+<p>This section lists selectable items to copy:</p>
+<ul>
+<li><p class="first">Only Settings <span class="red">*</span></p>
+<blockquote>
+<div><p>allows user to pick specific tenant to copy from.</p>
+<p>This special item was introduced to emulate the template mode for tenants. A distinctive feature of this item is that user does not need to select specific connectors, roles, etc. and all setting from Source tenant will be copied, even new ones that were created after creating the workspace.</p>
+<p>If this item is selected, all other checkboxes in Item to Copy section will be unavailable. Dashboards and Reports are not copied in this mode.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Copying all settings may take a long time.</p>
+</div>
+<ul>
+<li><p class="first">Data Connectors <span class="red">*</span></p>
+<blockquote>
+<div><p>allows user to copy specific connectors from Source tenant to Destination tenants.</p>
+<p>If user selects this item, an additional panel will be displayed in the workspace for selecting specific connectors.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Data Model</p>
+<blockquote>
+<div><p>allows user to copy data model configuration.</p>
+<p>If user selects this item, an additional panel will be displayed in the workspace for selecting specific data model items to copy.</p>
+<div class="figure" id="id4">
+<span id="workspace-data-model"></span><a class="reference internal image-reference" href="../_images/Workspace_Data_Model.png"><img alt="../_images/Workspace_Data_Model.png" src="../_images/Workspace_Data_Model.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">Workspace Data Model</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Advanced Data Settings</p>
+<blockquote>
+<div><p>allows user to copy Advanced Settings like Performance, Security, Category, Others specific for each tenant.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Dashboards</p>
+<blockquote>
+<div><p>allows user to copy dashboards.</p>
+<p>If user selects this item, an additional panel will be displayed in the workspace where user can select specific dashboards.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Reports</p>
+<blockquote>
+<div><p>allows user to copy reports.</p>
+<p>If user selects this item, an additional panel will be displayed in the workspace where user can select specific reports.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Tenant Permissions</p>
+<blockquote>
+<div><p>allows user to copy tenant permissions.</p>
+<p>Tenant Permissions cannot be copied from System level to tenant. This is due to the nature of system level permissions.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Roles (with Permissions)</p>
+<blockquote>
+<div><p>allows user to copy existing roles and role permissions.</p>
+<p>Roles cannot be copied from System level to tenant. This is due to the nature of system level permissions.</p>
+<p>If user selects this item, the Roles Copy Settings panel will be displayed in the workspace for selecting specific roles.</p>
+<p>Tick the Copy Role Permissions check-box to copy selected roles with permissions.</p>
+<div class="figure" id="id5">
+<span id="workspace-roles"></span><a class="reference internal image-reference" href="../_images/Workspace_Roles.png"><img alt="../_images/Workspace_Roles.png" src="../_images/Workspace_Roles.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">Workspace Roles</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">System Configuration settings <span class="red">*</span></p>
+<blockquote>
+<div><p>allows user to copy system configuration settings like Email (SMTP Configuration), Report (Default Header Image and Default Color Theme), Google Map (Google API Configuration).</p>
+<p>If user selects this item, the System Configuration Copy Settings panel will be displayed in the workspace to select settings for copying.</p>
+<div class="figure" id="id6">
+<span id="workspace-system-configuration"></span><a class="reference internal image-reference" href="../_images/Workspace_System_Configuration.png"><img alt="../_images/Workspace_System_Configuration.png" src="../_images/Workspace_System_Configuration.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">Workspace_System_Configuration</span></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Items marked with an asterisk (<span class="red">*</span>) are available starting from version 3.9.3. <br clear="right" /></p>
 </div>
 <div class="section" id="edit-mappings">
 <h3>Edit mappings<a class="headerlink" href="#edit-mappings" title="Permalink to this headline">¶</a></h3>
-<p>A mapping specifies the physical destination for each database
-connection or schema of tenant (in case the database connection or
-schema name in destination is different from logical data model).</p>
+<p>A mapping specifies the physical destination for each database connection or schema of tenant (in case the database connection or schema name in destination is different from logical data model).</p>
 <ol class="arabic simple">
 <li>Select a database connection in Source.</li>
 <li>Choose the mapping type: Database or Schema.</li>
 <li><ul class="first">
 <li>Select a schema from the Object list if using Schema mapping.</li>
-<li>For Database mapping, the Object list is already populated with
-the database name.</li>
+<li>For Database mapping, the Object list is already populated with the database name.</li>
 </ul>
 </li>
 <li>Select the target database connection.</li>
 <li><ul class="first">
-<li>Enter the schema name (expression) into Object list if using
-Schema mapping.</li>
-<li>For Database mapping, the Object list is already populated with
-the database name.</li>
+<li>Enter the schema name into the Object list if using Schema mapping.</li>
+<li>Or enter the database name into the Object list if using Database mapping.</li>
 </ul>
 </li>
 <li>Select the tenants to apply this mapping to.</li>
-<li>Continue to add mappings to cover all selected database connections,
-schemas and tenants.</li>
+<li>Continue to add mappings to cover all selected database connections, schemas and tenants.</li>
 </ol>
-<p>Rules:</p>
 <ul class="simple">
-<li>Roles, Role Permissons, and Tenant Permissions can only be copied between tenants. They cannot be copied from system to tenant. This is due to the nature of system level permissions.</li>
-<li>Tenants without a Database mapping will be copied to the same
-database connection.</li>
-<li>Each schema without mapping will be copied to a schema with the same
-name (in the database connection specified in mapping).</li>
+<li>Tenants without a Database mapping will be copied to the same database connection.</li>
+<li>Each schema without mapping will be copied to a schema with the same name (in the database connection specified in mapping).</li>
 </ul>
-<p>For example, user needs to copy data model for schema Sales to Tenant01, Tenant02 and Tenant03.</p>
-<blockquote>
-<div><p>The schemas are named Sales0x with x = 1, 2 or 3 for each tenant
-respectively.</p>
-<p>Tenant02 and Tenant03 share the same physical database TenantDB
-while Tenant03 uses ACMEDB database on a separate server.</p>
-</div></blockquote>
+<p>For example, user needs to copy data model for schema dbo to three tenants Target01, Target02 and Target03.</p>
+<p>Target01 and Target02 share the same physical database Northwind while Target03 uses ACMEDB database on a separate server.</p>
 <p>Following is how to configure the workspace:</p>
 <ol class="arabic">
-<li><p class="first">Tick Data Model check-box in Items to Copy section.</p>
+<li><p class="first">Tick the Data Model check-box in Items to Copy section.</p>
 </li>
-<li><div class="figure align-right" id="id3">
-<span id="copy-management-sample-sales-schema"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Sample_Sales_schema.png"><img alt="../_images/Copy_Management_Sample_Sales_schema.png" src="../_images/Copy_Management_Sample_Sales_schema.png" style="width: 664px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">Copy Sales schema</span></p>
-</div>
-<p>Tick the Sales schema to include it in the copy. <br clear="right" /></p>
+<li><p class="first">Tick dbo schema to include in the copy task.</p>
 </li>
-<li><p class="first">Select Tenant01, Tenant02 and Tenant03 as Destinations.</p>
+<li><p class="first">Select Target01, Target02 and Target03 as Destinations.</p>
 </li>
-<li><p class="first">Add Connection to TenantDB for Tenant02 and Tenant03, and add connection to ACMEDB for Tenant03.</p>
-</li>
-<li><p class="first">Add the mappings.</p>
-<div class="figure" id="id4">
-<span id="copy-management-sample-mapping"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Sample_Mapping.png"><img alt="../_images/Copy_Management_Sample_Mapping.png" src="../_images/Copy_Management_Sample_Mapping.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">Map database connections and schemas <br clear="right" /></span></p>
+<li><p class="first">Add mappings as follows</p>
+<div class="figure" id="id7">
+<span id="workspace-edit-mappings"></span><a class="reference internal image-reference" href="../_images/Workspace_Edit_Mappings.png"><img alt="../_images/Workspace_Edit_Mappings.png" src="../_images/Workspace_Edit_Mappings.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">Edit Mappings <br clear="right" /></span></p>
 </div>
 </li>
 </ol>
@@ -401,26 +431,22 @@ while Tenant03 uses ACMEDB database on a separate server.</p>
 <div class="section" id="validate-consistency-between-source-and-destinations">
 <h2>Validate Consistency between Source and Destinations<a class="headerlink" href="#validate-consistency-between-source-and-destinations" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Click the Validate button at the top to validate for tenants with
-status &#8220;Need validated&#8221;:</p>
+<li><p class="first">Click Validate button at the top to validate for tenants with status &#8220;Need validated&#8221;:</p>
 <blockquote>
 <div><p>Each tenant will be checked for a valid mapping for each schema.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Click the gear icon (⚙) next to
-each tenant to open Advanced Settings page for that tenant.</p>
+<li><p class="first">Click the gear icon (⚙) next to each tenant to open Advanced Settings page for that tenant.</p>
 </li>
-<li><p class="first">Click Validate button at the top to validate consistency in data
-model between source and the selected tenant.</p>
+<li><p class="first">Click Validate button at the top to validate consistency in data model between source and the selected tenant.</p>
 <blockquote>
-<div><p>Selected objects in source will be checked for existence in data
-model for selected tenant by name.</p>
+<div><p>Selected objects in source will be checked for existence in data model for selected tenant by name.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Click OK to close the page.</p>
-<div class="figure" id="id5">
-<span id="copy-management-data-model-comparison"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Data_Model_Comparison.png"><img alt="../_images/Copy_Management_Data_Model_Comparison.png" src="../_images/Copy_Management_Data_Model_Comparison.png" style="width: 637px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">Data Model Comparison <br clear="right" /></span></p>
+<div class="figure" id="id8">
+<span id="workspace-validation"></span><a class="reference internal image-reference" href="../_images/Workspace_Validation.png"><img alt="../_images/Workspace_Validation.png" src="../_images/Workspace_Validation.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">Workspace Validation <br clear="right" /></span></p>
 </div>
 </li>
 </ol>
@@ -428,16 +454,41 @@ model for selected tenant by name.</p>
 <div class="section" id="run-copy">
 <h2>Run Copy<a class="headerlink" href="#run-copy" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Click Run Copy button to perform the copy of selected items for
-tenants with status &#8220;Ready To Copy&#8221;.</p>
+<li><p class="first">Click Run Copy button to perform the copy of selected items for tenants with status &#8220;Ready To Copy&#8221;.</p>
 </li>
-<li><div class="figure align-right" id="id6">
-<span id="copy-management-overwritten-confirmation"></span><a class="reference internal image-reference" href="../_images/Copy_Management_Overwritten_Confirmation.png"><img alt="../_images/Copy_Management_Overwritten_Confirmation.png" src="../_images/Copy_Management_Overwritten_Confirmation.png" style="width: 452px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">Confirm to Overwrite existing Data Model</span></p>
+<li><p class="first">Click OK to confirm to overwrite existing Data Model if needed.</p>
+<div class="figure" id="id9">
+<span id="workspace-overwrite-confirmation"></span><a class="reference internal image-reference" href="../_images/Workspace_Overwrite_Confirmation.png"><img alt="../_images/Workspace_Overwrite_Confirmation.png" src="../_images/Workspace_Overwrite_Confirmation.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">Confirm to Overwrite existing Reports <br clear="right" /></span></p>
 </div>
-<p>Click OK to confirm to overwrite existing Data Model if needed. <br clear="right" /></p>
 </li>
 </ol>
+</div>
+<div class="section" id="refresh-a-workspace">
+<h2>Refresh a Workspace<a class="headerlink" href="#refresh-a-workspace" title="Permalink to this headline">¶</a></h2>
+<p>User can refresh a workspace to see the changes that appeared in Source tenant after the current workspace was created.</p>
+<ol class="arabic simple">
+<li>Click Refresh button to refresh the current workspace.</li>
+<li>Check exsiting ones and select new items to copy if needed.</li>
+<li>Click Save to save the workspace. <br clear="right" /></li>
+</ol>
+</div>
+<div class="section" id="scheduler-configuration">
+<h2>Scheduler Configuration<a class="headerlink" href="#scheduler-configuration" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><div class="figure align-right" id="id10">
+<span id="workspace-scheduler-configuration"></span><a class="reference internal image-reference" href="../_images/Workspace_Scheduler_Configuration.png"><img alt="../_images/Workspace_Scheduler_Configuration.png" src="../_images/Workspace_Scheduler_Configuration.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">Workspace Scheduler Configuration</span></p>
+</div>
+<p>Click Schedule button at the top to open the schedule properties.</p>
+</li>
+<li><p class="first">Configure schedule properties to run copy on a monthly, weekly, daily or hourly basis.</p>
+</li>
+<li><p class="first">Click OK to close the dialog.</p>
+</li>
+</ol>
+<p>All changes in Data Model will be automatically overwritten when the workspace is started by the scheduler.</p>
+<p>Using the Scheduler, user can distribute changes made in one Source tenant to Destination tenants by schedule. In this way, a model of tenant templates is implemented, in which one of the tenants acts as a template for other tenants. <br clear="right" /></p>
 </div>
 </div>
 
@@ -485,7 +536,7 @@ tenants with status &#8220;Ready To Copy&#8221;.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.9.2',
+            VERSION:'3.9.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

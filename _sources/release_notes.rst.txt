@@ -11,6 +11,15 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.9.3 Preview Release -- May 18th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Templates functionality is release
+    - This is an improvement to the existing Copy Management functionality
+    - This allows an administratror to easy push values within a tenant out to other tennats.
+
 v3.9.2 Preview Release -- May 14th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Added improvements for Form to Excel exporting

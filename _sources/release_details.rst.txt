@@ -4,6 +4,16 @@
 Release Details
 ==============
 
+v3.9.3 Preview Release -- May 18th, 2020 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Templates functionality is release
+    - The base performance of Copy Management has been Improved
+    - Several new items have been added to the copy management workspace to extend which values can be copied from the source to destination
+    - For more information, please see our :ref:`Copy_Management` page
+
 v3.9.1 Preview Release -- April 30th, 2020 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
