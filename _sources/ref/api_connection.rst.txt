@@ -20,57 +20,25 @@ Summary
    * - API
      - Purpose
      - Usage in Izenda Front-end
-   * - `GET systemSetting/databaseSetup`_
-     - Returns whether the system database has been set up.
-     - On Front-end load
-   * - `GET dataAdaptor`_
-     - Returns an array of database server types currently supported for queries. |br|
-       See also: :ref:`GET_databaseSetup/supportedDatabaseType`
-     - Settings > Data Setup > Connection String > populate Data Server Type box
-   * - `POST connection/verify`_
-     - Validates a connection string. |br|
-       See also: :ref:`POST_databaseSetup/testConnection`
-     - Settings > Data Setup > Connection String > Test
-   * - `POST connection/loadRemoteSchema`_
-     - Returns an enumeration of all supported objects (query sources) from a connection string.
-     - Settings > Data Setup > Connection String > Test > Connect
-   * - `POST connection`_
-     - Adds a new connection or updates an existing one. |br|
-       Only visible query sources should be saved.
-     - Settings > Data Setup > Connection String > Save
    * - `GET connection/(tenant_id)`_
      - Returns an array of connections (filtered by tenant_id if given).
      - Settings > Data Setup > Connection String, for a specific tenant
-   * - `GET connection/detail/{connection_id}`_
-     - Returns the details of the connection specified by the {connection_id} value.
-     - Settings > Data Setup > Connection String > select an existing connection
    * - `GET connection/basicInfo/(tenant_id)`_
      - Returns an array of id and name of connections (filtered by tenant_id if given).
      - To be updated
+   * - `GET connection/detail/{connection_id}`_
+     - Returns the details of the connection specified by the {connection_id} value.
+     - Settings > Data Setup > Connection String > select an existing connection
    * - `GET connection/detailInfo/(tenant_id)/{loadField}`_
      - Returns an array of connection details.
      - To be updated
-   * - `POST connection/detailInfo`_
-     - Returns an array of connection details with paging.
-     - To be updated
-   * - `POST connection/invisible/{connection_id}`_
-     - Hides from Data Model and Reports all query sources in the connection specified by the {connection_id} value.
-     - Settings > Data Setup > Connection String > click Visibility icon of a visible connection
-   * - `POST connection/visible/{connection_id}`_
-     - Restores the visibility of all query sources in the connection specified by the {connection_id} value.
-     - Settings > Data Setup > Connection String > click Visibility icon of a hidden connection
-   * - `DELETE connection/{connection_id}`_
-     - Deletes the connection specified by the {connection_id} value.
-     - Settings > Data Setup > Connection String > click Delete icon of a connection
-   * - `POST connection/reloadRemoteSchema`_
-     - Returns an enumeration of all supported objects (query sources) from an existing connection with detected changes.
-     - Settings > Data Setup > Connection String > Reconnect an existing connection
-   * - `POST connection/databaseName`_
-     - Returns the database name from a connection string.
-     - Settings > Data Setup > Connection String > Test
-   * - `POST connection/validateSchema`_
-     - Returns true if remote schema has not changed, otherwise returns false.
-     - To be updated
+   * - `GET connection/preset/{server_type_id}`_
+     - Returns a set of all connection presets, filtered by server_type_id. |br|
+     
+       .. tip::
+          
+          .. versionadded:: 3.9.4
+     - REST Connector: Settings > Data Setup > Connection String > Edit Connection > Load preset
    * - GET connection/systemIndicator/(tenantId)
      - Returns the number of changes in Connection String and Data Model (filtered by tenant_id if provided). |br|
      
@@ -81,260 +49,55 @@ Summary
    * - `GET connection/visible/(tenant_id)/count`_
      - Returns the count of visible connections, filtered by tenant_id if available.
      - Settings > Data Setup > Connection String
+   * - `GET dataAdaptor`_
+     - Returns an array of database server types currently supported for queries. |br|
+       See also: :ref:`GET_databaseSetup/supportedDatabaseType`
+     - Settings > Data Setup > Add Connector > populate Data Server Type tiles
+   * - `GET systemSetting/databaseSetup`_
+     - Returns whether the system database has been set up.
+     - On Front-end load
+   * - `POST connection`_
+     - Adds a new connection or updates an existing one. |br|
+       Only visible query sources should be saved.
+     - Settings > Data Setup > Connection String > Save
+   * - `POST connection/databaseName`_
+     - Returns the database name from a connection string.
+     - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
+   * - `POST connection/connectionStringData`_
+     - Returns the connection string data for a specific connection. |br|
+     
+       .. tip::
+          
+          .. versionadded:: 3.9.4
+     - Settings > Data Setup > Connection String > Edit Connection
+   * - `POST connection/detailInfo`_
+     - Returns an array of connection details with paging.
+     - To be updated
+   * - `POST connection/invisible/{connection_id}`_
+     - Hides from Data Model and Reports all query sources in the connection specified by the {connection_id} value.
+     - Settings > Data Setup > Connection String > click Visibility icon of a visible connection
    * - `POST connection/loadDistinctConnections`_
      - Returns an array of distinct connections (by server type and database name) from a list of tenant ids.
      - Settings > Data Setup > Copy Management
-
-GET systemSetting/databaseSetup
---------------------------------------------------------------
-
-Returns whether the system database has been set up.
-
-**Request**
-
-    No payload
-
-**Response**
-
-    * true if the system database has been set up.
-    * false if not.
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/systemSetting/databaseSetup HTTP/1.1
-
-   Response when system database has been setup::
-
-      true
-
-.. _GET_dataAdaptor:
-
-GET dataAdaptor
---------------------------------------------------------------
-
-Returns an array of database server types currently supported for queries. |br|
-See also: ``GET databaseSetup/SupportedDatabaseType``
-
-**Request**
-
-    No payload
-
-**Response**
-
-    An array of objects
-
-    .. list-table::
-       :header-rows: 1
-
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **id** |br|
-             string (GUID)
-          -  The id of the connection
-          -  Example: ``572bd576-8c92-4901-ab2a-b16e38144813``
-       *  -  **shortName** |br|
-             string
-          -  The short name of the database server type
-          -
-       *  -  **name** |br|
-             string
-          -  The display name of the database server type
-          -
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/dataAdaptor HTTP/1.1
-
-   Sample response::
-
-      [
-        {
-           "name" : "[AZSQL] AzureSQL",
-           "shortName" : "AZSQL",
-           "id" : "d968e96f-91dc-414d-9fd8-aef2926c9a18"
-        }, {
-           "name" : "[MYSQL] MySQL",
-           "shortName" : "MYSQL",
-           "id" : "3d4916d1-5a41-4b94-874f-5bedacb89656"
-        }, {
-           "name" : "[ORACL] Oracle",
-           "shortName" : "ORACL",
-           "id" : "93942448-c715-4f98-85e2-9292ed7ca4bc"
-        }, {
-           "name" : "[PGSQL] PostgreSQL",
-           "shortName" : "PGSQL",
-           "id" : "f2638ed5-70e5-47da-a052-4da0c1888fcf"
-        }, {
-           "name" : "[MSSQL] SQLServer",
-           "shortName" : "MSSQL",
-           "id" : "572bd576-8c92-4901-ab2a-b16e38144813"
-        }
-      ]
-
-.. _POST_connection/verify:
-
-POST connection/verify
---------------------------------------------------------------
-
-Validates a connection string. |br|
-See also: :ref:`POST_databaseSetup/testConnection`
-
-**Request**
-
-    Payload: a :doc:`models/DBSetupInfo` object
-
-**Response**
-
-    A :doc:`models/ConnectionVerificationResult` object
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection/verify HTTP/1.1
-
-   Request payload::
-
-      {
-        "ServerTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
-        "ConnectionString" : "server=host01\instance01;database=db01;User Id=user01;Password=secret;"
-      }
-
-   Successful response::
-
-      {
-        "serverNotValid" : false,
-        "databaseNotValid" : false,
-        "loginFail" : false,
-        "hasValidLicense" : false,
-        "success" : true,
-        "messages" : []
-      }
-
-.. _POST_connection/loadRemoteSchema:
-
-POST connection/loadRemoteSchema
---------------------------------------------------------------
-
-Returns an enumeration of all supported objects (query sources) from a connection string.
-
-**Request**
-
-    Payload: a :doc:`models/SchemaRequest` object
-
-**Response**
-
-    A :doc:`models/SchemaResult` object
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection/loadRemoteSchema HTTP/1.1
-
-   Request payload::
-
-      {
-        "connectionString" : "1aBcD+=",
-        "serverType" : "d968e96f-91dc-414d-9fd8-aef2926c9a18"
-      }
-
-   Successful response::
-
-      {
-        "dBSource" : {
-           "querySources" : [ {
-                 "id" : "6ca15f34-b4cb-4fd7-8d55-77ee26ba6abe",
-                 "name" : "dbo",
-                 "parentCategoryId" : null,
-                 "connectionId" : "00000000-0000-0000-0000-000000000000",
-                 "querySources" : [{
-                       "id" : "bcf124c4-c5df-434a-bc4c-1638161d7949",
-                       "name" : "AWBuildVersion",
-                       "type" : "Table",
-                       "parentQuerySourceId" : null,
-                       "categoryId" : null,
-                       "selected" : false,
-                       "connectionName" : null,
-                       "childs" : null,
-                       "dataSourceCategoryId" : null,
-                       "dataSourceCategoryName" : null,
-                       "alias" : null,
-                       "querySourceFields" : [],
-                       "querySourceCategory" : null,
-                       "modified" : null,
-                       "extendedProperties" : null,
-                       "physicalChange" : 0,
-                       "approval" : 0
-                    }
-                 ],
-                 "childs" : null,
-                 "connection" : null,
-                 "physicalChange" : 0
-              }
-           ]
-        },
-        "differentConnectionAndSchema" : false,
-        "success" : true,
-        "messages" : null
-      }
-
-.. _POST_connection:
-
-POST connection
---------------------------------------------------------------
-
-Adds a new connection or updates an existing one. |br|
-Only visible query sources should be saved. |br| |br|
-
-The connection string will be validated before saving.
-
-**Request**
-
-    Payload: a :doc:`models/Connection` object
-
-**Response**
-
-    A :doc:`models/SaveConnectionStatus` object
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection HTTP/1.1
-
-   Request payload for a new connection::
-
-      {
-        "id" : null,
-        "name" : "db01",
-        "serverTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
-        "connectionString" : "server=izenda01\\DB_INSTANCE;database=db01;User Id=user01;Password=secret;",
-        "visible" : true,
-        "dBSource" : {
-           "querySources" : []
-        }
-      }
-
-   Sample response (in case user has System Admin Permission)::
-
-      {
-        "success" : true,
-        "connectionId" : "f5180bc0-7c07-48db-b672-e66a5adde027",
-        "connectionErrors" : []
-      }
-
-   Response in case user does not have System Admin Permission::
-
-      {
-         "message" : "You don't have permission to perform this action",
-         "detail" : "NoPermission"
-      }
+   * - `POST connection/loadRemoteSchema`_
+     - Returns an enumeration of all supported objects (query sources) from a connection string.
+     - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
+   * - `POST connection/reloadRemoteSchema`_
+     - Returns an enumeration of all supported objects (query sources) from an existing connection with detected changes.
+     - Settings > Data Setup > Connection String > Reconnect an existing connection
+   * - `POST connection/verify`_
+     - Validates a connection string. |br|
+       See also: :ref:`POST_databaseSetup/testConnection`
+     - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
+   * - `POST connection/validateSchema`_
+     - Returns true if remote schema has not changed, otherwise returns false.
+     - To be updated
+   * - `POST connection/visible/{connection_id}`_
+     - Restores the visibility of all query sources in the connection specified by the {connection_id} value.
+     - Settings > Data Setup > Connection String > click Visibility icon of a hidden connection
+   * - `DELETE connection/{connection_id}`_
+     - Deletes the connection specified by the {connection_id} value.
+     - Settings > Data Setup > Connection String > click Delete icon of a connection
 
 GET connection/(tenant_id)
 --------------------------------------------------------------
@@ -389,6 +152,50 @@ Returns an array of connections (filtered by tenant_id if given).
            "physicalChange" : 0
         }
       ]
+
+.. _GET_connection/basicInfo/(tenant_id):
+
+GET connection/basicInfo/(tenant_id)
+--------------------------------------------------------------
+
+Returns an array of id and name of connections (filtered by tenant_id if given).
+
+**Request**
+
+    No payload
+
+**Response**
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **key** |br|
+             string (GUID)
+          -  The id of the connection
+          -
+       *  -  **value** |br|
+             string
+          -  The name of the connection
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/connection/basicInfo HTTP/1.1
+
+   Sample response::
+
+      [{
+         "key": "1a65445b-2779-4825-8c0b-2491eaa87a46",
+         "value": "AdventureWorks2008R2"
+      }, {
+         "key": "dda3633e-659f-4e88-9955-4e20bded686c",
+         "value": "Northwind"
+      }]
 
 GET connection/detail/{connection_id}
 --------------------------------------------------------------
@@ -462,50 +269,6 @@ These include the connection fields and the query sources inside.
         "success" : true,
         "messages" : null
       }
-
-.. _GET_connection/basicInfo/(tenant_id):
-
-GET connection/basicInfo/(tenant_id)
---------------------------------------------------------------
-
-Returns an array of id and name of connections (filtered by tenant_id if given).
-
-**Request**
-
-    No payload
-
-**Response**
-
-    .. list-table::
-       :header-rows: 1
-
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **key** |br|
-             string (GUID)
-          -  The id of the connection
-          -
-       *  -  **value** |br|
-             string
-          -  The name of the connection
-          -
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/connection/basicInfo HTTP/1.1
-
-   Sample response::
-
-      [{
-         "key": "1a65445b-2779-4825-8c0b-2491eaa87a46",
-         "value": "AdventureWorks2008R2"
-      }, {
-         "key": "dda3633e-659f-4e88-9955-4e20bded686c",
-         "value": "Northwind"
-      }]
 
 GET connection/detailInfo/(tenant_id)/{loadField}
 --------------------------------------------------------------
@@ -651,6 +414,325 @@ Returns an array of connection details.
         ]
       }
 
+GET connection/preset/{server_type_id}
+--------------------------------------------------------------
+
+Returns a set of all connection presets, filtered by server_type_id.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    A set of connection preset objects specific to the specified server type.
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/connection/preset/4b751f52-0903-4170-ab15-814a7fa4e42c HTTP/1.1
+
+   Successful response::
+
+      {
+        "data" : {
+           "myRest": [{
+              "endpointName": "Northwind",
+              "address": "https://rest.service.com",
+              "schemePath": "/NorthwindJSON/schema.json",
+              "dataPath": "/NorthwindJSON/{0}.json",
+              "flattenArrays": true,
+              "flattenObjects": true,
+              "flattenDepth": 4,
+              "subColumnSeparator": ".",
+              "headers": {},
+              "body": null,
+              "requestCacheTtl": 600,
+              "requestCacheEnabled": true,
+              "connectionString": null
+           }]
+        },
+        "success" : true,
+        "messages" : null
+      }
+
+GET connection/visible/(tenant_id)/count
+--------------------------------------------------------------
+
+Returns the count of visible connections, filtered by tenant_id if available.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    The number of connections
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/connection/visible/count HTTP/1.1
+
+   Sample response (in case user has System Admin Permission)::
+
+      2
+
+   Reponse in case user does not have System Admin Permission::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
+      }
+
+.. _GET_dataAdaptor:
+
+GET dataAdaptor
+--------------------------------------------------------------
+
+Returns an array of database server types currently supported for queries. |br|
+See also: ``GET databaseSetup/SupportedDatabaseType``
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of objects
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **id** |br|
+             string (GUID)
+          -  The id of the connection
+          -  Example: ``572bd576-8c92-4901-ab2a-b16e38144813``
+       *  -  **shortName** |br|
+             string
+          -  The short name of the database server type
+          -
+       *  -  **name** |br|
+             string
+          -  The display name of the database server type
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/dataAdaptor HTTP/1.1
+
+   Sample response::
+
+      [
+        {
+           "name" : "[AZSQL] AzureSQL",
+           "shortName" : "AZSQL",
+           "id" : "d968e96f-91dc-414d-9fd8-aef2926c9a18"
+        }, {
+           "name" : "[MYSQL] MySQL",
+           "shortName" : "MYSQL",
+           "id" : "3d4916d1-5a41-4b94-874f-5bedacb89656"
+        }, {
+           "name" : "[ORACL] Oracle",
+           "shortName" : "ORACL",
+           "id" : "93942448-c715-4f98-85e2-9292ed7ca4bc"
+        }, {
+           "name" : "[PGSQL] PostgreSQL",
+           "shortName" : "PGSQL",
+           "id" : "f2638ed5-70e5-47da-a052-4da0c1888fcf"
+        }, {
+           "name" : "[MSSQL] SQLServer",
+           "shortName" : "MSSQL",
+           "id" : "572bd576-8c92-4901-ab2a-b16e38144813"
+        }
+      ]
+
+GET systemSetting/databaseSetup
+--------------------------------------------------------------
+
+Returns whether the system database has been set up.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    * true if the system database has been set up.
+    * false if not.
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/systemSetting/databaseSetup HTTP/1.1
+
+   Response when system database has been setup::
+
+      true
+
+.. _POST_connection:
+
+POST connection
+--------------------------------------------------------------
+
+Adds a new connection or updates an existing one. |br|
+Only visible query sources should be saved. |br| |br|
+
+The connection string will be validated before saving.
+
+**Request**
+
+    Payload: a :doc:`models/Connection` object
+
+**Response**
+
+    A :doc:`models/SaveConnectionStatus` object
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection HTTP/1.1
+
+   Request payload for a new connection::
+
+      {
+        "id" : null,
+        "name" : "db01",
+        "serverTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
+        "connectionString" : "server=izenda01\\DB_INSTANCE;database=db01;User Id=user01;Password=secret;",
+        "visible" : true,
+        "dBSource" : {
+           "querySources" : []
+        }
+      }
+
+   Sample response (in case user has System Admin Permission)::
+
+      {
+        "success" : true,
+        "connectionId" : "f5180bc0-7c07-48db-b672-e66a5adde027",
+        "connectionErrors" : []
+      }
+
+   Response in case user does not have System Admin Permission::
+
+      {
+         "message" : "You don't have permission to perform this action",
+         "detail" : "NoPermission"
+      }
+
+POST connection/databaseName
+--------------------------------------------------------------
+
+Returns the database name from a connection string.
+
+**Request**
+
+    Payload: a :doc:`models/DBSetupInfo` object
+
+**Response**
+
+    * The database name if success
+    * An empty string in case of error
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection/databaseName HTTP/1.1
+
+   Request payload::
+
+      {
+        "ServerTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
+        "ConnectionString" : "server=host01\instance01;database=db01;User Id=user01;Password=secret;"
+      }
+
+   Successful response::
+
+      "db01"
+
+POST connection/connectionStringData
+--------------------------------------------------------------
+
+Returns the connection string data for a specific connection.
+
+**Request**
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  NULL
+          -  Description
+          -  Note
+       *  -  **connectionId** |br|
+             string (GUID)
+          -  
+          -  The id of the connection
+          -
+       *  -  **serverTypeId** |br|
+             string (GUID)
+          -  
+          -  The id of the server type
+          -
+       *  -  **connectionString** |br|
+             string
+          -  Y
+          -  The encrypted connection string
+          -
+
+**Response**
+
+    A set of connection preset objects specific to the specified server type.
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection/connectionStringData HTTP/1.1
+
+   Request payload::
+
+      {
+        "connectionId": "3e0e8445-eab1-4570-8528-17f2f93a80ab",
+        "serverTypeId":"bfdb387c-f405-4dbc-8677-c3c5bad91193",
+        "connectionString":"FPEo/svV4DeikmSZAnqCgDsYKrCR99z2Gn83tcaKxvUJ276UoVtUdfdgyPwLwTIcKoB1AGiqvehnW+jhQBjbF4wV+8VWLAyOZAydPw/QSmdJT06XA=="
+      }
+
+   Sample response::
+
+      {
+        "data" : {
+           "": [{
+              "endpointName": "Northwind",
+              "address": "https://rest.service.com",
+              "schemePath": "/NorthwindJSON/schema.json",
+              "dataPath": "/NorthwindJSON/{0}.json",
+              "flattenArrays": true,
+              "flattenObjects": true,
+              "flattenDepth": 4,
+              "subColumnSeparator": ".",
+              "headers": {},
+              "body": null,
+              "requestCacheTtl": 600,
+              "requestCacheEnabled": true,
+              "connectionString": null
+           }]
+        },
+        "success" : true,
+        "messages" : null
+      }
+
 POST connection/detailInfo
 --------------------------------------------------------------
 
@@ -780,64 +862,131 @@ Hides from Data Model and Reports all query sources in the connection specified 
          "detail" : "NoPermission"
       }
 
+.. _POST_connection/loadDistinctConnections:
 
-POST connection/visible/{connection_id}
+POST connection/loadDistinctConnections
 --------------------------------------------------------------
 
-Restores the visibility of all query sources in the connection specified by the {connection_id} value.
+Returns an array of distinct connections (by server type and database name) from a list of tenant ids.
 
 **Request**
 
-    No payload
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **tenantIds** |br|
+             array of strings
+          -  An array of string (GUID) values.
+          -
 
 **Response**
 
-    An :doc:`models/OperationResult` object with **success** field populated
+    An array of :doc:`models/Connection` objects
 
 **Samples**
 
    .. code-block:: http
 
-      POST /api/connection/visible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3 HTTP/1.1
+      POST /api/connection/loadDistinctConnections HTTP/1.1
+
+   Request payload::
+
+      {
+        "tenantIds" : ["e9e54aaf-64d8-4dbd-88c4-642f51ba16ec"]
+      }
 
    Sample response::
 
-      {
-         "success": true,
-         "messages": null
-      }
+      [{
+           "id" : "3cd79317-5d1b-4842-93d7-47abae6e0273",
+           "name" : "Northwind",
+           "serverTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
+           "serverTypeName" : "MSSQL",
+           "connectionString" : "4d8jRon2cmwd8K1blELZB7RtRYUM76oW5ZOYxEcE4eCRy19pnCeeyM4ZFpAxX+dwIsv+p+3JKbZbJCdDyj6XXOlS88wnw9pNBuLfk3SxFJM=",
+           "visible" : true,
+           "deleted" : false,
+           "relateToConnectionId" : null,
+           "tenantId" : "e9e54aaf-64d8-4dbd-88c4-642f51ba16ec",
+           "dbSource" : {
+              "querySources" : []
+           },
+           "relationships" : null,
+           "physicalChange" : 0,
+           "checked" : false,
+           "databaseName" : "Northwind",
+           "fullPath" : null
+        }
+      ]
 
-DELETE connection/{connection_id}
+.. _POST_connection/loadRemoteSchema:
+
+POST connection/loadRemoteSchema
 --------------------------------------------------------------
 
-Deletes the connection specified by the {connection_id} value.
+Returns an enumeration of all supported objects (query sources) from a connection string.
 
 **Request**
 
-    No payload
+    Payload: a :doc:`models/SchemaRequest` object
 
 **Response**
 
-    An :doc:`models/OperationResult` object with **success** field populated
+    A :doc:`models/SchemaResult` object
 
 **Samples**
 
    .. code-block:: http
 
-      DELETE /api/connection/f5180bc0-7c07-48db-b672-e66a5adde027 HTTP/1.1
+      POST /api/connection/loadRemoteSchema HTTP/1.1
 
-   Successful response (in case user has System Admin Permission)::
+   Request payload::
 
       {
-        "success" : true,
-        "messages" : null
+        "connectionString" : "1aBcD+=",
+        "serverType" : "d968e96f-91dc-414d-9fd8-aef2926c9a18"
       }
 
-   Response in case user does not have System Asmin Permission)::
+   Successful response::
 
       {
-         "message" : "You don't have permission to perform this action",
-         "detail" : "NoPermission"
+        "dBSource" : {
+           "querySources" : [ {
+                 "id" : "6ca15f34-b4cb-4fd7-8d55-77ee26ba6abe",
+                 "name" : "dbo",
+                 "parentCategoryId" : null,
+                 "connectionId" : "00000000-0000-0000-0000-000000000000",
+                 "querySources" : [{
+                       "id" : "bcf124c4-c5df-434a-bc4c-1638161d7949",
+                       "name" : "AWBuildVersion",
+                       "type" : "Table",
+                       "parentQuerySourceId" : null,
+                       "categoryId" : null,
+                       "selected" : false,
+                       "connectionName" : null,
+                       "childs" : null,
+                       "dataSourceCategoryId" : null,
+                       "dataSourceCategoryName" : null,
+                       "alias" : null,
+                       "querySourceFields" : [],
+                       "querySourceCategory" : null,
+                       "modified" : null,
+                       "extendedProperties" : null,
+                       "physicalChange" : 0,
+                       "approval" : 0
+                    }
+                 ],
+                 "childs" : null,
+                 "connection" : null,
+                 "physicalChange" : 0
+              }
+           ]
+        },
+        "differentConnectionAndSchema" : false,
+        "success" : true,
+        "messages" : null
       }
 
 POST connection/reloadRemoteSchema
@@ -931,10 +1080,13 @@ Returns an enumeration of all supported objects (query sources) from an existing
         "messages" : null
       }
 
-POST connection/databaseName
+.. _POST_connection/verify:
+
+POST connection/verify
 --------------------------------------------------------------
 
-Returns the database name from a connection string.
+Validates a connection string. |br|
+See also: :ref:`POST_databaseSetup/testConnection`
 
 **Request**
 
@@ -942,14 +1094,13 @@ Returns the database name from a connection string.
 
 **Response**
 
-    * The database name if success
-    * An empty string in case of error
+    A :doc:`models/ConnectionVerificationResult` object
 
 **Samples**
 
    .. code-block:: http
 
-      POST /api/connection/databaseName HTTP/1.1
+      POST /api/connection/verify HTTP/1.1
 
    Request payload::
 
@@ -960,7 +1111,14 @@ Returns the database name from a connection string.
 
    Successful response::
 
-      "db01"
+      {
+        "serverNotValid" : false,
+        "databaseNotValid" : false,
+        "loginFail" : false,
+        "hasValidLicense" : false,
+        "success" : true,
+        "messages" : []
+      }
 
 POST connection/validateSchema
 --------------------------------------------------------------
@@ -993,10 +1151,10 @@ Returns true if remote schema has not changed, otherwise returns false.
 
       true
 
-GET connection/visible/(tenant_id)/count
+POST connection/visible/{connection_id}
 --------------------------------------------------------------
 
-Returns the count of visible connections, filtered by tenant_id if available.
+Restores the visibility of all query sources in the connection specified by the {connection_id} value.
 
 **Request**
 
@@ -1004,81 +1162,50 @@ Returns the count of visible connections, filtered by tenant_id if available.
 
 **Response**
 
-    The number of connections
+    An :doc:`models/OperationResult` object with **success** field populated
 
 **Samples**
 
    .. code-block:: http
 
-      GET /api/connection/visible/count HTTP/1.1
+      POST /api/connection/visible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3 HTTP/1.1
 
-   Sample response (in case user has System Asmin Permission)::
+   Sample response::
 
-      2
+      {
+         "success": true,
+         "messages": null
+      }
 
-   Reponse in case user does not have System Admin Permission::
+DELETE connection/{connection_id}
+--------------------------------------------------------------
+
+Deletes the connection specified by the {connection_id} value.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An :doc:`models/OperationResult` object with **success** field populated
+
+**Samples**
+
+   .. code-block:: http
+
+      DELETE /api/connection/f5180bc0-7c07-48db-b672-e66a5adde027 HTTP/1.1
+
+   Successful response (in case user has System Admin Permission)::
+
+      {
+        "success" : true,
+        "messages" : null
+      }
+
+   Response in case user does not have System Asmin Permission)::
 
       {
          "message" : "You don't have permission to perform this action",
          "detail" : "NoPermission"
       }
-
-
-.. _POST_connection/loadDistinctConnections:
-
-POST connection/loadDistinctConnections
---------------------------------------------------------------
-
-Returns an array of distinct connections (by server type and database name) from a list of tenant ids.
-
-**Request**
-
-    .. list-table::
-       :header-rows: 1
-
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **tenantIds** |br|
-             array of strings
-          -  An array of string (GUID) values.
-          -
-
-**Response**
-
-    An array of :doc:`models/Connection` objects
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection/loadDistinctConnections HTTP/1.1
-
-   Request payload::
-
-      {
-        "tenantIds" : ["e9e54aaf-64d8-4dbd-88c4-642f51ba16ec"]
-      }
-
-   Sample response::
-
-      [{
-           "id" : "3cd79317-5d1b-4842-93d7-47abae6e0273",
-           "name" : "Northwind",
-           "serverTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
-           "serverTypeName" : "MSSQL",
-           "connectionString" : "4d8jRon2cmwd8K1blELZB7RtRYUM76oW5ZOYxEcE4eCRy19pnCeeyM4ZFpAxX+dwIsv+p+3JKbZbJCdDyj6XXOlS88wnw9pNBuLfk3SxFJM=",
-           "visible" : true,
-           "deleted" : false,
-           "relateToConnectionId" : null,
-           "tenantId" : "e9e54aaf-64d8-4dbd-88c4-642f51ba16ec",
-           "dbSource" : {
-              "querySources" : []
-           },
-           "relationships" : null,
-           "physicalChange" : 0,
-           "checked" : false,
-           "databaseName" : "Northwind",
-           "fullPath" : null
-        }
-      ]

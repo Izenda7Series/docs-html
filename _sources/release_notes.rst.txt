@@ -11,16 +11,27 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
-v3.9.3 Preview Release -- May 18th, 2020 
+v3.9.4 Preview Release -- June 2nd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
-- Tenant Templates functionality is release
-    - This is an improvement to the existing Copy Management functionality
-    - This allows an administratror to easy push values within a tenant out to other tennats.
+- REST API Connectors have been Added
+    - Connections to REST API sources can now be added on the Data Connectors pages
+		- REST connections can include multiple endpoints to act as a collection of responsiveness
+- Improved Data Connector Dialogue
+		- When adding a new connector, there is now a more dialogue-based approach to guide Users
 
-v3.9.2 Preview Release -- May 14th, 2020 
+v3.9.3 Preview Release -- May 18th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Templates functionality is released
+    - This is an improvement to the existing Copy Management functionality
+    - This allows an administrator to easy push values within a tenant out to other tenants.
+
+v3.9.2 Preview Release -- May 14th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Added improvements for Form to Excel exporting
     - We have improved how forms with and without tables export to Excel
@@ -30,32 +41,32 @@ v3.9.2 Preview Release -- May 14th, 2020
     - If this value is set to false, forms will export to Excel as they did prior to this release
 
 
-v3.9.1 Preview Release -- April 30th, 2020 
+v3.9.1 Preview Release -- April 30th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
-- Natural Language Query Functionality Introduced  
+- Natural Language Query Functionality Introduced
     - User will be able to see a new default landing page labeled the 'Explore' tab
     - This functionality can be enabled/disabled through tenant modules and permissions
-    - NLQ can only be currently leveraged against a single MSSQL data source. 
+    - NLQ can only be currently leveraged against a single MSSQL data source.
 - Grid Style Changes
-    - Izenda's grids have been updated with a new modern styling 
+    - Izenda's grids have been updated with a new modern styling
 - Improved Datasource Selection
     - When choosing data sources in the report designer, they are displayed in a list to quickly identify any selected items
 
-v3.9.0 Core Release -- April 14th, 2020 
+v3.9.0 Core Release -- April 14th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
 - Users can now add/delete subscriptions from the Report Viewer without Edit access to the report
-- A New Button, 'Clear Filter' is added to the Filter container of the Report Designer/Viewer 
+- A New Button, 'Clear Filter' is added to the Filter container of the Report Designer/Viewer
     - When clicked, this will remove all currently selected values for the filters on that report.
 - Images in the Report Header/Footer will scale down/up to fit the container
 
 FIXES
-^^^^^ 
+^^^^^
 - Defect 19700 Schedule times were not updating after Daylight Savings Time
 - Defect 22057 Aliased data sources would display their default name in the report designer
 - Defect 23081 Importing Global Report and source access rights fails
@@ -70,7 +81,7 @@ FIXES
 - Defect 25678 Calls to /api/report/list2 shows inconsistent responses on subsequent requests.
 - Defect 25696 PDF exports would fail when applying Page Break After Separator on Chart/Gauge
 - Defect 25782 Dashboards mobile responsiveness breaks for tenant users without full report/dashboard access
-- Defect 25800 Date Format not recognized of the file while exporting to Excel  
+- Defect 25800 Date Format not recognized of the file while exporting to Excel
 - Defect 25818 "Register for Alerts" permission is not automatically removed when the "Schedule" permission is also removed
 - Defect 25830 Opening a subreport would cause a filter logic notification to display for users
 - Defect 25903 "Full Report And Dashboard Access" permission is still checked when Grant Role with "Full Report and Dashboard Access" is removed from the tenant
@@ -80,7 +91,7 @@ FIXES
 - Defect 26083 NOT NULL filter operator was being applied as a NULL operator with required filters
 - Defect 26106 Calls to loadDashboard were being redundantly made when opening a dashboard with many filtered tiles.
 - Defect 26131 Report part title and description fields are being shown as altered after the default application font is changed.
-- Defect 26159 Exporting/Printing fails on Oracle Retail DB 
+- Defect 26159 Exporting/Printing fails on Oracle Retail DB
 - Defect 26167 During the email process, the existing access_token would not be used
 - Defect 26180 Gauges would fail to render values when dragging an in-use field between containers.
 - Defect 26185 Fields used for dynamic scale values in Gauges would incorrectly use the same alias values.
@@ -112,14 +123,14 @@ FIXES
 - Defect 26458 Minor improvements in paging control
 - Defect 26496 Report fails to save when cross-filtering is applied and drilldown report part is deleted
 - Defect 26536 Exporting chart that takes some time to retrieve data renders an image with an error message
-- Defect 26559 SMTP fails when using Amazon SES in Linux hosted API 
-- Defect 26630 Cannot create a custom gauge using IzendaCustomVisualizations 
+- Defect 26559 SMTP fails when using Amazon SES in Linux hosted API
+- Defect 26630 Cannot create a custom gauge using IzendaCustomVisualizations
 - Defect 26654 Performance impact from CONVERT_IMPLICIT on bigint field in the generated query plan for MSSQL
 - Defect 26801 Cannot use custom containers in custom visualizations
 - Defect 26803 UI - Search bar is not aligned on Report and Dashboard list and Data Source Selection page
 - Defect 26825 Unable to create a report using Excel Data Source
 
-v3.8.4 Preview Release -- March 17th, 2020 
+v3.8.4 Preview Release -- March 17th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -128,15 +139,15 @@ FEATURES
     - Any materialized views inside of Postgres databases are now displayed as Views for that data connector.
     - These are managed and edited alongside any standard database views.
 
-v3.8.3 Preview Release -- February 28th, 2020 
+v3.8.3 Preview Release -- February 28th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
 - System Cache can be disabled under Settings > System Configuration > Cache > System Cache Configuration
-    - This toggle behaves the same as the Data Cache toggle, and is enabled by default. 
+    - This toggle behaves the same as the Data Cache toggle, and is enabled by default.
 
-v3.8.2 Preview Release -- February 27th, 2020 
+v3.8.2 Preview Release -- February 27th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
@@ -153,7 +164,7 @@ FEATURES
     - Two new values, CookieSameSite and CookieSecurity, were added to this table to impact cookies generated by the application
 
 FIXES
-^^^^^ 
+^^^^^
 - Data Model creation would fail for Postgres systems in a Linux environment.
 
 v3.8.0 Core Release -- January 15th, 2020
@@ -164,31 +175,31 @@ FEATURES
 - Izenda's Default Font Changed from Roboto to Proxima Nova Semibold
 - Reports can be Exported as Iframes from the Report Viewer
     - A new option will exist under the export dropdown of a report
-    - This value can be controlled with permissions 
+    - This value can be controlled with permissions
 - Filter Logic is now Applied to Cascading Logic
     - When cascading is enabled, Izenda will take any custom filter logic into account when determining appropriate filter values for dropdowns.
 - Gauge Scale Inputs Accept Aggregated Fields
     - The scale setting for gauges now accepts both text and fields.
-    - Feilds will be aggregated to create a consistent maximum or minimum scale value for all gauges 
+    - Feilds will be aggregated to create a consistent maximum or minimum scale value for all gauges
 - Filters can Influence Subkey Conditions in Joins
     - When defining subkey conditions for report joins, distinct filter objects can be created.
     - These filter objects, when values are set, pass this value into the join condition of the report
-- New Role API 
+- New Role API
     - A new external API for role creation has been added to Izenda
     - This API allows for a new method of permission management
 - Drillown Grid supports Grouping on Value Fields
 
 FIXES
-^^^^^ 
-- Defect 19195 Error message appears when setting Average Days Old or Sum Days Old function for a date field while Convert Null to Empty is enabled. 
-- Defect 23213 Calculated fields using CONVERT on MYSQL date fields would fail with a syntax error. 
-- Defect 23615 Pivot Grid column expanders were only present when side totals were enabled. 
+^^^^^
+- Defect 19195 Error message appears when setting Average Days Old or Sum Days Old function for a date field while Convert Null to Empty is enabled.
+- Defect 23213 Calculated fields using CONVERT on MYSQL date fields would fail with a syntax error.
+- Defect 23615 Pivot Grid column expanders were only present when side totals were enabled.
 - Defect 24117 Applying a custom field alias via OnPreExecute would make the field invalid.
 - Defect 24424 Pivot grids would sort A->Z on grouping fields even when marked as unsorted.
 - Defect 25167 Join section of datasource tab breaks calculated fields when using French Language Pack.
 - Defect 25260 Tree maps would not display the message "No data to show" when the Multi-Level setting is checked and no data is present.
 - Defect 25271 Field values were not properly encoded in query parameters of a custom url when exporting to PDF.
-- Defect 25399 Custom Views did not work in SQL Server 2017 due to the default compatibility level. 
+- Defect 25399 Custom Views did not work in SQL Server 2017 due to the default compatibility level.
 - Defect 25444 Cache would prevent data model update icons from displaying on data sources with updated content.
 - Defect 25485 Global dashboard filters would be blank when viewed from the tenant level.
 - Defect 25494 Cross Filtering functionality not working when aliases are applied to calculated fields in a report part.
@@ -225,13 +236,13 @@ FEATURES
     - New settings are added to render HTML elements within data for Grid and Form report parts
 
 FIXES
-^^^^^ 
+^^^^^
 - Defect 25421 Grids would export for incorrect aggregate values when rows were collapsed
 - Defect 25665 Collapsed Pivot grid rows would be blank when exported
 - Defect 25788 Conditional Formatting would be incorrectly applied when rows were collapsed
 - Defect 25780 Text Format options would not properly apply in pivot grids
 - Defect 25865 Browsers consoles would display a warning when configuring report emails
-- Defect 25900 Running the migration script for MSSQL databases would produce an error 
+- Defect 25900 Running the migration script for MSSQL databases would produce an error
 
 v3.7.1 November 26th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,15 +251,15 @@ FEATURES
 ^^^^^^^^^
 - D3 Library Implemented
     - The D3 charting library is now implemented into the platform by default.
-    - A new Tree Map visualization is now available for all Chart report parts. 
-- Configurable Front-end AJAX Settings 
-    - A new parameter is added to our configJson element that allows for AJAX requests to be customized 
+    - A new Tree Map visualization is now available for all Chart report parts.
+- Configurable Front-end AJAX Settings
+    - A new parameter is added to our configJson element that allows for AJAX requests to be customized
 
 FIXES
-^^^^^ 
+^^^^^
 - Defect 23789 Cascading filters were not applied for Equals Tree/Checkbox filters
 - Defect 25253 TreeMap would fail to render with duplicated label values
-- Defect 25259 Field Color settings were not properly applied with Percentage Ranges when enabling Multi-Level display. 
+- Defect 25259 Field Color settings were not properly applied with Percentage Ranges when enabling Multi-Level display.
 - Defect 25499 Alternative Text settings were not properly applied with Percentage Ranges in Pie/Funnel/Donut/TreeMaps.
 
 v3.7.0 November 13th, 2019
@@ -256,38 +267,38 @@ v3.7.0 November 13th, 2019
 
 FEATURES
 ^^^^^^^^^
-- Salesforce Connector Preview 
-- Continued Grid Enhancements 
-    - Blank rows can be added to pivot grid expanders for better visual spacing. 
+- Salesforce Connector Preview
+- Continued Grid Enhancements
+    - Blank rows can be added to pivot grid expanders for better visual spacing.
     - Conditional formatting options were added to support bold, italics, and underline formatting for grids.
-    - A new conditional formatting option exists for Horizontal and Vertical Grids 
-        - This allows for conditional formatting to impact entire columns or entire rows 
+    - A new conditional formatting option exists for Horizontal and Vertical Grids
+        - This allows for conditional formatting to impact entire columns or entire rows
         - This will be expanded to impact pivot and drilldown grids at a later date.
 - Calculated Fields support New Line character
-- Expanded API response behavior for error handling 
+- Expanded API response behavior for error handling
 
 FIXES
-^^^^^ 
+^^^^^
 - Defect 15497 Pivot grid field text color does not change.
 - Defect 19052 Unexpected empty space beneathe collapsed Pivot headers.
 - Defect 19288 System users cannot copy global reports to local categories.
 - Defect 19470 Changing the chart type to Waterfall after adding a separator corrupts data.
 - Defect 20815 Field comparison filter values are not copied if built against a calculated field.
-- Defect 22467 Form fields positioned outside of a repeater would appear as links if CustomURLs were set in the repeater. 
+- Defect 22467 Form fields positioned outside of a repeater would appear as links if CustomURLs were set in the repeater.
 - Defect 22658 CustomURLs inconsistently encode characters in integrated modes on some browsers.
-- Defect 22847 Calculated fields that return aggregates would not display filter values. 
-- Defect 23686 Postgres Bytea data type would not display as an image. 
+- Defect 22847 Calculated fields that return aggregates would not display filter values.
+- Defect 23686 Postgres Bytea data type would not display as an image.
 - Defect 23737 Tenant users without scheduling permissions see a failed loadSchedules request when saving a report.
 - Defect 24195 Creating tenant with fullReportAndDashboardAccess = true in Permission object removes some permissions from the object.
 - Defect 24281 Convert Null To Empty causes an error when the report contains a calculated field using user defined function.
 - Defect 24333 Dashboard buttons flicker momentarily when loading.
 - Defect 24473 Value labels on maps do not display when Show Map Labels and Show Value Labels are enabled when a shading metric is not configured.
-- Defect 24682 Reports could not be renamed or moved when using an Oracle configuration database. 
+- Defect 24682 Reports could not be renamed or moved when using an Oracle configuration database.
 - Defect 24711 Global maps would error when dynamic shading was set while multiple point options were present.
-- Defect 24750 PostgreSQL procedures would not display fields in the data model.  
+- Defect 24750 PostgreSQL procedures would not display fields in the data model.
 - Defect 24871 Filter values were rounding automatically in the value dropdown.
 - Defect 24939 Exporting to Excel would fail when special ASCII characters were present.
-- Defect 24973 Emailing would fail when a tenant email server was set up using a custom configuration. 
+- Defect 24973 Emailing would fail when a tenant email server was set up using a custom configuration.
 - Defect 25069 Filters based on a calculated field would display no values if that field was built from a user defined function.
 - Defect 25091 Emailed Chart/Gauge/Map data was not filtered appropriately based on the user's value selection.
 - Defect 25100 Cannot save dashboard into a category when the category name resembles a GUID.
@@ -301,10 +312,10 @@ FIXES
 - Defect 25393 Embedded HTML grids do not keep styling when emailed.
 - Defect 25420 Email Body default text is missing when adding a new subscription/schedule in v3.6.0.
 - Defect 25445 Schedules use default filter values from the report definition instead of the values set in the schedule designer.
-- Defect 25483 When exporting, only rows that were visible in the viewer would be collapsed. 
-- Defect 25501 PDF and Word exporting/printing would fail for pivot grids. 
+- Defect 25483 When exporting, only rows that were visible in the viewer would be collapsed.
+- Defect 25501 PDF and Word exporting/printing would fail for pivot grids.
 - Defect 25505 Forms were not consistently rendered in the UI.
-- Defect 25517 Maps failed to render when applying a color formatting. 
+- Defect 25517 Maps failed to render when applying a color formatting.
 - Defect 25532 The popup grid for charts would load forever in Internet Explorer.
 - Defect 25577 Blank spaces were added between records in PDF Exporting.
 - Defect 25615 Users could not search for report parts in the dashboard designer when using Firefox.
@@ -327,23 +338,23 @@ FEATURES
 - Additive Field Auto Visible/Auto Filterable
     - The security settings Set Additive Field Auto Visible and Set Additive Field Auto Filterable are now set to True by default.
 - Excel Export DateTime Formatting
-    - Previously, date columns were being exported as Text in Excel exports. 
+    - Previously, date columns were being exported as Text in Excel exports.
     - These have been adjusted to be exported as a custom data type to enable date filtering options in the Excel sheet.
 - New Separator Option for Pivot Grids
-    - We have introduced a new separator type, Logical, for pivot grids. 
+    - We have introduced a new separator type, Logical, for pivot grids.
     - This separator will block out data within the pivot without creating a new grid instance, keeping all of the data in-line.
 - Visibility Toggle for User ID and User Profile
     - Two new options exist under System Configuration > Security Policies
-    - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible. 
+    - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible.
 - Logging Improvement for TenantID and ReportID values
-    - Two new parameters are present in our logs for both of these items to separate them from the larger message content. 
+    - Two new parameters are present in our logs for both of these items to separate them from the larger message content.
     - This will make it easier to search logs for tenant-specific or report-specific entires.
 - Excel Adapter Improvements and Release
-    - The Excel adapter now handles updating and replacing sheets for connections more reliably. 
-    - The UI updates for non-database connectors have been finished. 
+    - The Excel adapter now handles updating and replacing sheets for connections more reliably.
+    - The UI updates for non-database connectors have been finished.
 
 FIXES
-^^^^^  
+^^^^^
 - Defect 19030 System would show "This Field name alias already exists in [xxx] report part" despite only having one field.
 - Defect 21124 Grouping datetime field in Bubble/Scatter chart throws an error.
 - Defect 23232 The "Others" value was not displayed on legends for Pie Charts.
@@ -364,7 +375,7 @@ FIXES
 - Defect 24439 Subtotals were not properly formatted for drilldown grids.
 - Defect 24463 PDF export fails when a report has a footer and no header.
 - Defect 24561 Refresh button displayed when data caching layer is not enabled.
-- Defect 24623 System throws an error message when filtering on a calculated field. 
+- Defect 24623 System throws an error message when filtering on a calculated field.
 - Defect 24683 Drilldowns do not work when passing in a Guid that uses all uppercase letters to renderReportPart.
 - Defect 24687 Color settings are not applied when a Form contains repeaters and a custom data format.
 - Defect 24688 `Add Schedule` button in the report designer creates a console error with the .NET Core API.
@@ -372,7 +383,7 @@ FIXES
 - Defect 24708 Filters are applied incorrectly after saving a dashboard if a report contains subreports.
 - Defect 24752 Field values are not encoded when using Custom URL in the Report Designer.
 - Defect 24783 Field names and values are not encoded in Forms.
-- Defect 24850 Extra space in field names in forms could be used to enter information, breaking the form. 
+- Defect 24850 Extra space in field names in forms could be used to enter information, breaking the form.
 - Defect 24867 Adding repeater tag to Form report doesn't trigger a change notification when saving the report.
 - Defect 24889 Current Tenant Header in role/all/(tenantID) would allow users to see information for other tenants.
 - Defect 24920 "data:image/jpeg;base64," was being appended to Lob fields.
@@ -397,31 +408,31 @@ v3.5.0 September 10, 2019
 FEATURES
 ^^^^^^^^^
 - (Beta) Excel data sources can now be added as reporting data sources.
-- Google Maps can now be selected when creating a map report part. 
+- Google Maps can now be selected when creating a map report part.
 - Ability to hide grid headers from the report viewer.
 
 FIXES
-^^^^^    
-- Defect 22644 IsReportValid API Call is cached to help improve performance.        
-- Defect 23229 Info icon near the provision map data button is not working.        
-- Defect 23302 Adding fields to a report in an Angular environment would show console errors.        
-- Defect 23558 Copy Management workspace against a new tenant shows "Another user has recently modified this data".        
-- Defect 23626 $0,000 custom format displays $0,000$ when used in a report.        
-- Defect 23776 State indicators for buttons were not displayed.        
-- Defect 23928 Map legends would create inaccurate ranges when displaying.        
-- Defect 23978 No license expiration message displays in 3.x versions.        
-- Defect 24285 Email Report using Embedded HTML option would download a 0KB HTML file.         
-- Defect 24428 Imported report with a filter against an aggregated field crashes when viewing.        
-- Defect 24611 MySQL schema migration scripts would cause errors when running.        
-- Defect 24664 GetToken should not be called for exports using an access_token is already set.        
-- Defect 24694 Tables in form report parts show white space differently between the viewer and exporting.    
-- Defect 24695 Full column drilldown functionality was disabled.     
-- Defect 24882 Loading the dashboard list by a category fails against a PostgreSQL config database.        
-- Defect 24893 Chart/Gauge/Map exports would fail when exporting to PDF/Word format.         
-- Defect 24918 Navigating to a subreport for global reports at the tenant level returns a blank report.        
-- Defect 24933 Point options and metrics dropdown are hidden by the report part header in report designer in responsive layouts.        
-- Defect 25067 Tenant Field would not be applied consistently.     
-- Defect 25087 The browser page would crash when changing a report's property and then changing the chart type.        
+^^^^^
+- Defect 22644 IsReportValid API Call is cached to help improve performance.
+- Defect 23229 Info icon near the provision map data button is not working.
+- Defect 23302 Adding fields to a report in an Angular environment would show console errors.
+- Defect 23558 Copy Management workspace against a new tenant shows "Another user has recently modified this data".
+- Defect 23626 $0,000 custom format displays $0,000$ when used in a report.
+- Defect 23776 State indicators for buttons were not displayed.
+- Defect 23928 Map legends would create inaccurate ranges when displaying.
+- Defect 23978 No license expiration message displays in 3.x versions.
+- Defect 24285 Email Report using Embedded HTML option would download a 0KB HTML file.
+- Defect 24428 Imported report with a filter against an aggregated field crashes when viewing.
+- Defect 24611 MySQL schema migration scripts would cause errors when running.
+- Defect 24664 GetToken should not be called for exports using an access_token is already set.
+- Defect 24694 Tables in form report parts show white space differently between the viewer and exporting.
+- Defect 24695 Full column drilldown functionality was disabled.
+- Defect 24882 Loading the dashboard list by a category fails against a PostgreSQL config database.
+- Defect 24893 Chart/Gauge/Map exports would fail when exporting to PDF/Word format.
+- Defect 24918 Navigating to a subreport for global reports at the tenant level returns a blank report.
+- Defect 24933 Point options and metrics dropdown are hidden by the report part header in report designer in responsive layouts.
+- Defect 25067 Tenant Field would not be applied consistently.
+- Defect 25087 The browser page would crash when changing a report's property and then changing the chart type.
 
 
 
@@ -430,12 +441,12 @@ v3.4.2 August 29, 2019
 
 FEATURES
 ^^^^^^^^^
-- Conditional Formatting on Grids can be Applied Regardless of Value   
-    - When setting conditional formatting, instead of specifying a Value, Value Range, or Percentage Range grids can apply this setting to all values for that field. 
+- Conditional Formatting on Grids can be Applied Regardless of Value
+    - When setting conditional formatting, instead of specifying a Value, Value Range, or Percentage Range grids can apply this setting to all values for that field.
 
 FIXES
 ^^^^^
-- Defect 22598 ElasitcSearch timezone offsets would occasionally be applied twice. 
+- Defect 22598 ElasitcSearch timezone offsets would occasionally be applied twice.
 - Defect 22742 Alternative Text was not applied to X/Y Axis labels in charts.
 - Defect 23240 Users with Full Report and Dashboard Access could not edit category names.
 - Defect 23834 Fullscreen Mode would not be applied in Dashboards.
@@ -458,7 +469,7 @@ v3.4.0 August 16, 2019
 
 FEATURES
 ^^^^^^^^^
-- Machine Learning Infrastructure 
+- Machine Learning Infrastructure
 - System Cache Beta Implementation
     - Caching can be leveraged through a Disk Cache or a Memory Cache
     - This cache manages objects for system validation (roles, report list, data model access, etc.)
@@ -467,13 +478,13 @@ FEATURES
 
 FIXES
 ^^^^^
-- Defect 19260 In responsive modes of dashboards, grid headers overlaps dashboard tile names. 
+- Defect 19260 In responsive modes of dashboards, grid headers overlaps dashboard tile names.
 - Defect 20248 Report viewer is not scrollable in landscape mode for mobile phones.
 - Defect 21501 Forms would lack the border, background color, and inserted items when exported.
-- Defect 22502 Conditional formatting in forms would break when repeaters were used. 
+- Defect 22502 Conditional formatting in forms would break when repeaters were used.
 - Defect 22846 Dashboard viewer would display an additional, 13th tile when users would move a tile.
 - Defect 23189 Front-end warnings would be logged in the browser after updating the UI.
-- Defect 23206 Chart Static Threshold labels were partially visible if Filter Dialogue was collapsed. 
+- Defect 23206 Chart Static Threshold labels were partially visible if Filter Dialogue was collapsed.
 - Defect 23243 Loading Schedules list in UI would return a 500 error when using SQL Server 2008.
 - Defect 23644 Setting level dropdown is partially visible in mobile layouts.
 - Defect 23817 Reports would fail when using both an aliased join and a composite key in the relationships.
@@ -483,12 +494,12 @@ FIXES
 - Defect 23936 Pivot grid export would fail when more than 5000 records were used.
 - Defect 23976 Filter values were saved without notification when selected in the Viewer and navigating to the designer.
 - Defect 24078 Drilldowns would not work as expected when using the renderReportPart function with a chart.
-- Defect 24107 Setting Level and Tenant dropdown are not rendered in Ipad/Ipad Pro layouts. 
+- Defect 24107 Setting Level and Tenant dropdown are not rendered in Ipad/Ipad Pro layouts.
 - Defect 24128 Metric Dropdown does not appear on embedded reports in v3.x
 - Defect 24175 Calculated fields throw an error when using Tenant Field configuration and Report Filters.
-- Defect 24215 Required filter indicator (*) would not appear for required filters in dashboards. 
-- Defect 24221 Drill-down grid exports would not mirror the data in the designer. 
-- Defect 24261 Report headers and footers would not render appropriately on mobile layouts. 
+- Defect 24215 Required filter indicator (*) would not appear for required filters in dashboards.
+- Defect 24221 Drill-down grid exports would not mirror the data in the designer.
+- Defect 24261 Report headers and footers would not render appropriately on mobile layouts.
 - Defect 24266 Point option dropdown on Maps is misaligned on mobile layouts.
 - Defect 24283 MySQL Connections would error when stored procedures were present in the database.
 - Defect 24286 MongoDB adapter returns 101 records when grouping.
@@ -496,7 +507,7 @@ FIXES
 - Defect 24385 Encryption algorithm for disk cache objects was updated.
 - Defect 24445 Filters made against calculated fields would error out.
 - Defect 24450 Unsigned Int Fields would not display from a MySQL database.
-- Defect 24456 Null objects in the internal cache caused performance degradation. 
+- Defect 24456 Null objects in the internal cache caused performance degradation.
 - Defect 24589 MySQL/PostgreSQL/Oracle update scripts were incorrect.
 - Defect 24592 Changes in the Relationships page would not be saved.
 - Defect 24597 When sorting on a custom format the system would throw an error.
@@ -512,7 +523,7 @@ FEATURES
 ^^^^^^^^^
 - InTimePeriod filters reflect more accurate timezones
 - Multiple Selection filters now support delimited lists.
-- Izenda can load on pages with pre-existing Highcharts references. 
+- Izenda can load on pages with pre-existing Highcharts references.
 
 FIXES
 ^^^^^
@@ -532,8 +543,8 @@ FEATURES
     - Caching can be leveraged through a Disk Cache or a Memory Cache.
     - Data for Reports and Dashboards will be cached after the initial load.
     - A new UI button, 'Refresh' will be present which will allow users to update the cache.
-    - 'Update Results' has been renamed 'Apply Filters' and will always prioritize pulling from the cached data.  
-- Sorting can now be changed on fields with subtotals. 
+    - 'Update Results' has been renamed 'Apply Filters' and will always prioritize pulling from the cached data.
+- Sorting can now be changed on fields with subtotals.
 
 FIXES
 ^^^^^
@@ -587,7 +598,7 @@ FEATURES
     - Filters properties are now managed through a pop-up
     - 'Between' filter operators have a new interface
 - GetAccessToken is expanded for Grid and Form Exports
-- Subreports Allow Users to Pass Field Values into Input Parameters of a Report 
+- Subreports Allow Users to Pass Field Values into Input Parameters of a Report
 
 FIXES
 ^^^^^
@@ -595,12 +606,12 @@ FIXES
 - Defect 23239 OnPostLoadFilterData is no longer called for stored procedure parameters.
 - Defect 23578 API-STRONGNAME resources were not available for v3.0.0
 - Defect 23637 Connecting to an existing Postgres configuration database through the Standalone UI throws a duplicate key error.
-- Defect 23685 Filters would fail to load their values after saving a report. 
+- Defect 23685 Filters would fail to load their values after saving a report.
 - Defect 23689 Report visibility is cached when creating a report within a new category.
-- Defect 23701 Visible data sources are moved back to available after updating the data model tab. 
-- Defect 23713 The same aggregate field in a separate report part would not be displayed within the 'Add new filter' popup. 
+- Defect 23701 Visible data sources are moved back to available after updating the data model tab.
+- Defect 23713 The same aggregate field in a separate report part would not be displayed within the 'Add new filter' popup.
 - Defect 23735 RenderReportViewerPage function with AngularJS 1.x front-end causes infinite URL reloading.
-- Defect 23847 Report body grid lines would not display after adding a new report part.  
+- Defect 23847 Report body grid lines would not display after adding a new report part.
 
 
 v3.1.1 May 16, 2019
@@ -615,8 +626,8 @@ FIXES
 
 v3.1.0 May 9, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  
- 
+
+
 FEATURES
 ^^^^^^^^^
 
@@ -632,16 +643,16 @@ FEATURES
 -  Update Results Button Relocated
     - The Update Results button is now located alongside the filter panel
 -  Filter Panel - Space Consolidation
-    - To prepare for further updates in v3.2.0, the filter box has been adjusted to save space in the report designer. 
+    - To prepare for further updates in v3.2.0, the filter box has been adjusted to save space in the report designer.
 -  Close Button in Viewer Methods is Removed
--  Bottom Row of Dashboard Tiles is Situationally Removed 
-    - When viewing a dashboard that a user cannot edit, the bottom row of empty dashboard tiles will be removed. 
+-  Bottom Row of Dashboard Tiles is Situationally Removed
+    - When viewing a dashboard that a user cannot edit, the bottom row of empty dashboard tiles will be removed.
 -  Additional IntegrationStyle Flags for Front-End Render Functions
     - renderReportViewerPage allows you to hide the report name and the preview records dropdown.
     - renderDashboardViewerPage allows you to hide the dashboard name and global dashboard checkbox.
 -  New Dashboard Tile Header Permission
     - Added a new dashboard permission titled 'Display tile header in uneditable dashboard'
-    - When unselected, the blue dropdown tile header will not be presented in dashboards. Please note this is intended for roles that only view, and not design, dashboard. 
+    - When unselected, the blue dropdown tile header will not be presented in dashboards. Please note this is intended for roles that only view, and not design, dashboard.
 
 FIXES
 ^^^^^
@@ -662,17 +673,17 @@ FIXES
 - Defect 22937 Executing SPs in the Data Model resets field properties.
 - Defect 22947 Using [BLANK] for stored procedure parameter value passes NULL instead of empty string.
 - Defect 22962 Gauge Metrics could not be deleted in IE.
-- Defect 22969 'No. of Columns Per Exported Page' setting is not impacting Excel exports. 
+- Defect 22969 'No. of Columns Per Exported Page' setting is not impacting Excel exports.
 - Defect 22979 Report Part Name could not be easily set when using IE.
-- Defect 23094 Column widths would reset in the Data Model after making changes. 
-- Defect 23188 Gauge previews are not impacted by removing metrics from the gauge. 
+- Defect 23094 Column widths would reset in the Data Model after making changes.
+- Defect 23188 Gauge previews are not impacted by removing metrics from the gauge.
 - Defect 23205 Dashboards Initially Load a Blank Dashboard with 'Example Dashboard Name'.
 - Defect 23248 Pagination of embedded subreports is not scaled properly when extending the Grid's width.
 - Defect 23249 Cannot create report from Oracle data sources if a Date field is used as a key join.
 - Defect 23281 Failed to load Default landing page in a .Net 4.6.1 site.
 - Defect 23283 Quality Issue for Exporting Chart/Gauge/Map using Syncfusion on Framework 4.6.1
 - Defect 23301 Timestamp without time zone date/time type in PostgreSQL shows incorrect time with data offset setting
-- Defect 23314 Invisible UTF symbols removed from class/variable names. 
+- Defect 23314 Invisible UTF symbols removed from class/variable names.
 - Defect 23443 Updated unit tests for current dev branch.
 - Defect 23476 Unable to Provision Map Data on 3.0.0.
 - Defect 23477 User API duplicates database call to get the user's roles.
@@ -683,9 +694,9 @@ v3.0.0 April 2, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
--  UI Re-skin 
+-  UI Re-skin
     -  The v3.0.0 release features a new themed application that is easier to whitelabel.
 -  .NET Core Compliance
     -  Our libraries have been updated to support .NET Core
@@ -693,18 +704,18 @@ FEATURES
 -  Export Provider Change
     -  We have changed our export provider from EvoPDF to Syncfusion
 -  Default API Route
-    -  Navigating to http://[YourIP]/api/ will now provide a default Izenda landing page. 
-    -  If you make an application/json request to this endpoint it will return 'The system is online' upon a successful response. 
+    -  Navigating to http://[YourIP]/api/ will now provide a default Izenda landing page.
+    -  If you make an application/json request to this endpoint it will return 'The system is online' upon a successful response.
 -  Improved Import/Export Error Messaging
     -  While importing report/dashboard definitions, the pop-up will now contain file names, field names, and data types of all conflicting objects.
     -  The content of this pop-up is now copyable so it can be viewed outside of the application.
 -  Improved Export Error Messaging
-    -  Log messages will show if the system ran out of memory while exports, or if a navigation timeout occurred. 
+    -  Log messages will show if the system ran out of memory while exports, or if a navigation timeout occurred.
     -  If a navigation timeout caused the export to fail, it will mention the values for export configuration currently set in the IzendaSystemSetting table.
 -  Improved Emailed Report URLs
     -  When emailing the report URL, the filter values are now included so the opened report is filtered appropriately.
 -  Improved Install Error Messages
-    -  An error message is thrown during installation if the IIS users don't have sufficient permissions to the application files. 
+    -  An error message is thrown during installation if the IIS users don't have sufficient permissions to the application files.
 
 .. warning::
 
@@ -712,9 +723,9 @@ FEATURES
 
 FIXES
 ^^^^^
--  Defect  21853  Month In Time Period filters do not return the expected results using Oracle reporting database.   
--  Defect  21862  Sorting the x-axis did not work when a separator was in use. 
--  Defect  22258  Map drilldowns would break when using the % of Group format.  
+-  Defect  21853  Month In Time Period filters do not return the expected results using Oracle reporting database.
+-  Defect  21862  Sorting the x-axis did not work when a separator was in use.
+-  Defect  22258  Map drilldowns would break when using the % of Group format.
 -  Defect  22284  Using lookups with special characters would return all data.
 -  Defect  22339  Labels on a static threshold would not display.
 -  Defect  22687  Using AngularJS front end causes infinite URL redirecting.
@@ -732,21 +743,21 @@ v2.18.1 March 19, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  Right-click Menu Options
-    - Users can now right click on the following elements to open in a new tab or window: Reports/Report Menu, Report Categories, Dashboards/Dashboard Menu, Settings 
+    - Users can now right click on the following elements to open in a new tab or window: Reports/Report Menu, Report Categories, Dashboards/Dashboard Menu, Settings
 
 FIXES
 ^^^^^
--  Defect  22645  Calculated Fields were not properly sorted if other fields had sorting applied.   
--  Defect  22764  Query Generation would not accurately support LEFT/RIGHT joins in Star Schemas.   
--  Defect  22777  Users would receive a connection error when connecting to an Oracle configuration database.   
--  Defect  23012  Oracle migration scripts would not properly execute.   
+-  Defect  22645  Calculated Fields were not properly sorted if other fields had sorting applied.
+-  Defect  22764  Query Generation would not accurately support LEFT/RIGHT joins in Star Schemas.
+-  Defect  22777  Users would receive a connection error when connecting to an Oracle configuration database.
+-  Defect  23012  Oracle migration scripts would not properly execute.
 
 .. warning::
 
-   If you are currently leveraging LEFT or RIGHT joins in your reports, you should ensure that the changes in IZ-22764 have not impacted your reporting data. 
+   If you are currently leveraging LEFT or RIGHT joins in your reports, you should ensure that the changes in IZ-22764 have not impacted your reporting data.
 
 
 
@@ -755,10 +766,10 @@ v2.18.0 March 6, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  Elasticsearch Driver
-    - Elasticsearch can now be used as a reporting database 
+    - Elasticsearch can now be used as a reporting database
     - This driver is built to support Elasticsearch v2.2+
 
 - Updated 3rd Party Libraries
@@ -774,31 +785,31 @@ FEATURES
 
 FIXES
 ^^^^^
--  Defect  18966  Relationships Grid should expand to take up entire panel in Settings> Data Setup> Data Model > Relationship.   
--  Defect  19196  CASE statement help text had incorrect text in the Expression Builder.   
+-  Defect  18966  Relationships Grid should expand to take up entire panel in Settings> Data Setup> Data Model > Relationship.
+-  Defect  19196  CASE statement help text had incorrect text in the Expression Builder.
 -  Defect  21456  The "All changes will be lost" prompt doesn't show when creating new report and navigating away.
--  Defect  21458  Updating the PageSetting  value in the IzendaSystemSetting table (for formats like A4, A3, etc.) would not update the system to export in the newly selected format.   
--  Defect  21639  Map Color Value Range would not sorting in the chart legend.   
--  Defect  22204  Alternative Text values would incorrectly apply conditional formatting.   
--  Defect  22218  Dashboard filterse would display incorrectly if a self-join was used for an underlying report.   
--  Defect  22276  Stacked Percentage features on charts were not updating properly to the percentage format.   
--  Defect  22289  Embedded subreports in forms are not rendered during secondary load if a field mapping is not present.   
--  Defect  22292  No alert is thrown when trying to save a data model with duplicate column aliases.   
--  Defect  22549  The 3D Column Chart visualization would not draw a chart preview.   
--  Defect  22648  Database selection dropdowns would load indefinitely and inconsistently.   
--  Defect  22652  Scheduled/Subscribed reports that used a different timezone than the API server would send incorrectly when using the Quartz Scheduler.   
--  Defect  22666  Cache was not consistently cleared during the CopyManagement process.   
--  Defect  22667  Splines were not being applied to area charts.   
--  Defect  22709  Global reports do not show in tenant if reports listed before fail database mapping validation.   
--  Defect  22715  Formatting changes were not applied to the subtotal label.   
--  Defect  22729  End users could adjust their own UserID in their profile page.        
--  Defect  22755  Chart drilldowns were not working in Internet Explorer.   
--  Defect  22776  Subreports were not accurately filtered by field mappings.   
--  Defect  22809  Alternative text did not handle null values.        
--  Defect  22828  Top-left tile of the dashboard body could not be selected.   
--  Defect  22829  Report parts could not be removed once added to a report's Cross Filtering setup.   
--  Defect  22831  Axis labels would not match actual chart values.   
--  Defect  22842  Heatmap default colors would not be applied correctly.        
+-  Defect  21458  Updating the PageSetting  value in the IzendaSystemSetting table (for formats like A4, A3, etc.) would not update the system to export in the newly selected format.
+-  Defect  21639  Map Color Value Range would not sorting in the chart legend.
+-  Defect  22204  Alternative Text values would incorrectly apply conditional formatting.
+-  Defect  22218  Dashboard filterse would display incorrectly if a self-join was used for an underlying report.
+-  Defect  22276  Stacked Percentage features on charts were not updating properly to the percentage format.
+-  Defect  22289  Embedded subreports in forms are not rendered during secondary load if a field mapping is not present.
+-  Defect  22292  No alert is thrown when trying to save a data model with duplicate column aliases.
+-  Defect  22549  The 3D Column Chart visualization would not draw a chart preview.
+-  Defect  22648  Database selection dropdowns would load indefinitely and inconsistently.
+-  Defect  22652  Scheduled/Subscribed reports that used a different timezone than the API server would send incorrectly when using the Quartz Scheduler.
+-  Defect  22666  Cache was not consistently cleared during the CopyManagement process.
+-  Defect  22667  Splines were not being applied to area charts.
+-  Defect  22709  Global reports do not show in tenant if reports listed before fail database mapping validation.
+-  Defect  22715  Formatting changes were not applied to the subtotal label.
+-  Defect  22729  End users could adjust their own UserID in their profile page.
+-  Defect  22755  Chart drilldowns were not working in Internet Explorer.
+-  Defect  22776  Subreports were not accurately filtered by field mappings.
+-  Defect  22809  Alternative text did not handle null values.
+-  Defect  22828  Top-left tile of the dashboard body could not be selected.
+-  Defect  22829  Report parts could not be removed once added to a report's Cross Filtering setup.
+-  Defect  22831  Axis labels would not match actual chart values.
+-  Defect  22842  Heatmap default colors would not be applied correctly.
 
 
 
@@ -807,8 +818,8 @@ v2.17.1 February 19, 2018
 
 FIXES
 ^^^^^
-	
--  Defect  21997  Mulit-level drilldowns with hidden fields breaks beyond two levels of depth.   
+
+-  Defect  21997  Mulit-level drilldowns with hidden fields breaks beyond two levels of depth.
 -  Defect  22194  Unable to Save Fields with Altered Capitalization in the Data Model.
 -  Defect  22205  [Chart - Waterfall] The format for Threshold on Y-Axis is not applied as defined.
 -  Defect  22334  Date field being used as a Comparison Filter provides text box instead of date picker.
@@ -821,35 +832,35 @@ v2.17.0 February 4, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  Improved Error Messaging
     - Dashboard tiles will show error messages from their underlying reports.
     - System logs will provide more information on failed login attempts.
     - The report viewer will list any data sources and fields that are causing an error.
     - Email actions will throw more descriptive errors if an email server is not set up at the system level or for a tenant.
-    - Errors on the data sources page of the report designer are reworked for more clarity. 
+    - Errors on the data sources page of the report designer are reworked for more clarity.
 
 FIXES
 ^^^^^
--  Defect  16040  The message displays "The template....." Instead of "The report...." When a user Copies/Moves a report.   
--  Defect  17029  In Settings, Schedule, Created By should be <First Name> <Last Name> instead of userId.   
--  Defect  18351  When creating a role, the Permissions page shows 'Configure Password Options' under the User Setup > Actions area. In the Permission Summary page it shows that same area as 'Configure Security Options'.   
--  Defect  20351  In Time Period Fiscal Year filter operator includes both edge-case dates.   
--  Defect  20621  Resolved subscription-based security issue on API.   
--  Defect  21762  Report Category and Name change are not reflected in the dashboard report part link.   
--  Defect  21916  Alternative Text Not Applying to Subtotal NULL Value in Drill Down Grid.   
--  Defect  21917  Alternative Text Not Updating Chart Drill Down Labels for NULL Values.   
--  Defect  21995  Subtotal Creates Additional Border Cell in Pivot Grids.   
--  Defect  22167  Boolean Filter pValue Not Dynamically Updating.   
--  Defect  22209  Global subreports were not correctly filtered by field mappings.   
--  Defect  22277  Simple Gauge with Separator Not Exporting Values.   
--  Defect  22395  Side Totals were displayed if the % of Side Total function was used without enabling side totals.   
--  Defect  22522  Update Results button would be overlapped and unavailable in smaller resolutions.   
--  Defect  22541  Bar Chart axis were inverted.   
--  Defect  22591  Fields with a dot in the name could not be used in custom views.   
--  Defect  22592  Field dropdown in the Relationships page of the data model does not display non-visible fields.   
--  Defect  22649  Fixed JavaScript issues revealed in Karma testing.        
+-  Defect  16040  The message displays "The template....." Instead of "The report...." When a user Copies/Moves a report.
+-  Defect  17029  In Settings, Schedule, Created By should be <First Name> <Last Name> instead of userId.
+-  Defect  18351  When creating a role, the Permissions page shows 'Configure Password Options' under the User Setup > Actions area. In the Permission Summary page it shows that same area as 'Configure Security Options'.
+-  Defect  20351  In Time Period Fiscal Year filter operator includes both edge-case dates.
+-  Defect  20621  Resolved subscription-based security issue on API.
+-  Defect  21762  Report Category and Name change are not reflected in the dashboard report part link.
+-  Defect  21916  Alternative Text Not Applying to Subtotal NULL Value in Drill Down Grid.
+-  Defect  21917  Alternative Text Not Updating Chart Drill Down Labels for NULL Values.
+-  Defect  21995  Subtotal Creates Additional Border Cell in Pivot Grids.
+-  Defect  22167  Boolean Filter pValue Not Dynamically Updating.
+-  Defect  22209  Global subreports were not correctly filtered by field mappings.
+-  Defect  22277  Simple Gauge with Separator Not Exporting Values.
+-  Defect  22395  Side Totals were displayed if the % of Side Total function was used without enabling side totals.
+-  Defect  22522  Update Results button would be overlapped and unavailable in smaller resolutions.
+-  Defect  22541  Bar Chart axis were inverted.
+-  Defect  22591  Fields with a dot in the name could not be used in custom views.
+-  Defect  22592  Field dropdown in the Relationships page of the data model does not display non-visible fields.
+-  Defect  22649  Fixed JavaScript issues revealed in Karma testing.
 
 
 
@@ -857,22 +868,22 @@ v2.16.0 January 7, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  "PositionID" is added to the Relationships page of the Data Model.
     - This is an additional column that accepts numerical values to represent the priority of each join when being loaded into a report.
     - When these relationships are loaded into a report, they are from top to bottom from the lowest number to highest.
-    - If any data sources have multiple relationships that must be loaded, the relationship with the earliest position is loaded first and all other relationships become subkey joins.     
-    - The settings of PositionID can be copied out using Copy Management to allow all tenants to leverage the same join priorities. 
+    - If any data sources have multiple relationships that must be loaded, the relationship with the earliest position is loaded first and all other relationships become subkey joins.
+    - The settings of PositionID can be copied out using Copy Management to allow all tenants to leverage the same join priorities.
 
 -  Multi-Level Functionality for Tree Maps
     - Tree Maps now have a new Report Part Property 'Multi-Level'
     - If checked, drilldowns will be disabled and all x-axis groups are displayed on the same level.
-     
+
 FIXES
 ^^^^^
-	
--  Defect  19640  Dashboard save dialog displaying Local Categories with Global Categories box checked.   
+
+-  Defect  19640  Dashboard save dialog displaying Local Categories with Global Categories box checked.
 -  Defect  21419  Regression lines were not displayed on charts when the Multi-Color was enabled.
 -  Defect  21455  Exporting report from report list with empty filter values results in incorrectly filtered export.
 -  Defect  22332  Color and Alternative Text are not properly applied when using custom data formats.
@@ -888,8 +899,8 @@ v2.15.1 December 17, 2018
 
 FIXES
 ^^^^^
-	
--  Defect  16597  In Quick Edit mode filters Inherited from a Parent Report to a Sub Report are not retained after pressing "Update Result".   
+
+-  Defect  16597  In Quick Edit mode filters Inherited from a Parent Report to a Sub Report are not retained after pressing "Update Result".
 -  Defect  17609  Security questions are enabled when not selected when you create or reset your password with username which has Backslash.
 -  Defect  17615  When using a Bit data type as separator on chart legend shows series 1 not false.
 -  Defect  18142  Dashboard tiles do not properly resize when user resizes browser to responsive mode in screen.
@@ -906,7 +917,7 @@ v2.15.0 December 3, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  "Use Lookup" Checkbox Added for Filters
     - If you have lookups set on a field (utilizing the v2.14 lookup functionality) there will be a "Use Lookup" option on those filter fields.
@@ -924,8 +935,8 @@ v2.14.3 November 26, 2018
 
 FIXES
 ^^^^^
-	
--  Defect  18246  When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.   
+
+-  Defect  18246  When creating new calculated field in data model and adding alias prior to saving the calculated field is missing. User must save the calculated field prior to adding the alias.
 -  Defect  20173  Clickable labels are lost on Pie Charts when changing the Pie Chart type.
 -  Defect  21232  PDF exports would shrink report content when compared to the size of the report content when printing.
 -  Defect  21502  Subreports display Today's date in "Between Date" filters when set to inherit filters from main report.
@@ -943,8 +954,8 @@ v2.14.2 November 12, 2018
 
 FIXES
 ^^^^^
-	
--  Defect  17829  Print always wait for 60 seconds timeout to open Printing dialogue after page rendered. 
+
+-  Defect  17829  Print always wait for 60 seconds timeout to open Printing dialogue after page rendered.
 -  Defect  20159  Columns do not sort when choosing recipient from list for emailing.
 -  Defect  21898  ReportFilterField.SourceFieldName returns field alias.
 
@@ -955,8 +966,8 @@ v2.14.1 November 5, 2018
 
 FIXES
 ^^^^^
-	
--  Defect  18990  Copyright was not updating automatically. 
+
+-  Defect  18990  Copyright was not updating automatically.
 -  Defect  21773  Report parts in print and exports overlap in some cases.
 -  Defect  21899  Image data type fields that contain null fail when exporting to Excel or Word.
 -  Defect  22098  Heat Map Hover Label Displaying NULL instead of x-axis value.
@@ -966,7 +977,7 @@ v2.14.0 November 1, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
 -  Lookups for Fields in Tables and Views
 	- You can now set lookups against any field in your tables and views similar to stored procedure input parameters.
@@ -985,7 +996,7 @@ v2.13.4 October 29, 2018
 
 FIXES
 ^^^^^
-	
+
 -  Defect  17942  Unnecessary spacing for subreports in Forms that don't return data.
 -  Defect  21488  Forms were not consistently loading subreport contennt when updating filter values.
 -  Defect  21939  Forms with embedded subreports would export slowly and with a blank visualization.
@@ -998,7 +1009,7 @@ v2.13.3 October 22, 2018
 
 FIXES
 ^^^^^
-	
+
 -  Defect  18944  Users without User Role Association could assign roles to other users via the Role Setup pages.
 -  Defect  21772  Reports utilizing Custom Views with calculated fields would break if the database name used in the view changes.
 
@@ -1007,7 +1018,7 @@ v2.13.2 October 15, 2018
 
 FIXES
 ^^^^^
-	
+
 -  Defect  21657  Optimized bubble chart query performance
 -  Defect  21764  Cross database relationships were not being copied using copy management.
 -  Defect  21851  Query for getting connection details in MySQL took too long to complete.
@@ -1019,8 +1030,8 @@ FIXES
 ^^^^^
 
 -  Defect  21649  Scheduled reports would send with inconsistent timing for each delivery.
--  Defect  21656  Sorting numeric fields with subtotals would cause other values to sort incorrectly. 
--  Defect  21760  Custom 3D charts would not print or export consistently. 
+-  Defect  21656  Sorting numeric fields with subtotals would cause other values to sort incorrectly.
+-  Defect  21760  Custom 3D charts would not print or export consistently.
 -  Defect  21765  Adding filters to a report based on a stored procedure would return no results.
 -  Defect  21771  Global reports that leveraged calculated fields would export/print no records at the tenant level in Deployment Mode 1.
 -  Defect  21838  The cursor position resets after leaving the Form HTML editor.
@@ -1031,12 +1042,12 @@ v2.13.0 September 28, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
--  Highchart Version Update 
+-  Highchart Version Update
 	- Upgraded Highcharts from v4.2.7 to v6.1.0
 	- Customers leveraging custom charts now have the ability to implement custom charts up through v6.1.0
- 	- Please reference https://github.com/Izenda7Series/IzendaCustomVisualizations for documentation on implementation of custom charts	
+ 	- Please reference https://github.com/Izenda7Series/IzendaCustomVisualizations for documentation on implementation of custom charts
 
 FIXES
 ^^^^^
@@ -1085,7 +1096,7 @@ FIXES
 
 -  Defect  21415  Valid calculated fields fail to add to the field list in the report designer.
 -  Defect  21489  When exporting charts from the MVC starter kit, the x-axis is cut off.
--  Defect  21611  Removal of a filter in the report designer persists if the report isn't saved but opened in new tab. 
+-  Defect  21611  Removal of a filter in the report designer persists if the report isn't saved but opened in new tab.
 -  Defect  18984  Izenda configuration tables fail to create when using a case sensitive database on MSSQL.
 -  Defect  20837  Titles and/or descriptions in text dashboard tiles are being duplicated in exports.
 
@@ -1100,8 +1111,8 @@ FIXES
 ^^^^^
 
 -  Defect  21607  Subtotal is not calculated properly for Pivot/Dripdown Grids.
--  Defect  21411  Clicking 'Update Results' in the data sources tab of the designer would remove foreign fields from aliased joins. 
--  Defect  21366  When 'Snap to Grid' is disabled, some reports would be re-positioned when rendering the report. 
+-  Defect  21411  Clicking 'Update Results' in the data sources tab of the designer would remove foreign fields from aliased joins.
+-  Defect  21366  When 'Snap to Grid' is disabled, some reports would be re-positioned when rendering the report.
 -  Defect  21251  Pivot Grid Subreport Not Restricting Row Count Based on Field Mappings.
 -  Defect  21223  Altered PDF and Print process to use SVG for chart, gauge, map render to improve quality of image. This process cannot be used for Excel, Word, or HTML Email as these export types cannot accept SVG.
 
@@ -1110,13 +1121,13 @@ v2.12.0 August 31, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 
--  Combination Chart Enhancements  
+-  Combination Chart Enhancements
 	- Single Y Axis Option on combination chart property panel allows users to display multiple metrics on a single axis. See documentation on :ref:`Single Y Axis <Report_Designer_Single_Yaxis>`
 	- The combination chart now supports the area chart style for metrics. See documentation on :ref:`Combination Chart <NW_Order_Details_Combination_Sales_and_DiscountSales>`
 
--  Regression Lines for Charts 
+-  Regression Lines for Charts
 	- Regression lines are now available for chart types Line, Column, Bar, Area, Combination, Scatter, and Bubble.
 	- The regression types supported are Linear, Polynomial, Logarithmic, or Exponential
 	- See documentation on :ref:`Regression Lines <Chart_Regression_Line>`
@@ -1129,16 +1140,16 @@ FEATURES
 	- Please note subtotals are not supported in parallel repeater structures
 	- See documentation on :ref:`Form Subtotal Inside Repeaters <Form_Subtotal_Inside_Repeater>`
 
--  Upgrade to tinyMCE form builder	
+-  Upgrade to tinyMCE form builder
 	- Upgraded tinyMCE to v4.5.5
-	
+
 
 FIXES
 ^^^^^
 
--  Defect  20969  Tables in form report parts using Microsoft Edge are not functioning correctly  
-	
-	
+-  Defect  20969  Tables in form report parts using Microsoft Edge are not functioning correctly
+
+
 v2.11.4 August 27, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1146,7 +1157,7 @@ FIXES
 ^^^^^
 
 -  Defect  21518  Cannot add a field into the field container of new custom chart.
--  Defect  21487  Filters built from calculated fields would not render in the report designer. 
+-  Defect  21487  Filters built from calculated fields would not render in the report designer.
 -  Defect  21440  Drilldown grid containing a non-visible field fails to Print or Export.
 -  Defect  21401  Applying subtotals to calculated fields would throw an invalid query exception.
 -  Defect  21318  Charts using the Linear setting for the XY-Plane would not display properly if the x-axis was built from a time field.
@@ -1160,7 +1171,7 @@ FIXES
 ^^^^^
 
 -  Defect  18947  Typing text on any select box on IE11, the first character of tying text is lost.
--  Defect  21416  When using Forms in Dashboard some content that exists outside of Viewport still seen in export.  
+-  Defect  21416  When using Forms in Dashboard some content that exists outside of Viewport still seen in export.
 
 v2.11.2 August 13, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1168,7 +1179,7 @@ v2.11.2 August 13, 2018
 FIXES
 ^^^^^
 
--  Defect  18938  Relative positioning of grids is not respected when the user changes the number of records or adds filters, causing unnecessary gaps between grids in the report 
+-  Defect  18938  Relative positioning of grids is not respected when the user changes the number of records or adds filters, causing unnecessary gaps between grids in the report
 -  Defect  21242  Subreport returns 'No Results' with "Convert NULL to Empty String" and NULL as Field Mapped value
 -  Defect  21327  Izenda UI fails to render second time on Aurelia js framework
 -  Defect  21340  Sort Column Name setting is inverted/reversed
@@ -1194,18 +1205,18 @@ v2.11.0 July 31, 2018
 FEATURES
 ^^^^^^^^^
 
--  Custom Visualization Framework  
+-  Custom Visualization Framework
 	- New JavaScript APIs allow for the extension and customization of Izenda's current visualizations and the ability to use other charting and map libraries as well.
 	- :ref:`Front-end Integration APIs <Frontend_Integration_API>`
-	- Code examples can be found on our `GitHub repository <https://github.com/Izenda7Series/IzendaCustomVisualizations>`_ 
+	- Code examples can be found on our `GitHub repository <https://github.com/Izenda7Series/IzendaCustomVisualizations>`_
 
--  Dynamic threshold options for charts 
+-  Dynamic threshold options for charts
 	- Threshold lines can now be set using a field to show a dynamic line for chart thresholds
 	- More information on the new threshold option can be found :ref:`here <NW_Orders_Chart_Data_Thresholds_Settings>`
-	
--  Relationship / Join enhancement 
+
+-  Relationship / Join enhancement
 	- Enhanced the way relationships display when more than one relationship for the same data sources are set up in the data model. These types of multiple joins will now be displayed as key joins in the UI for users with Advanced Data Source access.
-	
+
 
 v2.10.5 July 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1285,16 +1296,16 @@ FEATURES
 -  Word wrap on field data in grid report part types
 
 	- User can select to word wrap individual fields at the field level or all fields at the report part level using the report part properties menu
-	
+
 	-  :ref:`Set Field Format <Report_Designer_Field_Format>`
-	
+
 -  Vertical Alignment for data in grid report part types
 
 	- This new option is available on the grid report part property panel for all fields or at the field level on the field property panel
 	- This can be set for both headers and grid data
 	-  :ref:`Set Field Format <Report_Designer_Field_Format>`
 	-  :ref:`Set Grid Format <Report_Designer_Columns_Width_Setting>`
-		
+
 -  Bubble and Scatter charts now support the mulit-color option
 
 	-  :ref:`Map Grid View <MultiColor>`
@@ -1302,7 +1313,7 @@ FEATURES
 -  Pop up grid view for chart, gauge and map
 
 	- This new option will show on all charts, gauges and maps allowing the user to open a popup window to see a grid view of the data from the visualization
-	-  :ref:`Chart Grid View <Report_Chart_Grid_View>`	
+	-  :ref:`Chart Grid View <Report_Chart_Grid_View>`
 	-  :ref:`Gauge Grid View <Report_Gauge_Grid_View>`
 	-  :ref:`Map Grid View <Report_Map_Grid_View>`
 
@@ -1407,7 +1418,7 @@ FEATURES
 	-  :ref:`Selecting Theme In Map Report Part <Map_Color_Theme_Selection>`
 	-  :ref:`Create Custom Themes <Color_Theme_File>`
 
--  New Multi-Color Options allows user to select a check box which shows each value in selected charts as a different color from the selected color theme. Bubble, Scatter, Heat Map and Sparkline chart types do not support Multi-Color option. The option is only available for single metric charts because in charts containing multiple metrics, each metric is a unique color. 
+-  New Multi-Color Options allows user to select a check box which shows each value in selected charts as a different color from the selected color theme. Bubble, Scatter, Heat Map and Sparkline chart types do not support Multi-Color option. The option is only available for single metric charts because in charts containing multiple metrics, each metric is a unique color.
 
 	-  :ref:`Set Multi-Color Option for Chart <MultiColor>`
 
@@ -1416,7 +1427,7 @@ FEATURES
 
 	-  :ref:`Set Alternative Background Color <Report_Designer_Background_Color>`
 
--  Role Data Model Access is now a single tree to improve performance when loading the role set up. The available and visible options are shown in a single tree with checkbox to show which items are available to the role. There is a new filter option avaialble on the tree to show only selected items. 
+-  Role Data Model Access is now a single tree to improve performance when loading the role set up. The available and visible options are shown in a single tree with checkbox to show which items are available to the role. There is a new filter option avaialble on the tree to show only selected items.
 
 	-  :ref:`Role Set up and Details <Role_Setup_List_and_Details>`
 	-  :ref:`New API role loadPartialDataModelAccess <loadpartialdatamodelaccess>`
@@ -1444,7 +1455,7 @@ FIXES
 -  Defect  20579  IzendaCity table not mapping to all MSSQL datatypes
 -  Defect  20475  Some data types of Oracle stored procedures are not showing in the stored procedure schema when loaded into the data model.
 -  Defect  20247  Starting Point on the y axis has no effect on the chart, this should set the absolute starting point
--  Defect  20238  Join fields not available to role should be obfuscated in the join and in the field dropdown of the join. The field is obfuscated but present in the field list of the join dropdown. 
+-  Defect  20238  Join fields not available to role should be obfuscated in the join and in the field dropdown of the join. The field is obfuscated but present in the field list of the join dropdown.
 
 v2.8.4 May 21, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1457,7 +1468,7 @@ FIXES
 -  Defect  20483  Setting menu in Settings page is not refreshed when switching tenant via custom code.
 -  Defect  20406  Report List Performance slows when Tenant Level Report List has over 140+ Global Reports
 -  Defect  20405  Connection string replaced with Saved Password in Chrome version 66.0.3359.139
--  Defect  20397  Switching the tenant's value in the UserContext shows error 
+-  Defect  20397  Switching the tenant's value in the UserContext shows error
 -  Defect  20362  Users with multiple roles that do not have Full Report and Dashboard Access could not load their list of data sources in the report designer.
 -  Defect  20215  When user updates a MySQL Store procedure and then updates connection of a MySQL database, the fields visible status will be set to false.
 -  Defect  20191  In some instances user cannot open dashboard which was shared from other user
@@ -1492,14 +1503,14 @@ v2.8.1 May 7, 2018
 FIXES
 ^^^^^
 -  Defect  20388  Improved memory utilization in the UI
--  Defect  20358  Change to remove grouping sets for subtotal calculations caused issues with smaller grids and should only be implemented when grids (horizontal and vertical) use more than 32 columns. When 33 columns are used and subtotals are enabled a sort must be enforced on the columns using the subtotal. 
+-  Defect  20358  Change to remove grouping sets for subtotal calculations caused issues with smaller grids and should only be implemented when grids (horizontal and vertical) use more than 32 columns. When 33 columns are used and subtotals are enabled a sort must be enforced on the columns using the subtotal.
 -  Defect  20256  In Time period filter for previous Calendar Quarter is missing last day in Quarter
 -  Defect  20255  In MYSQL the InTimePeriod filters are incorrect when using TIMESTAMPDIFF
 -  Defect  20236  Exporting a subreport with applied field mappings returns all records instead of subset of data
 -  Defect  20190  Resolved an issue where users and/or roles may not be applied when saving access rights.
 -  Defect  19925  Gauge/Chart jsformatString, system does not properly handle update, delete jsFormatString already saved in report
 -  Defect  19901  Utilizing multiple Subtotals in horizontal grids renders an extra column
--  Defect  19846  Front end conflict found in integration with underscore.js and lodash.js 
+-  Defect  19846  Front end conflict found in integration with underscore.js and lodash.js
 -  Defect  19668  When using Tenant Field and left/right/full/cross joins the tenant field condition results in inner join
 -  Defect  19328  Change in SELECT column order for stored procedures and functions not detected on reconnect
 -  Defect  19297  Filter Operator autocomplete not returning results
@@ -1512,7 +1523,7 @@ v2.8.0 April 30, 2018
 FEATURES
 ^^^^^^^^
 
--  Import & Export Report and Dashboard Definitions 
+-  Import & Export Report and Dashboard Definitions
 	-  Report and Dashboard definitions can now be exported to a file. These are JSON file types which are compressed and have extension types of report (.birt) and dashboard (.bidb).
 	-  Roles must be assigned the option to allow users to export definition files. See Settings>Role>Emailing and Exporting to enable these options.
 	-  Exported files can be emailed but these file types cannot be scheduled or subscribed.
@@ -1520,17 +1531,17 @@ FEATURES
 	-  Dashboard definitions contain all report definitions which are part of the dashboard
 	-  The files can be imported into the same system or another Izenda instance at any tenant level (system or tenant). This requires the import system to have the same schema based on a database mapping provided at import.
 	-  Imports can be completed by system administrator level users via the UI in Settings>Data Setup area. There are two new tabs for Importing the definition files and viewing the Import History.
-	-  Import and export can also be accomplished via the API. Please see API export options `here <https://www.izenda.com/docs/ref/api_export.html?highlight=export#export-apis>`_  for API information for import `here <https://izenda.com/docs/swagger/import-export.html>`_  
+	-  Import and export can also be accomplished via the API. Please see API export options `here <https://www.izenda.com/docs/ref/api_export.html?highlight=export#export-apis>`_  for API information for import `here <https://izenda.com/docs/swagger/import-export.html>`_
 	-  Please see the full documentation for setup and usage of this new feature  `here <https://www.izenda.com/docs/ui/doc_import_report_dashboard_definition.html>`_
 	-  Dashboards can now be directly exported from the Dashboard menu to all supported export types
-	
-	
+
+
 	.. note::
 		There are new DLLs with this release included in the API download
 			-  Izenda.BI.StorageProvider.dll
 			-  Izenda.BI.StorageProvider.FileSystem.dll
 			-  Izenda.BI.Exporting.Definition.dll
-			
+
 			If you are embedding Izenda, please be sure that you incorporate these new DLLs into your deployment.
 
 FIXES
@@ -1602,14 +1613,14 @@ FIXES
 -  Defect  19027  System shows error message when user changes Chart Type when the existing chart has XY-Plane settings set
 -  Defect  18517  Report Parts when used in integrated environments should each have their own separate progress bar
 -  Defect  17488  Text 'Can create new reports?' displays in Dashboards section
--  Defect  19465  Added new setting in Web.config file of API to allow stripping of potentially dangerous characters from the schema loader. 
+-  Defect  19465  Added new setting in Web.config file of API to allow stripping of potentially dangerous characters from the schema loader.
 
 .. code-block:: xml
 
-	  <appSettings> 
-	  <!-- 
-	  	Any characters specfied in the value fields below will be removed from any queries executed when 
-		adding or reconnecting to a database. Multiple characters should be added without separator or space as 
+	  <appSettings>
+	  <!--
+	  	Any characters specfied in the value fields below will be removed from any queries executed when
+		adding or reconnecting to a database. Multiple characters should be added without separator or space as
 		<add key="izenda.mssql.trimcharacters" value="*&^%" />
 	  -->
 	    <add key="izenda.mssql.trimcharacters" value="" />
@@ -1618,7 +1629,7 @@ FIXES
 	    <add key="izenda.postgre.trimcharacters" value="" />
 	    <add key="izenda.redshift.trimcharacters" value="" />
 	  </appSettings>
-	  
+
 
 v2.7.0 March 30, 2018
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1628,12 +1639,12 @@ FEATURES
 
 -  Redshift is now supported as a reporting database (not an Izenda configuration database).
 -  System & Tenant option to hide Report Headers in Report Viewer by default. A new button was added to show the header and footer in the Report Designer and Viewer. This button will only appear if a report has a header or footer configured. API change associated `here <https://www.izenda.com/docs/ref/api_advanced_settings.html>`_. To configure the setting please see option `here <https://www.izenda.com/docs/ui/doc_advanced_settings.html?highlight=other%20settings#update-others-settings>`_
--  Added overlays and tool tips to the Report Designer to provide guidance to the user for creating reports. See styling guide for more information on CSS, **new class names associated** `here <https://www.izenda.com/docs/dev/code_bi_portal_custom_css.html#customizing-the-report-designer-tooltips-overlay>`_. 
--  Changed name of Fields tab to Design in Report Designer to give the end user more context on the functionality. 
--  Pie chart enhancement, size of pie chart is now larger when labels are enabled. 
+-  Added overlays and tool tips to the Report Designer to provide guidance to the user for creating reports. See styling guide for more information on CSS, **new class names associated** `here <https://www.izenda.com/docs/dev/code_bi_portal_custom_css.html#customizing-the-report-designer-tooltips-overlay>`_.
+-  Changed name of Fields tab to Design in Report Designer to give the end user more context on the functionality.
+-  Pie chart enhancement, size of pie chart is now larger when labels are enabled.
 -  The selected chart metric is now saved in the report definition. When saved and another user opens the report, the selected saved metric will be displayed.
--  Enhanced horizontal scrolling in wide grids. The horizontal scroll option is always visible. To make this change, the Freeze button has been removed from the Report options for the filter panel. In the Report Designer and Viewer the Report name and filter panel are now always displayed.  
--  Performance improvement to Role set up screen, Access Limits & Scheduling Limits are now a single tree control selection. The new APIs associated can be found `here <https://www.izenda.com/docs/ref/api_role.html>`_. 
+-  Enhanced horizontal scrolling in wide grids. The horizontal scroll option is always visible. To make this change, the Freeze button has been removed from the Report options for the filter panel. In the Report Designer and Viewer the Report name and filter panel are now always displayed.
+-  Performance improvement to Role set up screen, Access Limits & Scheduling Limits are now a single tree control selection. The new APIs associated can be found `here <https://www.izenda.com/docs/ref/api_role.html>`_.
 
 .. note::
 
@@ -1645,7 +1656,7 @@ v2.6.24 March 29, 2018
 FIXES
 ^^^^^
 
--  Defect  19685  JsFormatString is used in chart but overrides the grid format using the same custom format. 
+-  Defect  19685  JsFormatString is used in chart but overrides the grid format using the same custom format.
 -  Defect  19383  JsFormatString does not impact gauge report part type
 
 v2.6.23 March 26, 2018
@@ -1658,7 +1669,7 @@ FIXES
 -  Defect  19312  Users get logged out when editing "My Profile" preferences without User Setup "Edit" permission
 -  Defect  19306  Cannot perform "Save As" on global report in a category at tenant level
 -  Defect  18989  Grouping Set limitation of 32 columns is causing errors when creating subtotals on grid when all fields are grouped for regular grids (this is a hard limit on any drilldown style grids).
--  Defect  18910  In MySql connection strings, operator '+', '-', '*', '/' cannot be applied to operands of type 'decimal' and 'double'. 
+-  Defect  18910  In MySql connection strings, operator '+', '-', '*', '/' cannot be applied to operands of type 'decimal' and 'double'.
 
 v2.6.22 March 19, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1667,7 +1678,7 @@ FIXES
 ^^^^^
 
 -  Defect  19356  In Chart report part, "Day of Week" and "Week Number" format shows incorrectly on chart
--  Defect  19330  Changes to PK/FK relationships in the database are not picked up in the data model when using reconnect. 
+-  Defect  19330  Changes to PK/FK relationships in the database are not picked up in the data model when using reconnect.
 -  Defect  19329  When tenant has a large data model (50k+ fields) the report list will not load for user due to query failure
 -  Defect  19298  Copy management would fail if custom views had relationships set up in the data model when copying data model from one tenant or system level to another.
 -  Defect  19296  Certain report permissions for a role log users out when clicking the "Access" tab in the report designer.
@@ -1680,11 +1691,11 @@ v2.6.21 March 12, 2018
 FIXES
 ^^^^^
 
--  Defect  19345  Setting needed to define excluded schemas for supported databases. Please see notes & warnings on using this setting   `here <https://www.izenda.com/docs/install/supplementary_guides/excluding-sql-schemas.html>`_ 
+-  Defect  19345  Setting needed to define excluded schemas for supported databases. Please see notes & warnings on using this setting   `here <https://www.izenda.com/docs/install/supplementary_guides/excluding-sql-schemas.html>`_
 -  Defect  19311  Issue when using special characters in * Days Old filter operators
 -  Defect  19293  Emailing Global Reports fails when sending attachments or embedded html
 -  Defect  19262  Join Alias behavior changes when changing join field in report designer
--  Defect  19055  Concurrency issue noted with IzendaTemporaryData table where 2 different users editing the same report are showing errors in the log file. **This release includes schema changes to the IzendaTemporaryData table. As with every upgrade, please ensure that there are no active users in the system.** 
+-  Defect  19055  Concurrency issue noted with IzendaTemporaryData table where 2 different users editing the same report are showing errors in the log file. **This release includes schema changes to the IzendaTemporaryData table. As with every upgrade, please ensure that there are no active users in the system.**
 -  Defect  18997  When making a column of pivot grid not visible, the pivot recalculates losing the grouping of the hidden column.
 -  Defect  18877  When using Oracle database receiving error transaction not yet disposed when connecting to large schemas.
 -  Defect  18875  Copy process should not verify items in physical data base, only model. Please note new API created for this change, details can be found `here <https://www.izenda.com/docs/ref/api_copy_console.html?highlight=copy%20console#copy-console-apis>`_
@@ -1698,7 +1709,7 @@ FIXES
 ^^^^^
 
 -  Defect  19335  Hidden filters on data model fields which are set to not visible return no data in reports.
--  Defect  19334  New option for JavaScript Format Function added to Front End API to control chart formats. Please see more details `here <https://www.izenda.com/docs/dev/api_frontend_integration.html#list-of-apis>`_ on creating the function and `here <https://www.izenda.com/docs/dev/ref_iadhocextension.html?highlight=iadhocextension#loadcustomdataformat>`_  on using the function. 
+-  Defect  19334  New option for JavaScript Format Function added to Front End API to control chart formats. Please see more details `here <https://www.izenda.com/docs/dev/api_frontend_integration.html#list-of-apis>`_ on creating the function and `here <https://www.izenda.com/docs/dev/ref_iadhocextension.html?highlight=iadhocextension#loadcustomdataformat>`_  on using the function.
 -  Defect  19315  UserContext.RequestId should be set to subscriptionId when running schedules/subscriptions
 -  Defect  19254  API - /api/dataModel/loadRelationships always returns false for isLastPage parameter
 -  Defect  19199  When logged in as system administrator, user is unable to print dashboard at tenant level.
@@ -1737,8 +1748,8 @@ v2.6.17 February 5, 2018
 FIXES
 ^^^^^
 -  Defect  19197  The images in report header and footer are using a background image and should be imgage tag
--  Defect  19182  Column Groupings set on fields in grid report parts would cause the grid to load infinitely. 
--  Defect  19179  Forms in Internet Explorer were not rendering successfully. 
+-  Defect  19182  Column Groupings set on fields in grid report parts would cause the grid to load infinitely.
+-  Defect  19179  Forms in Internet Explorer were not rendering successfully.
 -  Defect  19033  Remove concurrency check from copy process that validates data model changes multiple times to improve performance.
 -  Defect  19001  Resolved deadlock issue on MSSQL when using dashboard designer with large volume of concurrent users.
 -  Defect  18993  Extended Excel exporting to allow the ability to customize the current excel exporting provider
@@ -1753,26 +1764,26 @@ FIXES
 ^^^^^
 
 -  Defect  19035  In time period filter not responding after changing time period in report viewer.
--  Defect  19034  Calculated Field as filter created in prior version shows as invalid field after upgrading. 
--  Defect  19007  Canceling new, unsaved reports in integrated kits would show 'The report ID is invalid' when trying to continue designing a report. 
+-  Defect  19034  Calculated Field as filter created in prior version shows as invalid field after upgrading.
+-  Defect  19007  Canceling new, unsaved reports in integrated kits would show 'The report ID is invalid' when trying to continue designing a report.
 -  Defect  19006  Removed redundant confirmation dialogues during SMTP credential configuration through the UI
 -  Defect  19003  Calculated field contains another calculated field is broken, when calculated field A references another calculated field B, A is not functioning properly.
 -  Defect  18998  In Dashboard when saving as a user with full report & dashboard permission, the system is removing any sharing that was added
 -  Defect  18879  When using copy console and more than 4 database mappings on same schema doesn't work
--  Defect  18822  System shows can not draw chart in XY-Plane popup when user creates a chart with a separator. 
+-  Defect  18822  System shows can not draw chart in XY-Plane popup when user creates a chart with a separator.
 -  Defect  18571  Filter Descriptions (when using Show Filters Under Report Description) shows as undefined when using In Time Period filter
 -  Defect  18438  Resolved security issue on API
 -  Defect  18298  Report is Missing Save button on the report opened from sub report link
 -  Defect  18118  In Tenant Setup Standalone only List of existing System Roles are displayed on the Access/Schedule section on new Tenant Permission
 -  Defect  17884  Added additional methods to the Role and Tenant for integrated C# API see documentation here `Back-end Integration APIs <https://www.izenda.com/docs/dev/api_backend_integration.html?highlight=addorupdaterole#back-end-integration-apis>`_
--  Defect  17796  System should not prevent changing a user's role from [non System Admin] to [System Admin]	
+-  Defect  17796  System should not prevent changing a user's role from [non System Admin] to [System Admin]
 -  Defect  17754  dataModel/databaseMapping accepts bad data for fromserver value
 -  Defect  17707  Introduced a new API for adding new users in integrated mode. POST /api/external/user. This endpoint will return the ID of the newly created user. See documentation here `external/user <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_
 
 .. note::
 
-	This release introduces the external Izenda API. This new API will not be used by the Izenda application, which will ensure no breaking changes as the Izenda application evolves. A simple example can be found `here <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_. 
-	
+	This release introduces the external Izenda API. This new API will not be used by the Izenda application, which will ensure no breaking changes as the Izenda application evolves. A simple example can be found `here <https://www.izenda.com/docs/ref/api_user.html#user-apis>`_.
+
 
 v2.6.15 January 22, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1787,7 +1798,7 @@ FIXES
 -  Defect  18940  Report Part Context Menu Does Not Appear when using Internet Explorer
 -  Defect  18939  When base URL is set to / the user is allowed access to some components they should not be allowed to enter.
 -  Defect  18900  Tenant user can access the System DB & License page in some integrated modes.
--  Defect  18888  Data fails to load when turning to front side of report part tile in full screen mode for the first time	
+-  Defect  18888  Data fails to load when turning to front side of report part tile in full screen mode for the first time
 -  Defect  18876  Unnecessary scroll bar in dashboard tile with small grid.
 -  Defect  18830  System calculated incorrect data when user creates nested calculated fields: Example Calculated Field 1 = 2 fields and Calculated Field 2 = Calculated Field 1 * 2, the data returned is incorrect.
 -  Defect  18815  When user removes the first field of chart's x-axis, they are unable tot configure some report part properties.
@@ -1798,21 +1809,21 @@ FIXES
 -  Defect  18145  Resolved security issue on API
 -  Defect  18129  Destination dashboard is empty when copying dashboard without overwrite on second copy
 -  Defect  18089  Syntax error in SCSS file Izenda.Common.scss
--  Defect  17999  User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list. 
+-  Defect  17999  User is returned to specific report category after close from Quick Edit, when they never selected a category from the report list.
 -  Defect  17984  Data source categories sort incorrectly if all data sources are categorized
 -  Defect  17915  In Form Grand Total/SubTotal Change Function in Sub Total pop up, is not properly changed when user updates, the user must update is again
 -  Defect  17721  When copying a report part type map, fields are not properly copied to new report part in report designer.
 -  Defect  17627  Front Side of Form is blank when user adds Join Alias in Relationship of report containing form report part
 
 
-	
+
 v.2.6.14 January 15, 2018
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FIXES
 ^^^^^
 
--  Defect  18967  Invalid "http://(host)/undefined" url request in report viewer. 
+-  Defect  18967  Invalid "http://(host)/undefined" url request in report viewer.
 -  Defect  18965  Missing chart image exporting URL log when exporting
 -  Defect  18951  Reconnecting to an Oracle DB fails after new items have been added to the underlying database.
 -  Defect  18945  Dashboard Category Rename cause eternal loading from report list page
@@ -1828,11 +1839,11 @@ FIXES
 -  Defect  18907  Field Mappings Break for Role with FullReportAndDashboardAccess when no data sources are added to the role
 -  Defect  18859  Resolved security issue on API
 -  Defect  18586  Resolved security issue on API
--  Defect  18548  Error message is shown to user when using SAVE AS then adds a calculated field to the new instance of the report. 
+-  Defect  18548  Error message is shown to user when using SAVE AS then adds a calculated field to the new instance of the report.
 -  Defect  18526  Resolved security issue on API
 -  Defect  18505  Resolved security issue on API
 -  Defect  18090  Remove Dirty Form validation for report viewer page to avoid notification to user that changes will be lost when they have no ability to save a report.
--  Defect  17989  Resolved security issue on API 
+-  Defect  17989  Resolved security issue on API
 -  Defect  17800  Unable to add another report part next to a blank grid
 -  Defect  16512  The filter set on the calculated field is not inherited in subreports even though both reports have the same calculated fields and datasources
 
@@ -1854,7 +1865,7 @@ FIXES
 -  Defect  18013  Time and Timestamp data types are not returned from PostgreSql functions when created a stored procedure.
 -  Defect  17998  APIs - advancedSetting - User can access some function of module "advancedSetting" via api
 -  Defect  17993  GUI - Connection String - User can access IzendaDB by using encrypted connection string pasted into the UI Connection String
--  Defect  17992  APIs - databaseSetup- User can access some function of module "databaseSetup" 
+-  Defect  17992  APIs - databaseSetup- User can access some function of module "databaseSetup"
 
 v.2.6.12 January 2, 2018
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1862,7 +1873,7 @@ v.2.6.12 January 2, 2018
 FIXES
 ^^^^^
 -  Defect  18894  Uncategorized report and dashboard category should not show pencil icon as name is reserved and cannot be altered.
--  Defect  18893  Added a new setting for the copy console configuration to explicitly specify the authentication URL. This setting is only applicable for integrated deployments. For more information, see documentation here `Appauthurl <https://www.izenda.com/docs/ui/doc_copy_console.html?highlight=console#the-appauthurl-setting-v2-6-12-or-greater>`_ 
+-  Defect  18893  Added a new setting for the copy console configuration to explicitly specify the authentication URL. This setting is only applicable for integrated deployments. For more information, see documentation here `Appauthurl <https://www.izenda.com/docs/ui/doc_copy_console.html?highlight=console#the-appauthurl-setting-v2-6-12-or-greater>`_
 -  Defect  18886  Added enhanced error handling when using clob parameters
 -  Defect  18872  System hangs when setting SubTotal for 3 fields in Horizontal grid
 -  Defect  18754  Cross Filtering is not working when drilling into map type report part
@@ -1889,7 +1900,7 @@ FIXES
 -  Defect  18721  When using Oracle Izenda Configuration Database System shows error msg when user assigns a deleted data source from Visible to Available then saves
 -  Defect  18710  User can apply multiple sorts in grid report although option "Allow Multiple Sorts on Grid Header" is not checked in Advanced Settings
 -  Defect  18581  Some Provinces not working/missing (Quebec) in Canada
--  Defect  18481  Cannot save drilldown grid using time data type in groups 
+-  Defect  18481  Cannot save drilldown grid using time data type in groups
 -  Defect  18392  In report viewer page freezes if entering invalid value and triggering the filter list twice
 -  Defect  18329  No value is shown in Report Designer when using a Data Model CF that is created without clicking on Preview button
 -  Defect  18137  Count function on field level settings is incorrect when user turns on convert null to blank.
@@ -1934,40 +1945,40 @@ FIXES
 -  Defect  18837  Deadlock item resolved when using PostgreSQL as reporting database
 -  Defect  18820  User who has "Full Report and Dashboard Access" can create New report although these permissions are not set in Tenant Setup
 -  Defect  18775  Some settings on report part properties are changed when changing properties setting for a field of a map report part type
--  Defect  18774  Global dashboards would be visible within the tenant for system administrators if no database mapping was configured. 
+-  Defect  18774  Global dashboards would be visible within the tenant for system administrators if no database mapping was configured.
 -  Defect  18715  Added default sort to first x axis field in chart when adding multiple x axis fields to avoid sorting issue when drilling down on charts
 -  Defect  18711  Grid columns are not sorted correctly if changing aggregated functions of the column with multiple sorts
 -  Defect  18684  Alternative Text setting is not applied for Datetime field on Gauge Report
 -  Defect  18671  Chart fails to redraw when adding a running field at 1st metric then another field at 2nd metric
 -  Defect  18616  When using a calculated field containing a case statement and another calculated field with a case statement that refers to the first calculated field the system shows an error.
 -  Defect  18615  In Scheduler Button for delete multi items (Trash icon) does not work
--  Defect  18109  Allow Customers to resolve the URL of exporting/scheduling and emailing. See example `IWebUrlResolver <https://www.izenda.com/docs/dev/ref_iadhocextension.html#iweburlresolver>`_ 
+-  Defect  18109  Allow Customers to resolve the URL of exporting/scheduling and emailing. See example `IWebUrlResolver <https://www.izenda.com/docs/dev/ref_iadhocextension.html#iweburlresolver>`_
 -  Defect  17729  Date format MM/dd/yyyy HH:mm:ss tt in Izenda exports to excel and shows tt instead of AM/PM format.
 -  Defect  17556  Excel would lose certain DateTime formatting on un-grouped fields.
 -  Defect  17417  The calculated field status is not refreshed in some cases.
-	
-	
+
+
 v.2.6.8 December 5, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 FIXES
 ^^^^^
 -  Defect  18831  Application shows unknown error when editing a global report if it is currently opened in both system and tenant level.
--  Defect  18813  When setting alternative text on a calculated field in a chart, the alternative text is not displayed properly in the chart's breadcrumb 
+-  Defect  18813  When setting alternative text on a calculated field in a chart, the alternative text is not displayed properly in the chart's breadcrumb
 -  Defect  18808  Range Only option for charts displays error can't draw chart.
 -  Defect  18764  Deadlock noted in Dashboard when editing dashboard
 -  Defect  18746  Can't draw city as bubble on Map report part if the report is saved at point option which is not City (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_  for this process)
 -  Defect  18718  When attempting to print large record sets from the report viewer the print option fails. Moving print option server side for HTML creation to reduce the volume of data processed in the browser.
--  Defect  18714  User should be able to sort the fields in Values container for Funnel chart 
+-  Defect  18714  User should be able to sort the fields in Values container for Funnel chart
 -  Defect  18686  Unable to draw maps using postal codes for Canada (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_ for this process)
 -  Defect  18584  When user drills into a State/Province shows bubble metric for cities in surrounding state/province for Canada Map
 -  Defect  18583  For Map report parts user cannot use metrics for state/province without having a country field (This change requires alteratins to the Izenda Map table or data, please see instructions here `Import Map Data <https://www.izenda.com/docs/ui/doc_system_db_and_license.html?highlight=license#import-map-data>`_ for this process)
 -  Defect  18480  Mapping Field is not updated automatically when user update Field Name Alias on Field Properties for master/sub report
--  Defect  18478  On filter operator Manual Entry No Auto-Complete, no tool tip displays when hovering on the invalid input 
+-  Defect  18478  On filter operator Manual Entry No Auto-Complete, no tool tip displays when hovering on the invalid input
 -  Defect  18274  Map report part is not shown when "Layout" of "Legend settings" is set "Vertical"
 -  Defect  18120  Users receive repeated emails in Schedule function for some emails, this is sporadic functionality. This is due to the need to set up a database job store for schedules when runnning in distributed enviroments. Please see `Scheduler Configuration <https://www.izenda.com/docs/install/troubleshooting/scheduling.html#duplicate-scheduled-items-are-being-sent>`_  for set up instructions.
 -  Defect  18042  System shows error msg when user creates nested CF with aggregated function
-	
+
 v.2.6.7 November 27, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -2034,7 +2045,7 @@ FIXES
 -  Defect  18556  Formatting Chart Value as % of Group with or without rounding, the y axis is showing the actual values with a % appended.
 -  Defect  18555  Sort order is incorrect on pivot when using dates and some formats in column
 -  Defect  18549  Report Review displays with no record if selecting "Decimal Number" for Filter
--  Defect  18538  Calculated Field in chart shows incorrect values and placement of points on chart. 
+-  Defect  18538  Calculated Field in chart shows incorrect values and placement of points on chart.
 -  Defect  18305  Circular references to subreports will crash application, when setting Report B as subreport of Report A and then setting Report A as subreport of Report B, the system does not respond.
 -  Defect  18165  Cannot render multiple Izenda components in only one Angular 2 component, relate to routing mechanism in Izenda.
 
@@ -2054,7 +2065,7 @@ FIXES
 -  Defect  18706  When adding or updating an Oracle connection string, the system does not show Field where Data Type = VARCHAR2
 -  Defect  18682  When setting up a new instance of Izenda on 2.6.1 all options on security policy tab are enabled by default.
 -  Defect  18648  Error displayed displays when using case statement in calculated field in a chart report part
--  Defect  18630  When user has access to reports in uncategorized only they cannot see reports until they have access to a named category, then they see both uncategorized and the other categories 
+-  Defect  18630  When user has access to reports in uncategorized only they cannot see reports until they have access to a named category, then they see both uncategorized and the other categories
 -  Defect  18629  Browser consumes high memory when loading a role detail in Role Setup having thousands of users
 -  Defect  18628  Subtotal/GrandTotal shows incorrectly for fields in Rows container of Pivot grid
 -  Defect  18620  Schedule/Subscribe popup always shows default filter value even user changed and saved
@@ -2088,7 +2099,7 @@ FEATURES
 FIXES
 ^^^^^
 -  Defect  18635  Could not save report when adding new filter using add filter button, user receives error message stating no operator type is defined
--  Defect  18626  Global forms type report parts are missing report columns at the tenant level 
+-  Defect  18626  Global forms type report parts are missing report columns at the tenant level
 -  Defect  18625  Global form report has relationship that contains an alias, it does not show data on Tenant level
 -  Defect  18624  Error message appears when adding aggregated field into Filters then changing format of this field
 -  Defect  18590  Page freezes when pressing Save on Functions page of Data Sources
@@ -2157,9 +2168,9 @@ FIXES
 -  Defect  18257  Schema query to add data to data model should include database name in where clause based on given database from connection string.
 -  Defect  18213  Report header is readable in the report viewer, but the spacing is overlapped in Word export.
 -  Defect  18132  No roles/users are displayed when tenant user with Full sharing access in their role
--  Defect  18130  API security vulnerability resolved. 
+-  Defect  18130  API security vulnerability resolved.
 -  Defect  18078  Sub Total is counted incorrectly when sorting in grid
--  Defect  17625  Fields with alias in data model are removed from form when saving form. 
+-  Defect  17625  Fields with alias in data model are removed from form when saving form.
 -  Defect  17250  "The query syntax is incorrect" error message displays when creating report with "Full" join type relationship
 -  Defect  17161  Chart Legend shows incorrect color values when altered in field properties.
 
@@ -2190,14 +2201,14 @@ v.2.5.0 September 29, 2017
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
-^^^^^^^^^	
+^^^^^^^^^
 - Added new filter operator "Equals (Manual Entry No Auto-Complete)". This operator does not execute any queries to the database and allows user to input any values into the text entry.
 - Altered the way relationships display when more than one relationship for the same data sources are set up in the data model. These types of multiple joins will now be displayed as key joins in the UI for users with Advanced Data Source access.
 - Added ability to use aggregated and non-aggregated fields in filters without changing grouping in report designer. When using aggregated and non-aggregated filters in the same report, the filter logic will be removed as only AND logic is supported.
-- Performance Improvement of Data Source and Relationship Loading in the Report Designer 
+- Performance Improvement of Data Source and Relationship Loading in the Report Designer
 - Schema Tab removed from Data Model
 - Added Performance enhancements to Gauge and Map Report Parts
-- Removed redundant API calls when switching tabs in the Report Designer   
+- Removed redundant API calls when switching tabs in the Report Designer
 
 FIXES
 ^^^^^
@@ -2217,9 +2228,9 @@ v.2.4.4 September 25, 2017
 
 ENHANCEMENTS
 ^^^^^^^^^^^^^
--  New APIs created 
-	-  POST /api/report/findBySourceIds 
-	-  POST /api/report/findReportPartsBySourceIds 
+-  New APIs created
+	-  POST /api/report/findBySourceIds
+	-  POST /api/report/findReportPartsBySourceIds
 
 FIXES
 ^^^^^
@@ -2238,7 +2249,7 @@ FIXES
 ^^^^^
 -  Defect  18368  Stored Procedure Lookups are Failing when Key and Value are different data types
 -  Defect  18346  New Chrome release Version 61.0.3163.79 causes issues in rendering charts, maps and gauges.
--  Defect  18332  Relationships order is changed when user goes back to data source from report viewer when self join is created. 
+-  Defect  18332  Relationships order is changed when user goes back to data source from report viewer when self join is created.
 -  Defect  18319  Grid does not export, print or show in emailed items when some fields are hidden a grid
 -  Defect  18309  Latitude & longitude do not work on any map report parts.
 -  Defect  18287  Existing Users Can Be Modified to have User IDs that are already in use
@@ -2246,7 +2257,7 @@ FIXES
 -  Defect  18267  Using Calculated Field for subreport field mapping Breaks and does not show proper subreport values
 -  Defect  18256  Javascript declarations were being deleted upon using the visual tab.
 -  Defect  18209  Scatter chart labels are shown incorrectly, value label is shown as label and label for y axis
--  Defect  18074  Subtotals of side total on Pivot grids is incorrect 
+-  Defect  18074  Subtotals of side total on Pivot grids is incorrect
 -  Defect  18073  Side Total in Pivot Are not calculating properly
 -  Defect  18023  System shows blank value on filter value for parameter of stored procedure on Schedules/Subscriptions after saving
 -  Defect  17991  APIs - License - User can get Izenda "License Key and Token" by sending request to "api/License/currenttoken"
@@ -2261,7 +2272,7 @@ FIXES
 -  Defect  18289  The subscription doesn't trigger the last scheduled run if the system was offline and restarts later than that moment
 -  Defect  18229  When using embedded mode the URL for Custom URL and Custom JS on field values are encoded twice and cause navigation issues to the links.
 -  Defect  18174  Export to Excel fails when field mapping to subreport is added to pivot
--  Defect  18127  TIMESTAMP data type with fractional seconds precision was not recognized properly 
+-  Defect  18127  TIMESTAMP data type with fractional seconds precision was not recognized properly
 -  Defect  18123  Adding a new field removes Embedded JavaScript from first field (On Field Properties Panel). Clickable link still available on first field.
 -  Defect  18055  System shows incorrect value for Sub Total if date field has format, when user attempts to format the subtotal the data shows no results.
 -  Defect  18054  Duplicated Data Object is not automatically swapped at tenant level/ tenant user
@@ -2296,20 +2307,20 @@ FEATURES
 - Moved the pagination control from the right side of the report part to the left to allow ease of use when large grids are displayed.
 - Added JavaScript function to allow the Report Filter block to be Open or Closed by default in Report Viewer and Report Designer:
 	- To Implement this setting please see below:
-		For Standalone use the izenda_config.js file 
-		
+		For Standalone use the izenda_config.js file
+
 		.. code-block:: javascript
-		
+
 		    // to collapse by default, the value should be 1
-			UIPreferences: { 
+			UIPreferences: {
 				ReportFilterSectionExpanded: !0
-			}	 
-			
+			}
+
 		For integrated scenarios like the MVC kit, use the Scripts/izenda.integrate.js (or izenda.integrate.ts for the Angular kit)
 
 		.. code-block:: javascript
 		   :emphasize-lines: 15-18
-		   
+
 		    var configJson = {
 				"WebApiUrl": hostApi,
 				"BaseUrl": "/izenda",
@@ -2331,15 +2342,15 @@ FEATURES
 				"OnReceiveUnauthorizedResponse": redirectToLoginPage,
 				"Timeout": 3600
 			};
-			
+
 - Expanded the character limit (previously 500) for calculated fields. The field size has been increased to the maximum size text field supported by your configuration database type.
 - Added lazy-loading to the dashboard filters to improve performance.
 - Modified SASS files to support additional compilers.
 
 FIXES
 ^^^^^
--  Defect  18222  Tenant user cannot save Subscription 
--  Defect  18166  Update result does not work for pre-selected common filter value 
+-  Defect  18222  Tenant user cannot save Subscription
+-  Defect  18166  Update result does not work for pre-selected common filter value
 -  Defect  18157  Calculated Field displays in Join Field/Field list when adding relationship
 -  Defect  18153  Subscribe button is not working when user clicks it form the report list
 -  Defect  18146  Categories are not shown in template list, Report without category is shown in middle panel of Template
@@ -2375,7 +2386,7 @@ FIXES
 -  Defect  18106  No Reports can be saved in Oracle Izenda Config DB
 -  Defect  18075  Fields set to not visible still display in pivot grid
 -  Defect  18071  Fields in a form within a repeater that are set to not visible are still shown in the report
--  Defect  18049  Fields deleted in the database continue to show on report creation after schema update to the model.  
+-  Defect  18049  Fields deleted in the database continue to show on report creation after schema update to the model.
 -  Defect  18044  When attempting to create a calculated field in IE browser, the fields added by the lightbulb pop up are removed when attempting to add another field or a function.
 -  Defect  18036  Caching issue found when logging out and back in with different users under different tenants on the same browser.
 -  Defect  18014  When adding subtotals to groupings, the subtotal must be calculated before formats are applied.
@@ -2414,18 +2425,18 @@ v2.3.2 August 7, 2017
 
 FIXES
 ^^^^^
--  Defect  17567 Performance Improvements for Report Part Property Panel 
--  Defect  17566 Performance Improvements for Field Property Panel 
+-  Defect  17567 Performance Improvements for Report Part Property Panel
+-  Defect  17566 Performance Improvements for Field Property Panel
 -  Defect  17565 Performance Improvements for Filter Property Panel
 -  Defect  17702 Performance Improvements for /report/list2 and /allcategories APIs to speed report list rendering
 -  Defect  16646 Performance Improvement for loading User Setup Page
--  Defect  17982 Using Filter Operators Equals and Not Equals for Datetime field creates syntax error in the query generation 
+-  Defect  17982 Using Filter Operators Equals and Not Equals for Datetime field creates syntax error in the query generation
 -  Defect  17959 InTimePeriod filters in Calendar Year and Calendar Month show system error when executing report while using PostgreSQL reporting connecton
 -  Defect  17948 Default access rights are not properly applied to reports copied from the report list using the copy button
 -  Defect  17936 When clicking update results in the Report Viewer and Quick Edit modes without updating filter values causes the report body to be blank
 -  Defect  17889 Data time zone offset is not applied to separator and filter values
 -  Defect  17888 When validate access token returns null, system should return 401 error, currently returning 500 error
--  Defect  17887 When creating calculated fields using other calculated fields in a report the report errors when the order is changed 
+-  Defect  17887 When creating calculated fields using other calculated fields in a report the report errors when the order is changed
 -  Defect  17866 Using the + to add all fields from a stored procedure data source the screen hangs on field selection and some fields are not properly added to report part
 -  Defect  17728 System allows exporting of reports which contain required filters when no filter value is set
 -  Defect  17687 Default Access Rights are not added to report definition when using Copy button from report list or Save As options
@@ -2450,19 +2461,19 @@ v2.3.0 July 31, 2017
 
 FEATURES
 ^^^^^^^^
-- For customers using very large data sets or views which require heavy processing. In Data Setup > Advanced Settings > Others a new setting has been added, "Show Preview section in Configuration Mode", the default is true. When set to false, users will no longer see the report part preview on the configuration side of report parts. This changes the default behavior of querying the data when adding fields to the report parts. Instead, Izenda will only query the data when the user flips the report part to view the front side of report parts. When this setting is false, the preivews on charts in adding configuration options like borders, background colors, grid lines, XY-Plane options will be hidden as well. In addition, any time the user hides the preview section by sliding it closed on the configuration side of the report part, the queries for field data will not be executed until the user either flips to the front of the report part or expands the preview section of the report part. **To incorporate this, changes the following API were made: /api/advancedSetting/miscSetting/ and corresponding model :doc:`OtherSetting </ref/models/OtherSetting>`** 
- 
+- For customers using very large data sets or views which require heavy processing. In Data Setup > Advanced Settings > Others a new setting has been added, "Show Preview section in Configuration Mode", the default is true. When set to false, users will no longer see the report part preview on the configuration side of report parts. This changes the default behavior of querying the data when adding fields to the report parts. Instead, Izenda will only query the data when the user flips the report part to view the front side of report parts. When this setting is false, the preivews on charts in adding configuration options like borders, background colors, grid lines, XY-Plane options will be hidden as well. In addition, any time the user hides the preview section by sliding it closed on the configuration side of the report part, the queries for field data will not be executed until the user either flips to the front of the report part or expands the preview section of the report part. **To incorporate this, changes the following API were made: /api/advancedSetting/miscSetting/ and corresponding model :doc:`OtherSetting </ref/models/OtherSetting>`**
+
 - New filter operators added for "Null" and "Not Null", these operators will show all Null values or values which are not Null
- 
+
 - Convert Null to Empty String enhancements. This setting in Data Setup > Advanced Settings > Others when set to true (default is false) will no longer show null in the reports for values in the database which are null. The null values will show as empty string. When using this setting, and selecting filter operators, Null and Not Null will return no results as these values have been converted to BLANK or emtpy string.
- 
+
 - Changes to common Dashboard Filter queries. Prior to this release all fields for common filters were queried and results for dropdowns were aggregated in memory to form one list of possible values. After this change, only the common filters from the first report part will be queried to obtain data for any  dropdown, popup, tree, or other filter presenting data to the end user for selection. This change will increase performance for loading large dashboards or dashboard containing many fitlers
 
 - Improvements made to rendering Charts, Gauges and Maps by reducing the number of times these items are re-rendered and number of times data is queried to draw elements
 
 - Changes made to stored procedure execution, prior to this change full create rights were required to make full tables, now the system uses temp tables. This requires lower permission levels for the reporting connection string when using stored procedures
 
-- Enhance C# API to include the cascading lookup filter field along with tree filter field. :doc:`IAdHoc_Extension </dev/ref_iadhocextension>` 
+- Enhance C# API to include the cascading lookup filter field along with tree filter field. :doc:`IAdHoc_Extension </dev/ref_iadhocextension>`
 
 .. note::
 
@@ -2470,7 +2481,7 @@ FEATURES
 
 - Enhance performance of embedded subreports by reducing the number of validation requests for these report parts
 
-- New API added to tenant /api/tenant/namesOnly to improve loading times for setting level dropdown, :doc:`Tenant </ref/api_tenant>` 
+- New API added to tenant /api/tenant/namesOnly to improve loading times for setting level dropdown, :doc:`Tenant </ref/api_tenant>`
 
 
 FIXES
@@ -2488,7 +2499,7 @@ FIXES
 -  Defect  17736  Charts with Separators are missing the separator after drilldown
 -  Defect  17579  E-mail links for dashboards were not resolving correctly in the browser.
 -  Defect  17525  Sub Totals on Form shows incorrect value, it shows the first value in the list not the actual subtotal
--  Defect  17394  Sparkine chart does not render properly when created, user must resize tile much larger than needed to have it show properly. 
+-  Defect  17394  Sparkine chart does not render properly when created, user must resize tile much larger than needed to have it show properly.
 -  Defect  17045  Can't change status from Deactivate to Active for user in MVC kit
 
 
@@ -2508,8 +2519,8 @@ FIXES
 -  Defect 17622  Unknown error displays when modifying the filter of a report if this filter is the common filter in the dashboard when using only one report
 -  Defect 17611  Error message is received when saving a report which contains a stored procedure data source and distinct flag is checked
 -  Defect 17573  User with role which has permission on 'Visible Categories' in Dashboards is not able to open the dashboard
--  Defect 17557  When you creating a funnel chart and no sort is applied to the x axis, a sort is forced on the x axis when you alias the Y axis 
--  Defect 17096  System shows error msg when user add 1 field only to Value container of all gauges. The error can be easily removed by adding a sort to the field 
+-  Defect 17557  When you creating a funnel chart and no sort is applied to the x axis, a sort is forced on the x axis when you alias the Y axis
+-  Defect 17096  System shows error msg when user add 1 field only to Value container of all gauges. The error can be easily removed by adding a sort to the field
 
 v2.2.5 July 20, 2017
 ~~~~~~~~~~~~~~~~~~~~
@@ -2558,7 +2569,7 @@ FIXES
 -  Defect 17635	 User is unable to select item in dropdown lists for database mapping
 -  Defect 17612	 Fixed privilege escalation issue in the myprofile settings
 -  Defect 17598	 Stored Procedure cascading option is disabled in the report designer for use in OnPreLoadFilterData.
--  Defect 17561	 Reports with required filters are still querying the database prior to filter value being added to the report in the report viewer. 
+-  Defect 17561	 Reports with required filters are still querying the database prior to filter value being added to the report in the report viewer.
 -  Defect 17441	 System lost focus on Form and new added Field is not displayed in Visual tab when Form has style setting.
 -  Defect 17152	 When setting time for dashboard tiles to cycle through presentation mode and clicking full screen mode, tiles are not auto advancing.
 -  Defect 17065	 Subtotal does not show for field with aggregated function field for row container of pivot grid.
@@ -2580,9 +2591,9 @@ FIXES
 -  Defect 17453  In Tenant permissions 'Register for Alerts' checkbox is not automatically unchecked and disabled when 'Schedule' is unchecked
 -  Defect 17419  The field status is not refreshed when reconnecting to the database in some cases.
 -  Defect 17402  System scales the slave section of data model fields and it is not fixed with the bottom of the page
--  Defect 17323  From the second field of form, when user selects 1 function from drop down list, it is not updating the field. User must select it from the function list a second time 
+-  Defect 17323  From the second field of form, when user selects 1 function from drop down list, it is not updating the field. User must select it from the function list a second time
 -  Defect 17295  Cannot use Enter or Tab when saving Category or Subcategory of Dashboard
--  Defect 17282  After user reformats HTML in Form, and changes any function for a Field, system still keeps the old function for the Field on the Visual tab. 
+-  Defect 17282  After user reformats HTML in Form, and changes any function for a Field, system still keeps the old function for the Field on the Visual tab.
 -  Defect 17253  After user click format HTML in form and adds a new field the HTML is no longer formatted
 -  Defect 17082  Error 'The tenant ID already exists' displays when Deactivate or Activate a tenant after adding a duplicated one
 -  Defect 16774  Created Date, Number of Views and Average Rendering Time of copied report/dashboard still keep values of the old report/dashboard
@@ -2595,7 +2606,7 @@ FEATURES
 -  Removed Category List navigation on left side of page for Dashboard and Report Viewer
 -  Drilldown Grids have new option "Collapse Drilldown by Default". This option when selected will show the entire grid collapsed when user opens the report in the report viewer.
 -  Drilldown Grid now shows individual rows for subtotals even when there is only one value in the grouping
--  New Collapse/Expand all option added to drilldown grids. When user clicks the icon the entire drilldown grid will collapse to its highest/lowest level.  
+-  New Collapse/Expand all option added to drilldown grids. When user clicks the icon the entire drilldown grid will collapse to its highest/lowest level.
 -  Added Lazy Loading for Dashboard tiles to improve loading speeds. All tiles show individual loading icons to allow users to interact with tiles which have already rendered, while waiting for large dashboards to load.
 -  For report part containers which do not require sorting, the system will no longer create an automatic ascending sort for each field added to a report part.
 -  New option added to Data Model Others page, "Allow Multiple Sorts on Grid Header". This is selected by default. When unchecked this will allow users to resort column in the report viewer without unsorting other columns. The sort in the report viewer will be only one column at a time when the user changes the sort. These are not saved in the report, but a user defined sort on the report viewer.
@@ -2608,9 +2619,9 @@ FEATURES
    - Removed redundant calls in the save process
    - Added caching for validation result of report to reduce api calls
    - Added caching for data formats of all data types
-   - Performance improvement for API for /api/allcategories   
-   - Removed redundant calls from Report Viewer 
-   - Removed calls to api/report/loadAllFilterFieldsData from Report Viewer and Dashboard Viewer 
+   - Performance improvement for API for /api/allcategories
+   - Removed redundant calls from Report Viewer
+   - Removed calls to api/report/loadAllFilterFieldsData from Report Viewer and Dashboard Viewer
 
 CHANGES FOR INTEGRATION KITS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2628,7 +2639,7 @@ FIXES
 -  Defect  17545 Can't move to next page of results in report on Drilldown Grid which has a Subtotal
 -  Defect  17529 For equals checkbox filter type user needs to refresh to load filter values on the first time entering report viewer
 -  Defect  17528 Sub and Grad totals are not displaying values when exported for forms, they show field values instead.
--  Defect  17515 System shows error msg for report created using PostgreSQL stored procedure and valid value is entered in input parameter. 
+-  Defect  17515 System shows error msg for report created using PostgreSQL stored procedure and valid value is entered in input parameter.
 -  Defect  17494 User cannot delete Report on Tenant Level, after clicking delete the report still shows, and when user tries to open, system shows: "This report is no longer valid"
 -  Defect  17485 Pivots are showing incorrect values for dates as columns when changing from Grouped by year to grouped by other date formats.
 -  Defect  17484 Subtotal showing first item in list of values, not the actual subtotal.
@@ -2714,7 +2725,7 @@ v2.1.5 June 22, 2017
 ~~~~~~~~~~~~~~~~~~~~~
 FIXES
 ^^^^^
--  Defect 17436	 In some Angular applications using polyfills, errors occur on Dashboard page in Izenda 
+-  Defect 17436	 In some Angular applications using polyfills, errors occur on Dashboard page in Izenda
 -  Defect 17399  When clicking the option "Show Filters Under Report Description", filters are not consistently displayed
 -  Defect 17386  Error occurs on row count queries when row count is larger than max int field limit
 -  Defect 17381  User is allowed to save calculated field that is not valid and is showing error
@@ -2733,7 +2744,7 @@ FIXES
 -  Defect 17196  User can create/copy a report when 'Can create new report?' option is unchecked for a tenant
 -  Defect 17186  User cannot create a new role when role has 'Create' but 'Permissions' option is unchecked for Role Setup
 -  Defect 17168  In Form report part fields outside of repeater is auto changed to sort by A-Z
--  Defect 17164  Missing date and time only filter operators for datetime/time input-param field of stored procedures 
+-  Defect 17164  Missing date and time only filter operators for datetime/time input-param field of stored procedures
 -  Defect 17163  Select All Gives Roles Tenant Permissions in Single Tenant Deployments
 -  Defect 17155  'Next Scheduled Run' is showing start-date instead of next-run date after editing the schedule/subscription
 -  Defect 17147  After adding join alias to joins containing additional join conditions some data is no longer returning
@@ -2801,8 +2812,8 @@ v2.1.1 June 2, 2017
 * https://github.com/Izenda7Series/Mvc5StarterKit
 * https://github.com/Izenda7Series/Mvc5StarterKit_BE_Standalone
 * https://github.com/Izenda7Series/WebFormsStarterkit
-	   
-   
+
+
 FIXES
 ^^^^^
 -  Defect 16800  In integrated instances some users can access modules not allowed for tenant
@@ -2827,7 +2838,7 @@ FIXES
 ^^^^^
 -  Defect 15825  Filters Dropdown should not reload every time user hits on dropdown
 -  Defect 15992  Exporting fails on excel from report list using datetime field without a format from a grid report
--  Defect 15429  Embedded subreport is not recognized when copying along with master report. 
+-  Defect 15429  Embedded subreport is not recognized when copying along with master report.
 -  Defect 13239  In stand alone mode if Admin user deactivates user they may remain active until the token is inactive
 -  Defect 16348  Data Sources of MySQL connection do not show correctly when database in Connection String is uppercase
 -  Defect 16356  Warning message 'The selected system/tenant level does not contain any connection string.' appears when navigating from Connection String to Data Model then logout
@@ -2847,7 +2858,7 @@ FIXES
 -  Defect 15433  Error occurs in Quick Edit when user attempts to remove an existing field.
 -  Defect 15687  Schedule Tab displays when refreshing page on Global reports after save.
 -  Defect 15808  User with System Admin rights cannot "Subscribe" to global reports
--  Defect 15901  System Admin user at Tenant Setting level can delete the report 
+-  Defect 15901  System Admin user at Tenant Setting level can delete the report
 -  Defect 16041  For system admins at tenant level Move and Delete icons are still available for global reports but should be hidden
 -  Defect 16042  For System Admins User cannot copy a global report to local  in report list
 -  Defect 16331   User without full access right is able to edit category's name of Global Reports
@@ -2860,9 +2871,9 @@ FIXES
 -  Defect 16805  User can not open a sub report as Link on report Designer after saving the new report, error states report has not been saved.
 -  Defect 16247  Form, when using the insert subreport feature on the form properly panel subreport style changes the field name to be invalid
 -  Defect 15819  Rule to show/hide buttons in Dashboard and Dashboard List is incorrect for Global reports (Rename, Move, Delete, Move, Save) should not be shown to System Users in Tenant Level
--  Defect 15332  Data fails to load when sorting one of 2 similar fields with subtotal/grand total. 
+-  Defect 15332  Data fails to load when sorting one of 2 similar fields with subtotal/grand total.
 -  Defect 16712  Error message shows null when navigating in embedded instances when using IE browser
--  Defect 15275  Oracle 12c - ORA-01795 found in log file 
+-  Defect 15275  Oracle 12c - ORA-01795 found in log file
 -  Defect 16543  In Report Designer, clicking distinct Checkbox Breaks Aggregates on MSSQL Databases
 -  Defect 15524  Equals (Manual Entry) Cannot Manually Enter Values that Exist in the Dropdown
 -  Defect 15413  Report Parts Shifting When Navigating to Viewer
@@ -2881,15 +2892,15 @@ FIXES
 -  Defect 15924  Access rights disappear briefly after saving a new report
 -  Defect 15748  System works incorrectly when appling Additional Join for Relationship and key join
 -  Defect 15741  In Cross Database Join using additional join conditions drop down list for Data Object/Foreign Data Object is blank
--  Defect 15281  Missing icon to indicate datatype type of Time field 
--  Defect 14983  Print preview does not exist until the report is saved. 
+-  Defect 15281  Missing icon to indicate datatype type of Time field
+-  Defect 14983  Print preview does not exist until the report is saved.
 -  Defect 16036  Report Designer Unable to change format of Datetime field to nonformat
 -  Defect 15930  Page continues to load when creating simple gauge on Firefox/Edge/IE browsers
 -  Defect 16851  Linear Gauge does not show the Metric Value on the Preview section
 -  Defect 16781  System shows error msg when user selects function for one field on Horizontal Grid
 -  Defect 15299  System shows error msg for failure validation when user create report with Cross join
 -  Defect 15206  System navigates to Format page, instead of Fields page when design is selected from report list.
--  Defect 16780  Load Report/Dashboard list performance issue 
+-  Defect 16780  Load Report/Dashboard list performance issue
 -  Defect 15969  Printed and Exported reports are sometimes blank for tenant users
 -  Defect 15923  In System Configuration Filter Value Selection does not display in Dashboard Schedule instance
 -  Defect 15205  User input wrong data in Provide Information page, system does not show error msg but let user navigates to create password page
@@ -2900,16 +2911,16 @@ FIXES
 -  Defect 16322  Error on Schedule shows start date required, should be start time required
 -  Defect 13808  Dashboard reloads each time user goes to schedule or access tabs
 -  Defect 15071  Headers are Overlapped in Exports
--  Defect 15684  Popup Subreport is blank when there is NULL filter value transferred 
+-  Defect 15684  Popup Subreport is blank when there is NULL filter value transferred
 -  Defect 12645  Charts > Drilldowns Don't Work with DateTime Fields
 -  Defect 16244  Sorting is not correct when table does not have a primary key assigned.
--  Defect 14660  Advanced Settings Data Model Query Limit will not accept more than 100K. 
+-  Defect 14660  Advanced Settings Data Model Query Limit will not accept more than 100K.
 -  Defect 15906  Alignment for sub/grand total lost on Export
 -  Defect 15659  Changing date format does not export to CSV
 -  Defect 16207  Custom Tree Filter node shows value not text for child nodes when selected
 -  Defect 14796  Date formats in dd/mm/yyyy style export with mm/dd/yyyy format
 -  Defect 14799  Deleted columns from physical db are not added back when recreated after reconnecting to the database
--  Defect 15569  When copying Dashboard in UAT called Dash with some reports the copy fails without any error notification and stops working 
+-  Defect 15569  When copying Dashboard in UAT called Dash with some reports the copy fails without any error notification and stops working
 -  Defect 15193  Exports Lose sub/grand total formatting and display as text
 -  Defect 15525  Exporting fails with null value in between date filters and value in database is null not ''
 -  Defect 15594  Grouping is not working properly for Separators when date is used and format is changed
@@ -2941,7 +2952,7 @@ FIXES
 ^^^^^
 -  Defect 15571  In Data Setup, Connection String SQL Injection risk on Linux/Unix stored databases
 -  Defect 15093  Export Load Dialogue Not Deleting in some integrated modes
--  Defect 16573  Lazy loading is failing for Database mapping feature for global reports 
+-  Defect 16573  Lazy loading is failing for Database mapping feature for global reports
 -  Defect 16558  Browser memory causing application slow downs
 -  Defect 15279  Inconsistent field types shown in front end, when user edits field time in database and reconnects. Izenda Data type is not properly updated.
 -  Defect 16514  It is possible to save reports outside of the path specified for Send to Disk
@@ -2962,7 +2973,7 @@ FIXES
 -  Defect 15571  SQL Injection vunerability in MySQL
 -  Defect 15755  Copy Management fails to copy when using Oracle12c when packages exist using the same names, but different parameters
 -  Defect 15431  Cannot create field mapping for subreports using hidden field in report and grouping is incorrect when field is hidden
--  Defect 16292  Performace issues noted, indexes added for some tables in Izenda database 
+-  Defect 16292  Performace issues noted, indexes added for some tables in Izenda database
 
 v2.0.2
 ~~~~~~~
@@ -2972,7 +2983,7 @@ FIXES
 -  Defect 15964  System shows missing data on some gauges when user change from Back side to Front side of report part several times
 -  Defect 15946  System does not render Gauge/Pie/Donut chart on the Preview section for the first time log in
 -  Defect 16022  In Calculated field Sum (Distinct[Field]) operation fails to work and user defined functions with multiple input parameters are not working properly
--  Defect 14288  System shows error msg: "At least one grouping field is required due to filter has aggreated function." when user creates 1 aggregated CF and adds it to filter and report container 
+-  Defect 14288  System shows error msg: "At least one grouping field is required due to filter has aggreated function." when user creates 1 aggregated CF and adds it to filter and report container
 
 v2.0.1
 ~~~~~~~
@@ -2992,35 +3003,35 @@ v2.0.0
 BREAKING CHANGES
 ^^^^^^^^^^^^^^^^
 |  API Request - added additional header "Selected Tenant" for Global Reports. This change is already made in the webconfig in the build for download.
-|  Please ensure you are using the latest version of the Copy Console which is available with this download 
-|  
+|  Please ensure you are using the latest version of the Copy Console which is available with this download
+|
 
 
 FEATURES
 ^^^^^^^^
--  Lazy Loading added for Report and Dashboard List 
+-  Lazy Loading added for Report and Dashboard List
 -  Performance Improvements made for rendering of report parts (Chart, Map, Gauge)
--  Global Reports - Allows System Administrators to create reports at the System Level and share among all tenants based on role and connection string mapping. Please see user guide :doc:`/ui/doc_global_report_setup` 
+-  Global Reports - Allows System Administrators to create reports at the System Level and share among all tenants based on role and connection string mapping. Please see user guide :doc:`/ui/doc_global_report_setup`
 
-   These changes impact how report definitions are stored. Global reports are always stored at the system level, but can be shared with tenants. The mapping for the connection strings, done in the data model, is used to tell Izenda which connection string the report is running against. This mapping is databse to database or schema to schema with the assumption that the same tables/view/stored procedures exsit in the mapped connection string. If any elements are missing the report will not display at the tenant level. 
+   These changes impact how report definitions are stored. Global reports are always stored at the system level, but can be shared with tenants. The mapping for the connection strings, done in the data model, is used to tell Izenda which connection string the report is running against. This mapping is databse to database or schema to schema with the assumption that the same tables/view/stored procedures exsit in the mapped connection string. If any elements are missing the report will not display at the tenant level.
 
 .. warning::
 
    Global reports cannot be copied using the Copy Management UI. By definition, Global reports are meant to be shared across the tenant base to reduce the number of report definitions required for reports that all tenant can use. The copy console does not block copying Global reports to a tenant, and we are working on a patch to restrict this. Please note that doing this will cause unintended behavior and therefore should not be done. A feature is planned for a later release to add support for copying Global Reports from one System level to another for independent Izenda configuration databases, for now please do not copy Global reports using the Copy Console.
-   
-   Known issue: Tenant users with Full Report and Dashboard access can alter Global Category names. 
 
-   
-   
+   Known issue: Tenant users with Full Report and Dashboard access can alter Global Category names.
+
+
+
 
 FIXES
 ^^^^^
 -  Defect 13981 Blank error message shows after moving some joins containing additional key joins in report designer
 -  Defect 14316 Adding additional error messages to issues with Connection String
 -  Defect 14681 In Time Period Filter Displays as Undefined in Filter Description
--  Defect 15057 Oracle showing errors when gradually moving more than 1000 data sources to Available Data Sources 
+-  Defect 15057 Oracle showing errors when gradually moving more than 1000 data sources to Available Data Sources
 -  Defect 15075 Copying Reports with an Aliased Join causes errors in destination when viewing report
--  Defect 15096 Title of Border Settings popup on report designer grid is inconsistent with other report parts 
+-  Defect 15096 Title of Border Settings popup on report designer grid is inconsistent with other report parts
 -  Defect 15227 Select data on Join Field/Field of Key Join, system resets Key Join operators automatically
 -  Defect 15268 Exported file of chart/gauge does not display depending on query limit
 -  Defect 15269 Field Column Group should be removed for field in Values container in Pivot grid
@@ -3055,7 +3066,7 @@ FIXES
 -  Defect 15658 Dashboard is blank and other page can not be loaded when user update common filter in report
 -  Defect 15682 The content of report list page is empty after user clicks Close button from report viewer page
 -  Defect 15687 Schedule tab displays in error in Global report when refreshing the page at system level
--  Defect 15694 In Report List the arrow icon doesn't change when user expands or collapses category/subcatgory 
+-  Defect 15694 In Report List the arrow icon doesn't change when user expands or collapses category/subcatgory
 -  Defect 15702 In some cases after finishing workflow uUser cannot logout system
 -  Defect 15742 Redundant component on Key Join when Join operator is NULL/NOT NULL/TRUE/FALSE, user can not navigate to Fields screen
 -  Defect 15806 Data is not displayed on Sub Report as pop up / Link / New Link Window/ Embedded
@@ -3077,7 +3088,7 @@ FIXES
 ^^^^^
 -  Defect 15875 Dynamic Supplementary KPI is not shown on gauge after saving report
 -  Defect 15873 Stacked Bar Chart fails to render when using separator and selected color values
--  Defect 15878 Exporting fails for some gauges and charts 
+-  Defect 15878 Exporting fails for some gauges and charts
 -  Defect 15908 Update Languages - The two language options provided in the base application are being removed. The new language pack can be accessed on a public GitHub repo `here <https://github.com/Izenda7Series/LanguagePacks>`__ with full installation instructions
 -  Defect 15910 Scheduler popup locks when attempting to add user as recipient
 -  Defect 15911 When using hidden filters, some field mappings are not properly passed to subreports
@@ -3111,7 +3122,7 @@ v1.25.1
 
 FIXES
 ^^^^^
--  Defect 15457 When using a date/time field on the x axis and a separator the chart fails to render	
+-  Defect 15457 When using a date/time field on the x axis and a separator the chart fails to render
 
 v1.25.0
 ~~~~~~~
@@ -3122,19 +3133,19 @@ BREAKING CHANGES
 
 FEATURES
 ^^^^^^^^
--  Additional Join Functionality with key join allows setting a comparison to another field, null, not null or a value which can be entered manually by the user. This can be used by any user with access to joins in the report designer. Currently this feature cannot be used in cross database joins. This will be implemented later with an additional option for an in comparison. 
--  Property Panel changes for simple data source users (users without ability to add joins in report designer) to show less options by default in the property panels of the report designer and the quick edit mode. The uer can still access the features using the More option on the property panel. Users with full access can select Less option to see less options in the property panels as well.		
--  Improve rendering performance of report parts Form	
--  Apply lazy loading for Popup, Combo Box, Dropdown to improve performance	
--  Add Ability for user to add more than one field at a time in the report designer or quick add mode. Using the + symbol or the link to add field from report part.		
--  Users can now use PostgreSQL functions as stored procedures. All functions which return a set are added as stored procedures 	
--  Added new filter operators for date time fields. Now a date, date time or time only option are provided	
--  Added context menu to dashboard tile so the user can flip the tile using the context menu like the report part tiles	
--  Property panel items with gear icons to show additional setting options now show the green check box when used and also display a red X to remove the additional settings and reset back to default state	
--  Added options to the Render Report API to show/hide navigation, filter panel and toolbar	
--  New Javascript API added to update results for Dashboard, Report and Report Parts 	
+-  Additional Join Functionality with key join allows setting a comparison to another field, null, not null or a value which can be entered manually by the user. This can be used by any user with access to joins in the report designer. Currently this feature cannot be used in cross database joins. This will be implemented later with an additional option for an in comparison.
+-  Property Panel changes for simple data source users (users without ability to add joins in report designer) to show less options by default in the property panels of the report designer and the quick edit mode. The uer can still access the features using the More option on the property panel. Users with full access can select Less option to see less options in the property panels as well.
+-  Improve rendering performance of report parts Form
+-  Apply lazy loading for Popup, Combo Box, Dropdown to improve performance
+-  Add Ability for user to add more than one field at a time in the report designer or quick add mode. Using the + symbol or the link to add field from report part.
+-  Users can now use PostgreSQL functions as stored procedures. All functions which return a set are added as stored procedures
+-  Added new filter operators for date time fields. Now a date, date time or time only option are provided
+-  Added context menu to dashboard tile so the user can flip the tile using the context menu like the report part tiles
+-  Property panel items with gear icons to show additional setting options now show the green check box when used and also display a red X to remove the additional settings and reset back to default state
+-  Added options to the Render Report API to show/hide navigation, filter panel and toolbar
+-  New Javascript API added to update results for Dashboard, Report and Report Parts
 -  Exporting will now always export all records to the export limit or the limit set by each report part in the report designer
--  Performance enhancement when exporting to PDF with 10k records 	
+-  Performance enhancement when exporting to PDF with 10k records
 
 FIXES
 ^^^^^
@@ -3142,7 +3153,7 @@ FIXES
 -  Defect 13079 User must scroll to the bottom of the report body to get to the horizontal scroll bar due to extra vertical scroll bar
 -  Defect 13255 Missing line breaks after {dashboard Link} text in schedule's email body.
 -  Defect 13300 Null and Blank values are displayed as Undefined Value in Charts and Gauges
--  Defect 13457 Some areas of the application are referring to templates as reports ("Example Report Name") 
+-  Defect 13457 Some areas of the application are referring to templates as reports ("Example Report Name")
 -  Defect 13575 The list of fields of a data source is sorted incorrectly when "Sort Column Name" flag is turned on in data model
 -  Defect 13800 Introduction text is not refreshed for system admins when switching between system and tenant on report designer
 -  Defect 13858 After saving a report containing subreport with icon style selected, system is reverting to link style
@@ -3159,7 +3170,7 @@ FIXES
 -  Defect 14235 Filter Sorting Does Not Work for Pop up and Checkbox & Tool Tip Is Wrong on sort icon
 -  Defect 14287 If user clicks update results after adding a filter and prior to adding an operator, error message is shown for filter logic.
 -  Defect 14298 Missing Loading progress bar when user changes Preview Records in View Mode/Quick Edit Mode
--  Defect 14302 Header format color changes the sort arrow color 
+-  Defect 14302 Header format color changes the sort arrow color
 -  Defect 14303 After adding a format to a field if the user selects none, the data remains formatted
 -  Defect 14345 Label text is displayed incorrectly for Roles in copy management screen when selected for copy
 -  Defect 14656 Save notification showing when user has just saved and clicked on Report Viewer
@@ -3168,7 +3179,7 @@ FIXES
 -  Defect 14691 In Filter Equivalence missing scrollbar for checkbox type and not limit number of items to show
 -  Defect 14738 Stored Procedure Parameter Filters do not show up in the Scheduled instance Filters
 -  Defect 14762 When using Equals Tree filter child nodes are not unchecked when deleting parent node
--  Defect 14778 Using Not Equals Tree Filter Unknown error message shows when updating results 
+-  Defect 14778 Using Not Equals Tree Filter Unknown error message shows when updating results
 -  Defect 14793 Full access should be applied well when user checked "Full Report and Dashboard Access" checkbox in setting
 -  Defect 14795 Filter ignored on report after adding one filter saving and adding another filter. Filter logic is set by system on save and should not be.
 -  Defect 14798 Typing in dates for between calendar filter when user is in dd/mm/yyyy format alters date
@@ -3176,7 +3187,7 @@ FIXES
 -  Defect 14824 In forms when user adds a sub total/grand total generates a new smart tag
 -  Defect 14855 When changing setting level in New Dashboard, page redirect to Dashboard List
 -  Defect 14881 User has full permission on Role setup cannot set role active/deactive
--  Defect 14901 List user in User pop up is blank when user creates 1 schedule/Email in Report Designer or in Dashboard 
+-  Defect 14901 List user in User pop up is blank when user creates 1 schedule/Email in Report Designer or in Dashboard
 -  Defect 14907 List user in User pop up is blank when user creates Access right for User on Report Designer or Dashboard page
 -  Defect 14920  Null value is displayed instead of blank on the rows which is not configured Grand Total/Sub Total
 -  Defect 14927 Tenant link is displayed on Left Nav of Setting page while System User has no role for Tenant
@@ -3193,11 +3204,11 @@ FIXES
 -  Defect 14956 Success message does not display after clicking Save button in System Config > Report
 -  Defect 14958 Tenant Setup section is still displayed on Role Setup page in single Tenant mode
 -  Defect 14965 Pagination doesn't update after user have just created new report and changed Preview Records value
--  Defect 14974 Some users may experience issues when inputting dates / times in scheduler and subscriptions. 
+-  Defect 14974 Some users may experience issues when inputting dates / times in scheduler and subscriptions.
 -  Defect 14975 Embedded pages using margins throw off dropdown calculations and dropdowns appear out of alignment with the container
 -  Defect 14980 System shows a null error msg when user navigates from Report Viewer to Report Designer
 -  Defect 14984 Save function doesn't work when Version History's checkboxes are checked
--  Defect 15018 Newly created user does not appear in the sharing list option 
+-  Defect 15018 Newly created user does not appear in the sharing list option
 -  Defect 15021 Category highlight status fails to update after saving as
 -  Defect 15026 Default bubble size on map is too large causing many data points to over lap.
 -  Defect 15027 Charts with X-Axis and interval setting not allowign decimal Intervals
@@ -3216,7 +3227,7 @@ FIXES
 -  Defect 15120 System does not hide invisible Field on Dashboard for Pivot, Drilldown, Chart, Gauge, Map
 -  Defect 15122 Change notification for Provision Map Data to "The system is importing Map data into the configuration database. Please wait for the process to complete before using Maps"
 -  Defect 15127 Filters do not properly align when some are set to not visible in the viewer
--  Defect 15128 Only ONE form shows if embedded multiple similar forms 
+-  Defect 15128 Only ONE form shows if embedded multiple similar forms
 -  Defect 15129 When creating Map, cities are showing in the wrong countries
 -  Defect 15154 Column group is not working in some reports
 -  Defect 15155 Report is broken when user unchecks on a datasource in Report Designer and then navigates to another page without saving
@@ -3225,17 +3236,17 @@ FIXES
 -  Defect 15176 Relationship and Key Join is missing when user navigate from Field to Data Source
 -  Defect 15179 Separator expand and collapse icons are Hidden In Dashboards
 -  Defect 15181 In Time Period Filter is not showing values in scheduled instance filter dropdowns
--  Defect 15186 Embedded reports only show the icon when there is repeater in form 
+-  Defect 15186 Embedded reports only show the icon when there is repeater in form
 -  Defect 15194 Export Fails for Form stating invalid field but data is returned in the UI
 -  Defect 15202 Missing scrollbar for checkbox type and not limit number of items to show
 -  Defect 15209 Unable to set subtotal/grand total for the second similar field
 -  Defect 15219 All property panels are at More state on entry when user is in simple data source mode
 -  Defect 15222 System shows no record in Preview when user saves report having Additional join (>=) and Filter. Relationship is reset to blank on some fields in Data Sources page
 -  Defect 15223 System returns incorrect Total data before and after saving when user saves report have Additional joins
--  Defect 15224 Toggle link is disable when selecting any item in dropdown list 
+-  Defect 15224 Toggle link is disable when selecting any item in dropdown list
 -  Defect 15228 System shows incorrect data when user use Operator Different (<>) on Key Join
 -  Defect 15229 User can not navigate to Data Source page on existing report which has Key Join
--  Defect 15232 System shows error msg "application has unknown error" when user set negative data for Key Join value 
+-  Defect 15232 System shows error msg "application has unknown error" when user set negative data for Key Join value
 -  Defect 15234 No value displays in filter popup and page is freezing after closing the popup
 -  Defect 15251 The Subtotal/Grand Total setting aren't removed when user clicks on their red X icon to remove
 -  Defect 15255 Printed page is blank when printing report or printing a dashboard tile in dashboard
@@ -3245,7 +3256,7 @@ FIXES
 -  Defect 15265 Text color and Cell color don't show green check-box and red X icon after user added setting with Percentage Range
 -  Defect 15274 Page doesn't work and the green check-box and red X icon still show after user removed settings
 -  Defect 15282 Save As 1 existing report which as Key Join, the system shows the blank data on Foreign Data Object and mask with dot symbol on Field. Some other datasources are disabled.
--  Defect 15287 Incorrect Data is returned on report when user uses LEFT Join or RIGHT Join on Relationship when using key join 
+-  Defect 15287 Incorrect Data is returned on report when user uses LEFT Join or RIGHT Join on Relationship when using key join
 -  Defect 15289 System errors scheduling with Attachment in Standalone Frontend and Embedded BackEnd
 -  Defect 15342 Default Access rights are not populated correctly when user does not have access to the access tab in the report designer
 -  Defect 15365 Relationship of the new added data source is removed after user saves report
@@ -3282,7 +3293,7 @@ FIXES
                 });
             }
         }
-        
+
 -  Defect 15245   Error Thrown in PostgreSQL when attempting to create Izenda config database
 -  Defect 15261   Data from Query is incorrect when using Left join
 
@@ -3331,7 +3342,7 @@ FIXES
       "key":"dea8ee0e-08bf-4a8f-9158-240837b26e2f",
       "value":"10250;#10248"
      }]}
-     
+
 
 -  Defect 15046 Updated insert process for new datasources. This is now
    batched into multiple insert statements to avoid timeout errors. A
@@ -3619,4 +3630,3 @@ FIXES
 -  Defect 14318 Users with Full Report and Dashboard Access could not
    save reports that contained report part types they weren't explicity
    granted access to.
-

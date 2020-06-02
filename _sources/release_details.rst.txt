@@ -4,32 +4,47 @@
 Release Details
 ==============
 
-v3.9.3 Preview Release -- May 18th, 2020 
+v3.9.4 Preview Release -- June 2nd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
-- Tenant Templates functionality is release
+- REST API Connectors have been Added
+    - Connections to REST API sources can now be added on the Data Connectors pages
+		- REST connections can include multiple endpoints to act as a collection of responsiveness
+		- Each endpoint can be cached to avoid multiple requests on the endpoint as concurrency scales up
+- Improved Data Connector Dialogue
+		- When adding a new connector, there is now a more dialogue-based approach to guide Users
+		- Iconography has been added to easily identify connectors
+    - The Connection Builder has been adjusted to allow connections to be edited more easily.
+- For more information, please see our :ref:`Rest_Connectors` page
+
+v3.9.3 Preview Release -- May 18th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Templates functionality is released
     - The base performance of Copy Management has been Improved
     - Several new items have been added to the copy management workspace to extend which values can be copied from the source to destination
     - For more information, please see our :ref:`Copy_Management` page
 
-v3.9.1 Preview Release -- April 30th, 2020 
+v3.9.1 Preview Release -- April 30th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
-- Natural Language Query Functionality Introduced  
+- Natural Language Query Functionality Introduced
     - User will be able to see a new default landing page labeled the 'Explore' tab
     - This functionality can be enabled/disabled through tenant modules and permissions
-    - NLQ can only be currently leveraged against a single MSSQL data source. 
+    - NLQ can only be currently leveraged against a single MSSQL data source.
     - Information on configuring the NLQ functionality can be found on the :ref:`Developer_Guide` pages.
     .. figure:: /_static/images/Explore_Page.png
         :align: center
         :width: 653px
 
 - Grid Style Changes
-    - Izenda's grids have been updated with a new modern styling 
+    - Izenda's grids have been updated with a new modern styling
     .. figure:: /_static/images/NewGrid.png
         :align: center
         :width: 653px
@@ -69,7 +84,7 @@ FEATURES
 
 - Gauge Scale Inputs Accept Aggregated Fields
     - The scale setting for gauges now accepts both text and fields.
-    - Feilds will be aggregated to create a consistent maximum or minimum scale value for all gauges 
+    - Feilds will be aggregated to create a consistent maximum or minimum scale value for all gauges
     .. figure:: /_static/images/Gauge_Threshold_Sample.jpg
         :align: center
         :width: 653px
@@ -84,7 +99,7 @@ FEATURES
         :align: center
         :width: 653px
 
-- New Role API 
+- New Role API
     - We have added POST api/external/role and PUT api/external/role/<Role GUID> to our API
     - These APIs allow for a new Permission format to be supplied for creating/updating roles in the platform.
     - This API allows for a new method of permission management where permissions are supplied as an array of values instead of a JSON object
@@ -103,7 +118,7 @@ FEATURES
     - These are accessed under the Report Part Properties tab in the report designer
 - HTML Rendering for Report Viewers and Exporting
     - New settings are added to render HTML elements within data for Grid and Form report parts
-        - These are found under Settings > Data Setup > Advanced Settings > Security 
+        - These are found under Settings > Data Setup > Advanced Settings > Security
     - The Report Viewer and Exporting services can enable/disable this functionality independently
 
 v3.7.1 November 26th, 2019
@@ -112,7 +127,7 @@ v3.7.1 November 26th, 2019
 FEATURES
 ^^^^^^^^^
 - D3 Library Implemented
-    - The first D3 chart in the platform is the Tree Map. 
+    - The first D3 chart in the platform is the Tree Map.
         - This contains a unique Banner functionality when enabling Multi-Level when more than one X-axis field is present.
     - You can select which library to use under the General Info section of the Report Part Properties.
 
@@ -120,8 +135,8 @@ FEATURES
     :align: center
     :width: 653px
 
-- Configurable Front-end AJAX Settings 
-    - A new parameter is added to our configJson element that allows for AJAX requests to be customized to suit a developer's needs.  
+- Configurable Front-end AJAX Settings
+    - A new parameter is added to our configJson element that allows for AJAX requests to be customized to suit a developer's needs.
     - This allows for developers to expand our request functionality to provide flexible integrations with Izenda.
         - This new parameter expects a standard AJAX settings format.
 
@@ -163,14 +178,14 @@ v3.7.0 November 13th, 2019
 
 FEATURES
 ^^^^^^^^^
-- Salesforce Connector Preview 
+- Salesforce Connector Preview
     - A connection string can be added to your Salesforce data for reporting.
-    - This requires three pieces of information: Email, Password, and Security Token 
+    - This requires three pieces of information: Email, Password, and Security Token
         - Ex. User=myUserName@test.com;Password=pa$sw0rd;Security Token=Al9q7nmDJW3ib0NBiLEnYz;Verbosity=3;
-- Continued Grid Enhancements 
-    - Blank rows can be added to pivot grid expanders for better visual spacing. 
-    - A new conditional formatting option exists for Horizontal and Vertical Grids 
-        - This allows for conditional formatting to impact entire columns or entire rows 
+- Continued Grid Enhancements
+    - Blank rows can be added to pivot grid expanders for better visual spacing.
+    - A new conditional formatting option exists for Horizontal and Vertical Grids
+        - This allows for conditional formatting to impact entire columns or entire rows
         - This will be expanded to impact pivot and drilldown grids at a later date, as well as having a more comprehensive UI.
     - Conditional formatting options were added to support bold, italics, and underline formatting for grids.
     - Pivot grids can have all expander items collapsed/expanded by default
@@ -180,7 +195,7 @@ FEATURES
     :width: 653px
 
 - Calculated Fields support New Line character
-- Expanded API response behavior for error handling 
+- Expanded API response behavior for error handling
     - Added a new elemenent to the configJson element, ErrorHandler.
     - You can specify a function that is assigned to this element that will can handle certain error responses from the API.
     - This allows you to provide more detailed feedback or handle failed request made against the API.
@@ -199,7 +214,7 @@ FEATURES
     - This endpoint is meant to return user information for a single user at a time, as opposed to a bulk load.
     - For our documentation on this endpoint please see our :ref:`External_User` API page.
 - New Separator Option for Pivot Grids
-    - We have introduced a new separator type, Logical, for pivot grids. 
+    - We have introduced a new separator type, Logical, for pivot grids.
     - This separator will block out data within the pivot without creating a new grid instance, keeping all of the data in-line.
     - If subtotals are enabled, these will be rendered in-line with the grid, creating total rows below each logical separator grouping.
 
@@ -209,7 +224,7 @@ FEATURES
 
 - Visibility Toggle for User ID and User Profile
     - Two new options exist under System Configuration > Security Policies
-    - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible. 
+    - These items will let a user specify if the UserID value should be shown in the profile, or if the profile page as a whole is accessible.
 
 .. figure:: /_static/images/New_Log_Parameters_Example.jpg
     :align: center
@@ -236,8 +251,8 @@ FEATURES
     :align: center
     :width: 653px
 
-- Google Maps can now be selected when creating a map report part. 
-    - Google can now be chosen from the Map Type dropdown 
+- Google Maps can now be selected when creating a map report part.
+    - Google can now be chosen from the Map Type dropdown
     - This requires that a valid Google API key is set in the System Configuration > Google Maps page
         - There is an additional option 'Google Address' that lets users leverage address information and Google will obtain the Lat/Lon coordinates
     - Note that this behavior requires a premium API key and must be enabled.
@@ -287,28 +302,28 @@ v3.4.0 August 16, 2019
 FEATURES
 ^^^^^^^^^
 - Machine Learning Infrastructure Addition
-    - The Prediction, Classification, and Forecasting model infrastructures are included. 
+    - The Prediction, Classification, and Forecasting model infrastructures are included.
 - System Cache Beta Implementation
     - A detailed description of caching setup and configuration can be found on our :ref:`Caching_Overview` page.
     - The system cache is enabled by default.
-    - There is no ability to disable the system cache with this release. 
+    - There is no ability to disable the system cache with this release.
 - Drilldown Grids can be Exported at the Current Expansion Level
-    - When using drilldown grids, you will receive a new pop-up when choosing to export your report if you have modified the grid. 
+    - When using drilldown grids, you will receive a new pop-up when choosing to export your report if you have modified the grid.
     - This pop-up will let you designate if we're exporting all records in your drilldown grid, or the records as you've configured them (expanded vs collapsed)
     - Users will be able to leverage this functionality to create more fidelity between drilldown grids in the platform and in their exports.
 - Join Logic can be Toggled Between Behavior before 2.18.1 and after 2.18.1
-    - Defect 22764 was resolved in v2.18.1 of Izenda which required adjustments to our query engine. 
+    - Defect 22764 was resolved in v2.18.1 of Izenda which required adjustments to our query engine.
     - Reports that leverage order-specific join structures or LEFT/RIGHT joins may have seen their data change.
     - To toggle this you will need to edit a value in the web.config (.NET) or appsettings.json (.NET Core)
         - This is the following value: <add key="izendaJoinStructure" value="true" />
-        - This is a boolean value, which should be set to true/false and is true by default. 
+        - This is a boolean value, which should be set to true/false and is true by default.
         - To leverage the older join logic you should set this value to false.
-    - Note that this is an APPLICATION-WIDE setting, meaning that it is not configured per-tenant. 
+    - Note that this is an APPLICATION-WIDE setting, meaning that it is not configured per-tenant.
 
 DEFECTS
 ^^^^^
 - For Defect 22502, there is an additional behavior where conditional formatting isn't applied when Custom Formats and Repeaters are in use (Defect 24687)
-- For Defect 23976, there is an additional behavior where no alert is provided when a user naviagtes to the Report Viewer from the Report Designer after editing the report if they have not saved. 
+- For Defect 23976, there is an additional behavior where no alert is provided when a user naviagtes to the Report Viewer from the Report Designer after editing the report if they have not saved.
 
 v3.3.1 July 23, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,15 +333,15 @@ FEATURES
 
 - InTimePeriod filters reflect more accurate timezones
     - When opened in the application, these filters will be offset by a user's Data Offset value instead of using the API server's UTC time.
-    - When sending an embedded or attached report, senders will be able to leverage the Time Zone setting for the schedule/subscription for InTimePeriod filters. 
+    - When sending an embedded or attached report, senders will be able to leverage the Time Zone setting for the schedule/subscription for InTimePeriod filters.
 
 - Multiple Selection filters now support delimited lists.
     - You can provide Comma and New Line delimited lists as valid inputs
     - Select 'None' in the delimiter selection dialogue if you want to leverage historical behavior.
 
-- Izenda can load on pages with pre-existing Highcarts references. 
-    - Izenda will make a backup of the customer Highcharts reference, reset the Highcharts global variable, and then load our resources. 
-    - After Izenda's Highchart resources are loaded, we will restore the customer resources.  
+- Izenda can load on pages with pre-existing Highcarts references.
+    - Izenda will make a backup of the customer Highcharts reference, reset the Highcharts global variable, and then load our resources.
+    - After Izenda's Highchart resources are loaded, we will restore the customer resources.
 
 v3.3.0 July 15, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -341,7 +356,7 @@ FEATURES
 
 - Data Caching Beta is now Implemented
     - A detailed description of caching setup and configuration can be found on our :ref:`Caching_Overview` page.
-    - We will be adding system-level caching (roles, validation, etc.) in a later release. 
+    - We will be adding system-level caching (roles, validation, etc.) in a later release.
     - No caching will be enabled by default, so you must set this up via the configuration page in the application.
 
 v3.2.0 June 4, 2019
@@ -351,27 +366,27 @@ FEATURES
 ^^^^^^^^^
 
 - Report Headers Scale to Reduce Whitespace
-    - Any unused rows in the report header will be removed, decreasing the overall whitespace seen in the report viewer and exports. 
-    - Adding new objects into the report header will allow you to add new rows of content, up to the original height, if required. 
+    - Any unused rows in the report header will be removed, decreasing the overall whitespace seen in the report viewer and exports.
+    - Adding new objects into the report header will allow you to add new rows of content, up to the original height, if required.
 - New Filter Properties Interactions
-    - The Filter Properties Panel now resides within a pop-up dialogue. 
+    - The Filter Properties Panel now resides within a pop-up dialogue.
     - Clicking on a filter object will open a pop-up that lets you select the operator and the value(s).
-    - Right-clicking on a filter object and selecting 'Edit', or clicking on the gear icon will open the Filter Properties pop-up that used to be among the right-hand panels. 
+    - Right-clicking on a filter object and selecting 'Edit', or clicking on the gear icon will open the Filter Properties pop-up that used to be among the right-hand panels.
 - New Filter Interactions
     - The 'Between' operators are reworked to consume less space.
     - The 'Between Date' operator is more streamlined and will allow both dates to be selected from a singular dialogue.
 - GetAccessToken is expanded for Grid and Form Exports
     - For integrated scenarios, grid and form exports will now set the user context in the same manner as chart exports, allowing for the same approach to security and token management.
-- Subreports Allow Users to Pass Field Values into Input Parameters of a Report 
-    - When setting up field mappings for subreports, you can now pass field values into the input parameters of stored procedures. 
+- Subreports Allow Users to Pass Field Values into Input Parameters of a Report
+    - When setting up field mappings for subreports, you can now pass field values into the input parameters of stored procedures.
 
 v3.1.1 May 16, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
-    - (5/16) If you are using the ADOJobStore, you will need to explicity state if you are using binary or json serialization.  
+    - (5/16) If you are using the ADOJobStore, you will need to explicity state if you are using binary or json serialization.
     - (5/16) For an existing ADOJobStore setup please use the binary serializer type, but please note that this is not supported when targeting .NET Core.
-    - (5/16) For new configurations and .NET Core instances, the serializer type should be set to json. 
+    - (5/16) For new configurations and .NET Core instances, the serializer type should be set to json.
     - (5/16) For Quartz, ADO.NET provider names have been simplified and are without version. e.g. SqlServer-20 => SqlServer
     - (5/16) For these Quartz migration changes please see their migration guide `here <https://www.quartz-scheduler.net/documentation/quartz-3.x/migration-guide.html>`_.
 
@@ -382,40 +397,40 @@ v3.1.0 May 9, 2019
 .. warning::
     - (5/9) In version v3.0.0 the IAdHocExtension implementation would only be picked up if the assembly name began with Izenda. This was resolved in the v3.1.0 release.
     - (5/9) In addition, due to changes in our internal reference, please make the following changes to your references/implementation found `here <https://github.com/Izenda7Series/IAdHocExtensionSamples/commit/da47fd3780f3c07e00b0593f0dfbd268f400515a>`_.
-    - (5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible. 
+    - (5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.
 
 FEATURES
 ^^^^^^^^^
- 
+
 -  MongoDB Available as a Reporting Datasource
-    - We've introduced MongoDB as a new datasource for reporting. This means that you are able to select Mongo from the Data Server Type dropdown when adding a new connection string. 
-    - We support Mongo v2.6 or greater in this release. 
+    - We've introduced MongoDB as a new datasource for reporting. This means that you are able to select Mongo from the Data Server Type dropdown when adding a new connection string.
+    - We support Mongo v2.6 or greater in this release.
 
 -  Key Joins Support Multiple Values
-    - When creating key joins in the Data Sources page of the report designer, previously you were limited to only a singular value. This meant that for every unique value you wanted to join against, you would have to create an additional key join. Now you can hit enter once you've chosen or entered your value, and then continue to add them for the = and <> operators. 
-   
+    - When creating key joins in the Data Sources page of the report designer, previously you were limited to only a singular value. This meant that for every unique value you wanted to join against, you would have to create an additional key join. Now you can hit enter once you've chosen or entered your value, and then continue to add them for the = and <> operators.
+
 -  Pie Charts Support Drilldown Actions on the 'Others' slice
-    - While designing a Pie Chart, you normally have the ability to set a value for 'Bottom X% Grouped to Other'. When enabled, a slice on your pie chart will be labeled 'Others' and it is the combined value of items that fall within your setting. Previously, if a drill down was set up on your chart, you could not see any underlying data for that slice. Now, if drilldowns are set for your pie chart, you will see a pop-up when clicking on the Others slice. This will let you choose any value within the Others slice to drill down on so you can see the lower level of data for that particular value.  
-    
+    - While designing a Pie Chart, you normally have the ability to set a value for 'Bottom X% Grouped to Other'. When enabled, a slice on your pie chart will be labeled 'Others' and it is the combined value of items that fall within your setting. Previously, if a drill down was set up on your chart, you could not see any underlying data for that slice. Now, if drilldowns are set for your pie chart, you will see a pop-up when clicking on the Others slice. This will let you choose any value within the Others slice to drill down on so you can see the lower level of data for that particular value.
+
 -  New Datetime Picker
-    - Our goal for the immediate future was to help modernize and streamline our filter interactions. In order to do this, we needed to switch out our underlying library for DateTime interaction and replace it. Now that we've done this, the calendar picker for all DateTime values throughout the application will change accordingly. Please note that while this change is in place now, some optimizations for filter space and presentation for these will be released in v3.2.0 now that the underlying libraries are in place. 
+    - Our goal for the immediate future was to help modernize and streamline our filter interactions. In order to do this, we needed to switch out our underlying library for DateTime interaction and replace it. Now that we've done this, the calendar picker for all DateTime values throughout the application will change accordingly. Please note that while this change is in place now, some optimizations for filter space and presentation for these will be released in v3.2.0 now that the underlying libraries are in place.
 
 -  Update Results Button Relocated
-    - To help streamline filter and report interactions, we've relocated the Update Results button to be within the filter container. This way, as your users are setting their filter values, the ability to immediate update the report to reflect that new data is located in the same vicinity so their attention stays with their workflow. 
+    - To help streamline filter and report interactions, we've relocated the Update Results button to be within the filter container. This way, as your users are setting their filter values, the ability to immediate update the report to reflect that new data is located in the same vicinity so their attention stays with their workflow.
 
 -  Filter Panel - Space Consolidation
-    - As a step towards responsive filter design, we've begun to consolidate the use of space within the filter panel. We've abbreviated 'Show Filters Under Report Description' to save space and added a tooltip. Additionally we've changed the 'Add Filter' button to a '+' icon to make room for the Update Results button. 
+    - As a step towards responsive filter design, we've begun to consolidate the use of space within the filter panel. We've abbreviated 'Show Filters Under Report Description' to save space and added a tooltip. Additionally we've changed the 'Add Filter' button to a '+' icon to make room for the Update Results button.
 
 -  Close Button in Viewer Methods
-    - Previously, when use either the renderReportViewerPage or renderDashboardViewerPage endpoint, the 'Close' button will still be present. When selected, it would bring the user back to the report or dashboard list. In order to respect the workflow of those pages, the Close button will not be rendered when using either of those rener methods. 
+    - Previously, when use either the renderReportViewerPage or renderDashboardViewerPage endpoint, the 'Close' button will still be present. When selected, it would bring the user back to the report or dashboard list. In order to respect the workflow of those pages, the Close button will not be rendered when using either of those rener methods.
 
--  Bottom Row of Dashboard Tiles is Situationally Removed 
-    - When a user would view a dashboard, there would always be a row of empty tiles at the bottom, where a report designer could add new content. Now, if a user is unable to edit a dashboard and is viewing one, that bottom row of empty cells we be gone to improve dashboard quality. 
+-  Bottom Row of Dashboard Tiles is Situationally Removed
+    - When a user would view a dashboard, there would always be a row of empty tiles at the bottom, where a report designer could add new content. Now, if a user is unable to edit a dashboard and is viewing one, that bottom row of empty cells we be gone to improve dashboard quality.
 
 -  Additional IntegrationStyle Flags for our Front-end Integration APIs
-    - We've added some additional integrationStyle flages to the renderReportViewerPage and renderDashboardViewerPage to give users more control over what is displayed. 
-    - For renderReportViewerPage, the two additional variables are hideReportName and hidePreviewRecords. When set to false these will hide the name of the report and the preview records dropdown respectively. 
-    - For renderDashboardViewerPage, the additional variable is hideDashboardName. When set to false the name of the dashboard and the global checkbox will not be displayed. 
+    - We've added some additional integrationStyle flages to the renderReportViewerPage and renderDashboardViewerPage to give users more control over what is displayed.
+    - For renderReportViewerPage, the two additional variables are hideReportName and hidePreviewRecords. When set to false these will hide the name of the report and the preview records dropdown respectively.
+    - For renderDashboardViewerPage, the additional variable is hideDashboardName. When set to false the name of the dashboard and the global checkbox will not be displayed.
 
 -  New Dashboard Tile Header Permission
-    - For end users who are only viewing the report, the dropdown header on dashboard tiles may not be necessary. Because of this, we've introduce a new permission, 'Display tile header in uneditable dashboard' in the role permissions setup. If this permission is not enabled, then when a user opens a dashboard that they cannot edit, the blue tile headers will not display. This mirrors the behavior seen in the report viewer and simplifies a user's interaction with dashboards.     
+    - For end users who are only viewing the report, the dropdown header on dashboard tiles may not be necessary. Because of this, we've introduce a new permission, 'Display tile header in uneditable dashboard' in the role permissions setup. If this permission is not enabled, then when a user opens a dashboard that they cannot edit, the blue tile headers will not display. This mirrors the behavior seen in the report viewer and simplifies a user's interaction with dashboards.

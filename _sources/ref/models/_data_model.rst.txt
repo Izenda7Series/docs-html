@@ -42,5 +42,6 @@ Data Model
    WorkspaceMapping
    WorkspaceMappingDetail
    WorkspaceMappingTenant
+   WorkspaceSchedule
    WorkspaceTenant
    WorkspaceTenantDetail

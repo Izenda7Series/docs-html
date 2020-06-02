@@ -6,7 +6,7 @@ WorkspaceDetail
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 60 10
 
    *  -  Field
       -  NULL
@@ -92,8 +92,11 @@ WorkspaceDetail
       -
       -  Each field contains the hashcode for each copied section, e.g. advancedSettings, tenantPermission, etc.
       -
-
-
+   *  -  **schedule** |br|
+         object
+      -
+      - A :doc:`WorkspaceSchedule` object
+      - .. versionadded:: 3.9.3
 
 
 Inherited fields:

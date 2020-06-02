@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Connectors &mdash; Izenda BI 3.9.4 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Data Connectors/REST Connector" href="doc_data_connectors_rest.html"/>
+        <link rel="prev" title="System DB and License" href="doc_system_db_and_license.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Connectors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-connector-and-select-visible-data-sources">Add connector and select visible data sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connector-permissions">Connector Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-connector">Delete connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-a-conector-hidden">Make a conector hidden</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refresh-the-list-of-available-data-sources">Refresh the list of available data sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filter-the-connector-list">Filter the connector list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cancel-the-changes">Cancel the changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Connection String Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_connectors_rest.html">Data Connectors/REST Connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_permissions_setup.html">Permissions Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_import_report_dashboard_definition.html">Import Report or Dashboard Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Data Connectors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_data_connectors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-connectors">
+<h1>Data Connectors<a class="headerlink" href="#data-connectors" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Data Connectors</strong> page allows user to</p>
+<ul class="simple">
+<li>manage the list of connectors</li>
+<li>select individual items from these connectors to be visible in Data Model and Reports</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the Reporting Databases: <br clear="right" />
+- The connection string user should have permissions to read schema; to select on all tables, views, store procedures and functions that will be used as data sources; to execute those store procedures and functions. <br clear="right" />
+- The user should also have permissions to create temp tables. <br clear="right" /></p>
+</div>
+<div class="section" id="add-connector-and-select-visible-data-sources">
+<h2>Add connector and select visible data sources<a class="headerlink" href="#add-connector-and-select-visible-data-sources" title="Permalink to this headline">¶</a></h2>
+<p>In this step user adds a connector and selects data sources to be
+visible in reports.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please use caution when adding stored procedures to the visible data source list. All stored procedures are executed when added to visible (input parameters are set to NULL) to obtain the resulting fields returned. Some stored procedures are created to do things like delete tables, add data to tables, etc. If these are added to the visible data sources, they will be executed in the database.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Data Connectors permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Data Connectors in the left menu.</p>
+<div class="figure" id="id3">
+<span id="connector-add-connector"></span><a class="reference internal image-reference" href="../_images/Connector_Add_Connector.png"><img alt="../_images/Connector_Add_Connector.png" src="../_images/Connector_Add_Connector.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Add Connector</span></p>
+</div>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Click on Add Connector in the middle panel.</p>
+<div class="figure" id="id4">
+<span id="connector-server-type"></span><a class="reference internal image-reference" href="../_images/Connector_Server_Type.png"><img alt="../_images/Connector_Server_Type.png" src="../_images/Connector_Server_Type.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Connector Data Server Type</span></p>
+</div>
+</li>
+<li><p class="first">Select the data server type from the popup.</p>
+</li>
+<li><p class="first">The Database Connection popup appears for configuring the connector.</p>
+<div class="figure" id="id5">
+<span id="connector-builder"></span><a class="reference internal image-reference" href="../_images/Connector_Builder.png"><img alt="../_images/Connector_Builder.png" src="../_images/Connector_Builder.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Database Connection Builder <br clear="right" /></span></p>
+</div>
+<ol class="loweralpha simple">
+<li>Fill in the <strong>Server Name</strong>, e.g. &#8220;yourdbserver.com&#8221;.</li>
+<li>Fill in the <strong>Database</strong> name, e.g. &#8220;Northwind&#8221;.</li>
+<li>Select the <strong>Authentication</strong> type from the drop-down box.</li>
+<li>Fill in the <strong>Login</strong> and <strong>Password</strong> if necessary.</li>
+<li>Optional. Fill in the additional connection options specific to the selected data server.</li>
+</ol>
+<p>These steps can be bypassed when user already knows the connection string. In this case, it can be copied and pasted straight into the Connection String box.
+For examples of connection strings, please see the <a class="reference external" href="https://www.izenda.com/docs/ui/doc_connection_string.html#connection-string-examples">Connection String Examples</a> section below.
+To do this, switch to Connection String mode:</p>
+<div class="figure" id="id6">
+<span id="connector-builder-connection-string"></span><a class="reference internal image-reference" href="../_images/Connector_Builder_Connection_String.png"><img alt="../_images/Connector_Builder_Connection_String.png" src="../_images/Connector_Builder_Connection_String.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Database Connection Builder (Connection String) <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Click OK button to verify the connection and go to the next step after all required fields are filled in.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Unless the Connection String has been verified successfully, user will not be able to move next.</li>
+</ul>
+</div>
+</li>
+<li><p class="first">The connector name will be automatically populated from the database name. User can edit to give it a more suitable name.</p>
+<div class="figure" id="id7">
+<span id="connector-name"></span><a class="reference internal image-reference" href="../_images/Connector_Name.png"><img alt="../_images/Connector_Name.png" src="../_images/Connector_Name.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Connector Name</span></p>
+</div>
+</li>
+<li><p class="first">Expand the listed user schemas and object types to see the data sources. <br clear="right" />
+The data sources can be quickly filtered by typing a partial name in the Search box.</p>
+</li>
+<li><p class="first">Click on the data sources to move them between the two lists.
+User can quickly move all data sources in a group (Table, View, Stored Procedure or Function) by clicking on that group name.</p>
+<div class="figure" id="id8">
+<span id="connector-data-sources"></span><a class="reference internal image-reference" href="../_images/Connector_Data_Sources.png"><img alt="../_images/Connector_Data_Sources.png" src="../_images/Connector_Data_Sources.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Data Sources</span></p>
+</div>
+</li>
+<li><p class="first">Click Save button at the top to save the connector and the visible data sources.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="connector-permissions">
+<span id="connection-permissions"></span><h2>Connector Permissions<a class="headerlink" href="#connector-permissions" title="Permalink to this headline">¶</a></h2>
+<p>Izenda needs permissions to view the database schema and read from selected tables and views.</p>
+<p>If using stored procedures as data source, Izenda needs execute permission on these stored procedures as well as create table and delete table permissions.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The create table permission will be used to create temporary tables to store the output of stored procedures, for joining to other data sources. And the delete table permission will be used to clean up these temporary tables afterwards.</p>
+</div>
+</div>
+<div class="section" id="delete-connector">
+<h2>Delete connector<a class="headerlink" href="#delete-connector" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the delete icon (x) on the right of a connector to delete it.</li>
+<li>Click OK in the confirmation pop-up.</li>
+</ol>
+</div>
+<div class="section" id="make-a-conector-hidden">
+<h2>Make a conector hidden<a class="headerlink" href="#make-a-conector-hidden" title="Permalink to this headline">¶</a></h2>
+<p>All data sources from a connector can be hidden quickly by making that connector hidden.</p>
+<ol class="arabic">
+<li><p class="first">Click the visibility icon on the right of that connector.</p>
+<div class="figure" id="id9">
+<span id="connector-visible-invisible"></span><a class="reference internal image-reference" href="../_images/Connector_Visible_Invisible.png"><img alt="../_images/Connector_Visible_Invisible.png" src="../_images/Connector_Visible_Invisible.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Connector Visible/Invisible</span></p>
+</div>
+</li>
+<li><p class="first">Click OK in the confirmation pop-up.</p>
+<blockquote>
+<div><p>All data sources from this connector is hidden from Data Model and Reports. The right pane is disabled and the connector&#8217;s visibility icon is changed to a hidden one.</p>
+<div class="figure" id="id10">
+<span id="connector-visible-confirmation"></span><a class="reference internal image-reference" href="../_images/Connector_Visible_Confirmation.png"><img alt="../_images/Connector_Visible_Confirmation.png" src="../_images/Connector_Visible_Confirmation.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Confirmation pop-up</span></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>To restore the visibility of the data sources:</p>
+<ol class="arabic">
+<li><p class="first">Click the &#8220;hidden visibility&#8221; icon on the right of that connector.</p>
+</li>
+<li><p class="first">Click OK in the confirmation pop-up.</p>
+<blockquote>
+<div><p>The visibility of all data sources from this connector is restored back to the time before being hidden. The right pane is enabled and the connector&#8217;s visibility icon is changed back to normal.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="refresh-the-list-of-available-data-sources">
+<span id="id1"></span><h2>Refresh the list of available data sources<a class="headerlink" href="#refresh-the-list-of-available-data-sources" title="Permalink to this headline">¶</a></h2>
+<p>When there is a remote change in a connector, it will not be automatically reflected in Izenda. The Reconnect button needs to be manually clicked on to detect that.</p>
+<ol class="arabic">
+<li><p class="first">Click on the connector.</p>
+</li>
+<li><p class="first">Click the Reconnect button.</p>
+</li>
+<li><p class="first">The remote changes in the data sources will be marked as either New data source or Changed data source.</p>
+<blockquote>
+<div><p>The Data Setup, Data Connectors and Data Model menu items will also be marked with Changed data source icon (!).</p>
+<div class="figure" id="id11">
+<span id="connector-new-and-changed-data-sources"></span><a class="reference internal image-reference" href="../_images/Connector_New_And_Changed_Data_Sources.png"><img alt="../_images/Connector_New_And_Changed_Data_Sources.png" src="../_images/Connector_New_And_Changed_Data_Sources.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">New and changed Data Sources</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Go to <a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html"><span class="doc">Data Model</span></a> page to resolve the changes.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="filter-the-connector-list">
+<h2>Filter the connector list<a class="headerlink" href="#filter-the-connector-list" title="Permalink to this headline">¶</a></h2>
+<p>The connector list can be quickly filtered by typing a partial connector name in the Search box.</p>
+</div>
+<div class="section" id="cancel-the-changes">
+<h2>Cancel the changes<a class="headerlink" href="#cancel-the-changes" title="Permalink to this headline">¶</a></h2>
+<p>To cancel any changes without saving:</p>
+<ol class="arabic simple">
+<li>Click the Cancel button at the top.</li>
+<li>Click OK in the confirmation pop-up.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Connection String Examples<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Oracle:</dt>
+<dd><ul class="first last simple">
+<li>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=user;Password=password;</li>
+<li>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.45.37)(PORT=1521))(CONNECT_DATA=(SID=xe)));User Id=user;Password=password;</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Microsoft SQL Server:</dt>
+<dd><ul class="first last simple">
+<li>Server=192.168.45.37,1433;Database=testdatabase;User ID=user;Password=password</li>
+<li>Server=HOST-PC;Database=testdatabase;User ID=user;Password=password</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>MySQL:</dt>
+<dd><ul class="first last simple">
+<li>Server=MY-PC;Port=3306;Database=testdatabase;User ID=user;Password=password</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PostgreSQL:</dt>
+<dd><ul class="first simple">
+<li>Server=mydomainname;Port=5432;Database=testdatabase;User ID=user;Password=password</li>
+<li>Server=mydomainname;Port=5432;Database=testdatabase;User ID=user;Password=password;SslMode=Require;Trust Server Certificate=true;</li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>If using Izenda v3.0.0 or greater and a PostgreSQL connection string with &#8220;SslMode=Require&#8221;, the &#8220;Trust Server Certificate=true;&#8221; parameter will also need to be added.</li>
+</ul>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://www.izenda.com/docs/intro/elastic.html">Elasticsearch</a>:</dt>
+<dd><ul class="first last simple">
+<li>server=https://xxxxxxxx.us-east-1.aws.found.io;Port=9243;User=user;Password=password;</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://www.izenda.com/docs/intro/mongo.html">MongoDB</a>:</dt>
+<dd><ul class="first last simple">
+<li>Server=localhost;Port=27017;Database=admin;User=user;Password=password;</li>
+<li>User=user;Password=password;Server=atlas-host1;Port=27017;Database=testdatabase;AuthDatabase=admin;AuthMechanism=SCRAM-SHA-1;ReplicaSet=cluster0-shard-00-01-u49p2.mongodb.net:27017,cluster0-shard-00-02-u49p2.mongodb.net:27017;UseSSL=true;SlaveOK=true;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_data_connectors_rest.html" class="btn btn-neutral float-right" title="Data Connectors/REST Connector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_system_db_and_license.html" class="btn btn-neutral" title="System DB and License" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.9.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

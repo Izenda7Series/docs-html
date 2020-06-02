@@ -31,6 +31,7 @@ Others
    ReportDashboardSearchCriteria
    ReportSetting
    SaveConnectionStatus
+   ScheduleEntity
    SearchCriteria
    SecuritySetting
    SortOrder

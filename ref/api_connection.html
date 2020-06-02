@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Connection APIs &mdash; Izenda BI 3.9.3 documentation</title>
+  <title>Connection APIs &mdash; Izenda BI 3.9.4 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.9.3 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Data Model APIs" href="api_data_model.html"/>
         <link rel="prev" title="System DB and License APIs" href="api_systemdb_and_license.html"/> 
@@ -234,52 +234,103 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="#get-systemsetting-databasesetup">GET systemSetting/databaseSetup</a></td>
-<td>Returns whether the system database has been set up.</td>
-<td>On Front-end load</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#id1">GET dataAdaptor</a></td>
-<td>Returns an array of database server types currently supported for queries. <br clear="right" />
-See also: <a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-supporteddatabasetype"><span class="std std-ref">GET databaseSetup/supportedDatabaseType</span></a></td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; populate Data Server Type box</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#id2">POST connection/verify</a></td>
-<td>Validates a connection string. <br clear="right" />
-See also: <a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-testconnection"><span class="std std-ref">POST databaseSetup/testConnection</span></a></td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; Test</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#id3">POST connection/loadRemoteSchema</a></td>
-<td>Returns an enumeration of all supported objects (query sources) from a connection string.</td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; Test &gt; Connect</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#id4">POST connection</a></td>
-<td>Adds a new connection or updates an existing one. <br clear="right" />
-Only visible query sources should be saved.</td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; Save</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-connection-tenant-id">GET connection/(tenant_id)</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-connection-tenant-id">GET connection/(tenant_id)</a></td>
 <td>Returns an array of connections (filtered by tenant_id if given).</td>
 <td>Settings &gt; Data Setup &gt; Connection String, for a specific tenant</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id1">GET connection/basicInfo/(tenant_id)</a></td>
+<td>Returns an array of id and name of connections (filtered by tenant_id if given).</td>
+<td>To be updated</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#get-connection-detail-connection-id">GET connection/detail/{connection_id}</a></td>
 <td>Returns the details of the connection specified by the {connection_id} value.</td>
 <td>Settings &gt; Data Setup &gt; Connection String &gt; select an existing connection</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#id5">GET connection/basicInfo/(tenant_id)</a></td>
-<td>Returns an array of id and name of connections (filtered by tenant_id if given).</td>
-<td>To be updated</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#get-connection-detailinfo-tenant-id-loadfield">GET connection/detailInfo/(tenant_id)/{loadField}</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#get-connection-detailinfo-tenant-id-loadfield">GET connection/detailInfo/(tenant_id)/{loadField}</a></td>
 <td>Returns an array of connection details.</td>
 <td>To be updated</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-connection-detailinfo">POST connection/detailInfo</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#get-connection-preset-server-type-id">GET connection/preset/{server_type_id}</a></td>
+<td><p class="first">Returns a set of all connection presets, filtered by server_type_id. <br clear="right" /></p>
+<div class="last admonition tip">
+<p class="first admonition-title">Tip</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.9.4.</span></p>
+</div>
+</div>
+</td>
+<td>REST Connector: Settings &gt; Data Setup &gt; Connection String &gt; Edit Connection &gt; Load preset</td>
+</tr>
+<tr class="row-odd"><td>GET connection/systemIndicator/(tenantId)</td>
+<td><p class="first">Returns the number of changes in Connection String and Data Model (filtered by tenant_id if provided). <br clear="right" /></p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Obsolete, use <a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-systemindicator-tenant-id"><span class="std std-ref">GET systemSetting/systemIndicator/(tenant_id)</span></a> instead</p>
+</div>
+</td>
+<td>Not used</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-connection-visible-tenant-id-count">GET connection/visible/(tenant_id)/count</a></td>
+<td>Returns the count of visible connections, filtered by tenant_id if available.</td>
+<td>Settings &gt; Data Setup &gt; Connection String</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id2">GET dataAdaptor</a></td>
+<td>Returns an array of database server types currently supported for queries. <br clear="right" />
+See also: <a class="reference internal" href="api_systemdb_and_license.html#get-databasesetup-supporteddatabasetype"><span class="std std-ref">GET databaseSetup/supportedDatabaseType</span></a></td>
+<td>Settings &gt; Data Setup &gt; Add Connector &gt; populate Data Server Type tiles</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#get-systemsetting-databasesetup">GET systemSetting/databaseSetup</a></td>
+<td>Returns whether the system database has been set up.</td>
+<td>On Front-end load</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id3">POST connection</a></td>
+<td>Adds a new connection or updates an existing one. <br clear="right" />
+Only visible query sources should be saved.</td>
+<td>Settings &gt; Data Setup &gt; Connection String &gt; Save</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-connection-databasename">POST connection/databaseName</a></td>
+<td>Returns the database name from a connection string.</td>
+<td>Settings &gt; Data Setup &gt; Add Connector &gt; Data Server Type &gt; fill all required fields &gt; click OK</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#post-connection-connectionstringdata">POST connection/connectionStringData</a></td>
+<td><p class="first">Returns the connection string data for a specific connection. <br clear="right" /></p>
+<div class="last admonition tip">
+<p class="first admonition-title">Tip</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.9.4.</span></p>
+</div>
+</div>
+</td>
+<td>Settings &gt; Data Setup &gt; Connection String &gt; Edit Connection</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-connection-detailinfo">POST connection/detailInfo</a></td>
 <td>Returns an array of connection details with paging.</td>
 <td>To be updated</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-connection-invisible-connection-id">POST connection/invisible/{connection_id}</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#post-connection-invisible-connection-id">POST connection/invisible/{connection_id}</a></td>
 <td>Hides from Data Model and Reports all query sources in the connection specified by the {connection_id} value.</td>
 <td>Settings &gt; Data Setup &gt; Connection String &gt; click Visibility icon of a visible connection</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#id4">POST connection/loadDistinctConnections</a></td>
+<td>Returns an array of distinct connections (by server type and database name) from a list of tenant ids.</td>
+<td>Settings &gt; Data Setup &gt; Copy Management</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id5">POST connection/loadRemoteSchema</a></td>
+<td>Returns an enumeration of all supported objects (query sources) from a connection string.</td>
+<td>Settings &gt; Data Setup &gt; Add Connector &gt; Data Server Type &gt; fill all required fields &gt; click OK</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-connection-reloadremoteschema">POST connection/reloadRemoteSchema</a></td>
+<td>Returns an enumeration of all supported objects (query sources) from an existing connection with detected changes.</td>
+<td>Settings &gt; Data Setup &gt; Connection String &gt; Reconnect an existing connection</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#id6">POST connection/verify</a></td>
+<td>Validates a connection string. <br clear="right" />
+See also: <a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-testconnection"><span class="std std-ref">POST databaseSetup/testConnection</span></a></td>
+<td>Settings &gt; Data Setup &gt; Add Connector &gt; Data Server Type &gt; fill all required fields &gt; click OK</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#post-connection-validateschema">POST connection/validateSchema</a></td>
+<td>Returns true if remote schema has not changed, otherwise returns false.</td>
+<td>To be updated</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#post-connection-visible-connection-id">POST connection/visible/{connection_id}</a></td>
 <td>Restores the visibility of all query sources in the connection specified by the {connection_id} value.</td>
@@ -289,279 +340,8 @@ Only visible query sources should be saved.</td>
 <td>Deletes the connection specified by the {connection_id} value.</td>
 <td>Settings &gt; Data Setup &gt; Connection String &gt; click Delete icon of a connection</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-connection-reloadremoteschema">POST connection/reloadRemoteSchema</a></td>
-<td>Returns an enumeration of all supported objects (query sources) from an existing connection with detected changes.</td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; Reconnect an existing connection</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#post-connection-databasename">POST connection/databaseName</a></td>
-<td>Returns the database name from a connection string.</td>
-<td>Settings &gt; Data Setup &gt; Connection String &gt; Test</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#post-connection-validateschema">POST connection/validateSchema</a></td>
-<td>Returns true if remote schema has not changed, otherwise returns false.</td>
-<td>To be updated</td>
-</tr>
-<tr class="row-even"><td>GET connection/systemIndicator/(tenantId)</td>
-<td><p class="first">Returns the number of changes in Connection String and Data Model (filtered by tenant_id if provided). <br clear="right" /></p>
-<div class="last admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Obsolete, use <a class="reference internal" href="api_systemdb_and_license.html#get-systemsetting-systemindicator-tenant-id"><span class="std std-ref">GET systemSetting/systemIndicator/(tenant_id)</span></a> instead</p>
-</div>
-</td>
-<td>Not used</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#get-connection-visible-tenant-id-count">GET connection/visible/(tenant_id)/count</a></td>
-<td>Returns the count of visible connections, filtered by tenant_id if available.</td>
-<td>Settings &gt; Data Setup &gt; Connection String</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#id6">POST connection/loadDistinctConnections</a></td>
-<td>Returns an array of distinct connections (by server type and database name) from a list of tenant ids.</td>
-<td>Settings &gt; Data Setup &gt; Copy Management</td>
-</tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="get-systemsetting-databasesetup">
-<h2>GET systemSetting/databaseSetup<a class="headerlink" href="#get-systemsetting-databasesetup" title="Permalink to this headline">¶</a></h2>
-<p>Returns whether the system database has been set up.</p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>No payload</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>true if the system database has been set up.</li>
-<li>false if not.</li>
-</ul>
-</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/databaseSetup</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Response when system database has been setup:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="get-dataadaptor">
-<span id="id1"></span><h2>GET dataAdaptor<a class="headerlink" href="#get-dataadaptor" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of database server types currently supported for queries. <br clear="right" />
-See also: <code class="docutils literal"><span class="pre">GET</span> <span class="pre">databaseSetup/SupportedDatabaseType</span></code></p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>No payload</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div><p>An array of objects</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
-<th class="head">Note</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>id</strong> <br clear="right" />
-string (GUID)</td>
-<td>The id of the connection</td>
-<td>Example: <code class="docutils literal"><span class="pre">572bd576-8c92-4901-ab2a-b16e38144813</span></code></td>
-</tr>
-<tr class="row-odd"><td><strong>shortName</strong> <br clear="right" />
-string</td>
-<td>The short name of the database server type</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>name</strong> <br clear="right" />
-string</td>
-<td>The display name of the database server type</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataAdaptor</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
-  <span class="p">{</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[AZSQL] AzureSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span>
-  <span class="p">},</span> <span class="p">{</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[MYSQL] MySQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MYSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3d4916d1-5a41-4b94-874f-5bedacb89656&quot;</span>
-  <span class="p">},</span> <span class="p">{</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[ORACL] Oracle&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ORACL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;93942448-c715-4f98-85e2-9292ed7ca4bc&quot;</span>
-  <span class="p">},</span> <span class="p">{</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[PGSQL] PostgreSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span>
-  <span class="p">},</span> <span class="p">{</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="post-connection-verify">
-<span id="id2"></span><h2>POST connection/verify<a class="headerlink" href="#post-connection-verify" title="Permalink to this headline">¶</a></h2>
-<p>Validates a connection string. <br clear="right" />
-See also: <a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-testconnection"><span class="std std-ref">POST databaseSetup/testConnection</span></a></p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>Payload: a <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div>A <a class="reference internal" href="models/ConnectionVerificationResult.html"><span class="doc">ConnectionVerificationResult</span></a> object</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/verify</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;ServerTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;ConnectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;server=host01\instance01;database=db01;User Id=user01;Password=secret;&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Successful response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;serverNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;databaseNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;loginFail&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;hasValidLicense&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="post-connection-loadremoteschema">
-<span id="id3"></span><h2>POST connection/loadRemoteSchema<a class="headerlink" href="#post-connection-loadremoteschema" title="Permalink to this headline">¶</a></h2>
-<p>Returns an enumeration of all supported objects (query sources) from a connection string.</p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>Payload: a <a class="reference internal" href="models/SchemaRequest.html"><span class="doc">SchemaRequest</span></a> object</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div>A <a class="reference internal" href="models/SchemaResult.html"><span class="doc">SchemaResult</span></a> object</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/loadRemoteSchema</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;1aBcD+=&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;serverType&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Successful response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;dBSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
-           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;6ca15f34-b4cb-4fd7-8d55-77ee26ba6abe&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-                 <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;bcf124c4-c5df-434a-bc4c-1638161d7949&quot;</span><span class="p">,</span>
-                 <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;AWBuildVersion&quot;</span><span class="p">,</span>
-                 <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
-                 <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-                 <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
-                 <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                 <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                 <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span>
-              <span class="p">}</span>
-           <span class="p">],</span>
-           <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;connection&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-           <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span>
-        <span class="p">}</span>
-     <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;differentConnectionAndSchema&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="post-connection">
-<span id="id4"></span><h2>POST connection<a class="headerlink" href="#post-connection" title="Permalink to this headline">¶</a></h2>
-<p>Adds a new connection or updates an existing one. <br clear="right" />
-Only visible query sources should be saved. <br clear="right" /> <br clear="right" /></p>
-<p>The connection string will be validated before saving.</p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>Payload: a <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> object</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div>A <a class="reference internal" href="models/SaveConnectionStatus.html"><span class="doc">SaveConnectionStatus</span></a> object</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Request payload for a new connection:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;db01&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;server=izenda01</span><span class="se">\\</span><span class="s2">DB_INSTANCE;database=db01;User Id=user01;Password=secret;&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;dBSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-     <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Sample response (in case user has System Admin Permission):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;f5180bc0-7c07-48db-b672-e66a5adde027&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;connectionErrors&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Response in case user does not have System Admin Permission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 <div class="section" id="get-connection-tenant-id">
 <h2>GET connection/(tenant_id)<a class="headerlink" href="#get-connection-tenant-id" title="Permalink to this headline">¶</a></h2>
@@ -611,6 +391,57 @@ Only visible query sources should be saved. <br clear="right" /> <br clear="righ
      <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span>
   <span class="p">}</span>
 <span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-connection-basicinfo-tenant-id">
+<span id="id1"></span><h2>GET connection/basicInfo/(tenant_id)<a class="headerlink" href="#get-connection-basicinfo-tenant-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of id and name of connections (filtered by tenant_id if given).</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>key</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the connection</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
+string</td>
+<td>The name of the connection</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/basicInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;1a65445b-2779-4825-8c0b-2491eaa87a46&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;AdventureWorks2008R2&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;dda3633e-659f-4e88-9955-4e20bded686c&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+<span class="p">}]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -680,57 +511,6 @@ Only visible query sources should be saved. <br clear="right" /> <br clear="righ
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="get-connection-basicinfo-tenant-id">
-<span id="id5"></span><h2>GET connection/basicInfo/(tenant_id)<a class="headerlink" href="#get-connection-basicinfo-tenant-id" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of id and name of connections (filtered by tenant_id if given).</p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div>No payload</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
-<th class="head">Note</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>key</strong> <br clear="right" />
-string (GUID)</td>
-<td>The id of the connection</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>value</strong> <br clear="right" />
-string</td>
-<td>The name of the connection</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/basicInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
-   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;1a65445b-2779-4825-8c0b-2491eaa87a46&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;AdventureWorks2008R2&quot;</span>
-<span class="p">},</span> <span class="p">{</span>
-   <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;dda3633e-659f-4e88-9955-4e20bded686c&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
-<span class="p">}]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -882,6 +662,331 @@ string</td>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-connection-preset-server-type-id">
+<h2>GET connection/preset/{server_type_id}<a class="headerlink" href="#get-connection-preset-server-type-id" title="Permalink to this headline">¶</a></h2>
+<p>Returns a set of all connection presets, filtered by server_type_id.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A set of connection preset objects specific to the specified server type.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/preset/4b751f52-0903-4170-ab15-814a7fa4e42c</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;myRest&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;endpointName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest.service.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schemePath&quot;</span><span class="p">:</span> <span class="s2">&quot;/NorthwindJSON/schema.json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/NorthwindJSON/</span><span class="si">{0}</span><span class="s2">.json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flattenArrays&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;flattenObjects&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;flattenDepth&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;subColumnSeparator&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;requestCacheTtl&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+        <span class="s2">&quot;requestCacheEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-connection-visible-tenant-id-count">
+<h2>GET connection/visible/(tenant_id)/count<a class="headerlink" href="#get-connection-visible-tenant-id-count" title="Permalink to this headline">¶</a></h2>
+<p>Returns the count of visible connections, filtered by tenant_id if available.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The number of connections</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/visible/count</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response (in case user has System Admin Permission):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Reponse in case user does not have System Admin Permission:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-dataadaptor">
+<span id="id2"></span><h2>GET dataAdaptor<a class="headerlink" href="#get-dataadaptor" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of database server types currently supported for queries. <br clear="right" />
+See also: <code class="docutils literal"><span class="pre">GET</span> <span class="pre">databaseSetup/SupportedDatabaseType</span></code></p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><p>An array of objects</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
+string (GUID)</td>
+<td>The id of the connection</td>
+<td>Example: <code class="docutils literal"><span class="pre">572bd576-8c92-4901-ab2a-b16e38144813</span></code></td>
+</tr>
+<tr class="row-odd"><td><strong>shortName</strong> <br clear="right" />
+string</td>
+<td>The short name of the database server type</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>The display name of the database server type</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataAdaptor</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[AZSQL] AzureSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[MYSQL] MySQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MYSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3d4916d1-5a41-4b94-874f-5bedacb89656&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[ORACL] Oracle&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;ORACL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;93942448-c715-4f98-85e2-9292ed7ca4bc&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[PGSQL] PostgreSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;f2638ed5-70e5-47da-a052-4da0c1888fcf&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;[MSSQL] SQLServer&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;shortName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="get-systemsetting-databasesetup">
+<h2>GET systemSetting/databaseSetup<a class="headerlink" href="#get-systemsetting-databasesetup" title="Permalink to this headline">¶</a></h2>
+<p>Returns whether the system database has been set up.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>true if the system database has been set up.</li>
+<li>false if not.</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/systemSetting/databaseSetup</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Response when system database has been setup:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-connection">
+<span id="id3"></span><h2>POST connection<a class="headerlink" href="#post-connection" title="Permalink to this headline">¶</a></h2>
+<p>Adds a new connection or updates an existing one. <br clear="right" />
+Only visible query sources should be saved. <br clear="right" /> <br clear="right" /></p>
+<p>The connection string will be validated before saving.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/SaveConnectionStatus.html"><span class="doc">SaveConnectionStatus</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload for a new connection:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;db01&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;server=izenda01</span><span class="se">\\</span><span class="s2">DB_INSTANCE;database=db01;User Id=user01;Password=secret;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;dBSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response (in case user has System Admin Permission):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;f5180bc0-7c07-48db-b672-e66a5adde027&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;connectionErrors&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case user does not have System Admin Permission:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-connection-databasename">
+<h2>POST connection/databaseName<a class="headerlink" href="#post-connection-databasename" title="Permalink to this headline">¶</a></h2>
+<p>Returns the database name from a connection string.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>Payload: a <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>The database name if success</li>
+<li>An empty string in case of error</li>
+</ul>
+</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/databaseName</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ServerTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ConnectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;server=host01\instance01;database=db01;User Id=user01;Password=secret;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Successful response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;db01&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-connection-connectionstringdata">
+<h2>POST connection/connectionStringData<a class="headerlink" href="#post-connection-connectionstringdata" title="Permalink to this headline">¶</a></h2>
+<p>Returns the connection string data for a specific connection.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>connectionId</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The id of the connection</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>serverTypeId</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The id of the server type</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>connectionString</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The encrypted connection string</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A set of connection preset objects specific to the specified server type.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/connectionStringData</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;3e0e8445-eab1-4570-8528-17f2f93a80ab&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;serverTypeId&quot;</span><span class="p">:</span><span class="s2">&quot;bfdb387c-f405-4dbc-8677-c3c5bad91193&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span><span class="s2">&quot;FPEo/svV4DeikmSZAnqCgDsYKrCR99z2Gn83tcaKxvUJ276UoVtUdfdgyPwLwTIcKoB1AGiqvehnW+jhQBjbF4wV+8VWLAyOZAydPw/QSmdJT06XA==&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;endpointName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rest.service.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schemePath&quot;</span><span class="p">:</span> <span class="s2">&quot;/NorthwindJSON/schema.json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/NorthwindJSON/</span><span class="si">{0}</span><span class="s2">.json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flattenArrays&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;flattenObjects&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;flattenDepth&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;subColumnSeparator&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s2">&quot;requestCacheTtl&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+        <span class="s2">&quot;requestCacheEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;connectionString&quot;</span><span class="p">:</span> <span class="n">null</span>
+     <span class="p">}]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1042,54 +1147,129 @@ integer</td>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="post-connection-visible-connection-id">
-<h2>POST connection/visible/{connection_id}<a class="headerlink" href="#post-connection-visible-connection-id" title="Permalink to this headline">¶</a></h2>
-<p>Restores the visibility of all query sources in the connection specified by the {connection_id} value.</p>
+<div class="section" id="post-connection-loaddistinctconnections">
+<span id="id4"></span><h2>POST connection/loadDistinctConnections<a class="headerlink" href="#post-connection-loaddistinctconnections" title="Permalink to this headline">¶</a></h2>
+<p>Returns an array of distinct connections (by server type and database name) from a list of tenant ids.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>No payload</div></blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>tenantIds</strong> <br clear="right" />
+array of strings</td>
+<td>An array of string (GUID) values.</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field populated</div></blockquote>
+<div>An array of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/visible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/loadDistinctConnections</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Request payload:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tenantIds&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e9e54aaf-64d8-4dbd-88c4-642f51ba16ec&quot;</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span>
-<span class="p">}</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3cd79317-5d1b-4842-93d7-47abae6e0273&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;4d8jRon2cmwd8K1blELZB7RtRYUM76oW5ZOYxEcE4eCRy19pnCeeyM4ZFpAxX+dwIsv+p+3JKbZbJCdDyj6XXOlS88wnw9pNBuLfk3SxFJM=&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e9e54aaf-64d8-4dbd-88c4-642f51ba16ec&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+     <span class="p">},</span>
+     <span class="s2">&quot;relationships&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+     <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;checked&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+     <span class="s2">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="delete-connection-connection-id">
-<h2>DELETE connection/{connection_id}<a class="headerlink" href="#delete-connection-connection-id" title="Permalink to this headline">¶</a></h2>
-<p>Deletes the connection specified by the {connection_id} value.</p>
+<div class="section" id="post-connection-loadremoteschema">
+<span id="id5"></span><h2>POST connection/loadRemoteSchema<a class="headerlink" href="#post-connection-loadremoteschema" title="Permalink to this headline">¶</a></h2>
+<p>Returns an enumeration of all supported objects (query sources) from a connection string.</p>
 <p><strong>Request</strong></p>
 <blockquote>
-<div>No payload</div></blockquote>
+<div>Payload: a <a class="reference internal" href="models/SchemaRequest.html"><span class="doc">SchemaRequest</span></a> object</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field populated</div></blockquote>
+<div>A <a class="reference internal" href="models/SchemaResult.html"><span class="doc">SchemaResult</span></a> object</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/connection/f5180bc0-7c07-48db-b672-e66a5adde027</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/loadRemoteSchema</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Successful response (in case user has System Admin Permission):</p>
+<p>Request payload:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+  <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;1aBcD+=&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;serverType&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Response in case user does not have System Asmin Permission):</p>
+<p>Successful response:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
+  <span class="s2">&quot;dBSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
+     <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+           <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;6ca15f34-b4cb-4fd7-8d55-77ee26ba6abe&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;parentCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
+                 <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;bcf124c4-c5df-434a-bc4c-1638161d7949&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;AWBuildVersion&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;parentQuerySourceId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;categoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;selected&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                 <span class="s2">&quot;connectionName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;dataSourceCategoryId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;dataSourceCategoryName&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;alias&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;querySourceFields&quot;</span> <span class="p">:</span> <span class="p">[],</span>
+                 <span class="s2">&quot;querySourceCategory&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;modified&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;extendedProperties&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                 <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="s2">&quot;approval&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+              <span class="p">}</span>
+           <span class="p">],</span>
+           <span class="s2">&quot;childs&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;connection&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+     <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;differentConnectionAndSchema&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1183,22 +1363,19 @@ integer</td>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="post-connection-databasename">
-<h2>POST connection/databaseName<a class="headerlink" href="#post-connection-databasename" title="Permalink to this headline">¶</a></h2>
-<p>Returns the database name from a connection string.</p>
+<div class="section" id="post-connection-verify">
+<span id="id6"></span><h2>POST connection/verify<a class="headerlink" href="#post-connection-verify" title="Permalink to this headline">¶</a></h2>
+<p>Validates a connection string. <br clear="right" />
+See also: <a class="reference internal" href="api_systemdb_and_license.html#post-databasesetup-testconnection"><span class="std std-ref">POST databaseSetup/testConnection</span></a></p>
 <p><strong>Request</strong></p>
 <blockquote>
 <div>Payload: a <a class="reference internal" href="models/DBSetupInfo.html"><span class="doc">DBSetupInfo</span></a> object</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li>The database name if success</li>
-<li>An empty string in case of error</li>
-</ul>
-</div></blockquote>
+<div>A <a class="reference internal" href="models/ConnectionVerificationResult.html"><span class="doc">ConnectionVerificationResult</span></a> object</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/databaseName</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/verify</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
@@ -1209,7 +1386,14 @@ integer</td>
 </pre></div>
 </div>
 <p>Successful response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;db01&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;serverNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;databaseNotValid&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;loginFail&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;hasValidLicense&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1242,94 +1426,55 @@ integer</td>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="get-connection-visible-tenant-id-count">
-<h2>GET connection/visible/(tenant_id)/count<a class="headerlink" href="#get-connection-visible-tenant-id-count" title="Permalink to this headline">¶</a></h2>
-<p>Returns the count of visible connections, filtered by tenant_id if available.</p>
+<div class="section" id="post-connection-visible-connection-id">
+<h2>POST connection/visible/{connection_id}<a class="headerlink" href="#post-connection-visible-connection-id" title="Permalink to this headline">¶</a></h2>
+<p>Restores the visibility of all query sources in the connection specified by the {connection_id} value.</p>
 <p><strong>Request</strong></p>
 <blockquote>
 <div>No payload</div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
-<div>The number of connections</div></blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field populated</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/connection/visible/count</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/visible/866d8a41-3bd8-48d5-bc1e-9e4488c171c3</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Sample response (in case user has System Asmin Permission):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<p>Sample response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Reponse in case user does not have System Admin Permission:</p>
+</div></blockquote>
+</div>
+<div class="section" id="delete-connection-connection-id">
+<h2>DELETE connection/{connection_id}<a class="headerlink" href="#delete-connection-connection-id" title="Permalink to this headline">¶</a></h2>
+<p>Deletes the connection specified by the {connection_id} value.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>No payload</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field populated</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/connection/f5180bc0-7c07-48db-b672-e66a5adde027</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Successful response (in case user has System Admin Permission):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Response in case user does not have System Asmin Permission):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
    <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="post-connection-loaddistinctconnections">
-<span id="id6"></span><h2>POST connection/loadDistinctConnections<a class="headerlink" href="#post-connection-loaddistinctconnections" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of distinct connections (by server type and database name) from a list of tenant ids.</p>
-<p><strong>Request</strong></p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
-<th class="head">Note</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>tenantIds</strong> <br clear="right" />
-array of strings</td>
-<td>An array of string (GUID) values.</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p><strong>Response</strong></p>
-<blockquote>
-<div>An array of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects</div></blockquote>
-<p><strong>Samples</strong></p>
-<blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/connection/loadDistinctConnections</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</pre></div>
-</div>
-<p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;tenantIds&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e9e54aaf-64d8-4dbd-88c4-642f51ba16ec&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
-     <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;3cd79317-5d1b-4842-93d7-47abae6e0273&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;4d8jRon2cmwd8K1blELZB7RtRYUM76oW5ZOYxEcE4eCRy19pnCeeyM4ZFpAxX+dwIsv+p+3JKbZbJCdDyj6XXOlS88wnw9pNBuLfk3SxFJM=&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;visible&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-     <span class="s2">&quot;deleted&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;e9e54aaf-64d8-4dbd-88c4-642f51ba16ec&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;dbSource&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[]</span>
-     <span class="p">},</span>
-     <span class="s2">&quot;relationships&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-     <span class="s2">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;checked&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-     <span class="s2">&quot;databaseName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;fullPath&quot;</span> <span class="p">:</span> <span class="n">null</span>
-  <span class="p">}</span>
-<span class="p">]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1380,7 +1525,7 @@ array of strings</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.9.3',
+            VERSION:'3.9.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Subscription &mdash; Izenda BI 3.9.3 documentation</title>
+  <title>Subscription &mdash; Izenda BI 3.9.4 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.9.3 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../../index.html"/>
         <link rel="up" title="Report Details" href="_report_details.html"/>
         <link rel="next" title="SubscriptionFilterField" href="SubscriptionFilterField.html"/>
         <link rel="prev" title="ReportValidation" href="ReportValidation.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l4"><a class="reference internal" href="ReportSavingResult.html">ReportSavingResult</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReportValidation.html">ReportValidation</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Subscription</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scheduleentity">ScheduleEntity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SubscriptionFilterField.html">SubscriptionFilterField</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SubscriptionCommonFilterField.html">SubscriptionCommonFilterField</a></li>
 </ul>
@@ -243,16 +244,165 @@ string</td>
 <td>The name of the subscription</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>schedule</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The schedule for display</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>type</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>type</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The subscription type, either &#8220;Subscription Report&#8221; or &#8220;Subscription Alert&#8221;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>deliveryType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The delivery type (Email or File Location)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>deliveryMethod</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The delivery method (Link, Attachment, Embedded HTML, Send to disk)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>exportFileType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The export file type (PDF, Word Doc, Excel, CSV)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>exportAttachmentType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The export attachment type (PDF, Word Doc, Excel, CSV)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>emailSubject</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The email subject template</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>emailBody</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The email body template</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the report</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>draftId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the draft report</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>dashboardId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the dashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>filterValueSelection</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The filter value selection</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>recipients</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The recipients</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>isSubscription</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this a subscription (or scheduling)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>createdById</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the user creating this subscription</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the tenant if available</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>subscriptionFilterFields</strong> <br clear="right" />
+array of objects</td>
+<td>Y</td>
+<td>An array of <a class="reference internal" href="SubscriptionFilterField.html"><span class="doc">SubscriptionFilterField</span></a> objects. <br clear="right" /> <br clear="right" />
+<em>When emailing a report with selected filter(s).</em></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>subscriptionCommonFilterFields</strong> <br clear="right" />
+array of objects</td>
+<td>Y</td>
+<td>An array of <a class="reference internal" href="SubscriptionCommonFilterField.html"><span class="doc">SubscriptionCommonFilterField</span></a> objects. <br clear="right" /> <br clear="right" />
+<em>When emailing a dashboard with selected common filter(s).</em></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>tempId</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The temporary id</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>reportingType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The reporting type</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>additionalRecipients</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>Additional recipients</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>reportDashboardName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the report or dashboard</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>isSubscriptionTimeZoneUsed</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>Is subscription timezone used for reports and dashboards</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+</div>
+<div class="section" id="scheduleentity">
+<h1>ScheduleEntity<a class="headerlink" href="#scheduleentity" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Null</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>schedule</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The schedule for display</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><strong>timeZoneName</strong> <br clear="right" />
@@ -361,66 +511,6 @@ datetime</td>
 <td>The end date in UTC timezone</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>deliveryType</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The delivery type (Email or File Location)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>deliveryMethod</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The delivery method (Link, Attachment, Embedded HTML, Send to disk)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>exportFileType</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The export file type (PDF, Word Doc, Excel, CSV)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>exportAttachmentType</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The export attachment type (PDF, Word Doc, Excel, CSV)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>emailSubject</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The email subject template</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>emailBody</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The email body template</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>reportId</strong> <br clear="right" />
-string (GUID)</td>
-<td>Y</td>
-<td>The id of the report</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>dashboardId</strong> <br clear="right" />
-string (GUID)</td>
-<td>Y</td>
-<td>The id of the dashboard</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>filterValueSelection</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The filter value selection</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>recipients</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The recipients</td>
-<td>&#160;</td>
-</tr>
 <tr class="row-odd"><td><strong>lastSuccessfulRun</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
@@ -445,66 +535,92 @@ datetime</td>
 <td>The next scheduled run date and time</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>isSubscription</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Is this a subscription (or scheduling)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>createdById</strong> <br clear="right" />
-string (GUID)</td>
-<td>Y</td>
-<td>The id of the user creating this subscription</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
-string (GUID)</td>
-<td>Y</td>
-<td>The id of the tenant if available</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>isStartDateAdjusted</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>isStartDateAdjusted</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Has the start date been updated</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>subscriptionFilterFields</strong> <br clear="right" />
-array of objects</td>
-<td>Y</td>
-<td>An array of <a class="reference internal" href="SubscriptionFilterField.html"><span class="doc">SubscriptionFilterField</span></a> objects. <br clear="right" /> <br clear="right" />
-<em>When emailing a report with selected filter(s).</em></td>
-<td>&#160;</td>
+</tbody>
+</table>
+<p>Inherited fields:</p>
+<div class="section" id="entity">
+<h2>Entity<a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="45%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
 </tr>
-<tr class="row-even"><td><strong>subscriptionCommonFilterFields</strong> <br clear="right" />
-array of objects</td>
-<td>Y</td>
-<td>An array of <a class="reference internal" href="SubscriptionCommonFilterField.html"><span class="doc">SubscriptionCommonFilterField</span></a> objects. <br clear="right" /> <br clear="right" />
-<em>When emailing a dashboard with selected common filter(s).</em></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>tempId</strong> <br clear="right" />
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>id</strong> <br clear="right" />
 string (GUID)</td>
 <td>&#160;</td>
-<td>The temporary id</td>
+<td>The id of this object <br clear="right" />
+Example: <code class="docutils literal"><span class="pre">572bd576-8c92-4901-ab2a-b16e38144813</span></code></td>
+<td>Allow null incase insert a new entity</td>
+</tr>
+<tr class="row-odd"><td><strong>state</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td><p class="first">The entity state of this object</p>
+<ul class="last simple">
+<li>0 = None</li>
+<li>1 = Insert</li>
+<li>2 = Delete</li>
+<li>3 = Update</li>
+</ul>
+</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>reportingType</strong> <br clear="right" />
-string</td>
+<tr class="row-even"><td><strong>deleted</strong> <br clear="right" />
+boolean</td>
 <td>&#160;</td>
-<td>The reporting type</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>additionalRecipients</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>Additional recipients</td>
+<td>Is this object deleted</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>reportDashboardName</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>inserted</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this object inserted</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>version</strong> <br clear="right" />
+string</td>
+<td>Y</td>
+<td>The version</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>created</strong> <br clear="right" />
+datetime in ISO 8601 format</td>
+<td>Y</td>
+<td>The created datetime</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>createdBy</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
-<td>The name of the report or dashboard</td>
+<td>The creator</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>modified</strong> <br clear="right" />
+datetime in ISO 8601 format</td>
+<td>Y</td>
+<td>The modification datetime</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>modifiedBy</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The user who last modified this object</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -543,6 +659,7 @@ string</td>
    <span class="nt">&quot;isEdit&quot;</span> <span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -591,7 +708,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.9.3',
+            VERSION:'3.9.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

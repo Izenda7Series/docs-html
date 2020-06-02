@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Connection &mdash; Izenda BI 3.9.3 documentation</title>
+  <title>Connection &mdash; Izenda BI 3.9.4 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.9.3 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../../index.html"/>
         <link rel="up" title="Data Model" href="_data_model.html"/>
         <link rel="next" title="ConnectionColor" href="ConnectionColor.html"/>
         <link rel="prev" title="CalculatedFieldFunctionParam" href="CalculatedFieldFunctionParam.html"/> 
@@ -150,6 +150,8 @@
 <li class="toctree-l4"><a class="reference internal" href="WorkspaceMapping.html">WorkspaceMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WorkspaceMappingDetail.html">WorkspaceMappingDetail</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WorkspaceMappingTenant.html">WorkspaceMappingTenant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WorkspaceSchedule.html">WorkspaceSchedule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WorkspaceSchedule.html#scheduleentity">ScheduleEntity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WorkspaceTenant.html">WorkspaceTenant</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WorkspaceTenantDetail.html">WorkspaceTenantDetail</a></li>
 </ul>
@@ -249,8 +251,8 @@
 <colgroup>
 <col width="25%" />
 <col width="5%" />
-<col width="65%" />
-<col width="5%" />
+<col width="60%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Field</th>
@@ -344,13 +346,22 @@ integer</td>
 <td>The change status</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>checked</strong> <br clear="right" />
+<tr class="row-even"><td><strong>copyDataConnector</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is selected for copy in Copy Management (only data connector mode)</td>
+<td><div class="first last versionadded">
+<p><span class="versionmodified">New in version 3.9.3.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><strong>checked</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Is selected for copy in Copy Management</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>databaseName</strong> <br clear="right" />
+<tr class="row-even"><td><strong>databaseName</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The name of the database</td>
@@ -424,7 +435,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.9.3',
+            VERSION:'3.9.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

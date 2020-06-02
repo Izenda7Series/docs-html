@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Connectors/REST Connector &mdash; Izenda BI 3.9.4 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../index.html"/>
+        <link rel="up" title="System Setup Guide" href=".system_setup_guide.html"/>
+        <link rel="next" title="Data Model/Tables, Views and Stored Procedures" href="doc_data_model_tables,_views_and_stored_procedures.html"/>
+        <link rel="prev" title="Data Connectors" href="doc_data_connectors.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href=".system_setup_guide.html">System Setup Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_system_db_and_license.html">System DB and License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_connectors.html">Data Connectors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Connectors/REST Connector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-rest-connector">Add REST connector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_tables,_views_and_stored_procedures.html">Data Model/Tables, Views and  Stored Procedures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_custom_view.html">Custom View Setup Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_functions.html">Data Model/Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_data_model_relationships_and_schema.html">Data Model/Relationships and Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_advanced_settings.html">Advanced Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_role_setup.html">Role Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_permissions_setup.html">Permissions Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_user_setup.html">User Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".system_configuration_guide.html">System Configuration Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".multi-tenant_setup_guide.html">Multi-tenant Setup Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_security_recommendations.html">Security Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_copy_console.html">Izenda Copy Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc_import_report_dashboard_definition.html">Import Report or Dashboard Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
+        
+          <li><a href=".system_setup_guide.html">System Setup Guide</a> &raquo;</li>
+        
+      <li>Data Connectors/REST Connector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_data_connectors_rest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-connectors-rest-connector">
+<span id="rest-connectors"></span><h1>Data Connectors/REST Connector<a class="headerlink" href="#data-connectors-rest-connector" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">REST Connector is available from release 3.9.4.</p>
+</div>
+<p>The <strong>REST Connector</strong> is a special type of connector to interact with REST APIs.</p>
+<div class="section" id="add-rest-connector">
+<h2>Add REST connector<a class="headerlink" href="#add-rest-connector" title="Permalink to this headline">¶</a></h2>
+<p>Here, user adds and configures a new REST connector.</p>
+<ol class="arabic">
+<li><p class="first">In browser, log in to Izenda as a user with Data Connectors permission.</p>
+</li>
+<li><p class="first">Click Settings, then Data Setup then Data Connectors in the left menu.</p>
+<div class="figure" id="id1">
+<span id="connector-rest-add-connector"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Add_Connector.png"><img alt="../_images/Connector_Rest_Add_Connector.png" src="../_images/Connector_Rest_Add_Connector.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Add Connector</span></p>
+</div>
+</li>
+<li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
+</li>
+<li><p class="first">Click on Add Connector in the middle panel.</p>
+<div class="figure" id="id2">
+<span id="connector-rest-server-type"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Server_Type.png"><img alt="../_images/Connector_Rest_Server_Type.png" src="../_images/Connector_Rest_Server_Type.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Connector REST Data Server Type <br clear="right" /></span></p>
+</div>
+</li>
+<li><p class="first">Select the REST data server type from the popup.</p>
+</li>
+<li><p class="first">The REST Adaptor Connection String Builder popup appears for configuring the connector. <br clear="right" /></p>
+<div class="figure" id="id3">
+<span id="connector-rest-builder"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Builder.png"><img alt="../_images/Connector_Rest_Builder.png" src="../_images/Connector_Rest_Builder.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">REST Adaptor Connection String Builder <br clear="right" /></span></p>
+</div>
+<ol class="loweralpha">
+<li><p class="first">The <strong>Endpoint Name</strong> will be automatically populated. User can edit to give it a more suitable name.</p>
+</li>
+<li><p class="first">Fill in the <strong>Address</strong> of REST API, e.g. &#8220;<a class="reference external" href="https://yourservice.com:9000">https://yourservice.com:9000</a>&#8221;.</p>
+</li>
+<li><p class="first">Fill in the <strong>Data Path</strong> field with the endpoint that return one or more datasets, e.g. &#8220;/api/get/orders&#8221;. <br clear="right" />
+Supported optional parameter: <br clear="right" />
+- {0} - placeholder to substitute the dataset name from the schema, e.g. &#8220;/api/get/{0}&#8221;</p>
+<p>Sample response:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Orders&quot;</span><span class="p">,</span> <span class="s2">&quot;OrderDetails&quot;</span><span class="p">,</span> <span class="s2">&quot;Customers&quot;</span><span class="p">,</span> <span class="s2">&quot;Products&quot;</span><span class="p">,</span> <span class="s2">&quot;Categories&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional. Fill in the <strong>Schema Path</strong> field with the endpoint that returns a list of dataset names. <br clear="right" />
+If it is empty, the endpoint will contain only 1 dataset with data from the Data Path.</p>
+</li>
+<li><p class="first">Optional. Click Advanced Options button. User can change the following settings: <br clear="right" /></p>
+<div class="figure" id="id4">
+<span id="connector-rest-advanced-options"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Advanced_Options.png"><img alt="../_images/Connector_Rest_Advanced_Options.png" src="../_images/Connector_Rest_Advanced_Options.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Advanced Options</span></p>
+<div class="legend">
+<dl class="docutils">
+<dt><strong>Flatten Arrays</strong> <br clear="right" /></dt>
+<dd><p class="first">Enable this setting to flatten array properties into rows of their own. <br clear="right" />
+For example, there is the following object:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;order&quot;</span><span class="p">:</span> <span class="s2">&quot;96e41566&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;date&quot;</span><span class="p">:</span>  <span class="s2">&quot;2020-05-01&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+   <span class="nt">&quot;country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If Flatten Arrays is enabled, then it flattened into the following table:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">order</th>
+<th class="head">date</th>
+<th class="head">quantity</th>
+<th class="head">country</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>96e41566</td>
+<td>2020-05-01</td>
+<td>30</td>
+<td>USA</td>
+</tr>
+<tr class="row-odd"><td>96e41566</td>
+<td>2020-05-01</td>
+<td>30</td>
+<td>Germany</td>
+</tr>
+<tr class="row-even"><td>96e41566</td>
+<td>2020-05-01</td>
+<td>30</td>
+<td>Italy</td>
+</tr>
+<tr class="row-odd"><td>96e41566</td>
+<td>2020-05-01</td>
+<td>30</td>
+<td>France</td>
+</tr>
+</tbody>
+</table>
+<p>Otherwise, this is only one row:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">order</th>
+<th class="head">date</th>
+<th class="head">quantity</th>
+<th class="head">country</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>96e41566</td>
+<td>2020-05-01</td>
+<td>30</td>
+<td>[&#8220;USA&#8221;, &#8220;Germany&#8221;, &#8220;Italy&#8221;, &#8220;France&#8221;]</td>
+</tr>
+</tbody>
+</table>
+<p class="last">This setting is enabled by default.</p>
+</dd>
+<dt><strong>Flatten Objects</strong> <br clear="right" /></dt>
+<dd><p class="first">Enable this setting to flatten object properties into columns of their own. Otherwise, nested objects are returned as strings of JSON. <br clear="right" />
+The property name is concatenated onto the object name with &#8216;Sub-column Separator&#8217; to generate the column name. <br clear="right" />
+For example, there is the following object:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;WA&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Seattle&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="s2">&quot;1029 - 12th Ave. S.&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If Flatten Objects is enabled, then it flattened into the following table:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">address.country</th>
+<th class="head">address.region</th>
+<th class="head">address.city</th>
+<th class="head">address.street</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>USA</td>
+<td>WA</td>
+<td>Seattle</td>
+<td>1029 - 12th Ave. S.</td>
+</tr>
+</tbody>
+</table>
+<p>Otherwise, this is only one column with the value:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">address</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{ &#8220;country&#8221;: &#8220;USA&#8221;, &#8220;region&#8221;: &#8220;WA&#8221;, &#8220;city&#8221;: &#8220;Seattle&#8221;, &#8220;street&#8221;: &#8220;1029 - 12th Ave. S.&#8221; }</td>
+</tr>
+</tbody>
+</table>
+<p class="last">This setting is enabled by default.</p>
+</dd>
+<dt><strong>Flatten Depth</strong> <br clear="right" /></dt>
+<dd><p class="first">Use this setting to set the level of nested objects to be flattened. <br clear="right" />
+For example, there is the following object:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;order&quot;</span><span class="p">:</span> <span class="s2">&quot;9c588124&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;date&quot;</span><span class="p">:</span>  <span class="s2">&quot;2020-04-21&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;primary&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;WA&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Seattle&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="s2">&quot;1029 - 12th Ave. S.&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If Flatten Depth is 2, then it flattened into the following table:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="15%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">order</th>
+<th class="head">date</th>
+<th class="head">address.primary.country</th>
+<th class="head">address.primary.region</th>
+<th class="head">address.primary.city</th>
+<th class="head">address.primary.street</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>9c588124</td>
+<td>2020-04-21</td>
+<td>USA</td>
+<td>WA</td>
+<td>Seattle</td>
+<td>1029 - 12th Ave. S.</td>
+</tr>
+</tbody>
+</table>
+<p>If Flatten Depth is 1:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="35%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">order</th>
+<th class="head">date</th>
+<th class="head">address.primary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>9c588124</td>
+<td>2020-04-21</td>
+<td>{ &#8220;country&#8221;: &#8220;USA&#8221;, &#8220;region&#8221;: &#8220;WA&#8221;, &#8220;city&#8221;: &#8220;Seattle&#8221;, &#8220;street&#8221;: &#8220;1029 - 12th Ave. S.&#8221; }</td>
+</tr>
+</tbody>
+</table>
+<p class="last">The default value is 4.</p>
+</dd>
+<dt><strong>Sub-column Separator</strong> <br clear="right" /></dt>
+<dd><p class="first">Use this setting to set which separator to use for flattened objects.</p>
+<p class="last">The default value is &#8216;.&#8217; (dot).</p>
+</dd>
+<dt><strong>Request Cache Enabled</strong> <br clear="right" /></dt>
+<dd><p class="first">Use this setting to enable/disable caching of endpoint datasets.</p>
+<p class="last">This setting is enabled by default.</p>
+</dd>
+<dt><strong>Request Cache TTL</strong> <br clear="right" /></dt>
+<dd><p class="first">Use this setting to set TTL for the cache.</p>
+<p class="last">The default value is 600 seconds.</p>
+</dd>
+</dl>
+</div>
+</div>
+</li>
+<li><p class="first">Optional. <strong>Request Headers</strong> <br clear="right" />
+Type a header name and value in the appropriate fields. <br clear="right" />
+After you begin to type any value, a new row will appear for the next request heder.</p>
+<div class="figure" id="id5">
+<span id="connector-rest-request-headers"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Request_Headers.png"><img alt="../_images/Connector_Rest_Request_Headers.png" src="../_images/Connector_Rest_Request_Headers.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">Request Headers</span></p>
+</div>
+</li>
+<li><p class="first">Optional. <strong>Request Body</strong> <br clear="right" />
+Type a request payloadt to the Request Body field. <br clear="right" />
+If this field is not empty, then the connector sends POST request, otherwise GET.</p>
+<div class="figure" id="id6">
+<span id="connector-rest-request-body"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Request_Body.png"><img alt="../_images/Connector_Rest_Request_Body.png" src="../_images/Connector_Rest_Request_Body.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Request Body</span></p>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Add one or more endpoints if necessary. <br clear="right" />
+Use presets to prefill the data of the new endpoint with values from any existing endpoint.</p>
+<div class="figure" id="id7">
+<span id="connector-rest-presets"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Presets.png"><img alt="../_images/Connector_Rest_Presets.png" src="../_images/Connector_Rest_Presets.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">Presets</span></p>
+</div>
+</li>
+<li><p class="first">Click OK button to verify the connection and go to the next step after all required fields are filled in.</p>
+</li>
+<li><p class="first">Expand the listed user schemas and object types to see the data sources. <br clear="right" />
+The data sources can be quickly filtered by typing a partial name in the Search box.</p>
+<div class="figure" id="id8">
+<span id="connector-rest-data-sources"></span><a class="reference internal image-reference" href="../_images/Connector_Rest_Data_Sources.png"><img alt="../_images/Connector_Rest_Data_Sources.png" src="../_images/Connector_Rest_Data_Sources.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">Data Sources</span></p>
+</div>
+</li>
+<li><p class="first">Click on the data sources to move them between the two lists.
+User can quickly move all data sources in a group (Table, View, Stored Procedure or Function) by clicking on that group name.</p>
+</li>
+<li><p class="first">Fill in the <strong>Connector Name</strong>.</p>
+</li>
+<li><p class="first">Click Save button at the top to save the connector and the visible data sources.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc_data_model_tables,_views_and_stored_procedures.html" class="btn btn-neutral float-right" title="Data Model/Tables, Views and Stored Procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc_data_connectors.html" class="btn btn-neutral" title="Data Connectors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.9.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

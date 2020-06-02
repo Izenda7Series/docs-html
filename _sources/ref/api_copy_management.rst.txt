@@ -2706,6 +2706,10 @@ Validates that the mappings are valid, destination tenants have the same connect
              boolean
           -  Is response returning connections
           -
+       *  -  **copyOnlySettings** |br|
+             boolean
+          -  Does user select to copy only settings
+          -  .. versionadded:: 3.9.3
 
 **Response**
 

@@ -6,7 +6,7 @@ Connection
 
 .. list-table::
    :header-rows: 1
-   :widths: 25 5 65 5
+   :widths: 25 5 60 10
 
    *  -  Field
       -  NULL
@@ -82,6 +82,11 @@ Connection
       -
       -  The change status
       -
+   *  -  **copyDataConnector** |br|
+         boolean
+      -
+      -  Is selected for copy in Copy Management (only data connector mode)
+      -  .. versionadded:: 3.9.3
    *  -  **checked** |br|
          boolean
       -
