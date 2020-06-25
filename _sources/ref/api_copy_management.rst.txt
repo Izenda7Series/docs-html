@@ -87,7 +87,16 @@ List of APIs
    * - `POST copyManagement/workspace/detectConflictingDashboard`_
      - Detect conflicting tenant's dashboards.
      -
+   * - `POST copyManagement/exportDataModel`_
 
+       .. versionadded:: 3.9.5
+     - Exports data model to \*.bidm file.
+     -
+   * - `POST copyManagement/importDataModel`_
+
+       .. versionadded:: 3.9.5
+     - Imports data model from preloaded \*.bidm file.
+     -
 
 GET copyManagement/workspace/{workspace_id}
 --------------------------------------------------------------
@@ -4555,3 +4564,140 @@ Detect conflicting tenant's dashboards.
             }],
             "checked": true
          }]
+
+POST copyManagement/exportDataModel
+-----------------------------------
+
+Exports data model to *.bidm file.
+
+**Request**
+
+   A :doc:`models/ExportDataModel` object
+
+**Response**
+
+   The \*.bidm file that contains the exported data model.
+
+**Samples**
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample payload:
+
+      .. code-block:: json
+
+         {
+            "SourceTenant": "YourSourceTenantName",
+            "SelectedConnections": [
+               {
+                  "Name": "Northwind",
+                  "DBSource": {
+                     "QuerySources": [
+                        {
+                           "Name": "dbo",
+                           "QuerySources": [
+                              {
+                                 "Name": "Orders"
+                              },
+                              {
+                                 "Name": "Order Details"
+                              }
+                           ]
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+
+POST copyManagement/importDataModel
+-----------------------------------
+
+Imports data model from preloaded \*.bidm file.
+
+**Request**
+
+   A :doc:`models/ImportDataModel` object
+
+**Response**
+
+   A :doc:`models/ImportDataModelResult` object
+
+**Samples**
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample payload:
+
+      .. code-block:: json
+
+         {
+            "DataModelFileId": "4ba9b973-629b-458b-94fc-f901dba49852_DatamodelofSystemtenant",
+            "DestinationTenants": [
+               {
+                  "Name": "YourDestinationTenantName",
+                  "Mappings": [
+                     {
+                        "FromConnectionName": "Northwind",
+                        "FromSchemaName": "dbo",
+                        "ToConnectionName": "Northwind",
+                        "ToSchemaName": "dbo"
+                     }
+                  ]
+               }
+            ]
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample success response:
+
+      .. code-block:: json
+
+         {
+            "success": true,
+            "messages": null,
+            "inconsistentDataSources": null
+         }
+
+   .. container:: toggle
+
+      .. container:: header
+
+         Sample failure response:
+
+      .. code-block:: json
+
+         {
+            "success": false,
+            "messages": [
+               "There are one or more inconsistent data sources"
+            ],
+            "inconsistentDataSources": [
+               {
+                  "destinationTenant": "YourDestinationTenantName",
+                  "sourceConnections": [
+                     {
+                        "connection": "Northwind",
+                        "schemas": [
+                           {
+                              "schema": "dbo",
+                              "sources": [
+                                 {
+                                    "source": "Orders",
+                                    "type": "Table"
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         }

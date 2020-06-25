@@ -11,6 +11,17 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.9.5 Preview Release -- June 25th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Data Model Import Export Phase 1
+    - New functionality has been added to allow the exporting of Data Model information
+    - This information will be exported as a .bidm file
+    - The resulting .bidm file can be imported into any instance of Izenda that has this functionality to populate the data model
+
+
 v3.9.4 Preview Release -- June 2nd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -18,7 +29,7 @@ FEATURES
 ^^^^^^^^^
 - REST API Connectors have been Added
     - Connections to REST API sources can now be added on the Data Connectors pages
-		- REST connections can include multiple endpoints to act as a collection of responsiveness
+		- REST connections can include multiple endpoints to act as a collection of responses
 - Improved Data Connector Dialogue
 		- When adding a new connector, there is now a more dialogue-based approach to guide Users
 

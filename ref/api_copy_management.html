@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Copy Management APIs &mdash; Izenda BI 3.9.4 documentation</title>
+  <title>Copy Management APIs &mdash; Izenda BI 3.9.5 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.9.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.9.5 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Copy Console APIs" href="api_copy_console.html"/>
         <link rel="prev" title="Export APIs" href="api_export.html"/> 
@@ -321,6 +321,22 @@
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#post-copymanagement-workspace-detectconflictingdashboard">POST copyManagement/workspace/detectConflictingDashboard</a></td>
 <td>Detect conflicting tenant&#8217;s dashboards.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><a class="reference internal" href="#post-copymanagement-exportdatamodel">POST copyManagement/exportDataModel</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.9.5.</span></p>
+</div>
+</td>
+<td>Exports data model to *.bidm file.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="#post-copymanagement-importdatamodel">POST copyManagement/importDataModel</a></p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.9.5.</span></p>
+</div>
+</td>
+<td>Imports data model from preloaded *.bidm file.</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -4792,6 +4808,127 @@ Sample response:</div>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="post-copymanagement-exportdatamodel">
+<h2>POST copyManagement/exportDataModel<a class="headerlink" href="#post-copymanagement-exportdatamodel" title="Permalink to this headline">¶</a></h2>
+<p>Exports data model to <a href="#id1"><span class="problematic" id="id2">*</span></a>.bidm file.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ExportDataModel.html"><span class="doc">ExportDataModel</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>The *.bidm file that contains the exported data model.</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+Sample payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;SourceTenant&quot;</span><span class="p">:</span> <span class="s2">&quot;YourSourceTenantName&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;SelectedConnections&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;DBSource&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;QuerySources&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;QuerySources&quot;</span><span class="p">:</span> <span class="p">[</span>
+                     <span class="p">{</span>
+                        <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span>
+                     <span class="p">},</span>
+                     <span class="p">{</span>
+                        <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Order Details&quot;</span>
+                     <span class="p">}</span>
+                  <span class="p">]</span>
+               <span class="p">}</span>
+            <span class="p">]</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="post-copymanagement-importdatamodel">
+<h2>POST copyManagement/importDataModel<a class="headerlink" href="#post-copymanagement-importdatamodel" title="Permalink to this headline">¶</a></h2>
+<p>Imports data model from preloaded *.bidm file.</p>
+<p><strong>Request</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ImportDataModel.html"><span class="doc">ImportDataModel</span></a> object</div></blockquote>
+<p><strong>Response</strong></p>
+<blockquote>
+<div>A <a class="reference internal" href="models/ImportDataModelResult.html"><span class="doc">ImportDataModelResult</span></a> object</div></blockquote>
+<p><strong>Samples</strong></p>
+<blockquote>
+<div><div class="toggle docutils container">
+<div class="header docutils container">
+Sample payload:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;DataModelFileId&quot;</span><span class="p">:</span> <span class="s2">&quot;4ba9b973-629b-458b-94fc-f901dba49852_DatamodelofSystemtenant&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;DestinationTenants&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;YourDestinationTenantName&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;Mappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;FromConnectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;FromSchemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;ToConnectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;ToSchemaName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span>
+            <span class="p">}</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample success response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;inconsistentDataSources&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container">
+Sample failure response:</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;There are one or more inconsistent data sources&quot;</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;inconsistentDataSources&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;destinationTenant&quot;</span><span class="p">:</span> <span class="s2">&quot;YourDestinationTenantName&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;sourceConnections&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;connection&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;schemas&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                     <span class="nt">&quot;schema&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;sources&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span>
+                        <span class="p">}</span>
+                     <span class="p">]</span>
+                  <span class="p">}</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -4838,7 +4975,7 @@ Sample response:</div>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.9.4',
+            VERSION:'3.9.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

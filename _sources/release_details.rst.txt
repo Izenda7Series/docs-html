@@ -4,6 +4,19 @@
 Release Details
 ==============
 
+
+v3.9.5 Preview Release -- June 25th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Data Model Import Export Phase 1
+    - The Copy Management APIs have been extended to allow the export of data model content.
+    - All content selected for the export will be present in a .bidm file
+    - The resulting .bidm file can be imported into any instance of Izenda that has this functionality to populate the data model
+        - When importing, a database mapping will need to be present, so connections will need to be established prior to importing.
+    - For more information, please see our :ref:`Copy_Management` page
+
 v3.9.4 Preview Release -- June 2nd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,7 +24,7 @@ FEATURES
 ^^^^^^^^^
 - REST API Connectors have been Added
     - Connections to REST API sources can now be added on the Data Connectors pages
-		- REST connections can include multiple endpoints to act as a collection of responsiveness
+		- REST connections can include multiple endpoints to act as a collection of responses
 		- Each endpoint can be cached to avoid multiple requests on the endpoint as concurrency scales up
 - Improved Data Connector Dialogue
 		- When adding a new connector, there is now a more dialogue-based approach to guide Users

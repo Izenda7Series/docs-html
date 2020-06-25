@@ -20,7 +20,12 @@ Data Model
    DBSetupInfo
    DBSource
    DestinationTenant
+   ExportDataModel
    GlobalDatabaseMapping
+   ImportDataModel
+   ImportDataModelMapping
+   ImportDataModelResult
+   ImportDataModelTenant
    InputWorkspace
    Overwrite
    QuerySource
