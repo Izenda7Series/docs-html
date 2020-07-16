@@ -11,6 +11,123 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.10.0 Core Release -- July 16th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+- Defect 23656 International characters not displaying correctly after exporting to CSV
+- Defect 23679 Unable to view empty form columns with text header in excel exports
+- Defect 24625 Dashboard designer overlay flickers and disappears in DM1 for SPA
+- Defect 24784 Extra blank space is present on top of dashboard tiles 
+- Defect 24852 Cross filtering is not working on multiple report parts when drilling down on a map
+- Defect 25781 Replacing report part on a dashboard causes an error if there is an empty filter
+- Defect 25919 Access Defaults duplicates in UI during role setup
+- Defect 26158 License key/token accessible from UI when license is in offline mode
+- Defect 26261 Izenda standalone API server crashing
+- Defect 26269 Charts in Reports and Dashboards when viewed on mobile do not display in a friendly manner
+- Defect 26315 Dashboard full screen mode configuration not centered
+- Defect 26373 Subscribing with a limited role not consistent between Report List and Report Viewer
+- Defect 26445 HTML tags in calculated fields of Form Report Part do not export/print (word)
+- Defect 26459 Ajax Settings do not affect api/importManagement/file?batchId request
+- Defect 26479 Word wrap in forms shows inconsistent behavior between report viewer and export
+- Defect 26535 Changing filter visibility in first filter removes filter values in second filter
+- Defect 26547 loadDashboard requested twice when using EmbeddedUI resources
+- Defect 26548 Report list/viewer on smaller screens does not contain print or export options
+- Defect 26556 Tenant selection dropdown and report/dashboard selection not available on some tablets
+- Defect 26561 Dynamic stored procedure fails to move to the design view after updating filters
+- Defect 26573 The "No permission" message displayed on dashboard is not sourced from language text file
+- Defect 26605 Side total for pivot grid does not reflect the conditional format setting
+- Defect 26607 Date isn't kept in filter when manually typing in date values
+- Defect 26608 Using custom format with alternative text breaks side totaling
+- Defect 26609 Issue with Date Formatting in Excel Exports
+- Defect 26639 Values from forms are overlapping when exported. 
+- Defect 26640 Exporting empty pivot grid to csv throws error
+- Defect 26677 Reports would error when field names contained commas and were used with multi-value inputs
+- Defect 26705 IzendaUserRole CreatedBy field doesn't match IzendaUser CreatedBy field
+- Defect 26713 Pdf Report content is not fully exported.
+- Defect 26715 Filter Value doesn't appear on the report viewer when the "show filter" option is checked.
+- Defect 26724 Reports with Stored Procs are invalid if another parameter is added
+- Defect 26727 Unsorting a subtotal field causes a query error
+- Defect 26730 Custom data formats are not exporting to Excel
+- Defect 26807 Maps throwing sql error when city values contain a single quote
+- Defect 26842 System Configuration > Report settings are not consistent when switching tenants
+- Defect 26849 FIPS issue in 2.18.3 hotfix
+- Defect 26851 I-Frames are not displaying report parts when exported.
+- Defect 26870 Maps do not drill down or display hover items when using Firefox. 
+- Defect 26873 No security check is made for the systemSetting/reset api
+- Defect 26874 Custom View Defintions appear in cleartext in responses related to them
+- Defect 26879 Users with no data model privileges can delete datasource fields via api
+- Defect 26886 Custom Data Format is not applied to Side Total cells in Pivot grid
+- Defect 26902 Email attachment type defaults to blank if PDF permissions are missing.
+- Defect 26921 Save As category selection displays global after switching between reports and templates
+- Defect 26923 Selecting Roboto font shows as Times New Roman
+- Defect 26944 Saving connection string with different database users fails and reports a duplicate connection
+- Defect 26947 Timezone offsets would influence time values in DateTime fields
+- Defect 26971 Custom view fields query not using query timeout advanced setting
+- Defect 26975 Issue removing role from user that has created reports
+- Defect 26977 Pivot grid does not project well if trying to total the column being pivoted on
+- Defect 26983 Exporting through API with filter values in payload not applying for charts
+- Defect 26986 Calculated field CASE or IF statement with string literal END throws syntax error
+- Defect 27006 Custom Functions not appearing in Subtotal or Grand total
+- Defect 27007 Remove extra resources from API resources
+- Defect 27021 Drop-down trimming in Forms and Misaligned Boxes in all Report Part Types
+- Defect 27039 UI Issues related to copyright text at the left-bottom of the page
+- Defect 27044 Alternative Text not working in certain scenarios with grid report parts
+- Defect 27051 loadDashboard requested twice when using EmbeddedUI
+- Defect 27061 Common filters do not resolve due to outdated operator setting
+- Defect 27065 Mongo adapter is broken
+- Defect 27088 Displaying GUID and Wrong x,y axis value in the Chart Report
+- Defect 27089 System admin subject to tenant-level scheduling limits
+- Defect 27090 Filter value on main report isn't passed to required filters on subreport
+- Defect 27092 Full Report and Dashboard Access permission does not save as true when saving role
+- Defect 27100 Cannot set property 'range' of undefined when using date pickers
+- Defect 27111 Required Filters do not display dropdown values when configuring subscriptions.
+- Defect 27130 Reports cannot be saved using oracle configuration database
+- Defect 27131 Cannot save Postgres connections when stored procedures without parameters are present. 
+- Defect 27174 Creating Calculated Field on report designer is cutting off under the list of columns
+- Defect 27175 Copying individual reports does not work due to hashing error.
+- Defect 27176 Copy Only Settings does not work if source tenant has disabled connections
+- Defect 27193 Scroll Bar shifts to left when creating relationship from Data-source page
+- Defect 27211 Filter Values Aren't Displayed in Report Viewer when 'Show Filters' is enabled
+- Defect 27219 Notification missing when adding, editing, copying or deleting subscriptions/schedules in reports and dashboards
+- Defect 27229 Headers Not Displayed with Embedded Subreport
+- Defect 27250 Tenants names are displayed outside of the container in Tenant Setup when many Tenants exist
+- Defect 27255 Deleted Relationships Not Getting Removed from the ConfigDb
+- Defect 27257 Query to get lookup filter key/value pairs does not respect hidden filters
+- Defect 27277 Dashboard does not have correct filter type if the underlying report filters are changed.
+- Defect 27282 Errors when running the schema migration upgrade scripts for Oracle
+- Defect 27283 Using drilldown grid with subtotals in postgres breaks grid
+- Defect 27306 Applying filters to a form report that contains an embedded subreport errors in Internet Explorer. 
+- Defect 27346 Izenda Exporting logs all cookies from a browser session
+- Defect 27353 Connection string builder: improve security.
+- Defect 27360 Clear Filter button on Dashboard does not clear filter values in request
+- Defect 27361 Export to CSV exports partial data for pivot grids with separator
+- Defect 27378 Export throws error if grid report part column width is not set
+- Defect 27388 Adding a numeric separator breaks reports built from REST data sources
+- Defect 27389 Subtotals return no records on reports built from REST data sources
+- Defect 27394 Error querying data with Custom Views and Fields that contain the @ symbol
+- Defect 27403 Query filter field name generation produces overflow when using numeric field and multiple values
+- Defect 27412 Login page hangs indefinitely when Izenda is deployed as a virtual directory
+- Defect 27413 Horizontal grid borders are not rounded in new styles
+- Defect 27414 Comma separated filter values cause the report to error
+- Defect 27421 Cross filtering causes report errors after query optiomizations
+- Defect 27427 Collapse Expanders by Default feature does not work correctly in pivot grids when using Separators
+- Defect 27443 Unable to add/edit join alias when there are multiple joins
+- Defect 27457 Performance impact from CONVERT_IMPLICIT on varchar field in generated query plan
+- Defect 27481 Inefficient regex for multiline value in export causes timeout
+- Defect 27486 No Permission is shown for tenants when NLQ module is not enableed
+- Defect 27506 Report list does not refresh when changing tenants
+- Defect 27513 Clear Filter and Apply Filter do not work in reports and dashboards
+- Defect 27526 Forms with wide formats and page breaks would not export properly to PDF
+- Defect 27572 Maps (World) are not loading on Linux Environments
+- Defect 27573 Exports are not working on Linux Environments
+- Defect 27579 Blank page is appearing while redirecting from Report designer to the Report Viewer on existing reports.
+- Defect 27580 Report and Dashboard viewer does not contain Refresh button.
+- Defect 27668 Unable to search the report list in Copy Management because the cursor keeps flipping to the start of the text field.
+- Defect 27682 HTML text is not displaying in Grid report part when exporting to word.
+
+
 v3.9.5 Preview Release -- June 25th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

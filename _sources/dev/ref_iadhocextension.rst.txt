@@ -15,44 +15,49 @@ IAdHocExtension
      - Description
    * - Filter data tree lookup
      - `OnPreLoadFilterDataTree`_
-     - Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This has extra report filter settings, which contains the other filter values selected by the user in the report. This allows for easy set up of cascading behavior in your custom code. If this is implemented OnLoadFilterDataTree will be ignored.  
+     - Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This has extra report filter settings, which contains the other filter values selected by the user in the report. This allows for easy set up of cascading behavior in your custom code. If this is implemented OnLoadFilterDataTree will be ignored.
    * - Filter data tree lookup (To be deprecated in 3.0.0)
      - `OnLoadFilterDataTree`_
-     - Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This will be deprecated in favor of OnPreLoadFilterDataTree, please make plans to convert to this implementation prior to release of 3.0.0 
+     - Allows customizing the tree of filter values displayed for selection under Report Designer filter fields, Equals (Tree) dropdown menu. This will be deprecated in favor of OnPreLoadFilterDataTree, please make plans to convert to this implementation prior to release of 3.0.0.
    * - Customize filter data tree lookup results
      - `OnPostLoadFilterDataTree`_
      - Allows override of the filter tree just before the results are returned to the user.
    * - Filter data
      - `OnPreLoadFilterData`_
-     - Allows injecting report filter data instead of querying the database
+     - Allows injecting report filter data instead of querying the database.
    * - Filter data display
      - `OnPostLoadFilterData`_
-     - Allows overriding filter values displayed for selection under Report Designer filter fields
+     - Allows overriding filter values displayed for selection under Report Designer filter fields.
    * - ReportDefinition object
      - `OnPreExecute`_
-     - Allows on-the-fly customization of the report content
+     - Allows on-the-fly customization of the report content.
    * - Data source query tree
      - `OnExecuting`_
-     - Allows customizing the data source query tree
+     - Allows customizing the data source query tree.
    * - Data source query results
      - `OnPostExecute`_
-     - Allows customizing the execution result of data source queries
+     - Allows customizing the execution result of data source queries.
    * - Hidden report filters
      - `SetHiddenFilters`_
-     - Adds customized filters to reports while hiding them from UI users
+     - Adds customized filters to reports while hiding them from UI users.
    * - Custom In Time Period Filters
      - `CustomTimePeriod`_
-     - Adds custom In Time Period Filter Values
+     - Adds custom In Time Period Filter Values.
    * - Load Custom Data Format
      - `LoadCustomDataFormat`_
-     - Adds custom data formats for specified data types
+     - Adds custom data formats for specified data types.
    * - WebUrlResolver
      - `IWebUrlResolver`_
      - Allow overriding the DefaultWebUrlResolver and customizing the way the application generates the Front End URL.
    * - Color themes
      - `GetThemes`_
-     - Get defined color themes for Chart, Gauge, and Map. (v2.9.0 or higher)
-
+     - Get defined color themes for Chart, Gauge, and Map (v2.9.0 or higher).
+   * - HTTP requests to REST API service initiated by REST Connector
+     - `OnPreRestApiRequest`_
+     - Allows modify HTTP requests to REST API service initiated by REST Connector (v3.10.0 or higher).
+   * - SQL query
+     - `ModifyQuery`_
+     - Allows modify SQL queries (v3.10.0 or higher).
 
 The companion wrapper class **DefaultAdHocExtension** in  Izenda.BI.Framework.CustomConfiguration should be used as the base class for customization.
 
@@ -65,7 +70,7 @@ The companion wrapper class **DefaultAdHocExtension** in  Izenda.BI.Framework.Cu
    :doc:`Full-code Samples for all IAdHocExtension Methods <code_iadhocextension_samples>`
 
 OnPreLoadFilterDataTree
------------------------------------
+-----------------------
 
 ``List<ValueTreeNode> OnPreLoadFilterDataTree(ReportFilterField filterField, ReportFilterSetting filterSetting, out bool handled)``
 
@@ -95,7 +100,7 @@ This method customizes the behavior of :ref:`POST_report/loadFilterFieldDataAsTr
        }
 
 OnLoadFilterDataTree
------------------------------------
+--------------------
 
 ``List<ValueTreeNode> OnLoadFilterDataTree(QuerySourceFieldInfo fieldInfo)``
 
@@ -137,9 +142,9 @@ Sample code to display All > South America and North America for Manager role:
               return result;
          }
        }
-      
+
 OnPostLoadFilterDataTree
------------------------------------
+------------------------
 
 ``List<ValueTreeNode> OnPostLoadFilterDataTree(ReportFilterField filterField, List<ValueTreeNode> data, ReportFilterSetting filterSetting)``
 
@@ -161,7 +166,7 @@ This method customizes the behavior of :ref:`POST_report/loadFilterFieldDataAsTr
 
          return data; 
        }
-       
+
 OnPreLoadFilterData
 -------------------
 
@@ -210,7 +215,7 @@ Sample code to use a pre-defined list for filters on OrdersByRegion.CountryRegio
     }
 
 OnPostLoadFilterData
----------------------
+--------------------
 
 ``List<string> OnPostLoadFilterData(ReportFilterField filterField, List<string> data)``
 
@@ -245,7 +250,7 @@ Sample code to change Europe to EU for Employee role:
     }
 
 OnPreExecute
--------------------
+------------
 
 ``ReportDefinition OnPreExecute(ReportDefinition reportDefinition)``
 
@@ -276,7 +281,7 @@ Sample code to remove all Map report parts on-the-fly:
     }
 
 OnExecuting
--------------
+-----------
 
 ``QueryTree OnExecuting(QueryTree queryTree)``
 
@@ -327,7 +332,7 @@ Sample code to log all operations without a result limit operator:
     }
 
 OnPostExecute
------------------
+-------------
 
 ``List<IDictionary<string, object>> OnPostExecute(QueryTree executedQueryTree, List<IDictionary<string, object>> result)``
 
@@ -353,7 +358,7 @@ Sample code to limit the execution result to the first 1000 rows only (although 
 .. _SetHiddenFilters:
 
 SetHiddenFilters
---------------------
+----------------
 
 ``ReportFilterSetting SetHiddenFilters(SetHiddenFilterParam param)``
 
@@ -489,7 +494,7 @@ Sample code to add hidden filter ShipRegion = "WA" or "[Blank]" for all:
         }
 
 Application Scenarios
------------------------
+---------------------
 
 Hidden filters can be applied based on several values. For example,
 
@@ -559,7 +564,7 @@ Query Source::
 
 
 Applying Filter with Compounded Values
------------------------------------------
+--------------------------------------
 
 In some scenarios, you will require several values passed into the same filter, which get applied according to the logic you provide.
 
@@ -603,7 +608,7 @@ In some scenarios, you will require several values passed into the same filter, 
 .. _CustomTimePeriod:
 
 CustomTimePeriod
------------------------------------
+----------------
 
 ``public override List<CustomTimePeriod> LoadCustomTimePeriod()``
 
@@ -643,7 +648,7 @@ You can create custom time period filters for various datatypes by overriding th
 .. _LoadCustomDataFormat:
 
 LoadCustomDataFormat
------------------------------------
+--------------------
 
 ``public override List<DataFormat> LoadCustomDataFormat()``
 
@@ -892,10 +897,9 @@ LoadCustomDataFormat
             return result;
 
         }
-		
 
 IWebUrlResolver
------------------------------------
+---------------
 
 ``public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();``
 
@@ -908,36 +912,37 @@ Step 1: Implement IWebUrlResolver or inherit from DefaultWebUrlResolver
 
 .. code-block:: csharp
 
-	public class CustomWebUrlResolver : DefaultWebUrlResolver
-	{
-		private readonly ILog logger;
+   public class CustomWebUrlResolver : DefaultWebUrlResolver
+   {
+      private readonly ILog logger;
 
-		public CustomWebUrlResolver()
-		{
-			this.logger = (new LogManager()).GetLogger<CustomWebUrlResolver>();
-		}
+      public CustomWebUrlResolver()
+      {
+         this.logger = (new LogManager()).GetLogger<CustomWebUrlResolver>();
+      }
 
-		public override string ResolveUrl(string baseUrl, WebUrlActionLink action, Guid? id, Dictionary<string, object> parameters = null)
-		{
-			logger.Info($"Resolving the url of {action} on base url {baseUrl}");
-			// Put logic to custom the web url here
-			return base.ResolveUrl(baseUrl, action, id, parameters);
-		}
-	}
-	
-	
+      public override string ResolveUrl(string baseUrl, WebUrlActionLink action, Guid? id, Dictionary<string, object> parameters = null)
+      {
+         logger.Info($"Resolving the url of {action} on base url {baseUrl}");
+         // Put logic to custom the web url here
+         return base.ResolveUrl(baseUrl, action, id, parameters);
+      }
+   }
+
+
 Step 2: Override WebUrlResolver property of DefaultAdhocExtension
 
 .. code-block:: csharp
 
-	[Export(typeof(IAdHocExtension))]
-	public class CustomAdhocReport : DefaultAdHocExtension
-	{
-		public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();
-	}
-    
+   [Export(typeof(IAdHocExtension))]
+   public class CustomAdhocReport : DefaultAdHocExtension
+   {
+      public override IWebUrlResolver WebUrlResolver => new CustomWebUrlResolver();
+   }
+
 GetThemes
-----------------------
+---------
+
 ``public override List<Theme> GetThemes()``
 
 This method customizes the behavior of :ref:`GET_systemSetting/themes` API.
@@ -969,8 +974,132 @@ This method customizes the behavior of :ref:`GET_systemSetting/themes` API.
       };
    }
 
-See Also
+OnPreRestApiRequest
+-------------------
+
+``RESTRequest OnPreRestApiRequest(RESTRequest request, RESTContext context)``
+
+This method allows modify the HTTP request to REST API service initiated by REST Connector on the fly before it is sent.
+
+RESTRequest Object
+~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 5 70
+
+   *  -  Field
+      -  NULL
+      -  Description
+   *  -  **Url** |br|
+         string
+      -
+      -  URL of the current request
+   *  -  **RequestBody** |br|
+         string
+      -  Y
+      -  Request Body of the current request
+
+RESTContext Object
+~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 5 70
+
+   *  -  Field
+      -  NULL
+      -  Description
+   *  -  **QuerySourceName** |br|
+         string
+      -  Y
+      -  The query source name
+   *  -  **ConnectorInfo** |br|
+         object
+      -
+      -  The :doc:`/ref/models/RESTConnectorInfo` object
+   *  -  **EndpointInfo** |br|
+         object
+      -
+      -  The :doc:`/ref/models/RESTEndpointInfo` object
+   *  -  **UserContext** |br|
+         object
+      -
+      -  The :doc:`UserContext.Current </ref/models/UserContext>` object contains data of the current logged in user
+   *  -  **ReportDefinition** |br|
+         object
+      -  Y
+      -  The :doc:`/ref/models/ReportDefinition` object
+
+Sample code to add a query parameter based on the selected filter value:
+
+.. code-block:: csharp
+
+    [Export(typeof(IAdHocExtension))]
+    public class AdHocExtensionSample : DefaultAdHocExtension
+    {
+        public override RESTRequest OnPreRestApiRequest(RESTRequest request, RESTContext context)
+        {
+            if (context.ReportDefinition != null)
+            {
+                var filterFields = context.ReportDefinition.ReportFilter.FilterFields;
+                if(filterFields.Count > 0)
+                {
+                    var filterValue = filterFields[0].Value;
+                    if (!string.IsNullOrEmpty(filterValue))
+                        request.Url += $"?filter={filterValue}";
+                }
+            }
+            return request;
+        }
+    }
+
+ModifyQuery
 -----------
+
+``string ModifyQuery(string query, string database)``
+
+This method allows modify the SQL query on the fly before it is executed.
+
+.. warning::
+   Be really careful when modifying queries, as this can break system logic and lead to data corruption.
+
+Sample code to modify a SQL query by forcibly adding DISTINCT to a specific table (Orders):
+
+.. code-block:: csharp
+
+    [Export(typeof(IAdHocExtension))]
+    public class AdHocExtensionSample : DefaultAdHocExtension
+    {
+        public override string ModifyQuery(string query, string database)
+        {
+            if (database == SupportedDatabase.MSSQL)
+            {
+                var queryNodes = query.Split(new[] { ';' });
+
+                for (var i = 0; i < queryNodes.Length; ++i)
+                {
+                    var queryNode = queryNodes[i];
+
+                    var isQueryOrdersTable = queryNode.Contains("FROM [dbo].[Orders]");
+                    if (isQueryOrdersTable)
+                    {
+                        var searchedExpression = "SELECT";
+                        var firstSelectClauseIndex = queryNode.IndexOf(searchedExpression);
+                        queryNodes[i] = queryNode.Insert(firstSelectClauseIndex + searchedExpression.Length, " DISTINCT ");
+                    }
+                }
+
+                return String.Join(";\r\n", queryNodes);
+            }
+
+            return query;
+        }
+    }
+
+
+See Also
+--------
 
 The :doc:`UserContext.Current </ref/models/UserContext>` object contains data of the current logged in user, which can be leveraged in filters:
 

@@ -4,7 +4,6 @@
 Release Details
 ==============
 
-
 v3.9.5 Preview Release -- June 25th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
