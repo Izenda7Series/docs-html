@@ -11,6 +11,25 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.10.1 Preview Release -- July 27th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- CustomBootstrapper added for .NET Core Environments
+    - The CustomerBootstrapper functionality has been added for .NET Core resources
+    - This implementation can be found here: https://github.com/Izenda7Series/CoreIzendaCustomBootstrapper
+- New IAdHocExtension Method Added for REST API requests
+    - A new method, OnPreRestApiRequest, has been added to the IAdHocExtension class
+    - This can be used to modify the request parameters for the REST request before it is sent
+- New IAdHocExtension Method Added for Query Optimizations
+    - A new method, ModifyQuery, has been added to the IAdHocExtension class
+    - This can be used to modify SQL queries run by Izenda to improve performance or meet specific needs
+- Configuration Database References Added to the API's appSettings
+    - Users can configure these values to allow Izenda to read the configuration database's connection without using the izendadb.config file
+
+
+
 v3.10.0 Core Release -- July 16th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

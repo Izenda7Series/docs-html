@@ -1,3 +1,5 @@
+.. _IAdHocExtension_Reference:
+
 ===================
 IAdHocExtension
 ===================
