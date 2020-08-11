@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Front-end Integration APIs &mdash; Izenda BI 3.10.1 documentation</title>
+  <title>Front-end Integration APIs &mdash; Izenda BI 3.10.3 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.1 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.10.3 documentation" href="../index.html"/>
         <link rel="up" title="Full API List" href=".integration_api_documentation.html"/>
         <link rel="next" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
         <link rel="prev" title="Back-end Integration APIs" href="api_backend_integration.html"/> 
@@ -265,9 +265,9 @@
 <td>Render Izenda New Dashboard page</td>
 </tr>
 <tr class="row-even"><td><div class="lpad2 first last docutils container">
-<a class="reference internal" href="#setcurrentusercontext-token-access-token">setCurrentUserContext({&#8220;token&#8221;:access_token})</a></div>
+<a class="reference internal" href="#setcurrentusercontext-token-access-token-keeppermissionsetting">setCurrentUserContext({&#8220;token&#8221;:access_token}, keepPermissionSetting)</a></div>
 </td>
-<td>Authentication and authorization between hosting web and Izenda</td>
+<td>Authentication and authorization between hosting web and Izenda. Dictates if the rendered element has to be refreshed or not.</td>
 </tr>
 <tr class="row-odd"><td><div class="lpad2 first last docutils container">
 <a class="reference internal" href="#renderdashboardviewerpage-element-dashboard-id-filter-integrationstyle">renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)</a></div>
@@ -784,12 +784,12 @@ Integer</p>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="setcurrentusercontext-token-access-token">
-<h2>setCurrentUserContext({&#8220;token&#8221;:access_token})<a class="headerlink" href="#setcurrentusercontext-token-access-token" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setcurrentusercontext-token-access-token-keeppermissionsetting">
+<h2>setCurrentUserContext({&#8220;token&#8221;:access_token}, keepPermissionSetting)<a class="headerlink" href="#setcurrentusercontext-token-access-token-keeppermissionsetting" title="Permalink to this headline">¶</a></h2>
 <p>Authentication and authorization between hosting web and Izenda</p>
 <p><strong>Parameters</strong></p>
 <blockquote>
-<div>element <br clear="right" />
+<div>boolean <br clear="right" />
 access_token</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
@@ -797,7 +797,7 @@ access_token</div></blockquote>
    <span class="nx">token</span><span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token</span>
 <span class="p">};</span>
 
-<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">setCurrentUserContext</span><span class="p">(</span><span class="nx">currentUserContext</span><span class="p">);</span>
+<span class="nx">IzendaSynergy</span><span class="p">.</span><span class="nx">setCurrentUserContext</span><span class="p">(</span><span class="nx">currentUserContext</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1886,7 +1886,7 @@ This settings is optional.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.10.1',
+            VERSION:'3.10.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

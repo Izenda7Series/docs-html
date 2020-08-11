@@ -4,6 +4,24 @@
 Release Details
 ==============
 
+v3.10.3 Preview Release -- August 11th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Set Alternative Text against NULL and BLANK values
+   - [NULL] and [BLANK] can be set as target values when creating rules
+- Combination Charts can display multiple metrics on one shared axis
+   - Opening the 'Settings' wheel for any metric will let a user choose which y-axis to use for display purposes
+   - Users can choose from any other metric that is currently displayed on the chart
+- UserContext can now be set without reloading Izenda components
+   - IzendaSynergy.setCurrentUserContext() now accepts a second argument, which will be passed as true/false
+   - This parameter, if set to true, will cause the items to be reloaded once the context is set
+   - This new value does not have to be set. If not explicitly stated, it is assumed to be false.
+   - Please see our - :ref:`Front-end Integration APIs <Frontend_Integration_API>` page for examples
+- Snowflake can now be selected as a reporting data source
+    - Example connection string: account=xxxx;user=xxxx;password=xxxx;db=xxxx;host=xxxx.east-us-2.azure.snowflakecomputing.com
+
 v3.10.2 Preview Release -- August 3rd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

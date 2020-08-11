@@ -58,8 +58,8 @@ List of APIs
      - Render Izenda New Dashboard page
    * - .. container:: lpad2
    
-          `setCurrentUserContext({"token":access_token})`_
-     - Authentication and authorization between hosting web and Izenda
+          `setCurrentUserContext({"token":access_token}, keepPermissionSetting)`_
+     - Authentication and authorization between hosting web and Izenda. Dictates if the rendered element has to be refreshed or not.
    * - .. container:: lpad2
    
           `renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)`_
@@ -525,7 +525,7 @@ Render Izenda New Dashboard page
 
        Izenda Dashboard Designer Only
 
-setCurrentUserContext({"token":access_token})
+setCurrentUserContext({"token":access_token}, keepPermissionSetting)
 ----------------------------------------------------------------------------------------------
 
 Authentication and authorization between hosting web and Izenda
@@ -533,7 +533,7 @@ Authentication and authorization between hosting web and Izenda
 
 **Parameters**
 
-    element |br|
+    boolean |br|
     access_token
 
 **Samples**
@@ -544,7 +544,7 @@ Authentication and authorization between hosting web and Izenda
           token: data.token
        };
        
-       IzendaSynergy.setCurrentUserContext(currentUserContext);
+       IzendaSynergy.setCurrentUserContext(currentUserContext, true);
 
 renderDashboardViewerPage(element, dashboard_id, filter, integrationStyle)
 ----------------------------------------------------------------------------------------------
