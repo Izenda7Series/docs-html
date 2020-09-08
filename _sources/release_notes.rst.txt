@@ -11,6 +11,23 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.10.4 Preview Release -- September 8th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Introduced new Asynchronous Export Functionality
+    - Izenda will be able to leverage an asynchronous process in order to generate and deliver exported files
+    - This setting can be confured on the Settings > System Configuration > Exporting page
+    - The Izenda application must be restarted once toggled on in order for the service to be activated
+- Export Manager has been added to use profiles
+    - This page is under the user profile dropdown list
+    - The Export Manager can be rendered via a javascript API
+    - The Export Manager will allow a user to easily access their recently exported files
+- New Notification Functionality
+    - When a user's export is complete, the notification bell at the top-right of the screen will display a notification
+    - This will replace the current functionality of the bell icon
+
 v3.10.3 Preview Release -- August 11th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

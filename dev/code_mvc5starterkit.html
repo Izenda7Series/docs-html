@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mvc5Starterkit &mdash; Izenda BI 3.10.3 documentation</title>
+  <title>Mvc5Starterkit &mdash; Izenda BI 3.10.4 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.3 documentation" href="../index.html"/> 
+    <link rel="top" title="Izenda BI 3.10.4 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -311,6 +311,57 @@ their information that will then be used in IzendaTokenAuthorization</li>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="nd">@Html</span><span class="o">.</span><span class="n">ActionLink</span><span class="p">(</span><span class="s2">&quot;Report Viewer&quot;</span><span class="p">,</span> <span class="s2">&quot;ReportViewer&quot;</span><span class="p">,</span> <span class="s2">&quot;Report&quot;</span><span class="p">,</span> <span class="n">new</span> <span class="p">{</span> <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;&lt;add your report id here&gt;&quot;</span> <span class="p">},</span> <span class="n">null</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="rendering-export-manager-page">
+<h2>Rendering export manager page<a class="headerlink" href="#rendering-export-manager-page" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create page ExportManager.cshtml in MVCStarterKit</li>
+</ul>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first docutils">
+<dt>&#64;{</dt>
+<dd>ViewBag.Title = &#8220;Export Manager&#8221;;</dd>
+</dl>
+<p>}
+&#64;section scripts
+{</p>
+<blockquote>
+<div><p>&lt;script type=&#8221;text/javascript&#8221;&gt;
+$(document).ready(function () {</p>
+<blockquote>
+<div>izendaInitExportManager();</div></blockquote>
+<p>});
+&lt;/script&gt;</p>
+</div></blockquote>
+<p class="last">}
+&lt;div class=&#8221;loader&#8221; id=&#8221;progressLoader&#8221;&gt; &lt;/div&gt;
+&lt;div class=&#8221;izenda-container&#8221; id=&#8221;izenda-root&#8221;&gt;&lt;/div&gt;</p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Create render function in integration.js</li>
+</ul>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first docutils">
+<dt>var izendaInitExportManager = function () {</dt>
+<dd><dl class="first docutils">
+<dt>function successFunc(data, status) {</dt>
+<dd>console.info(data);
+var currentUserContext = {
+token: data.token
+};
+IzendaSynergy.setCurrentUserContext(currentUserContext);
+IzendaSynergy.renderExportManagerPage(document.getElementById(&#8216;izenda-root&#8217;));</dd>
+</dl>
+<p class="last">}
+this.DoRender(successFunc);</p>
+</dd>
+</dl>
+<p class="last">};</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="hidden-filters">
 <h2>Hidden Filters<a class="headerlink" href="#hidden-filters" title="Permalink to this headline">¶</a></h2>
@@ -648,7 +699,7 @@ Mvc5StarterKit:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.10.3',
+            VERSION:'3.10.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
