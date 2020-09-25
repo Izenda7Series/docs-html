@@ -4,6 +4,29 @@
 Release Details
 ==============
 
+v3.10.5 Preview Release -- September 25th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Grouping
+    - Tenants have a new value, Tenant Group, that can be applied on the Tenant Setup page
+    - Multiple tenants can belong to the same group, but a tenant can only have one tenant group value
+    - Tenant Groups can be used to distribute Global Reports in a more streamlined fashion
+        - When setting Report Access values, tenants can now be chosen directly
+        - Instead of choosing every tenant, users can select a Tenant Group, which will apply this access value to all tenants in that group
+        - Tenant Group and Tenant settings will take priority over Everyone-based rules
+- Tenant Report Import Functionality
+    - Tenant users can now import report definitions into their instance of Izenda
+    - A new permission, Import, hosted under the Data Setup section of permissions enables this functionality
+        - This functionality can be restricted on a per-role basis
+- Required Filter Expansion
+    - A new value in our config.json will allow Izenda to automatically expand filter sections if required filters are present
+        - This value is RequiredFilterSectionExpanded
+        - This value can be set to true or false
+    - This is meant to be used in conjunction with the ReportFilterSectionExpanded value
+
+
 v3.10.4 Preview Release -- September 8th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,7 +34,7 @@ FEATURES
 ^^^^^^^^^
 - Introduced new Asynchronous Export Functionality
     - Async Exporting Interval
-        - This setting controls how oftem, in minutes, helper processes will evaluate the queue of export jobs 
+        - This setting controls how often, in minutes, helper processes will evaluate the queue of export jobs 
     - Export Storage Option
         - Admins can choose to leverage disk, AzureFileService, or AWSS3Bucket options 
         - AzureFileService options will leverage the connection string for the services
@@ -25,7 +48,7 @@ FEATURES
         - This setting will determine if Izenda encrypts the files they generate 
     - Export File Refresh
         - This setting will determine if Izenda will refresh the content of any exported files currently in the export Manager
-        - The job interval is a setting, in minutes, that Izenda will scan the exported documents and reaplce them with updated versions
+        - The job interval is a setting, in minutes, that Izenda will scan the exported documents and replace them with updated versions
     - Deletion of Files
         - By default, Izenda will archive any export files that are older than 7 days
         - This value can be manipulated by changing the value of AsyncArchiveExportingInterval in the IzendaExportQueueSetting table
@@ -37,7 +60,8 @@ FEATURES
     - Export Manager
         - The Export Manager will display a list of exported files the user has available to them.
         - Users can easily download the same files from this page without having to run another export process 
-        - A new front-end javascript API has been created for integrations that can be found on our :ref:`Front-end Integration APIs <Frontend_Integration_API>` page
+        - A new front-end Javascript API has been created for integrations that can be found on our :ref:`Front-end Integration APIs <Frontend_Integration_API>` page
+            - An example can be found in our MVC5 Starterkit 
 
 
 v3.10.3 Preview Release -- August 11th, 2020
@@ -54,7 +78,7 @@ FEATURES
    - IzendaSynergy.setCurrentUserContext() now accepts a second argument, which will be passed as true/false
    - This parameter, if set to true, will cause the items to be reloaded once the context is set
    - This new value does not have to be set. If not explicitly stated, it is assumed to be false.
-   - Please see our - :ref:`Front-end Integration APIs <Frontend_Integration_API>` page for examples
+   - Please see our :ref:`Front-end Integration APIs <Frontend_Integration_API>` page for examples
 - Snowflake can now be selected as a reporting data source
     - Example connection string: account=xxxx;user=xxxx;password=xxxx;db=xxxx;host=xxxx.east-us-2.azure.snowflakecomputing.com
 

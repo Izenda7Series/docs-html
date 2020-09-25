@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Details &mdash; Izenda BI 3.10.4 documentation</title>
+  <title>Release Details &mdash; Izenda BI 3.10.5 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Izenda BI 3.10.4 documentation" href="index.html"/> 
+    <link rel="top" title="Izenda BI 3.10.5 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -175,10 +175,70 @@
             
   <div class="section" id="release-details">
 <span id="id1"></span><h1>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v3-10-4-preview-release-september-8th-2020">
-<h2>v3.10.4 Preview Release &#8211; September 8th, 2020<a class="headerlink" href="#v3-10-4-preview-release-september-8th-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v3-10-5-preview-release-september-25th-2020">
+<h2>v3.10.5 Preview Release &#8211; September 25th, 2020<a class="headerlink" href="#v3-10-5-preview-release-september-25th-2020" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="features">
 <h3>FEATURES<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Tenant Grouping</dt>
+<dd><ul class="first last">
+<li>Tenants have a new value, Tenant Group, that can be applied on the Tenant Setup page</li>
+<li>Multiple tenants can belong to the same group, but a tenant can only have one tenant group value</li>
+<li><dl class="first docutils">
+<dt>Tenant Groups can be used to distribute Global Reports in a more streamlined fashion</dt>
+<dd><ul class="first last">
+<li>When setting Report Access values, tenants can now be chosen directly</li>
+<li>Instead of choosing every tenant, users can select a Tenant Group, which will apply this access value to all tenants in that group</li>
+<li>Tenant Group and Tenant settings will take priority over Everyone-based rules</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Tenant Report Import Functionality</dt>
+<dd><ul class="first last">
+<li>Tenant users can now import report definitions into their instance of Izenda</li>
+<li><dl class="first docutils">
+<dt>A new permission, Import, hosted under the Data Setup section of permissions enables this functionality</dt>
+<dd><ul class="first last">
+<li>This functionality can be restricted on a per-role basis</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Required Filter Expansion</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>A new value in our config.json will allow Izenda to automatically expand filter sections if required filters are present</dt>
+<dd><ul class="first last">
+<li>This value is RequiredFilterSectionExpanded</li>
+<li>This value can be set to true or false</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>This is meant to be used in conjunction with the ReportFilterSectionExpanded value</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v3-10-4-preview-release-september-8th-2020">
+<h2>v3.10.4 Preview Release &#8211; September 8th, 2020<a class="headerlink" href="#v3-10-4-preview-release-september-8th-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Introduced new Asynchronous Export Functionality</dt>
@@ -186,7 +246,7 @@
 <li><dl class="first docutils">
 <dt>Async Exporting Interval</dt>
 <dd><ul class="first last">
-<li>This setting controls how oftem, in minutes, helper processes will evaluate the queue of export jobs</li>
+<li>This setting controls how often, in minutes, helper processes will evaluate the queue of export jobs</li>
 </ul>
 </dd>
 </dl>
@@ -224,7 +284,7 @@
 <dt>Export File Refresh</dt>
 <dd><ul class="first last">
 <li>This setting will determine if Izenda will refresh the content of any exported files currently in the export Manager</li>
-<li>The job interval is a setting, in minutes, that Izenda will scan the exported documents and reaplce them with updated versions</li>
+<li>The job interval is a setting, in minutes, that Izenda will scan the exported documents and replace them with updated versions</li>
 </ul>
 </dd>
 </dl>
@@ -254,7 +314,14 @@
 <dd><ul class="first last">
 <li>The Export Manager will display a list of exported files the user has available to them.</li>
 <li>Users can easily download the same files from this page without having to run another export process</li>
-<li>A new front-end javascript API has been created for integrations that can be found on our <a class="reference internal" href="dev/api_frontend_integration.html#frontend-integration-api"><span class="std std-ref">Front-end Integration APIs</span></a> page</li>
+<li><dl class="first docutils">
+<dt>A new front-end Javascript API has been created for integrations that can be found on our <a class="reference internal" href="dev/api_frontend_integration.html#frontend-integration-api"><span class="std std-ref">Front-end Integration APIs</span></a> page</dt>
+<dd><ul class="first last">
+<li>An example can be found in our MVC5 Starterkit</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
@@ -268,8 +335,8 @@
 </div>
 <div class="section" id="v3-10-3-preview-release-august-11th-2020">
 <h2>v3.10.3 Preview Release &#8211; August 11th, 2020<a class="headerlink" href="#v3-10-3-preview-release-august-11th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Set Alternative Text against NULL and BLANK values</dt>
@@ -294,7 +361,7 @@
 <li>IzendaSynergy.setCurrentUserContext() now accepts a second argument, which will be passed as true/false</li>
 <li>This parameter, if set to true, will cause the items to be reloaded once the context is set</li>
 <li>This new value does not have to be set. If not explicitly stated, it is assumed to be false.</li>
-<li>Please see our - <a class="reference internal" href="dev/api_frontend_integration.html#frontend-integration-api"><span class="std std-ref">Front-end Integration APIs</span></a> page for examples</li>
+<li>Please see our <a class="reference internal" href="dev/api_frontend_integration.html#frontend-integration-api"><span class="std std-ref">Front-end Integration APIs</span></a> page for examples</li>
 </ul>
 </dd>
 </dl>
@@ -312,8 +379,8 @@
 </div>
 <div class="section" id="v3-10-2-preview-release-august-3rd-2020">
 <h2>v3.10.2 Preview Release &#8211; August 3rd, 2020<a class="headerlink" href="#v3-10-2-preview-release-august-3rd-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Model Import/Export Phase 2</dt>
@@ -346,8 +413,8 @@
 </div>
 <div class="section" id="v3-10-1-preview-release-july-27th-2020">
 <h2>v3.10.1 Preview Release &#8211; July 27th, 2020<a class="headerlink" href="#v3-10-1-preview-release-july-27th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>CustomBootstrapper added for .NET Core Environments</dt>
@@ -393,8 +460,8 @@
 </div>
 <div class="section" id="v3-9-5-preview-release-june-25th-2020">
 <h2>v3.9.5 Preview Release &#8211; June 25th, 2020<a class="headerlink" href="#v3-9-5-preview-release-june-25th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Model Import Export Phase 1</dt>
@@ -419,8 +486,8 @@
 </div>
 <div class="section" id="v3-9-4-preview-release-june-2nd-2020">
 <h2>v3.9.4 Preview Release &#8211; June 2nd, 2020<a class="headerlink" href="#v3-9-4-preview-release-june-2nd-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>REST API Connectors have been Added</dt>
@@ -459,8 +526,8 @@
 </div>
 <div class="section" id="v3-9-3-preview-release-may-18th-2020">
 <h2>v3.9.3 Preview Release &#8211; May 18th, 2020<a class="headerlink" href="#v3-9-3-preview-release-may-18th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>FEATURES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Tenant Templates functionality is released</dt>
@@ -477,8 +544,8 @@
 </div>
 <div class="section" id="v3-9-1-preview-release-april-30th-2020">
 <h2>v3.9.1 Preview Release &#8211; April 30th, 2020<a class="headerlink" href="#v3-9-1-preview-release-april-30th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>FEATURES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>FEATURES<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Natural Language Query Functionality Introduced</dt>
@@ -521,8 +588,8 @@
 </div>
 <div class="section" id="v3-8-1-february-10th-2020">
 <h2>v3.8.1 February 10th, 2020<a class="headerlink" href="#v3-8-1-february-10th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>FEATURES<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>FEATURES<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>New IzendaSystemSetting Values for Chrome 80 Cookie Changes</dt>
@@ -547,8 +614,8 @@
 </div>
 <div class="section" id="v3-8-0-january-15th-2020">
 <h2>v3.8.0 January 15th, 2020<a class="headerlink" href="#v3-8-0-january-15th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>FEATURES<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>FEATURES<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Reports can be Exported as Iframes from the Report Viewer</dt>
@@ -606,8 +673,8 @@
 </div>
 <div class="section" id="v3-7-2-december-4th-2019">
 <h2>v3.7.2 December 4th, 2019<a class="headerlink" href="#v3-7-2-december-4th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>FEATURES<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>FEATURES<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Conditional Formatting Dialogue Expanded to Pivot and Drilldown Grids</dt>
@@ -639,8 +706,8 @@
 </div>
 <div class="section" id="v3-7-1-november-26th-2019">
 <h2>v3.7.1 November 26th, 2019<a class="headerlink" href="#v3-7-1-november-26th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>FEATURES<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>FEATURES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>D3 Library Implemented</dt>
@@ -716,8 +783,8 @@
 </div>
 <div class="section" id="v3-7-0-november-13th-2019">
 <h2>v3.7.0 November 13th, 2019<a class="headerlink" href="#v3-7-0-november-13th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>FEATURES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>FEATURES<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Salesforce Connector Preview</dt>
@@ -778,8 +845,8 @@
 </div>
 <div class="section" id="v3-6-0-october-10-2019">
 <h2>v3.6.0 October 10, 2019<a class="headerlink" href="#v3-6-0-october-10-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>FEATURES<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>FEATURES<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>New User Load API</dt>
@@ -823,8 +890,8 @@
 </div>
 <div class="section" id="v3-5-0-september-10-2019">
 <h2>v3.5.0 September 10, 2019<a class="headerlink" href="#v3-5-0-september-10-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id15">
-<h3>FEATURES<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>FEATURES<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>(Beta) Excel data sources can now be added as reporting data sources.</dt>
@@ -892,8 +959,8 @@
 </div>
 <div class="section" id="v3-4-1-august-23-2019">
 <h2>v3.4.1 August 23, 2019<a class="headerlink" href="#v3-4-1-august-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>FEATURES<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>FEATURES<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Introduced CORS Policy Configuration for the .NET Core API resources for Izenda</dt>
@@ -947,8 +1014,8 @@
 </div>
 <div class="section" id="v3-4-0-august-16-2019">
 <h2>v3.4.0 August 16, 2019<a class="headerlink" href="#v3-4-0-august-16-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>FEATURES<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>FEATURES<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Machine Learning Infrastructure Addition</dt>
@@ -1010,8 +1077,8 @@
 </div>
 <div class="section" id="v3-3-1-july-23-2019">
 <h2>v3.3.1 July 23, 2019<a class="headerlink" href="#v3-3-1-july-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id18">
-<h3>FEATURES<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>FEATURES<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>InTimePeriod filters reflect more accurate timezones</dt>
@@ -1052,8 +1119,8 @@
 </ul>
 </div>
 <p>The <strong>System Configuration &gt; Cache</strong> page allows an administrator to manage users.</p>
-<div class="section" id="id19">
-<h3>FEATURES<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h3>FEATURES<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Caching Beta is now Implemented</dt>
@@ -1070,8 +1137,8 @@
 </div>
 <div class="section" id="v3-2-0-june-4-2019">
 <h2>v3.2.0 June 4, 2019<a class="headerlink" href="#v3-2-0-june-4-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id20">
-<h3>FEATURES<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>FEATURES<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Report Headers Scale to Reduce Whitespace</dt>
@@ -1143,8 +1210,8 @@
 <li>(5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
 </ul>
 </div>
-<div class="section" id="id22">
-<h3>FEATURES<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>FEATURES<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>MongoDB Available as a Reporting Datasource</dt>
@@ -1269,7 +1336,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.10.4',
+            VERSION:'3.10.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

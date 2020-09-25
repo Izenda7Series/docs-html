@@ -11,6 +11,22 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.10.5 Preview Release -- September 25th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Tenant Grouping
+   - Tenants have a new value, Tenant Group, that can be applied on the Tenant Setup page
+   - Multiple tenants can belong to the same group, but a tenant can only have one tenant group value
+   - Tenant Groups can be used to distribute Global Reports in a more streamlined fashion
+- Tenant Report Import Functionality
+   - Tenant users can now import report definitions into their instance of Izenda
+- Required Filter Expansion
+   - A new value in our config.json will allow Izenda to automatically expand filter sections if required filters are present
+   - This is mused in conjunction with the ReportFilterSectionExpanded value
+
+
 v3.10.4 Preview Release -- September 8th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -18,7 +34,7 @@ FEATURES
 ^^^^^^^^^
 - Introduced new Asynchronous Export Functionality
     - Izenda will be able to leverage an asynchronous process in order to generate and deliver exported files
-    - This setting can be confured on the Settings > System Configuration > Exporting page
+    - This setting can be configured on the Settings > System Configuration > Exporting page
     - The Izenda application must be restarted once toggled on in order for the service to be activated
 - Export Manager has been added to use profiles
     - This page is under the user profile dropdown list
