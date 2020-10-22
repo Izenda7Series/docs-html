@@ -116,38 +116,6 @@ Rendering Report Parts & Reports
 
 	<li>@Html.ActionLink("Report Viewer", "ReportViewer", "Report", new { id = "<add your report id here>" }, null)</li>
 
-Rendering export manager page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Create page ExportManager.cshtml in MVCStarterKit 
-::
-	@{
-    		ViewBag.Title = "Export Manager";
-	}
-	@section scripts
-    	{
-    		<script type="text/javascript">
-        	$(document).ready(function () {
-	        	izendaInitExportManager();
-        	});
-    		</script>
-	}
-	<div class="loader" id="progressLoader"> </div>
-	<div class="izenda-container" id="izenda-root"></div>
-
-- Create render function in integration.js
-::
-	var izendaInitExportManager = function () {
-		function successFunc(data, status) {
-			console.info(data);
-			var currentUserContext = {
-			token: data.token
-			};
-			IzendaSynergy.setCurrentUserContext(currentUserContext);
-			IzendaSynergy.renderExportManagerPage(document.getElementById('izenda-root'));
-		}
-		this.DoRender(successFunc);
-	};
-
 Hidden Filters
 ^^^^^^^^^^^^^^^^^^^	
 -  Hidden Filter examples are shown in Mvc5StarterKit -> IzendaBoundary -> CustomAdhocReport.cs

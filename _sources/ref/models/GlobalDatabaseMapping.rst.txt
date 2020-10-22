@@ -12,6 +12,13 @@ GlobalDatabaseMapping
       -  NULL
       -  Description
       -  Note
+   *  -  **type** |br|
+         integer
+      -
+      -  *  1 = Schema
+         *  2 = Database
+
+      -
    *  -  **fromServer** |br|
          string
       -
@@ -27,27 +34,34 @@ GlobalDatabaseMapping
       -
       -  The source database name
       -
-   *  -  **type** |br|
-         integer
+   *  -  **toDatabaseName** |br|
+         string
       -
-      -  *  1 = Schema
-         *  2 = Database
-
+      -  The destination database name
       -
    *  -  **fromObject** |br|
          string
       -
       -  The source schema (N/A in case of type 2 Database)
       -
-   *  -  **toDatabaseName** |br|
-         string
-      -
-      -  The destination database name
-      -
    *  -  **toObject** |br|
          string
       -
       -  The destination
+      -
+   *  -  **fromDatabaseUser** |br|
+         string
+
+         .. versionadded:: 3.10.0
+      -
+      -  The source (encrypted) database username
+      -
+   *  -  **toDatabaseUser** |br|
+         string
+
+         .. versionadded:: 3.10.0
+      -
+      -  The destination (encrypted) database username
       -
    *  -  **selectAllTenants** |br|
          boolean

@@ -1,4 +1,4 @@
-
+.. _Advanced_Settings:
 
 =================
 Advanced Settings
@@ -81,11 +81,11 @@ In Advanced Settings page, click on Security tab in Middle Panel to view the ite
 
    .. figure:: /_static/images/Advanced_Settings_Sercurity.PNG
       :align: center
-      :width: 1657px
+      :width: 1421px
 
       Setting values provied in Security tab
 
-Update settings in Tenant group
+Update common settings
 ***********************************
 
    *  Tick on Show Tenant Field checkbox will show the field(s) which is(are) sepcififed in Tenant Field in report/dashboard. Otherwise, those fields will be hidden.
@@ -97,14 +97,67 @@ Update settings in Tenant group
       \- Press **Enter** to add tenant field  |br|
       \- You can use multiple tenant fields 
 
-   .. _Update_settings_in_Security_Additive_Fields_group:
+   * Tick on Render HTML in Printing/Exporting checkbox will allow HTML tags to be rendered when exporting and printing.
 
-Update settings in Additive Fields group
-********************************************
+   * Tick on Render HTML in Report Viewer checkbox will allow HTML tags to be rendered when viewing reports in browser.
 
-   * Tick on **Set Additive Field Auto Visible** will automatically set the additive field when physical data model changes as Visible
-   * Tick on **Set Additive Field Auto Filterable** will automatically set the additive field when physical data model changes as Filterable
+Add Row-Level security rules
+***********************************
 
+   #. In browser, log in to Izenda as a System Admin and go to Settings, then Data Setup, Advanced Settings in the left
+      menu, and Security in the middle panel.
+   #. Click Add button in Row-Level Security section
+
+      .. figure:: /_static/images/data_security/data_security_001.PNG
+         :width: 940px
+
+   #. Choose one or more available data sources and click Next to go to Step 2
+
+      .. figure:: /_static/images/data_security/data_security_002.PNG
+         :width: 896px
+
+   #. Choose one or more available fields and click Next to go to Step 3
+
+      .. figure:: /_static/images/data_security/data_security_003.PNG
+         :width: 896px
+
+   #. Type Name and Descitption (optional) for the data security rule set.
+   #. Click Add Rule and configure new data security rule.
+   #. Select one of the existing User Groups (Everyone, User or Role)
+
+      .. figure:: /_static/images/data_security/data_security_004.PNG
+         :width: 896px
+
+   #. Select some specific users or roles if you selected the corresponding values in the previous step.
+   #. Type any value and press Enter to Values or select one of the preset values like
+      - [All] - all values
+      - [Tenant ID] - the current Tenant ID
+      - [Tenant Name] - the current Tenant Name
+      - [Role Name] - any role name of the current user
+      - [User ID] - the current User ID
+   #. Select access mode: Block or Allow
+
+      .. figure:: /_static/images/data_security/data_security_005.PNG
+         :width: 896px
+
+   #. Add more rules if necessary.
+   #. Click Save and then OK  on the pop-up info message about the impact of the current changes
+
+      .. figure:: /_static/images/data_security/data_security_006.PNG
+         :width: 872px
+
+   #. Add more data security rule sets if necessary or edit/clone/delete some of the existing rule sets.
+   #. Click Save at the top-right corner to save security settings
+
+      .. figure:: /_static/images/data_security/data_security_007.PNG
+         :width: 938px
+
+   |br|
+
+   After that, if you create a new report with fields to which blocking rules are applied or open an existing one, and print or export it, then you will see masked data instead of the actual values
+
+      .. figure:: /_static/images/data_security/data_security_008.PNG
+         :width: 631px
 
 Update Categories Settings
 ---------------------------
@@ -227,7 +280,7 @@ In Advanced Settings page, click on Others tab in Middle Panel to view the items
             In database the data value is 11:00. If user sets “5” in the textbox of this section then the data value will be shown as 16:00 in the report part.
          -  0
       *  -  Timezone for Timestamp Offset
-         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to all Datetime/Time field in system. **As of v2.9.5 offset will accept partial hours as .25, .5 or .75**|br|
+         -  To set default value for the Timezone Data Offset in Settings > User Setup page. And this setting will effect to all Datetime/Time field in system. **As of v2.9.5 offset will accept partial hours as .25, .5 or .75** |br|
             For example: |br|
             The created date of report is 11:00. If user sets “5” in the textbox of this section then the created date will be shown as 16:00 in the system. 
          -  0

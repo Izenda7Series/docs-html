@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SecuritySetting &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>SecuritySetting &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Others" href="_others.html"/>
         <link rel="next" title="SortOrder" href="SortOrder.html"/>
         <link rel="prev" title="SearchCriteria" href="SearchCriteria.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -129,6 +129,10 @@
 <li class="toctree-l4"><a class="reference internal" href="DataCacheSetting.html">DataCacheSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataFormat.html">DataFormat</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataFormating.html">DataFormating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataSecurityAccessor.html">DataSecurityAccessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataSecurityField.html">DataSecurityField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataSecurityRule.html">DataSecurityRule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataSecurityRuleSet.html">DataSecurityRuleSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataSourceItem.html">DataSourceItem</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataSourceItem.html#hierarchyitem">HierarchyItem</a></li>
 <li class="toctree-l4"><a class="reference internal" href="EmailSetting.html">EmailSetting</a></li>
@@ -157,8 +161,10 @@
 <li class="toctree-l4"><a class="reference internal" href="SortParam.html">SortParam</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SystemCacheSetting.html">SystemCacheSetting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SystemVariable.html">SystemVariable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TenantField.html">TenantField</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Tenants.html">Tenants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenantField.html">TenantField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenantGroup.html">TenantGroup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TenantGroupHierarchicalData.html">TenantGroupHierarchicalData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TimePeriod.html">TimePeriod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ValidateExpiration.html">ValidateExpiration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ValueTreeNode.html">ValueTreeNode</a></li>
@@ -267,41 +273,32 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><strong>tenantFieldValue</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>Names of tenant fields, separated by semi-colon <br clear="right" /> <br clear="right" />
-Example: <code class="docutils literal"><span class="pre">TenantID;UserID</span></code></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>tenantFieldDefaultValue</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The default value for tenantFieldValue</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>showTenantFieldValue</strong> <br clear="right" />
+<tr class="row-even"><td><strong>allowShowTenant</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
-<td>Show Tenant Field - when false, this hides the fields identified in the TenantField property from being selected or viewed by users. Any filters based on the tenant fields will still affect the results.</td>
+<td>Is Show Tenant Field disabled.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>showTenantFieldDefaultValue</strong> <br clear="right" />
-boolean</td>
+<tr class="row-odd"><td><p class="first"><strong>dataSecurityRuleSets</strong> <br clear="right" />
+array of objects</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.11.0.</span></p>
+</div>
+</td>
 <td>&#160;</td>
-<td>The default value for Show Tenant Field (<code class="docutils literal"><span class="pre">true</span></code>)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>setAdditiveFieldAutoVisibleValue</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Additive Fields Auto Visible - if checked then additive fields when physical data model changes will be set as Visible automatically.</td>
+<td>An array of <a class="reference internal" href="DataSecurityRuleSet.html"><span class="doc">DataSecurityRuleSet</span></a> objects.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>setAdditiveFieldAutoVisibleDefaultValue</strong> <br clear="right" />
+<tr class="row-even"><td><strong>modified</strong> <br clear="right" />
+datetime</td>
+<td>Y</td>
+<td>The modification date time.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>setAdditiveFieldAutoFilterableDefaultValue</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
-<td>The default value for Additive Fields Auto Visible (<code class="docutils literal"><span class="pre">false</span></code>)</td>
+<td>The default value for Additive Fields Auto Filterable (<code class="docutils literal"><span class="pre">false</span></code>).</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><strong>setAdditiveFieldAutoFilterableValue</strong> <br clear="right" />
@@ -310,35 +307,54 @@ boolean</td>
 <td>Additive Fields Auto Filterable - if checked then additive fields when physical data model changes will be set as Filterable automatically.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>setAdditiveFieldAutoFilterableDefaultValue</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>setAdditiveFieldAutoVisibleDefaultValue</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
-<td>The default value for Additive Fields Auto Filterable (<code class="docutils literal"><span class="pre">false</span></code>)</td>
+<td>The default value for Additive Fields Auto Visible (<code class="docutils literal"><span class="pre">false</span></code>).</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+<tr class="row-even"><td><strong>setAdditiveFieldAutoVisibleValue</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Additive Fields Auto Visible - if checked then additive fields when physical data model changes will be set as Visible automatically.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>showTenantFieldDefaultValue</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>The default value for Show Tenant Field (<code class="docutils literal"><span class="pre">true</span></code>).</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>showTenantFieldValue</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Show Tenant Field - when false, this hides the fields identified in the TenantField property from being selected or viewed by users. Any filters based on the tenant fields will still affect the results.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
 <td>The id of the tenant <br clear="right" />
-null if the setting belongs to system</td>
+(null if the setting belongs to system).</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>tenantFields</strong> <br clear="right" />
+<tr class="row-even"><td><strong>tenantFields</strong> <br clear="right" />
 array of objects</td>
 <td>&#160;</td>
-<td>An array of <a class="reference internal" href="TenantField.html"><span class="doc">TenantField</span></a> objects</td>
+<td>An array of <a class="reference internal" href="TenantField.html"><span class="doc">TenantField</span></a> objects.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>allowShowTenant</strong> <br clear="right" />
-boolean</td>
+<tr class="row-odd"><td><strong>tenantFieldDefaultValue</strong> <br clear="right" />
+string</td>
 <td>&#160;</td>
-<td>Is Show Tenant Field disabled</td>
+<td>The default value for tenantFieldValue.</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>modified</strong> <br clear="right" />
-datetime</td>
-<td>Y</td>
-<td>The modification date time</td>
+<tr class="row-even"><td><strong>tenantFieldValue</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>Names of tenant fields, separated by semi-colon. <br clear="right" /> <br clear="right" />
+Example: <code class="docutils literal"><span class="pre">TenantID;UserID</span></code></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -367,6 +383,7 @@ datetime</td>
       <span class="p">}</span>
    <span class="p">],</span>
    <span class="nt">&quot;allowShowTenant&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">&quot;dataSecurityRuleSets&quot;</span><span class="p">:</span> <span class="p">[],</span>
    <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-15T06:31:15&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -418,7 +435,7 @@ datetime</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

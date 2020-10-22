@@ -166,6 +166,12 @@ List of APIs
      - Extends report part with a new style configuration. |br|
 
        .. versionadded:: 2.11.0
+   * - .. container:: lpad2
+   
+          `renderExportManagerPage(element)`_
+     - Render Izenda Export Manager Page inside hosting web. |br|
+
+       .. versionadded:: 3.10.4
 
 config(configJson)
 ----------------------------------------------------------------------------------------------
@@ -343,7 +349,7 @@ Render Izenda Report Designer Page (New/Edit Report) inside hosting web
 
     .. code-block:: javascript
 
-       IzendaSynergy.renderReportDesignerPage(document.getElementById('izenda-root'));v
+       IzendaSynergy.renderReportDesignerPage(document.getElementById('izenda-root'));
 
     .. figure:: /_static/images/Izenda_Report_Designer_only.png
 
@@ -1405,6 +1411,21 @@ Extends report part with a new style configuration. |br|
          }
       }
       });
+
+renderExportManagerPage(element)
+----------------------------------------------------------------------------------------------
+
+Render Izenda Export Manager Page inside hosting web
+
+**Parameters**
+
+    element
+
+**Samples**
+
+	.. code-block:: javascript
+
+	 IzendaSynergy.renderExportManagerPage(document.getElementById('izenda-root'));
 
 **Tags**
 

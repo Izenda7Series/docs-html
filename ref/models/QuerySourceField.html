@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>QuerySourceField &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>QuerySourceField &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Data Model" href="_data_model.html"/>
         <link rel="next" title="QuerySourceFieldInfo" href="QuerySourceFieldInfo.html"/>
         <link rel="prev" title="QuerySourceCategoryPagedRequest" href="QuerySourceCategoryPagedRequest.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -267,111 +267,16 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><strong>name</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The name of the query source field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>alias</strong> <br clear="right" />
+<tr class="row-even"><td><strong>alias</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The alias entered by user</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>dataType</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The data type of the field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>izendaDataType</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The mapped data type of the field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>allowDistinct</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>allowDistinct</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Does the data type allow distinct select or not</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>visible</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Is the field selected to be visible in report</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>filterable</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Is the field selected to be filterable in report</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>querySourceId</strong> <br clear="right" />
-string (GUID)</td>
-<td>&#160;</td>
-<td>The id of the parent query source</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>parentId</strong> <br clear="right" />
-string (GUID)</td>
-<td>Y</td>
-<td>The id of the parent of the parent query source</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>expressionFields</strong> <br clear="right" />
-array of objects</td>
-<td>Y</td>
-<td>An array of <a class="reference internal" href="ReportField.html"><span class="doc">ReportField</span></a> objects</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>filteredValue</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The filter value in json format - when the field is a stored procedure parameter</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>type</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td><ul class="first last simple">
-<li>0 = Field</li>
-<li>1 = Parameter</li>
-</ul>
-</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>groupPosition</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td>The group position</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>position</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td>The ordinal position of the field inside the query source</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>extendedProperties</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The extended properties (for stored procedures and functions)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>physicalChange</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td><p class="first">Has the field changed</p>
-<ul class="last simple">
-<li>0 = None</li>
-<li>1 = Added</li>
-<li>2 = Modified</li>
-<li>3 = Deleted</li>
-</ul>
-</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><strong>approval</strong> <br clear="right" />
@@ -380,27 +285,38 @@ boolean</td>
 <td>Is the change approved</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-odd"><td><strong>calculatedTree</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>The calculated tree</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>categoryName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the <a class="reference internal" href="../.glossary.html#term-query-source-category"><span class="xref std std-term">query source category</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><p class="first"><strong>checked</strong> <br clear="right" />
+boolean</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.11.0.</span></p>
+</div>
+</td>
+<td>&#160;</td>
+<td>Is the field checked for some operations or not (like for PII/Data Security)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>dataType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The data type of the field</td>
+<td>&#160;</td>
+</tr>
 <tr class="row-odd"><td><strong>existed</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Exist flag</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>matchedTenant</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td><p class="first">Is this query source field hidden from view because it is a tenant field (in Tenant Field setting), and current Show Tenant Field setting is false.</p>
-<div class="last admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="../../ui/doc_advanced_settings.html#update-settings-in-security-additive-fields-group"><span class="std std-ref">Update settings in Additive Fields group</span></a></p>
-</div>
-</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>functionName</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>Place-holder</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><strong>expression</strong> <br clear="right" />
@@ -409,122 +325,36 @@ string</td>
 <td>The calculated expression in case this is a calculated field</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>fullName</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The fully-qualified name of the field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>calculatedTree</strong> <br clear="right" />
-object</td>
-<td>&#160;</td>
-<td>The calculated tree</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>reportId</strong> <br clear="right" />
-string (GUID)</td>
+<tr class="row-odd"><td><strong>expressionFields</strong> <br clear="right" />
+array of objects</td>
 <td>Y</td>
-<td>The id of the parent report - in case this is a calculated field</td>
+<td>An array of <a class="reference internal" href="ReportField.html"><span class="doc">ReportField</span></a> objects</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>originalName</strong> <br clear="right" />
+<tr class="row-even"><td><strong>extendedProperties</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
-<td>The original name of the field - in case this field is cloned from a physical field</td>
+<td>The extended properties (for stored procedures and functions)</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>originalId</strong> <br clear="right" />
-string (GUID)</td>
-<td>&#160;</td>
-<td>The original id of the field - in case this field is cloned from a physical field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>isParameter</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>filterable</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
-<td>Is this a stored procedure parameter (or a normal field)</td>
+<td>Is the field selected to be filterable in report</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>isCalculated</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Is this a calculated field</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>hasAggregatedFunction</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Whether this calculated field contains an aggregated function</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>querySource</strong> <br clear="right" />
-object</td>
-<td>&#160;</td>
-<td>The parent <a class="reference internal" href="QuerySource.html"><span class="doc">QuerySource</span></a> object</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>querySourceName</strong> <br clear="right" />
+<tr class="row-even"><td><strong>filteredValue</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
-<td>The name of the parent query source</td>
+<td>The filter value in json format - when the field is a stored procedure parameter</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>categoryName</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The name of the <a class="reference internal" href="../.glossary.html#term-query-source-category"><span class="xref std std-term">query source category</span></a></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>inaccessible</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Whether this is inaccessible</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>originalAlias</strong> <br clear="right" />
-string</td>
-<td>&#160;</td>
-<td>The original alias</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>isCheck</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td>Whether this is selected in workspace for copying</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>numOfChilds</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td>The number of children</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>numOfCheckedChilds</strong> <br clear="right" />
-integer</td>
-<td>&#160;</td>
-<td>The number of selected children</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>indeterminate</strong> <br clear="right" />
-boolean</td>
-<td>&#160;</td>
-<td><ul class="first last simple">
-<li>true if 0 &lt; numOfCheckedChilds &lt; numOfChilds</li>
-<li>false if not</li>
-</ul>
+<tr class="row-odd"><td><p class="first"><strong>filterStatus</strong> <br clear="right" />
+integer</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.14.0.</span></p>
+</div>
 </td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>hasFilterLookup</strong> <br clear="right" />
-boolean
-.. versionadded:: 2.14.0</td>
-<td>&#160;</td>
-<td>Whether this field has filter lookup setting or not</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>filterStatus</strong> <br clear="right" />
-integer
-.. versionadded:: 2.14.0</td>
 <td>&#160;</td>
 <td><p class="first">The status of filter lookup key-value</p>
 <blockquote>
@@ -540,6 +370,192 @@ integer
 </div></blockquote>
 <p class="last"><strong>Note:</strong> If multiple errors occur at the same time, system will return the sum of error code.</p>
 </td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>fullName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The fully-qualified name of the field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>functionName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>Place-holder</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>groupPosition</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The group position</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>hasAggregatedFunction</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether this calculated field contains an aggregated function</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>hasFilterLookup</strong> <br clear="right" />
+boolean</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 2.14.0.</span></p>
+</div>
+</td>
+<td>&#160;</td>
+<td>Whether this field has filter lookup setting or not</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>inaccessible</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether this is inaccessible</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>indeterminate</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>true if 0 &lt; numOfCheckedChilds &lt; numOfChilds</li>
+<li>false if not</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>isCalculated</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this a calculated field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>isCheck</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Whether this is selected in workspace for copying</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>isParameter</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is this a stored procedure parameter (or a normal field)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>izendaDataType</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The mapped data type of the field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>matchedTenant</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td><p class="first">Is this query source field hidden from view because it is a tenant field (in Tenant Field setting), and current Show Tenant Field setting is false.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><span class="xref std std-ref">Update_settings_in_Security_Additive_Fields_group</span></p>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>name</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the query source field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>numOfCheckedChilds</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The number of selected children</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>numOfChilds</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The number of children</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>originalAlias</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The original alias</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>originalId</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The original id of the field - in case this field is cloned from a physical field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>originalName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The original name of the field - in case this field is cloned from a physical field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>parentId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the parent of the parent query source</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>physicalChange</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td><p class="first">Has the field changed</p>
+<ul class="last simple">
+<li>0 = None</li>
+<li>1 = Added</li>
+<li>2 = Modified</li>
+<li>3 = Deleted</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>position</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td>The ordinal position of the field inside the query source</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>querySource</strong> <br clear="right" />
+object</td>
+<td>&#160;</td>
+<td>The parent <a class="reference internal" href="QuerySource.html"><span class="doc">QuerySource</span></a> object</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>querySourceId</strong> <br clear="right" />
+string (GUID)</td>
+<td>&#160;</td>
+<td>The id of the parent query source</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>querySourceName</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The name of the parent query source</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>reportId</strong> <br clear="right" />
+string (GUID)</td>
+<td>Y</td>
+<td>The id of the parent report - in case this is a calculated field</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>type</strong> <br clear="right" />
+integer</td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>0 = Field</li>
+<li>1 = Parameter</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>visible</strong> <br clear="right" />
+boolean</td>
+<td>&#160;</td>
+<td>Is the field selected to be visible in report</td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -700,7 +716,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

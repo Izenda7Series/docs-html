@@ -823,6 +823,23 @@ Create the DashboardViewer.cshtml view:
 .. literalinclude:: included_samples/mvc/DashboardViewer.cshtml
    :emphasize-lines: 11
 
+
+Embedding the Export Manager
+-------------------------------------------
+
+Export Manager Queue List
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create the ExportManager action in the HomeController
+
+.. literalinclude:: included_samples/mvc/HomeController.cs
+   :lines: 74-77
+   :emphasize-lines: 0
+
+The ExportManager page view ExportManager.cshtml:
+
+.. literalinclude:: included_samples/mvc/ExportManager.cshtml
+
+
 Run Your Izenda Integrated Application
 ===========================================
 

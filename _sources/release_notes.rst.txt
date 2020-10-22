@@ -11,6 +11,139 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.11.0 Core Release -- October 22nd, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- PII Security Options
+   - A new dialogue can be found in the Data Setup > Advanded Settings > Security
+   - This dialogue will allow administrators to restrict how data is viewed internally and externally within the platform
+   - Information on configuring these rules can be found on the :ref:`Advanced_Settings` page
+- Configuring Temporary Export Files
+   - A new value, ExportingTempPath, has been added to the IzendaSystemSetting table
+   - This value will dictate the location where Izenda temporarily stores files during the export process
+   - The default value can be changed to store these files in a different file path
+   - By default, these files will be stored within the Export folder of the Izenda API resources
+- Combination Chart Selective Axis
+   - When creating a combination chart, users can now dictate which metrics should share an axis to avoid Apply_Cross_Filtering_to_Multiple_Report_Parts
+   - This is configured within the advanced options of each metric independently
+
+FIXES
+^^^^^
+- Defect 21496  Form smart tags use the wrong format when exporting/printing Date Time 
+- Defect 21752  Email To and CC fields do not close when user hits tab
+- Defect 23160  Izenda query taking long time to run against Azure DBs
+- Defect 24222  Can not search in Dashboard when navigating to parent categories
+- Defect 24601  Switching Filter Options Does not persist the filter value
+- Defect 25486  Subtotals do not work in IE
+- Defect 25692  Subreport(link) disabled when user changes column width through report viewer and can't save it
+- Defect 25862  Subtotals do not work for Rows in pivots if there is more than one column
+- Defect 25904  [Role Setup] Full Report and Dashboard Access permission is still true when tenant user does not have this permission
+- Defect 25918  Invisible filters can be addressed by pN on a report, but not on a dashboard
+- Defect 26086  [object Object] displays when an error occurs during emailing unsaved dashboards
+- Defect 26087  Export url is not displayed in logs like in previous versions
+- Defect 26464  Large filter lists requiring multiple API requests with duplicate values freezes report designer/viewer
+- Defect 26537  Report Header Items Missing in Excel Exports (multiple versions)
+- Defect 26560  Report header appears twice when exporting
+- Defect 26580  Point Options dropdown in maps is empty when using IAdHoc extensions
+- Defect 26850  "Next Scheduled Run" is not accurate
+- Defect 26894  Calculated Field expression text font not applying as Proxima Nova
+- Defect 27068  Unable to remove second metric for solid gauges
+- Defect 27070  TCP connect to smtp server sends HELO command and EHLO command
+- Defect 27377  AMI EC2 clr process crashes when running 3.7.0 or higher standalone
+- Defect 27404  Grid size is flickering when rendering
+- Defect 27408  Report Designer Glitches when zooming in Google Chrome
+- Defect 27410  hasReportUseRelationship endpoint does not work
+- Defect 27424  Subtotal for collapsed All item of drilldown grid is wrong in exported reports
+- Defect 27428  Deleting a schedule shows no changes found in UI when paginated
+- Defect 27482  Translating the RoleType values in the dropdown
+- Defect 27489  Less than Days Old Filter Option returns future dates
+- Defect 27507  Global reports no longer showing in report list after upgrade to 3.9.0.9
+- Defect 27551  Heat Map Hover Values Displayed Incorrectly
+- Defect 27562  Issue Displaying Filter values in filter drop-down
+- Defect 27563  Issue with Excel Data Connector when uploading files
+- Defect 27569  MongoDB adapter fails when trying to execute a query with more than 100 conditions
+- Defect 27583  Unable to edit subtotal when there is a syntax error
+- Defect 27620  User should be redirected to the 1st page instead of 'no record found' page for schedules and subscriptions.
+- Defect 27628  Filter value in the property section on the string field is throwing exceptions when we use '/' in the Column name.
+- Defect 27647  Total sum is not appearing on exporting drilldown report to Pdf/Word/Excel
+- Defect 27648  Suspicious side totals values for AVG cells function
+- Defect 27658  On the Report viewer, the Donut chart is not appearing unless the item per row is modified from its default value.
+- Defect 27673  Existing logo images are not adjusted to their dimension after upgrade to 3.9.X
+- Defect 27676  Dashboard save and save as category selection not working in 3.9.0
+- Defect 27681  Connector creation popup does not work in IE11
+- Defect 27683  Missing detailed errors in logs
+- Defect 27685  Issue with Join Aliases and Subkey joins causing query errors
+- Defect 27702  Incorrect fonts for buttons in Connection String and License settings
+- Defect 27703  Boolean Types field in Materialized Views is missing
+- Defect 27735  Selected data sources not maintained when re-navigating to data source tab
+- Defect 27775  Email Templates for Different Languages aren't displaying in Subscriptions
+- Defect 27785  Date Picker Selects Previous Day
+- Defect 27786  Report Filter Info "Display Value" does not show correctly when exported as Excel
+- Defect 27803  Excel Exports issue while report created by parameterized SP
+- Defect 27804  Subreport ID does not update in Form's HTML after importing
+- Defect 27811  Chart legend settings not visible under the certain condition of monitor display settings
+- Defect 27812  Access token included in HTML when emailing as Embedded HTML type
+- Defect 27819  Subcategory List does not populate when using 'Save As'
+- Defect 27821  Different Result Sets When Query Should Be the Same using Key Join Filter Values in a Report
+- Defect 27827  Simple gauge word export does not show all content
+- Defect 27835  Issue with using DateAdd in a specific calculated field of a report
+- Defect 27837  User's list is not populated correctly when using the Email function
+- Defect 27887  Saving a subscription with Link delivery type disabled in tenant permissions causes user to be kicked off
+- Defect 27890  Filters not applying on the renderReportViewerPage function on v3.10
+- Defect 27896  Exporting goes through Asynchronous process when Export Service toggle is disabled
+- Defect 27898  Data Model Export API doesn't work after UI implementation
+- Defect 27900  Report Logo appears different in exported files than it does from the viewer
+- Defect 27902  Frequent 404 errors in 3.10.2
+- Defect 27905  CSS Overflow not set for border grid selection popup
+- Defect 27918  Pipe '|' symbol in report title prevents search.
+- Defect 27926  Exporting Interval set to zero does not display error message
+- Defect 27927  Export File Refresh Job Interval time set to zero doesn't display error
+- Defect 27936  Izenda passing sql function to Snowflake that don't exist
+- Defect 27953  Column are not populated as expected in Grid Report Part of Drill-down type
+- Defect 27954  Changes to the query source capitalization do not trigger a data model update
+- Defect 27955  Sub report not filtering by the field mapping specified
+- Defect 27971  When export fails notification doesn't show failed message
+- Defect 27982  Drop-down isn't working for Certain Field Comparison filter types
+- Defect 27989  Calculated fields broken after 3.10 upgrade
+- Defect 27991  Save As a Report does not remove the pop after save as process is complete
+- Defect 27996  Recently exported report should appear on the top of the list in export manager
+- Defect 27997  When report fails to export user cannot export the same report again
+- Defect 27999  Creating custom views does not work with Snowflake data sources
+- Defect 28004  Dashboard error not being displayed
+- Defect 28005  Materialized View Mapping Error during Custom View import process
+- Defect 28010  Date format not same as showing in Report viewer with excel (after changing the date format from User Setup)
+- Defect 28013  Bold toggle button at Header Formatting does not work
+- Defect 28015  Form report part PDF/Word export does not preserve font family
+- Defect 28027  Items per page is not working in Gauges - when the user edits and saves it says "No changes found"
+- Defect 28055  getting error during custom time period filters
+- Defect 28057  Eviction Interval at System Cache Configuration is not saved
+- Defect 28108  Issue with using datetime fields in calculated fields among with having filters
+- Defect 28110  Cannot add Calculated Field if report has filters using aggregated values
+- Defect 28117  Missing TenantId field in IzendaNLQSchema table when upgrading the configuration database
+- Defect 28132  Applying code modifications from IZ-27683 to Snowflake adapter
+- Defect 28139  Calculated Field Error: Due to using old NGSQL.dll v4.0.4 
+- Defect 28148  Incorrect role permission checkbox state
+- Defect 28151  Unable to Adjust Settings in Tenant Roles
+- Defect 28166  Custom data format not applied to side total if more than one field in Rows container
+- Defect 28167  Role UI issue when switching between System and Tenant context
+- Defect 28229  The filter value set up for SP does not work as expected when one value is selected in a filter using a lookup.
+- Defect 28244  Dimensions of Logo images imported from old version are not properly set but fixed as 1 by 1
+- Defect 28297  Search text box is not working accurately for dashboards
+- Defect 28422  IZENDAEXPORTQUEUESETTING table colums throws ORA-00972
+- Defect 28482  Print/Export button is not working on the report list.
+- Defect 28490  Email is not able to send in Embedded HTML(Delivery Method) Format
+- Defect 28494  Query execution is not yielding any results.
+- Defect 28512  Function is not able to remove from column after removing it from field properties
+- Defect 28516  Getting application encountered an error message on exporting stored procedures
+- Defect 28530  [Short Hour/Long Hour] Date Format is not working accurately
+- Defect 28537  Snowflake Adapter: filter values are not populated, it only shows Null and Blank in the dropdown.
+- Defect 28540  Exported forms do not contain tables in excel
+- Defect 28547  Schedule Instance is not saved when created from Dashboard List.
+- Defect 28552  When Filter is applied to a report part, it shows 'iteam' as an option.
+
+
 v3.10.5 Preview Release -- September 25th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

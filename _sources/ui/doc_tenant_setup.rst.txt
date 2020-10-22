@@ -1,5 +1,3 @@
-
-
 ==========================
 Tenant Setup
 ==========================
@@ -18,16 +16,15 @@ The **Tenant Setup** page allows user to
 List and View Tenants
 ---------------------
 
-#. .. _Tenant_Setup_Location:
+#. In browser, log in to Izenda as an Admin.
+#. Click Settings, then Tenant Setup in the left menu.
 
    .. figure:: /_static/images/Tenant_Setup_Location.png
-      :align: right
-      :width: 432px
+      :align: center
+      :width: 1404px
 
       Tenant Setup
 
-   In browser, log in to Izenda as an Admin.
-#. Click Settings, then Tenant Setup in the left menu. (:numref:`Tenant_Setup_Location`)
 #. List of tenant ids and tenant names will be displayed in the Middle
    Panel.
 #. Click any tenant in the list.
@@ -42,7 +39,7 @@ The Search box at the top allows user to search for specific tenants.
 
    .. figure:: /_static/images/Tenant_Setup_Search.png
       :align: right
-      :width: 194px
+      :width: 550px
 
       Search for Tenants
 
@@ -57,23 +54,26 @@ Add Tenant
 
    .. figure:: /_static/images/Tenant_Setup_Add_button.png
       :align: right
-      :width: 197px
+      :width: 550px
 
       Add New Tenant
 
    Click the + Add Tenant button at the top. (:numref:`Tenant_Setup_Add_button`)
 #. The Details section will be cleared for user to enter the tenant information.
-#. Click the Save button at the top, then OK in the confirmation pop-up. |br|
-#. .. _Tenant_Setup_Successful_Save:
+#. Enter a unique Tenant ID, then the Tenant Name and Description (optional).
+#. Select an existing group in the Grouping dropdown if necessary. |br|
+   If the group is not yet in the list, user can add it by typing the group name in and press Enter.
+
+   .. figure:: /_static/images/Tenant_Setup_Grouping.png
+      :width: 826px
+
+#. Click the Save button at the top, then OK in the confirmation pop-up.
+#. A successful notification message will be displayed and the new
+   tenant will also appear in the list in Middle Panel. |br|
 
    .. figure:: /_static/images/Tenant_Setup_Successful_Save.png
-      :align: right
-      :width: 401px
+      :width: 846px
 
-      Tenant is saved successfully
-
-   A successful notification message will be displayed and the new
-   tenant will also appear in the list in Middle Panel. (:numref:`Tenant_Setup_Successful_Save`)
    Tenant ID and Tenant Name are required and unique and will be
    checked before saving. |br|
 
@@ -84,9 +84,6 @@ Edit Tenant Details
 #. The tenant's information is displayed in the Details section.
 #. Edit the information.
 #. Click the Save button at the top, then OK in the confirmation pop-up.
-
-       Tenant ID and Tenant Name are required and unique and will be
-       checked before saving.
 
 Deactivate Tenant
 -----------------
@@ -117,16 +114,15 @@ Delete Tenant
 Edit Tenant Permissions
 -----------------------
 
-#. Click the tenant in the list in Middle Panel.
-#. The tenant's permissions
-   are displayed in the Permissions section.
+#. Click the tenant in the list in the Middle Panel.
+#. The tenant's permissions are displayed in the Permissions section.
 #. The permissions are grouped into sections, each with a short-cut link
    placed at the top of the page.
 
    .. _Tenant_Permissions_Section_Short-cuts:
 
    .. figure:: /_static/images/Tenant_Permissions_Section_Short-cuts.png
-      :width: 686px
+      :width: 910px
 
       Short-cuts to Permission Groups
 

@@ -60,9 +60,6 @@ Summary
      - Adds a new connection or updates an existing one. |br|
        Only visible query sources should be saved.
      - Settings > Data Setup > Connection String > Save
-   * - `POST connection/databaseName`_
-     - Returns the database name from a connection string.
-     - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
    * - `POST connection/connectionStringData`_
      - Returns the connection string data for a specific connection. |br|
      
@@ -70,9 +67,19 @@ Summary
           
           .. versionadded:: 3.9.4
      - Settings > Data Setup > Connection String > Edit Connection
+   * - `POST connection/databaseName`_
+     - Returns the database name from a connection string.
+     - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
    * - `POST connection/detailInfo`_
      - Returns an array of connection details with paging.
      - To be updated
+   * - `POST connection/detailInfoByQuerySources`_
+     - Returns an array of connection objects filled with field data.
+     
+       .. tip::
+          
+          .. versionadded:: 3.11.0
+     - Settings > Data Setup > Advanced Settings > Security > click Add (Row-Level Security) > select one or more available Data Sources and click Next to go to Step 2
    * - `POST connection/invisible/{connection_id}`_
      - Hides from Data Model and Reports all query sources in the connection specified by the {connection_id} value.
      - Settings > Data Setup > Connection String > click Visibility icon of a visible connection
@@ -85,13 +92,13 @@ Summary
    * - `POST connection/reloadRemoteSchema`_
      - Returns an enumeration of all supported objects (query sources) from an existing connection with detected changes.
      - Settings > Data Setup > Connection String > Reconnect an existing connection
+   * - `POST connection/validateSchema`_
+     - Returns true if remote schema has not changed, otherwise returns false.
+     - To be updated
    * - `POST connection/verify`_
      - Validates a connection string. |br|
        See also: :ref:`POST_databaseSetup/testConnection`
      - Settings > Data Setup > Add Connector > Data Server Type > fill all required fields > click OK
-   * - `POST connection/validateSchema`_
-     - Returns true if remote schema has not changed, otherwise returns false.
-     - To be updated
    * - `POST connection/visible/{connection_id}`_
      - Restores the visibility of all query sources in the connection specified by the {connection_id} value.
      - Settings > Data Setup > Connection String > click Visibility icon of a hidden connection
@@ -630,37 +637,6 @@ The connection string will be validated before saving.
          "detail" : "NoPermission"
       }
 
-POST connection/databaseName
---------------------------------------------------------------
-
-Returns the database name from a connection string.
-
-**Request**
-
-    Payload: a :doc:`models/DBSetupInfo` object
-
-**Response**
-
-    * The database name if success
-    * An empty string in case of error
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection/databaseName HTTP/1.1
-
-   Request payload::
-
-      {
-        "ServerTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
-        "ConnectionString" : "server=host01\instance01;database=db01;User Id=user01;Password=secret;"
-      }
-
-   Successful response::
-
-      "db01"
-
 POST connection/connectionStringData
 --------------------------------------------------------------
 
@@ -732,6 +708,37 @@ Returns the connection string data for a specific connection.
         "success" : true,
         "messages" : null
       }
+
+POST connection/databaseName
+--------------------------------------------------------------
+
+Returns the database name from a connection string.
+
+**Request**
+
+    Payload: a :doc:`models/DBSetupInfo` object
+
+**Response**
+
+    * The database name if success
+    * An empty string in case of error
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection/databaseName HTTP/1.1
+
+   Request payload::
+
+      {
+        "ServerTypeId" : "572bd576-8c92-4901-ab2a-b16e38144813",
+        "ConnectionString" : "server=host01\instance01;database=db01;User Id=user01;Password=secret;"
+      }
+
+   Successful response::
+
+      "db01"
 
 POST connection/detailInfo
 --------------------------------------------------------------
@@ -827,6 +834,217 @@ Returns an array of connection details with paging.
        "hashCode": "27ab6cfbfec1bc319cde19a907a",
        "connections": [],
        "maxNumberOfRecords": 0
+      }
+
+POST connection/detailInfoByQuerySources
+--------------------------------------------------------------
+
+Returns an array of connection objects filled with :doc:`models/QuerySourceField` data.
+
+**Request**
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  NULL
+          -  Description
+          -  Note
+       *  -  **querySourceIds** |br|
+             array of strings
+          -
+          -  An array of string (GUID) values of :doc:`models/QuerySource` objects.
+          -
+
+**Response**
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **connections** |br|
+             string
+          -  An array of :doc:`models/Connection` objects filled with :doc:`models/QuerySourceField` data.
+          -
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection/detailInfoByQuerySources HTTP/1.1
+
+   Request payload::
+
+      {
+         "querySourceIds": ["8f9a3d47-1d55-4d72-863e-39a365b224e5"]
+      }
+
+   Sample response::
+
+      {
+         "connections": [
+            {
+               "id": "61239e17-2d57-4b0a-b887-37491df9ab07",
+               "name": "Northwind",
+               "originalName": null,
+               "serverTypeId": "572bd576-8c92-4901-ab2a-b16e38144813",
+               "databaseServer": "localhost",
+               "databaseUser": null,
+               "serverTypeName": "MSSQL",
+               "connectionString": "3GTDfCloEoI/76VPjdIGGbycGQadvS6b0HzDKup7YL5AwTf+k70pBQLIWw88jwSzQXSLUnzCvg883cjkdS5",
+               "visible": true,
+               "deleted": false,
+               "relateToConnectionId": null,
+               "tenantId": null,
+               "dbSource": {
+                  "querySources": [
+                     {
+                        "id": "edbd5bdb-a931-4d66-8377-dd55270bf8ea",
+                        "name": "dbo",
+                        "parentCategoryId": null,
+                        "connectionId": "61239e17-2d57-4b0a-b887-37491df9ab07",
+                        "querySources": [
+                           {
+                              "id": "8f9a3d47-1d55-4d72-863e-39a365b224e5",
+                              "name": "Customers",
+                              "realName": null,
+                              "type": "Table",
+                              "parentQuerySourceId": null,
+                              "categoryId": "edbd5bdb-a931-4d66-8377-dd55270bf8ea",
+                              "selected": true,
+                              "overwritten": false,
+                              "deleted": false,
+                              "connectionId": "61239e17-2d57-4b0a-b887-37491df9ab07",
+                              "serverTypeId": "00000000-0000-0000-0000-000000000000",
+                              "connectionName": null,
+                              "childs": null,
+                              "dataSourceCategoryId": null,
+                              "dataSourceCategoryName": null,
+                              "alias": null,
+                              "originalAlias": null,
+                              "querySourceFields": [
+                                 {
+                                    "name": "CustomerID",
+                                    "alias": "",
+                                    "dataType": "nchar",
+                                    "izendaDataType": "Text",
+                                    "allowDistinct": true,
+                                    "visible": true,
+                                    "filterable": false,
+                                    "querySourceId": "8f9a3d47-1d55-4d72-863e-39a365b224e5",
+                                    "parentId": null,
+                                    "expressionFields": [],
+                                    "filteredValue": "",
+                                    "type": 0,
+                                    "groupPosition": 0,
+                                    "position": 1,
+                                    "extendedProperties": null,
+                                    "physicalChange": 0,
+                                    "approval": 0,
+                                    "existed": false,
+                                    "checked": false,
+                                    "matchedTenant": false,
+                                    "functionName": null,
+                                    "expression": null,
+                                    "isRunningField": false,
+                                    "supportDefaultTotal": null,
+                                    "fullName": null,
+                                    "calculatedTree": null,
+                                    "reportId": null,
+                                    "originalName": null,
+                                    "originalId": "00000000-0000-0000-0000-000000000000",
+                                    "isParameter": false,
+                                    "isCalculated": false,
+                                    "isPredicated": false,
+                                    "modelName": null,
+                                    "targetValue": null,
+                                    "relationColumn": null,
+                                    "inputFeatures": null,
+                                    "hasAggregatedFunction": false,
+                                    "isCompositeField": false,
+                                    "hasSupportDefaultTotal": true,
+                                    "querySource": null,
+                                    "querySourceName": null,
+                                    "categoryName": null,
+                                    "inaccessible": false,
+                                    "originalAlias": null,
+                                    "allowToSave": false,
+                                    "filterLookupType": 0,
+                                    "filterLookupStatus": 0,
+                                    "dataBaseType": 0,
+                                    "fullPath": null,
+                                    "isCheck": false,
+                                    "id": "0aff7cd0-7da8-4c61-ad65-a8dda605a1d7",
+                                    "state": 0,
+                                    "deleted": false,
+                                    "inserted": true,
+                                    "version": null,
+                                    "created": null,
+                                    "createdBy": "System Admin",
+                                    "modified": "2020-10-12T07:13:57.193",
+                                    "modifiedBy": null
+                                 }
+                              ],
+                              "querySourceCategoryName": "dbo",
+                              "querySourceCategory": null,
+                              "modified": "2020-10-12T07:13:57.163",
+                              "extendedProperties": null,
+                              "physicalChange": 0,
+                              "approval": 0,
+                              "existed": false,
+                              "checked": false,
+                              "belongToCopiedReport": false,
+                              "customDefinition": null,
+                              "isCustomQuerySource": false,
+                              "isCheck": false,
+                              "disabled": false,
+                              "databaseType": 0,
+                              "fullPath": null,
+                              "indeterminate": false,
+                              "numOfChilds": 0,
+                              "numOfCheckedChilds": 0,
+                              "isLastPage": false
+                           }
+                        ],
+                        "childs": null,
+                        "connection": null,
+                        "physicalChange": 0,
+                        "existed": false,
+                        "deleted": false,
+                        "checked": false,
+                        "isCheck": false,
+                        "numOfChilds": 0,
+                        "numOfCheckedChilds": 0,
+                        "totalTableChildNodes": 0,
+                        "totalTableCheckedNodes": 0,
+                        "totalStoredProcedureChildNodes": 0,
+                        "totalStoredProcedureCheckedNodes": 0,
+                        "totalViewChildNodes": 0,
+                        "totalViewCheckedNodes": 0,
+                        "totalFunctionChildNodes": 0,
+                        "totalFunctionCheckedNodes": 0,
+                        "fullPath": null,
+                        "indeterminate": false,
+                        "isLastPage": false
+                     }
+                  ]
+               },
+               "relationships": null,
+               "querySourceCategories": [],
+               "physicalChange": 0,
+               "copyDataConnector": false,
+               "checked": false,
+               "isCheck": false,
+               "databaseName": "northwnd",
+               "fullPath": null,
+               "indeterminate": false,
+               "numOfChilds": 0,
+               "numOfCheckedChilds": 0,
+               "isLastPage": false
+            }
+         ]
       }
 
 POST connection/invisible/{connection_id}
@@ -1080,6 +1298,37 @@ Returns an enumeration of all supported objects (query sources) from an existing
         "messages" : null
       }
 
+POST connection/validateSchema
+--------------------------------------------------------------
+
+Returns true if remote schema has not changed, otherwise returns false.
+
+**Request**
+
+    Payload: a :doc:`models/Connection` object
+
+**Response**
+
+    A boolean value
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/connection/validateSchema HTTP/1.1
+
+   Request payload::
+
+      {
+        "id" : "dda3633e-659f-4e88-9955-4e20bded686c",
+        "serverType" : "572bd576-8c92-4901-ab2a-b16e38144813",
+        "connectionString" : "1aBcD+="
+      }
+
+   Sample response::
+
+      true
+
 .. _POST_connection/verify:
 
 POST connection/verify
@@ -1119,37 +1368,6 @@ See also: :ref:`POST_databaseSetup/testConnection`
         "success" : true,
         "messages" : []
       }
-
-POST connection/validateSchema
---------------------------------------------------------------
-
-Returns true if remote schema has not changed, otherwise returns false.
-
-**Request**
-
-    Payload: a :doc:`models/Connection` object
-
-**Response**
-
-    A boolean value
-
-**Samples**
-
-   .. code-block:: http
-
-      POST /api/connection/validateSchema HTTP/1.1
-
-   Request payload::
-
-      {
-        "id" : "dda3633e-659f-4e88-9955-4e20bded686c",
-        "serverType" : "572bd576-8c92-4901-ab2a-b16e38144813",
-        "connectionString" : "1aBcD+="
-      }
-
-   Sample response::
-
-      true
 
 POST connection/visible/{connection_id}
 --------------------------------------------------------------

@@ -45,6 +45,13 @@ RelationshipPagedRequest
       -  Y
       -  The newly added or modified relationships
       -  Use for retrieve the newly added/modified relationships in Datta Model > Relationships
+   *  -  **includeDisabledRelationships** |br|
+         boolean
+
+         .. versionadded:: 3.10.0
+      -
+      -  Indictates whether disabled relationships should be included or not
+      -
 
 Inherited fields:
 
@@ -59,19 +66,20 @@ Inherited fields:
    .. code-block:: json
 
       {
-        "querySourceId" : null,
-        "tenentId" : "",
-        "criteria" : [{
-              "key" : "All",
-              "value" : "",
-              "operation" : 1
+        "querySourceId": null,
+        "tenentId": "",
+        "criteria": [{
+              "key": "All",
+              "value": "",
+              "operation": 1
            }
         ],
-        "pageIndex" : 1,
-        "pageSize" : 1,
-        "sortOrders" : [{
-              "key" : "DatabaseName",
-              "descending" : true
+        "pageIndex": 1,
+        "pageSize": 1,
+        "sortOrders": [{
+              "key": "DatabaseName",
+              "descending": true
            }
-        ]
+        ],
+        "includeDisabledRelationships": true
       }

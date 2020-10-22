@@ -21,12 +21,15 @@ ReportPartValidateExpressionParameter
          string
       -
       -  The Izenda data type
-      -    
-      
-      
-      
-      
-      
+      -
+   *  -  **totalProperties** |br|
+         object
+
+         .. versionadded:: 3.11.0
+      -
+      -  A dynamic object to keep the total properties in Report Part Properties box, can be user-defined. |br| |br|
+         See :doc:`ReportPartElementProperties` (dataFormattings -> subTotal/grandTotal) for more details.
+      -
 
 Inherited fields:
 

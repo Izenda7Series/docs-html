@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MVC5 Integration &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>MVC5 Integration &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../index.html"/> 
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -249,11 +249,15 @@
 <li><a class="reference internal" href="#dashboard-viewer" id="id68">Dashboard Viewer</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#embedding-the-export-manager" id="id69">Embedding the Export Manager</a><ul>
+<li><a class="reference internal" href="#export-manager-queue-list" id="id70">Export Manager Queue List</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#run-your-izenda-integrated-application" id="id69">Run Your Izenda Integrated Application</a></li>
-<li><a class="reference internal" href="#implement-register-new-account" id="id70">Implement Register New Account</a></li>
-<li><a class="reference internal" href="#call-izenda-api-service-in-c" id="id71">Call Izenda API Service in C#</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#run-your-izenda-integrated-application" id="id71">Run Your Izenda Integrated Application</a></li>
+<li><a class="reference internal" href="#implement-register-new-account" id="id72">Implement Register New Account</a></li>
+<li><a class="reference internal" href="#call-izenda-api-service-in-c" id="id73">Call Izenda API Service in C#</a></li>
 </ul>
 </li>
 </ul>
@@ -1765,9 +1769,43 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 </div>
 </div>
 </div>
+<div class="section" id="embedding-the-export-manager">
+<h3><a class="toc-backref" href="#id69">Embedding the Export Manager</a><a class="headerlink" href="#embedding-the-export-manager" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="export-manager-queue-list">
+<h4><a class="toc-backref" href="#id70">Export Manager Queue List</a><a class="headerlink" href="#export-manager-queue-list" title="Permalink to this headline">¶</a></h4>
+<p>Create the ExportManager action in the HomeController</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>        <span class="n">public</span> <span class="n">ActionResult</span> <span class="n">ExportManager</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">View</span><span class="p">();</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>The ExportManager page view ExportManager.cshtml:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>@{
+    ViewBag.Title = &quot;Dashboards&quot;;
+}
+
+@*@section title{ Izenda }*@
+@*@section customHeader{}*@
+@section scripts
+{
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function () {
+            izendaInitExportManager();
+        });
+    &lt;/script&gt;
+}
+
+&lt;div class=&quot;loader&quot; id=&quot;progressLoader&quot;&gt; &lt;/div&gt;
+&lt;div class=&quot;izenda-container&quot; id=&quot;izenda-root&quot;&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="run-your-izenda-integrated-application">
-<h2><a class="toc-backref" href="#id69">Run Your Izenda Integrated Application</a><a class="headerlink" href="#run-your-izenda-integrated-application" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id71">Run Your Izenda Integrated Application</a><a class="headerlink" href="#run-your-izenda-integrated-application" title="Permalink to this headline">¶</a></h2>
 <p>Press F5 to run debug</p>
 <p>Navigate to login page and enter the values below for the respective fields:</p>
 <ul class="simple">
@@ -1789,7 +1827,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>Now feel free to explore Izenda integrated application.</p>
 </div>
 <div class="section" id="implement-register-new-account">
-<h2><a class="toc-backref" href="#id70">Implement Register New Account</a><a class="headerlink" href="#implement-register-new-account" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id72">Implement Register New Account</a><a class="headerlink" href="#implement-register-new-account" title="Permalink to this headline">¶</a></h2>
 <p>Modify register new user layout in ASP.NET MVC 5</p>
 <div class="figure" id="id13">
 <a class="reference internal image-reference" href="../_images/mvc_new_account.png"><img alt="../_images/mvc_new_account.png" src="../_images/mvc_new_account.png" style="width: 900px;" /></a>
@@ -1945,7 +1983,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <p>You can refer to completed implementation of Register in AccountController on Github <a class="reference external" href="https://github.com/Izenda7Series/Mvc5StarterKit/blob/master/Mvc5StarterKit/Controllers/AccountController.cs">here</a>.</p>
 </div>
 <div class="section" id="call-izenda-api-service-in-c">
-<h2><a class="toc-backref" href="#id71">Call Izenda API Service in C#</a><a class="headerlink" href="#call-izenda-api-service-in-c" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id73">Call Izenda API Service in C#</a><a class="headerlink" href="#call-izenda-api-service-in-c" title="Permalink to this headline">¶</a></h2>
 <p>On completed sample starter kit on Github, we provide an example demonstrating how to call Izenda API service in C# code, reference to the ~\IzendaBoundary\WebAPIService.cs and ~\IzendaBoundary\IzendaUtility.cs for more detail.</p>
 </div>
 </div>
@@ -1985,7 +2023,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

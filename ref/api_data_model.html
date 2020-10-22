@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Model APIs &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>Data Model APIs &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../index.html"/>
         <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
         <link rel="next" title="Tenant APIs" href="api_tenant.html"/>
         <link rel="prev" title="Connection APIs" href="api_connection.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -2519,9 +2519,11 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
       <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER2&quot;</span><span class="p">,</span>
       <span class="s2">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fromDatabaseUser&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toDatabaseUser&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
       <span class="s2">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name_2&quot;</span><span class="p">,</span>
       <span class="s2">&quot;selectAllTenants&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
       <span class="s2">&quot;tenantIds&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span><span class="p">,</span>
@@ -2562,10 +2564,12 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
       <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
       <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;fromDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] Northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;fromDatabaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;User1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">&quot;fromObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER2&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toDatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;[MSSQL] northwind&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toDatabaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;User1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toObject&quot;</span><span class="p">:</span> <span class="s2">&quot;connection_name_2&quot;</span><span class="p">,</span>
       <span class="s2">&quot;tenants&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
       <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -2630,6 +2634,14 @@ string</td>
 <td>The name of the database</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-odd"><td><strong>databaseUser</strong> <br clear="right" />
+string</td>
+<td>The database username (encrypted)</td>
+<td><div class="first last versionadded">
+<p><span class="versionmodified">New in version 3.10.0.</span></p>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div></blockquote>
@@ -2652,27 +2664,32 @@ string</td>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
          <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;abc.database.windows.net&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;ijoBJ2mYel+pdMBQ==&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
          <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;X2hL0wD8EeMj8rfXw==&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MYSQL&quot;</span><span class="p">,</span>
          <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;gJybx9qkcwecg==&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;ORACL&quot;</span><span class="p">,</span>
          <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1:1521/orcl&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;orcl&quot;</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;orcl&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;sLpuLgFFUcKwxUBw==&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;PGSQL&quot;</span><span class="p">,</span>
          <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;DB&quot;</span>
+         <span class="s2">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;DB&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;obgdUndXx6y0JYk==&quot;</span>
       <span class="p">}</span>
    <span class="p">],</span>
    <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -3110,7 +3127,7 @@ boolean</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

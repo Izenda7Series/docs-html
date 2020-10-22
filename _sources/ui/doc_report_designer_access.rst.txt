@@ -23,7 +23,7 @@ View List of Sharings
    .. _Report_Designer_Access:
 
    .. figure:: /_static/images/Report_Designer_Access.png
-      :width: 600px
+      :width: 1050px
 
       Report Designer - Access |br|
 
@@ -44,18 +44,38 @@ Add a Sharing
 
 #. Click the Add Sharing button above the list to add a new row in the
    list:
-#. Select the type of people to share with: Everyone, Role or User.
-#. Select the specific Role or User (not applied for Everyone option).
+#. Select the type of user group to share with: Everyone, Role, User or Tenant (for Global reports only).
+#. Select the specific Tenant, Role or User (not applied for Everyone option).
 
-   -  For Role, select a role from the drop-down list.
-   -  For User, click the plus icon to open All User pop-up.
+   *  For Tenant, click the plus icon to open Select Tenant pop-up.
+
+      .. figure:: /_static/images/Access_Rights_Tenants.png
+         :width: 593px
+
+      #. Select one or more tenants or tenant groups.
+      #. Click OK to close the pop-up. |br|
+
+   *  For Role, click the plus icon to open All Roles pop-up.
+
+      .. figure:: /_static/images/Access_Rights_Roles.png
+         :width: 593px
+
+      #. Type a partial name into the search box and click the search
+         icon (🔍).
+      #. Only matching roles will be displayed.
+      #. Select one or more roles then click OK to close the pop-up. |br|
+
+   *  For User, click the plus icon to open All User pop-up.
+
+      .. figure:: /_static/images/Access_Rights_Users.png
+         :width: 895px
 
       #. Select either User Name, Email Address or Role to search for.
          Select All to search for all fields.
       #. Type a partial name into the search box and click the search
          icon (🔍).
       #. Only matching users will be displayed.
-      #. Select one more more users then click OK to close the pop-up.
+      #. Select one or more users then click OK to close the pop-up. |br|
 
 #. Select an Access Right (See details in List of Access Rights table
    below).
@@ -68,10 +88,12 @@ Add a Sharing
    *  - **Share With Value**
       - Specific User
       - Specific Role
+      - Specific Tenant or Tenant Group
       - Everyone
    *  - **Interaction**
       - All roles of User
       - This Role
+      - All roles of tenant/tenant group |br| (for Global reports only)
       - All roles of tenant/system
 
 

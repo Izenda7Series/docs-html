@@ -2345,9 +2345,11 @@ Returns an array of database mappings.
             "fromServer": "SERVER1",
             "toServer": "SERVER2",
             "fromDatabaseName": "[MSSQL] Northwind",
+            "fromDatabaseUser": null,
             "type": 2,
             "fromObject": "connection_name",
             "toDatabaseName": "[MSSQL] northwind",
+            "toDatabaseUser": null,
             "toObject": "connection_name_2",
             "selectAllTenants": true,
             "tenantIds": "null",
@@ -2391,10 +2393,12 @@ Saves an array of database mappings.
             "id": null,
             "fromServer": "SERVER1",
             "fromDatabaseName": "[MSSQL] Northwind",
+            "fromDatabaseUser": "User1",
             "type": 2,
             "fromObject": "connection_name",
             "toServer": "SERVER2",
             "toDatabaseName": "[MSSQL] northwind",
+            "toDatabaseUser": "User1",
             "toObject": "connection_name_2",
             "tenants": null,
             "state": 1,
@@ -2430,26 +2434,30 @@ Returns a paged array of database servers and database names.
 
 **Response**
 
-    A :doc:`models/PagedResult` object, with **result** field containing an array of the following object:
+   A :doc:`models/PagedResult` object, with **result** field containing an array of the following object:
 
-    .. list-table::
-       :header-rows: 1
+   .. list-table::
+      :header-rows: 1
 
-       *  -  Field
-          -  Description
-          -  Note
-       *  -  **serverTypeName** |br|
-             string
-          -  The type of the database server (MSSQL, Oracle, MySQL, etc.)
-          -
-       *  -  **databaseServer** |br|
-             string
-          -  The name of the server
-          -
-       *  -  **databaseName** |br|
-             string
-          -  The name of the database
-          -
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **serverTypeName** |br|
+            string
+         -  The type of the database server (MSSQL, Oracle, MySQL, etc.)
+         -
+      *  -  **databaseServer** |br|
+            string
+         -  The name of the server
+         -
+      *  -  **databaseName** |br|
+            string
+         -  The name of the database
+         -
+      *  -  **databaseUser** |br|
+            string
+         -  The database username (encrypted)
+         -  .. versionadded:: 3.10.0
 
 **Samples**
 
@@ -2472,27 +2480,32 @@ Returns a paged array of database servers and database names.
             {
                "serverTypeName": "AZSQL",
                "databaseServer": "abc.database.windows.net",
-               "databaseName": "Northwind"
+               "databaseName": "Northwind",
+               "databaseUser": "ijoBJ2mYel+pdMBQ=="
             },
             {
                "serverTypeName": "MSSQL",
                "databaseServer": "localhost",
-               "databaseName": "Northwind"
+               "databaseName": "Northwind",
+               "databaseUser": "X2hL0wD8EeMj8rfXw=="
             },
             {
                "serverTypeName": "MYSQL",
                "databaseServer": "192.168.1.1",
-               "databaseName": "northwind"
+               "databaseName": "northwind",
+               "databaseUser": "gJybx9qkcwecg=="
             },
             {
                "serverTypeName": "ORACL",
                "databaseServer": "192.168.1.1:1521/orcl",
-               "databaseName": "orcl"
+               "databaseName": "orcl",
+               "databaseUser": "sLpuLgFFUcKwxUBw=="
             },
             {
                "serverTypeName": "PGSQL",
                "databaseServer": "192.168.1.1",
-               "databaseName": "DB"
+               "databaseName": "DB",
+               "databaseUser": "obgdUndXx6y0JYk=="
             }
          ],
          "pageIndex": 1,

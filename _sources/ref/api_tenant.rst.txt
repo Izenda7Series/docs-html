@@ -1,5 +1,3 @@
-
-
 ============================
 Tenant APIs
 ============================
@@ -20,25 +18,37 @@ List of APIs
 
    * - API
      - Purpose
-   * - `GET tenant/allTenants`_
-     - Returns an array of all tenants.
    * - `GET tenant/{tenant_id}`_
      - Returns the tenant specified by tenant_id.
-   * - `POST tenant`_
-     - Saves a tenant.
-   * - `POST tenant/active/{tenant_id}`_
-     - Sets active for the tenant specified by tenant_id.
-   * - `POST tenant/deactive/{tenant_id}`_
-     - Sets inactive for the tenant specified by tenant_id.
-   * - `DELETE tenant/{tenant_id}`_
-     - Deletes the tenant specified by tenant_id.
    * - `GET tenant/activeTenants`_
      - Returns an array of active tenants.
+   * - `GET tenant/allTenantGroups`_
+
+       .. versionadded:: 3.11.0
+     - Returns an array of all tenant groups.
+   * - `GET tenant/allTenants`_
+     - Returns an array of all tenants.
    * - `GET tenant/availableCategory/{type}`_
      - .. deprecated:: 2.0.0
             superseded by :ref:`POST_role/availableCategory` |br| |br|
 
        Returns an array of available categories for report/template (type=0) or dashboard (type=1).
+   * - `GET tenant/basicInfos`_
+     - Returns all active tenants with basic info.
+   * - `GET tenant/namesOnly`_
+     - Returns all active tenants with names only.
+   * - `GET tenant/tenantGroupsHierarchy`_
+
+       .. versionadded:: 3.11.0
+     - Returns an array of all tenant groups and tenants.
+   * - `POST tenant`_
+     - Saves a tenant.
+   * - `POST tenant/accessLimits`_
+     - Lazy load access limit for each tenant.
+   * - `POST tenant/active/{tenant_id}`_
+     - Sets active for the tenant specified by tenant_id.
+   * - `POST tenant/deactive/{tenant_id}`_
+     - Sets inactive for the tenant specified by tenant_id.
    * - `POST tenant/intergration/saveTenant`_
      - Adds or updates external tenant.
      
@@ -46,76 +56,10 @@ List of APIs
           
           To be renamed to "integration"
 
-   * - `GET tenant/basicInfos`_
-     - Returns all active tenants with basic info.
-   * - `GET tenant/namesOnly`_
-     - Returns all active tenants with names only.
-   * - `POST tenant/accessLimits`_
-     - Lazy load access limit for each tenant.
    * - `POST tenant/scheduleLimits`_
      - Lazy load schedule limit for each tenant.
-
-GET tenant/allTenants
---------------------------------------------------------------
-
-Returns an array of all tenants.
-
-**Request**
-
-    No payload
-
-**Response**
-
-    An array of :doc:`models/Tenants` objects
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/tenant/allTenants HTTP/1.1
-
-   Sample response::
-
-      [{
-           "id" : "e4c784eb-3e41-4849-925c-a9094b73dfb7",
-           "tenantID" : "acme",
-           "name" : "ACME Corporation",
-           "description" : null,
-           "active" : true,
-           "deleted" : false,
-           "modules" : "Report Template/ Component; Scheduling",
-           "tenantModules" : ["Report Template/ Component", "Scheduling"],
-           "permissionData" : null,
-           "permission": null,
-           "state" : 0,
-           "inserted" : true,
-           "version" : 2,
-           "created" "2017-06-15T09:03:04.7770000+07:00",
-           "createdBy": "System2 Admin2",
-           "modified" : "2017-09-05T07:59:14.6970000+07:00",
-           "modifiedBy": "System2 Admin2"
-        }, {
-           "id" : "811e2d3b-c656-46fa-b70e-7fe95bc6529f",
-           "tenantID" : "doe",
-           "name" : "John Doe",
-           "description" : null,
-           "active" : true,
-           "deleted" : false,
-           "modules" : "Report Template/ Component; Scheduling",
-           "modified" : "2016-05-22T03:26:32.0000000+07:00",
-           "tenantModules" : ["Report Template/ Component", "Scheduling"],
-           "permissionData" : null,
-           "permission": null,
-           "state" : 0,
-           "inserted" : true,
-           "version" : 2,
-           "created" "2017-06-23T08:07:50.5700000+07:00",
-           "createdBy": "$RootAdmin$",
-           "modified" : "2017-08-16T09:15:59.5400000+07:00",
-           "modifiedBy": "$RootAdmin$"
-        }
-      ]
-
+   * - `DELETE tenant/{tenant_id}`_
+     - Deletes the tenant specified by tenant_id.
 
 GET tenant/{tenant_id}
 --------------------------------------------------------------
@@ -150,6 +94,7 @@ Returns the tenant specified by tenant_id.
             "description": null,
             "active": true,
             "modules": "maUqbVKEX7hSyzaUp2nEAdVdmBVmue6S2e72m8XBl/OHx7ysEcRYz7YEjYqMhOnL0jpxXGB7saUIPgZ+58bWkH+ZBadLbo4SqixBr9Dtv+uIrVWFs1JJDdudOyn+nSr+sjPDAbD/BzjU3NGFV9mjBA==",
+            "tenantGroups": [],
             "tenantModules": [
                "Alerting",
                "Report Templates",
@@ -431,6 +376,418 @@ Returns the tenant specified by tenant_id.
             "modifiedBy": "$RootAdmin$"
          }
 
+.. _GET_tenant/activeTenants:
+
+GET tenant/activeTenants
+--------------------------------------------------------------
+
+Returns an array of active tenants.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of :doc:`models/Tenants` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/activeTenants HTTP/1.1
+
+   Sample response::
+
+      [{
+        "tenantID": "acme",
+        "name": "ACME Corporation",
+        "description": null,
+        "active": true,
+        "modules": null,
+        "permissionData": null,
+        "tenantModules": [],
+        "permission": null,
+        "id": "1658c545-2ee4-4952-98f8-7d4e8b6c4e04",
+        "state": 0,
+        "deleted": false,
+        "inserted": true,
+        "version": null,
+        "created": null,
+        "createdBy": null,
+        "modified": null,
+        "modifiedBy": null
+      }]
+
+GET tenant/allTenantGroups
+--------------------------------------------------------------
+
+Returns an array of all tenant groups.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of :doc:`models/TenantGroup` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/allTenantGroups HTTP/1.1
+
+   Sample response::
+
+      [
+         {
+            "created": "2020-10-09T13:42:46.0130000+05:00",
+            "createdBy": "System Admin",
+            "deleted": false,
+            "id": "70ef6c18-adbc-4567-a7b1-556216a8447e",
+            "inserted": true,
+            "modified": "2020-10-09T13:42:46.0130000+05:00",
+            "modifiedBy": "System Admin",
+            "name": "TenantGroup1",
+            "state": 0,
+            "version": 1
+         }
+      ]
+
+GET tenant/allTenants
+--------------------------------------------------------------
+
+Returns an array of all tenants.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of :doc:`models/Tenants` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/allTenants HTTP/1.1
+
+   Sample response::
+
+      [{
+           "id" : "e4c784eb-3e41-4849-925c-a9094b73dfb7",
+           "tenantID" : "acme",
+           "name" : "ACME Corporation",
+           "description" : null,
+           "active" : true,
+           "deleted" : false,
+           "modules" : "Report Template/ Component; Scheduling",
+           "tenantModules" : ["Report Template/ Component", "Scheduling"],
+           "permissionData" : null,
+           "permission": null,
+           "state" : 0,
+           "inserted" : true,
+           "version" : 2,
+           "created" "2017-06-15T09:03:04.7770000+07:00",
+           "createdBy": "System2 Admin2",
+           "modified" : "2017-09-05T07:59:14.6970000+07:00",
+           "modifiedBy": "System2 Admin2"
+        }, {
+           "id" : "811e2d3b-c656-46fa-b70e-7fe95bc6529f",
+           "tenantID" : "doe",
+           "name" : "John Doe",
+           "description" : null,
+           "active" : true,
+           "deleted" : false,
+           "modules" : "Report Template/ Component; Scheduling",
+           "modified" : "2016-05-22T03:26:32.0000000+07:00",
+           "tenantModules" : ["Report Template/ Component", "Scheduling"],
+           "permissionData" : null,
+           "permission": null,
+           "state" : 0,
+           "inserted" : true,
+           "version" : 2,
+           "created" "2017-06-23T08:07:50.5700000+07:00",
+           "createdBy": "$RootAdmin$",
+           "modified" : "2017-08-16T09:15:59.5400000+07:00",
+           "modifiedBy": "$RootAdmin$"
+        }
+      ]
+
+GET tenant/availableCategory/{type}
+--------------------------------------------------------------
+
+.. deprecated:: 2.0.0
+   superseded by :ref:`POST_role/availableCategory`
+
+Returns an array of available categories for report/template (type=0) or dashboard (type=1).
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of :doc:`models/Category` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/availableCategory/0 HTTP/1.1
+
+   Sample response::
+
+      [{
+            "name": "0 july 19",
+            "type": 0,
+            "parentId": null,
+            "tenantId": null,
+            "isGlobal": false,
+            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "canDelete": false,
+            "editable": false,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": null,
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 2,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "e6b0d0e1-85f0-4708-bd3e-6ca074de94c8",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
+        },
+        {
+            "name": "12062017",
+            "type": 0,
+            "parentId": null,
+            "tenantId": null,
+            "isGlobal": false,
+            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
+            "canDelete": false,
+            "editable": false,
+            "savable": false,
+            "subCategories": [],
+            "checked": false,
+            "reports": [],
+            "dashboards": null,
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "status": 2,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false,
+            "id": "f0e8668a-ff01-4d94-8f59-3dab8bf373ff",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
+        }
+      ]
+
+GET tenant/basicInfos
+--------------------------------------------------------------
+
+Returns all active tenants with basic info.
+
+Returns only the current tenant with basic info if logged in user is a tenant user.
+
+**Request**
+
+    No payload
+
+**Response**
+
+   An array of the following objects:
+
+   .. list-table::
+      :header-rows: 1
+
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **id** |br|
+            string (GUID)
+         - The id of the tenant
+         -
+      *  -  **tenantId** |br|
+            string
+         - The user-selected id of the tenant
+         -
+      *  -  **name** |br|
+            string
+         - The name of the tenant
+         -
+      *  -  **active** |br|
+            boolean
+         - Whether the tenant is active
+         -
+      *  -  **description** |br|
+            string
+         - The description of the tenant
+         -
+      *  -  **tenantModules** |br|
+            array of strings
+         -  An array of selected module names for the tenant
+         -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/basicInfos HTTP/1.1
+
+   Sample response::
+
+      [
+         {
+            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "tenantID": "acme",
+            "name": "Acme Yo",
+            "active": true,
+            "description": null,
+            "tenantModules": [
+                  "Alerting",
+                  "Report Templates",
+                  "Report Designer",
+                  "Form",
+                  "Scheduling",
+                  "Charting",
+                  "Dashboard",
+                  "Exporting",
+                  "Maps"
+            ]
+         },
+         {
+            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
+            "tenantID": "System",
+            "name": "System",
+            "active": true,
+            "description": null,
+            "tenantModules": [
+                  "Alerting",
+                  "Report Templates",
+                  "Report Designer",
+                  "Form",
+                  "Scheduling",
+                  "Charting",
+                  "Exporting",
+                  "Dashboard",
+                  "Maps"
+            ]
+         }
+      ]
+
+GET tenant/namesOnly
+--------------------------------------------------------------
+
+Returns all active tenants with names only.
+
+Returns only the current tenant with name only if logged in user is a tenant user.
+
+**Request**
+
+    No payload
+
+**Response**
+
+   An array of the following objects:
+
+   .. list-table::
+      :header-rows: 1
+
+      *  -  Field
+         -  Description
+         -  Note
+      *  -  **id** |br|
+            string (GUID)
+         - The id of the tenant
+         -
+      *  -  **tenantId** |br|
+            string
+         - The user-selected id of the tenant
+         -
+      *  -  **name** |br|
+            string
+         - The name of the tenant
+         -
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/namesOnly HTTP/1.1
+
+   Sample response::
+
+      [
+         {
+            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
+            "tenantID": "acme",
+            "name": "Acme Yo"
+         },
+         {
+            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
+            "tenantID": "System",
+            "name": "System"
+         }
+      ]
+
+GET tenant/tenantGroupsHierarchy
+--------------------------------------------------------------
+
+Returns an array of all tenant groups and tenants.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An array of :doc:`models/TenantGroupHierarchicalData` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      GET /api/tenant/tenantGroupsHierarchy HTTP/1.1
+
+   Sample response::
+
+      [
+         {
+            "tenantGroupId": "095e50a7-11cf-47cf-a8a0-06125cc3f30b",
+            "tenantGroupName": "TenantGroup1",
+            "tenantId": "723f9b74-2cd7-4eff-8813-00dc86feea16",
+            "tenantName": "Tenant1"
+         },
+         {
+            "tenantGroupId": "00000000-0000-0000-0000-000000000000",
+            "tenantGroupName": "",
+            "tenantId": "ac8137b2-8d8c-47ca-97a3-357c12c0751d",
+            "tenantName": "Tenant2"
+         }
+      ]
+
 .. _POST_tenant:
 
 POST tenant
@@ -475,6 +832,7 @@ Creates or updates a tenant.
       {
         "tenantID" : "doe",
         "name" : "DOE",
+        "tenantGroups": [],
         "tenantModules" : ["Report Template/ Component", "Scheduling"]
       }
 
@@ -491,6 +849,7 @@ Creates or updates a tenant.
            "name": "Stark Industries",
            "description": "Fictional Company",
            "active": true,
+           "tenantGroups": [],
            "tenantModules": ["Alerting", "Form", "Dashboard", "Report Templates", "Scheduling", "Exporting", "Report Designer", "Charting", "Maps"],
            "permission": {
              "fullReportAndDashboardAccess": false,
@@ -714,6 +1073,52 @@ Creates or updates a tenant.
            "version": 2
          }
 
+POST tenant/accessLimits
+----------------------------
+
+Lazy load access Limit data for each role.
+
+**Request**
+
+    A :doc:`models/RolePagedRequest` objects
+
+**Response**
+
+    A :doc:`models/RoleVirtualNode` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST api/tenant/accessLimits HTTP/1.1
+
+   Request payload::
+
+      {
+         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
+         "tenantId": null,
+         "skipItems": 1,
+         "pageSize": 6,
+         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
+         "criteria": [ { "key": "name", "value": "Anna" }]
+      }
+
+   Sample response::
+
+      {  
+         "isLastPage":false,
+         "name":null,
+         "childNodes":[  ],
+         "numOfChilds":8,
+         "checked":false,
+         "indeterminate":true,
+         "numOfCheckedChilds":2,
+         "totalItems":223,
+         "level":1,
+         "id":"00000000-0000-0000-0000-000000000000",
+         "parentId":null
+      }
+
 POST tenant/active/{tenant_id}
 --------------------------------------------------------------
 
@@ -769,167 +1174,6 @@ Sets inactive for the tenant specified by tenant_id.
         "data": null
       }
 
-
-DELETE tenant/{tenant_id}
---------------------------------------------------------------
-
-Deletes the tenant specified by tenant_id.
-
-**Request**
-
-    No payload
-
-**Response**
-
-    An :doc:`models/OperationResult` object with **success** field true if the deletion is successful
-
-**Samples**
-
-   .. code-block:: http
-
-      DELETE /api/tenant/811e2d3b-c656-46fa-b70e-7fe95bc6529f HTTP/1.1
-
-   Sample response::
-
-      {
-        "success" : true,
-        "messages" : null,
-        "data": null
-      }
-
-.. _GET_tenant/activeTenants:
-
-GET tenant/activeTenants
---------------------------------------------------------------
-
-Returns an array of active tenants.
-
-**Request**
-
-    No payload
-
-**Response**
-
-    An array of :doc:`models/Tenants` objects
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/tenant/activeTenants HTTP/1.1
-
-   Sample response::
-
-      [{
-        "tenantID": "acme",
-        "name": "ACME Corporation",
-        "description": null,
-        "active": true,
-        "modules": null,
-        "permissionData": null,
-        "tenantModules": [],
-        "permission": null,
-        "id": "1658c545-2ee4-4952-98f8-7d4e8b6c4e04",
-        "state": 0,
-        "deleted": false,
-        "inserted": true,
-        "version": null,
-        "created": null,
-        "createdBy": null,
-        "modified": null,
-        "modifiedBy": null
-      }]
-
-
-GET tenant/availableCategory/{type}
---------------------------------------------------------------
-
-.. deprecated:: 2.0.0
-   superseded by :ref:`POST_role/availableCategory`
-
-Returns an array of available categories for report/template (type=0) or dashboard (type=1).
-
-**Request**
-
-    No payload
-
-**Response**
-
-    An array of :doc:`models/Category` objects
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/tenant/availableCategory/0 HTTP/1.1
-
-   Sample response::
-
-      [{
-            "name": "0 july 19",
-            "type": 0,
-            "parentId": null,
-            "tenantId": null,
-            "isGlobal": false,
-            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
-            "canDelete": false,
-            "editable": false,
-            "savable": false,
-            "subCategories": [],
-            "checked": false,
-            "reports": [],
-            "dashboards": null,
-            "numOfChilds": 0,
-            "numOfCheckedChilds": 0,
-            "indeterminate": false,
-            "status": 2,
-            "fullPath": null,
-            "computeNameSettings": null,
-            "isCheck": false,
-            "id": "e6b0d0e1-85f0-4708-bd3e-6ca074de94c8",
-            "state": 0,
-            "deleted": false,
-            "inserted": true,
-            "version": null,
-            "created": null,
-            "createdBy": null,
-            "modified": null,
-            "modifiedBy": null
-        },
-        {
-            "name": "12062017",
-            "type": 0,
-            "parentId": null,
-            "tenantId": null,
-            "isGlobal": false,
-            "createdById": "9d2f1d51-0e3d-44db-bfc7-da94a7581bfe",
-            "canDelete": false,
-            "editable": false,
-            "savable": false,
-            "subCategories": [],
-            "checked": false,
-            "reports": [],
-            "dashboards": null,
-            "numOfChilds": 0,
-            "numOfCheckedChilds": 0,
-            "indeterminate": false,
-            "status": 2,
-            "fullPath": null,
-            "computeNameSettings": null,
-            "isCheck": false,
-            "id": "f0e8668a-ff01-4d94-8f59-3dab8bf373ff",
-            "state": 0,
-            "deleted": false,
-            "inserted": true,
-            "version": null,
-            "created": null,
-            "createdBy": null,
-            "modified": null,
-            "modifiedBy": null
-        }
-      ]
-
-
 POST tenant/intergration/saveTenant
 --------------------------------------------------------------
 
@@ -979,199 +1223,6 @@ Adds or updates external tenant.
 
       true
 
-GET tenant/basicInfos
---------------------------------------------------------------
-
-Returns all active tenants with basic info.
-
-Returns only the current tenant with basic info if logged in user is a tenant user.
-
-**Request**
-
-    No payload
-
-**Response**
-
-   An array of the following objects:
-
-   .. list-table::
-      :header-rows: 1
-
-      *  -  Field
-         -  Description
-         -  Note
-      *  -  **id** |br|
-            string (GUID)
-         - The id of the tenant
-         -
-      *  -  **tenantId** |br|
-            string
-         - The user-selected id of the tenant
-         -
-      *  -  **name** |br|
-            string
-         - The name of the tenant
-         -
-      *  -  **active** |br|
-            boolean
-         - Whether the tenant is active
-         -
-      *  -  **description** |br|
-            string
-         - The description of the tenant
-         -
-      *  -  **tenantModules** |br|
-            array of strings
-         -  An array of selected module names for the tenant
-         -
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/tenant/basicInfos HTTP/1.1
-
-   Sample response::
-
-      [
-         {
-            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
-            "tenantID": "acme",
-            "name": "Acme Yo",
-            "active": true,
-            "description": null,
-            "tenantModules": [
-                  "Alerting",
-                  "Report Templates",
-                  "Report Designer",
-                  "Form",
-                  "Scheduling",
-                  "Charting",
-                  "Dashboard",
-                  "Exporting",
-                  "Maps"
-            ]
-         },
-         {
-            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
-            "tenantID": "System",
-            "name": "System",
-            "active": true,
-            "description": null,
-            "tenantModules": [
-                  "Alerting",
-                  "Report Templates",
-                  "Report Designer",
-                  "Form",
-                  "Scheduling",
-                  "Charting",
-                  "Exporting",
-                  "Dashboard",
-                  "Maps"
-            ]
-         }
-      ]
-
-GET tenant/namesOnly
---------------------------------------------------------------
-
-Returns all active tenants with names only.
-
-Returns only the current tenant with name only if logged in user is a tenant user.
-
-**Request**
-
-    No payload
-
-**Response**
-
-   An array of the following objects:
-
-   .. list-table::
-      :header-rows: 1
-
-      *  -  Field
-         -  Description
-         -  Note
-      *  -  **id** |br|
-            string (GUID)
-         - The id of the tenant
-         -
-      *  -  **tenantId** |br|
-            string
-         - The user-selected id of the tenant
-         -
-      *  -  **name** |br|
-            string
-         - The name of the tenant
-         -
-
-**Samples**
-
-   .. code-block:: http
-
-      GET /api/tenant/namesOnly HTTP/1.1
-
-   Sample response::
-
-      [
-         {
-            "id": "28788c9b-4e0d-464e-b588-ea5bee676bd3",
-            "tenantID": "acme",
-            "name": "Acme Yo"
-         },
-         {
-            "id": "6d775a01-f6c4-48f2-8678-4f8aa081db49",
-            "tenantID": "System",
-            "name": "System"
-         }
-      ]
-
-POST tenant/accessLimits
-----------------------------
-
-Lazy load access Limit data for each role.
-
-**Request**
-
-    A :doc:`models/RolePagedRequest` objects
-
-**Response**
-
-    A :doc:`models/RoleVirtualNode` objects
-**Samples**
-
-   .. code-block:: http
-
-      POST api/tenant/accessLimits HTTP/1.1
-
-   Request payload::
-
-      {
-         "roleId": "db8693f7-3d5a-41d7-a888-8a1dfaad31b4",
-         "tenantId": null,
-         "skipItems": 1,
-         "pageSize": 6,
-         "parentIds": ["5329b0cc-37a1-49c7-9271-a870a480db5c"],
-         "criteria": [ { "key": "name", "value": "Anna" }]
-      }
-
-   Sample response::
-
-      {  
-         "isLastPage":false,
-         "name":null,
-         "childNodes":[  ],
-         "numOfChilds":8,
-         "checked":false,
-         "indeterminate":true,
-         "numOfCheckedChilds":2,
-         "totalItems":223,
-         "level":1,
-         "id":"00000000-0000-0000-0000-000000000000",
-         "parentId":null
-      }
-
 POST tenant/scheduleLimits
 --------------------------------
 
@@ -1184,6 +1235,7 @@ Lazy load schedule limit data for each role.
 **Response**
 
     A :doc:`models/RoleVirtualNode` objects
+
 **Samples**
 
    .. code-block:: http
@@ -1215,4 +1267,31 @@ Lazy load schedule limit data for each role.
          "level":1,
          "id":"00000000-0000-0000-0000-000000000000",
          "parentId":null
+      }
+
+DELETE tenant/{tenant_id}
+--------------------------------------------------------------
+
+Deletes the tenant specified by tenant_id.
+
+**Request**
+
+    No payload
+
+**Response**
+
+    An :doc:`models/OperationResult` object with **success** field true if the deletion is successful
+
+**Samples**
+
+   .. code-block:: http
+
+      DELETE /api/tenant/811e2d3b-c656-46fa-b70e-7fe95bc6529f HTTP/1.1
+
+   Sample response::
+
+      {
+        "success" : true,
+        "messages" : null,
+        "data": null
       }

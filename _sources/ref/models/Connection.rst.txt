@@ -37,6 +37,11 @@ Connection
       -
       -  The database address
       -
+   *  -  **databaseUser** |br|
+         string
+      -
+      -  The database username (encrypted)
+      -  .. versionadded:: 3.10.0
    *  -  **serverTypeName** |br|
          string
       -
@@ -107,16 +112,23 @@ Connection
    .. code-block:: json
 
       {
-           "id" : "89e91284-6546-44d0-8de0-f8f666a590ea",
-           "name" : "Northwind",
-           "serverType" : "d968e96f-91dc-414d-9fd8-aef2926c9a18",
-           "serverTypeName" : "AZSQL",
-           "connectionString" : "1aBcD+==",
-           "visible" : true,
-           "deleted" : false,
-           "relateToConnectionId" : null,
-           "tenantId" : null,
-           "dBSource" : null,
-           "relationships" : null,
-           "physicalChange" : 0
+         "id" : "89e91284-6546-44d0-8de0-f8f666a590ea",
+         "name" : "Northwind",
+         "serverTypeId" : "d968e96f-91dc-414d-9fd8-aef2926c9a18",
+         "serverTypeName" : "AZSQL",
+         "connectionString" : "1aBRE29O143H1SyQGNMkU3I3CNyM+gqaxFEuOSKGzd0U0cD+==",
+         "checked": false,
+         "copyDataConnector": false,
+         "databaseName": "Northwind",
+         "databaseServer": "localhost",
+         "databaseUser": "8oX0eYKrA7PlcqOIYA==",
+         "dbSource": {},
+         "deleted": false,
+         "originalName": null,
+         "physicalChange": 0,
+         "querySourceCategories": [],
+         "relateToConnectionId": null,
+         "relationships": null,
+         "tenantId": null,
+         "visible": false
       }

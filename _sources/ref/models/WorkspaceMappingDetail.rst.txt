@@ -25,7 +25,6 @@ WorkspaceMappingDetail
 
 
 
-
 Inherited fields:
 
 .. include:: WorkspaceMapping.rst

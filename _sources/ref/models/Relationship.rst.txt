@@ -61,6 +61,13 @@ Relationship
       -
       -  Is this relationship from physical database (cannot be deleted)
       -
+   *  -  **disabled** |br|
+         boolean
+
+         .. versionadded:: 3.10.0
+      -
+      -  Indicate if the relationship is disabled or not
+      -
    *  -  **joinType** |br|
          string
       -

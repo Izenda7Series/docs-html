@@ -46,6 +46,13 @@ Tenants
       -
       -  A :doc:`Permission` object
       -
+   *  -  **tenantGroups** |br|
+         array of objects
+
+         .. versionadded:: 3.11.0
+      -
+      -  An array of :doc:`TenantGroup` objects
+      -
 
 Inherited fields:
 
@@ -68,5 +75,6 @@ Inherited fields:
         "deleted" : false,
         "modules" : "Abc/.../Def==",
         "modified" : "2016-05-22T03:27:13.5070000+07:00",
+        "tenantGroups": [],
         "tenantModules" : ["Report Template/ Component", "Scheduling"]
      }

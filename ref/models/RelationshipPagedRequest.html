@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RelationshipPagedRequest &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>RelationshipPagedRequest &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Request and Response" href="_request_and_response.html"/>
         <link rel="next" title="ReloadQuerySourceRequest" href="ReloadQuerySourceRequest.html"/>
         <link rel="prev" title="QuerySourcePagedRequest" href="QuerySourcePagedRequest.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -315,6 +315,16 @@ string (GUID)</p>
 <td>The newly added or modified relationships</td>
 <td>Use for retrieve the newly added/modified relationships in Datta Model &gt; Relationships</td>
 </tr>
+<tr class="row-even"><td><p class="first"><strong>includeDisabledRelationships</strong> <br clear="right" />
+boolean</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 3.10.0.</span></p>
+</div>
+</td>
+<td>&#160;</td>
+<td>Indictates whether disabled relationships should be included or not</td>
+<td>&#160;</td>
+</tr>
 </tbody>
 </table>
 <p>Inherited fields:</p>
@@ -418,21 +428,22 @@ boolean</td>
 <div class="header docutils container">
 <strong>RelationshipPagedRequest Sample</strong>:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nt">&quot;tenentId&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;criteria&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;operation&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+  <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;tenentId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;operation&quot;</span><span class="p">:</span> <span class="mi">1</span>
      <span class="p">}</span>
   <span class="p">],</span>
-  <span class="nt">&quot;pageIndex&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;pageSize&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;sortOrders&quot;</span> <span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;DatabaseName&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;descending&quot;</span> <span class="p">:</span> <span class="kc">true</span>
+  <span class="nt">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;sortOrders&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;DatabaseName&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;descending&quot;</span><span class="p">:</span> <span class="kc">true</span>
      <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;includeDisabledRelationships&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -484,7 +495,7 @@ boolean</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

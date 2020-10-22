@@ -13,6 +13,10 @@ Others
    DataCacheSetting
    DataFormat
    DataFormating
+   DataSecurityAccessor
+   DataSecurityField
+   DataSecurityRule
+   DataSecurityRuleSet
    DataSourceItem
    EmailSetting
    Entity
@@ -40,8 +44,10 @@ Others
    SortParam
    SystemCacheSetting
    SystemVariable
-   TenantField
    Tenants
+   TenantField
+   TenantGroup
+   TenantGroupHierarchicalData
    TimePeriod
    ValidateExpiration
    ValueTreeNode

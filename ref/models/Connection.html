@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Connection &mdash; Izenda BI 3.10.5 documentation</title>
+  <title>Connection &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Izenda BI 3.10.5 documentation" href="../../index.html"/>
+    <link rel="top" title="Izenda BI 3.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Data Model" href="_data_model.html"/>
         <link rel="next" title="ConnectionColor" href="ConnectionColor.html"/>
         <link rel="prev" title="CalculatedFieldFunctionParam" href="CalculatedFieldFunctionParam.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -297,61 +297,70 @@ string</td>
 <td>The database address</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>serverTypeName</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>databaseUser</strong> <br clear="right" />
+string</td>
+<td>&#160;</td>
+<td>The database username (encrypted)</td>
+<td><div class="first last versionadded">
+<p><span class="versionmodified">New in version 3.10.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><strong>serverTypeName</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The type of the server</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>connectionString</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>connectionString</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The connection string</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>visible</strong> <br clear="right" />
+<tr class="row-even"><td><strong>visible</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Whether this is visible in Data Model</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>deleted</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>deleted</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Whether this is deleted</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>relateToConnectionId</strong> <br clear="right" />
+<tr class="row-even"><td><strong>relateToConnectionId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
 <td>The id of the related connection</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>tenantId</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>tenantId</strong> <br clear="right" />
 string (GUID)</td>
 <td>Y</td>
 <td>The id of the tenant if available</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>dBSource</strong> <br clear="right" />
+<tr class="row-even"><td><strong>dBSource</strong> <br clear="right" />
 object</td>
 <td>&#160;</td>
 <td>A <a class="reference internal" href="DBSource.html"><span class="doc">DBSource</span></a> object</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>relationships</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>relationships</strong> <br clear="right" />
 array of objects</td>
 <td>&#160;</td>
 <td>An array of <a class="reference internal" href="Relationship.html"><span class="doc">Relationship</span></a> objects</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>physicalChange</strong> <br clear="right" />
+<tr class="row-even"><td><strong>physicalChange</strong> <br clear="right" />
 integer</td>
 <td>&#160;</td>
 <td>The change status</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>copyDataConnector</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>copyDataConnector</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Is selected for copy in Copy Management (only data connector mode)</td>
@@ -360,13 +369,13 @@ boolean</td>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><strong>checked</strong> <br clear="right" />
+<tr class="row-even"><td><strong>checked</strong> <br clear="right" />
 boolean</td>
 <td>&#160;</td>
 <td>Is selected for copy in Copy Management</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>databaseName</strong> <br clear="right" />
+<tr class="row-odd"><td><strong>databaseName</strong> <br clear="right" />
 string</td>
 <td>&#160;</td>
 <td>The name of the database</td>
@@ -378,18 +387,25 @@ string</td>
 <div class="header docutils container">
 <strong>Sample</strong>:</div>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-     <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;89e91284-6546-44d0-8de0-f8f666a590ea&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;serverType&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;1aBcD+==&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;visible&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-     <span class="nt">&quot;deleted&quot;</span> <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-     <span class="nt">&quot;relateToConnectionId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;dBSource&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;relationships&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-     <span class="nt">&quot;physicalChange&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+   <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;89e91284-6546-44d0-8de0-f8f666a590ea&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;serverTypeId&quot;</span> <span class="p">:</span> <span class="s2">&quot;d968e96f-91dc-414d-9fd8-aef2926c9a18&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;serverTypeName&quot;</span> <span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;connectionString&quot;</span> <span class="p">:</span> <span class="s2">&quot;1aBRE29O143H1SyQGNMkU3I3CNyM+gqaxFEuOSKGzd0U0cD+==&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;copyDataConnector&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;databaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;databaseUser&quot;</span><span class="p">:</span> <span class="s2">&quot;8oX0eYKrA7PlcqOIYA==&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;dbSource&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;querySourceCategories&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="nt">&quot;relateToConnectionId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;relationships&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -440,7 +456,7 @@ string</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.10.5',
+            VERSION:'3.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -642,7 +642,7 @@ Validates grand total expression syntax and returns a suggested data type.
 POST fusion/validateSubTotalExpression
 --------------------------------------------------------------
 
-Validates grand total expression syntax and returns a suggested data type.
+Validates sub total expression syntax and returns a suggested data type.
 
 **Request**
 
