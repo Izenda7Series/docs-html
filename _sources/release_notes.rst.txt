@@ -11,13 +11,18 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
-v3.11.0 Core Release -- October 22nd, 2020
+v3.11.0 Core Release -- October 23rd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   There are known CSS issues that may impact the main and body tags of integrated environments. These issues are being addressed in upcoming hotfix releases. Please contact support@izenda.com if you experience any conflicts. 
+
 
 FEATURES
 ^^^^^^^^^
 - PII Security Options
-   - A new dialogue can be found in the Data Setup > Advanded Settings > Security
+   - A new dialogue can be found in the Data Setup > Advanced Settings > Security
    - This dialogue will allow administrators to restrict how data is viewed internally and externally within the platform
    - Information on configuring these rules can be found on the :ref:`Advanced_Settings` page
 - Configuring Temporary Export Files

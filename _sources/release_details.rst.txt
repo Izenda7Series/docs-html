@@ -4,13 +4,13 @@
 Release Details
 ==============
 
-v3.11.0 Core Release -- October 22nd, 2020
+v3.11.0 Core Release -- October 23rd, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
 - PII Security Options
-    - A new dialogue can be found in the Data Setup > Advanded Settings > Security
+    - A new dialogue can be found in the Data Setup > Advanced Settings > Security
     - This dialogue will allow administrators to restrict how data is viewed internally and externally within the platform
     - Administrators can determine which values should be replaced/obscured with symbols to trim out sensitive information
         - These values can be configured to target specific tenants, roles, and users
