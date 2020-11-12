@@ -7,6 +7,10 @@ Release Details
 v3.11.2 Preview Release -- November 11th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. warning::
+
+   Note that the Explore tab does not support changing tenancy, as mutli-tenancy is only at the configuration level 
+
 FEATURES
 ^^^^^^^^^
 - PostgreSQL support for NLQ 
@@ -14,7 +18,6 @@ FEATURES
 - NLQ Supports Multi-Tenancy
    - NLQ services can be configured on a per-tenant basis 
    - This configuration can be manipulated by the administrator on a tenant's behalf
-   - Note that the Explore tab does not support changing tenancy, as mutli-tenancy is only at the configuration level
 - NLQ Grid Enhancements 
    - Column headers can now be used to apply formats and functions to each column
    - This will allow users to sum, count, etc. directly on the grid 
