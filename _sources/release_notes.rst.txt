@@ -11,6 +11,22 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.11.2 Preview Release -- November 11th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- PostgreSQL support for NLQ 
+   - NLQ services can now be configured against PostgreSQL data sources
+- NLQ Supports Multi-Tenancy
+   - NLQ services can be configured on a per-tenant basis 
+   - This configuration can be manipulated by the administrator on a tenant's behalf
+   - Note that the Explore tab does not support changing tenancy, as mutli-tenancy is only at the configuration level
+- NLQ Grid Enhancements 
+   - Column headers can now be used to apply formats and functions to each column
+   - This will allow users to sum, count, etc. directly on the grid 
+- For more information on NLQ please see our :ref:`NLQ_User_Guide`
+
 
 v3.11.1 Preview Release -- October 30th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

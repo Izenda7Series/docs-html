@@ -245,11 +245,9 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Start a new instance of the command prompt. Navigate to the directory where the docker-compose file is present. Run the following commands and verify docker login credentials.</dt>
+<dt>Start a new instance of the command prompt. Navigate to the directory where the docker-compose file is present. Run the following commands to start containers.</dt>
 <dd><blockquote class="first">
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>docker login --username=izendaeng
-Password: &lt;Password&gt;
-docker-compose up -d
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>docker-compose up -d
 </pre></div>
 </div>
 </div></blockquote>
@@ -264,9 +262,8 @@ docker-compose up -d
 <div class="section" id="port-management">
 <h1>Port Management<a class="headerlink" href="#port-management" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
-<li>Open port 8000 to allow TCP access from outside sources. The NLQ application will be posted on port 8000. Izenda&#8217;s BI application will use port 8000 by default to connect to the NLQ application.</li>
-<li>Additionally, open port 5432 and 8983 in Windows Defender Firewall</li>
-<li>On the machine where SQL Server is installed, create an inbound rule for 1433 and white-list the machine IP where the NLQ docker was installed.</li>
+<li>Open port 8000 to allow TCP access from outside sources. The NLQ application will be hosted on port 8000. Izenda&#8217;s BI application will use port 8000 by default to connect to the NLQ application.</li>
+<li>On the machine where SQL server is installed, create an inbound rule for 1433. Whitelist the IP, so that NLQ docker is able to communicate</li>
 <li>On the same machine, open port 1433 in Windows Defender Firewall</li>
 <li>For SQL Server, Enable TCP/IP connections in SQL Server Configuration Manager</li>
 </ol>
@@ -303,50 +300,43 @@ docker-compose up -d
 <div class="highlight-c"><div class="highlight"><pre><span></span>version: &#39;3.1&#39;
 
 services:
-    ml_app:
+  ml_app:
         container_name: ml_app
         restart: always
         # build: .
-        image: izendainc/izenda-ml-app:1.0.0
+        image: izendainc/izenda-ml-app:3.11.2
         # image: ml_app
         depends_on:
-        - db
-        - nlp_solr
+          - nlp_solr
         ports:
-        - &quot;8000:8000&quot;
+          - &quot;8000:8000&quot;
         volumes:
-        - appdata:/usr/src/ml_services/app
-        - solrdata2:/usr/src/ml_services/app/xml
-    db:
-        container_name: pg_sql
-        restart: always
-        image: postgres:10.1
-        environment:
-        POSTGRES_USER: admin
-        POSTGRES_PASSWORD: telegram@678
-        POSTGRES_DB: configdb
-        ports:
-        - 5432:5432
-        volumes:
-        - pgdata:/var/lib/postgresql/data
-    nlp_solr:
+          - logs:/usr/src/ml_services/logs
+          - guided-config:/usr/src/ml_services/app/config
+          - guided-db_config:/usr/src/ml_services/app/db_config
+          - nat-config:/usr/src/ml_services/app/nat_config
+          - nat-db_config:/usr/src/ml_services/app/nat_db_config
+          - prediction-config:/usr/src/ml_services/app/prediction/config
+          - prediction-models:/usr/src/ml_services/app/prediction/models
+          - solrdata2:/usr/src/ml_services/app/xml
+  nlp_solr:
         container_name: nlp_solr
-        image: izendainc/nlp_solr:1.0.0
-        # image: nlp_solr
-        # build : solr_docker
+        image: izendainc/nlp_solr:3.11.2
+        restart: always
         command: bin/solr start -f
-        ports:
-        - &quot;8983:8983&quot;
         volumes:
-        - solrdata1:/opt/solr
-        - solrdata2:/var/solr/data
-        # tty: false
-        # stdin_open: false
+          - solrdata1:/opt/solr
+          - solrdata2:/var/solr/data
 volumes:
-    solrdata1:
-    solrdata2:
-    pgdata:
-    appdata:
+  solrdata1:
+  solrdata2:
+  logs:
+  guided-config:
+  guided-db_config:
+  nat-config:
+  nat-db_config:
+  prediction-config:
+  prediction-models:
 </pre></div>
 </div>
 </div>

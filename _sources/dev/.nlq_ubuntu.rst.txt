@@ -40,12 +40,9 @@ Izenda NLQ Installation
         :align: center
         :width: 653px
 
-#. Navigate to the directory where the docker-compose.yml file is located. Run the following commands and verify the docker login credentials:
+#. Navigate to the directory where the docker-compose.yml file is located. Run the following commands to start containers:
         .. code-block:: code
 
-         sudo docker login
-         username: izendaeng
-         Password: <Password>
          sudo docker-compose up -d
 
     .. figure:: /_static/images/nlq_gifs/nlq_ubuntu3.GIF
@@ -54,8 +51,8 @@ Izenda NLQ Installation
 
 Port Management
 --------------
-#. Open port 8000 to allow TCP access from outside sources. The NLQ application will be posted on port 8000. Izenda's BI application will use port 8000 by default to connect to the NLQ application.
-#. On the machine where SQL server is installed, create an inbound rule for 1433 and white-list the machine IP where the NLQ docker was installed.
+#. Open port 8000 to allow TCP access from outside sources. The NLQ application will be hosted on port 8000. Izenda's BI application will use port 8000 by default to connect to the NLQ application.
+#. On the machine where SQL server is installed, create an inbound rule for 1433. Whitelist the IP, so that NLQ docker is able to communicate
 #. On the same machine, open port 1433 in Windows Defender Firewall 
 #. For SQL Server, Enable TCP/IP connections in SQL Server Configuration Manager
 
@@ -80,50 +77,43 @@ docker-compose.yml
 
 .. code-block:: c
 
-    version: '3.1'
+	version: '3.1'
 
-    services:
-        ml_app:
-            container_name: ml_app
-            restart: always
-            # build: .
-            image: izendainc/izenda-ml-app:1.0.0
-            # image: ml_app
-            depends_on:
-            - db
-            - nlp_solr
-            ports:
-            - "8000:8000"
-            volumes:
-            - appdata:/usr/src/ml_services/app
-            - solrdata2:/usr/src/ml_services/app/xml
-        db:
-            container_name: pg_sql
-            restart: always
-            image: postgres:10.1
-            environment:
-            POSTGRES_USER: admin
-            POSTGRES_PASSWORD: telegram@678
-            POSTGRES_DB: configdb
-            ports:
-            - 5432:5432
-            volumes:
-            - pgdata:/var/lib/postgresql/data
-        nlp_solr:
-            container_name: nlp_solr
-            image: izendainc/nlp_solr:1.0.0
-            # image: nlp_solr 
-            # build : solr_docker
-            command: bin/solr start -f
-            ports:
-            - "8983:8983"
-            volumes:
-            - solrdata1:/opt/solr
-            - solrdata2:/var/solr/data
-            # tty: false
-            # stdin_open: false
-    volumes:
-        solrdata1:
-        solrdata2:
-        pgdata:
-        appdata:
+	services:
+	  ml_app:
+		container_name: ml_app
+		restart: always
+		# build: .
+		image: izendainc/izenda-ml-app:3.11.2
+		# image: ml_app
+		depends_on:
+		  - nlp_solr
+		ports:
+		  - "8000:8000"
+		volumes:
+		  - logs:/usr/src/ml_services/logs
+		  - guided-config:/usr/src/ml_services/app/config
+		  - guided-db_config:/usr/src/ml_services/app/db_config
+		  - nat-config:/usr/src/ml_services/app/nat_config
+		  - nat-db_config:/usr/src/ml_services/app/nat_db_config
+		  - prediction-config:/usr/src/ml_services/app/prediction/config
+		  - prediction-models:/usr/src/ml_services/app/prediction/models
+		  - solrdata2:/usr/src/ml_services/app/xml
+	  nlp_solr:
+		container_name: nlp_solr
+		image: izendainc/nlp_solr:3.11.2
+		restart: always
+		command: bin/solr start -f
+		volumes:
+		  - solrdata1:/opt/solr
+		  - solrdata2:/var/solr/data
+	volumes:
+	  solrdata1:
+	  solrdata2:
+	  logs:
+	  guided-config:
+	  guided-db_config:
+	  nat-config:
+	  nat-db_config:
+	  prediction-config:
+	  prediction-models:		
