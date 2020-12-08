@@ -23,52 +23,52 @@ Syntax guided NLP search query
 
 The search follows a mandatory syntax with a set of rules to follow. The following list of comparison words and signs will be automatically recognized by Izenda’s NLP and suggestions will appear.
 
-.. list-table:: Syntax guide for NLP search query
-	 :class: apitable
-	 :header-rows: 1
-
-	 * - Words/ Signs
-	   - Avg
-	   - Sum
-	   - Maximum
-	   - Count
-	   - Distinct sum
-	   - Distinct count
-	   - =
-	   - >
-	   - <
-	   - Between
-	   - Group
-	   - Like
-	   - Is
-	 * - Syntax
-	   - **Avg** [Column Name] of [Table Name]
-	   - **Sum** [Column Name] of [Table Name]
-	   - **Maximum** [Column Name] of [Table Name>
-	   - **Count** [Column Name] of [Table Name]
-	   - **Distinct sum** [Column Name] of [Table Name]
-	   - **Distinct count** [Column Name] of [Table Name]
-       - [Column Name] of [Table Name]  **for** [Column Name] **=** [Value]
-	   - [Column Name] of [Table Name]  **for** [Column Name] **>** [Value]
-	   - [Column Name] of [Table Name]  **for** [Column Name] **<** [Value]
-	   - [Column Name] of [Table Name]  **for** [Column Name] **between** [Value] and [Value]
-	   - [Column Name] of [Table Name] **by** [Column Name]
-	   - [Column Name] of [Table Name] **for** [Column Name] **like** [String value]
-	   - [Column Name] of [Table Name] **for** [Column Name] **is** [String value
-     * - Example
-	   - **Avg** freight of orders
-	   - **Sum** discount of order details ,
-	   - **Maximum** unit price of products for categoryid = 1
-	   - **Count** ship country of orders
-	   - **Distinct Sum** Freight of orders
-	   - **Distinct count** customer id of orders
-	   - Count ship country of orders **for** freight **=** 100
-	   - Ship country of orders **for** freight **>** 10
-	   - Ship country of orders **for** freight **<** 10
-	   - Product name of products **for** unit price **between** 10 **and** 50
-	   - Avg freight of orders **by** ship city
-	   - Avg freight of orders **for** ship city **like** AM
-	   - Avg freight of orders **for** ship city **is** Brazil
+.. list-table::
+    :class: apitable
+    :header-rows: 1
+	
+    * - Words/Signs
+      - Syntax
+      - Example
+    * - Avg
+      - **Avg** [Column Name] of [Table Name]
+      - **Avg** freight of orders
+    * - Sum
+      - **Sum** [Column Name] of [Table Name]
+      - **Sum** discount of order details
+    * - Maximum
+      - **Maximum** [Column Name] of [Table Name]
+      - **Maximum** unit price of products for categoryid = 1
+    * - Count
+      - **Count** [Column Name] of [Table Name]
+      - **Count** ship country of orders
+    * - Distinct sum
+      - **Distinct sum** [Column Name] of [Table Name]
+      - **Distinct Sum** Freight of orders
+    * - Distinct count
+      - **Distinct count** [Column Name] of [Table Name]
+      - **Distinct count** customer id of orders
+    * - =
+      - [Column Name] of [Table Name]  **for** [Column Name] **=** [Value]
+      - Count ship country of orders **for** freight **=** 100
+    * - >
+      - [Column Name] of [Table Name]  **for** [Column Name] **>** [Value]
+      - Ship country of orders **for** freight **>** 10
+    * - <
+      - [Column Name] of [Table Name]  **for** [Column Name] **<** [Value]
+      - Ship country of orders **for** freight **<** 10
+    * - Between
+      - [Column Name] of [Table Name]  **for** [Column Name] **between** [Value] and [Value]
+      - Product name of products **for** unit price **between** 10 **and** 50
+    * - Group
+      - [Column Name] of [Table Name] **by** [Column Name]
+      - Avg freight of orders **by** ship city
+    * - Like
+      - [Column Name] of [Table Name] **for** [Column Name] **like** [String value]
+      - Avg freight of orders **for** ship city **like** AM
+    * - Is
+      - [Column Name] of [Table Name] **for** [Column Name] **is** [String value]
+      - Avg freight of orders **for** ship city **is** Brazil (edited) 
 
 NLP Suggestions
 ---------------------
