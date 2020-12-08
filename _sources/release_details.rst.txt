@@ -4,6 +4,20 @@
 Release Details
 ==============
 
+v3.11.3 Preview Release -- December 7th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- KPI Report Parts Added as Unique Visualization Type
+   - KPIs are now built as a separate report part type
+     - This report part type can be selected during report creation in the same manner as existing report part types
+   - This report part type allows for users to input metric, text, and image tiles in a unique layout editor
+     - Metric tiles currently only support one metric to be shown at a time. 
+     - Multiple text tiles can be created for each KPI which allow for light text entry and formatting
+     - Multiple image tiles can be created for each KPI which allow for users to provide URLs for the images they wish to display in their visualization
+   - For more information please see the :ref:'KPI_User_Guide' 
+
 v3.11.2 Preview Release -- November 11th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
