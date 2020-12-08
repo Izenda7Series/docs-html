@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Password Setup &mdash; Izenda BI 3.11.0 documentation</title>
+  <title>Natural Language Query &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Izenda BI 3.11.0 documentation" href="../index.html"/>
         <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
-        <link rel="next" title="Report Designer/Data Source" href="doc_report_designer_data_source.html"/>
-        <link rel="prev" title="User Interface Overview" href=".ui_overview.html"/> 
+        <link rel="next" title="Training Walkthroughs" href=".training_walkthroughs.html"/>
+        <link rel="prev" title="KPI Report Parts" href="KPI-User-Guide.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -107,12 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Password Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#password-setup-section">Password Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#password-change-for-current-user">Password Change for Current User</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#password-reset-for-another-user">Password Reset for Another User</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
@@ -132,7 +127,15 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_grand_total_sub_total.html">Grand Total and Sub Total</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_available_filter_operators.html">Available Filter Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="KPI-User-Guide.html">KPI Report Parts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nlp_user_guide.html">Natural Language Query</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Natural Language Query</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nlq-data-connectors">NLQ Data Connectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax-guided-nlp-search-query">Syntax guided NLP search query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nlp-suggestions">NLP Suggestions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-features">Grid Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multitenancy-support">Multitenancy support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href=".training_walkthroughs.html">Training Walkthroughs</a></li>
@@ -194,13 +197,13 @@
         
           <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
         
-      <li>Password Setup</li>
+      <li>Natural Language Query</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ui/doc_password_setup.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ui/nlp_user_guide.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,69 +216,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="password-setup">
-<h1>Password Setup<a class="headerlink" href="#password-setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="password-setup-section">
-<span id="id1"></span><h2>Password Setup<a class="headerlink" href="#password-setup-section" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Password Setup</strong> page allows user to create password for the first
-time. The page can only be opened from a password link, which is a
-short-expiry web address uniquely created from the user information.</p>
-<ol class="arabic">
-<li><div class="first figure align-right" id="id2">
-<a class="reference internal image-reference" href="../_images/Password_Setup.png"><img alt="../_images/Password_Setup.png" src="../_images/Password_Setup.png" style="width: 404px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 164 </span><span class="caption-text">Password Setup Page</span></p>
-</div>
-<p>Click the password link to open Password Setup page in browser.</p>
-</li>
-<li><p class="first">Verify the link by entering the exact information used to create the
-link and click Next.</p>
-</li>
-<li><p class="first">In the next screen, enter the password and answers to security
-questions if available.</p>
+  <div class="section" id="natural-language-query">
+<span id="nlq-user-guide"></span><h1>Natural Language Query<a class="headerlink" href="#natural-language-query" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>NLQ Data Connectors</li>
+<li>Syntax guided NLP search query</li>
+<li>NLP suggestions</li>
+<li>Grid improvements</li>
+<li>Multitenancy support</li>
+</ul>
+<div class="section" id="nlq-data-connectors">
+<h2>NLQ Data Connectors<a class="headerlink" href="#nlq-data-connectors" title="Permalink to this headline">¶</a></h2>
+<p>Natural language processing functionality can be leveraged against a single <strong>MSSQL</strong> or a single <strong>PGSQL</strong> data source.</p>
 <blockquote>
-<div><p>The password must meet the <a class="reference internal" href="doc_configuration_security_policies.html#configure-password-complexity-sample"><span class="std std-ref">Password Complexity setting in
-Security
-Policies</span></a>.</p>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_connectors.png"><img alt="../_images/nlq_connectors.png" src="../_images/nlq_connectors.png" style="width: 1404px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="syntax-guided-nlp-search-query">
+<h2>Syntax guided NLP search query<a class="headerlink" href="#syntax-guided-nlp-search-query" title="Permalink to this headline">¶</a></h2>
+<p>The search follows a mandatory syntax with a set of rules to follow. The following list of comparison words and signs will be automatically recognized by Izenda’s NLP and suggestions will appear.</p>
+</div>
+<div class="section" id="nlp-suggestions">
+<h2>NLP Suggestions<a class="headerlink" href="#nlp-suggestions" title="Permalink to this headline">¶</a></h2>
+<p>As user types into the search box, Izenda will provide a list of suggestions to choose from. This list will be populated by the system after analyzing the data in DB/schemas. Users will need to select from the query suggestions and press ENTER to populate results in step 2.</p>
+<p>Izenda will provide query assistance based on the following:</p>
+<ul>
+<li><p class="first"><strong>Synonyms:</strong>  Izenda’s NLQ engine will save hours of your effort to add tags and keywords to column names. When you type a keyword which is not a part of the data model, the synonyms of the column names will be automatically recognized by Izenda’s model. The engine will pick the matching columns from the data model and help you build your query.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_synonyms.gif"><img alt="../_images/nlq_synonyms.gif" src="../_images/nlq_synonyms.gif" style="width: 1404px;" /></a>
+</div>
 </div></blockquote>
 </li>
-<li><p class="first">Click OK to save. <br clear="right" /></p>
-</li>
-</ol>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<div class="section" id="password-change-for-current-user">
-<h2>Password Change for Current User<a class="headerlink" href="#password-change-for-current-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Log in as the user having the password to change.</p>
-</li>
-<li><p class="first">Click My Profile under the user name at the top right of the screen.</p>
-</li>
-<li><p class="first">Click Security Options in the left menu, then click Change Password.</p>
-<div class="figure" id="id3">
-<span id="security-options-change-password"></span><a class="reference internal image-reference" href="../_images/Security_Options_Change_Password.png"><img alt="../_images/Security_Options_Change_Password.png" src="../_images/Security_Options_Change_Password.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 165 </span><span class="caption-text">Security Options <br clear="right" /></span></p>
+<ul>
+<li><p class="first"><strong>Relationships:</strong>  Izenda’s NLQ engine identifies relationships in the DB and intelligently suggests columns from the related data sources. When you type a keyword which matches a column in another table with which relationship exists, the engine will suggest and help you build your query.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_relationships.gif"><img alt="../_images/nlq_relationships.gif" src="../_images/nlq_relationships.gif" style="width: 1404px;" /></a>
 </div>
+</div></blockquote>
 </li>
-<li><div class="figure align-right" id="id4">
-<span id="change-password-pop-up"></span><a class="reference internal image-reference" href="../_images/Change_Password_Pop-up.png"><img alt="../_images/Change_Password_Pop-up.png" src="../_images/Change_Password_Pop-up.png" style="width: 458px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 166 </span><span class="caption-text">Change Password Pop-up</span></p>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<p>Enter the current password, then the new password twice to verify in
-the Change Password pop-up. <br clear="right" /></p>
+<ul>
+<li><p class="first"><strong>Column Values</strong>:  Izenda’s NLQ engine indexes the data connectors and helps in suggesting column values. When you type keywords ‘IS’ or ‘LIKE’, the engine will auto-populate values to easily select from.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_value_suggestion.gif"><img alt="../_images/nlq_value_suggestion.gif" src="../_images/nlq_value_suggestion.gif" style="width: 1404px;" /></a>
+</div>
+</div></blockquote>
 </li>
-</ol>
+</ul>
 </div>
-<div class="section" id="password-reset-for-another-user">
-<h2>Password Reset for Another User<a class="headerlink" href="#password-reset-for-another-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>In browser, log in to Izenda as a user with User Setup permission.</li>
-<li>Click Settings, then User Setup in the left menu.</li>
-<li>Click Configure Password Option.</li>
-<li>Click Generate Password Link.</li>
-<li>Click the copy icon (that looks a bit like this ❐) to copy the
-password link to clipboard.</li>
-<li>Paste and open the password link in browser to reset the password
-(similarly to <a class="reference internal" href="#password-setup-section"><span class="std std-ref">Password Setup</span></a> steps).</li>
-</ol>
+<div class="section" id="grid-features">
+<h2>Grid Features<a class="headerlink" href="#grid-features" title="Permalink to this headline">¶</a></h2>
+<p>For users who are unfamiliar with the data model, Grid improvements have been introduced in NLP step 2. This functionality will help in identifying, sorting and managing data very quickly. The ‘Add Column’ rail on the right side displays all the available columns that can be added to the grid. You can also find all applicable functions, formats and sorting options in the grid dropdown itself.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nlq_grid_Enhancements.gif"><img alt="../_images/nlq_grid_Enhancements.gif" src="../_images/nlq_grid_Enhancements.gif" style="width: 1404px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="multitenancy-support">
+<h2>Multitenancy support<a class="headerlink" href="#multitenancy-support" title="Permalink to this headline">¶</a></h2>
+<p>Izenda now has Multi-tenant capability in NLQ. A single instance of NLQ license can be served to multiple tenants. With this feature, every tenant can now configure NLQ separately with its own share of the data, configuration, user management and functionality.</p>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>All column names in the search query have to be separated by a <strong>comma</strong> (,) for more suggestions to populate</li>
+<li>Users will be required to select from query suggestions for grids to populate in Step 2</li>
+<li>Synonyms of the values of column names will not be recognized by the model</li>
+<li>Natural language processing functionality can be leveraged against only MSSQL or PGSQL configuration database</li>
+</ul>
 </div>
 </div>
 
@@ -289,10 +310,10 @@ password link to clipboard.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="doc_report_designer_data_source.html" class="btn btn-neutral float-right" title="Report Designer/Data Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href=".training_walkthroughs.html" class="btn btn-neutral float-right" title="Training Walkthroughs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href=".ui_overview.html" class="btn btn-neutral" title="User Interface Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="KPI-User-Guide.html" class="btn btn-neutral" title="KPI Report Parts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

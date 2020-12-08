@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Password Setup &mdash; Izenda BI 3.11.0 documentation</title>
+  <title>KPI Report Parts &mdash; Izenda BI 3.11.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Izenda BI 3.11.0 documentation" href="../index.html"/>
         <link rel="up" title="User Interface Overview" href=".ui_overview.html"/>
-        <link rel="next" title="Report Designer/Data Source" href="doc_report_designer_data_source.html"/>
-        <link rel="prev" title="User Interface Overview" href=".ui_overview.html"/> 
+        <link rel="next" title="Natural Language Query" href="nlp_user_guide.html"/>
+        <link rel="prev" title="Available Filter Operators" href="doc_available_filter_operators.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -107,12 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href=".user_guide.html">User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href=".ui_overview.html">User Interface Overview</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Password Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#password-setup-section">Password Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#password-change-for-current-user">Password Change for Current User</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#password-reset-for-another-user">Password Reset for Another User</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="doc_password_setup.html">Password Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_data_source.html">Report Designer/Data Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_fields.html">Report Designer/Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_report_designer_format.html">Report Designer/Format</a></li>
@@ -131,7 +126,13 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_available_calculated_field_expressions.html">Available Calculated Field Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_grand_total_sub_total.html">Grand Total and Sub Total</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_available_filter_operators.html">Available Filter Operators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="KPI-User-Guide.html">KPI Report Parts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">KPI Report Parts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#metric-tiles">Metric Tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-tiles">Text Tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image-tiles">Image Tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kpi-report-part-properties">KPI Report Part Properties</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="nlp_user_guide.html">Natural Language Query</a></li>
 </ul>
 </li>
@@ -194,13 +195,13 @@
         
           <li><a href=".ui_overview.html">User Interface Overview</a> &raquo;</li>
         
-      <li>Password Setup</li>
+      <li>KPI Report Parts</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ui/doc_password_setup.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ui/KPI-User-Guide.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,69 +214,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="password-setup">
-<h1>Password Setup<a class="headerlink" href="#password-setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="password-setup-section">
-<span id="id1"></span><h2>Password Setup<a class="headerlink" href="#password-setup-section" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Password Setup</strong> page allows user to create password for the first
-time. The page can only be opened from a password link, which is a
-short-expiry web address uniquely created from the user information.</p>
-<ol class="arabic">
-<li><div class="first figure align-right" id="id2">
-<a class="reference internal image-reference" href="../_images/Password_Setup.png"><img alt="../_images/Password_Setup.png" src="../_images/Password_Setup.png" style="width: 404px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 164 </span><span class="caption-text">Password Setup Page</span></p>
+  <div class="section" id="kpi-report-parts">
+<span id="kpi-user-guide"></span><h1>KPI Report Parts<a class="headerlink" href="#kpi-report-parts" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>A KPI report part consists of three different tile types each of which can be scaled and has properties that affect the content within the tile.</li>
+<li>KPI Tiles are arranged relative to each other on an underlying grid, which is only visible in edit mode.</li>
+<li>KPIs can have a background image and color and the report part size responds to the size of the underlying grid.</li>
+<li>KPIs should be used to visualize simple numerical metrics with text and images to enhance them.</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/KPI-Sample.png"><img alt="../_images/KPI-Sample.png" src="../_images/KPI-Sample.png" style="width: 1404px;" /></a>
 </div>
-<p>Click the password link to open Password Setup page in browser.</p>
-</li>
-<li><p class="first">Verify the link by entering the exact information used to create the
-link and click Next.</p>
-</li>
-<li><p class="first">In the next screen, enter the password and answers to security
-questions if available.</p>
-<blockquote>
-<div><p>The password must meet the <a class="reference internal" href="doc_configuration_security_policies.html#configure-password-complexity-sample"><span class="std std-ref">Password Complexity setting in
-Security
-Policies</span></a>.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Click OK to save. <br clear="right" /></p>
-</li>
-</ol>
+<div class="section" id="metric-tiles">
+<h2>Metric Tiles<a class="headerlink" href="#metric-tiles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Metric Tiles allow users to insert a value or measure within the KPI.</li>
+<li>Metric Tiles can be manipulated with the Report Part Properties, Tile Properties, and the Field Properties in that order of precedence.</li>
+<li>Users can only add one Metric Tile to a KPI report part</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/KPI-Metric-Tile.gif"><img alt="../_images/KPI-Metric-Tile.gif" src="../_images/KPI-Metric-Tile.gif" style="width: 1404px;" /></a>
 </div>
-<div class="section" id="password-change-for-current-user">
-<h2>Password Change for Current User<a class="headerlink" href="#password-change-for-current-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Log in as the user having the password to change.</p>
-</li>
-<li><p class="first">Click My Profile under the user name at the top right of the screen.</p>
-</li>
-<li><p class="first">Click Security Options in the left menu, then click Change Password.</p>
-<div class="figure" id="id3">
-<span id="security-options-change-password"></span><a class="reference internal image-reference" href="../_images/Security_Options_Change_Password.png"><img alt="../_images/Security_Options_Change_Password.png" src="../_images/Security_Options_Change_Password.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 165 </span><span class="caption-text">Security Options <br clear="right" /></span></p>
 </div>
-</li>
-<li><div class="figure align-right" id="id4">
-<span id="change-password-pop-up"></span><a class="reference internal image-reference" href="../_images/Change_Password_Pop-up.png"><img alt="../_images/Change_Password_Pop-up.png" src="../_images/Change_Password_Pop-up.png" style="width: 458px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 166 </span><span class="caption-text">Change Password Pop-up</span></p>
+<div class="section" id="text-tiles">
+<h2>Text Tiles<a class="headerlink" href="#text-tiles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Text tiles allow users to input plain text string content.</li>
+<li>They can manipulate the look of that content with properties in the tile properties panel.</li>
+<li>Any number of Text tiles can be added to a KPI report Part</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/KPI-Text-Tile.gif"><img alt="../_images/KPI-Text-Tile.gif" src="../_images/KPI-Text-Tile.gif" style="width: 1404px;" /></a>
 </div>
-<p>Enter the current password, then the new password twice to verify in
-the Change Password pop-up. <br clear="right" /></p>
-</li>
-</ol>
 </div>
-<div class="section" id="password-reset-for-another-user">
-<h2>Password Reset for Another User<a class="headerlink" href="#password-reset-for-another-user" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>In browser, log in to Izenda as a user with User Setup permission.</li>
-<li>Click Settings, then User Setup in the left menu.</li>
-<li>Click Configure Password Option.</li>
-<li>Click Generate Password Link.</li>
-<li>Click the copy icon (that looks a bit like this ❐) to copy the
-password link to clipboard.</li>
-<li>Paste and open the password link in browser to reset the password
-(similarly to <a class="reference internal" href="#password-setup-section"><span class="std std-ref">Password Setup</span></a> steps).</li>
-</ol>
+<div class="section" id="image-tiles">
+<h2>Image Tiles<a class="headerlink" href="#image-tiles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Image tiles allow users to insert images into the KPI.</li>
+<li>They can manipulate the look of that content with properties in the tile properties panel.</li>
+<li>Any number of Image tiles can be added to a KPI report Part</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/KPI-Image-Tile.gif"><img alt="../_images/KPI-Image-Tile.gif" src="../_images/KPI-Image-Tile.gif" style="width: 1404px;" /></a>
+</div>
+</div>
+<div class="section" id="kpi-report-part-properties">
+<h2>KPI Report Part Properties<a class="headerlink" href="#kpi-report-part-properties" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Background image can be modified for the KPI report part</li>
+<li>Number of rows/ columns and Cell size can be modified</li>
+<li>Data Refresh update intervals can be enabled</li>
+</ul>
 </div>
 </div>
 
@@ -289,10 +278,10 @@ password link to clipboard.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="doc_report_designer_data_source.html" class="btn btn-neutral float-right" title="Report Designer/Data Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nlp_user_guide.html" class="btn btn-neutral float-right" title="Natural Language Query" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href=".ui_overview.html" class="btn btn-neutral" title="User Interface Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="doc_available_filter_operators.html" class="btn btn-neutral" title="Available Filter Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

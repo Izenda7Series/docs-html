@@ -19,7 +19,7 @@ FEATURES
 - KPI Report Parts Added as Unique Visualization Type
    - KPIs are now built as a separate report part type
    - This report part type allows for users to input metric, text, and image tiles in a unique layout editor
-   - For more information please see the :ref:'KPI_User_Guide' 
+   - For more information please see the :ref:`KPI_User_Guide` 
 
 v3.11.2 Preview Release -- November 11th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
