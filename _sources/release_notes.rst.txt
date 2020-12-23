@@ -11,6 +11,26 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.11.4 Preview Release -- December 23rd, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Displaying Form CSS in Exports
+- Display Field Names Under Pie Charts
+- Remove extra Side/Sub Total columns in Pivot Grids
+- Asynchronous Exporting Improvements 
+    - Node-based Deployment Support
+- Show grid headers at the top of the report for exports 
+- Routine data deletion frequency can be configured
+- Dashboards will only display the current slide in Full-Screen Mode
+- Remove Inactive/Deleted Users from Email events
+- Exporting no longer leverages Iframes for image generation
+- Improved filter query performance 
+- Allow conditional formatting against null/blank values
+- Improvements to Category and Report Sharing/Accessibility 
+
+
 v3.11.3 Preview Release -- December 8th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

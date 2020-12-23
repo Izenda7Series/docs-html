@@ -4,6 +4,74 @@
 Release Details
 ==============
 
+
+v3.11.4 Preview Release -- December 23rd, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Displaying Form CSS in Exports
+    - Two settings have been added to the IzendaSystemSetting table to determine this functionality:
+    - UseLegacyMhtExcelExport
+        - Setting this value to 1 will enable this functionality, exporting in the mhtml format for Excel
+        - Setting this value to 0 will disable this functionality, which is the default
+    - UseLegacyMhtWordExport
+        - Setting this value to 1 will enable this functionality, exporting in the mhtml format for Word
+        - Setting this value to 0 will disable this functionality, which is the default
+- Display Field Names Under Pie Charts
+    - A new report part property, Show Values Field Names, has been added for Pie Charts
+    - When selected, the Values field in use for the pie chart will be displayed below the visualization.
+- Remove extra Side/Sub Total columns in Pivot Grids
+    - A new checkbox is present for pivot grids next to the column containers
+        - This item is only present if 'Add Side Total' is checked
+    - When checked, all side total and subtotal columns will disappear
+        - The overall side total will be present, but each column-specific side total will be removed 
+- Asynchronous Exporting Improvements (Please see our :ref:`Async_Configuration` page for setup information)
+    - Node-based Deployment Support
+        - New values have been added to the application settings to help with deployment and scaling:
+            - izenda.jobs.routineprovisioned
+                - All background jobs, including async exporting, can be enabled on the deployed server.
+                - Useful for deployments in web farm environments
+            - izenda.jobs.asyncjobsenabled
+                - All async exporting jobs will scale using this setting
+        - New values have been added to the application settings to help with resource usage:
+            - AsyncJobMaxCpuUsage
+                - This setting checks total CPU usage in percentages and stops executing jobs when this threshold is met
+                - By default, this is set to 70
+            - AsyncJobMaxRamUsage
+                - This setting checks the total memory in use in percentages and stops executing when this threshold is met 
+                - By default, this is set to 80
+- Show grid headers at the top of report for exports 
+    - A new report part properties, Disable Repeat Headers, has been added for grids
+    - When selected, the report headers will not be repeated throughout the grid and will only be shown at the top of the visualization
+- Routine data deletion frequency can be configured
+    - A new value is set in the IzendaSystemSetting table, CleanDataJobInterval
+    - This value, set in days, will determine how old a deleted record has to be before it is permanently deleted from the configuration database
+    - By default, this is set to 7 days
+- Dashboards will only display the current slide in Full-Screen Mode
+    - When the user switches to fullscreen, only the current slide view will be available
+    - The user can transition to other slides using the navigation buttons
+- Remove Inactive/Deleted Users from Email events
+    - If a user is deactivated:
+        - The user will not receive any emails
+        - The user's email will appear inactive on the schedule detail, list, and list view pages. 
+        - If a user is re-activated all instances will resume as normal
+    - If a user is deleted:
+        - The user's email will be removed from all subscriptions and schedules
+        - The user's email address will not appear in the recipient lists
+- Exporting no longer leverages Iframes for image generation
+    - SVGs are now used in place of the former Iframe approach
+    - This should resolve any x-frame-options security issues that may have been encountered
+- Improved filter query performance 
+    - Our query structure for filter values has been adjusted to be more performant
+- Allow conditional formatting against null/blank values
+    - While this was previously possible at the field level, this functionality is now included in the conditional formatting for grids at the Report Part Property level.
+- Improvements to Category and Report Sharing/Accessibility 
+    - A new setting, 'Prevent Report Sharing Based on Category Accessibility' is added to the Role > Report permissions page
+        - When toggled OFF, if a report is shared with a role, the category accessibility is automatically updated based on the access rights of that report
+        - When toggled ON, if a report is shared with a role, the category accessibility for that role is not updated
+
+
 v3.11.3 Preview Release -- December 8th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

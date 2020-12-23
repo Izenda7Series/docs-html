@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Details &mdash; Izenda BI 3.11.0 documentation</title>
+  <title>Release Details &mdash; Izenda BI 3.11.4 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Izenda BI 3.11.0 documentation" href="index.html"/> 
+    <link rel="top" title="Izenda BI 3.11.4 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -175,10 +175,234 @@
             
   <div class="section" id="release-details">
 <span id="id1"></span><h1>Release Details<a class="headerlink" href="#release-details" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v3-11-3-preview-release-december-8th-2020">
-<h2>v3.11.3 Preview Release &#8211; December 8th, 2020<a class="headerlink" href="#v3-11-3-preview-release-december-8th-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v3-11-4-preview-release-december-23rd-2020">
+<h2>v3.11.4 Preview Release &#8211; December 23rd, 2020<a class="headerlink" href="#v3-11-4-preview-release-december-23rd-2020" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="features">
 <h3>FEATURES<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Displaying Form CSS in Exports</dt>
+<dd><ul class="first last">
+<li>Two settings have been added to the IzendaSystemSetting table to determine this functionality:</li>
+<li><dl class="first docutils">
+<dt>UseLegacyMhtExcelExport</dt>
+<dd><ul class="first last">
+<li>Setting this value to 1 will enable this functionality, exporting in the mhtml format for Excel</li>
+<li>Setting this value to 0 will disable this functionality, which is the default</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>UseLegacyMhtWordExport</dt>
+<dd><ul class="first last">
+<li>Setting this value to 1 will enable this functionality, exporting in the mhtml format for Word</li>
+<li>Setting this value to 0 will disable this functionality, which is the default</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Display Field Names Under Pie Charts</dt>
+<dd><ul class="first last">
+<li>A new report part property, Show Values Field Names, has been added for Pie Charts</li>
+<li>When selected, the Values field in use for the pie chart will be displayed below the visualization.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Remove extra Side/Sub Total columns in Pivot Grids</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>A new checkbox is present for pivot grids next to the column containers</dt>
+<dd><ul class="first last">
+<li>This item is only present if &#8216;Add Side Total&#8217; is checked</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>When checked, all side total and subtotal columns will disappear</dt>
+<dd><ul class="first last">
+<li>The overall side total will be present, but each column-specific side total will be removed</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Asynchronous Exporting Improvements (Please see our <span class="xref std std-ref">Async_Configuration</span> page for setup information)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Node-based Deployment Support</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>New values have been added to the application settings to help with deployment and scaling:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>izenda.jobs.routineprovisioned</dt>
+<dd><ul class="first last">
+<li>All background jobs, including async exporting, can be enabled on the deployed server.</li>
+<li>Useful for deployments in web farm environments</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>izenda.jobs.asyncjobsenabled</dt>
+<dd><ul class="first last">
+<li>All async exporting jobs will scale using this setting</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>New values have been added to the application settings to help with resource usage:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>AsyncJobMaxCpuUsage</dt>
+<dd><ul class="first last">
+<li>This setting checks total CPU usage in percentages and stops executing jobs when this threshold is met</li>
+<li>By default, this is set to 70</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>AsyncJobMaxRamUsage</dt>
+<dd><ul class="first last">
+<li>This setting checks the total memory in use in percentages and stops executing when this threshold is met</li>
+<li>By default, this is set to 80</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Show grid headers at the top of report for exports</dt>
+<dd><ul class="first last">
+<li>A new report part properties, Disable Repeat Headers, has been added for grids</li>
+<li>When selected, the report headers will not be repeated throughout the grid and will only be shown at the top of the visualization</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Routine data deletion frequency can be configured</dt>
+<dd><ul class="first last">
+<li>A new value is set in the IzendaSystemSetting table, CleanDataJobInterval</li>
+<li>This value, set in days, will determine how old a deleted record has to be before it is permanently deleted from the configuration database</li>
+<li>By default, this is set to 7 days</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Dashboards will only display the current slide in Full-Screen Mode</dt>
+<dd><ul class="first last">
+<li>When the user switches to fullscreen, only the current slide view will be available</li>
+<li>The user can transition to other slides using the navigation buttons</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Remove Inactive/Deleted Users from Email events</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>If a user is deactivated:</dt>
+<dd><ul class="first last">
+<li>The user will not receive any emails</li>
+<li>The user&#8217;s email will appear inactive on the schedule detail, list, and list view pages.</li>
+<li>If a user is re-activated all instances will resume as normal</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If a user is deleted:</dt>
+<dd><ul class="first last">
+<li>The user&#8217;s email will be removed from all subscriptions and schedules</li>
+<li>The user&#8217;s email address will not appear in the recipient lists</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Exporting no longer leverages Iframes for image generation</dt>
+<dd><ul class="first last">
+<li>SVGs are now used in place of the former Iframe approach</li>
+<li>This should resolve any x-frame-options security issues that may have been encountered</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Improved filter query performance</dt>
+<dd><ul class="first last">
+<li>Our query structure for filter values has been adjusted to be more performant</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Allow conditional formatting against null/blank values</dt>
+<dd><ul class="first last">
+<li>While this was previously possible at the field level, this functionality is now included in the conditional formatting for grids at the Report Part Property level.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Improvements to Category and Report Sharing/Accessibility</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>A new setting, &#8216;Prevent Report Sharing Based on Category Accessibility&#8217; is added to the Role &gt; Report permissions page</dt>
+<dd><ul class="first last">
+<li>When toggled OFF, if a report is shared with a role, the category accessibility is automatically updated based on the access rights of that report</li>
+<li>When toggled ON, if a report is shared with a role, the category accessibility for that role is not updated</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v3-11-3-preview-release-december-8th-2020">
+<h2>v3.11.3 Preview Release &#8211; December 8th, 2020<a class="headerlink" href="#v3-11-3-preview-release-december-8th-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>KPI Report Parts Added as Unique Visualization Type</dt>
@@ -203,8 +427,8 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Note that the Explore tab does not support changing tenancy, as mutli-tenancy is only at the configuration level</p>
 </div>
-<div class="section" id="id2">
-<h3>FEATURES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>PostgreSQL support for NLQ</dt>
@@ -238,8 +462,8 @@
 </div>
 <div class="section" id="v3-11-0-core-release-october-23rd-2020">
 <h2>v3.11.0 Core Release &#8211; October 23rd, 2020<a class="headerlink" href="#v3-11-0-core-release-october-23rd-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>FEATURES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>PII Security Options</dt>
@@ -264,8 +488,8 @@
 </div>
 <div class="section" id="v3-10-5-preview-release-september-25th-2020">
 <h2>v3.10.5 Preview Release &#8211; September 25th, 2020<a class="headerlink" href="#v3-10-5-preview-release-september-25th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>FEATURES<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Tenant Grouping</dt>
@@ -324,8 +548,8 @@
 </div>
 <div class="section" id="v3-10-4-preview-release-september-8th-2020">
 <h2>v3.10.4 Preview Release &#8211; September 8th, 2020<a class="headerlink" href="#v3-10-4-preview-release-september-8th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>FEATURES<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Introduced new Asynchronous Export Functionality</dt>
@@ -422,8 +646,8 @@
 </div>
 <div class="section" id="v3-10-3-preview-release-august-11th-2020">
 <h2>v3.10.3 Preview Release &#8211; August 11th, 2020<a class="headerlink" href="#v3-10-3-preview-release-august-11th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>FEATURES<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Set Alternative Text against NULL and BLANK values</dt>
@@ -466,8 +690,8 @@
 </div>
 <div class="section" id="v3-10-2-preview-release-august-3rd-2020">
 <h2>v3.10.2 Preview Release &#8211; August 3rd, 2020<a class="headerlink" href="#v3-10-2-preview-release-august-3rd-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>FEATURES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>FEATURES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Model Import/Export Phase 2</dt>
@@ -500,8 +724,8 @@
 </div>
 <div class="section" id="v3-10-1-preview-release-july-27th-2020">
 <h2>v3.10.1 Preview Release &#8211; July 27th, 2020<a class="headerlink" href="#v3-10-1-preview-release-july-27th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>FEATURES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>FEATURES<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>CustomBootstrapper added for .NET Core Environments</dt>
@@ -547,8 +771,8 @@
 </div>
 <div class="section" id="v3-9-5-preview-release-june-25th-2020">
 <h2>v3.9.5 Preview Release &#8211; June 25th, 2020<a class="headerlink" href="#v3-9-5-preview-release-june-25th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>FEATURES<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>FEATURES<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Model Import Export Phase 1</dt>
@@ -573,8 +797,8 @@
 </div>
 <div class="section" id="v3-9-4-preview-release-june-2nd-2020">
 <h2>v3.9.4 Preview Release &#8211; June 2nd, 2020<a class="headerlink" href="#v3-9-4-preview-release-june-2nd-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>FEATURES<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>FEATURES<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>REST API Connectors have been Added</dt>
@@ -613,8 +837,8 @@
 </div>
 <div class="section" id="v3-9-3-preview-release-may-18th-2020">
 <h2>v3.9.3 Preview Release &#8211; May 18th, 2020<a class="headerlink" href="#v3-9-3-preview-release-may-18th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>FEATURES<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>FEATURES<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Tenant Templates functionality is released</dt>
@@ -631,8 +855,8 @@
 </div>
 <div class="section" id="v3-9-1-preview-release-april-30th-2020">
 <h2>v3.9.1 Preview Release &#8211; April 30th, 2020<a class="headerlink" href="#v3-9-1-preview-release-april-30th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>FEATURES<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>FEATURES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Natural Language Query Functionality Introduced</dt>
@@ -675,8 +899,8 @@
 </div>
 <div class="section" id="v3-8-1-february-10th-2020">
 <h2>v3.8.1 February 10th, 2020<a class="headerlink" href="#v3-8-1-february-10th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>FEATURES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>FEATURES<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>New IzendaSystemSetting Values for Chrome 80 Cookie Changes</dt>
@@ -701,8 +925,8 @@
 </div>
 <div class="section" id="v3-8-0-january-15th-2020">
 <h2>v3.8.0 January 15th, 2020<a class="headerlink" href="#v3-8-0-january-15th-2020" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>FEATURES<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>FEATURES<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Reports can be Exported as Iframes from the Report Viewer</dt>
@@ -760,8 +984,8 @@
 </div>
 <div class="section" id="v3-7-2-december-4th-2019">
 <h2>v3.7.2 December 4th, 2019<a class="headerlink" href="#v3-7-2-december-4th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id15">
-<h3>FEATURES<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>FEATURES<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Conditional Formatting Dialogue Expanded to Pivot and Drilldown Grids</dt>
@@ -793,8 +1017,8 @@
 </div>
 <div class="section" id="v3-7-1-november-26th-2019">
 <h2>v3.7.1 November 26th, 2019<a class="headerlink" href="#v3-7-1-november-26th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>FEATURES<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>FEATURES<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>D3 Library Implemented</dt>
@@ -870,8 +1094,8 @@
 </div>
 <div class="section" id="v3-7-0-november-13th-2019">
 <h2>v3.7.0 November 13th, 2019<a class="headerlink" href="#v3-7-0-november-13th-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>FEATURES<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>FEATURES<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Salesforce Connector Preview</dt>
@@ -932,8 +1156,8 @@
 </div>
 <div class="section" id="v3-6-0-october-10-2019">
 <h2>v3.6.0 October 10, 2019<a class="headerlink" href="#v3-6-0-october-10-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id18">
-<h3>FEATURES<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>FEATURES<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>New User Load API</dt>
@@ -977,8 +1201,8 @@
 </div>
 <div class="section" id="v3-5-0-september-10-2019">
 <h2>v3.5.0 September 10, 2019<a class="headerlink" href="#v3-5-0-september-10-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>FEATURES<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h3>FEATURES<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>(Beta) Excel data sources can now be added as reporting data sources.</dt>
@@ -1046,8 +1270,8 @@
 </div>
 <div class="section" id="v3-4-1-august-23-2019">
 <h2>v3.4.1 August 23, 2019<a class="headerlink" href="#v3-4-1-august-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id20">
-<h3>FEATURES<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>FEATURES<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Introduced CORS Policy Configuration for the .NET Core API resources for Izenda</dt>
@@ -1101,8 +1325,8 @@
 </div>
 <div class="section" id="v3-4-0-august-16-2019">
 <h2>v3.4.0 August 16, 2019<a class="headerlink" href="#v3-4-0-august-16-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id21">
-<h3>FEATURES<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>FEATURES<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Machine Learning Infrastructure Addition</dt>
@@ -1164,8 +1388,8 @@
 </div>
 <div class="section" id="v3-3-1-july-23-2019">
 <h2>v3.3.1 July 23, 2019<a class="headerlink" href="#v3-3-1-july-23-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id22">
-<h3>FEATURES<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>FEATURES<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>InTimePeriod filters reflect more accurate timezones</dt>
@@ -1206,8 +1430,8 @@
 </ul>
 </div>
 <p>The <strong>System Configuration &gt; Cache</strong> page allows an administrator to manage users.</p>
-<div class="section" id="id23">
-<h3>FEATURES<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>FEATURES<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Data Caching Beta is now Implemented</dt>
@@ -1224,8 +1448,8 @@
 </div>
 <div class="section" id="v3-2-0-june-4-2019">
 <h2>v3.2.0 June 4, 2019<a class="headerlink" href="#v3-2-0-june-4-2019" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id24">
-<h3>FEATURES<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h3>FEATURES<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Report Headers Scale to Reduce Whitespace</dt>
@@ -1297,8 +1521,8 @@
 <li>(5/14) A user in a load-balanced environment has reported inconsistencies with scheduling. We are investigating and will provide a fix, if necessary, as soon as possible.</li>
 </ul>
 </div>
-<div class="section" id="id26">
-<h3>FEATURES<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3>FEATURES<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>MongoDB Available as a Reporting Datasource</dt>
@@ -1423,7 +1647,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'3.11.0',
+            VERSION:'3.11.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
