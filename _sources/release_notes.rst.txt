@@ -11,6 +11,119 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.12.0 Core Release -- January 15th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+FEATURES
+^^^^^^^^^
+
+- Subtotal and Grand Total formatting for Grids 
+   - When configuring either a subtotal or a grand total, additional options are shown in the configuration modal
+   - These options allow a user to configure basic font settings for these totals:
+      - Font Family
+      - Font Size
+      - Bold, Italics, and Underlining
+      - Font Color
+      - Text Highlight Color
+- Which day marks the beginning of the week can now be configured per tenant
+   - Under Settings > Data Setup > Advanced Settings > Others a new section 'Configure Period' has been created
+   - This dropdown will let users mark which day is the beginning of the week for that tenant.
+- Improvements to error messaging during role deletion
+   - When deleting a role that would result in a category access conflict for any users, a new error message will outline the conflict areas
+   - The modal will display the category name and report name for any reports which must be deleted or moved to allow the role to be deleted or removed from a user
+- Pie, donut, and funnel charts can now display value field names under the visualization 
+   - A new checkbox is added to the Report Part Properties of these charts 'Show Value Field Names'
+   - When checked, the underlying field name(s) used in the values container will be displayed below the chart (ex. Count(Ship_Country))
+   
+
+FIXES
+^^^^^
+- Defect 25083  Exporting in PDF formats caused a webpage conversion error
+- Defect 25526  TEXT and NTEXT fields (SQL SERVER) are not being queried correctly when there is a repeater in a form.
+- Defect 26493  Excel/word exports on certain azure windows instances fail to print angled labels
+- Defect 26501  Exporting dashboard to PDF fails with a certain number of charts
+- Defect 27395  Izenda Report Design space falls out of the root container
+- Defect 27798  Dashboard background image or color disrupts buttons
+- Defect 28011  [KPI] Text in Text-Tile doesn't adjust when reducing font size from already exceeding value
+- Defect 28016  [KPI][Image-Tile] Number of Rows/Columns show incorrectly in Preview Mode for KPI Grid
+- Defect 28017  [KPI][Text-Tile] Number of Rows/Columns show incorrectly in Preview Mode for KPI Grid
+- Defect 28020  Data Model Search button not working
+- Defect 28094  [KPI][Metric-Tile] 'Can't draw chart' appears in Metric-Tile when changing No. of Rows/Columns/Cell-size(px)
+- Defect 28096  [KPI][Metric-Tile] Added Field text does not adjust for some Font-Type and/or Text Formatting
+- Defect 28112  [KPI][All-Tiles][Re-sizing] Number of Rows/Columns show incorrectly in Preview Mode for KPI Grid
+- Defect 28130  Angular framework does not allow Izenda BI front-end to render Google maps after 3.8.2 update
+- Defect 28146  [KPI][Metric-Tile] Metric-Tile is getting cut-off/not visible completely in Report Viewer.
+- Defect 28155  [KPI][Field Properties] Metric-Tile/App Functionality breaks when applying Custom Formats
+- Defect 28156  [KPI][Report Designer Context Menu] Context Menu options/Drop-down gets hidden when adding another Tile with having any existing Tile
+- Defect 28185  [Role Setup] Permissions are not inherited from Tenant when creating new Role
+- Defect 28189  The system would fail to find the file path for disk cache configurations
+- Defect 28207  Disable access rights controls of global reports for tenant users
+- Defect 28208  Dashboard Edit>"Set Background Color" button is not working, JS failure and a console error when using Oracle Db.
+- Defect 28239  Chart exporting does not work in modern component based web framework applications
+- Defect 28244  Dimensions of Logo images imported from old version are not properly set but fixed as 1 by 1
+- Defect 28256  Embedded Report preview is not visible in Form Report Designer and Report Viewer
+- Defect 28258  Filter auto-complete does not show narrowed results when filter lookup is applied
+- Defect 28270  Users with Access to Report Designer But Not Create New Report Are Unable to Add Stored Procedures
+- Defect 28271  CSS Overrides Main Body and Tags for Embedded instances of Izenda
+- Defect 28296  [KPI][Metric-Tile] Metric-Tile becomes un-responsive when changing/applying any option under Data Formatting.
+- Defect 28303  IAdHoc extension doesn't affect on Report definition(Title, Description and Report Name) in email when sending an email from Report list.
+- Defect 28310  [KPI][Background-Images] Background Image does not show up in Report Designer Configuration Mode.
+- Defect 28317  Applying Conditional Formatting hangs in a certain condition
+- Defect 28410  No Error Displayed When Importing Converted Izenda 6 Reports If View Doesn't Exist in Environment
+- Defect 28412  Error when importing data model bidm file to system level
+- Defect 28417  Some areas of application do not change with language packs enabled
+- Defect 28469  X-Frame-Options Response Header Prevents visualizations to display in PDF Exports
+- Defect 28492  Custom format is not applied in chart / gauge type
+- Defect 28521  [PII] PII/Data Security - Stack Overflow issue in code for applying rules to calculated fields
+- Defect 28522  [PII] PII/Data Security rules are not getting applied if report contains subtotal, grand total
+- Defect 28523  [PII] PII/Data Security rules do not apply to Side Totals
+- Defect 28542  Visual Tab in Form Designer is not using the entire space to render elements
+- Defect 28557  SyncFusion taking too much memory
+- Defect 28569  Adding new Dashboard part gives exception "ERROR: Conversion failed when converting from a character string to uniqueidentifier" in log and unable to save the report
+- Defect 28571  [Copy-Management] UI breaks and application hangs when "Show only my workspaces" is checked.
+- Defect 28578  Excel/Word Export Error with Report Headers
+- Defect 28617  Another user Modified Data Error occurs when updating Advanced Setting in Tenant
+- Defect 28624  Unable to import reports from 6 Series
+- Defect 28625  Unable to import reports from 6 Series that have a dot (.) character in column names
+- Defect 28640  Key join operator not selected after import
+- Defect 28649  Full Report & Dashboard Access Not Set if Grant Full Report & Dashboard Access is enabled
+- Defect 28660  Filter Equivalence - Equals(tree) select [All] chart type export from report list bug
+- Defect 28671  Syncfusion Memory leak due to failing exports [Syncfusion 304080 ]
+- Defect 28718  Unable to scroll down in certain situations on a filter
+- Defect 28733  [Drilldown report/ dashboard]: Printing and PDF Exporting giving error with all rows shown as in viewer for Drilldown
+- Defect 28739  [KPI-Reports] Any unsaved Changes Confirmation message pop-up always appears to confirm and save modifications even if all changes are applied and saved
+- Defect 28740  [EXPORTs] Issue with Exports Reports, failing for PDF and for other report parts including KPI "The Picture can't be displayed" is being displayed.
+- Defect 28741  [KPI][Preview-Grid] KPI Preview Grid shrinks beyond the minimum area required to showcase added tile(s)
+- Defect 28747  [KPI][Dashboard] UI issue in Metric-Tile and in Placement of Title and Description.
+- Defect 28772  Non-cascading filters clear out the following filters
+- Defect 28778  Unable to print two report on tenant level
+- Defect 28785  Dashboard error with filtered report parts
+- Defect 28790  Filter selection - values are not populated out of PostgreSQL in Iz3.11.2
+- Defect 28835  [KPI]: Report part properties text is trimming
+- Defect 28839  Oracle and Excel adapter are broken in IZ-27680
+- Defect 28844  [KPI][Exports] Issue with placement of Title & Description when performing Exports.
+- Defect 28851  Cannot import reports with calculated fields
+- Defect 28853  Viewer and Designer do not match when utilizing Japanese language resources with specific filter types
+- Defect 28857  [KPI][Transparency] Metric Tile does not follow the transparency flow and fails for Print and Exports
+- Defect 28895  UI freezes when scrolling with a filter using a configured lookup value 
+- Defect 28969  [KPI][Text-Tile] Applied settings under Format are not getting respected upon saving a report
+- Defect 28977  Grand total and Sub total formatting not getting respected in Print and Exports
+- Defect 28978  Unable to access BI application in IE browser.
+- Defect 28985  Issues with Asynchronous Export: not working properly
+- Defect 28986  Server showing blank after changing a language in hindi/arabic
+- Defect 29001  Eviction Interval at System Cache Configuration is not saved
+- Defect 29007  Blank pop up warning modal is displayed when navigating away from Import page
+- Defect 29014  Grand Total Label Position is not getting changed as mentioned in settings.
+- Defect 29016  UI breaks when we scroll the right panel of configuartion settings.
+- Defect 29020  [Export] Pivot Report Side Total value is not reflected correctly while exporting in WORD/CSV
+- Defect 29022  'Bold' font style is automatically selected even after removing it in Subtotals
+- Defect 29049  Email clients do not support SVG images
+- Defect 29068  Subscription email is not being delivered to end user
+- Defect 29099  Dashboard PDF export results in error on 3.12
+
+
+
 v3.11.4 Preview Release -- December 24th, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
