@@ -34,7 +34,7 @@ Download quartz database script ~\database\tables\tables_sqlServer.sql inside Qu
 2. Create the database (by default the table prefix "QRTZ_" but this can be set in the config) |br|
 
 .. note::
-	- If using the .NET Core API resources, the Quartz configuration in steps 3 and 4 will instead be in a separate *quartz.config* file which can be downloaded `here <https://downloads.izenda.com/Utilities/quartz.config>`_.
+	- If using the .NET Core API resources, the Quartz configuration in steps 3 and 4 will instead be in a separate *quartz.config* file which can be downloaded `here <https//izenda.com/utilities/quartz.config>`_.
 	- The *quartz.config* file should be placed in the root of the Izenda API directory.
 
 3. Add quartz config section into Web.config |br|  

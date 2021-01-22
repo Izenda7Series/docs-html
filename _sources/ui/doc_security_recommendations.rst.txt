@@ -210,7 +210,7 @@ The high-level work flow is as follows:
 
 Izenda's RSA Key Generator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to simplify the process of creating RSA keys, Izenda has provided a tool to generate Public/Private key pairs and convert them to the format required by Izenda. This tool can be found here: http://downloads.izenda.com/Utilities/Izenda.Synergy.RSATool.zip 
+In order to simplify the process of creating RSA keys, Izenda has provided a tool to generate Public/Private key pairs and convert them to the format required by Izenda. This tool can be found here: https//izenda.com/utilities/Izenda.Synergy.RSATool.zip  
 
 **Usage:**
 

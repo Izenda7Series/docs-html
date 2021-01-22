@@ -41,18 +41,7 @@ Upgrade Preparations
 Retrieving Database Upgrade Scripts   
 -------------------------------------
 
-Locating Specific Schema Migration Scripts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Before upgrading Izenda, you will need to download Izenda System Database upgrade scripts. The scripts are located on our downloads page in each respective version. For instance, if you are looking to upgrade to 2.1.0, the update scripts will be found in the directory /v2.1.0/ .
-   *  .. _Upgrade_Izenda_App_folder:
-
-      .. figure:: /_static/images/Izenda_App_folder2.png
-
-         Front-end package
-
-      Locating the Schema Migration Scripts.
-      
+     
 
 The Schema Migration Assistant
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,8 +183,8 @@ Replace Current Front End and Back End Packages
 Backup`_ section since they will be overwritten in this step.
 
 #. Download the Izenda Front-end and Back-end Packages to Web Server. Ensure that the version you are downloading matches your updated database version set in the section above.
-    * For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from our downloads page.
-    * For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from our downloads page.
+    * For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from the `Customer Portal<https://app.izenda.com/>`_.
+    * For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from the `Customer Portal<https://app.izenda.com/>`_.
 #. Stop the web site process to avoid Izenda DLL files being used.
 #. Remove all files in your current API and App directories.
 #. Copy the files from the downloaded API and App folders to the current API and App directories, respectively.

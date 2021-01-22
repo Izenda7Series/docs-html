@@ -216,6 +216,6 @@ Using .NET Core API
             }
           }
 
--  Download the MicroKnights.Log4NetAdoNetAppender.dll file from our Utilities page `here <https://downloads.izenda.com/Utilities/MicroKnights.Log4NetAdoNetAppender.dll>`_.
+-  Download the MicroKnights.Log4NetAdoNetAppender.dll file from our Utilities page from the Upgrade tab in the `Customer Portal<https://app.izenda.com/>`_.
 
    -  Add this assembly file to the root of your API directory.

@@ -25,8 +25,8 @@ The following is not a comprehensive list but it will give you a good idea of th
 	
 	- **Izenda:** The main goal of the project is to showcase how to embed Izenda into your MVC application. Of the Izenda portion of the kit, there are components that are required standards for Izenda and other components that are designed as useful guidelines for managing and rendering Izenda. The following are not comprehensive lists—if you have any additional questions regarding what is required, please contact our support team.
 		* Required: Required components should not be changed at their core. If they are modified, unexpected behavior may occur.
-			* All API resources downloaded from http://downloads.izenda.com/latest/API.zip . Decompilations of the packaged API is strictly prohibited by your EULA.
-			* All Embedded UI resources downloaded from http://downloads.izenda.com/latest/EmbeddedUI.zip . Note: If an open source version of the Embedded UI is released, modifications will not be supported by the Izenda Support team. Decompilations of the packaged Embedded UI is strictly prohibited by your EULA.
+			* All API resources downloaded from the Upgrade tab in the Izenda Customer Portal. Decompilations of the packaged API is strictly prohibited by your EULA.
+			* All Embedded UI resources downloaded from the Upgrade tab in the `Customer Portal<https://app.izenda.com/>`_. Note: If an open source version of the Embedded UI is released, modifications will not be supported by the Izenda Support team. Decompilations of the packaged Embedded UI is strictly prohibited by your EULA.
 			* Where/how your authorization is stored is completely up to you. For embedded scenarios, however, we require that you provide the Izenda user name and the unique tenant name.
 		* Suggested: Our kit is home to a plethora of embedded examples ranging from tenant CSS cusomization to numerous configurations of rendering the Izenda UI. These examples may not be necessary to build a fully-operational Application. For more information, please see the "Location and Description of Features" section below.
 
@@ -260,7 +260,7 @@ The keys can be declared in the following locations:
   1. AuthRSAPublicKey value in the IzendaSystemSettings table of the Izenda database (note: only use keysize < 1024 to generate because max-length for this field in database is 256) . This value is your public key and should be in XML format.
   2. And RSAPrivateKey value in Web.config file of the MVC Kit. This value is your private key and should be in PEM format.
   
-To generate your RSA keys, you can use our RSA Key Generator utility found at http://downloads.izenda.com/Utilities/Izenda.Synergy.RSATool.zip .
+To generate your RSA keys, you can use our RSA Key Generator utility found at https//izenda.com/utilities/Izenda.Synergy.RSATool.zip .
 
 02/08/2017
 ^^^^^^^^^^
