@@ -183,8 +183,8 @@ Replace Current Front End and Back End Packages
 Backup`_ section since they will be overwritten in this step.
 
 #. Download the Izenda Front-end and Back-end Packages to Web Server. Ensure that the version you are downloading matches your updated database version set in the section above.
-    * For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from the `Customer Portal<https://app.izenda.com/>`_.
-    * For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from the `Customer Portal<https://app.izenda.com/>`_.
+    * For a Stand Alone version of Izenda, you will need to download the API and the StandaloneUI packages from the `Customer Portal <https://app.izenda.com>`_.
+    * For Integrated versions of Izenda, you will need to download the API and the EmbeddedUI packages from the `Customer Portal <https://app.izenda.com>`_.
 #. Stop the web site process to avoid Izenda DLL files being used.
 #. Remove all files in your current API and App directories.
 #. Copy the files from the downloaded API and App folders to the current API and App directories, respectively.

@@ -59,4 +59,4 @@ If you can successfully connect to the database using the connection string abov
 In order for Izenda to run successfully, the Izenda Configuration Database, Izenda API, and Izenda Front End resources must be the same version.
   - The Izenda Configuration Database: Found in the IzendaDBVersion table.
   - The Izenda API: Navigate to the bin directory of the API. Select an Izenda prefixed dll (e.g. Izenda.BI.Core). Right click this dll, select properties, and navigate to the details tab. The version can be found in the properties panel.
-  - The Izenda UI: The simplest way to ensure that your Izenda front end resources match the API and Configuration Database is to download the corresponding version from the Upgrade tab in the `Customer Portal<https://app.izenda.com/>`_.
+  - The Izenda UI: The simplest way to ensure that your Izenda front end resources match the API and Configuration Database is to download the corresponding version from the Upgrade tab in the `Customer Portal <https://app.izenda.com>`_.
