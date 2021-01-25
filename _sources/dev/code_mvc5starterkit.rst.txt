@@ -260,7 +260,7 @@ The keys can be declared in the following locations:
   1. AuthRSAPublicKey value in the IzendaSystemSettings table of the Izenda database (note: only use keysize < 1024 to generate because max-length for this field in database is 256) . This value is your public key and should be in XML format.
   2. And RSAPrivateKey value in Web.config file of the MVC Kit. This value is your private key and should be in PEM format.
   
-To generate your RSA keys, you can use our RSA Key Generator utility found at https//izenda.com/utilities/Izenda.Synergy.RSATool.zip .
+To generate your RSA keys, you can use our RSA Key Generator utility found at https://izenda.com/utilities/Izenda.Synergy.RSATool.zip .
 
 02/08/2017
 ^^^^^^^^^^
