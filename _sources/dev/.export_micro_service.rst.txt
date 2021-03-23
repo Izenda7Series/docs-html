@@ -1,0 +1,106 @@
+.. _Export_Micero_Service:
+
+Export Micro Service
+####################
+
+Deploying Export Micro Service on Linux
+************************************************************************
+
+Export micro service does not required to be installed on same server as Izenda back-end or front-end. It can also run on any separate server. For installation on separate server, follow the steps mentioned here :doc:`.export_micro_service_reverse_proxy` . The only difference is to setup a reverse proxy on web server.
+
+Pre-deployment steps
+========================================
+
+**Node JS**
+
+#. Izenda Export service needs Node JS runtime environment to execute. Login as root user and run following commands.
+
+        .. code-block:: code
+
+         sudo curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+         sudo apt-get install -y nodejs
+         sudo nodejs -v
+
+**PM2**
+
+#. Izenda Export service leverages PM2 as process manager. Login as root user and run following commands.
+
+        .. code-block:: code
+
+         sudo npm install pm2@4.5.0 -g
+         sudo pm2 --version
+
+Deployment steps
+========================================
+#. Login as root user and copy Export Service at desired location. Run following commands.
+
+        .. code-block:: code
+
+         tar -xvf <export service archive>
+         cd package
+         sudo pm2 start app.js -- --port <port number>
+         sudo pm2 startup systemd
+         sudo pm2 save
+         sudo pm2 list
+#. On successful completion of these commands, Export Service will start listening on specified port number.
+
+    .. figure:: /_static/images/export_micro_service/service_started_linux.png
+        :align: center
+        :width: 653px
+
+
+
+Deploying Export Micro Service on Windows
+***************************************************************************
+
+Export micro service does not required to be installed on same server as Izenda back-end or front-end. It can also run on any separate server. For installation on separate server, follow the steps mentioned here :doc:`.export_micro_service_reverse_proxy` . The only difference is to setup a reverse proxy on web server.
+
+Pre-deployment steps
+========================================
+
+**Node JS**
+
+#. Izenda Export service needs Node JS runtime environment to execute. Download and install Node JS from ``node-v12.21.0-x64.msi`` by navigating to https://nodejs.org/dist/latest-v12.x/
+
+Deployment steps
+========================================
+#. Copy export service at desired location and unzip Export Service archive. Open command prompt in administrative mode and navigate to extracted location. Run following command.
+
+        .. code-block:: code
+
+         cd package	
+         node app.js --port 5775
+#. On successful completion of these commands, Export Service will start listening on specified port number.
+
+    .. figure:: /_static/images/export_micro_service/service_started_windows.png
+        :align: center
+        :width: 653px
+
+BI Application changes
+**********************
+#. Export micro service can be enabled by setting ``EnableExportService`` to ``1`` in ``IzendaSystemSetting`` table.
+#. Additionally, make an entry into ``IzendaExportService`` table specifying URL of Export Service. For example:
+
+        .. code-block:: code
+
+         INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES ('9195E7BE-96A3-4529-985A-C4DC88646FFE','http://localhost:5775',0);
+ 
+Service Scalability
+*******************
+#. This is an optional step. 
+#. Export micro service is designed to scale out horizontally into multiple instances. A typical use case scenario would be a heavy load on export functionality. In such situations the load will be shared among multiple instances and multiple simultaneous exports will take relatively lesser time.
+#. Deployment Steps
+
+	#. Navigate to the location where service is extracted and simply start the service on a different port.
+	#. Additionally, make an entry into IzendaExportService table specifying URL of Export Service. For example, if new service got started on http://localhost:5776, make an entry as following.
+
+        .. code-block:: code
+
+         INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES ('5A93C3B8-56CF-409E-B45C-2F288732A53F','http://localhost:5776',0);
+ 
+ 
+    .. figure:: /_static/images/export_micro_service/micro-services-export-micro-services.png
+        :width: 1024px
+
+
+**Fig. 1 Scaling export micro services**	

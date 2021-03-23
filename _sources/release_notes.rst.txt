@@ -8,8 +8,179 @@ Release Notes
 	- Core Release - x.1.x - Quarterly stable release with preview releases and hotfixes combined
 	- Major Release - 1.x.x - Larger Features, potential breaking changes
 
+.. warning::
+   - For all upgrades and installations, downloads.izenda.com is moved to our customer portal at app.izenda.com
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
+
+v4.0.0 Core Release -- March 23rd, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Breaking Changes
+^^^^^^^^^
+
+   - Front-end Updates
+      - React upgraded from 15.6 to 16.3
+         - `React 15 to 16 migration guide <https://reactjs.org/blog/2017/09/26/react-v16.0.html>`_
+      - React-dom upgraded from 15.6 to 16.3
+      - Mobx upgraded from 2.4.2 to 5.15
+         - `Mobx 3 to 4 migration guide <https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4>`_
+         - `Mobx 4 to 5 migration guide <https://mobx.js.org/migrating-from-4-or-5.html>`_
+      - Mobx-react upgraded from 3.5 to 5.2
+      - Bootstrap upgraded from 3.3.7 to 3.4.1
+      - Babel upgraded from 6 to 7
+         - `Babel 7 migration guide <https://babeljs.io/docs/en/v7-migration>`_
+   - .Net Core 3.1 & .Net Framework 472
+      - Newtonsoft.Json - 12.0.1
+      - Log4Net - 2.0.12
+   - Exporting Engine 
+      - Izenda has updated the exporting process from WebKit to the Blink Engine
+         - This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine.
+         - Please deploy the Izenda docker within a Linux container to resolve this
+   - Map Provisioning Changes
+      - The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance
+   - Encryption Changes
+      - Izenda's encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance
+   - Excel Driver
+      - Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change
+
+FEATURES
+^^^^^^^^^
+- New Report Designer
+   - A new report designer can be enabled/disabled with the Report Designer 2.0 permission at the tenant or role level
+   - Functional Limitations of the new designer include:
+      - Report header/footer is not currently supported
+      - Opening legacy reports in the new designer is not currently supported
+      - It only supports the following visualizations:
+         - Vertical Grids, Horizontal Grids, Line Charts, and Column Charts
+   - For more overview information on the new designer, see our :ref:`Docs_2.0` page
+- Exporting Microservice
+   - Exporting functionalities can now leverage the new web engine and a scalable node-based solution
+   - For more information, please see the :ref:`Export_Micero_Service` and :ref:`Export_Micero_Service_Reverse_Proxy` pages
+- Scheduled Task Queue
+   - A new scalable solution is present to handle alerts and subscriptions that start at the same time so they may be performed sequentially and avoid overloading the server
+   - For information on this process, please see our :ref:`Heavy_Load_Queue_` page
+
+FIXES
+^^^^^
+- Defect 23619  Unhandled Exception Error is thrown when the report part width is not set
+- Defect 27386  Drilldown to city level in maps takes a very long time to load
+- Defect 28131  Blink - Exporting Chart report parts to Word and Excel looks stretched
+- Defect 28548  Asynchronous Exporting fails with Azure File Services storage option
+- Defect 28639  Checkboxes in Forms overlap when Exported to PDF 
+- Defect 28729  Excel exports taking longer to complete from version 3.2 to latest
+- Defect 29017  Pdf export issue in embedded report
+- Defect 29021  Role dropdown not appearing when user is set as System Admin
+- Defect 29042  Internal server error is thrown while registering a user.
+- Defect 29043  Unable to Create/Save Grid Report part
+- Defect 29044  Environment freezes when any data source is selected
+- Defect 29045  Blank page is appearing after selecting data source.
+- Defect 29046  Unable to Edit the Report and/or Navigate to other application pages
+- Defect 29047  Logs missing from Izenda log file in linux environments
+- Defect 29048  Not able to edit Dashboard Name
+- Defect 29050  UI is unresponsive on Tenant Setup Page
+- Defect 29054  Notification bell not clickable
+- Defect 29056  Unable to add Excel and REST Connectors
+- Defect 29058  Join Field and Field dropdowns not working
+- Defect 29066  Not able to configure NLQ
+- Defect 29067  Data/Map not populating the records and fails to render the Map when saving the report
+- Defect 29070  Generate Password link not getting populated during user setup
+- Defect 29071  Charts are not working for TreeMap D3/Column Donut/3D Scatter visualizations
+- Defect 29072  Issue with Data Connector Page and Add Connector Functionality not loading properly
+- Defect 29074  Subreport functionality is not working
+- Defect 29076  Copy Management is not copying settings options
+- Defect 29077  Creating report as tenant causes page to go blank
+- Defect 29082  Not able to apply online licenses form settings page
+- Defect 29087  Export functionality not working in Full Framework
+- Defect 29088  Not getting save notification on data model page after clicking on Save Button.
+- Defect 29089  Blank page appears after clicking on system variables while adding schedules.
+- Defect 29090  UI is not proper when we open edit dropdown in a dashboard.
+- Defect 29091  Getting system admin error on saving dashboard after making changes to filter
+- Defect 29092  Dashboard report filter is not showing all values.
+- Defect 29093  UI issue with quick edit mode of report part
+- Defect 29094  Getting error after editing the query limit in advanced settings.
+- Defect 29095  After activating the user from deactivation, the text still shows 'Activate' despite being an active user account.
+- Defect 29096  Blank page appears when configuring within the border cog in Report Part Properties.
+- Defect 29097  Not able to use border properties on Form report
+- Defect 29098  Applying text or background color to field values breaks form reports
+- Defect 29111  Getting Custom report part types in dropdown of report parts while creating a new report
+- Defect 29112  Page is blank after adding add calculated field from report designer
+- Defect 29113  Page is Blank after clicking on Border setting icon from report part properties
+- Defect 29115  Blank page appears after quick edit mode selection
+- Defect 29116  Getting error messages when creating a Gauge report.
+- Defect 29136  Table selection checkbox is not checked when all the columns are selected
+- Defect 29137  Conditional formatting breaks for prints and exports when blank values are present 
+- Defect 29138  Blank page appears when we search data source in middle panel on report designer page
+- Defect 29141  Not able to create a report at the tenant level as a system admin
+- Defect 29142  While Saving a KPI report, save pop up takes too long to disappear.
+- Defect 29151  Bell Notification appears but does not populate records when clicked during the NLQ process
+- Defect 29159  Getting system admin error for changing passwords
+- Defect 29160  Blank page appears after clicking on Search on Scheduling page
+- Defect 29164  After clicking on Report viewer, page goes blank.
+- Defect 29165  Reports in Dashboard from NLQ are not getting saved in Linux environments
+- Defect 29178  Getting Application error while saving the report
+- Defect 29181  Items missing on explore page of NLQ.
+- Defect 29183  Page is blank after searching any column name from report designer
+- Defect 29192  Export Manager does not display any results and error in log 'Cannot perform runtime binding on a null reference' with PGSQL.
+- Defect 29209  'Any unsaved changes will be lost' pop-up never appears if navigating without saving a report
+- Defect 29226  Modal for Configure Password Option never Resets during the user setup process.
+- Defect 29240  Popup subreport is blank
+- Defect 29272  Copy Management crashes when switching workspaces
+- Defect 29275  Import Functionality not working properly.
+- Defect 29276  Application Error when sending email through Report Viewer/Dashboard
+- Defect 29277  Emails for both Subscribe and Schedule are not getting received/sent
+- Defect 29299  Able to save template under tenant without template access
+- Defect 29303  Unable to create Map other than Google Map on Linux environments
+- Defect 29304  Alternative Text is not applied to the field
+- Defect 29315  Changed Value for Eviction Interval at System Cache Configuration is not persisting
+- Defect 29316  "Are you sure? All your changes will be lost." pop-up appears without having any changes in the data model
+- Defect 29324  Some areas remain unchanged with having language packs enabled
+- Defect 29329  Screen goes blank when "Show only my workspaces" is checked on the copy management page.
+- Defect 29330  Getting pop up while moving from Report viewer to designer with no changes made to the report on Linux environments.
+- Defect 29331  Filter values gets appended with Column names when any filter is applied on Linux environments.
+- Defect 29342  Unable to create any report, getting System Admin error as we click design tab
+- Defect 29344  Pop up for successful email delivery is displayed for Unsaved dashboards.
+- Defect 29346  Extra/Duplicate Checkbox for Remove Extra Side Total Column(s) is appearing on UI.
+- Defect 29347  Exporting fails for reports with Headers & footer enabled from exporting tab
+- Defect 29348  Embedded Report preview is not visible in Form report part
+- Defect 29377  Country map never renders in print and exports
+- Defect 29386  Screen goes to blank state if we drill-down over maps
+- Defect 29403  Notification pop up is not proper.
+- Defect 29404  Reports in NLQ are not getting saved.
+- Defect 29405  Header and Footer if added to report should be visible by default on Report viewer.
+- Defect 29422  Calculated html is not rendering correctly on forms
+- Defect 29429  Filter values are not applied for async exporting if export runs from Report Viewer
+- Defect 29431  White background on an image tile is not getting covered up in report viewer
+- Defect 29435  Cannot edit calculated fields in legacy Report Designer
+- Defect 29437  Getting 500 Internal Server error on Report list page
+- Defect 29438  Able to add some text values after decimal in thickness text box while applying borders.
+- Defect 29439  Lazy loading of filter values does not work
+- Defect 29445  Screen goes Blank on adding filters to a recently created report.
+- Defect 29446  Extra/duplicate entry for Google map is listed in Map Type
+- Defect 29447  Application error appear on UI when creating any report part with Mongo datasources
+- Defect 29448  Unable to add Salesforce connector
+- Defect 29463  Settings page loads with Advanced Settings for user who does not have access
+- Defect 29469  Dashboard Loading is too slow
+- Defect 29494  Page showing blank when adding same excel data Connector again
+- Defect 29496  Not able to create a report from form Report part.
+- Defect 29499  Compatibility issue for QueueWorkers class in Izenda with the npgsql driver: “Job QueueWorkers"
+- Defect 29503  API for create schema is failing
+- Defect 29515  Export deployment issues
+- Defect 29521  ave Notification pop up not appears next time, if I click on Save button.
+- Defect 29544  IzendaCoreCustomBootstrapper is not working with .NetCore31 updates
+- Defect 29561  Missing functionality for deleting export items in Export Manager
+- Defect 29563  Unable to create any report, getting System Admin error as we click design tab
+- Defect 29565  Not able to login on qa2 env
+- Defect 29575  Unable to create Map other than Google Map
+- Defect 29585  Settings copy from system to tenant throws error on UI
+- Defect 29592  Error when saving report with PGSQL config database and v3.12.0.3
+- Defect 29597  Map Always keeps loading in case of World/Continent/Country map
+- Defect 29600  Disabling License status doesn't block the Reports and Dashboard
+- Defect 29601  Supervisor service fails to start dotnet process
+- Defect 29679  Options other than System DB & License are not accessible.
+- Defect 29680  Issues with Exporting for all report parts
+
 
 v3.12.0 Core Release -- January 15th, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

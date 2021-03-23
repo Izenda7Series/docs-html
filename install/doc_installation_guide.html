@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation Guide &mdash; Izenda BI 3.11.4 documentation</title>
+  <title>Installation Guide &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.11.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
         <link rel="up" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/>
         <link rel="next" title="Upgrade Guide" href="doc_upgrade_guide.html"/>
         <link rel="prev" title="Hosting Izenda" href="doc_hosting_izenda_yourself.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.11
+                4.0
               </div>
             
           
@@ -198,31 +198,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="installation-guide">
-<h1><a class="toc-backref" href="#id11">Installation Guide</a><a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id12">Installation Guide</a><a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#installation-guide" id="id11">Installation Guide</a><ul>
-<li><a class="reference internal" href="#standalone-installation-options" id="id12">Standalone Installation Options</a></li>
-<li><a class="reference internal" href="#architectural-goal" id="id13">Architectural Goal</a></li>
-<li><a class="reference internal" href="#install-izenda-standalone-on-window-os" id="id14">Install Izenda Standalone on Window OS</a><ul>
-<li><a class="reference internal" href="#pre-installation-preparations" id="id15">Pre-installation Preparations</a></li>
-<li><a class="reference internal" href="#web-server-setup" id="id16">Web Server Setup</a></li>
-<li><a class="reference internal" href="#izenda-installation-as-two-separate-sites" id="id17">Izenda Installation As Two Separate Sites</a></li>
-<li><a class="reference internal" href="#deploying-izenda-as-a-virtual-directory-or-application" id="id18">Deploying Izenda as a Virtual Directory or Application</a></li>
-<li><a class="reference internal" href="#troubleshooting-verifying-the-installation" id="id19">Troubleshooting &amp; Verifying the Installation</a></li>
-<li><a class="reference internal" href="#common-izenda-standalone-installation-issues" id="id20">Common Izenda Standalone Installation Issues</a></li>
+<li><a class="reference internal" href="#installation-guide" id="id12">Installation Guide</a><ul>
+<li><a class="reference internal" href="#standalone-installation-options" id="id13">Standalone Installation Options</a></li>
+<li><a class="reference internal" href="#architectural-goal" id="id14">Architectural Goal</a></li>
+<li><a class="reference internal" href="#install-izenda-standalone-on-window-os" id="id15">Install Izenda Standalone on Window OS</a><ul>
+<li><a class="reference internal" href="#pre-installation-preparations" id="id16">Pre-installation Preparations</a></li>
+<li><a class="reference internal" href="#runtime-installation" id="id17">Runtime Installation</a></li>
+<li><a class="reference internal" href="#web-server-setup" id="id18">Web Server Setup</a></li>
+<li><a class="reference internal" href="#izenda-installation-as-two-separate-sites" id="id19">Izenda Installation As Two Separate Sites</a></li>
+<li><a class="reference internal" href="#deploying-izenda-as-a-virtual-directory-or-application" id="id20">Deploying Izenda as a Virtual Directory or Application</a></li>
+<li><a class="reference internal" href="#troubleshooting-verifying-the-installation" id="id21">Troubleshooting &amp; Verifying the Installation</a></li>
+<li><a class="reference internal" href="#common-izenda-standalone-installation-issues" id="id22">Common Izenda Standalone Installation Issues</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#install-izenda-standalone-on-ubuntu-os" id="id21">Install Izenda Standalone on Ubuntu OS</a><ul>
-<li><a class="reference internal" href="#pre-install-preparations" id="id22">Pre-install preparations</a></li>
-<li><a class="reference internal" href="#install-izenda-as-two-separate-sites" id="id23">Install Izenda as two separate sites</a></li>
-<li><a class="reference internal" href="#create-monitor-service" id="id24">Create monitor service</a></li>
-<li><a class="reference internal" href="#configuring-exporting" id="id25">Configuring Exporting</a></li>
+<li><a class="reference internal" href="#install-izenda-standalone-on-ubuntu-os" id="id23">Install Izenda Standalone on Ubuntu OS</a><ul>
+<li><a class="reference internal" href="#pre-install-preparations" id="id24">Pre-install preparations</a></li>
+<li><a class="reference internal" href="#install-izenda-as-two-separate-sites" id="id25">Install Izenda as two separate sites</a></li>
+<li><a class="reference internal" href="#create-monitor-service" id="id26">Create monitor service</a></li>
+<li><a class="reference internal" href="#configuring-exporting" id="id27">Configuring Exporting</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#additional-reference" id="id26">Additional Reference</a><ul>
-<li><a class="reference internal" href="#next-install-izenda-system-database-and-apply-license" id="id27">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a></li>
+<li><a class="reference internal" href="#additional-reference" id="id28">Additional Reference</a><ul>
+<li><a class="reference internal" href="#next-install-izenda-system-database-and-apply-license" id="id29">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a></li>
 </ul>
 </li>
 </ul>
@@ -231,7 +232,7 @@
 </div>
 <p><br clear="right" /></p>
 <div class="section" id="standalone-installation-options">
-<h2><a class="toc-backref" href="#id12">Standalone Installation Options</a><a class="headerlink" href="#standalone-installation-options" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Standalone Installation Options</a><a class="headerlink" href="#standalone-installation-options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>There are two main options when deploying a &#8220;vanilla&#8221; instnace of our standalone environment.</dt>
 <dd><ul class="first last simple">
@@ -243,16 +244,16 @@
 <p>The architectural goal, pre-installation preparations, and web server setup are the same for both deployment options.</p>
 </div>
 <div class="section" id="architectural-goal">
-<h2><a class="toc-backref" href="#id13">Architectural Goal</a><a class="headerlink" href="#architectural-goal" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Architectural Goal</a><a class="headerlink" href="#architectural-goal" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id3">
 <img alt="../_images/Slide1B.PNG" src="../_images/Slide1B.PNG" />
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">A diagram of implementation</span></p>
 </div>
 </div>
 <div class="section" id="install-izenda-standalone-on-window-os">
-<h2><a class="toc-backref" href="#id14">Install Izenda Standalone on Window OS</a><a class="headerlink" href="#install-izenda-standalone-on-window-os" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Install Izenda Standalone on Window OS</a><a class="headerlink" href="#install-izenda-standalone-on-window-os" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="pre-installation-preparations">
-<h3><a class="toc-backref" href="#id15">Pre-installation Preparations</a><a class="headerlink" href="#pre-installation-preparations" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Pre-installation Preparations</a><a class="headerlink" href="#pre-installation-preparations" title="Permalink to this headline">¶</a></h3>
 <p>The setup of Izenda requires a download of the latest version of the stand-alone front-end and the back-end and a proper web server setup. Izenda can be installed on a local machine on a Windows machine for testing purposes and is a best practice for ensuring permissions and performance can be validated locally prior to moving toward more embedded and integrated examples, but it is not recommended for live deployments.</p>
 <ul>
 <li><p class="first">Izenda installation packages, download them from the Upgrade tab in the <a class="reference external" href="https://app.izenda.com">Customer Portal</a>.</p>
@@ -282,9 +283,28 @@
 <p class="last">All of the information covered in this document can also be found in video from <a class="reference external" href="https://www.izenda.com/7-series-installation-videos/#portal-install">here</a></p>
 </div>
 </div>
+<div class="section" id="runtime-installation">
+<h3><a class="toc-backref" href="#id17">Runtime Installation</a><a class="headerlink" href="#runtime-installation" title="Permalink to this headline">¶</a></h3>
+<p>Izenda depends on .Net Core 3.1 runtime environment to run application. This step is only required if you are installing <strong>Izenda 4.0.0 and above</strong>.</p>
+<div class="section" id="install-net-core-3-1-runtime">
+<h4>Install .Net Core 3.1 runtime<a class="headerlink" href="#install-net-core-3-1-runtime" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Download and install Hosting Bundle from Microsoft&#8217;s <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/3.1">download page</a>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/hosting_bundle.png"><img alt="../_images/hosting_bundle.png" src="../_images/hosting_bundle.png" style="width: 524px;" /></a>
+</div>
+</li>
+<li><p class="first">Check the version after installtion by running &#8220;dotnet &#8211;info&#8221;.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/hosting_bundle_installed.png"><img alt="../_images/hosting_bundle_installed.png" src="../_images/hosting_bundle_installed.png" style="width: 524px;" /></a>
+</div>
+</li>
+</ol>
+</div>
+</div>
 <div class="section" id="web-server-setup">
-<h3><a class="toc-backref" href="#id16">Web Server Setup</a><a class="headerlink" href="#web-server-setup" title="Permalink to this headline">¶</a></h3>
-<p>To ensure that Izenda works properly, your Web Server requires additional components that may not be present on your server by default.</p>
+<h3><a class="toc-backref" href="#id18">Web Server Setup</a><a class="headerlink" href="#web-server-setup" title="Permalink to this headline">¶</a></h3>
+<p>To ensure that Izenda works properly, your Web Server requires additional components that may not be present on your server by default. If you are installing <strong>Izenda 4.0.0 and above</strong>, this step is not required.</p>
 <div class="section" id="add-web-server-role-and-net-framework">
 <h4>Add Web Server Role and .NET Framework<a class="headerlink" href="#add-web-server-role-and-net-framework" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
@@ -317,8 +337,9 @@ check-box.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="install-asp-net-4-5-and-url-rewrite-components">
-<span id="id1"></span><h4>Install ASP.NET 4.5 and URL Rewrite Components<a class="headerlink" href="#install-asp-net-4-5-and-url-rewrite-components" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="install-asp-net-4-5-components">
+<span id="install-asp-net-4-5-and-url-rewrite-components"></span><h4>Install ASP.NET 4.5 Components<a class="headerlink" href="#install-asp-net-4-5-components" title="Permalink to this headline">¶</a></h4>
+<p>If you are installing <strong>Izenda 4.0.0 and above</strong>, this step is not required.</p>
 <ol class="arabic">
 <li><p class="first">Open Microsoft Web Platform Installer’s <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">download page</a>.</p>
 <blockquote>
@@ -330,10 +351,6 @@ Web Platform Components&#8221; link.</p>
 </li>
 <li><p class="first">Open Microsoft Web Platform Installer.</p>
 </li>
-<li><p class="first">Search for &#8220;ASP.NET&#8221;, select &#8220;IIS:ASP.NET 4.5&#8221; and click Add. (Not applicable for Windows Server 2016)</p>
-</li>
-<li><p class="first">Similarly search for URL Rewrite 2.0 and click Add.</p>
-</li>
 <li><p class="first">Click Install.</p>
 </li>
 </ol>
@@ -341,6 +358,29 @@ Web Platform Components&#8221; link.</p>
 <div><div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../_images/IIS_ASP.NET_install.png"><img alt="../_images/IIS_ASP.NET_install.png" src="../_images/IIS_ASP.NET_install.png" style="width: 667px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Install IIS ASP.NET 4.5 <br clear="right" /></span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="install-url-rewrite-components">
+<h4>Install URL Rewrite Components<a class="headerlink" href="#install-url-rewrite-components" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Open Microsoft Web Platform Installer’s <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">download page</a>.</p>
+<blockquote>
+<div><p>This can also be opened from IIS Manager Actions panel, &#8220;Get New
+Web Platform Components&#8221; link.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Download and run the installer.</p>
+</li>
+<li><p class="first">Open Microsoft Web Platform Installer.</p>
+</li>
+<li><p class="first">Click Install.</p>
+</li>
+</ol>
+<blockquote id="id1">
+<div><div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/IIS_URL_REWRITE_install.png"><img alt="../_images/IIS_URL_REWRITE_install.png" src="../_images/IIS_URL_REWRITE_install.png" style="width: 667px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Install URL Rewrite <br clear="right" /></span></p>
 </div>
 </div></blockquote>
 </div>
@@ -354,7 +394,7 @@ Web Platform Components&#8221; link.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="izenda-installation-as-two-separate-sites">
-<h3><a class="toc-backref" href="#id17">Izenda Installation As Two Separate Sites</a><a class="headerlink" href="#izenda-installation-as-two-separate-sites" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Izenda Installation As Two Separate Sites</a><a class="headerlink" href="#izenda-installation-as-two-separate-sites" title="Permalink to this headline">¶</a></h3>
 <p>The most common testing scenario places the front-end and the back-end on two separate sites. Virtual Directories and Virtual Applications deployments are possible with additional configuration and are outlined in another section below.</p>
 <ol class="arabic">
 <li><p class="first">Extract the Izenda Front-end and Back-end packages to 2 separate
@@ -394,22 +434,21 @@ file:
 <li><p class="first">Click OK to create the website.</p>
 </li>
 </ol>
-<div class="figure" id="id8">
+<div class="figure" id="id9">
 <span id="iis-add-website"></span><a class="reference internal image-reference" href="../_images/IIS_Add_Website.png"><img alt="../_images/IIS_Add_Website.png" src="../_images/IIS_Add_Website.png" style="width: 439px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">New Website <br clear="right" /></span></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">New Website <br clear="right" /></span></p>
 </div>
 </li>
 </ul>
 </li>
 <li><p class="first">Add new website for Back-end package:</p>
 <ul class="simple">
-<li>.NET infrastructure: Similarly to Front-end site set-up but with different port</li>
-<li>.NET Core infrastructure: Please prefer to the .NET Core Back-end Standalone set-up guide <span class="xref std std-ref">Deploy_NET_Core_BE</span></li>
+<li>Follow above steps and add another site for Izenda back-end with different port.</li>
 </ul>
 </li>
-<li><div class="figure align-right" id="id9">
+<li><div class="figure align-right" id="id10">
 <span id="iis-folder-permissions"></span><a class="reference internal image-reference" href="../_images/IIS_Folder_Permissions.png"><img alt="../_images/IIS_Folder_Permissions.png" src="../_images/IIS_Folder_Permissions.png" style="width: 239px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Folder Permissions</span></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Folder Permissions</span></p>
 </div>
 <p>Set folder permissions</p>
 <ol class="arabic">
@@ -449,7 +488,7 @@ Please refer to the following guides below:
 </div>
 <hr class="docutils" id="deploy-net-core-be" />
 <div class="section" id="deploying-izenda-as-a-virtual-directory-or-application">
-<h3><a class="toc-backref" href="#id18">Deploying Izenda as a Virtual Directory or Application</a><a class="headerlink" href="#deploying-izenda-as-a-virtual-directory-or-application" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Deploying Izenda as a Virtual Directory or Application</a><a class="headerlink" href="#deploying-izenda-as-a-virtual-directory-or-application" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div>Installing Izenda as a virtual directorys will mirror the steps taken required to deploy Izenda using two separate websites but additional modifications are necessary for the front end and back end to interact correctly together.</div></blockquote>
 <div class="section" id="initial-set-up">
@@ -586,13 +625,13 @@ Please refer to the following guides below:
 </div>
 </div>
 <div class="section" id="troubleshooting-verifying-the-installation">
-<h3><a class="toc-backref" href="#id19">Troubleshooting &amp; Verifying the Installation</a><a class="headerlink" href="#troubleshooting-verifying-the-installation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Troubleshooting &amp; Verifying the Installation</a><a class="headerlink" href="#troubleshooting-verifying-the-installation" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">To ensure that your API site is running correctly, navigate to <a class="reference external" href="http://YOUR_API_URL/api/404">http://YOUR_API_URL/api/404</a> (e.g. <a class="reference external" href="http://localhost:8080/api/404">http://localhost:8080/api/404</a>)</p>
 <p>If your API is installed correctly, you should see the graphic below:</p>
-<div class="figure" id="id10">
+<div class="figure" id="id11">
 <img alt="../_images/SuccessfulAPI.png" src="../_images/SuccessfulAPI.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Successful Connection to API displays a stylized 404 error</span></p>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Successful Connection to API displays a stylized 404 error</span></p>
 </div>
 </li>
 <li><p class="first">Navigate to the API folder, you should see a &#8216;logs&#8217; folder with with at least one log file. If you do not see the folder and/or files, verify that the application pool and/or web site user have write permissions to the API folder.</p>
@@ -600,7 +639,7 @@ Please refer to the following guides below:
 </ul>
 </div>
 <div class="section" id="common-izenda-standalone-installation-issues">
-<h3><a class="toc-backref" href="#id20">Common Izenda Standalone Installation Issues</a><a class="headerlink" href="#common-izenda-standalone-installation-issues" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Common Izenda Standalone Installation Issues</a><a class="headerlink" href="#common-izenda-standalone-installation-issues" title="Permalink to this headline">¶</a></h3>
 <div class="toggle docutils container">
 <div class="header docutils container">
 <strong>IIS Issues</strong>:</div>
@@ -611,7 +650,7 @@ Please refer to the following guides below:
 <p>For .NET web applications to run through IIS you need to install IIS ASP.NET through your server’s Add Roles and Feature Wizard, or through the <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">IIS Web Platform Installer</a>.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#add-web-server-role-and-net-framework">Add Web Server Role and .NET Framework</a></li>
-<li><a class="reference internal" href="#id1">Install ASP.NET 4.5 and URL Rewrite Components</a></li>
+<li><a class="reference internal" href="#install-asp-net-4-5-components">Install ASP.NET 4.5 Components</a></li>
 </ul>
 <p><br clear="right" /></p>
 <p>Without these features installed you may encounter errors like the following:</p>
@@ -630,7 +669,7 @@ Please refer to the following guides below:
 <dd><p class="first">Izenda’s Stand-alone UI web.config makes use of the IIS URL Rewrite Module for routing.</p>
 <p>You’ll install this module through the <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">IIS Web Platform Installer</a>.</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id1">Install ASP.NET 4.5 and URL Rewrite Components</a></li>
+<li><a class="reference internal" href="#install-asp-net-4-5-components">Install ASP.NET 4.5 Components</a></li>
 </ul>
 <p><br clear="right" /></p>
 <p>Without this feature installed you may encounter errors like the following navigating to the UI.</p>
@@ -786,15 +825,43 @@ Please refer to the following guides below:
 </div>
 </div>
 <div class="section" id="install-izenda-standalone-on-ubuntu-os">
-<h2><a class="toc-backref" href="#id21">Install Izenda Standalone on Ubuntu OS</a><a class="headerlink" href="#install-izenda-standalone-on-ubuntu-os" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">Install Izenda Standalone on Ubuntu OS</a><a class="headerlink" href="#install-izenda-standalone-on-ubuntu-os" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="pre-install-preparations">
-<h3><a class="toc-backref" href="#id22">Pre-install preparations</a><a class="headerlink" href="#pre-install-preparations" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">Pre-install preparations</a><a class="headerlink" href="#pre-install-preparations" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
+<li><p class="first">Runtime Installation - Izenda 4.0.0 and above</p>
+<p>Izenda depends on .Net Core 3.1 runtime environment to run application.</p>
+<blockquote>
+<div><ol class="arabic">
 <li><p class="first">Create instance of Ubuntu 18.04</p>
 </li>
 <li><p class="first">Login using <code class="docutils literal"><span class="pre">ssh</span></code> as default user</p>
 </li>
-<li><p class="first">Download ans install .NET core 2.2 sdk and run time env. <a class="reference external" href="https://dotnet.microsoft.com/download/linux-package-manager/rhel/runtime-2.2.3">Download here</a></p>
+<li><p class="first">Download and install .NET core 3.2 sdk run time env. <a href="#id30"><span class="problematic" id="id31">`Download here &lt;https://dotnet.microsoft.com/download/dotnet/3.1`_</span></a></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb</span>
+<span class="go">sudo dpkg -i packages-microsoft-prod.deb</span>
+<span class="go">sudo apt-get update;</span>
+<span class="go">sudo apt-get install -y apt-transport-https &amp;&amp; sudo apt-get update &amp;&amp; sudo apt-get install -y aspnetcore-runtime-3.1</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">dotnet</span> <span class="pre">--info</span></code> to check the installation of .NET Core. You suppose to recieve the following result if .NET Core 3.1 was successfully installed.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/Ubuntu_Standalone_NET_Core_3_1.png"><img alt="../_images/Ubuntu_Standalone_NET_Core_3_1.png" src="../_images/Ubuntu_Standalone_NET_Core_3_1.png" style="width: 550px;" /></a>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Runtime Installation - Prior to Izenda 4.0.0</p>
+<p>Prior to Izenda 4.0.0, Izenda uses .Net Core 2.2 runtime.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Create instance of Ubuntu 18.04</p>
+</li>
+<li><p class="first">Login using <code class="docutils literal"><span class="pre">ssh</span></code> as default user</p>
+</li>
+<li><p class="first">Download and install .NET core 2.2 sdk and run time env. <a class="reference external" href="https://dotnet.microsoft.com/download/linux-package-manager/rhel/runtime-2.2.3">Download here</a></p>
 <ul>
 <li><p class="first">If you recieve any error, please follow the below steps</p>
 <blockquote>
@@ -831,8 +898,11 @@ Please refer to the following guides below:
 </li>
 <li><p class="first">Use <code class="docutils literal"><span class="pre">dotnet</span> <span class="pre">--info</span></code> to check the installation of .NET Core. You suppose to recieve the following result if .NET Core 2.2 was successfully installed</p>
 <div class="figure">
-<a class="reference internal image-reference" href="../_images/Ubuntu_Standalone_NET_Core.png"><img alt="../_images/Ubuntu_Standalone_NET_Core.png" src="../_images/Ubuntu_Standalone_NET_Core.png" style="width: 847px;" /></a>
+<a class="reference internal image-reference" href="../_images/Ubuntu_Standalone_NET_Core.png"><img alt="../_images/Ubuntu_Standalone_NET_Core.png" src="../_images/Ubuntu_Standalone_NET_Core.png" style="width: 600px;" /></a>
 </div>
+</li>
+</ol>
+</div></blockquote>
 </li>
 <li><p class="first">Install Appache2 as reverse proxy</p>
 <ol class="arabic">
@@ -893,7 +963,7 @@ Please refer to the following guides below:
 </ol>
 </div>
 <div class="section" id="install-izenda-as-two-separate-sites">
-<h3><a class="toc-backref" href="#id23">Install Izenda as two separate sites</a><a class="headerlink" href="#install-izenda-as-two-separate-sites" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">Install Izenda as two separate sites</a><a class="headerlink" href="#install-izenda-as-two-separate-sites" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Create <strong>izenda-ui.conf</strong> under /etc/apache2/sites-available: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">vim</span> <span class="pre">/etc/apache2/sites-available/izenda-ui.conf</span></code></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span>Listen 8080
@@ -954,7 +1024,7 @@ Please refer to the following guides below:
 </ol>
 </div>
 <div class="section" id="create-monitor-service">
-<h3><a class="toc-backref" href="#id24">Create monitor service</a><a class="headerlink" href="#create-monitor-service" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">Create monitor service</a><a class="headerlink" href="#create-monitor-service" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Install Supervisor, a monitor service app: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">supervisor</span></code></p>
 </li>
@@ -985,9 +1055,35 @@ Please refer to the following guides below:
 </ol>
 </div>
 <div class="section" id="configuring-exporting">
-<h3><a class="toc-backref" href="#id25">Configuring Exporting</a><a class="headerlink" href="#configuring-exporting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">Configuring Exporting</a><a class="headerlink" href="#configuring-exporting" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Configuring Exporting</p>
+<li><p class="first">Configuring Exporting - Izenda 4.0.0 and above</p>
+<ul>
+<li><p class="first">To convert HTML to PDF in Linux using the Blink rendering engine, the following packages should be installed in the Linux machine where the conversion takes place:</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get update
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libasound2
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6
+<span class="gp">        $</span> sudo apt-get install -yq --no-install-recommends libnss3
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Give permission to run the Blink rendering engine</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo chmod 755 /var/www/izenda-api/API_AspNetCore/Export/BlinkBinariesLinux/chrome</span>
+<span class="go">sudo chmod 755 /var/www/izenda-api/API_AspNetCore/Export/BlinkBinariesLinux/chrome-wrapper</span>
+<span class="go">sudo chmod 755 /var/www/izenda-api/API_AspNetCore/Export/BlinkBinariesLinux/chrome_sandbox</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Configuring Exporting - Prior to Izenda 4.0.0</p>
 <ul>
 <li><p class="first">To convert HTML to PDF in Linux using the WebKit rendering engine, the following packages should be installed in the Linux machine where the conversion takes place:</p>
 <blockquote>
@@ -1012,7 +1108,7 @@ Please refer to the following guides below:
 </div>
 </div>
 <div class="section" id="additional-reference">
-<h2><a class="toc-backref" href="#id26">Additional Reference</a><a class="headerlink" href="#additional-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id28">Additional Reference</a><a class="headerlink" href="#additional-reference" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Understanding Configuration vs. Reporting Connection Strings</dt>
@@ -1159,7 +1255,7 @@ document</a>.</p>
 </li>
 </ul>
 <div class="section" id="next-install-izenda-system-database-and-apply-license">
-<h3><a class="toc-backref" href="#id27">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a><a class="headerlink" href="#next-install-izenda-system-database-and-apply-license" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">Next: <a class="reference internal" href="../ui/doc_system_db_and_license.html"><span class="doc">Install Izenda System Database and Apply License</span></a></a><a class="headerlink" href="#next-install-izenda-system-database-and-apply-license" title="Permalink to this headline">¶</a></h3>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
@@ -1197,7 +1293,7 @@ IIS</a></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Izenda.
+        &copy; Copyright 2021, Izenda.
 
     </p>
   </div>
@@ -1219,7 +1315,7 @@ IIS</a></li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.11.4',
+            VERSION:'4.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Export Micro Service &mdash; Izenda BI 4.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Export Micro Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/.export_micro_service_reverse_proxy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="export-micro-service">
+<span id="export-micero-service-reverse-proxy"></span><h1>Export Micro Service<a class="headerlink" href="#export-micro-service" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deploying-export-micro-service-on-separate-linux-server">
+<h2>Deploying Export Micro Service on Separate Linux Server<a class="headerlink" href="#deploying-export-micro-service-on-separate-linux-server" title="Permalink to this headline">¶</a></h2>
+<p>Export micro service can also run on the same server as Izenda back-end application. For installation on same server, follow the steps mentioned here <a class="reference internal" href=".export_micro_service.html"><span class="doc">Export Micro Service</span></a></p>
+<div class="section" id="pre-deployment-steps">
+<h3>Pre-deployment steps<a class="headerlink" href="#pre-deployment-steps" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node JS</strong></p>
+<ol class="arabic">
+<li><p class="first">Izenda Export service needs Node JS runtime environment to execute. Login as root user and run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo nodejs -v
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>PM2</strong></p>
+<ol class="arabic">
+<li><p class="first">Izenda Export service leverages PM2 as process manager. Login as root user and run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo npm install pm2@4.5.0 -g
+sudo pm2 --version
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="deployment-steps">
+<h3>Deployment steps<a class="headerlink" href="#deployment-steps" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Login as root user and copy Export Service at desired location. Run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>tar -xvf &lt;export service archive&gt;
+cd package
+sudo pm2 start app.js -- --port 5775
+sudo pm2 startup systemd
+sudo pm2 save
+sudo pm2 list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">On successful completion of these commands, Export Service will start listening on specified port number.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/service_started_linux.png"><img alt="../_images/service_started_linux.png" src="../_images/service_started_linux.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="post-deployment-steps">
+<h3>Post-deployment steps<a class="headerlink" href="#post-deployment-steps" title="Permalink to this headline">¶</a></h3>
+<p><strong>Apache Reverse Proxy</strong></p>
+<ol class="arabic">
+<li><p class="first">Login as root user and run following commands.</p>
+<ol class="arabic">
+<li><p class="first">Update Ubuntu packages to the latest stable version: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p>
+</li>
+<li><p class="first">Install the Apache web server on Ubuntu: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span> <span class="pre">-y</span></code></p>
+</li>
+<li><p class="first">Enable the Apache required modules</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2enmod rewrite</span>
+<span class="go">sudo a2enmod proxy</span>
+<span class="go">sudo a2enmod proxy_http</span>
+<span class="go">sudo a2enmod headers</span>
+<span class="go">sudo a2enmod ssl –- if you want to configure as SSL</span>
+<span class="go">sudo service apache2 restart</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify Apache installation by running localhost.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Ubuntu_Stadnalone_Apache.png"><img alt="../_images/Ubuntu_Stadnalone_Apache.png" src="../_images/Ubuntu_Stadnalone_Apache.png" style="width: 653px;" /></a>
+</div>
+</li>
+<li><p class="first">Enter domain name in to <strong>apache2.conf</strong> file</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo nano /etc/apache2/apache2.conf</span>
+<span class="go">ServerName localhost</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enter port in to <strong>ports.conf</strong> file</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sudo nano /etc/apache2/ports.conf</span>
+<span class="go">Listen 9001</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create <strong>9001.conf</strong> under /etc/apache2/sites-available: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/apache2/sites-available/9001.conf</span></code></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;VirtualHost *:9001&gt;
+ProxyPreserveHost On
+ProxyRequests Off
+ProxyPass / http://localhost:5775/
+ProxyPassReverse / http://localhost:5775/
+ServerName localhost
+ErrorLog /var/log/apache2/9001-api-error.log
+CustomLog /var/log/apache2/9001-api-access.log common
+&lt;/VirtualHost&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Active the service site.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2ensite 9001.conf</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Verify the configuration: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apachectl</span> <span class="pre">configtest</span></code>. If the configuration is correct, the result will be <code class="docutils literal"><span class="pre">Syntax</span> <span class="pre">Ok</span></code>. If not, there is an issue in the configuration.</p>
+</li>
+<li><p class="first">Restart the website: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="deploying-export-micro-service-on-separate-windows-server">
+<h2>Deploying Export Micro Service on Separate Windows Server<a class="headerlink" href="#deploying-export-micro-service-on-separate-windows-server" title="Permalink to this headline">¶</a></h2>
+<p>Export micro service can also run on the same server as Izenda back-end application. For installation on same server, follow the steps mentioned here <a class="reference internal" href=".export_micro_service.html"><span class="doc">Export Micro Service</span></a></p>
+<div class="section" id="id1">
+<h3>Pre-deployment steps<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node JS</strong></p>
+<ol class="arabic simple">
+<li>Izenda Export service needs Node JS runtime environment to execute. Download and install Node JS from <code class="docutils literal"><span class="pre">node-v12.21.0-x64.msi</span></code> by navigating to <a class="reference external" href="https://nodejs.org/dist/latest-v12.x/">https://nodejs.org/dist/latest-v12.x/</a></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>Deployment steps<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Copy export service at desired location and unzip Export Service archive. Open command prompt in administrative mode and navigate to extracted location. Run following command.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>cd package
+node app.js --port 5775
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">On successful completion of these commands, Export Service will start listening on specified port number.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/service_started_windows.png"><img alt="../_images/service_started_windows.png" src="../_images/service_started_windows.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>Post-deployment steps<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>IIS Reverse Proxy</strong></p>
+<ol class="arabic">
+<li><p class="first">Install Application Request Routing and URL Rewrite Components</p>
+</li>
+<li><p class="first">Open Microsoft Web Platform Installer’s <a class="reference external" href="https://www.microsoft.com/web/downloads/platform.aspx">download page</a>. This can also be opened from IIS Manager Actions panel, “Get New Web Platform Components” link.</p>
+</li>
+<li><p class="first">Download and run the installer.</p>
+</li>
+<li><p class="first">Open Microsoft Web Platform Installer.</p>
+</li>
+<li><p class="first">Search for “Application Request Routing” and click Add.</p>
+</li>
+<li><p class="first">Similarly search for “URL Rewrite 2.0” and click Add.</p>
+</li>
+<li><p class="first">Click Install.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/web-installer.png"><img alt="../_images/web-installer.png" src="../_images/web-installer.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Setup Reverse Proxy in IIS. Open IIS Manager.</p>
+</li>
+<li><p class="first">Select a server node in the tree view on the left hand side and then click on the &#8220;Application Request Routing&#8221; feature.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/arr.png"><img alt="../_images/arr.png" src="../_images/arr.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Check the &#8220;Enable Proxy&#8221; check box. Leave the default values for all the other settings on this page:</p>
+</li>
+<li><p class="first">Select Apply.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/enable-proxy.png"><img alt="../_images/enable-proxy.png" src="../_images/enable-proxy.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Right-click on a server node in the tree view and add a new website.</p>
+</li>
+<li><p class="first">Click the ellipsis (...) button to select the location of the extracted Izenda export service containing the app.js file.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/site.png"><img alt="../_images/site.png" src="../_images/site.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select your website under sites in left side section. Now select “URL Rewrite” option.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/url-rewrite.png"><img alt="../_images/url-rewrite.png" src="../_images/url-rewrite.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Now click on “Add Rule(s)…” in actions section on the right side.</p>
+</li>
+<li><p class="first">Now select Reverse Proxy under inbound and outbound section.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/add-reverse-proxy.png"><img alt="../_images/add-reverse-proxy.png" src="../_images/add-reverse-proxy.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add the server name or IP address with port under inbound rules input box. This is the URL of the export service running locally on the server.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/add-url.png"><img alt="../_images/add-url.png" src="../_images/add-url.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">At this point, the reverse proxy setup has been done.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bi-application-changes">
+<h2>BI Application changes<a class="headerlink" href="#bi-application-changes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal"><span class="pre">EnableExportService</span></code> to <code class="docutils literal"><span class="pre">1</span></code> in <code class="docutils literal"><span class="pre">IzendaSystemSetting</span></code> table.</p>
+</li>
+<li><p class="first">Additionally, make an entry into <code class="docutils literal"><span class="pre">IzendaExportService</span></code> table specifying URL of Export Service. For example:</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;9195E7BE-96A3-4529-985A-C4DC88646FFE&#39;,&#39;http://52.152.230.0:9001&#39;,0);
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="service-scalability">
+<h2>Service Scalability<a class="headerlink" href="#service-scalability" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">This is an optional step.</p>
+</li>
+<li><p class="first">Export micro service is designed to scale out horizontally into multiple instances. A typical use case scenario would be a heavy load on export functionality. In such situations the load will be shared among multiple instances and multiple simultaneous exports will take relatively lesser time.</p>
+</li>
+<li><p class="first">Deployment Steps</p>
+<blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li>Navigate to the location where service is extracted and simply start the service on a different port.</li>
+<li>Additionally, make an entry into IzendaExportService table specifying URL of Export Service. For example, if new service got started on <a class="reference external" href="http://52.152.230.0:9002">http://52.152.230.0:9002</a>, make an entry as following.</li>
+</ol>
+<div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;5A93C3B8-56CF-409E-B45C-2F288732A53F&#39;,&#39;http://52.152.230.0:9002&#39;,0);
+</pre></div>
+</div>
+</div></blockquote>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/micro-services-export-micro-services.png"><img alt="../_images/micro-services-export-micro-services.png" src="../_images/micro-services-export-micro-services.png" style="width: 1024px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Fig. 1 Scaling export micro services</strong></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

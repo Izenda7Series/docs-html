@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Export Micro Service &mdash; Izenda BI 4.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
+        <link rel="next" title="Requirements" href=".nlq_windows.html"/>
+        <link rel="prev" title="Front End Rendering Considerations" href="dev_front_end_considerations.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href=".developer_guide.html">Developer Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#interacting-with-the-izenda-api">Interacting with the Izenda API</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#embedding-izenda">Embedding Izenda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".developer_guide.html#export-micro-service">Export Micro Service</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Export Micro Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-export-micro-service-on-linux">Deploying Export Micro Service on Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-export-micro-service-on-windows">Deploying Export Micro Service on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bi-application-changes">BI Application changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service-scalability">Service Scalability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#configuring-natural-language-query">Configuring Natural Language Query</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#customizing-your-izenda-instance">Customizing Your Izenda Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href=".developer_guide.html#redistributing-the-izenda-documentation">Redistributing the Izenda Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
+        
+      <li>Export Micro Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/dev/.export_micro_service.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="export-micro-service">
+<span id="export-micero-service"></span><h1>Export Micro Service<a class="headerlink" href="#export-micro-service" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deploying-export-micro-service-on-linux">
+<h2>Deploying Export Micro Service on Linux<a class="headerlink" href="#deploying-export-micro-service-on-linux" title="Permalink to this headline">¶</a></h2>
+<p>Export micro service does not required to be installed on same server as Izenda back-end or front-end. It can also run on any separate server. For installation on separate server, follow the steps mentioned here <a class="reference internal" href=".export_micro_service_reverse_proxy.html"><span class="doc">Export Micro Service</span></a> . The only difference is to setup a reverse proxy on web server.</p>
+<div class="section" id="pre-deployment-steps">
+<h3>Pre-deployment steps<a class="headerlink" href="#pre-deployment-steps" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node JS</strong></p>
+<ol class="arabic">
+<li><p class="first">Izenda Export service needs Node JS runtime environment to execute. Login as root user and run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo nodejs -v
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>PM2</strong></p>
+<ol class="arabic">
+<li><p class="first">Izenda Export service leverages PM2 as process manager. Login as root user and run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo npm install pm2@4.5.0 -g
+sudo pm2 --version
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="deployment-steps">
+<h3>Deployment steps<a class="headerlink" href="#deployment-steps" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Login as root user and copy Export Service at desired location. Run following commands.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>tar -xvf &lt;export service archive&gt;
+cd package
+sudo pm2 start app.js -- --port &lt;port number&gt;
+sudo pm2 startup systemd
+sudo pm2 save
+sudo pm2 list
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">On successful completion of these commands, Export Service will start listening on specified port number.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/service_started_linux.png"><img alt="../_images/service_started_linux.png" src="../_images/service_started_linux.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="deploying-export-micro-service-on-windows">
+<h2>Deploying Export Micro Service on Windows<a class="headerlink" href="#deploying-export-micro-service-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Export micro service does not required to be installed on same server as Izenda back-end or front-end. It can also run on any separate server. For installation on separate server, follow the steps mentioned here <a class="reference internal" href=".export_micro_service_reverse_proxy.html"><span class="doc">Export Micro Service</span></a> . The only difference is to setup a reverse proxy on web server.</p>
+<div class="section" id="id1">
+<h3>Pre-deployment steps<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node JS</strong></p>
+<ol class="arabic simple">
+<li>Izenda Export service needs Node JS runtime environment to execute. Download and install Node JS from <code class="docutils literal"><span class="pre">node-v12.21.0-x64.msi</span></code> by navigating to <a class="reference external" href="https://nodejs.org/dist/latest-v12.x/">https://nodejs.org/dist/latest-v12.x/</a></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>Deployment steps<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Copy export service at desired location and unzip Export Service archive. Open command prompt in administrative mode and navigate to extracted location. Run following command.</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>cd package
+node app.js --port 5775
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">On successful completion of these commands, Export Service will start listening on specified port number.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/service_started_windows.png"><img alt="../_images/service_started_windows.png" src="../_images/service_started_windows.png" style="width: 653px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bi-application-changes">
+<h2>BI Application changes<a class="headerlink" href="#bi-application-changes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal"><span class="pre">EnableExportService</span></code> to <code class="docutils literal"><span class="pre">1</span></code> in <code class="docutils literal"><span class="pre">IzendaSystemSetting</span></code> table.</p>
+</li>
+<li><p class="first">Additionally, make an entry into <code class="docutils literal"><span class="pre">IzendaExportService</span></code> table specifying URL of Export Service. For example:</p>
+<blockquote>
+<div><div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;9195E7BE-96A3-4529-985A-C4DC88646FFE&#39;,&#39;http://localhost:5775&#39;,0);
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="service-scalability">
+<h2>Service Scalability<a class="headerlink" href="#service-scalability" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">This is an optional step.</p>
+</li>
+<li><p class="first">Export micro service is designed to scale out horizontally into multiple instances. A typical use case scenario would be a heavy load on export functionality. In such situations the load will be shared among multiple instances and multiple simultaneous exports will take relatively lesser time.</p>
+</li>
+<li><p class="first">Deployment Steps</p>
+<blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li>Navigate to the location where service is extracted and simply start the service on a different port.</li>
+<li>Additionally, make an entry into IzendaExportService table specifying URL of Export Service. For example, if new service got started on <a class="reference external" href="http://localhost:5776">http://localhost:5776</a>, make an entry as following.</li>
+</ol>
+<div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;5A93C3B8-56CF-409E-B45C-2F288732A53F&#39;,&#39;http://localhost:5776&#39;,0);
+</pre></div>
+</div>
+</div></blockquote>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/micro-services-export-micro-services.png"><img alt="../_images/micro-services-export-micro-services.png" src="../_images/micro-services-export-micro-services.png" style="width: 1024px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Fig. 1 Scaling export micro services</strong></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".nlq_windows.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dev_front_end_considerations.html" class="btn btn-neutral" title="Front End Rendering Considerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

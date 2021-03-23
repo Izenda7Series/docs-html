@@ -18,5 +18,5 @@ Izenda supports all popular web browsers:
       -  latest 3 versions
    *  -  Safari
       -  latest 3 versions
-   *  -  Internet Explorer
-      -  10 and 11
+   *  -  Edge
+      -  latest 3 versions

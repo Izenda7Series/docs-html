@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generic Queue mechanism for heavy load operations &mdash; Izenda BI 4.0.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../_static/logo2.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href=".user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.system_reference.html">System Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Generic Queue mechanism for heavy load operations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ui/doc_generic_queue_mechanish_for_heavy_load_operations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generic-queue-mechanism-for-heavy-load-operations">
+<span id="heavy-load-queue"></span><h1>Generic Queue mechanism for heavy load operations<a class="headerlink" href="#generic-queue-mechanism-for-heavy-load-operations" title="Permalink to this headline">¶</a></h1>
+<p>Izenda implemented a scalable solution to support the Task queue job where alerts and subscriptions which start at the same time will be performed sequentially to handle the load of the server.</p>
+<p>The Queue mechanism provides the possibility for execution of heavy load operations:</p>
+<ul class="simple">
+<li>Sequentially, one by one, occupying strictly predetermined number of threads to avoid Izenda instance (or service node) overload</li>
+<li>Allowing for both embedded (native) workers, and easily implementable external workers, to distribute load related to jobs execution across dynamically spun-up services/nodes</li>
+<li><dl class="first docutils">
+<dt>In a failproof manner:</dt>
+<dd><ul class="first last">
+<li>Failed/crashed workers get re-instantiated;</li>
+<li>Halfway terminated jobs will be executed again;</li>
+<li>Jobs exceeded execution timeout, get “timedOut” flag to avoid repeat tries to execute;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The implemented Queue mechanism consists of two storages (tables) in Repository DB.</p>
+<p>First one is Queued Tasks storage, which both keeps, and orders (prioritizes) Tasks for sequential execution. Currently it behaves as a simple FIFO buffer, so Tasks are dispatched for processing in the order, in which they were inserted into Queue.</p>
+<p>Second is Registered Workers, which keeps IDs of “known” Workers, and tracks their health by regular “alive” pings issued by Workers. Worker can be any service/node/routine/webapp, which is able to process some of Izenda jobs, and implements simplest interactions with Queue Logic module in Izenda. Each Worker can request and serve either one kind of Task/Job, or a few of them, or even all of them - whatever is its implementation.</p>
+<p>Also, there are internal (embedded) Workers in Izenda backend, which can process all kinds of Tasks/Jobs, in case when customer doesn’t want to deploy external services/Workers.</p>
+<p>The Queue Logic module in the Izenda backend exposes following methods (endpoints) for Workers:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong>Enqueue Task</strong></dt>
+<dd><ul class="first last">
+<li>It accepts <strong>(enum) JobKind</strong>, <strong>(Guid) JobEntityId</strong> and <strong>(string) JobData</strong> values, representing / describing data related to job to be performed.</li>
+<li>Note that sometimes Workers will need be able to pull some additional data.</li>
+<li>For example, pull the <strong>Subscription</strong> object from WebAPI / Repository by its <strong>Id</strong> provided in <strong>JobEntityId</strong>.</li>
+<li>It returns the <strong>(Guid) Id</strong> of the enqueued Task, to allow for its progress tracking.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Register Worker</strong></dt>
+<dd><ul class="first last">
+<li>It accepts just an empty request, and returns the <strong>(Guid) Id</strong>, which will identify given worker</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Alive Ping</strong></dt>
+<dd><ul class="first last">
+<li>It accepts the request with <strong>(Guid) Id</strong> identifying given Worker, and prolongs its “health / validity” for another period of time (specified in Queue mechanism configuration).</li>
+<li>It returns <strong>(bool) True</strong> if Worker validity was successfully prolonged, and <strong>(bool) False</strong> if Worker was somehow considered expired / corrupted, and should recycle.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Dequeue Task</strong></dt>
+<dd><ul class="first last">
+<li>It accepts the request with Worker-identifying <strong>(Guid) Id</strong>, checks for Worker “health / validity” in <strong>RegisteredWorkers</strong> table, and if it’s fine, then picks “oldest” Task from QueueTasks table and returns it to given Worker in response for processing</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>Set Job Execution Outcome</strong></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>It accepts the <strong>(Guid) Id</strong> of Task, the <strong>(enum) Outcome</strong> (which can be <strong>Succeeded</strong>, <strong>Failed</strong>, or <strong>TimedOut</strong>), and the <strong>(Guid) Id</strong> of the Worker, (because there is possibility that some Worker implementations can dequeue and process a few Tasks simultaneously).</li>
+<li>Then it checks for given Worker validity, and if it’s fine, then updates Task, effectively removing it from the Queue.</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_static/images/Generic-queue-mechanism.PNG" src="_static/images/Generic-queue-mechanism.PNG" />
+</div>
+<div class="section" id="recommended-workflow">
+<h2>Recommended Workflow<a class="headerlink" href="#recommended-workflow" title="Permalink to this headline">¶</a></h2>
+<p>There are no strict requirements for Workers implementations apart from mentioned above communication with Izenda backend. However, there is a recommended workflow for any Worker implementation. The Izenda internal (embedded) ones do follow this workflow as well:</p>
+<ol class="arabic simple">
+<li>Send Register Worker request</li>
+</ol>
+<ul class="simple">
+<li>Repeat Alive Ping requests every N seconds (60 seconds in current configuration of Izenda embedded Workers) in parallel with all activity in #2 - #7 items</li>
+<li>If Alive Ping request got “False” response, abandon all work, and reinitialize Worker / Jump to #1</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li>Send Task Dequeue request</li>
+</ol>
+<ul class="simple">
+<li>If there is no Task dispatched, then jump to #6</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>Process the dispatched Task</li>
+<li>Send Task Outcome Report request</li>
+<li>Return to #2</li>
+<li>Sleep for N seconds (60 seconds in current configuration of Izenda embedded Workers)</li>
+<li>Return to #2</li>
+</ol>
+<div class="figure align-center">
+<img alt="_static/images/Generic-queue-mechanism-1.PNG" src="_static/images/Generic-queue-mechanism-1.PNG" />
+</div>
+<p>Such behavior provides the most efficient approach to Tasks dispatching/processing - while some Tasks exist in Queue, the Worker processes them continuously, one after another without delays, but at the same time sequentially, thus occupying only one thread, without risk of overloading whole machine / node. Once Tasks ended and the Queue empty, Worker will wait for new Tasks to appear, hitting <strong>RepositoryDB</strong> just one time per N seconds to check new Tasks presence, but don’t provide load on the <strong>RepositoryDB</strong>.</p>
+<p>On the standalone / dedicated service node, the number of Workers can be equal (or even exceed) the number of CPU cores.</p>
+<p>On the Izenda backend instance, each embedded Worker always uses only one thread/core. Thus, the value of setting for number of simultaneously acting Workers (“<strong>izenda.tasksqueue.workercount</strong>”) is recommended to be ~25% - 50% of total CPU cores amount on the machine, to always have a spare resources for WebAPI/UI requests processing.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Izenda.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

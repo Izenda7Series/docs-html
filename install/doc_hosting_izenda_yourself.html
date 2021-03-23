@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hosting Izenda &mdash; Izenda BI 3.11.4 documentation</title>
+  <title>Hosting Izenda &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.11.4 documentation" href="../index.html"/>
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
         <link rel="up" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/>
         <link rel="next" title="Installation Guide" href="doc_installation_guide.html"/>
         <link rel="prev" title="Getting Started: Stand-alone Deployment" href=".stand_alone_deployment.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                3.11
+                4.0
               </div>
             
           
@@ -108,7 +108,6 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Hosting Izenda</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#minimum-hardware-requirements">Minimum Hardware Requirements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#required-software-for-oracle-data-source">Required Software for Oracle Data Source</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="doc_installation_guide.html">Installation Guide</a></li>
@@ -205,11 +204,9 @@ For small data sources, however, a single server can be used.</p>
 <div class="section" id="minimum-hardware-requirements">
 <h2>Minimum Hardware Requirements<a class="headerlink" href="#minimum-hardware-requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Processor: 4 Core CPU (3.6Ghz)</li>
-<li>Free Hard Disk Space: 1 GB<ul>
+<li>Processor: 8 Core CPU (3.6Ghz)</li>
+<li>Free Hard Disk Space: 10 GB</li>
 <li>SSD drives are recommended for optimal database performance</li>
-</ul>
-</li>
 <li>RAM: 16 GB</li>
 </ul>
 <div class="admonition note">
@@ -220,27 +217,19 @@ For small data sources, however, a single server can be used.</p>
 <div class="section" id="software-requirements">
 <h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Operating System: Windows Server 2008R2 or newer</li>
-<li>Web Server: IIS7 or newer with ASP.NET (see <a class="reference internal" href="doc_installation_guide.html#install-asp-net-4-5-and-url-rewrite-components"><span class="std std-ref">Install ASP.NET 4.5 and URL Rewrite Components</span></a>)</li>
-<li>.NET Application Pool (CLR): 4.0 Integrated</li>
-<li>.NET Framework: .NET 4.0 or higher</li>
-<li>Supported Database servers, we recommend using a separate database for your Izenda configuration database as there are updates and changes which must be made during any upgrades for new features and performance:<ul>
-<li>Microsoft SQL Server 2008 or later</li>
+<li>Operating System: Windows Server 20016 or newer , Ubuntu 18.04 or newer , Linux latest versions</li>
+<li>Web Server: IIS8 or newer with ASP Net Core 3.1 runtime for windows , Apache and Nginx latest versions for Linux</li>
+<li>.NET Core: .NET 3.1</li>
+<li><dl class="first docutils">
+<dt>Supported Database servers, we recommend using a separate database for your Izenda configuration database as there are updates and changes which must be made during any upgrades for new features and performance:</dt>
+<dd><ul class="first last">
+<li>Microsoft SQL Server 2012 or later</li>
 <li>Microsoft Azure</li>
-<li>Oracle 10.2 or later</li>
-<li>MySQL</li>
-<li>PostgreSQL</li>
+<li>PostgreSQL - 10.5 or later</li>
 </ul>
+</dd>
+</dl>
 </li>
-</ul>
-</div>
-<div class="section" id="required-software-for-oracle-data-source">
-<h2>Required Software for Oracle Data Source<a class="headerlink" href="#required-software-for-oracle-data-source" title="Permalink to this headline">¶</a></h2>
-<p>To access Oracle database, Izenda uses the Oracle Data Provider for .NET. This driver uses some DLLs that may be missing from some machines.</p>
-<p>If having issues with <strong>Oracle.ManagedDataAccessDTC.DLL</strong>, please install the Microsoft Visual C++ 2010 Redistributable:</p>
-<ul class="simple">
-<li>For Windows Server 2008 R2 x64, install the <a class="reference external" href="http://www.microsoft.com/en-us/download/details.aspx?id=14632">Microsoft Visual C++ 2010 Redistributable Package</a></li>
-<li>For Windows Server 2012 x64, install the <a class="reference external" href="http://www.microsoft.com/en-us/download/details.aspx?id=13523">Microsoft Visual C++ 2010 SP1 Redistributable Package</a></li>
 </ul>
 </div>
 </div>
@@ -267,7 +256,7 @@ For small data sources, however, a single server can be used.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Izenda.
+        &copy; Copyright 2021, Izenda.
 
     </p>
   </div>
@@ -289,7 +278,7 @@ For small data sources, however, a single server can be used.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.11.4',
+            VERSION:'4.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

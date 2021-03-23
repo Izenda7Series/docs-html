@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>System Configuration/Async Exporting &mdash; Izenda BI 3.11.4 documentation</title>
+  <title>System Configuration/Async Exporting &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 3.11.4 documentation" href="../index.html"/> 
+    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                3.11
+                4.0
               </div>
             
           
@@ -181,7 +181,7 @@ sending options.</p>
 <li><p class="first">In browser, log in to Izenda as a user with System Configuration
 permission.</p>
 </li>
-<li><p class="first">Click Settings, then System Configuration then Email in the left
+<li><p class="first">Click Settings, then System Configuration then Exporting in the left
 menu.</p>
 </li>
 <li><p class="first">Select the Setting Level: either System or a specific tenant.</p>
@@ -196,11 +196,81 @@ menu.</p>
 <li><p class="first">Turn ON the Exporting Service and enter the details into the configuration seciton</p>
 </li>
 <li><p class="first">Save the configuration.</p>
-<div class="figure" id="system-configuration-async">
-<a class="reference internal image-reference" href="../_images/System_Config_Async.png"><img alt="../_images/System_Config_Async.png" src="../_images/System_Config_Async.png" style="width: 652px;" /></a>
+<blockquote>
+<div><blockquote>
+<div><div class="figure" id="system-configuration-async">
+<img alt="../_images/System_Config_Async.png" src="../_images/System_Config_Async.png" />
 </div>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">width:</th><td class="field-body">652px</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 </li>
 </ol>
+<div class="section" id="node-based-deployment-support">
+<h2>Node Based Deployment Support<a class="headerlink" href="#node-based-deployment-support" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>New values have been added to the application settings to help with deployment and scaling</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>izenda.jobs.routineprovisioned</strong><ul>
+<li>Page layouts are immutable.</li>
+<li>CSS Stylesheets and basic logo replacement available.</li>
+</ul>
+</li>
+<li><strong>izenda.jobs.asyncjobsenabled</strong><ul>
+<li>All&nbsp;async&nbsp;exporting jobs will scale using this setting</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>New values have been added to the application settings to help with resource usage</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>AsyncJobMaxCpuUsage</strong><ul>
+<li>This setting checks total CPU usage in percentages and stops executing jobs when this threshold is met</li>
+<li>By default, this is set to 70</li>
+</ul>
+</li>
+<li><strong>AsyncJobMaxRamUsage</strong><ul>
+<li>This setting checks the total memory in use in percentages and stops executing when this threshold is me</li>
+<li>By default, this is set to 80</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>If you get the following error on Windows environment</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2021-03-16 13:37:51,939 [30   ][ERROR] [(null)] [(null)] [JobRunShell] Job ExportQueue.ExportQueueJob threw an unhandled Exception:</span>
+<span class="go">System.UnauthorizedAccessException: Access to the registry key &#39;Global&#39; is denied.</span>
+<span class="go">at Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)</span>
+<span class="go">at Microsoft.Win32.RegistryKey.InternalGetValueCore(String name, Object defaultValue, Boolean doNotExpand)</span>
+<span class="go">at System.Diagnostics.PerformanceMonitor.GetData(String item)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Please update the app pools permission using following the commands</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">net localgroup &quot;Performance Monitor Users&quot; &quot;IIS APPPOOL\&lt;POOL NAME&gt;&quot; /add</span>
+<span class="go">net localgroup &quot;Performance Log Users&quot; &quot;IIS APPPOOL\&lt;POOL NAME&gt;&quot; /add</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -216,7 +286,7 @@ menu.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Izenda.
+        &copy; Copyright 2021, Izenda.
 
     </p>
   </div>
@@ -238,7 +308,7 @@ menu.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'3.11.4',
+            VERSION:'4.0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
