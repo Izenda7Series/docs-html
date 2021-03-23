@@ -16,9 +16,9 @@ Release Notes
 v4.0.0 Core Release -- March 23rd, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Breaking Changes
-^^^^^^^^^
+.. warning::
+   Breaking Changes
+   ^^^^^^^^^
 
    - Front-end Updates
       - React upgraded from 15.6 to 16.3
@@ -57,7 +57,7 @@ FEATURES
    - For more overview information on the new designer, see our :ref:`Docs_2.0` page
 - Exporting Microservice
    - Exporting functionalities can now leverage the new web engine and a scalable node-based solution
-   - For more information, please see the :ref:`Export_Micero_Service` and :ref:`Export_Micero_Service_Reverse_Proxy` pages
+   - For more information, please see the :ref:`Export_Micero_Service` page
 - Scheduled Task Queue
    - A new scalable solution is present to handle alerts and subscriptions that start at the same time so they may be performed sequentially and avoid overloading the server
    - For information on this process, please see our :ref:`Heavy_Load_Queue_` page

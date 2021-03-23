@@ -7,9 +7,9 @@ Release Details
 v4.0.0 Core Release -- March 23rd, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Breaking Changes
-^^^^^^^^^
+.. warning::
+   Breaking Changes
+   ^^^^^^^^^
 
    - Front-end Updates
       - React upgraded from 15.6 to 16.3
