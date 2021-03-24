@@ -7,34 +7,32 @@ Release Details
 v4.0.0 Core Release -- March 23rd, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning::
-   Breaking Changes
-   ^^^^^^^^^
 
-   - Front-end Updates
-      - React upgraded from 15.6 to 16.3
-         - `React 15 to 16 migration guide <https://reactjs.org/blog/2017/09/26/react-v16.0.html>`_
-      - React-dom upgraded from 15.6 to 16.3
-      - Mobx upgraded from 2.4.2 to 5.15
-         - `Mobx 3 to 4 migration guide <https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4>`_
-         - `Mobx 4 to 5 migration guide <https://mobx.js.org/migrating-from-4-or-5.html>`_
-      - Mobx-react upgraded from 3.5 to 5.2
-      - Bootstrap upgraded from 3.3.7 to 3.4.1
-      - Babel upgraded from 6 to 7
-         - `Babel 7 migration guide <https://babeljs.io/docs/en/v7-migration>`_
-   - .Net Core 3.1 & .Net Framework 472
-      - Newtonsoft.Json - 12.0.1
-      - Log4Net - 2.0.12
-   - Exporting Engine 
-      - Izenda has updated the exporting process from WebKit to the Blink Engine
-         - This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine.
-         - Please deploy the Izenda docker within a Linux container to resolve this
-   - Map Provisioning Changes
-      - The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance
-   - Encryption Changes
-      - Izenda's encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance
-   - Excel Driver
-      - Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change
+Breaking Changes
+^^^^^^^^^
+
+- Front-end Updates
+   - React upgraded from 15.6 to 16.3
+     - `React 15 to 16 migration guide <https://reactjs.org/blog/2017/09/26/react-v16.0.html>`_
+   - React-dom upgraded from 15.6 to 16.3
+   - Mobx upgraded from 2.4.2 to 5.15
+      - `Mobx 3 to 4 migration guide <https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4>`_
+      - `Mobx 4 to 5 migration guide <https://mobx.js.org/migrating-from-4-or-5.html>`_
+   - Mobx-react upgraded from 3.5 to 5.2
+   - Bootstrap upgraded from 3.3.7 to 3.4.1
+   - Babel upgraded from 6 to 7
+      - `Babel 7 migration guide <https://babeljs.io/docs/en/v7-migration>`_
+- .Net Core 3.1
+   - Newtonsoft.Json - 12.0.1
+   - Log4Net - 2.0.12
+- Exporting Engine 
+   - Izenda has updated the exporting process from WebKit to the Blink Engine
+- Map Provisioning Changes
+   - The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance
+- Encryption Changes
+   - Izenda's encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance
+- Excel Driver
+   - Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change
 
 FEATURES
 ^^^^^^^^^
@@ -48,7 +46,7 @@ FEATURES
    - For more overview information on the new designer, see our :ref:`Docs_2.0` page
 - Exporting Microservice
    - Exporting functionalities can now leverage the new web engine and a scalable node-based solution
-   - For more information, please see the :ref:`Export_Micero_Service` and :ref:`Export_Micero_Service_Reverse_Proxy` pages
+   - For more information, please see the :ref:`Export_Micero_Service`
 - Scheduled Task Queue
    - A new scalable solution is present to handle alerts and subscriptions that start at the same time so they may be performed sequentially and avoid overloading the server
    - For information on this process, please see our :ref:`Heavy_Load_Queue_` page
