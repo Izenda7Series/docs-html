@@ -4,11 +4,13 @@
 Breaking Changes
 ================
 
-v4.0.0 April 2, 2021
+v4.0.0 March 24, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. warning::
   - Front-end Updates
+	
 	Izenda updated the following frontend libraries and dependencies customer who integrated izenda frontend need to modify their frontend if they are affected by the below library changes.
+	
 	- React upgraded from 15.6 to 16.3
 	  - `React 15 to 16 migration guide <https://reactjs.org/blog/2017/09/26/react-v16.0.html>`_
 	  - React-dom upgraded from 15.6 to 16.3
@@ -19,19 +21,24 @@ v4.0.0 April 2, 2021
 	- Bootstrap upgraded from 3.3.7 to 3.4.1
 	- Babel upgraded from 6 to 7
 	  - `Babel 7 migration guide <https://babeljs.io/docs/en/v7-migration>`_
+  
   - .Net Core 3.1
-	- If you currently use the IAdHocExtension/IzendaCustomBootstrapper classes you will need to rebuild these into a new assembly using our v3.x dlls.
+    - If you currently use the IAdHocExtension/IzendaCustomBootstrapper classes you will need to rebuild these into a new assembly using our v4.x.x dlls.
 	- if your current deployment of izenda APIs are under the .net full framework then your deployment needs to migrate to .netcore 3.1
-  - Exporting Engine 
+  
+  - Exporting Engine
 	- Izenda has updated the exporting process from WebKit to the Blink Engine
-	  - This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine.
-	  - Please deploy the Izenda docker within a Linux container to resolve this
+	- This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine.
+	- Please deploy the Izenda docker within a Linux container to resolve this
+  
   - Map Provisioning Changes
     - The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance
+  
   - Encryption Changes
     - Izenda's encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance
 	- Updating your existing values into your izenda config database you need to log in as administrator and provision encryption jobs from the settings tab.
 	- Izenda strongly recommends updating these encryption methods also it is strongly recommended to take backup of the izenda config database.
+  
   - Excel Driver
     - Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change
 

@@ -4,7 +4,7 @@
 Release Details
 ==============
 
-v4.0.0 Core Release -- March 23rd, 2021
+v4.0.0 Core Release -- March 24th, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -36,7 +36,7 @@ Breaking Changes
 
 FEATURES
 ^^^^^^^^^
-- New Report Designer
+- New Report Designer (Beta)
    - A new report designer can be enabled/disabled with the Report Designer 2.0 permission at the tenant or role level
    - Functional Limitations of the new designer include:
       - Report header/footer is not currently supported
@@ -44,7 +44,7 @@ FEATURES
       - It only supports the following visualizations:
          - Vertical Grids, Horizontal Grids, Line Charts, and Column Charts
    - For more overview information on the new designer, see our :ref:`Docs_2.0` page
-- Exporting Microservice
+- Exporting Microservice (Beta)
    - Exporting functionalities can now leverage the new web engine and a scalable node-based solution
    - For more information, please see the :ref:`Export_Micero_Service`
 - Scheduled Task Queue
