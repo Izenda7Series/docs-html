@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>REST API Test &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/>
-        <link rel="next" title="ReactJS to manage a scalar value" href="code_react_manage_a_scalar_value.html"/>
-        <link rel="prev" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ReactJS to manage a scalar value" href="code_react_manage_a_scalar_value.html" />
+    <link rel="prev" title="Basic API Client Code Samples" href=".basic_api_client_code_samples.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -137,13 +133,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -151,10 +148,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -174,7 +174,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
@@ -185,7 +185,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/code_rest_api_test.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -206,19 +206,19 @@ REST API then displays the response.</p>
 <ul class="simple">
 <li>We will test with the <a class="reference internal" href="../ref/api_advanced_settings.html#get-advancedsetting-category-tenant-id"><span class="std std-ref">GET advancedSetting/category/(tenant_id)</span></a> API.</li>
 <li>We will use JQuery ajax to call the API.</li>
-<li>We will display the response in the browser&#8217;s JavaScript Console.</li>
+<li>We will display the response in the browser’s JavaScript Console.</li>
 </ul>
 <div class="section" id="folder-preparation">
 <h2>Folder preparation<a class="headerlink" href="#folder-preparation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Create a folder named &#8220;ui_react_examples&#8221; in our web server root
+<li><p class="first">Create a folder named “ui_react_examples” in our web server root
 folder.</p>
 <blockquote>
 <div><p>A web server is not required for our tutorials. In case of none,
-just create the &#8220;ui_react_examples&#8221; folder anywhere available.</p>
+just create the “ui_react_examples” folder anywhere available.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Inside it, create a folder named &#8220;vendor&#8221;. This is where we will put
+<li><p class="first">Inside it, create a folder named “vendor”. This is where we will put
 the JavaScript library files.</p>
 </li>
 <li><p class="first">If using a web server, check the permissions to make sure that it can
@@ -249,7 +249,7 @@ versions:</p>
 <ul>
 <li><p class="first">Production, which has been minified and compressed.</p>
 <blockquote>
-<div><p>The filename for production version ends with <code class="docutils literal"><span class="pre">.min.js</span></code>.</p>
+<div><p>The filename for production version ends with <code class="docutils literal notranslate"><span class="pre">.min.js</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Development, which contains uncompressed and readable code.</p>
@@ -261,9 +261,9 @@ versions:</p>
 <li>Include it from a content delivery network such as Google or
 Microsoft.<ul>
 <li>The link for Google hosted library: <br clear="right" />
-<code class="docutils literal"><span class="pre">https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js</span></code></li>
 <li>The link for Microsoft hosted library: <br clear="right" />
-<code class="docutils literal"><span class="pre">http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js</span></code></li>
 </ul>
 </li>
 <li>Download it and put into a local folder on our web server, then
@@ -273,18 +273,18 @@ include the local file in our web page.</li>
 <ol class="arabic simple">
 <li>Go to <a class="reference external" href="http://jquery.com/download/">http://jquery.com/download/</a> and download the uncompressed,
 development version (jquery-1.12.2.js).</li>
-<li>Put it into the &#8220;ui_react_examples/vendor&#8221; folder.</li>
+<li>Put it into the “ui_react_examples/vendor” folder.</li>
 </ol>
 </div>
 <div class="section" id="boilerplate-html-page">
 <h2>Boilerplate HTML page<a class="headerlink" href="#boilerplate-html-page" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">In &#8220;ui_react_examples&#8221; folder, create a blank text file and name it
-&#8220;REST API Test.html&#8221;.</p>
+<li><p class="first">In “ui_react_examples” folder, create a blank text file and name it
+“REST API Test.html”.</p>
 </li>
 <li><p class="first">Edit the file with a text editor such as Notepad or Notepad++ and
 paste the following boilerplate HTML code:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;vendor/jquery-1.12.2.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -299,15 +299,15 @@ paste the following boilerplate HTML code:</p>
 </div>
 </li>
 </ol>
-<p>For production web site, we will replace <code class="docutils literal"><span class="pre">vendor/jquery-1.12.2.js</span></code>
+<p>For production web site, we will replace <code class="docutils literal notranslate"><span class="pre">vendor/jquery-1.12.2.js</span></code>
 with the link for Google or Microsoft hosted, minified and compressed
 library.</p>
 </div>
 <div class="section" id="code-sample-for-calling-rest-api">
 <span id="id1"></span><h2>Code sample for calling REST API<a class="headerlink" href="#code-sample-for-calling-rest-api" title="Permalink to this headline">¶</a></h2>
-<p>Edit the &#8220;REST API Test.html&#8221; file to replace <code class="docutils literal"><span class="pre">//</span> <span class="pre">TODO</span></code> with our
+<p>Edit the “REST API Test.html” file to replace <code class="docutils literal notranslate"><span class="pre">//</span> <span class="pre">TODO</span></code> with our
 JQuery ajax call:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">access_token</span><span class="o">:</span><span class="s2">&quot;&lt;the token returned from the login API&gt;&quot;</span>
    <span class="p">},</span>
@@ -323,7 +323,7 @@ JQuery ajax call:</p>
 <span class="p">})</span>
 </pre></div>
 </div>
-<p>The url <code class="docutils literal"><span class="pre">http://127.0.0.1:8888/api/advancedSetting/category</span></code> should be updated with the correct IP and port of our API server.</p>
+<p>The url <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/api/advancedSetting/category</span></code> should be updated with the correct IP and port of our API server.</p>
 <p>In this JQuery ajax call, we:</p>
 <ol class="arabic simple">
 <li>fill out the url.</li>
@@ -331,9 +331,9 @@ JQuery ajax call:</p>
 <li>set the content type application/json.</li>
 <li>register two anonymous call-back functions for success and error
 cases.</li>
-<li>write the call-back functions to format as text (<code class="docutils literal"><span class="pre">JSON.stringify</span></code>)
-the response from server, then display to the browser&#8217;s JavaScript
-Console (<code class="docutils literal"><span class="pre">console.log</span></code>).</li>
+<li>write the call-back functions to format as text (<code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code>)
+the response from server, then display to the browser’s JavaScript
+Console (<code class="docutils literal notranslate"><span class="pre">console.log</span></code>).</li>
 </ol>
 </div>
 <div class="section" id="view-the-web-page-in-browser-and-the-javascript-console">
@@ -343,8 +343,8 @@ Console (<code class="docutils literal"><span class="pre">console.log</span></co
 available.</p>
 <ul class="simple">
 <li>To open the file through a web server, we must know the address
-and port of the server (e.g. <code class="docutils literal"><span class="pre">http://127.0.0.1:81</span></code>), then add
-<code class="docutils literal"><span class="pre">/ui_react_examples/REST</span> <span class="pre">API</span> <span class="pre">Test.html</span></code> and type in the address
+and port of the server (e.g. <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:81</span></code>), then add
+<code class="docutils literal notranslate"><span class="pre">/ui_react_examples/REST</span> <span class="pre">API</span> <span class="pre">Test.html</span></code> and type in the address
 bar.</li>
 <li>To open the file locally, in the browser press Ctrl + O or go to
 File, Open then browse to the file location and open it.</li>
@@ -352,7 +352,7 @@ File, Open then browse to the file location and open it.</li>
 </li>
 <li><p class="first">After the file has been opened, activate the JavaScript Console. In
 most browsers, this can be done by pressing F12 then choosing
-&#8220;Console&#8221; menu item.</p>
+“Console” menu item.</p>
 <blockquote>
 <div><p>For more help, this link has the instructions to open the
 JavaScript Console on many browsers
@@ -363,7 +363,7 @@ JavaScript Console on many browsers
 similar to this:</p>
 </li>
 </ol>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_1&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;cf484173-e03a-46a8-aa23-c628e28a6e9e&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1300000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_2&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;04d67b3c-e93e-4b93-88e2-e4c6199d9671&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1130000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">}]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_1&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;cf484173-e03a-46a8-aa23-c628e28a6e9e&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1300000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Category_2&quot;</span><span class="p">,</span><span class="nt">&quot;tenantId&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;04d67b3c-e93e-4b93-88e2-e4c6199d9671&quot;</span><span class="p">,</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;modified&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T04:43:01.1130000-07:00&quot;</span><span class="p">,</span><span class="nt">&quot;dateTimeNow&quot;</span><span class="p">:</span><span class="s2">&quot;2016-05-06T06:44:15.3911108Z&quot;</span><span class="p">}]</span>
 </pre></div>
 </div>
 </div>
@@ -381,34 +381,32 @@ similar to this:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="code_react_manage_a_scalar_value.html" class="btn btn-neutral float-right" title="ReactJS to manage a scalar value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href=".basic_api_client_code_samples.html" class="btn btn-neutral" title="Basic API Client Code Samples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="code_react_manage_a_scalar_value.html" class="btn btn-neutral float-right" title="ReactJS to manage a scalar value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href=".basic_api_client_code_samples.html" class="btn btn-neutral float-left" title="Basic API Client Code Samples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -417,37 +415,15 @@ similar to this:</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Security Recommendations &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Administrator Guide" href=".administrator_guide.html"/>
-        <link rel="next" title="Izenda Copy Console" href="doc_copy_console.html"/>
-        <link rel="prev" title="Copy Management" href="doc_copy_management.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Izenda Copy Console" href="doc_copy_console.html" />
+    <link rel="prev" title="Copy Management" href="doc_copy_management.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -123,7 +119,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#embedded-security-deployment-mode-1">Embedded Security - Deployment Mode 1</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#rsa-keys">RSA Keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#izenda-s-rsa-key-generator">Izenda&#8217;s RSA Key Generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#izenda-s-rsa-key-generator">Izenda’s RSA Key Generator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#token-and-key-security">Token and Key Security</a></li>
 </ul>
 </li>
@@ -147,13 +143,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -161,10 +158,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -184,7 +184,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".administrator_guide.html">Administrator Guide</a> &raquo;</li>
         
@@ -193,7 +193,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/ui/doc_security_recommendations.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -220,16 +220,16 @@ practice to show original error messages to only local clients (opened
 on the server box), and user-friendly error messages to remote clients
 (end-users).</p>
 <p>For example, this erroneous API call
-<code class="docutils literal"><span class="pre">http://127.0.0.1:8888/api/report/info/foo</span></code> will
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/api/report/info/foo</span></code> will
 result in a 500 Internal Server Error:</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;The application has encountered an unknown error. Please contact System Administrator for further information.&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>On the other hand, end-users should be presented with a non-technical
 and more friendly message such as:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>Something&#39;s wrong!
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Something&#39;s wrong!
 
 It looks like something is broken in our system.
 Don&#39;t panic - the situation has been logged and we will get to it as soon as we can.
@@ -239,7 +239,7 @@ Don&#39;t panic - the situation has been logged and we will get to it as soon as
 <div class="toggle docutils container">
 <div class="header docutils container">
 Error page HTML source</div>
-<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -263,16 +263,16 @@ Error page HTML source</div>
 </div>
 <p>To configure IIS 7.0+:</p>
 <ul class="simple">
-<li>Add the following under <code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>:</li>
+<li>Add the following under <code class="docutils literal notranslate"><span class="pre">&lt;system.webServer&gt;</span></code>:</li>
 </ul>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">httpErrors</span> <span class="na">errorMode</span><span class="o">=</span><span class="s">&quot;DetailedLocalOnly&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">httpErrors</span> <span class="na">errorMode</span><span class="o">=</span><span class="s">&quot;DetailedLocalOnly&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">remove</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">subStatusCode</span><span class="o">=</span><span class="s">&quot;-1&quot;</span> <span class="p">/&gt;</span>
    <span class="p">&lt;</span><span class="nt">error</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">path</span><span class="o">=</span><span class="s">&quot;/ErrorPage.html&quot;</span> <span class="na">responseMode</span><span class="o">=</span><span class="s">&quot;ExecuteURL&quot;</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">httpErrors</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Possible values for <code class="docutils literal"><span class="pre">errorMode</span></code>:<ul>
+<li>Possible values for <code class="docutils literal notranslate"><span class="pre">errorMode</span></code>:<ul>
 <li>DetailedLocalOnly: Returns detailed error information if the
 request is from the local computer, and returns a custom error
 message if the request is from an external computer.</li>
@@ -291,15 +291,15 @@ panel to configure.</li>
 </ul>
 <p>To configure IIS 6.0:</p>
 <ul class="simple">
-<li>Add the following under <code class="docutils literal"><span class="pre">&lt;system.web&gt;</span></code>:</li>
+<li>Add the following under <code class="docutils literal notranslate"><span class="pre">&lt;system.web&gt;</span></code>:</li>
 </ul>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">customErrors</span> <span class="na">mode</span><span class="o">=</span><span class="s">&quot;RemoteOnly&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">customErrors</span> <span class="na">mode</span><span class="o">=</span><span class="s">&quot;RemoteOnly&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">error</span> <span class="na">redirect</span><span class="o">=</span><span class="s">&quot;/ErrorPage.html&quot;</span> <span class="na">statusCode</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">customErrors</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Possible values for <code class="docutils literal"><span class="pre">mode</span></code>:<ul>
+<li>Possible values for <code class="docutils literal notranslate"><span class="pre">mode</span></code>:<ul>
 <li>On: Specifies that custom errors are enabled. If no
 defaultRedirect attribute is specified, users see a generic error.
 The custom errors are shown to the remote clients and to the local
@@ -326,12 +326,12 @@ which may be on another domain. This can be configured using the <a class="refer
 Origin Resource Sharing (CORS)</a> standard.</p>
 <p>To allow calls from only the Front-end site while rejecting others:</p>
 <ol class="arabic simple">
-<li>In Web.config, locate the section <code class="docutils literal"><span class="pre">&lt;system.webServer&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;httpProtocol&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;customHeaders&gt;</span></code>,
-<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;*&quot;</span> <span class="pre">/&gt;</span></code>.</li>
+<li>In Web.config, locate the section <code class="docutils literal notranslate"><span class="pre">&lt;system.webServer&gt;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;httpProtocol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;customHeaders&gt;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;*&quot;</span> <span class="pre">/&gt;</span></code>.</li>
 <li>Change the default value * to the addresses (and ports) of the
 Front-end sites, separated by comma. For example:
-<code class="docutils literal"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;http://www.acme.com,http://www.example.com&quot;</span> <span class="pre">/&gt;</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">&lt;add</span> <span class="pre">name=&quot;Access-Control-Allow-Origin&quot;</span> <span class="pre">value=&quot;http://www.acme.com,http://www.example.com&quot;</span> <span class="pre">/&gt;</span></code>.</li>
 </ol>
 </div>
 <div class="section" id="ssl-tls">
@@ -356,7 +356,7 @@ passwords.</p>
 </div>
 <div class="section" id="reporting-databases">
 <h3>Reporting databases<a class="headerlink" href="#reporting-databases" title="Permalink to this headline">¶</a></h3>
-<p>Following the principle of least privilege, your connection strings for the reporting database(s) should have the most restrictive permissions necessary to the application. Note, if you are using stored procedures, you will need &#8220;execute&#8221; permissions.</p>
+<p>Following the principle of least privilege, your connection strings for the reporting database(s) should have the most restrictive permissions necessary to the application. Note, if you are using stored procedures, you will need “execute” permissions.</p>
 </div>
 </div>
 <div class="section" id="embedded-security-deployment-mode-1">
@@ -391,7 +391,7 @@ passwords.</p>
 </li>
 <li><p class="first">The method below (in the front-end application) decrypts the JSON model and returns a token for the specified User/Tenant to the API.</p>
 <blockquote>
-<div><div class="highlight-csharp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div><div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -415,7 +415,7 @@ passwords.</p>
 </ol>
 </div>
 <div class="section" id="izenda-s-rsa-key-generator">
-<h3>Izenda&#8217;s RSA Key Generator<a class="headerlink" href="#izenda-s-rsa-key-generator" title="Permalink to this headline">¶</a></h3>
+<h3>Izenda’s RSA Key Generator<a class="headerlink" href="#izenda-s-rsa-key-generator" title="Permalink to this headline">¶</a></h3>
 <p>In order to simplify the process of creating RSA keys, Izenda has provided a tool to generate Public/Private key pairs and convert them to the format required by Izenda. This tool can be found here: <a class="reference external" href="https://izenda.com/utilities/Izenda.Synergy.RSATool.zip">https://izenda.com/utilities/Izenda.Synergy.RSATool.zip</a></p>
 <p><strong>Usage:</strong></p>
 <ol class="arabic simple">
@@ -456,34 +456,32 @@ Errors</a></li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="doc_copy_console.html" class="btn btn-neutral float-right" title="Izenda Copy Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="doc_copy_management.html" class="btn btn-neutral" title="Copy Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="doc_copy_console.html" class="btn btn-neutral float-right" title="Izenda Copy Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="doc_copy_management.html" class="btn btn-neutral float-left" title="Copy Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -492,37 +490,15 @@ Errors</a></li>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

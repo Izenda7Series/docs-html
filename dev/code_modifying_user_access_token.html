@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Modifying User Access Token &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
-        <link rel="next" title="Location of CSS" href="code_bi_portal_custom_css.html"/>
-        <link rel="prev" title="Modifying Default Email Template" href="code_default_email_template.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Location of CSS" href="code_bi_portal_custom_css.html" />
+    <link rel="prev" title="Modifying Default Email Template" href="code_default_email_template.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -136,13 +132,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -150,10 +147,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -173,7 +173,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
@@ -182,7 +182,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/code_modifying_user_access_token.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -198,12 +198,12 @@
             
   <div class="section" id="modifying-user-access-token">
 <h1>Modifying User Access Token<a class="headerlink" href="#modifying-user-access-token" title="Permalink to this headline">¶</a></h1>
-<p>This article contains information on how to create custom properties and logic using the user&#8217;s access token. Custom properties can be useful for adding conditions to determine whether a user&#8217;s token is valid or for implementing hidden filters. Below is a general guide of how to perform these tasks. Note that this guide is not applicable to deployment mode 0.</p>
+<p>This article contains information on how to create custom properties and logic using the user’s access token. Custom properties can be useful for adding conditions to determine whether a user’s token is valid or for implementing hidden filters. Below is a general guide of how to perform these tasks. Note that this guide is not applicable to deployment mode 0.</p>
 <div class="section" id="adding-a-custom-property-to-the-user-info">
 <h2>Adding a custom property to the User Info<a class="headerlink" href="#adding-a-custom-property-to-the-user-info" title="Permalink to this headline">¶</a></h2>
-<p>You can add your own custom property to the application&#8217;s UserInfo object, which is used to create the access token. Please note that this model is different from the User object native within Izenda.</p>
+<p>You can add your own custom property to the application’s UserInfo object, which is used to create the access token. Please note that this model is different from the User object native within Izenda.</p>
 <blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">UserInfo</span>
+<div><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">UserInfo</span>
 <span class="p">{</span>
    <span class="k">public</span> <span class="kt">string</span> <span class="n">UserName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
@@ -225,7 +225,7 @@
 </div></blockquote>
 <p>After modifying the UserInfo object definition in your integrated environment, the new property can be set in various ways in your code. Below is an example of setting the property using the GenerateToken method.</p>
 <blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="na">[HttpGet]</span>
+<div><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[HttpGet]</span>
 <span class="na">[Authorize]</span>
 <span class="k">public</span> <span class="n">ActionResult</span> <span class="nf">GenerateToken</span><span class="p">()</span>
 <span class="p">{</span>
@@ -247,7 +247,7 @@
 <p>If you are running a deployment mode 1 or 2 solution, you will need to add the same decryption logic used to decrypt the access token within the application to the IAdHocExtension solution. In this example, we will use the IzendaBoundary resources from the MVC5 starter kit. If you are running a deployment mode 3 solution, the IzendaBoundary resources and IAdHocExtension class will exist in the same solution and will thus be available in all contexts.</p>
 <ul class="simple">
 <li>If you are using the IAdHocExtension sample from the github repository, copy IzendaTokenAuthorization.cs, StringCipher.cs, and UserInfo.cs (located in the models sub-folder) from the IzendaBoundary folder in your MVC5 starter kit. You may need to change the namespaces on these files.<ul>
-<li>IzendaTokenAuthorization.cs requires the Newtonsoft.Json NuGet package, so you will need to add the package to your IAdHocExtension solution (ensure it&#8217;s the same version as the one in the bin/Web.config of your MVC5 starter kit)</li>
+<li>IzendaTokenAuthorization.cs requires the Newtonsoft.Json NuGet package, so you will need to add the package to your IAdHocExtension solution (ensure it’s the same version as the one in the bin/Web.config of your MVC5 starter kit)</li>
 <li>Add a reference to System.Configuration</li>
 </ul>
 </li>
@@ -257,7 +257,7 @@
 <h2>Retrieving the access token properties from the hidden filter method<a class="headerlink" href="#retrieving-the-access-token-properties-from-the-hidden-filter-method" title="Permalink to this headline">¶</a></h2>
 <p>You can now retrieve the access_token from the UserContext and decrypt it to view the custom property.</p>
 <blockquote>
-<div><div class="highlight-csharp"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">ReportFilterSetting</span> <span class="nf">SetHiddenFilters</span><span class="p">(</span><span class="n">SetHiddenFilterParam</span> <span class="n">param</span><span class="p">)</span>
+<div><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">ReportFilterSetting</span> <span class="nf">SetHiddenFilters</span><span class="p">(</span><span class="n">SetHiddenFilterParam</span> <span class="n">param</span><span class="p">)</span>
 <span class="p">{</span>
    <span class="c1">// Get the current user&#39;s access token</span>
    <span class="kt">var</span> <span class="n">currentAccessToken</span> <span class="p">=</span> <span class="n">UserContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">CurrentUser</span><span class="p">.</span><span class="n">CurrentAccessToken</span><span class="p">;</span>
@@ -279,34 +279,32 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral float-right" title="Location of CSS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="code_default_email_template.html" class="btn btn-neutral" title="Modifying Default Email Template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral float-right" title="Location of CSS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="code_default_email_template.html" class="btn btn-neutral float-left" title="Modifying Default Email Template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -315,37 +313,15 @@
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

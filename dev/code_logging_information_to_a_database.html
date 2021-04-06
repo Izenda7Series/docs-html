@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Logging Information Into a Database &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Developer Guide" href=".developer_guide.html"/>
-        <link rel="next" title="System Reference" href="../ref/.system_reference.html"/>
-        <link rel="prev" title="Location of CSS" href="code_bi_portal_custom_css.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="System Reference" href="../ref/.system_reference.html" />
+    <link rel="prev" title="Location of CSS" href="code_bi_portal_custom_css.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -134,13 +130,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -148,10 +145,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -171,7 +171,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
@@ -180,7 +180,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/code_logging_information_to_a_database.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -212,7 +212,7 @@ name to easily identify its contents (ex. Izenda Logs)</p>
 </li>
 <li><p class="first">Within this table, create one table, entitled Log, with the query
 below:</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Log</span><span class="p">]</span> <span class="p">(</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Log</span><span class="p">]</span> <span class="p">(</span>
     <span class="p">[</span><span class="n">Id</span><span class="p">]</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="k">IDENTITY</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="p">[</span><span class="nb">Date</span><span class="p">]</span> <span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="p">[</span><span class="n">Thread</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -228,8 +228,8 @@ below:</p>
 </li>
 <li><p class="first">Open the web.config file in your API folder</p>
 <ul>
-<li><p class="first">in <code class="docutils literal"><span class="pre">&lt;configSections&gt;</span></code> replace the current <code class="docutils literal"><span class="pre">&lt;section</span> <span class="pre">name=&quot;log4net&quot;&gt;</span></code> with the following:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;log4net&quot;</span> <span class="na">type=</span><span class="s">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a&quot;</span> <span class="nt">/&gt;</span>
+<li><p class="first">in <code class="docutils literal notranslate"><span class="pre">&lt;configSections&gt;</span></code> replace the current <code class="docutils literal notranslate"><span class="pre">&lt;section</span> <span class="pre">name=&quot;log4net&quot;&gt;</span></code> with the following:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;log4net&quot;</span> <span class="na">type=</span><span class="s">&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 </li>
@@ -240,7 +240,7 @@ Remove this and all of its contents (Lines 14 through 52)</p>
 <ul>
 <li><p class="first">Replace the removed section with the following, noting to add your
 connection string to the log database:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;log4net&gt;</span> <span class="nt">&lt;root&gt;</span> <span class="nt">&lt;level</span> <span class="na">value=</span><span class="s">&quot;DEBUG&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;log4net&gt;</span> <span class="nt">&lt;root&gt;</span> <span class="nt">&lt;level</span> <span class="na">value=</span><span class="s">&quot;DEBUG&quot;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;/root&gt;</span>
   <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="na">type=</span><span class="s">&quot;log4net.Appender.ADONetAppender&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;bufferSize</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;connectionType</span> <span class="na">value=</span><span class="s">&quot;System.Data.SqlClient.SqlConnection, System.Data, Version=2.0.8.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span class="nt">/&gt;</span>
 
@@ -290,7 +290,7 @@ name to easily identify its contents (ex. Izenda Logs)</p>
 </li>
 <li><p class="first">Within this table, create one table, entitled Log, with the query
 below:</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Log</span><span class="p">]</span> <span class="p">(</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">Log</span><span class="p">]</span> <span class="p">(</span>
     <span class="p">[</span><span class="n">Id</span><span class="p">]</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="k">IDENTITY</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="p">[</span><span class="nb">Date</span><span class="p">]</span> <span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="p">[</span><span class="n">Thread</span><span class="p">]</span> <span class="p">[</span><span class="nb">varchar</span><span class="p">]</span> <span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -306,8 +306,8 @@ below:</p>
 </li>
 <li><p class="first">Open the log4net.config file in your API folder</p>
 <ul>
-<li><p class="first">In <code class="docutils literal"><span class="pre">&lt;root&gt;</span></code> replace the current <code class="docutils literal"><span class="pre">&lt;appender-ref&gt;</span></code> elements with the ADONetAppender. Please refer the following as example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;root&gt;</span>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;</span></code> replace the current <code class="docutils literal notranslate"><span class="pre">&lt;appender-ref&gt;</span></code> elements with the ADONetAppender. Please refer the following as example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root&gt;</span>
      <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
@@ -319,7 +319,7 @@ below:</p>
 Remove this and all of its contents (Lines 8 through 38)</p>
 <ul>
 <li><p class="first">Replace the removed section with the following, noting the reference to appsetting.json for the connectionStringFile:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="na">type=</span><span class="s">&quot;MicroKnights.Logging.AdoNetAppender, MicroKnights.Log4NetAdoNetAppender&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;ADONetAppender&quot;</span> <span class="na">type=</span><span class="s">&quot;MicroKnights.Logging.AdoNetAppender, MicroKnights.Log4NetAdoNetAppender&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;bufferSize</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
      <span class="nt">&lt;connectionType</span> <span class="na">value=</span><span class="s">&quot;System.Data.SqlClient.SqlConnection,System.Data,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089&quot;</span> <span class="nt">/&gt;</span>
      <span class="nt">&lt;connectionStringName</span> <span class="na">value=</span><span class="s">&quot;log4net&quot;</span> <span class="nt">/&gt;</span>
@@ -382,8 +382,8 @@ into the database.</p>
 </li>
 <li><p class="first">Open the appsettings.json file in your API folder</p>
 <ul>
-<li><p class="first">Add a &#8220;connectionStrings&#8221; parameter that points to your Log database similar to the below:</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<li><p class="first">Add a “connectionStrings” parameter that points to your Log database similar to the below:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;Logging&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;LogLevel&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;Default&quot;</span><span class="p">:</span> <span class="s2">&quot;Warning&quot;</span>
@@ -428,34 +428,32 @@ into the database.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../ref/.system_reference.html" class="btn btn-neutral float-right" title="System Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral" title="Location of CSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../ref/.system_reference.html" class="btn btn-neutral float-right" title="System Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="code_bi_portal_custom_css.html" class="btn btn-neutral float-left" title="Location of CSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -464,37 +462,15 @@ into the database.</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

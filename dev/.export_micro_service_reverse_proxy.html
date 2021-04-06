@@ -1,62 +1,58 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Export Micro Service &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -65,7 +61,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -90,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -115,13 +112,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -129,10 +127,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -152,14 +153,14 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Export Micro Service</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/.export_micro_service_reverse_proxy.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -184,7 +185,7 @@
 <ol class="arabic">
 <li><p class="first">Izenda Export service needs Node JS runtime environment to execute. Login as root user and run following commands.</p>
 <blockquote>
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>sudo curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo nodejs -v
 </pre></div>
@@ -196,7 +197,7 @@ sudo nodejs -v
 <ol class="arabic">
 <li><p class="first">Izenda Export service leverages PM2 as process manager. Login as root user and run following commands.</p>
 <blockquote>
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>sudo npm install pm2@4.5.0 -g
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>sudo npm install pm2@4.5.0 -g
 sudo pm2 --version
 </pre></div>
 </div>
@@ -209,7 +210,7 @@ sudo pm2 --version
 <ol class="arabic">
 <li><p class="first">Login as root user and copy Export Service at desired location. Run following commands.</p>
 <blockquote>
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>tar -xvf &lt;export service archive&gt;
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>tar -xvf &lt;export service archive&gt;
 cd package
 sudo pm2 start app.js -- --port 5775
 sudo pm2 startup systemd
@@ -234,12 +235,12 @@ sudo pm2 list
 <ol class="arabic">
 <li><p class="first">Login as root user and run following commands.</p>
 <ol class="arabic">
-<li><p class="first">Update Ubuntu packages to the latest stable version: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p>
+<li><p class="first">Update Ubuntu packages to the latest stable version: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p>
 </li>
-<li><p class="first">Install the Apache web server on Ubuntu: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span> <span class="pre">-y</span></code></p>
+<li><p class="first">Install the Apache web server on Ubuntu: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span> <span class="pre">-y</span></code></p>
 </li>
 <li><p class="first">Enable the Apache required modules</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2enmod rewrite</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo a2enmod rewrite</span>
 <span class="go">sudo a2enmod proxy</span>
 <span class="go">sudo a2enmod proxy_http</span>
 <span class="go">sudo a2enmod headers</span>
@@ -254,19 +255,19 @@ sudo pm2 list
 </div>
 </li>
 <li><p class="first">Enter domain name in to <strong>apache2.conf</strong> file</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo nano /etc/apache2/apache2.conf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo nano /etc/apache2/apache2.conf</span>
 <span class="go">ServerName localhost</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Enter port in to <strong>ports.conf</strong> file</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sudo nano /etc/apache2/ports.conf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sudo nano /etc/apache2/ports.conf</span>
 <span class="go">Listen 9001</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Create <strong>9001.conf</strong> under /etc/apache2/sites-available: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/apache2/sites-available/9001.conf</span></code></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;VirtualHost *:9001&gt;
+<li><p class="first">Create <strong>9001.conf</strong> under /etc/apache2/sites-available: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/apache2/sites-available/9001.conf</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>&lt;VirtualHost *:9001&gt;
 ProxyPreserveHost On
 ProxyRequests Off
 ProxyPass / http://localhost:5775/
@@ -279,15 +280,15 @@ CustomLog /var/log/apache2/9001-api-access.log common
 </div>
 </li>
 <li><p class="first">Active the service site.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo a2ensite 9001.conf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo a2ensite 9001.conf</span>
 </pre></div>
 </div>
 </li>
 </ol>
 </li>
-<li><p class="first">Verify the configuration: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apachectl</span> <span class="pre">configtest</span></code>. If the configuration is correct, the result will be <code class="docutils literal"><span class="pre">Syntax</span> <span class="pre">Ok</span></code>. If not, there is an issue in the configuration.</p>
+<li><p class="first">Verify the configuration: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apachectl</span> <span class="pre">configtest</span></code>. If the configuration is correct, the result will be <code class="docutils literal notranslate"><span class="pre">Syntax</span> <span class="pre">Ok</span></code>. If not, there is an issue in the configuration.</p>
 </li>
-<li><p class="first">Restart the website: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></p>
+<li><p class="first">Restart the website: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></p>
 </li>
 </ol>
 </div>
@@ -299,7 +300,7 @@ CustomLog /var/log/apache2/9001-api-access.log common
 <h3>Pre-deployment steps<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p><strong>Node JS</strong></p>
 <ol class="arabic simple">
-<li>Izenda Export service needs Node JS runtime environment to execute. Download and install Node JS from <code class="docutils literal"><span class="pre">node-v12.21.0-x64.msi</span></code> by navigating to <a class="reference external" href="https://nodejs.org/dist/latest-v12.x/">https://nodejs.org/dist/latest-v12.x/</a></li>
+<li>Izenda Export service needs Node JS runtime environment to execute. Download and install Node JS from <code class="docutils literal notranslate"><span class="pre">node-v12.21.0-x64.msi</span></code> by navigating to <a class="reference external" href="https://nodejs.org/dist/latest-v12.x/">https://nodejs.org/dist/latest-v12.x/</a></li>
 </ol>
 </div>
 <div class="section" id="id2">
@@ -307,7 +308,7 @@ CustomLog /var/log/apache2/9001-api-access.log common
 <ol class="arabic">
 <li><p class="first">Copy export service at desired location and unzip Export Service archive. Open command prompt in administrative mode and navigate to extracted location. Run following command.</p>
 <blockquote>
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>cd package
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>cd package
 node app.js --port 5775
 </pre></div>
 </div>
@@ -347,14 +348,14 @@ node app.js --port 5775
 </li>
 <li><p class="first">Setup Reverse Proxy in IIS. Open IIS Manager.</p>
 </li>
-<li><p class="first">Select a server node in the tree view on the left hand side and then click on the &#8220;Application Request Routing&#8221; feature.</p>
+<li><p class="first">Select a server node in the tree view on the left hand side and then click on the “Application Request Routing” feature.</p>
 <blockquote>
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/arr.png"><img alt="../_images/arr.png" src="../_images/arr.png" style="width: 653px;" /></a>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Check the &#8220;Enable Proxy&#8221; check box. Leave the default values for all the other settings on this page:</p>
+<li><p class="first">Check the “Enable Proxy” check box. Leave the default values for all the other settings on this page:</p>
 </li>
 <li><p class="first">Select Apply.</p>
 <blockquote>
@@ -365,7 +366,7 @@ node app.js --port 5775
 </li>
 <li><p class="first">Right-click on a server node in the tree view and add a new website.</p>
 </li>
-<li><p class="first">Click the ellipsis (...) button to select the location of the extracted Izenda export service containing the app.js file.</p>
+<li><p class="first">Click the ellipsis (…) button to select the location of the extracted Izenda export service containing the app.js file.</p>
 <blockquote>
 <div><div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/site.png"><img alt="../_images/site.png" src="../_images/site.png" style="width: 653px;" /></a>
@@ -403,11 +404,11 @@ node app.js --port 5775
 <div class="section" id="bi-application-changes">
 <h2>BI Application changes<a class="headerlink" href="#bi-application-changes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal"><span class="pre">EnableExportService</span></code> to <code class="docutils literal"><span class="pre">1</span></code> in <code class="docutils literal"><span class="pre">IzendaSystemSetting</span></code> table.</p>
+<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal notranslate"><span class="pre">EnableExportService</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> in <code class="docutils literal notranslate"><span class="pre">IzendaSystemSetting</span></code> table.</p>
 </li>
-<li><p class="first">Additionally, make an entry into <code class="docutils literal"><span class="pre">IzendaExportService</span></code> table specifying URL of Export Service. For example:</p>
+<li><p class="first">Additionally, make an entry into <code class="docutils literal notranslate"><span class="pre">IzendaExportService</span></code> table specifying URL of Export Service. For example:</p>
 <blockquote>
-<div><div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;9195E7BE-96A3-4529-985A-C4DC88646FFE&#39;,&#39;http://52.152.230.0:9001&#39;,0);
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;9195E7BE-96A3-4529-985A-C4DC88646FFE&#39;,&#39;http://52.152.230.0:9001&#39;,0);
 </pre></div>
 </div>
 </div></blockquote>
@@ -428,7 +429,7 @@ node app.js --port 5775
 <li>Navigate to the location where service is extracted and simply start the service on a different port.</li>
 <li>Additionally, make an entry into IzendaExportService table specifying URL of Export Service. For example, if new service got started on <a class="reference external" href="http://52.152.230.0:9002">http://52.152.230.0:9002</a>, make an entry as following.</li>
 </ol>
-<div class="highlight-code"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;5A93C3B8-56CF-409E-B45C-2F288732A53F&#39;,&#39;http://52.152.230.0:9002&#39;,0);
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>INSERT INTO [IzendaExportService]([Id],[Url],[RequestCount]) VALUES (&#39;5A93C3B8-56CF-409E-B45C-2F288732A53F&#39;,&#39;http://52.152.230.0:9002&#39;,0);
 </pre></div>
 </div>
 </div></blockquote>
@@ -444,25 +445,28 @@ node app.js --port 5775
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -471,37 +475,15 @@ node app.js --port 5775
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

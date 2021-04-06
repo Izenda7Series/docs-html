@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Referencing A Filtered Report Using A URL &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Design Tutorials" href=".design_tutorials.html"/>
-        <link rel="next" title="Creating Printable Name Tags" href="usage_forms_printable_name_tags.html"/>
-        <link rel="prev" title="Using Templates" href="usage_using_templates.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating Printable Name Tags" href="usage_forms_printable_name_tags.html" />
+    <link rel="prev" title="Using Templates" href="usage_using_templates.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -137,13 +133,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -151,10 +148,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -174,7 +174,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".user_guide.html">User Guide</a> &raquo;</li>
         
@@ -185,7 +185,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/ui/usage_referencing_a_filtered_report_using_a_url.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -205,19 +205,19 @@
 URL.</p>
 <p>Common Use Cases Include:</p>
 <ul class="simple">
-<li>Creating a generic invoice with a &#8220;Case Number&#8221; filter to display
+<li>Creating a generic invoice with a “Case Number” filter to display
 information unique to a particular invoice</li>
 <li>Referencing a subreport with filtered information</li>
 </ul>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<p>In the following example, we&#8217;ve created a simple table using Country,
+<p>In the following example, we’ve created a simple table using Country,
 City, And Ship Address.</p>
 <div class="figure" id="id1">
 <img alt="../_images/UrlFilters1.png" src="../_images/UrlFilters1.png" />
 <p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">Sample report</span></p>
 </div>
-<p>Additionally, we&#8217;ve added a filter on Country.</p>
+<p>Additionally, we’ve added a filter on Country.</p>
 <div class="figure" id="id2">
 <img alt="../_images/UrlFilters2.png" src="../_images/UrlFilters2.png" />
 <p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">Filter on Country</span></p>
@@ -226,7 +226,7 @@ City, And Ship Address.</p>
 <div class="section" id="adding-a-filter-and-sharing-a-static-url">
 <h2>Adding A Filter And Sharing A Static URL<a class="headerlink" href="#adding-a-filter-and-sharing-a-static-url" title="Permalink to this headline">¶</a></h2>
 <p>If you wish to filter on the country Argentina, you can select
-&#8220;Argentina&#8221; in the report viewer or the report designer Filter
+“Argentina” in the report viewer or the report designer Filter
 Properties Panel and update the Results to see the new results. If you
 save this report, the filter will default to Argentina.</p>
 <div class="figure" id="id3">
@@ -245,8 +245,8 @@ user. For instance,
 <h2>Dynamically Passing A Filter Value<a class="headerlink" href="#dynamically-passing-a-filter-value" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">If you wish to change the filter dynamically, we would use the
-following expression: &#8220;URL&#8221; + &#8221;?&#8221; + &#8220;p&#8221; + &#8220;FILTER_NUMBER&#8221; + &#8220;value=&#8221;
-+ &#8220;VALUE_FOR_THE_FILTER&#8221;</p>
+following expression: “URL” + “?” + “p” + “FILTER_NUMBER” + “value=”
++ “VALUE_FOR_THE_FILTER”</p>
 <p>For instance, if you would like to filter on USA instead of
 Argentina, you would follow the formula:</p>
 <blockquote>
@@ -261,11 +261,11 @@ Argentina, you would follow the formula:</p>
 <p class="caption"><span class="caption-number">Fig. 419 </span><span class="caption-text">Opened from Report Link with filter value</span></p>
 </div>
 <ul>
-<li><p class="first">In this report, we&#8217;ve added a Custom URL to the Country field. Within
-this Custom URL, we&#8217;ve passed the URL to this report along with a
+<li><p class="first">In this report, we’ve added a Custom URL to the Country field. Within
+this Custom URL, we’ve passed the URL to this report along with a
 filter value pointing to each particular Country value. Therefore, if
-we click on &#8220;Argentina,&#8221; we will be able to filter this report to
-Argentina only. Similarly, if we click on &#8220;USA,&#8221; we will be able to
+we click on “Argentina,” we will be able to filter this report to
+Argentina only. Similarly, if we click on “USA,” we will be able to
 filter this report to USA only.</p>
 <p>The custom URL takes the following form:</p>
 <blockquote>
@@ -282,7 +282,7 @@ filter this report to USA only.</p>
 <h2>Dynamically Passing Multiple Filter Values<a class="headerlink" href="#dynamically-passing-multiple-filter-values" title="Permalink to this headline">¶</a></h2>
 <p>If you wish to pass more than one filter dynamically using a URL, you
 can use the expression in the section above and add additional filters
-with &#8220;&amp;&#8221; + &#8220;p&#8221; + &#8220;FILTER_NUMBER&#8221; + &#8220;value=&#8221; . This formula can be
+with “&amp;” + “p” + “FILTER_NUMBER” + “value=” . This formula can be
 followed for as many filters that you have available for a particular
 report.</p>
 <blockquote>
@@ -314,8 +314,8 @@ country USA and the city Portland, you would follow the formula:</p>
 <h2>Passing Filter Values To Dashboards<a class="headerlink" href="#passing-filter-values-to-dashboards" title="Permalink to this headline">¶</a></h2>
 <p>Older versions only allowed users to pass filter values to reports. With a slight modification to the processes described above, you can now pass filter values to dashboards.</p>
 <ul class="simple">
-<li>To reference the report viewer, you would use the subdirectory <strong>/report/view/</strong> in the URL (e.g.http://xxxx:8081/report/view/....)</li>
-<li>To reference the dashboard editor/viewer, you woud use the subdirectory <strong>/dashboard/edit/</strong> in the URL (e.g.http://xxxx:8081/editor/viewer....)</li>
+<li>To reference the report viewer, you would use the subdirectory <strong>/report/view/</strong> in the URL (e.g.http://xxxx:8081/report/view/….)</li>
+<li>To reference the dashboard editor/viewer, you woud use the subdirectory <strong>/dashboard/edit/</strong> in the URL (e.g.http://xxxx:8081/editor/viewer….)</li>
 <li>To reference a parameter value for reports, you would use <strong>p</strong> + <strong>Filter Number</strong> + <strong>value</strong> + <strong>=</strong> + <strong>Filter_Value</strong></li>
 <li>To reference a parameter value for dashboards, you would use <strong>p</strong> + <strong>Filter Number</strong> + <strong>=</strong> + <strong>Filter_Value</strong></li>
 <li>Example report URL: <strong>http://xxxx:8081/report/view/52602346-e6ea-4027-ab75-344fd93c66ce?p1value=USA&amp;p2value=Portland</strong></li>
@@ -326,34 +326,32 @@ country USA and the city Portland, you would follow the formula:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="usage_forms_printable_name_tags.html" class="btn btn-neutral float-right" title="Creating Printable Name Tags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="usage_using_templates.html" class="btn btn-neutral" title="Using Templates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="usage_forms_printable_name_tags.html" class="btn btn-neutral float-right" title="Creating Printable Name Tags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage_using_templates.html" class="btn btn-neutral float-left" title="Using Templates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -362,37 +360,15 @@ country USA and the city Portland, you would follow the formula:</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

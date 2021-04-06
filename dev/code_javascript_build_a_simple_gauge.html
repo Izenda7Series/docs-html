@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Build a simple Gauge &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Building Report" href=".building_report.html"/>
-        <link rel="next" title="Build a simple Map" href="code_javascript_build_a_simple_map.html"/>
-        <link rel="prev" title="Build a simple Chart" href="code_javascript_build_a_simple_chart.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Build a simple Map" href="code_javascript_build_a_simple_map.html" />
+    <link rel="prev" title="Build a simple Chart" href="code_javascript_build_a_simple_chart.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -138,13 +134,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -152,10 +149,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -175,7 +175,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
@@ -188,7 +188,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/code_javascript_build_a_simple_gauge.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -209,8 +209,8 @@
 <li>Follow <a class="reference internal" href="code_javascript_build_a_generic_report.html"><span class="doc">Build a Generic Report</span></a> until the step to add report parts.</li>
 <li>Prepare an empty <a class="reference internal" href="../ref/models/ReportPartGauge.html"><span class="doc">ReportPartGauge</span></a> object with default properties.</li>
 <li>For each selected data source fields, populate a <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> object with default properties.</li>
-<li>Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into either <code class="docutils literal"><span class="pre">labels.elements</span></code>, <code class="docutils literal"><span class="pre">values.elements</span></code> or <code class="docutils literal"><span class="pre">separators.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartGauge.html"><span class="doc">ReportPartGauge</span></a> object.</li>
-<li>Update the properties of the chart in <code class="docutils literal"><span class="pre">properties</span></code> field per user selection (See <a class="reference internal" href="../ref/models/ReportPartGaugeProperties.html"><span class="doc">ReportPartGaugeProperties</span></a>).</li>
+<li>Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into either <code class="docutils literal notranslate"><span class="pre">labels.elements</span></code>, <code class="docutils literal notranslate"><span class="pre">values.elements</span></code> or <code class="docutils literal notranslate"><span class="pre">separators.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartGauge.html"><span class="doc">ReportPartGauge</span></a> object.</li>
+<li>Update the properties of the chart in <code class="docutils literal notranslate"><span class="pre">properties</span></code> field per user selection (See <a class="reference internal" href="../ref/models/ReportPartGaugeProperties.html"><span class="doc">ReportPartGaugeProperties</span></a>).</li>
 <li>Back to the steps in <a class="reference internal" href="code_javascript_build_a_generic_report.html"><span class="doc">Build a Generic Report</span></a>.</li>
 </ol>
 <div class="section" id="prepare-an-empty-reportpartgauge-object">
@@ -220,10 +220,10 @@
 Empty ReportPartGauge object</div>
 <p><br clear="right" /></p>
 <ul class="simple">
-<li>The highlighted <code class="docutils literal"><span class="pre">labels.elements</span></code>, <code class="docutils literal"><span class="pre">values.elements</span></code> and <code class="docutils literal"><span class="pre">separators.elements</span></code> are where the selected data source fields will be added</li>
-<li>The highlighted <code class="docutils literal"><span class="pre">properties</span></code> contains the default properties</li>
+<li>The highlighted <code class="docutils literal notranslate"><span class="pre">labels.elements</span></code>, <code class="docutils literal notranslate"><span class="pre">values.elements</span></code> and <code class="docutils literal notranslate"><span class="pre">separators.elements</span></code> are where the selected data source fields will be added</li>
+<li>The highlighted <code class="docutils literal notranslate"><span class="pre">properties</span></code> contains the default properties</li>
 </ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -381,22 +381,22 @@ Empty ReportPartGauge object</div>
 <ol class="arabic simple">
 <li>Get the list of available data sources fields from <a class="reference internal" href="../ref/api_report_designer_datasources.html#post-report-availablequerysourcefields"><span class="std std-ref">POST report/availableQuerySourceFields</span></a></li>
 <li>Build a corresponding ReportPartElement object for each selected data source field</li>
-<li>Populate a default ReportPartElementProperties for <code class="docutils literal"><span class="pre">properties</span></code> field in each ReportPartElement object</li>
+<li>Populate a default ReportPartElementProperties for <code class="docutils literal notranslate"><span class="pre">properties</span></code> field in each ReportPartElement object</li>
 </ol>
 <p>See <a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html"><span class="doc">Sample Properties for a ReportPartElement</span></a> for some samples.</p>
 </li>
-<li><p class="first">Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into <code class="docutils literal"><span class="pre">labels.elements</span></code>, <code class="docutils literal"><span class="pre">values.elements</span></code> and <code class="docutils literal"><span class="pre">separators.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartChart.html"><span class="doc">ReportPartChart</span></a> object.</p>
+<li><p class="first">Add the <a class="reference internal" href="../ref/models/ReportPartElement.html"><span class="doc">ReportPartElement</span></a> objects into <code class="docutils literal notranslate"><span class="pre">labels.elements</span></code>, <code class="docutils literal notranslate"><span class="pre">values.elements</span></code> and <code class="docutils literal notranslate"><span class="pre">separators.elements</span></code> in <a class="reference internal" href="../ref/models/ReportPartChart.html"><span class="doc">ReportPartChart</span></a> object.</p>
 </li>
 </ol>
 <div class="toggle docutils container" id="sample-full-reportpartgauge-object">
 <div class="header docutils container">
 Sample full ReportPartGauge object</div>
 <ul class="simple">
-<li>Highlighted in <code class="docutils literal"><span class="pre">labels.elements</span></code> is the ReportPartElement for <code class="docutils literal"><span class="pre">GROUP(OrderDate)</span></code></li>
-<li>Highlighted in <code class="docutils literal"><span class="pre">values.elements</span></code> is the ReportPartElement for <code class="docutils literal"><span class="pre">SUM(Freight)</span></code></li>
+<li>Highlighted in <code class="docutils literal notranslate"><span class="pre">labels.elements</span></code> is the ReportPartElement for <code class="docutils literal notranslate"><span class="pre">GROUP(OrderDate)</span></code></li>
+<li>Highlighted in <code class="docutils literal notranslate"><span class="pre">values.elements</span></code> is the ReportPartElement for <code class="docutils literal notranslate"><span class="pre">SUM(Freight)</span></code></li>
 </ul>
 <p><br clear="right" /></p>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -1149,7 +1149,7 @@ Sample full ReportPartGauge object</div>
 <p>See <a class="reference internal" href="code_javascript_sample_properties_for_a_reportpartelement.html"><span class="doc">Sample Properties for a ReportPartElement</span></a> for more samples.</p>
 </div>
 <div class="section" id="update-the-properties-of-the-gauge-in-properties-field-per-user-selection">
-<h2>Update the properties of the Gauge in &#8220;properties&#8221; field per user selection<a class="headerlink" href="#update-the-properties-of-the-gauge-in-properties-field-per-user-selection" title="Permalink to this headline">¶</a></h2>
+<h2>Update the properties of the Gauge in “properties” field per user selection<a class="headerlink" href="#update-the-properties-of-the-gauge-in-properties-field-per-user-selection" title="Permalink to this headline">¶</a></h2>
 <p>Please see <a class="reference internal" href="../ref/models/ReportPartGaugeProperties.html"><span class="doc">ReportPartGaugeProperties</span></a> for the purpose of each field.</p>
 </div>
 <div class="section" id="back-to-the-save-step-in-build-a-generic-report">
@@ -1157,7 +1157,7 @@ Sample full ReportPartGauge object</div>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample full ReportSavingParameter object for Save report API</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;3b50a6e7-1ae0-47c3-8c1c-70b375c86d85&quot;</span><span class="p">,</span>
       <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span>
@@ -2122,34 +2122,32 @@ Sample full ReportSavingParameter object for Save report API</div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="code_javascript_build_a_simple_map.html" class="btn btn-neutral float-right" title="Build a simple Map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="code_javascript_build_a_simple_chart.html" class="btn btn-neutral" title="Build a simple Chart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="code_javascript_build_a_simple_map.html" class="btn btn-neutral float-right" title="Build a simple Map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="code_javascript_build_a_simple_chart.html" class="btn btn-neutral float-left" title="Build a simple Chart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -2158,37 +2156,15 @@ Sample full ReportSavingParameter object for Save report API</div>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

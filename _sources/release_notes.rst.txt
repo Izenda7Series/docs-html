@@ -13,11 +13,30 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
-v4.0.0 Core Release -- March 24th, 2021
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+v4.0.1 Minor Preview Release -- April 6th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES
+^^^^^^^^^
+- Filter Logic Added to Beta Report Designer 
+   - A new option is added to the filter panel that opens a modal for users to input a string for their filter logic
+   - The expressions for this string of text are the same as the legacy report designer
+- Zero States Added to Beta Report Designer
+   - Placeholder images are added to visualizations when users select them before adding fields to their visualization
+- Warning Messages Added to Beta Report Designer
+   - Warning messages will be shown in the report designer/viewer when a layout for the report is not created
+
+FIXES
+^^^^^
+- Defect 29487  Format function dropdown was not appearing for string datatypes 
+- Defect 29675  Process fails to gets workers from the worker Polynomial
+
+
+v4.0.0 (Beta) Major Release – March 24th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Breaking Changes
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Front-end Updates
    - Izenda Front-end is updated to React 16.2 and other dependencies 
@@ -2407,7 +2426,7 @@ v2.6.18 February 12, 2018
 
 FIXES
 ^^^^^
--  Defect  19280  Made property ValueTokenCommandGenerator of ExpressionCommandGeneratorVisitor class overridable for creating custom data adapters
+-  Defect  19280  Made property ValueTokenCommandGenerator of ExpressionCommandGeneratorVisitor class overridable for creating custom data adapters
 -  Defect  19274  Tenant user has proper create report permission but system fails to save report in new category
 -  Defect  19251  Hiding Tenant Field in the data model prevents query data from returning
 -  Defect  19235  Dashboard common filter rules do not function as expected, one filter shows when two are expected based on data sources
@@ -4055,11 +4074,11 @@ FEATURES
    ease of use and visibility in the property panel
 -  Added Default Filter Operators for each Datatype
 
-   -  Date: Equivalence Equals Calendar
-   -  Text: Equivalence Manual Entry
-   -  Number: Equivalence Manual Entry
-   -  Money: Equivalence Manual Entry
-   -  Subtotal Auto Add name for subtotal so user is not required to configure a name
+   -  Date: Equivalence Equals Calendar
+   -  Text: Equivalence Manual Entry
+   -  Number: Equivalence Manual Entry
+   -  Money: Equivalence Manual Entry
+   -  Subtotal Auto Add name for subtotal so user is not required to configure a name
 
 -  Change Filter Descriptions default should be set to off
 -  Removed extra white space on back of Dashboard Tiles
@@ -4078,12 +4097,12 @@ FEATURES
    tab with proper configuration
 -  Data Setup > Advanced Settings > Others: Added settings to define Common Filters for Dashboard
 
-   -  Same field of the same data object from the same Database Schema
-   -  Same field name regardless of the Database Schema or connection string
-   -  Same alias name in Data Model regardless of Database Schema or connection
+   -  Same field of the same data object from the same Database Schema
+   -  Same field name regardless of the Database Schema or connection string
+   -  Same alias name in Data Model regardless of Database Schema or connection
       string
 
--  Added support for Export API to accept filter and filter values
+-  Added support for Export API to accept filter and filter values
 -  Remove Copy icon from the backside of report part tile and dashboard
    tile to reduce accidental copy of report part when attempting to flip
    tile. It is now only available on the front side.

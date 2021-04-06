@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Build a Generic Report &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="Building Report" href=".building_report.html"/>
-        <link rel="next" title="Build a simple Grid" href="code_javascript_build_a_simple_grid.html"/>
-        <link rel="prev" title="Building Report" href=".building_report.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Build a simple Grid" href="code_javascript_build_a_simple_grid.html" />
+    <link rel="prev" title="Building Report" href=".building_report.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -138,13 +134,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -152,10 +149,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -175,7 +175,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".developer_guide.html">Developer Guide</a> &raquo;</li>
         
@@ -188,7 +188,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/dev/code_javascript_build_a_generic_report.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -214,7 +214,7 @@
 </ol>
 </li>
 <li>Populate the draft with report parts<ol class="arabic">
-<li>Extract the <code class="docutils literal"><span class="pre">report</span></code> field from the <a class="reference internal" href="../ref/models/ReportSavingResult.html"><span class="doc">ReportSavingResult</span></a> object. This is a <a class="reference internal" href="../ref/models/ReportDefinition.html"><span class="doc">ReportDefinition</span></a> object which has been assigned a report id.</li>
+<li>Extract the <code class="docutils literal notranslate"><span class="pre">report</span></code> field from the <a class="reference internal" href="../ref/models/ReportSavingResult.html"><span class="doc">ReportSavingResult</span></a> object. This is a <a class="reference internal" href="../ref/models/ReportDefinition.html"><span class="doc">ReportDefinition</span></a> object which has been assigned a report id.</li>
 <li>Populate the report parts:<ul>
 <li><a class="reference internal" href="code_javascript_build_a_simple_grid.html"><span class="doc">Build a simple Grid</span></a></li>
 <li><a class="reference internal" href="code_javascript_build_a_simple_chart.html"><span class="doc">Build a simple Chart</span></a></li>
@@ -238,11 +238,11 @@
 Empty ReportDefinition object:</div>
 <p><br clear="right" /></p>
 <ul class="simple">
-<li>The highlighted <code class="docutils literal"><span class="pre">name</span></code>  is where the report name will be inserted</li>
-<li>The highlighted <code class="docutils literal"><span class="pre">categoryId</span></code>, <code class="docutils literal"><span class="pre">category</span></code>, <code class="docutils literal"><span class="pre">subCategoryId</span></code> and <code class="docutils literal"><span class="pre">subCategory</span></code>  is where the categories and sub-categories will be updated</li>
-<li>The highlighted <code class="docutils literal"><span class="pre">reportDataSource</span></code>  is where the selected data source will be added</li>
+<li>The highlighted <code class="docutils literal notranslate"><span class="pre">name</span></code>  is where the report name will be inserted</li>
+<li>The highlighted <code class="docutils literal notranslate"><span class="pre">categoryId</span></code>, <code class="docutils literal notranslate"><span class="pre">category</span></code>, <code class="docutils literal notranslate"><span class="pre">subCategoryId</span></code> and <code class="docutils literal notranslate"><span class="pre">subCategory</span></code>  is where the categories and sub-categories will be updated</li>
+<li>The highlighted <code class="docutils literal notranslate"><span class="pre">reportDataSource</span></code>  is where the selected data source will be added</li>
 </ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -1175,14 +1175,14 @@ Empty ReportDefinition object:</div>
 <h2>Populate Report Name and Categories<a class="headerlink" href="#populate-report-name-and-categories" title="Permalink to this headline">¶</a></h2>
 <p>Populate the fields:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">name</span></code> with the actual report name</li>
-<li><code class="docutils literal"><span class="pre">category</span></code> and <code class="docutils literal"><span class="pre">subCategory</span></code> with the actual categories <br clear="right" />
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> with the actual report name</li>
+<li><code class="docutils literal notranslate"><span class="pre">category</span></code> and <code class="docutils literal notranslate"><span class="pre">subCategory</span></code> with the actual categories <br clear="right" />
 Get the list of categories from <a class="reference internal" href="../ref/api_report_designer_details.html#get-report-allcategories-type-tenant-id"><span class="std std-ref">GET report/allCategories/{type}/(tenant_id)</span></a></li>
 </ul>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample populated ReportDefinition object:</div>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1255,7 +1255,7 @@ Sample populated ReportDefinition object:</div>
 <h2>Populate selected data sources<a class="headerlink" href="#populate-selected-data-sources" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Get the list of available data sources grouped by data source categories from <a class="reference internal" href="../ref/api_report_designer_datasources.html#post-report-loaddatasourcecategory"><span class="std std-ref">POST report/loadDataSourceCategory</span></a> with this payload:</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;tenantId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;reportKey&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="kc">null</span>
@@ -1265,7 +1265,7 @@ Sample populated ReportDefinition object:</div>
 </div>
 </li>
 <li><p class="first">For each selected data source (<a class="reference internal" href="../ref/models/ReportQuerySource.html"><span class="doc">ReportQuerySource</span></a> object), build a corresponding <a class="reference internal" href="../ref/models/ReportDataSource.html"><span class="doc">ReportDataSource</span></a> object</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;id of the selected ReportQuerySource&gt;&quot;</span><span class="p">,</span>
    <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;name of the selected ReportQuerySource&gt;&quot;</span><span class="p">,</span>
    <span class="nt">&quot;aliasId&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;querySourceId&gt;_&lt;querySourceName&gt;&quot;</span><span class="p">,</span>
@@ -1281,18 +1281,18 @@ Sample populated ReportDefinition object:</div>
 <col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><a class="reference download internal" href="../_downloads/ReportQuerySource_Orders.json" download=""><code class="xref download docutils literal"><span class="pre">Sample</span> <span class="pre">ReportQuerySource</span></code></a></th>
-<th class="head"><a class="reference download internal" href="../_downloads/ReportDataSource_Orders.json" download=""><code class="xref download docutils literal"><span class="pre">Sample</span> <span class="pre">ReportDataSource</span></code></a></th>
+<tr class="row-odd"><th class="head"><a class="reference download internal" download="" href="../_downloads/33d174163b79ecf601213d8ed368b396/ReportQuerySource_Orders.json"><code class="xref download docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">ReportQuerySource</span></code></a></th>
+<th class="head"><a class="reference download internal" download="" href="../_downloads/204304bd00315348631ae9f68f952c72/ReportDataSource_Orders.json"><code class="xref download docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">ReportDataSource</span></code></a></th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<tr class="row-even"><td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
 <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a&quot;</span><span class="p">,</span>
 <span class="s2">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
 <span class="s2">&quot;aliasId&quot;</span><span class="p">:</span> <span class="s2">&quot;af773c7b-878e-461b-9345-27ee6592db1a_Orders&quot;</span><span class="p">,</span>
@@ -1300,31 +1300,31 @@ Sample populated ReportDefinition object:</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<tr class="row-odd"><td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;selected&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td>&#160;</td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+<tr class="row-odd"><td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;primaryFields&quot;</span><span class="p">:</span> <span class="p">[</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;primaryFields&quot;</span><span class="p">:</span> <span class="p">[</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+<tr class="row-even"><td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
       <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
       <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
       <span class="s2">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
@@ -1373,7 +1373,7 @@ Sample populated ReportDefinition object:</div>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
       <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OrderID&quot;</span><span class="p">,</span>
       <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
       <span class="s2">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
@@ -1423,12 +1423,12 @@ Sample populated ReportDefinition object:</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">]</span>
+<tr class="row-odd"><td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">]</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1437,13 +1437,13 @@ Sample populated ReportDefinition object:</div>
 </tbody>
 </table>
 </li>
-<li><p class="first">Populate the field <code class="docutils literal"><span class="pre">reportDataSource</span></code> with the array of <a class="reference internal" href="../ref/models/ReportDataSource.html"><span class="doc">ReportDataSource</span></a> objects.</p>
+<li><p class="first">Populate the field <code class="docutils literal notranslate"><span class="pre">reportDataSource</span></code> with the array of <a class="reference internal" href="../ref/models/ReportDataSource.html"><span class="doc">ReportDataSource</span></a> objects.</p>
 </li>
 </ol>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Populated ReportDefinition object:</div>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1633,8 +1633,8 @@ Populated ReportDefinition object:</div>
 <div class="header docutils container">
 Sample object:</div>
 <p><br clear="right" /></p>
-<p>The highlighted <code class="docutils literal"><span class="pre">report</span></code>  is where the ReportDefinition object will be inserted</p>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p>The highlighted <code class="docutils literal notranslate"><span class="pre">report</span></code>  is where the ReportDefinition object will be inserted</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1668,8 +1668,8 @@ Sample object:</div>
 <div class="header docutils container">
 Sample object</div>
 <p><br clear="right" />
-ReportSavingResult object with the <strong>success</strong> field true and report id assigned in <code class="docutils literal"><span class="pre">reportKey.key</span></code> and <strong>report</strong> field populated:</p>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+ReportSavingResult object with the <strong>success</strong> field true and report id assigned in <code class="docutils literal notranslate"><span class="pre">reportKey.key</span></code> and <strong>report</strong> field populated:</p>
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -2797,7 +2797,7 @@ ReportSavingResult object with the <strong>success</strong> field true and repor
 <div class="section" id="populate-the-report-parts">
 <span id="id1"></span><h2>Populate the report parts<a class="headerlink" href="#populate-the-report-parts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Extract the populated ReportDefinition from <code class="docutils literal"><span class="pre">report</span></code> field.</p>
+<li><p class="first">Extract the populated ReportDefinition from <code class="docutils literal notranslate"><span class="pre">report</span></code> field.</p>
 </li>
 <li><p class="first">Prepare the report part objects:</p>
 <ul class="simple">
@@ -2810,10 +2810,10 @@ ReportSavingResult object with the <strong>success</strong> field true and repor
 </li>
 <li><p class="first">For each report part object, build a corresponding <a class="reference internal" href="../ref/models/ReportPartDefinition.html"><span class="doc">ReportPartDefinition</span></a> object</p>
 <ul class="simple">
-<li>Highlighted <code class="docutils literal"><span class="pre">reportPartContent</span></code> is to be updated by the report part object</li>
-<li>Highlighted <code class="docutils literal"><span class="pre">title</span></code> field is to be updated by the user-selected title <br clear="right" /></li>
+<li>Highlighted <code class="docutils literal notranslate"><span class="pre">reportPartContent</span></code> is to be updated by the report part object</li>
+<li>Highlighted <code class="docutils literal notranslate"><span class="pre">title</span></code> field is to be updated by the user-selected title <br clear="right" /></li>
 </ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2831,7 +2831,7 @@ ReportSavingResult object with the <strong>success</strong> field true and repor
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Update the <code class="docutils literal"><span class="pre">reportPart</span></code> field of the extracted ReportDefinition  with the array of ReportPartDefinition objects. (example in the step below)</p>
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">reportPart</span></code> field of the extracted ReportDefinition  with the array of ReportPartDefinition objects. (example in the step below)</p>
 </li>
 </ol>
 </div>
@@ -2845,12 +2845,12 @@ ReportSavingResult object with the <strong>success</strong> field true and repor
 ReportSavingParameter object</div>
 <p><br clear="right" /></p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">reportKey.key</span></code> filled with the assigned id</li>
-<li><code class="docutils literal"><span class="pre">section</span></code> = 2 (Fields) to save the report parts section only</li>
-<li><code class="docutils literal"><span class="pre">report</span></code> extracted from <a class="reference internal" href="#call-save-report-as-draft-api">Call Save report as draft API</a> step</li>
-<li><code class="docutils literal"><span class="pre">report.reportPart</span></code> populated with the sample grid in <a class="reference internal" href="code_javascript_build_a_simple_grid.html#sample-full-reportpartgrid-object"><span class="std std-ref">Build a simple Grid</span></a> <br clear="right" /></li>
+<li><code class="docutils literal notranslate"><span class="pre">reportKey.key</span></code> filled with the assigned id</li>
+<li><code class="docutils literal notranslate"><span class="pre">section</span></code> = 2 (Fields) to save the report parts section only</li>
+<li><code class="docutils literal notranslate"><span class="pre">report</span></code> extracted from <a class="reference internal" href="#call-save-report-as-draft-api">Call Save report as draft API</a> step</li>
+<li><code class="docutils literal notranslate"><span class="pre">report.reportPart</span></code> populated with the sample grid in <a class="reference internal" href="code_javascript_build_a_simple_grid.html#sample-full-reportpartgrid-object"><span class="std std-ref">Build a simple Grid</span></a> <br clear="right" /></li>
 </ul>
-<div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+<div class="highlight-json notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -4455,41 +4455,39 @@ ReportSavingParameter object</div>
 </td></tr></table></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Receive back the <a class="reference internal" href="../ref/models/ReportSavingResult.html"><span class="doc">ReportSavingResult</span></a> object and check that <code class="docutils literal"><span class="pre">success</span></code> field is true.</li>
+<li>Receive back the <a class="reference internal" href="../ref/models/ReportSavingResult.html"><span class="doc">ReportSavingResult</span></a> object and check that <code class="docutils literal notranslate"><span class="pre">success</span></code> field is true.</li>
 </ol>
 </div>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="code_javascript_build_a_simple_grid.html" class="btn btn-neutral float-right" title="Build a simple Grid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href=".building_report.html" class="btn btn-neutral" title="Building Report" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="code_javascript_build_a_simple_grid.html" class="btn btn-neutral float-right" title="Build a simple Grid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href=".building_report.html" class="btn btn-neutral float-left" title="Building Report" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -4498,37 +4496,15 @@ ReportSavingParameter object</div>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

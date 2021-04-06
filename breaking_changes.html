@@ -1,62 +1,58 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Breaking Changes &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -65,7 +61,7 @@
 
           
             
-            <img src="_static/logo2.png" class="logo" />
+            <img src="_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -90,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -115,13 +112,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Izenda BI</a>
@@ -129,10 +127,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -152,14 +153,14 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Breaking Changes</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/breaking_changes.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -175,60 +176,89 @@
             
   <div class="section" id="breaking-changes">
 <span id="id1"></span><h1>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="v4-0-0-march-24-2021">
-<h2>v4.0.0 March 24, 2021<a class="headerlink" href="#v4-0-0-march-24-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v4-0-0-beta-major-release-march-24th-2021">
+<h2>v4.0.0 (Beta) Major Release – March 24th, 2021<a class="headerlink" href="#v4-0-0-beta-major-release-march-24th-2021" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<ul class="last">
-<li><p class="first">Front-end Updates</p>
-<blockquote>
-<div><p>Izenda updated the following frontend libraries and dependencies customer who integrated izenda frontend need to modify their frontend if they are affected by the below library changes.</p>
-<ul class="simple">
-<li>React upgraded from 15.6 to 16.3
-- <a class="reference external" href="https://reactjs.org/blog/2017/09/26/react-v16.0.html">React 15 to 16 migration guide</a>
-- React-dom upgraded from 15.6 to 16.3</li>
-<li>Mobx upgraded from 2.4.2 to 5.15
-- <a class="reference external" href="https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4">Mobx 3 to 4 migration guide</a>
-- <a class="reference external" href="https://mobx.js.org/migrating-from-4-or-5.html">Mobx 4 to 5 migration guide</a></li>
-<li>Mobx-react upgraded from 3.5 to 5.2</li>
-<li>Bootstrap upgraded from 3.3.7 to 3.4.1</li>
-<li>Babel upgraded from 6 to 7
-- <a class="reference external" href="https://babeljs.io/docs/en/v7-migration">Babel 7 migration guide</a></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">.Net Core 3.1
-- If you currently use the IAdHocExtension/IzendaCustomBootstrapper classes you will need to rebuild these into a new assembly using our v4.x.x dlls.</p>
-<blockquote>
-<div><ul class="simple">
-<li>if your current deployment of izenda APIs are under the .net full framework then your deployment needs to migrate to .netcore 3.1</li>
-</ul>
-</div></blockquote>
-</li>
+<ul class="last simple">
 <li><dl class="first docutils">
-<dt>Exporting Engine</dt>
-<dd><ul class="first last simple">
-<li>Izenda has updated the exporting process from WebKit to the Blink Engine</li>
-<li>This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine.</li>
-<li>Please deploy the Izenda docker within a Linux container to resolve this</li>
+<dt>Front-end Updates: Izenda updated the following frontend libraries and dependencies customer who integrated izenda frontend need to modify their frontend if they are affected by the below library changes.</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>React upgraded from 15.6 to 16.3</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://reactjs.org/blog/2017/09/26/react-v16.0.html">React 15 to 16 migration guide</a></li>
+<li>React-dom upgraded from 15.6 to 16.3</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">Map Provisioning Changes
-- The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance</p>
+<li><dl class="first docutils">
+<dt>Mobx upgraded from 2.4.2 to 5.15</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://github.com/mobxjs/mobx/wiki/Migrating-from-mobx-3-to-mobx-4">Mobx 3 to 4 migration guide</a></li>
+<li><a class="reference external" href="https://mobx.js.org/migrating-from-4-or-5.html">Mobx 4 to 5 migration guide</a></li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Encryption Changes
-- Izenda&#8217;s encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance</p>
-<blockquote>
-<div><ul class="simple">
+<li>Mobx-react upgraded from 3.5 to 5.2</li>
+<li>Bootstrap upgraded from 3.3.7 to 3.4.1</li>
+<li><dl class="first docutils">
+<dt>Babel upgraded from 6 to 7</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="https://babeljs.io/docs/en/v7-migration">Babel 7 migration guide</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>.Net Core 3.1</dt>
+<dd><ul class="first last">
+<li>If you currently use the IAdHocExtension/IzendaCustomBootstrapper classes you will need to rebuild these into a new assembly using our v4.x.x DLL’s.</li>
+<li>if your current deployment of izenda APIs are under the .net full framework then your deployment needs to migrate to .netcore 3.1</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Exporting Engine</dt>
+<dd><ul class="first last">
+<li>Izenda has updated the exporting process from WebKit to the Blink Engine</li>
+<li>This could impact customers with Azure App Service deployments as the exporting service will not work directly due to the Blink engine. Please deploy the Izenda docker within a Linux container to resolve this.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Map Provisioning Changes</dt>
+<dd><ul class="first last">
+<li>The Izenda data structure for mapping data points has been updated for better performance, so map data must be re-provisioned within your Izenda instance</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Encryption Changes</dt>
+<dd><ul class="first last">
+<li>Izenda’s encryption algorithm has been updated from 128 bit to 256 bit to support FIPS compliance</li>
 <li>Updating your existing values into your izenda config database you need to log in as administrator and provision encryption jobs from the settings tab.</li>
 <li>Izenda strongly recommends updating these encryption methods also it is strongly recommended to take backup of the izenda config database.</li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p class="first">Excel Driver
-- Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change</p>
+<li><dl class="first docutils">
+<dt>Excel Driver</dt>
+<dd><ul class="first last">
+<li>Izenda has internalized the Excel driver and as a result, some pre-existing reports may be impacted by this change</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -238,7 +268,7 @@
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <ul class="last simple">
-<li>If you currently have additional Azure resources configured for an EvoPDF exporting provider, this is no longer necessary. Syncfusion works in Azure environments without the need of a specific service. You will need to adjust your exporting configurations accordingly.</li>
+<li>If you currently have additional Azure resources configured for an EvoPDF exporting provider, this is no longer necessary. Syncfusion works in Azure environments without the need for a specific service. You will need to adjust your exporting configurations accordingly.</li>
 <li>If you currently use the IAdHocExtension classes you will need to rebuild these into a new assembly using our v3.x dlls.</li>
 </ul>
 </div>
@@ -278,7 +308,7 @@
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <ul class="last simple">
-<li>API Request - added additional header &#8220;Selected Tenant&#8221; for Global Reports. This change is already made in the webconfig in the build for download.</li>
+<li>API Request - added additional header “Selected Tenant” for Global Reports. This change is already made in the webconfig in the build for download.</li>
 <li>Please ensure you are using the latest version of the Copy Console which is available with this download</li>
 </ul>
 </div>
@@ -301,25 +331,28 @@ Known issue: Tenant users with Full Report and Dashboard access can alter Global
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -328,37 +361,15 @@ Known issue: Tenant users with Full Report and Dashboard access can alter Global
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {
