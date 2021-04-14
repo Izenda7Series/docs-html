@@ -606,7 +606,7 @@ Pre-install preparations
 
       #. Create instance of Ubuntu 18.04
       #. Login using ``ssh`` as default user
-      #. Download and install .NET core 3.2 sdk run time env. `Download here <https://dotnet.microsoft.com/download/dotnet/3.1`_
+      #. Download and install .NET core 3.1 run time env. `Download here <https://dotnet.microsoft.com/download/dotnet/3.1>`_
 
 
          .. code-block:: console

@@ -587,11 +587,6 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <div class="section" id="logging-config">
 <h3><a class="toc-backref" href="#id30">Logging Config</a><a class="headerlink" href="#logging-config" title="Permalink to this headline">¶</a></h3>
 <p>In &lt;configSections&gt; add a new section named name=”log4net” to config logging for Izenda API.</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>            Configuration = configuration;
-            IzendaConfig.RegisterLoginLogic();
-            Izenda.BI.Logging.Log4Net.LogConfiguration.Configure();
-</pre></div>
-</div>
 <p>Then add log4net node below:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">&lt;log4net</span> <span class="na">threshold=</span><span class="s">&quot;ALL&quot;</span> <span class="na">debug=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;root&gt;</span>
@@ -695,7 +690,7 @@ Open Project Properties page select Build Events then click Edit Post-build… b
 <h3><a class="toc-backref" href="#id34">Run Starter Kit</a><a class="headerlink" href="#run-starter-kit" title="Permalink to this headline">¶</a></h3>
 <p>In Visual Studio you can press F5 to run your starter kit for the first time, the application page will look like the screenshot below:</p>
 <div class="figure" id="id5">
-<a class="reference internal image-reference" href="../_images/mvc_core_run_starter_kit.png"><img alt="../_images/mvc_core_run_starter_kit.png" src="../_images/mvc_core_run_starter_kit.png" style="width: 911px;" /></a>
+<a class="reference internal image-reference" href="_static/images/install/mvc_core_run_starter_kit.png"><img alt="_static/images/install/mvc_core_run_starter_kit.png" src="_static/images/install/mvc_core_run_starter_kit.png" style="width: 911px;" /></a>
 <p class="caption"><span class="caption-text">Starter kit screen</span></p>
 </div>
 <p>There is nothing present from the Izenda UI at this time. At this step we are just checking whether Izenda API is able to start up completely or not. On your browser address add /api/ to the end of url (<a class="reference external" href="http://localhost:14809/api/">http://localhost:14809/api/</a>) then press enter, you will see Izenda API is hosted completely:</p>

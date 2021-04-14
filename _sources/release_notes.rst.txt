@@ -13,6 +13,83 @@ Release Notes
 
  For more advanced information and details on our releases where needed, please see our :ref:`Release_Details` and :ref:`Breaking_Changes` .
 
+v3.13.0 Core Release -- April 14th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXES
+^^^^^
+ - Defect 29779  Async export throws permission error when global report exported from tenant level
+ - Defect 29773  Issue with print and Exports
+ - Defect 29761  Async Exporting is not working showing always be in pending state
+ - Defect 29756  Not able to type email in the email field
+ - Defect 29754  Image report parts are not getting exported in DM1 and DM3
+ - Defect 29752  Generic application error when exporting data-model.
+ - Defect 29744  Prevent Report Sharing Based on Category Accessibility is Adding Categories by Default
+ - Defect 29735  Facing issue in exporting with Pivot grid report type which causes memory leakage problem.
+ - Defect 29703  API crashes when viewing or exporting some reports with a certain amount of columns
+ - Defect 29702  Unable to Save Workspace
+ - Defect 29695  Not able to configure PGSQL config db on qa env
+ - Defect 29693  Image Orientation Changes When Exporting
+ - Defect 29682  Some values in the In Time Period filter throws error when using Snowflake connection
+ - Defect 29675  Issue with getting workers from worker pool
+ - Defect 29664  Report search does not work for some languages
+ - Defect 29663  Update Async exporting worker jobs with new internal values after change and additional logging
+ - Defect 29643  Error when saving new report using Azure MySQL as config database
+ - Defect 29633  Error on Fresh Oracle Config DB while provisioning DB on 3.12
+ - Defect 29629  Not able to create dashboard, getting generic error
+ - Defect 29605  Emails/Schedule is not working with Oracle Config DB
+ - Defect 29604  No Exporting Queue seen in Export Manager using Oracle Config DB
+ - Defect 29595  Apply Filter Button is not working in the Reports (MVCStarterKit DM1 Mode)
+ - Defect 29592  Error when saving report with PGSQL config database and v3.12.0.3
+ - Defect 29583  Some Queries not working for Natural Search
+ - Defect 29531  Embedded Subreports Not Displayed in Exports
+ - Defect 29522  Functionality breaks For % of Subtotal and Grand total for Date/Time field
+ - Defect 29499  Compatibility issue for QueueWorkers class in Izenda with the npgsql driver: “Job QueueWorkers"
+ - Defect 29498  Issue with Load balanced for task queue job in  Quartz/ADO Job Store is used
+ - Defect 29489  Form report export as Excel format does not preserve values
+ - Defect 29469  Dashboard Loading is too slow
+ - Defect 29440  Data Source Name set incorrectly when join has an alias
+ - Defect 29429  Filter values are not applied for async exporting if export runs from Report Viewer
+ - Defect 29367  Copy Management - Stored Procedure's Filter Value Mapping Not Copied Correctly
+ - Defect 29360  Field Comparison Filter Breaks On Comparing Calculated Fields
+ - Defect 29332  Visibility of SubReport in Report Viewer and in PDF is not consistent.
+ - Defect 29285  Date field in a Snowflake-based custom view produces an error on the view create / edit.
+ - Defect 29250  "izenda-root" ID on the main container for the embedded Izenda UI is not dynamic starting from 3.11
+ - Defect 29226  Modal for Configure Password Option never Resets.
+ - Defect 29225  Report with pivot table and boolean filter fails
+ - Defect 29192  Export Manager does not display any results and error in log 'Cannot perform runtime binding on a null reference ' with PGSQL.
+ - Defect 29180  Dashboard list reports are not visible to other Users except admin user.
+ - Defect 29135  Add Predicted Field Button is not working
+ - Defect 29134  State does not change after saving the function
+ - Defect 29038  Font is not bold by default on Subtotals
+ - Defect 28983  Reports Filter are not working properly while using Postgres DB
+ - Defect 28982  Emailing Link type with filter values containing space character doesn't get URL encoded correctly
+ - Defect 28967  Background image and added Image-Tile not visible in PDF export
+ - Defect 28963  Reports and Sub Reports Created Via Copy Management Does Not Work Correctly
+ - Defect 28950  OnExecuting IAdHocExtension not picking up SP param value with filter lookup applied
+ - Defect 28944  SQL Query Error for the Turkish Language
+ - Defect 28936  Issue rendering data for Maps
+ - Defect 28924  Autofill in E-mail(Report/Dashboard) is not working
+ - Defect 28915  Cascading filters don't reset when value is updated in cascading filter for some scenarios.
+ - Defect 28902  Dashboard filter not loading all filter values if report filter pre-populated
+ - Defect 28897  Lazy loading of filter values hangs on scroll
+ - Defect 28895  freezing issue while scrolling lookup based filter
+ - Defect 28873  Filters autocomplete does not work correctly for dates in fusion and fusion based connectors
+ - Defect 28853  Viewer and Designer do not match when utilizing Japanese and specific filter type
+ - Defect 28849  Copy Management clears the filter values.
+ - Defect 28845  Date Formats with the month name are displayed in the user's language correctly in export but not the report viewer/designer
+ - Defect 28838  Opening sub-report configured with Link (same window) having issues
+ - Defect 28729  Excel exports taking longer to complete from version 3.2 to latest
+ - Defect 28679  Izenda 3.10.5 throws data source validation error while editing the report
+ - Defect 28644  ModifiedBy is not updated in the IzendaSubscription table when adjusting a user's schedule as an Admin
+ - Defect 28551  Asynchronous Exporting - when report is modified (report part added/removed) the modified report doesn't go through asynchronous process
+ - Defect 28550  Asynchronous Exports: Same report with same exporting type is exported multiple times
+ - Defect 28243  Autofill in E-mail Scheduler no longer working
+ - Defect 27230  Grid Report Part has layout issues when null values in the entire row
+ - Defect 25101  UI issue with 'Show Filters' in Edge
+ - Defect 22544  Length of the Current Date Time input box different from others.
+
+
 v4.0.1 Minor Preview Release -- April 6th, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -278,7 +355,7 @@ FIXES
 - Defect 28785  Dashboard error with filtered report parts
 - Defect 28790  Filter selection - values are not populated out of PostgreSQL in Iz3.11.2
 - Defect 28835  [KPI]: Report part properties text is trimming
-- Defect 28839  Oracle and Excel adapter are broken in IZ-27680
+- Defect 28839  Oracle and Excel adapter are broken in  - Defect 27680
 - Defect 28844  [KPI][Exports] Issue with placement of Title & Description when performing Exports.
 - Defect 28851  Cannot import reports with calculated fields
 - Defect 28853  Viewer and Designer do not match when utilizing Japanese language resources with specific filter types
@@ -473,7 +550,7 @@ FIXES
 - Defect 28108  Issue with using datetime fields in calculated fields among with having filters
 - Defect 28110  Cannot add Calculated Field if report has filters using aggregated values
 - Defect 28117  Missing TenantId field in IzendaNLQSchema table when upgrading the configuration database
-- Defect 28132  Applying code modifications from IZ-27683 to Snowflake adapter
+- Defect 28132  Applying code modifications from  - Defect 27683 to Snowflake adapter
 - Defect 28139  Calculated Field Error: Due to using old NGSQL.dll v4.0.4 
 - Defect 28148  Incorrect role permission checkbox state
 - Defect 28151  Unable to Adjust Settings in Tenant Roles
@@ -1449,7 +1526,7 @@ FIXES
 
 .. warning::
 
-   If you are currently leveraging LEFT or RIGHT joins in your reports, you should ensure that the changes in IZ-22764 have not impacted your reporting data.
+   If you are currently leveraging LEFT or RIGHT joins in your reports, you should ensure that the changes in  - Defect 22764 have not impacted your reporting data.
 
 
 
