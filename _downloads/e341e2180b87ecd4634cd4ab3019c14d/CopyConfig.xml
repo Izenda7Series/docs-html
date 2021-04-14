@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mapping>
+
+    <source>   
+  
+		<credentials userName="IzendaAdmin" password="IzendaAdmin123" apiUrl="http://localhost:2222/api"/>	
+		
+		<tenant id=""> </tenant>
+	
+		<reports>
+			<report id="8e9cbf85-2d30-422e-9e0f-67ce1da7a7e8"/>
+
+			<!--<report id="a6277cdf-db62-480d-9f7e-ff333c481cc5"/>	-->		
+		</reports>
+		
+		<templates>
+		<!--	 <template id="23BEAFC3-249D-45F2-A772-762BB3262DA6"/> -->	
+		</templates>
+		
+		<dashboards>									
+			<!--<dashboard id="200fb90a-d570-464a-a92f-8bdd9454dde8"/>-->
+		</dashboards> 
+		
+  </source>
+  
+	<!-- Specify the destination(s)-->
+	<destinations>
+		<!-- Destination 1 -->
+		<destination name="UAT">
+		
+			<!-- Specify the api credentials -->
+			<!--<credentials userName="drr123" password="drrytyt123" apiUrl="http://10.111.5.86:8200/API"/>	-->		
+			<credentials userName="drr" password="drr123" apiUrl="http://10.111.5.86:8200/API"/>
+			<!-- Specify the tenant(s)-->			
+			<tenants>
+			    
+				<!-- id is not a guid, but rather the 'Tenant ID' field from the UI. If Tenant ID is NULL this is System Level-->	
+
+				<tenant id="TestReportCopy1" overwriteIfAlreadyExist="yes">
+				
+
+					<!-- Specify the database mappings -->
+					<databaseMappings>
+						
+						 <databaseMapping sourceDatabaseName="NORTHWND-Local" sourceSchema="dbo" destinationDatabaseName="northwind" destinationSchema="dbo"/>
+						
+						<!-- <databaseMapping sourceDatabaseName="northwind" sourceSchema="dbo" destinationDatabaseName="northwind 66." destinationSchema="dbo"/> -->
+						<!-- <databaseMapping sourceDatabaseName="northwind.100" sourceSchema="northwind" destinationDatabaseName="northwind" destinationSchema="northwind"/> -->
+						<!-- <databaseMapping sourceDatabaseName="northwind" sourceSchema="dbo" destinationDatabaseName="northwind 66." destinationSchema="dbo"/> -->
+						
+					</databaseMappings>	
+					
+					<!-- Specify the role mappings -->
+					<roleMappings>
+						<!-- <roleMapping sourceRole="Accounting" destinationRole="Account"/> -->
+						<!-- <roleMapping sourceRole="IT" destinationRole="ITS"/> -->
+					</roleMappings>					
+				</tenant>
+			</tenants>
+	</destination>				
+
+	</destinations>
+</mapping>

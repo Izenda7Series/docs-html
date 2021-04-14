@@ -1,65 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Data Model APIs &mdash; Izenda BI 4.0.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.png"/>
   
+
   
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Izenda BI 4.0.0 documentation" href="../index.html"/>
-        <link rel="up" title="REST API Documentation" href=".rest_api_documentation.html"/>
-        <link rel="next" title="Tenant APIs" href="api_tenant.html"/>
-        <link rel="prev" title="Connection APIs" href="api_connection.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tenant APIs" href="api_tenant.html" />
+    <link rel="prev" title="Connection APIs" href="api_connection.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -68,7 +63,7 @@
 
           
             
-            <img src="../_static/logo2.png" class="logo" />
+            <img src="../_static/logo2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -93,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -150,13 +146,14 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Izenda BI</a>
@@ -164,10 +161,13 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
+
+
 
 
 
@@ -187,7 +187,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href=".system_reference.html">System Reference</a> &raquo;</li>
         
@@ -198,7 +198,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/ref/api_data_model.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -214,7 +214,7 @@
             
   <div class="section" id="data-model-apis">
 <h1>Data Model APIs<a class="headerlink" href="#data-model-apis" title="Permalink to this headline">¶</a></h1>
-<p>The &#8216;&#8217;&#8216;Data Model&#8217;&#8216;&#8217; section allows user to</p>
+<p>The ‘’’Data Model’’’ section allows user to</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li>manage data sources and data source fields</li>
 <li>add computed columns</li>
@@ -386,11 +386,11 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySources</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySources</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;querySourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
    <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;b5b3a5cc-9e55-424c-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
    <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -408,7 +408,7 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
             <span class="s2">&quot;realName&quot;</span><span class="p">:</span> <span class="s2">&quot;orders_new&quot;</span><span class="p">,</span>
@@ -484,11 +484,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;querySource&quot;</span> <span class="p">:</span> <span class="p">{</span>
      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;9fa90af2-5329-44ac-a753-50c27f9d6fd5&quot;</span><span class="p">,</span>
      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span>
@@ -506,7 +506,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ShipVia&quot;</span><span class="p">,</span>
@@ -585,11 +585,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
    <span class="p">{</span>
       <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;6cc06e5b-0627-432c-bc33-708b0843c7c7&quot;</span><span class="p">,</span>
       <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind&quot;</span><span class="p">,</span>
@@ -629,11 +629,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Item.html"><span class="doc">Item</span></a> objects whose each <strong>key</strong> is the connectionsId and <strong>value</strong> is the connectionName.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicConnectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
             <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;2046c03b-3830-4385-9ac0-bdc95e92ea49&quot;</span><span class="p">,</span>
@@ -678,18 +678,18 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Connection.html"><span class="doc">Connection</span></a> objects.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/connectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/connectionsInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;skipItems&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
    <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span><span class="n">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:[</span>
       <span class="p">{</span>
          <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;fa1c3381-d56a-4648-a280-480c759ef867&quot;</span><span class="p">,</span>
@@ -745,11 +745,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourceCategoriesInfo/2046c03b-3830-4385-9ac0-bdc95e92ea49</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourceCategoriesInfo/2046c03b-3830-4385-9ac0-bdc95e92ea49</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;34dc82ea-890d-4e3a-86a9-91ef171fd6f5&quot;</span><span class="p">,</span>
     <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Application&quot;</span><span class="p">,</span>
@@ -794,11 +794,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing a list of <a class="reference internal" href="models/Item.html"><span class="doc">Item</span></a> objects whose each <strong>key</strong> is the id of the <a class="reference internal" href="models/QuerySourceCategory.html"><span class="doc">QuerySourceCategory</span></a> and <strong>value</strong> is the name of the the <a class="reference internal" href="models/QuerySourceCategory.html"><span class="doc">QuerySourceCategory</span></a>.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicQuerySourceCategoriesInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/basicQuerySourceCategoriesInfo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
             <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;34dc82ea-890d-4e3a-86a9-91ef171f4ca5&quot;</span><span class="p">,</span>
@@ -842,11 +842,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourcesInfo/48733501-c57d-48ca-aded-501d5ebdaad9</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourcesInfo/48733501-c57d-48ca-aded-501d5ebdaad9</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8&quot;</span><span class="p">,</span>
    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Suppliers&quot;</span><span class="p">,</span>
    <span class="s2">&quot;originalValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
@@ -885,11 +885,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>An array of <a class="reference internal" href="models/QuerySourceInfo.html"><span class="doc">QuerySourceInfo</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/querySourcesInfo/5e8e56ce-ac29-48cf-ae0d-56cb5d9a935e/Table</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/querySourcesInfo/5e8e56ce-ac29-48cf-ae0d-56cb5d9a935e/Table</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;77882ea1-6d82-45c2-b762-6c8612682b91&quot;</span><span class="p">,</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Categories&quot;</span><span class="p">,</span>
@@ -931,11 +931,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/querySourceField/da7be1b4-d4c0-43c4-a11b-5c87004c4837</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/querySourceField/da7be1b4-d4c0-43c4-a11b-5c87004c4837</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">true</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -955,11 +955,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourceFieldsInfo/4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/basicQuerySourceFieldsInfo/4e9aabda-9a95-4a00-8d80-0b8b1fbc7bc8</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;f8c2a34b-b304-4f1d-9d90-96c018ec3d2a&quot;</span><span class="p">,</span>
    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ContactName&quot;</span><span class="p">,</span>
    <span class="s2">&quot;originalValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
@@ -999,11 +999,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the save is successful</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload to save the aliases for column [dbo].[AWBuildVersion].[Database Version] and for table [dbo].[Categories]:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
   <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;c3330d53-cd8d-411c-9e7d-05849c7f2cc3&quot;</span><span class="p">,</span>
@@ -1092,7 +1092,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 </pre></div>
 </div>
 <p>Request Payload to set dynamic for stored procedure [dbo].[CustOrdersDetail]:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
   <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;eabce774-10e4-4c9d-b0fd-7f8dc3b8a6be&quot;</span><span class="p">,</span>
@@ -1141,7 +1141,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 </pre></div>
 </div>
 <p>Request Payload to set Field Level and Expression Level for functions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
   <span class="s2">&quot;querySources&quot;</span> <span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;b2972494-ca59-4904-9561-d4b609a6b806&quot;</span><span class="p">,</span>
@@ -1189,7 +1189,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 </pre></div>
 </div>
 <p>Successful response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[],</span>
   <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">null</span>
@@ -1208,16 +1208,16 @@ Will load from remote connection if they are not yet populated in system.</p>
 <blockquote>
 <div><p>An array of <a class="reference internal" href="models/Item.html"><span class="doc">Item</span></a> objects with:</p>
 <blockquote>
-<div>- <strong>key</strong> is Either &#8220;Table&#8221;, &#8220;View&#8221;, &#8220;Stored procedure&#8221; or &#8220;Function&#8221; <br clear="right" />
+<div>- <strong>key</strong> is Either “Table”, “View”, “Stored procedure” or “Function” <br clear="right" />
 - <strong>value</strong> is the number of changes for each type</div></blockquote>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/indicator</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/indicator</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
   <span class="s2">&quot;key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
   <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
   <span class="s2">&quot;originalValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
@@ -1256,11 +1256,11 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div>A <a class="reference internal" href="models/DataResult.html"><span class="doc">DataResult</span></a> object, with <strong>data</strong> field containing a <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object whose <strong>result</strong> field containing a list of <a class="reference internal" href="models/QuerySourceField.html"><span class="doc">QuerySourceField</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/reloadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/reloadQuerySourceFields</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload for Filter Lookup Key - Value:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
   <span class="s2">&quot;postedParameters&quot;</span> <span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8ccfac80-c883-446b-948d-18568dc4d173&quot;</span><span class="p">,</span>
@@ -1288,7 +1288,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 </pre></div>
 </div>
 <p>Request payload for User Defined Filter Value:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;0cd0f186-48f1-47a9-9975-1f2bded3a5cc&quot;</span><span class="p">,</span>
   <span class="s2">&quot;postedParameters&quot;</span> <span class="p">:</span> <span class="p">[{</span>
         <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;8ccfac80-c883-446b-948d-18568dc4d173&quot;</span><span class="p">,</span>
@@ -1310,7 +1310,7 @@ Will load from remote connection if they are not yet populated in system.</p>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample response:</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -1437,18 +1437,18 @@ Sample response:</div>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/validateCalculatedField</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/validateCalculatedField</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
         <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;UnitPrice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;querySourceId&quot;</span> <span class="p">:</span> <span class="s2">&quot;9d18fa06-bf09-4908-9cc0-3ecb15c0e9e4&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
@@ -1468,11 +1468,11 @@ Sample response:</div>
 <div>An array of <a class="reference internal" href="models/ReportFunction.html"><span class="doc">ReportFunction</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/functionOperators</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/functionOperators</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;tenantId&quot;</span> <span class="p">:</span> <span class="s2">&quot;b5b3a5cc-9e55-424c-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
    <span class="s2">&quot;querySourceIds&quot;</span> <span class="p">:</span> <span class="p">[</span>
       <span class="s2">&quot;273badf8-d210-494f-a458-25e8f462891f&quot;</span><span class="p">,</span>
@@ -1487,7 +1487,7 @@ Sample response:</div>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample response:</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span>
    <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -1900,11 +1900,11 @@ Sample response:</div>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing an array of <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="s2">&quot;b5b3a5cc-9e55-424c-ae85-ba92ec3b934e&quot;</span><span class="p">,</span>
    <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -1922,7 +1922,7 @@ Sample response:</div>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
             <span class="s2">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;5e97b5e4-bf85-4be8-8244-cf195bdf4739&quot;</span><span class="p">,</span>
@@ -1998,11 +1998,11 @@ Sample response:</div>
 <div>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object with <strong>result</strong> field containing an array of <a class="reference internal" href="models/Relationship.html"><span class="doc">Relationship</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadInvalidRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/loadInvalidRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;tenantId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;criteria&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -2054,7 +2054,7 @@ Sample response:</div>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample response:</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
          <span class="nt">&quot;invalid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -2281,11 +2281,11 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if the save is successful</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/relationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/dataModel/relationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request payload to insert one new relationship and update another:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
      <span class="s2">&quot;joinConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
      <span class="s2">&quot;foreignConnectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;ca24a47e-ffdd-4391-a82a-254f48b451e5&quot;</span><span class="p">,</span>
@@ -2315,7 +2315,7 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[],</span>
   <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">null</span>
@@ -2335,11 +2335,11 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object with <strong>success</strong> field true if deletion is successful</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/relationship/457dbf49-9b1d-42d0-9026-0e67ee86a912</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/api/dataModel/relationship/457dbf49-9b1d-42d0-9026-0e67ee86a912</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Successful response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[],</span>
   <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">null</span>
@@ -2347,7 +2347,7 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 </pre></div>
 </div>
 <p>Response when trying to delete a system relationship:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -2375,11 +2375,11 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <div>A <a class="reference internal" href="models/DataModelSchema.html"><span class="doc">DataModelSchema</span></a> object</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/schema</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/dataModel/schema</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
-<p>Sample response for 2 relationships &#8220;Customer&#8221; Left joins with &#8220;Orders&#8221; and &#8220;Orders&#8221; Inner joins with &#8220;Order Details&#8221;:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<p>Sample response for 2 relationships “Customer” Left joins with “Orders” and “Orders” Inner joins with “Order Details”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;querySources&quot;</span><span class="p">:</span> <span class="p">[{</span>
       <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8aa52ba9-8324-4b8e-bf42-619a3f050aa5&quot;</span><span class="p">,</span>
       <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo.Customers&quot;</span><span class="p">,</span>
@@ -2457,11 +2457,11 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/schema/updateConnectionColor</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/schema/updateConnectionColor</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;connectionId&quot;</span> <span class="p">:</span> <span class="s2">&quot;6cc06e5b-0627-432c-bc33-708b0843c7c7&quot;</span><span class="p">,</span>
    <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-15T03:11:24&quot;</span>
@@ -2469,7 +2469,7 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 </pre></div>
 </div>
 <p>Sample Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">null</span>
@@ -2487,14 +2487,14 @@ After adding a new relationship, <a class="reference internal" href="#post-datam
 <p><strong>Response</strong></p>
 <blockquote>
 <div>An array of string values. <br clear="right" /> <br clear="right" />
-Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#8221;, &#8220;Full&#8221; and &#8220;Cross&#8221;.</div></blockquote>
+Currently supported are: “Inner”, “Left”, “Right”, “Full” and “Cross”.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/relationship/joinTypes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/relationship/joinTypes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Inner&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span> <span class="s2">&quot;Full&quot;</span><span class="p">,</span> <span class="s2">&quot;Cross&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Inner&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span> <span class="s2">&quot;Full&quot;</span><span class="p">,</span> <span class="s2">&quot;Cross&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -2510,11 +2510,11 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 <div>An array of <a class="reference internal" href="models/GlobalDatabaseMapping.html"><span class="doc">GlobalDatabaseMapping</span></a> objects</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
    <span class="p">{</span>
       <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;toServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER2&quot;</span><span class="p">,</span>
@@ -2555,11 +2555,11 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> field true if the save is successful</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/databaseMapping</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
    <span class="p">{</span>
       <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
       <span class="s2">&quot;fromServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
@@ -2579,7 +2579,7 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 </pre></div>
 </div>
 <p>Sample response in case user has System Admin Permission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span><span class="n">true</span>
    <span class="s2">&quot;messages&quot;</span> <span class="p">:</span> <span class="p">[],</span>
    <span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">null</span>
@@ -2587,7 +2587,7 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 </pre></div>
 </div>
 <p>Sample response in case user does not have System Admin Permission:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;message&quot;</span> <span class="p">:</span> <span class="s2">&quot;You don&#39;t have permission to perform this action&quot;</span><span class="p">,</span>
   <span class="s2">&quot;detail&quot;</span> <span class="p">:</span> <span class="s2">&quot;NoPermission&quot;</span>
 <span class="p">}</span>
@@ -2601,7 +2601,7 @@ Currently supported are: &#8220;Inner&#8221;, &#8220;Left&#8221;, &#8220;Right&#
 <p><strong>Request</strong></p>
 <blockquote>
 <div><p>A <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a> object</p>
-<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: &#8220;databaseName&#8221;</p>
+<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: “databaseName”</p>
 </div></blockquote>
 <p><strong>Response</strong></p>
 <blockquote>
@@ -2647,11 +2647,11 @@ string</td>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseNames</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseNames</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
    <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
    <span class="s2">&quot;loadFromDatabase&quot;</span><span class="p">:</span> <span class="n">true</span>
@@ -2659,7 +2659,7 @@ string</td>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
          <span class="s2">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;AZSQL&quot;</span><span class="p">,</span>
@@ -2711,16 +2711,16 @@ string</td>
 <p><strong>Response</strong></p>
 <blockquote>
 <div><p>A <a class="reference internal" href="models/PagedResult.html"><span class="doc">PagedResult</span></a> object, with <strong>result</strong> field containing an array of strings.</p>
-<p>If <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a>.``type`` is <code class="docutils literal"><span class="pre">2</span></code> (Database), return connection names, else return schema names.</p>
-<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: &#8220;objectName&#8221;</p>
+<p>If <a class="reference internal" href="models/DatabaseMappingPagedRequest.html"><span class="doc">DatabaseMappingPagedRequest</span></a>.``type`` is <code class="docutils literal notranslate"><span class="pre">2</span></code> (Database), return connection names, else return schema names.</p>
+<p><strong>Notes:</strong> Key for <a class="reference internal" href="models/SearchCriteria.html"><span class="doc">SearchCriteria</span></a> support to search: “objectName”</p>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseObjects</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/loadDatabaseObjects</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload for Database:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
    <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
    <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
@@ -2730,7 +2730,7 @@ string</td>
 </pre></div>
 </div>
 <p>Sample response for Database:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="s2">&quot;connection_name&quot;</span>
    <span class="p">],</span>
@@ -2743,7 +2743,7 @@ string</td>
 </pre></div>
 </div>
 <p>Request Payload for Schema:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;pageIndex&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
    <span class="s2">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
    <span class="s2">&quot;databaseServer&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVER1&quot;</span><span class="p">,</span>
@@ -2753,7 +2753,7 @@ string</td>
 </pre></div>
 </div>
 <p>Sample response for Schema:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="s2">&quot;dbo&quot;</span>
    <span class="p">],</span>
@@ -2778,11 +2778,11 @@ string</td>
 <div>The saved <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/customQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/customQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
    <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;6cc06e5b-0627-432c-bc33-708b0843c7c7&quot;</span><span class="p">,</span>
    <span class="s2">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;94454a0a-17a2-49e5-bebf-9c0d07d95587&quot;</span><span class="p">,</span>
@@ -2793,7 +2793,7 @@ string</td>
 <div class="toggle docutils container">
 <div class="header docutils container">
 Sample response:</div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">&quot;realName&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;193a0a94-decf-4217-9e0c-1956f0335f59&quot;</span><span class="p">,</span>
    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;northwind.test&quot;</span><span class="p">,</span>
@@ -2892,11 +2892,11 @@ Sample response:</div>
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> field true if View Name is unique and other custom view contents are valid.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/validateCustomQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/validateCustomQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test&quot;</span><span class="p">,</span>
   <span class="s2">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;3562497d-07a1-4a0a-823d-811b8a098d73&quot;</span><span class="p">,</span>
   <span class="s2">&quot;categoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;533f001b-88ef-46d5-b0c1-69b774c81aba&quot;</span><span class="p">,</span>
@@ -2905,7 +2905,7 @@ Sample response:</div>
 </pre></div>
 </div>
 <p>Sample response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
   <span class="s2">&quot;confirmation&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
   <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[]</span>
@@ -2925,15 +2925,15 @@ Sample response:</div>
 <div>An <a class="reference internal" href="models/OperationResult.html"><span class="doc">OperationResult</span></a> object, with <strong>success</strong> true if the deletion is successful.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/deleteCustomQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/deleteCustomQuerySource</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;e26a908a-5d76-473e-a364-91afe9147023&quot;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;e26a908a-5d76-473e-a364-91afe9147023&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Sample Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">true</span>
 <span class="p">}</span>
 </pre></div>
@@ -2951,11 +2951,11 @@ Sample response:</div>
 <div>A <a class="reference internal" href="models/QuerySource.html"><span class="doc">QuerySource</span></a> object.</div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/querySource/c7341994-3506-4f4a-acd9-96f9b8936ec2</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">api/dataModel/querySource/c7341994-3506-4f4a-acd9-96f9b8936ec2</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Sample Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;realName&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;c7341994-3506-4f4a-acd9-96f9b8936ec2&quot;</span><span class="p">,</span>
    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orders&quot;</span><span class="p">,</span>
@@ -3036,11 +3036,11 @@ boolean</td>
 </div></blockquote>
 <p><strong>Samples</strong></p>
 <blockquote>
-<div><div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/validateRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div><div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">api/dataModel/validateRelationships</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </pre></div>
 </div>
 <p>Request Payload:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
@@ -3073,7 +3073,7 @@ boolean</td>
 </pre></div>
 </div>
 <p>Sample Response:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;success&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
    <span class="s2">&quot;hasPositionId&quot;</span> <span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
@@ -3085,34 +3085,32 @@ boolean</td>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="api_tenant.html" class="btn btn-neutral float-right" title="Tenant APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="api_connection.html" class="btn btn-neutral" title="Connection APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="api_tenant.html" class="btn btn-neutral float-right" title="Tenant APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api_connection.html" class="btn btn-neutral float-left" title="Connection APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, Izenda.
+        &#169; Copyright 2021, Izenda.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -3121,37 +3119,15 @@ boolean</td>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'4.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  <script type="text/javascript">
     $(document).ready(function() {

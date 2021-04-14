@@ -4,12 +4,11 @@
 Release Details
 ==============
 
-v4.0.0 Core Release -- March 24th, 2021
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+v4.0.0 (Beta) Major Release – March 24th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Breaking Changes
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 - Front-end Updates
    - React upgraded from 15.6 to 16.3
@@ -52,7 +51,7 @@ FEATURES
    - For information on this process, please see our :ref:`Heavy_Load_Queue_` page
 
 v3.11.4 Preview Release -- December 24th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -119,7 +118,7 @@ FEATURES
 
 
 v3.11.3 Preview Release -- December 8th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -133,7 +132,7 @@ FEATURES
    - For more information please see the :ref:`KPI_User_Guide` 
 
 v3.11.2 Preview Release -- November 11th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
@@ -152,7 +151,7 @@ FEATURES
 - For more information on NLQ please see our :ref:`NLQ_User_Guide`
 
 v3.11.0 Core Release -- October 23rd, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -166,7 +165,7 @@ FEATURES
 
 
 v3.10.5 Preview Release -- September 25th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -189,7 +188,7 @@ FEATURES
 
 
 v3.10.4 Preview Release -- September 8th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -226,7 +225,7 @@ FEATURES
 
 
 v3.10.3 Preview Release -- August 11th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -244,7 +243,7 @@ FEATURES
     - Example connection string: account=xxxx;user=xxxx;password=xxxx;db=xxxx;host=xxxx.east-us-2.azure.snowflakecomputing.com
 
 v3.10.2 Preview Release -- August 3rd, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -258,7 +257,7 @@ FEATURES
     - For more information, please see our :ref:`Copy_Management` page
 
 v3.10.1 Preview Release -- July 27th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -281,7 +280,7 @@ FEATURES
 
 
 v3.9.5 Preview Release -- June 25th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -293,7 +292,7 @@ FEATURES
     - For more information, please see our :ref:`Copy_Management` page
 
 v3.9.4 Preview Release -- June 2nd, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -308,7 +307,7 @@ FEATURES
 - For more information, please see our :ref:`Rest_Connectors` page
 
 v3.9.3 Preview Release -- May 18th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
@@ -318,7 +317,7 @@ FEATURES
     - For more information, please see our :ref:`Copy_Management` page
 
 v3.9.1 Preview Release -- April 30th, 2020
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FEATURES
 ^^^^^^^^^
