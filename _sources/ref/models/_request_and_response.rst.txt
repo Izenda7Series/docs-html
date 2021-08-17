@@ -21,6 +21,7 @@ Request and Response
    PagedResult
    QuerySourceFieldPagedRequest
    QuerySourcePagedRequest
+   RelatedDataSourcesWithRelationshipsResult
    RelationshipPagedRequest
    ReloadQuerySourceRequest
    ReportCalculatedFieldParameter
@@ -30,6 +31,7 @@ Request and Response
    ReportExpressionParameter
    ReportFilterParameter
    ReportFilterFieldPagedRequest
+   ReportFilterValidationParameter
    ReportHistoryPagedRequest
    ReportPagedRequest
    ReportParam

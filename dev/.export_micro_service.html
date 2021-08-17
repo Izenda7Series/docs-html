@@ -229,11 +229,11 @@ sudo pm2 --version
 <div class="section" id="deployment-steps">
 <h3>Deployment steps<a class="headerlink" href="#deployment-steps" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Login as root user and copy Export Service at desired location. Run following commands.</p>
+<li><p class="first">Login as root user and copy Export Service at desired location. Run following commands by replacing export service archive name and port.</p>
 <blockquote>
-<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>tar -xvf &lt;export service archive&gt;
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>tar -xvf exportservice-4.0.0-linux.tgz
 cd package
-sudo pm2 start app.js -- --port &lt;port number&gt;
+sudo pm2 start app.js -- --port 5775
 sudo pm2 startup systemd
 sudo pm2 save
 sudo pm2 list
@@ -285,7 +285,12 @@ node app.js --port 5775
 <div class="section" id="bi-application-changes">
 <h2>BI Application changes<a class="headerlink" href="#bi-application-changes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal notranslate"><span class="pre">EnableExportService</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> in <code class="docutils literal notranslate"><span class="pre">IzendaSystemSetting</span></code> table.</p>
+<li><p class="first">Export micro service can be enabled by setting <code class="docutils literal notranslate"><span class="pre">EnableExportService</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> in <code class="docutils literal notranslate"><span class="pre">IzendaSystemSetting</span></code> table. Note: We strongly recommend to take backup of configuration database before running script.</p>
+<blockquote>
+<div><div class="highlight-code notranslate"><div class="highlight"><pre><span></span>UPDATE IzendaSystemSetting set Value=&#39;1&#39; where Name=&#39;EnableExportService&#39;;
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p class="first">Additionally, make an entry into <code class="docutils literal notranslate"><span class="pre">IzendaExportService</span></code> table specifying URL of Export Service. For example:</p>
 <blockquote>

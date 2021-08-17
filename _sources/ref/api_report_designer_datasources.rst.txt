@@ -1,5 +1,3 @@
-
-
 ==================================
 Report Designer Data Sources APIs
 ==================================
@@ -104,6 +102,16 @@ Summary
 
        .. versionadded:: 2.5.0
      - In Report Designer when switching from the others to Data Source tab.
+   * - `POST report/loadPartialDataSources`_
+     - Returns list of report data sources per connection.
+
+       .. versionadded:: 4.0.0
+     - First step in Report Designer 2.0 (Report Part Designer -> Select Your Data).
+   * - `POST report/loadRelatedDataSources`_
+     - Returns list of related data sources per connection based on query sources.
+
+       .. versionadded:: 4.0.0
+     - First step in Report Designer 2.0 when selecting data sources or data source fields (Report Part Designer > Select Your Data).
 
 GET report/dataSourceCategory/(tenant_id)
 ------------------------------------------------
@@ -420,7 +428,7 @@ Returns list of related query source categories.
           -  Description
           -  Note
        *  -  **data** |br|
-             an array of :doc:`ReportDataSourceCategory`
+             an array of :doc:`models/ReportDataSourceCategory`
           -  The list of report data source category
           -
        *  -  **totalItems** |br|
@@ -1749,7 +1757,7 @@ Returns list of report data source category with paging.
           -  Description
           -  Note
        *  -  **data** |br|
-             an array of :doc:`ReportDataSourceCategory`
+             an array of :doc:`models/ReportDataSourceCategory`
           -  The list of report data source category
           -
        *  -  **totalItems** |br|
@@ -1937,4 +1945,404 @@ Returns list of report data source category with paging.
          "numOfCheckedChilds": 0,
          "indeterminate": false,
          "isLastPage": true
+      }
+
+
+POST report/loadPartialDataSources
+-------------------------------------------
+
+Returns list of report data sources per connection.
+
+**Request**
+
+    Payload: a :doc:`models/ReportDataSourceParameter` object
+
+**Response**
+
+    An array of :doc:`models/ReportDataSourceConnection` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadPartialDataSources HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "tenantId": "0fc6bbfe-7066-4e1d-92f5-9c6d75558ead",
+         "criteria": [{
+            "key": "Name",
+            "value": ""
+         }],
+         "skipItems": 0,
+         "pageSize": 50,
+         "parentIds": [],
+         "relationships": []
+      }
+
+   Sample Response ::
+
+      {
+         "data": [{
+            "id": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+            "name": "Northwind-MSSQL",
+            "querySource": [{
+               "connectionId": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+               "connectionName": "Northwind-MSSQL",
+               "dataSourceCategoryId": "518033c3-9db5-4ac1-9cb0-c4581d052b76",
+               "dataSourceCategoryName": "MSSQL",
+               "fields": [{
+                  "alias": "",
+                  "allowDistinct": true,
+                  "allowToSave": false,
+                  "approval": 0,
+                  "calculatedTree": null,
+                  "categoryName": null,
+                  "checked": false,
+                  "created": null,
+                  "createdBy": "System Admin",
+                  "dataBaseType": 0,
+                  "dataType": "int",
+                  "deleted": false,
+                  "existed": false,
+                  "expression": null,
+                  "expressionFields": [],
+                  "extendedProperties": null,
+                  "filterLookupStatus": 0,
+                  "filterLookupType": 0,
+                  "filterable": true,
+                  "filteredValue": "{}",
+                  "fullName": null,
+                  "fullPath": null,
+                  "functionName": null,
+                  "groupPosition": 0,
+                  "hasAggregatedFunction": false,
+                  "hasSupportDefaultTotal": true,
+                  "id": "7de99693-eb74-4209-80b4-12b530837211",
+                  "inaccessible": false,
+                  "inputFeatures": null,
+                  "inserted": true,
+                  "isAlias": false,
+                  "isCalculated": false,
+                  "isCheck": false,
+                  "isCompositeField": false,
+                  "isParameter": false,
+                  "isPredicated": false,
+                  "isRunningField": false,
+                  "izendaDataType": "Numeric",
+                  "matchedTenant": false,
+                  "modelName": null,
+                  "modified": "0001-01-01T00:00:00",
+                  "modifiedBy": null,
+                  "name": "OrderID",
+                  "originalAlias": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "originalName": "OrderID",
+                  "parentId": null,
+                  "physicalChange": 0,
+                  "position": 0,
+                  "querySource": null,
+                  "querySourceId": "ec16146f-5873-4146-9a89-3c7b36f2d1bf",
+                  "querySourceName": null,
+                  "relationColumn": null,
+                  "reportId": null,
+                  "state": 0,
+                  "supportDefaultTotal": null,
+                  "targetValue": null,
+                  "type": 0,
+                  "version": null,
+                  "visible": true
+               }, {
+                  "alias": "",
+                  "allowDistinct": true,
+                  "allowToSave": false,
+                  "approval": 0,
+                  "calculatedTree": null,
+                  "categoryName": null,
+                  "checked": false,
+                  "created": null,
+                  "createdBy": "System Admin",
+                  "dataBaseType": 0,
+                  "dataType": "nchar",
+                  "deleted": false,
+                  "existed": false,
+                  "expression": null,
+                  "expressionFields": [],
+                  "extendedProperties": null,
+                  "filterLookupStatus": 0,
+                  "filterLookupType": 0,
+                  "filterable": true,
+                  "filteredValue": "{}",
+                  "fullName": null,
+                  "fullPath": null,
+                  "functionName": null,
+                  "groupPosition": 0,
+                  "hasAggregatedFunction": false,
+                  "hasSupportDefaultTotal": true,
+                  "id": "bb2f13f3-eba8-45bc-90ea-cac543691c04",
+                  "inaccessible": false,
+                  "inputFeatures": null,
+                  "inserted": true,
+                  "isAlias": false,
+                  "isCalculated": false,
+                  "isCheck": false,
+                  "isCompositeField": false,
+                  "isParameter": false,
+                  "isPredicated": false,
+                  "isRunningField": false,
+                  "izendaDataType": "Text",
+                  "matchedTenant": false,
+                  "modelName": null,
+                  "modified": "0001-01-01T00:00:00",
+                  "modifiedBy": null,
+                  "name": "CustomerID",
+                  "originalAlias": null,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "originalName": "CustomerID",
+                  "parentId": null,
+                  "physicalChange": 0,
+                  "position": 0,
+                  "querySource": null,
+                  "querySourceId": "ec16146f-5873-4146-9a89-3c7b36f2d1bf",
+                  "querySourceName": null,
+                  "relationColumn": null,
+                  "reportId": null,
+                  "state": 0,
+                  "supportDefaultTotal": null,
+                  "targetValue": null,
+                  "type": 0,
+                  "version": null,
+                  "visible": true
+               }],
+               "id": "ec16146f-5873-4146-9a89-3c7b36f2d1bf",
+               "isAlias": false,
+               "isCheck": false,
+               "isDynamic": false,
+               "name": "Orders",
+               "numOfCheckedChilds": 0,
+               "numOfChilds": 2,
+               "originalName": "Orders",
+               "querySourceCategoryName": "dbo",
+               "selected": false,
+               "visible": true,
+               "type": "Table"
+            }],
+            "serverTypeId": "572bd576-8c92-4901-ab2a-b16e38144813",
+            "serverTypeName": "MSSQL",
+         }],
+         "indeterminate": false,
+         "isLastPage": true,
+         "numOfCheckedChilds": 0,
+         "numOfChilds": 1,
+         "totalItems": 3
+      }
+
+
+POST report/loadRelatedDataSources
+-------------------------------------------
+
+Returns list of related data sources per connection based on query sources.
+
+**Request**
+
+    The following object:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **tenantId** |br|
+             string (GUID)
+          -  The tenant id
+          -
+       *  -  **querySources** |br|
+             an array of :doc:`models/QuerySource`
+          -  The list of query sources
+          -
+       *  -  **relationships** |br|
+             an array of :doc:`models/Relationship`
+          -  The list of relationships
+          -
+
+**Response**
+
+    An array of :doc:`models/RelatedDataSourcesWithRelationshipsResult` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadRelatedDataSources HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "querySources": [{
+            "querySourceId": "8b26c324-6b9e-484e-8202-123e2180bd0b",
+            "selected": true
+         }],
+         "relationships": [],
+         "tenantId": null
+      }
+
+   Sample Response ::
+
+      {
+         "relatedDataSources": [{
+            "serverTypeId": "572bd576-8c92-4901-ab2a-b16e38144813",
+            "serverTypeName": "MSSQL",
+            "id": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+            "name": "Northwind-MSSQL",
+            "querySource": [{
+               "id": "8b26c324-6b9e-484e-8202-123e2180bd0b",
+               "name": "Employees",
+               "originalName": "Employees",
+               "type": "Table",
+               "selected": true,
+               "visible": true,
+               "querySourceCategoryName": "dbo",
+               "dataSourceCategoryName": "MSSQL",
+               "dataSourceCategoryId": "518033c3-9db5-4ac1-9cb0-c4581d052b76",
+               "connectionName": "Northwind-MSSQL",
+               "connectionId": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+               "isAlias": false,
+               "isNativeAlias": false,
+               "isDynamic": false,
+               "fields": [{
+                  "name": "EmployeeID",
+                  "alias": "",
+                  "dataType": "int",
+                  "izendaDataType": "Numeric",
+                  "allowDistinct": true,
+                  "visible": true,
+                  "filterable": true,
+                  "querySourceId": "8b26c324-6b9e-484e-8202-123e2180bd0b",
+                  "parentId": null,
+                  "expressionFields": [],
+                  "filteredValue": "{}",
+                  "type": 0,
+                  "groupPosition": 0,
+                  "position": 0,
+                  "extendedProperties": null,
+                  "physicalChange": 0,
+                  "approval": 0,
+                  "existed": false,
+                  "checked": false,
+                  "matchedTenant": false,
+                  "functionName": null,
+                  "expression": null,
+                  "isRunningField": false,
+                  "supportDefaultTotal": null,
+                  "fullName": null,
+                  "calculatedTree": null,
+                  "reportId": null,
+                  "originalName": "EmployeeID",
+                  "isAlias": false,
+                  "originalId": "00000000-0000-0000-0000-000000000000",
+                  "isParameter": false,
+                  "isCalculated": false,
+                  "isPredicated": false,
+                  "modelName": null,
+                  "targetValue": null,
+                  "relationColumn": null,
+                  "inputFeatures": null,
+                  "hasAggregatedFunction": false,
+                  "isCompositeField": false,
+                  "hasSupportDefaultTotal": true,
+                  "querySource": null,
+                  "querySourceName": null,
+                  "categoryName": null,
+                  "inaccessible": false,
+                  "originalAlias": null,
+                  "allowToSave": false,
+                  "filterLookupType": 0,
+                  "filterLookupStatus": 0,
+                  "dataBaseType": 0,
+                  "fullPath": null,
+                  "isCheck": false,
+                  "id": "4fdcb7e5-0d09-4fdf-a0f2-e1b69589941f",
+                  "state": 0,
+                  "deleted": false,
+                  "inserted": true,
+                  "version": null,
+                  "created": null,
+                  "createdBy": "System Admin",
+                  "modified": "0001-01-01T00:00:00",
+                  "modifiedBy": null
+               }],
+               "numOfChilds": 1,
+               "numOfCheckedChilds": 0,
+               "indeterminate": false,
+               "fullPath": null,
+               "computeNameSettings": null,
+               "isCheck": false
+            }],
+            "numOfChilds": 0,
+            "numOfCheckedChilds": 0,
+            "indeterminate": false,
+            "fullPath": null,
+            "computeNameSettings": null,
+            "isCheck": false
+         }],
+         "selectedRealtionships": [{
+            "joinConnectionId": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+            "foreignConnectionId": "83554d8c-3383-42b6-be73-0bb31cdb40db",
+            "joinQuerySourceAlias": null,
+            "foreignQuerySourceAlias": null,
+            "joinFieldAlias": "",
+            "specifictJoinFieldAlias": null,
+            "foreignFieldAlias": "",
+            "specifictForeignFieldAlias": null,
+            "alias": "Employees (Self-Joined)",
+            "systemRelationship": false,
+            "disabled": false,
+            "joinType": "Inner",
+            "parentRelationshipId": "b5109c00-7c43-4e88-9216-3b22cd3768b5",
+            "position": null,
+            "relationshipPosition": 0,
+            "hasBeenModified": false,
+            "isPredictionRelation": false,
+            "predictionRelationId": null,
+            "predictionId": null,
+            "relationshipKeyJoins": [],
+            "reportId": null,
+            "foreignAlias": null,
+            "joinQuerySourceUniqueName": null,
+            "joinFieldUniqueName": null,
+            "forgeinQuerySourceUniqueName": null,
+            "forgeinFieldUniqueName": null,
+            "tempId": null,
+            "aliasTempId": null,
+            "originalId": "00000000-0000-0000-0000-000000000000",
+            "isForeignDataObjectAlias": false,
+            "positionId": null,
+            "selectedForeignAlias": "8b26c324-6b9e-484e-8202-123e2180bd0b_Employees",
+            "joinQuerySourceName": "Employees",
+            "joinQuerySourceId": "8b26c324-6b9e-484e-8202-123e2180bd0b",
+            "joinFieldId": "68f8968b-d5d7-4e5f-b822-abba656bea34",
+            "joinFieldType": null,
+            "foreignQuerySourceName": "Employees",
+            "foreignQuerySourceId": "8b26c324-6b9e-484e-8202-123e2180bd0b",
+            "foreignFieldId": "4fdcb7e5-0d09-4fdf-a0f2-e1b69589941f",
+            "foreignFieldType": null,
+            "joinFieldName": "ReportsTo",
+            "foreignFieldName": "EmployeeID",
+            "joinDataSourceCategoryId": "518033c3-9db5-4ac1-9cb0-c4581d052b76",
+            "joinDataSourceCategoryName": "MSSQL",
+            "foreignDataSourceCategoryId": "518033c3-9db5-4ac1-9cb0-c4581d052b76",
+            "foreignDataSourceCategoryName": "MSSQL",
+            "comparisonOperator": null,
+            "id": "5c41f75b-7cc0-4459-91ab-4187da590ea8",
+            "state": 1,
+            "deleted": false,
+            "inserted": false,
+            "version": null,
+            "created": null,
+            "createdBy": "System Admin",
+            "modified": "2021-06-17T14:42:13",
+            "modifiedBy": null
+         }]
       }

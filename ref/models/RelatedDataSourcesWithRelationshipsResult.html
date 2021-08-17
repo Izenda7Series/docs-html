@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RelatedDataSourcesWithRelationshipsResult &mdash; Izenda BI 4.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="RelationshipPagedRequest" href="RelationshipPagedRequest.html" />
+    <link rel="prev" title="QuerySourcePagedRequest" href="QuerySourcePagedRequest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Izenda BI
+          
+
+          
+            
+            <img src="../../_static/logo2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/.intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/.install.html">Installation and Maintenance Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.administrator_guide.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui/.user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/.developer_guide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../.system_reference.html">System Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../.system_specification.html">System Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../.rest_api_documentation.html">REST API Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href=".rest_api_object_models.html">REST API Object Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_data_model.html">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_details.html">Report Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data_sources.html">Report Datasources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_filters.html">Report Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_data.html">Report Data and Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_report_part_details.html">Report Part Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_dashboards.html">Dashboards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_security.html">Security</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="_request_and_response.html">Request and Response</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="AccessPagedRequest.html">AccessPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CategoryPagedRequest.html">CategoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionResult.html">ConnectionResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ConnectionVerificationResult.html">ConnectionVerificationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardFilterFieldPagedRequest.html">DashboardFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DashboardRenameParameter.html">DashboardRenameParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DatabaseMappingPagedRequest.html">DatabaseMappingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DataResult.html">DataResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GenerateAccessTokenArgs.html">GenerateAccessTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LicenseStatusResult.html">LicenseStatusResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="LoadDashboard.html">LoadDashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModelError.html">ModelError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OperationResult.html">OperationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PagedResult.html">PagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourceFieldPagedRequest.html">QuerySourceFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QuerySourcePagedRequest.html">QuerySourcePagedRequest</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">RelatedDataSourcesWithRelationshipsResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RelationshipPagedRequest.html">RelationshipPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReloadQuerySourceRequest.html">ReloadQuerySourceRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportCalculatedFieldParameter.html">ReportCalculatedFieldParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportCategoryParam.html">ReportCategoryParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportConnectionParam.html">ReportConnectionParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportDataSourceParameter.html">ReportDataSourceParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportExpressionParameter.html">ReportExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterParameter.html">ReportFilterParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterFieldPagedRequest.html">ReportFilterFieldPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportFilterValidationParameter.html">ReportFilterValidationParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportHistoryPagedRequest.html">ReportHistoryPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPagedRequest.html">ReportPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportParam.html">ReportParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartPreviewParameter.html#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html">ReportPartValidateExpressionParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html#reportpartpreviewparameter">ReportPartPreviewParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportPartValidateExpressionParameter.html#reportsavingparameter">ReportSavingParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRelationshipResult.html">ReportRelationshipResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportRenameParameter.html">ReportRenameParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedPagedRequest.html">ReportSelectedPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedPagedRequest.html#reportpagedrequest">ReportPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReportSelectedQuerySourceResult.html">ReportSelectedQuerySourceResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaRequest.html">SchemaRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SchemaResult.html">SchemaResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SharingRoleUserParameter.html">SharingRoleUserParameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SubscriptionPagedRequest.html">SubscriptionPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedRequest.html">SystemSchedulingPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemSchedulingPagedResult.html">SystemSchedulingPagedResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SystemVariablePagedRequest.html">SystemVariablePagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TokenRequest.html">TokenRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportInput.html">UpdateSubReportInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UpdateSubReportStatus.html">UpdateSubReportStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UserPagedRequest.html">UserPagedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenArgs.html">ValidateTokenArgs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateTokenResult.html">ValidateTokenResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidateUserRoleAssociationParam.html">ValidateUserRoleAssociationParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ValidationOperationResult.html">ValidationOperationResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RolePagedRequest.html">RolePagedRequest</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_others.html">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../.database_documentation.html">Database Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_external.html">External APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/.faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../.glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://wiki.izenda.us">6 Series Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Izenda BI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../.system_reference.html">System Reference</a> &raquo;</li>
+        
+          <li><a href=".rest_api_object_models.html">REST API Object Models</a> &raquo;</li>
+        
+          <li><a href="_request_and_response.html">Request and Response</a> &raquo;</li>
+        
+      <li>RelatedDataSourcesWithRelationshipsResult</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/ref/models/RelatedDataSourcesWithRelationshipsResult.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="relateddatasourceswithrelationshipsresult">
+<h1>RelatedDataSourcesWithRelationshipsResult<a class="headerlink" href="#relateddatasourceswithrelationshipsresult" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="5%" />
+<col width="65%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">NULL</th>
+<th class="head">Description</th>
+<th class="head">Note</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>relatedDataSources</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="QuerySource.html"><span class="doc">QuerySource</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>selectedRealtionships</strong> <br clear="right" />
+array of objects</td>
+<td>&#160;</td>
+<td>An array of <a class="reference internal" href="Relationship.html"><span class="doc">Relationship</span></a> objects</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Sample</strong>:</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;relatedDataSources&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;serverTypeId&quot;</span><span class="p">:</span> <span class="s2">&quot;572bd576-8c92-4901-ab2a-b16e38144813&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;serverTypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;83554d8c-3383-42b6-be73-0bb31cdb40db&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-MSSQL&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;querySource&quot;</span><span class="p">:</span> <span class="p">[{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8b26c324-6b9e-484e-8202-123e2180bd0b&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Employees&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;Employees&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Table&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;selected&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nt">&quot;querySourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;dbo&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;dataSourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;dataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;518033c3-9db5-4ac1-9cb0-c4581d052b76&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;connectionName&quot;</span><span class="p">:</span> <span class="s2">&quot;Northwind-MSSQL&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;connectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;83554d8c-3383-42b6-be73-0bb31cdb40db&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;isAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isNativeAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;EmployeeID&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;izendaDataType&quot;</span><span class="p">:</span> <span class="s2">&quot;Numeric&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;allowDistinct&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;filterable&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;8b26c324-6b9e-484e-8202-123e2180bd0b&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parentId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expressionFields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;filteredValue&quot;</span><span class="p">:</span> <span class="s2">&quot;{}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;groupPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;extendedProperties&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;physicalChange&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;approval&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;existed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;checked&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;matchedTenant&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;functionName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;expression&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isRunningField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;supportDefaultTotal&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;fullName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;calculatedTree&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;originalName&quot;</span><span class="p">:</span> <span class="s2">&quot;EmployeeID&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isParameter&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCalculated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isPredicated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;modelName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;targetValue&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;relationColumn&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;inputFeatures&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;hasAggregatedFunction&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;isCompositeField&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;hasSupportDefaultTotal&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;querySource&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;querySourceName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;categoryName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;inaccessible&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;originalAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;allowToSave&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;filterLookupType&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;filterLookupStatus&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;dataBaseType&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4fdcb7e5-0d09-4fdf-a0f2-e1b69589941f&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+         <span class="p">}],</span>
+         <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}],</span>
+      <span class="nt">&quot;numOfChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;numOfCheckedChilds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;indeterminate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;fullPath&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;computeNameSettings&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;isCheck&quot;</span><span class="p">:</span> <span class="kc">false</span>
+   <span class="p">}],</span>
+   <span class="nt">&quot;selectedRealtionships&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&quot;joinConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;83554d8c-3383-42b6-be73-0bb31cdb40db&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignConnectionId&quot;</span><span class="p">:</span> <span class="s2">&quot;83554d8c-3383-42b6-be73-0bb31cdb40db&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;foreignQuerySourceAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;joinFieldAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;specifictJoinFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;foreignFieldAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;specifictForeignFieldAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;Employees (Self-Joined)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;systemRelationship&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;disabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;joinType&quot;</span><span class="p">:</span> <span class="s2">&quot;Inner&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;parentRelationshipId&quot;</span><span class="p">:</span> <span class="s2">&quot;b5109c00-7c43-4e88-9216-3b22cd3768b5&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;relationshipPosition&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;hasBeenModified&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;isPredictionRelation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;predictionRelationId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;predictionId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;relationshipKeyJoins&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;reportId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;foreignAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;joinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;joinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;forgeinQuerySourceUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;forgeinFieldUniqueName&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;aliasTempId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;originalId&quot;</span><span class="p">:</span> <span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;isForeignDataObjectAlias&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;positionId&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;selectedForeignAlias&quot;</span><span class="p">:</span> <span class="s2">&quot;8b26c324-6b9e-484e-8202-123e2180bd0b_Employees&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Employees&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;8b26c324-6b9e-484e-8202-123e2180bd0b&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;68f8968b-d5d7-4e5f-b822-abba656bea34&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;foreignQuerySourceName&quot;</span><span class="p">:</span> <span class="s2">&quot;Employees&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignQuerySourceId&quot;</span><span class="p">:</span> <span class="s2">&quot;8b26c324-6b9e-484e-8202-123e2180bd0b&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignFieldId&quot;</span><span class="p">:</span> <span class="s2">&quot;4fdcb7e5-0d09-4fdf-a0f2-e1b69589941f&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignFieldType&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;joinFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;ReportsTo&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignFieldName&quot;</span><span class="p">:</span> <span class="s2">&quot;EmployeeID&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;518033c3-9db5-4ac1-9cb0-c4581d052b76&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;joinDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignDataSourceCategoryId&quot;</span><span class="p">:</span> <span class="s2">&quot;518033c3-9db5-4ac1-9cb0-c4581d052b76&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;foreignDataSourceCategoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;MSSQL&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;comparisonOperator&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;5c41f75b-7cc0-4459-91ab-4187da590ea8&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;deleted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;inserted&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;createdBy&quot;</span><span class="p">:</span> <span class="s2">&quot;System Admin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-17T14:42:13&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;modifiedBy&quot;</span><span class="p">:</span> <span class="kc">null</span>
+   <span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="RelationshipPagedRequest.html" class="btn btn-neutral float-right" title="RelationshipPagedRequest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="QuerySourcePagedRequest.html" class="btn btn-neutral float-left" title="QuerySourcePagedRequest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Izenda.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75560-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75560-1');
+</script>
+
+
+
+</body>
+</html>

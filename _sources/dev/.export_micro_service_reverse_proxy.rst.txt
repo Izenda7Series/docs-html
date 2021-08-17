@@ -1,6 +1,6 @@
 .. _Export_Micero_Service_Reverse_Proxy:
 
-Export Micro Service
+Export Micro Service 
 ####################
 
 Deploying Export Micro Service on Separate Linux Server
@@ -32,11 +32,11 @@ Pre-deployment steps
 
 Deployment steps
 ========================================
-#. Login as root user and copy Export Service at desired location. Run following commands.
+#. Login as root user and copy Export Service at desired location. Run following commands by replacing export service archive name and port.
 
         .. code-block:: code
 
-         tar -xvf <export service archive>
+         tar -xvf exportservice-4.0.0-linux.tgz
          cd package
          sudo pm2 start app.js -- --port 5775
          sudo pm2 startup systemd
@@ -200,7 +200,12 @@ Post-deployment steps
 
 BI Application changes
 **********************
-#. Export micro service can be enabled by setting ``EnableExportService`` to ``1`` in ``IzendaSystemSetting`` table.
+#. Export micro service can be enabled by setting ``EnableExportService`` to ``1`` in ``IzendaSystemSetting`` table. Note: We strongly recommend to take backup of configuration database before running script.
+
+        .. code-block:: code
+
+         UPDATE IzendaSystemSetting set Value='1' where Name='EnableExportService';
+		 
 #. Additionally, make an entry into ``IzendaExportService`` table specifying URL of Export Service. For example:
 
         .. code-block:: code

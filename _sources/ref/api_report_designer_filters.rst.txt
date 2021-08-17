@@ -28,6 +28,10 @@ List of APIs
      - Returns the list filter operators grouped by data type.
    * - `POST report/loadFilterDataSource`_
      - Returns a list of available report filter fields.
+   * - `POST report/loadFilterDataSourceByQuerySourceIds`_
+     - Returns a list of available report filter fields by query source IDs.
+
+       .. versionadded :: 4.0.0
    * - `POST report/validateFilterSyntax`_
      - Validates a filter syntax.
    * - `POST report/loadFilter`_
@@ -56,11 +60,13 @@ List of APIs
    * - `POST report/validateFilterFieldsType`_
      - Validate if report contains both aggregated and non-aggregated filter fields.
 
-       .. versionadded :: 2.5.0
-   * - `GET report/validateFilterFieldsType/{reportId}`_
+       .. versionadded:: 2.5.0
+   * - `POST report/validateFilterFields`_
      - Validate if report contains both aggregated and non-aggregated filter fields.
 
-       .. versionadded :: 2.5.0
+       .. versionadded:: 4.0.0
+
+
 .. _GET_report/filter/operators:
 
 GET report/filter/operators
@@ -573,7 +579,6 @@ Returns the list filter operators grouped by data type.
          }]
 
 
-
 POST report/loadFilterDataSource
 ------------------------------------------------
 
@@ -761,7 +766,198 @@ Returns a list of available report filter fields.
 
    Sample response is similar to above.
 
-       
+
+POST report/loadFilterDataSourceByQuerySourceIds
+------------------------------------------------
+
+Returns a list of available report filter fields by query source IDs.
+
+**Request**
+
+    The following object:
+
+    .. list-table::
+       :header-rows: 1
+
+       *  -  Field
+          -  Description
+          -  Note
+       *  -  **tenantId** |br|
+             string (GUID)
+          -  The tenant id
+          -
+       *  -  **querySourceIds** |br|
+             an array of string (GUID)
+          -  The list of query source IDs
+          -
+       *  -  **forFieldComparison** |br|
+             boolean
+          -  A flag that determines whether the filter is used to compare fields
+          -
+       *  -  **dataType** |br|
+             string
+          -  The data type
+          -
+       *  -  **relationships** |br|
+             an array of :doc:`models/Relationship`
+          -  The list of relationships
+          -
+
+**Response**
+
+    An array of :doc:`models/ReportFilterField` objects
+
+**Samples**
+
+   .. code-block:: http
+
+      POST /api/report/loadFilterDataSourceByQuerySourceIds HTTP/1.1
+
+   Request payload::
+
+      {
+         "tenantId": null,
+         "querySourceIds": ["8f9a3d47-1d55-4d72-863e-39a365b224e5"],
+         "forFieldComparison": false,
+         "dataType": "Text",
+         "relationships": []
+      }
+
+   Sample response::
+
+      [
+         {
+            "connectionName": "MSSQL",
+            "querySourceCategoryName": "dbo",
+            "sourceFieldName": "CategoryID",
+            "sourceFieldVisible": true,
+            "sourceFieldFilterable": true,
+            "sourceDataObjectName": "Categories",
+            "sourceDataObjectFullName": null,
+            "dataType": "Numeric",
+            "isParameter": false,
+            "isCalculated": false,
+            "calculatedTree": null,
+            "compareFieldCalculatedTree": null,
+            "compareValueCalculatedTree": null,
+            "compareField": null,
+            "selected": false,
+            "dataFormat": null,
+            "reportId": null,
+            "useMappedFieldAlias": false,
+            "uniqueId": null,
+            "comparisionValue": null,
+            "inTimePeriodType": null,
+            "valueInTimePeriod": null,
+            "hasModifiedCalculatedTree": false,
+            "isHiddenFilter": false,
+            "isInheritableFilter": false,
+            "operatorName": null,
+            "filterId": "00000000-0000-0000-0000-000000000000",
+            "reportFieldAlias": null,
+            "reportPartTitle": null,
+            "querySourceFieldId": "1c21c9b2-cc58-4181-89b5-76740bf04c64",
+            "querySourceType": "Table",
+            "querySourceId": "8ea14631-ce4f-4546-a6e9-04094c69d4af",
+            "relationshipId": null,
+            "alias": null,
+            "position": 0,
+            "visible": true,
+            "required": false,
+            "cascading": true,
+            "operatorId": null,
+            "operatorSetting": null,
+            "value": null,
+            "dataFormatId": null,
+            "sortType": "Unsorted",
+            "fontFamily": null,
+            "fontSize": 0,
+            "textColor": null,
+            "backgroundColor": null,
+            "fontBold": false,
+            "fontItalic": false,
+            "fontUnderline": false,
+            "querySourceUniqueName": null,
+            "querySourceFieldName": null,
+            "comparisonFieldUniqueName": null,
+            "isNegative": false,
+            "id": "00000000-0000-0000-0000-000000000000",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
+         },
+         {
+            "connectionName": "MSSQL",
+            "querySourceCategoryName": "dbo",
+            "sourceFieldName": "CategoryName",
+            "sourceFieldVisible": true,
+            "sourceFieldFilterable": true,
+            "sourceDataObjectName": "Categories",
+            "sourceDataObjectFullName": null,
+            "dataType": "Text",
+            "isParameter": false,
+            "isCalculated": false,
+            "calculatedTree": null,
+            "compareFieldCalculatedTree": null,
+            "compareValueCalculatedTree": null,
+            "compareField": null,
+            "selected": false,
+            "dataFormat": null,
+            "reportId": null,
+            "useMappedFieldAlias": false,
+            "uniqueId": null,
+            "comparisionValue": null,
+            "inTimePeriodType": null,
+            "valueInTimePeriod": null,
+            "hasModifiedCalculatedTree": false,
+            "isHiddenFilter": false,
+            "isInheritableFilter": false,
+            "operatorName": null,
+            "filterId": "00000000-0000-0000-0000-000000000000",
+            "reportFieldAlias": null,
+            "reportPartTitle": null,
+            "querySourceFieldId": "8a628514-1024-4051-92a8-33752b79d58b",
+            "querySourceType": "Table",
+            "querySourceId": "8ea14631-ce4f-4546-a6e9-04094c69d4af",
+            "relationshipId": null,
+            "alias": null,
+            "position": 0,
+            "visible": true,
+            "required": false,
+            "cascading": true,
+            "operatorId": null,
+            "operatorSetting": null,
+            "value": null,
+            "dataFormatId": null,
+            "sortType": "Unsorted",
+            "fontFamily": null,
+            "fontSize": 0,
+            "textColor": null,
+            "backgroundColor": null,
+            "fontBold": false,
+            "fontItalic": false,
+            "fontUnderline": false,
+            "querySourceUniqueName": null,
+            "querySourceFieldName": null,
+            "comparisonFieldUniqueName": null,
+            "isNegative": false,
+            "id": "00000000-0000-0000-0000-000000000000",
+            "state": 0,
+            "deleted": false,
+            "inserted": true,
+            "version": null,
+            "created": null,
+            "createdBy": null,
+            "modified": null,
+            "modifiedBy": null
+         }
+      ]
+
 
 POST report/validateFilterSyntax
 ------------------------------------------------
@@ -5852,14 +6048,14 @@ Validate if report contains both aggregated and non-aggregated filter fields.
 
       false
 
-GET report/validateFilterFieldsType/{reportId}
+POST report/validateFilterFields
 -------------------------------------------------
 
 Validate if report contains both aggregated and non-aggregated filter fields.
 
 **Request**
 
-    No payload
+    Payload: a :doc:`models/ReportFilterValidationParameter` object
 
 **Response**
 
@@ -5869,7 +6065,16 @@ Validate if report contains both aggregated and non-aggregated filter fields.
 **Sample**
    .. code-block:: http
 
-      GET report/validateFilterFieldsType/655418a5-1036-4b3b-8793-3f60f15c7be3 HTTP/1.1
+      POST report/validateFilterFields HTTP/1.1
+
+   Sample Request Payload ::
+
+      {
+         "reportId": "90c5ee59-b816-4034-b927-e8f16b1c2759",
+         "masterReportId": "ec7efb62-8a54-4803-bce6-5a2b10e6e3bd",
+         "reportWrapper": null,
+         "inheritMasterReportFilter": true,
+      }
 
    Sample Response ::
 

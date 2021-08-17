@@ -9,6 +9,7 @@ Report Datasources
    ReportSelectedQuerySource
    ReportSelectedQuerySourceDetail
    ReportDataSourceCategory
+   ReportDataSourceConnection
    ReportQuerySource
    ReportField
    RelationshipQuerySource
